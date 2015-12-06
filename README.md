@@ -56,7 +56,7 @@ $ cd /your-app-path/
 $ git clone https://github.com/thatgibbyguy/tgggrid.git
 ```
 
-Because tgggrid utilizes [SCSS], you will need to use any of the following to compile your code.
+Because tgggrid utilizes [SCSS], you will need to use any of the following to compile your code. A gulp file is currently included to help you get started.
 
 * [Gulp]
 * [Grunt]
