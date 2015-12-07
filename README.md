@@ -1,6 +1,6 @@
 # tgggrid
 
-tgggrid (pronounced tig*grid) is a ratio based CSS Framework written in SCSS, and is currently a fork of [Kube v 4.0.2] that was converted to SCSS by me, [thatgibbyguy]. The purpose of tgggrid is to provide Front End developers with an immediately understandable framework based on a ration based grid system, versus arbitrary column based grid systems.
+tgggrid (pronounced tig*grid) is a ratio based CSS Framework written in SCSS, and is currently a fork of [Kube v 4.0.2] that was converted to SCSS by me, [thatgibbyguy]. The purpose of tgggrid is to provide Front End developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
 
 ## tgggrid versus foundation
 
