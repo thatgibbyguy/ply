@@ -7,14 +7,14 @@ tgggrid (pronounced tig*grid) is a ratio based CSS Framework written in SCSS, an
 An offset, three column layout in tgggrid:
 ```html
 <section class="units-row">
-    <div class="unit-20">
-        <!-- A column of 20% width -->
+    <div class="unit-25">
+        <!-- A column of 25% width -->
     </div>
-    <div class="unit-40">
-        <!-- A column of 40% width -->
+    <div class="unit-50">
+        <!-- A column of 50% width -->
     </div>
-    <div class="unit-20">
-        <!-- A column of 20% width -->
+    <div class="unit-25">
+        <!-- A column of 25% width -->
     </div>
 </section>
 ```
@@ -22,13 +22,13 @@ An offset, three column layout in foundation:
 ```html
 <div class="row">
     <div class="large-3 columns">
-        <!-- A column of ~20% width -->
+        <!-- A column of ~25% width -->
     </div>
     <div class="large-6 columns">
-        <!-- A column of ~40% width -->
+        <!-- A column of ~50% width -->
     </div>
     <div class="large-3 columns">
-        <!-- A column of ~20% width -->
+        <!-- A column of ~25% width -->
     </div>
 </div>
 ```
