@@ -1,0 +1,29 @@
+{
+  "name": "tgggrid",
+  "version": "0.0.1",
+  "description": "tgggrid - A ratio based CSS grid framework",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatgibbyguy/tgggrid.git"
+  },
+  "homepage": "https://github.com/thatgibbyguy/tgggrid",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/thatgibbyguy/tgggrid/issues"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Gibby",
+  "license": "MIT"
+}

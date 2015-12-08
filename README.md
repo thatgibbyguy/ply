@@ -39,7 +39,7 @@ tgggrid is currently a simple fork of [Kube v 4.0.2]. Documentation on that is c
 
 ### Version
 Kube v 4.0.2  
-tgggrid v 0.0.1
+tgggrid v 0.0.2
 
 ### Tech
 tgggrid utilizes following technologies:
@@ -49,19 +49,44 @@ tgggrid utilizes following technologies:
 * [smacss]
 
 # Using tgggrid
-tgggrid makes no assumptions on your app's directory structure, your task runner, or how you markup your HTML. To use tgggrid, simply clone this repo into your project directory. 
+To begin using tgggrid, run the following commands.
 
 ```sh
 $ cd /your-app-path/
 $ git clone https://github.com/thatgibbyguy/tgggrid.git
 ```
 
-Because tgggrid utilizes [SCSS], you will need to use any of the following to compile your code. A gulp file is currently included to help you get started.
+### Linking tgggrid in your document head
+After cloning tgggrid into your application, you will be able to link tgggrid into your app by linking to it using the following code:
 
-* [Gulp]
-* [Grunt]
+```html
+<link rel="stylesheet" type="text/css" href="/tgggrid/css/tgggrid.min.css">
+<link rel="stylesheet" type="text/css" href="your-normal-css.css">
+```
+Importing tgggrid this way will allow you to code CSS the way you always have, with tgggrid providing you a base framework for your elements. Make sure that your css file(s) comes after the tgggrid import so that your styles will extend tgggrid functionality.
 
-### Development
+### Using [Gulp]
+tgggrid comes with a predefined gulp file for you. To code continuously with gulp simply run:
+
+```sh
+$ gulp
+```
+This task will watch the file located at `/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/css/styles.css` and `/css/styles.min.css`. 
+
+To use these styles in your webapp, use the following code:
+
+```html
+<link rel="stylesheet" type="text/css" href="/tgggrid/css/styles.min.css">
+```
+
+### Additional [Gulp] functions
+Included with this gulp file are the following commands:  
+
+`gulp styles` `gulp stylesMin` `gulp tgggrid` `gulp tgggridMin`
+
+Each of these gulp commands will output to the `/css/` directory and you may use them as you see fit. 
+
+# Development
 
 Want to contribute? Great! Simply fork this repo and create a Pull Request with your added features!
 
@@ -69,7 +94,7 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 
  - Add in additional mixins
  - Convert base layout to flexbox
- - Add PostCSS and Webpack support
+ - Add Webpack support
  - Create project as npm module
  - Create project as meteor package
 
