@@ -95,6 +95,7 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
  - Add in additional mixins
  - Convert base layout to flexbox
  - Add Webpack support
+ - Add gulp-rev for revision tracking
  - Create project as npm module
  - Create project as meteor package
 
