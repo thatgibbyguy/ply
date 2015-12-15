@@ -69,6 +69,7 @@ Importing tgggrid this way will allow you to code CSS the way you always have, w
 tgggrid comes with a predefined gulp file for you. To code continuously with gulp simply run:
 
 ```sh
+$ npm install
 $ gulp
 ```
 This task will watch the file located at `/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/css/styles.css` and `/css/styles.min.css`. 
