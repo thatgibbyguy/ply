@@ -1,5 +1,5 @@
 # Ignore docs files
-node_modules
+node_modules/
 
 
 # OS generated files
