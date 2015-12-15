@@ -39,7 +39,7 @@ tgggrid is currently a simple fork of [Kube v 4.0.2]. Documentation on that is c
 
 ### Version
 Kube v 4.0.2  
-tgggrid v 0.0.3
+tgggrid v 0.0.4
 
 ### Tech
 tgggrid utilizes following technologies:
@@ -99,6 +99,8 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
  - Add gulp-rev for revision tracking
  - Create project as npm module
  - Create project as meteor package
+ - Split javascript into separate repo
+ - Reorganize scss
 
 License
 ----
