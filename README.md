@@ -39,7 +39,7 @@ tgggrid is currently a simple fork of [Kube v 4.0.2]. Documentation on that is c
 
 ### Version
 Kube v 4.0.2  
-tgggrid v 0.0.2
+tgggrid v 0.0.3
 
 ### Tech
 tgggrid utilizes following technologies:

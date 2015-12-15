@@ -1,6 +1,6 @@
 {
   "name": "tgggrid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tgggrid - A ratio based CSS grid framework",
   "main": "gulpfile.js",
   "repository": {
