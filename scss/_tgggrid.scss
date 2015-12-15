@@ -1,10 +1,11 @@
 /*
-	tgggrid 0.0.2
+	tgggrid 0.0.3
 	author: John Gibby @thatgibbyguy
 */
 
 @import "components/variables";
 @import "components/mixins";
+@import "components/helpers";
 
 @import "components/reset";
 @import "components/typography";
@@ -31,7 +32,6 @@
 @import "components/autocomplete";
 @import "components/modal";
 
-@import "components/helpers";
 @import "components/prettyprint";
 
 @import "components/grid-responsive";
