@@ -6,6 +6,8 @@ body {
 	line-height: $base-line;
 	background: $background-body;
 	color: $color-body;
+	@include square;
+    overflow: auto;
 }
 
 /* =Links

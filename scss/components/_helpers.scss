@@ -13,6 +13,16 @@
 	}
 }
 
+.vertical-align {
+	align-items: center;
+	justify-content: center;
+}
+
+.full-screen {
+	position: relative;
+	@include square;
+}
+
 // General Helpers
 
 .group {
