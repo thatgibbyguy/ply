@@ -263,3 +263,7 @@ background-image: url($file + '.' + $type);
 		box-shadow: 0 1px 3px rgba(red($color-dark), green($color-dark), blue($color-dark), .6) inset;
 	}
 }
+
+@mixin text-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
+    text-shadow: $x $y $distance $color;
+}
