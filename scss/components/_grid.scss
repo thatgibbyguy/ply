@@ -49,7 +49,7 @@
 	max-width: 70%;  
 }
 .unit-66 { 
-	flex-basis: 66.;
+	flex-basis: 66.6%;
 	max-width: 66.6%;
 }
 .unit-65 { 
@@ -73,7 +73,7 @@
 	max-width: 35%;  
 }
 .unit-33 { 
-	flex-basis: 33.;
+	flex-basis: 33.3%;
 	max-width: 33.3%;
 }
 .unit-30 { 
@@ -95,9 +95,25 @@
 
 // Mobile Widths
 @media (max-width: $breakpoint-tablet) {
-	.tablet-unit-100 {
+	.unit-auto,
+	.unit-100,
+	.unit-90, 
+	.unit-80, 
+	.unit-75, 
+	.unit-70, 
+	.unit-66,
+	.unit-65, 
+	.unit-60, 
+	.unit-50, 
+	.unit-40, 
+	.unit-35, 
+	.unit-33,
+	.unit-30, 
+	.unit-25, 
+	.unit-20, 
+	.unit-10 {
+		flex-basis: 100%;
 		max-width: 100%;
-		flex-basis: 100%;  
 	}
 	.tablet-unit-90 {
 		max-width: 90%;
@@ -292,13 +308,6 @@
 	.phone-unit-10 {
 		max-width: 10%;
 		flex-basis: 10%;
-	}
-}
-
-[class*='phone-'] {
-	&:not(class*='large-'){
-		@include box-sizing(border-box);
-		padding: $padding;
 	}
 }
 

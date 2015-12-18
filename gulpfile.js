@@ -4,16 +4,17 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('tgggrid', function() {
-  gulp.src('./scss/_tgggrid.scss')
+  gulp.src('./scss/tgggrid-iso.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: true }
   ))
+  .pipe(rename('tgggrid.css'))
   .pipe(gulp.dest('./css/'))
 });
 
 gulp.task('tgggridMinified', function() {
-  gulp.src('./scss/_tgggrid.scss')
+  gulp.src('./scss/tgggrid-iso.scss')
   .pipe(sass({
     outputStyle: 'compressed'
   }).on('error', sass.logError))
