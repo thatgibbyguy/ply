@@ -35,11 +35,11 @@ An offset, three column layout in foundation:
 
 ## Documentation 
 
-tgggrid is currently a simple fork of [Kube v 4.0.2]. Documentation on that is currently available at the [legacy Kube example page]. An updated tgggrid example page will be available once work on the tgggrid roadmap has begun.
+tgggrid is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated tgggrid example page is coming soon.
 
 ### Version
+tgggrid v 0.1.0
 Kube v 4.0.2  
-tgggrid v 0.0.4
 
 ### Tech
 tgggrid utilizes following technologies:
@@ -93,8 +93,6 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 
 ### Roadmap
 
- - Add in additional mixins
- - Convert base layout to flexbox
  - Add Webpack support
  - Add gulp-rev for revision tracking
  - Create project as npm module

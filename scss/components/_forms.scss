@@ -1,6 +1,6 @@
 /* =Forms
 -----------------------------------------------------------------------------*/
-.forms  {
+.form  {
 	& .btn,
 	& input[type="submit"].btn,
 	& button,
@@ -17,7 +17,7 @@
 }
 
 
-.forms {
+.form {
 	& label {
 		display: block;
 		margin-bottom: $base-line / 1.5;
@@ -44,8 +44,8 @@
 		display: block;
 	}
 }
-.forms-inline,
-.forms-inline-list {
+.form-inline,
+.form-inline-list {
 	& input[type="text"],
 	& input[type="password"],
 	& input[type="email"],
@@ -68,31 +68,31 @@
 	}
 }
 
-.forms-list,
-.forms-inline,
-.forms-inline-list {
+.form-list,
+.form-inline,
+.form-inline-list {
 	margin: 0;
 	padding: 0;
 	margin-bottom: $base-line / 1.5;
 	list-style: none;
 }
-.forms-list label,
-.forms-inline label,
-.forms-inline-list li,
-.forms-inline-list li label {
+.form-list label,
+.form-inline label,
+.form-inline-list li,
+.form-inline-list li label {
 	display: inline-block;
 	margin-bottom: 0;
 }
-.forms-inline-list li label {
+.form-inline-list li label {
 	margin-right: $base-line / 2;
 }
-.forms-inline-list li {
+.form-inline-list li {
 	margin-bottom: 3px;
 }
-.forms-list li {
+.form-list li {
 	margin-bottom: 6px;
 }
-.forms-desc {
+.form-desc {
 	margin-top: 4px;
 	color: rgba(0, 0, 0, .4);
 	font-size: $font-size-small;
@@ -117,6 +117,18 @@ textarea {
 	@include transition(border ease .5s);
 }
 
+// Fieldset
+fieldset {
+	padding: $base-line;
+	margin-bottom: $base-line;
+	border: 1px solid $color-fieldset-border;
+	@include color-opacity;
+	@extend .border-radius;
+
+	& *:last-child {
+		margin-bottom: 0 !important;
+	}
+}
 
 /* States */
 .error,

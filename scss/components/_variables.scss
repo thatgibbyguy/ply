@@ -5,7 +5,7 @@ $font-family-controls: $font-family-base;
 $font-family-code: Menlo, Monaco, Consolas, "Courier New", monospace;
 
 // Grid
-$grid-width: 1200;
+$grid-width: 1000;
 $grid-gutter-width: 30;
 
 // Breakpoints
@@ -16,7 +16,7 @@ $breakpoint-small-desktop: 1024px;
 $breakpoint-large-desktop: 1200px;
 
 // Base color
-$background-body: #fff;
+$background-body: #f7f8f8;
 $color-body: #222;
 $color-headings: #000;
 
@@ -34,6 +34,10 @@ $font-size-big:  ($font-size-root * 1.2 * 16) + 0px;
 $font-size-small: ($font-size-root * .85 * 16) + 0px;
 $font-size-smaller: ($font-size-root * .75 * 16) + 0px;
 
+// Base padding and spacing
+$padding: ($font-size-root / .25);
+$margin: $padding;
+$border-radius: 4px;
 
 // HEADINGS
 
