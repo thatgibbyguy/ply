@@ -19,9 +19,7 @@
 	img::-moz-selection { background: transparent; 	}
 }
 
-@mixin box-sizing($box-model) {
-	-webkit-box-sizing: $box-model;
-	-moz-box-sizing: $box-model;
+@mixin box-sizing($box-model: border-box) {
 	box-sizing: $box-model;
 }
 
@@ -266,4 +264,13 @@ background-image: url($file + '.' + $type);
 
 @mixin text-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
     text-shadow: $x $y $distance $color;
+}
+
+@mixin square($width:100%, $height: 100%) {
+	width: $width;
+	height: $height;
+}
+
+@mixin color-opacity($color: $color-white, $opacity: 0.5) {
+	background-color: rgba($color, $opacity);
 }

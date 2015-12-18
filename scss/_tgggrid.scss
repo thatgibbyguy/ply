@@ -1,13 +1,14 @@
 /*
-	tgggrid 0.0.3
-	author: John Gibby @thatgibbyguy
+	tgggrid 0.1.0
+	CSS Framework: tgggrid :: https://github.com/thatgibbyguy/tgggrid
+	Framework Author: @thatgibbyguy
 */
 
+@import "components/reset";
 @import "components/variables";
 @import "components/mixins";
 @import "components/helpers";
 
-@import "components/reset";
 @import "components/typography";
 
 @import "components/grid";
