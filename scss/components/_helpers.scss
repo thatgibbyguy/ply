@@ -73,6 +73,13 @@
 .text-right {
 	text-align: right;
 }
+.text-left {
+	text-align: left;
+}
+.hide-text {
+	text-indent: -5000px;
+	font-size: 0;
+}
 .last {
 	margin-right: 0 !important;
 }
@@ -100,7 +107,8 @@
 .right {
 	float: right;
 }
-.upper {
+.uppercase,
+.capitalized {
 	text-transform: uppercase;
 }
 .list-flat {

@@ -5,8 +5,8 @@ $font-family-controls: $font-family-base;
 $font-family-code: Menlo, Monaco, Consolas, "Courier New", monospace;
 
 // Grid
-$grid-width: 1000;
-$grid-gutter-width: 30;
+$grid-width: 1200;
+$grid-gutter-width: 30/($grid-width/100)*1%;
 
 // Breakpoints
 $breakpoint-large-phone: 650px;
