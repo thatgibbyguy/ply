@@ -38,7 +38,7 @@ An offset, three column layout in foundation:
 tgggrid is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated tgggrid example page is coming soon.
 
 ### Version
-tgggrid v 0.1.0
+tgggrid v 0.1.0  
 Kube v 4.0.2  
 
 ### Tech
