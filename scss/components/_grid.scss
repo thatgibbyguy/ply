@@ -349,7 +349,7 @@
 }
 .units-row {
 	& .unit-role-right {
-		margin-left: $grid-gutter-width/($grid-width/100)*1%;
+		margin-left: $grid-gutter-width / ($grid-width / 100) * .01;
 		float: right;
 	}
 	& .unit-role-left {

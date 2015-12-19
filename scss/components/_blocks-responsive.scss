@@ -24,11 +24,11 @@
 	.blocks-mobile-50 > li,
 	.blocks-mobile-33 > li {
 		float: left;
-		margin-left: $grid-gutter-width/($grid-width/100)*1%;
+		margin-left: $grid-gutter-width / ( $grid-width / 100) * .01;
 	}
 	.blocks-mobile-33,
 	.blocks-mobile-50 {
-		margin-left: -$grid-gutter-width/($grid-width/100)*1%;
+		margin-left: -$grid-gutter-width / ( $grid-width / 100) * .01;
 	}
 
 	.blocks-mobile-50 > li {

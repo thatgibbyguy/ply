@@ -7,13 +7,13 @@
 .blocks-6 {
 	padding-left: 0;
 	list-style: none;
-	margin-left: (-$grid-gutter-width) / ($grid-width / 100) * 1%;
+	margin-left: (-$grid-gutter-width) / ($grid-width / 100) * .01;
 	@include clearfix;
 	& > li {
 		height: auto;
 		float: left;
 		margin-bottom: $base-line;
-		margin-left: $grid-gutter-width / ($grid-width / 100) * 1%;
+		margin-left: $grid-gutter-width / ($grid-width / 100) * .01;
 		& ul {
 			list-style-type: disc;
 		}

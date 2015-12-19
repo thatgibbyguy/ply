@@ -192,23 +192,23 @@ background-image: url($file + '.' + $type);
 
 // Grid
 @mixin block($num) {
-	width: (($grid-width - ($grid-gutter-width * $num)) / $num / ($grid-width / 100)) * 1%;
+	width: (($grid-width - ($grid-gutter-width * $num)) / $num / ($grid-width / 100)) * .01;
 }
 
 @mixin column($num) {
-	width: (($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * 1%;
+	width: (($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * .01;
 }
 
 @mixin columns($factor, $num) {
-	width: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) * 1%;
+	width: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) * .01;
 }
 
 @mixin column-push($num) {
-	left: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) + $grid-gutter-width/($grid-width/100)) * 1%;
+	left: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) + $grid-gutter-width/($grid-width/100)) * .01;
 }
 
 @mixin columns-push($factor, $num) {
-	left: (((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) + $grid-gutter-width/($grid-width/100)) * 1%;
+	left: (((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) + $grid-gutter-width/($grid-width/100)) * .01;
 }
 
 // Buttons

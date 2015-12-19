@@ -1,10 +1,10 @@
-# tgggrid
+# ply
 
-tgggrid (pronounced tig*grid) is a ratio based CSS Framework written in SCSS, and is currently a fork of [Kube v 4.0.2] that was converted to SCSS by me, [thatgibbyguy]. The purpose of tgggrid is to provide Front End developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
+ply is a ratio based CSS Framework written in SCSS, and is currently a fork of [Kube v 4.0.2] that was converted to SCSS by me, [thatgibbyguy]. The purpose of ply is to provide Front End developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
 
-## tgggrid versus foundation
+## ply versus foundation
 
-An offset, three column layout in tgggrid:
+An offset, three column layout in ply:  
 ```html
 <section class="units-row">
     <div class="unit-25">
@@ -18,7 +18,8 @@ An offset, three column layout in tgggrid:
     </div>
 </section>
 ```
-An offset, three column layout in foundation:
+
+An offset, three column layout in foundation:  
 ```html
 <div class="row">
     <div class="large-3 columns">
@@ -35,38 +36,39 @@ An offset, three column layout in foundation:
 
 ## Documentation 
 
-tgggrid is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated tgggrid example page is coming soon.
+ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated plu example page is coming soon.
 
 ### Version
-tgggrid v 0.1.0  
+ply v 0.1.1  
 Kube v 4.0.2  
 
 ### Tech
-tgggrid utilizes following technologies:
+ply utilizes following technologies:
 
 * [SCSS]
 * [jQuery]
 * [smacss]
+* [Gulp]
 
-# Using tgggrid
-To begin using tgggrid, run the following commands.
+# Using ply
+To begin using ply, run the following commands.
 
 ```sh
 $ cd /your-app-path/
-$ git clone https://github.com/thatgibbyguy/tgggrid.git
+$ git clone https://github.com/thatgibbyguy/ply.git
 ```
 
-### Linking tgggrid in your document head
-After cloning tgggrid into your application, you will be able to link tgggrid into your app by linking to it using the following code:
+### Linking ply in your document head
+After cloning ply into your application, you will be able to link ply into your app by linking to it using the following code:
 
 ```html
-<link rel="stylesheet" type="text/css" href="/tgggrid/css/tgggrid.min.css">
+<link rel="stylesheet" type="text/css" href="/ply/css/ply.min.css">
 <link rel="stylesheet" type="text/css" href="your-normal-css.css">
 ```
-Importing tgggrid this way will allow you to code CSS the way you always have, with tgggrid providing you a base framework for your elements. Make sure that your css file(s) comes after the tgggrid import so that your styles will extend tgggrid functionality.
+Importing ply this way will allow you to code CSS the way you always have, with ply providing you a base framework for your elements. Make sure that your css file(s) comes after the ply import so that your styles will extend ply functionality.
 
 ### Using [Gulp]
-tgggrid comes with a predefined gulp file for you. To code continuously with gulp simply run:
+ply comes with a predefined gulp file for you. To code continuously with gulp simply run:
 
 ```sh
 $ npm install
@@ -77,13 +79,13 @@ This task will watch the file located at `/scss/styles.scss`. Each time you save
 To use these styles in your webapp, use the following code:
 
 ```html
-<link rel="stylesheet" type="text/css" href="/tgggrid/css/styles.min.css">
+<link rel="stylesheet" type="text/css" href="/ply/css/styles.min.css">
 ```
 
 ### Additional [Gulp] functions
 Included with this gulp file are the following commands:  
 
-`gulp styles` `gulp stylesMin` `gulp tgggrid` `gulp tgggridMin`
+`gulp styles` `gulp stylesMin` `gulp ply` `gulp plyMin`
 
 Each of these gulp commands will output to the `/css/` directory and you may use them as you see fit. 
 
@@ -113,7 +115,7 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
    [thatgibbyguy]: <https://twitter.com/thatgibbyguy>
    [legacy Kube example page]: <http://k1.imperavi.com/>
    [SCSS]: <http://sass-lang.com/>
-   [git-repo-url]: <https://github.com/thatgibbyguy/tgggrid.git>
+   [git-repo-url]: <https://github.com/thatgibbyguy/ply.git>
    [smacss]: <https://smacss.com>
    [gulp]: <http://gulpjs.com/>
    [grunt]: <http://gruntjs.com/>

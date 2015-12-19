@@ -2,8 +2,8 @@
 	Author:
 */
 /*
-	tgggrid 0.1.0
-	CSS Framework: tgggrid :: https://github.com/thatgibbyguy/tgggrid
+	ply 0.1.1
+	CSS Framework: ply :: https://github.com/thatgibbyguy/ply
 	Framework Author: @thatgibbyguy
 */
 /* =Reset
@@ -437,6 +437,13 @@ img {
 .text-right {
   text-align: right; }
 
+.text-left {
+  text-align: left; }
+
+.hide-text {
+  text-indent: -5000px;
+  font-size: 0; }
+
 .last {
   margin-right: 0 !important; }
 
@@ -464,7 +471,8 @@ img {
 .right {
   float: right; }
 
-.upper {
+.uppercase,
+.capitalized {
   text-transform: uppercase; }
 
 .list-flat {
@@ -963,12 +971,12 @@ table {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   box-sizing: border-box;
-  margin: -30 1.65em; }
+  margin: -0.025 1.65em; }
 
 [class*='unit-'] {
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0 30; }
+  padding: 0 0.025; }
 
 .units-row.split {
   margin: 0 0 1.65em; }
@@ -1360,55 +1368,55 @@ table {
   position: relative; }
 
 .unit-push-90 {
-  left: 92.7%; }
+  left: 0.90002; }
 
 .unit-push-80 {
-  left: 82.4%; }
+  left: 0.80002; }
 
 .unit-push-75 {
-  left: 77.25%; }
+  left: 0.75002; }
 
 .unit-push-70 {
-  left: 72.1%; }
+  left: 0.70001; }
 
 .unit-push-66 {
-  left: 68.66667%; }
+  left: 0.66668; }
 
 .unit-push-65 {
-  left: 68.66667%; }
+  left: 0.66668; }
 
 .unit-push-60 {
-  left: 61.8%; }
+  left: 0.60001; }
 
 .unit-push-50 {
-  left: 51.5%; }
+  left: 0.50001; }
 
 .unit-push-40 {
-  left: 41.2%; }
+  left: 0.40001; }
 
 .unit-push-35 {
-  left: 34.33333%; }
+  left: 0.33334; }
 
 .unit-push-33 {
-  left: 34.33333%; }
+  left: 0.33334; }
 
 .unit-push-30 {
-  left: 30.9%; }
+  left: 0.30001; }
 
 .unit-push-25 {
-  left: 25.75%; }
+  left: 0.25001; }
 
 .unit-push-20 {
-  left: 20.6%; }
+  left: 0.2; }
 
 .unit-push-10 {
-  left: 10.3%; }
+  left: 0.1; }
 
 .units-row .unit-push-right {
   float: right; }
 
 .units-row .unit-role-right {
-  margin-left: 3%;
+  margin-left: 0.00002;
   float: right; }
 
 .units-row .unit-role-left {
@@ -1428,7 +1436,7 @@ table {
 .blocks-6 {
   padding-left: 0;
   list-style: none;
-  margin-left: -3%; }
+  margin-left: -0.00002; }
   .blocks-2:after,
   .blocks-3:after,
   .blocks-4:after,
@@ -1445,7 +1453,7 @@ table {
     height: auto;
     float: left;
     margin-bottom: 1.65em;
-    margin-left: 3%; }
+    margin-left: 0.00002; }
     .blocks-2 > li ul,
     .blocks-3 > li ul,
     .blocks-4 > li ul,
@@ -1467,19 +1475,19 @@ table {
       margin: 0; }
 
 .blocks-2 > li {
-  width: 47%; }
+  width: 0.49998; }
 
 .blocks-3 > li {
-  width: 30.33333%; }
+  width: 0.33331; }
 
 .blocks-4 > li {
-  width: 22%; }
+  width: 0.24998; }
 
 .blocks-5 > li {
-  width: 17%; }
+  width: 0.19998; }
 
 .blocks-6 > li {
-  width: 13.66667%; }
+  width: 0.16665; }
 
 .block-first {
   clear: both; }
@@ -1756,7 +1764,7 @@ input.input-smaller {
   .input-groups .btn-append,
   .input-groups .input-append,
   .input-groups .input-prepend {
-    width: 1%;
+    width: .01;
     vertical-align: middle; }
   .input-groups .input-append,
   .input-groups .input-prepend {
@@ -1882,7 +1890,7 @@ input.input-smaller {
   float: none !important;
   margin: 0;
   display: table-cell;
-  width: 1%;
+  width: .01;
   text-align: center; }
 
 .fullwidth li a,
@@ -3151,8 +3159,8 @@ ul.dropdown {
   .units-mobile-50 .unit-20,
   .units-mobile-50 .unit-10 {
     float: left;
-    margin-left: 3%;
-    width: 48.5%; }
+    margin-left: 0.00002;
+    width: 0.49999; }
   .units-mobile-50 .unit-90:first-child,
   .units-mobile-50 .unit-80:first-child,
   .units-mobile-50 .unit-75:first-child,
@@ -3190,14 +3198,14 @@ ul.dropdown {
   .blocks-mobile-50 > li,
   .blocks-mobile-33 > li {
     float: left;
-    margin-left: 3%; }
+    margin-left: 0.00002; }
   .blocks-mobile-33,
   .blocks-mobile-50 {
-    margin-left: -3%; }
+    margin-left: -0.00002; }
   .blocks-mobile-50 > li {
-    width: 47%; }
+    width: 0.49998; }
   .blocks-mobile-33 > li {
-    width: 30.33333%; } }
+    width: 0.33331; } }
 
 /* =Typography Responsive
 -----------------------------------------------------------------------------*/

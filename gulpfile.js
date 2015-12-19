@@ -3,25 +3,25 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('tgggrid', function() {
-  gulp.src('./scss/tgggrid-iso.scss')
+gulp.task('ply', function() {
+  gulp.src('./scss/ply-iso.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: true }
   ))
-  .pipe(rename('tgggrid.css'))
+  .pipe(rename('ply.css'))
   .pipe(gulp.dest('./css/'))
 });
 
-gulp.task('tgggridMinified', function() {
-  gulp.src('./scss/tgggrid-iso.scss')
+gulp.task('plyMin', function() {
+  gulp.src('./scss/ply-iso.scss')
   .pipe(sass({
     outputStyle: 'compressed'
   }).on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: false }
   ))
-  .pipe(rename('tgggrid.min.css'))
+  .pipe(rename('ply.min.css'))
   .pipe(gulp.dest('./css/'))
 });
 

@@ -64,7 +64,7 @@
 	.units-mobile-50 .unit-20,
 	.units-mobile-50 .unit-10 {
 		float: left;
-		margin-left: $grid-gutter-width/($grid-width/100)*1%;
+		margin-left: $grid-gutter-width/($grid-width/100)*.01;
 		@include column(2);
 	}
 	.units-mobile-50 .unit-90:first-child,
