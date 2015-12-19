@@ -1,20 +1,24 @@
 /* =Grid
 -----------------------------------------------------------------------------*/
+.units-container {
+	max-width: $grid-width * 1px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+	
+.units-container,
+.units-row {
+	height: 100%;
+}
+
 .units-row {
 	display: flex;
 	flex: 0 1 auto;
 	flex-flow: row wrap;
 	box-sizing: border-box;
-	margin: 0 -$grid-gutter-width $base-line;
-}
+	margin: 0 (-$grid-gutter-width) $base-line;
 
-[class*='unit-'] {
-	@include box-sizing;
-	max-width: 100%;
-	padding: 0 $grid-gutter-width;
-}
-
-.units-row {
 	&.split {
 		margin: 0 0 $base-line;
 
@@ -22,6 +26,21 @@
 			padding: 0;
 		}
 	}
+
+	&.centered-content {
+		justify-content: center;
+    	text-align: center;
+	}
+
+	&.stacked {
+		margin-bottom: 0;
+	}
+}
+
+[class*='unit-'] {
+	@include box-sizing;
+	max-width: 100%;
+	padding: 0 $grid-gutter-width;
 }
 
 .unit-auto { 
