@@ -30,12 +30,7 @@
 
 @mixin gradient($start: #555, $end: #333) {
 	background-color: mix($start, $end, 60%);
-	background-image: -moz-linear-gradient(top, $start, $end); // FF 3.6+
-	background-image: -ms-linear-gradient(top, $start, $end); // IE10
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($start), to($end)); // Safari 4+, Chrome 2+
-	background-image: -webkit-linear-gradient(top, $start, $end); // Safari 5.1+, Chrome 10+
-	background-image: -o-linear-gradient(top, $start, $end); // Opera 11.10
-	background-image: linear-gradient(top, $start, $end); // The standard
+	background-image: linear-gradient(to bottom, $start, $end); // The standard
 	filter: e(%("progid:DXImageTransform.Microsoft@include gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$start,$end)); // IE9 and down
 }
 
@@ -212,16 +207,26 @@ background-image: url($file + '.' + $type);
 }
 
 // Buttons
-@mixin make-color-btn($color, $color-dark, $color-text, $active-shadow: .5) {
+@mixin create-button($base-color, $hover-color, $text-color, $active-shadow: .5) {
 
-	color: rgba(red($color-text), green($color-text), blue($color-text), .9);
-	background: $color;
+	color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+	background: $base-color;
 
+	&:hover,
+	&:active,
+	&:focus {
+		color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+		background: $hover-color;
+	}
+	
 	&:hover {
-		color: rgba(red($color-text), green($color-text), blue($color-text), .6);
-		background: $color-dark;
+		transform: translateY(0) scale(1.05, 1.05);
 	}
 
+	&:focus,
+	&:active {
+		transform: translateY(0) scale(.95, .95);
+	}
 
 	&.btn-active {
 		box-shadow: 0 1px 4px rgba(0, 0, 0, $active-shadow) inset;
@@ -230,20 +235,20 @@ background-image: url($file + '.' + $type);
 	&.btn-active,
 	&.btn-disabled,
 	&.btn[disabled] {
-		color: rgba(red($color-text), green($color-text), blue($color-text), .5);
-		background: $color-dark;
+		color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+		background: $hover-color;
 		&:hover {
-			color: rgba(red($color-text), green($color-text), blue($color-text), .5);
+			color: rgba(red($text-color), green($text-color), blue($text-color), .5);
 		}
 	}
 
 	&.btn-outline {
 		background: none;
-		border-color: $color;
-		color: $color;
+		border-color: $base-color;
+		color: $base-color;
 		&:hover {
-			color: rgba(red($color-text), green($color-text), blue($color-text), .9);
-			background: $color;
+			color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+			background: $base-color;
 		}
 	}
 
@@ -251,14 +256,14 @@ background-image: url($file + '.' + $type);
 	&.btn-outline.btn-disabled {
 		background: none;
 		box-shadow: none;
-		color: rgba(red($color), green($color), blue($color), .4);
-		border: 1px solid rgba(red($color), green($color), blue($color), .3);
+		color: rgba(red($base-color), green($base-color), blue($base-color), .5);
+		border: 1px solid rgba(red($base-color), green($base-color), blue($base-color), .3);
 	}
 	&.btn-outline.btn-active {
 		background: none;
-		color: rgba(red($color), green($color), blue($color), .6);
+		color: rgba(red($base-color), green($base-color), blue($base-color), 1);
 		border: none;
-		box-shadow: 0 1px 3px rgba(red($color-dark), green($color-dark), blue($color-dark), .6) inset;
+		box-shadow: 0 1px 3px rgba(red($hover-color), green($hover-color), blue($hover-color), .6) inset;
 	}
 }
 

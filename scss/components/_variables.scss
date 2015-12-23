@@ -34,6 +34,8 @@ $font-size-big:  ($font-size-root * 1.2 * 16) + 0px;
 $font-size-small: ($font-size-root * .85 * 16) + 0px;
 $font-size-smaller: ($font-size-root * .75 * 16) + 0px;
 
+$header-font-weight: 100;
+
 // Base padding and spacing
 $padding: ($font-size-root / .25);
 $margin: $padding;

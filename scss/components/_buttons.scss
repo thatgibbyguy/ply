@@ -2,6 +2,8 @@
 -----------------------------------------------------------------------------*/
 .btn,
 input[type="submit"].btn {
+	transition: all 150ms ease-in-out, transform 50ms ease, background 150ms ease-in-out;
+
 	display: inline-block;
 	vertical-align: top;
 
@@ -27,8 +29,11 @@ input[type="submit"].btn {
 	padding: $padding-btn;
 
 	&:hover {
-		color: rgba(0, 0, 0, .5);
 		background: $color-gray-dark;
+	}
+
+	&[class*='unit-'] {
+		margin: auto $grid-gutter-width;
 	}
 }
 .btn::-moz-focus-inner {
@@ -103,27 +108,31 @@ input[type="submit"].btn-outline {
 
 .btn-blue,
 input[type="submit"].btn-blue {
-	@include make-color-btn($color-blue, $color-blue-dark, #fff);
+	@include create-button($color-blue, $color-blue-dark, #fff);
+}
+.btn-blue-dark,
+input[type="submit"].btn-blue {
+	@include create-button(darken($color-blue-dark, 10%), $color-blue-dark, #fff);
 }
 .btn-red,
 input[type="submit"].btn-red {
-	@include make-color-btn($color-red, $color-red-dark, #fff);
+	@include create-button($color-red, $color-red-dark, #fff);
 }
 .btn-green,
 input[type="submit"].btn-green {
-	@include make-color-btn($color-green, $color-green-dark, #fff);
+	@include create-button($color-green, $color-green-dark, #fff);
 }
 .btn-black,
 input[type="submit"].btn-black {
-	@include make-color-btn($color-black, $color-black-light, #fff, .7);
+	@include create-button($color-black, $color-black-light, #fff, .7);
 }
 .btn-yellow,
 input[type="submit"].btn-yellow {
-	@include make-color-btn($color-yellow, $color-yellow-dark, #000);
+	@include create-button($color-yellow, $color-yellow-dark, #000);
 }
 .btn-white,
 input[type="submit"].btn-white {
-	@include make-color-btn($color-white, darken(#fff, 7%), #000, .2);
+	@include create-button($color-white, darken(#fff, 7%), #000, 1);
 }
 
 .btn-white {

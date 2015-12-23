@@ -35,7 +35,7 @@ h6,
 .h5,
 .h6 {
 	font-family: $font-family-headings;
-	font-weight: bold;
+	font-weight: $header-font-weight;
 	color: $color-headings;
 	text-rendering: optimizeLegibility;
 	margin: 0 0 .5em 0;

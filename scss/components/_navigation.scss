@@ -1,5 +1,13 @@
 /* =Navs
 -----------------------------------------------------------------------------*/
+// Nav element reset
+nav {
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+}
+
 
 /* NavBar */
 .navbar {
