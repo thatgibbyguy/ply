@@ -26,6 +26,10 @@ $font-size-print: 12pt;
 $font-size-base: $font-size-root + 0em;
 $base-line: 1.65em;
 
+$bold: 700;
+$medium: 400;
+$light: 100;
+
 // Font size and line height
 $font-size-lead: 1.3125em; // 21px by default
 $line-height-lead: 1.5;
@@ -34,7 +38,7 @@ $font-size-big:  ($font-size-root * 1.2 * 16) + 0px;
 $font-size-small: ($font-size-root * .85 * 16) + 0px;
 $font-size-smaller: ($font-size-root * .75 * 16) + 0px;
 
-$header-font-weight: 100;
+$header-font-weight: $medium;
 
 // Base padding and spacing
 $padding: ($font-size-root / .25);
