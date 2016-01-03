@@ -4,9 +4,10 @@
 	max-width: $grid-width * 1px;
 	overflow: hidden;
 	position: relative;
+	padding: $padding;
 	width: 100%;
 }
-	
+
 .units-container,
 .units-row {
 	height: 100%;
@@ -377,7 +378,8 @@
 }
 
 .centered,
-.unit-centered {
+.unit-centered,
+%centered {
 	float: none !important;
-	margin: 0 auto $base-line !important;
+	margin: 0 auto $base-line;
 }

@@ -226,6 +226,8 @@ background-image: url($file + '.' + $type);
 	&:focus,
 	&:active {
 		transform: translateY(0) scale(.95, .95);
+		background: darken($hover-color,5%);
+		box-shadow: 0 0 10px darken($hover-color,15%) inset;
 	}
 
 	&.btn-active {
@@ -235,11 +237,25 @@ background-image: url($file + '.' + $type);
 	&.btn-active,
 	&.btn-disabled,
 	&.btn[disabled] {
+		@extend %cursor-not-allowed;
 		color: rgba(red($text-color), green($text-color), blue($text-color), .5);
 		background: $hover-color;
+
 		&:hover {
 			color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+			transform: scale(1,1);
 		}
+
+		&:active,
+		&:focus {
+			transform: scale(1,1);
+			box-shadow: 0 0 0;
+		}
+	}
+
+	&.btn-disabled,
+	&.btn[disabled] {
+		background: desaturate($hover-color, 50%);
 	}
 
 	&.btn-outline {

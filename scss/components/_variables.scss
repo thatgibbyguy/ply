@@ -6,7 +6,7 @@ $font-family-code: Menlo, Monaco, Consolas, "Courier New", monospace;
 
 // Grid
 $grid-width: 1200;
-$grid-gutter-width: 30 / ($grid-width / 100) * .1em;
+$grid-gutter-width: 30 / ($grid-width / 100) * .15em;
 
 // Breakpoints
 $breakpoint-large-phone: 650px;
@@ -26,10 +26,6 @@ $font-size-print: 12pt;
 $font-size-base: $font-size-root + 0em;
 $base-line: 1.65em;
 
-$bold: 700;
-$medium: 400;
-$light: 100;
-
 // Font size and line height
 $font-size-lead: 1.3125em; // 21px by default
 $line-height-lead: 1.5;
@@ -38,12 +34,13 @@ $font-size-big:  ($font-size-root * 1.2 * 16) + 0px;
 $font-size-small: ($font-size-root * .85 * 16) + 0px;
 $font-size-smaller: ($font-size-root * .75 * 16) + 0px;
 
-$header-font-weight: $medium;
+$header-font-weight: 100;
 
 // Base padding and spacing
-$padding: ($font-size-root / .25);
+$padding: ($font-size-root * .75) * 1em;
 $margin: $padding;
 $border-radius: 4px;
+$button-radius: 2em;
 
 // HEADINGS
 

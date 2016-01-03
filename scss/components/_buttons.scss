@@ -22,7 +22,7 @@ input[type="submit"].btn {
 	outline: none;
 	margin: 0;
 	border: none;
-	border-radius: 2px;
+	border-radius: $button-radius;
 	box-shadow: none;
 	cursor: pointer;
 	background: $color-gray;
@@ -78,6 +78,7 @@ input[type="submit"].btn-outline {
 	background: none;
 	background: $color-gray-dark;
 	color: rgba(0, 0, 0, .5);
+
 	&:hover {
 		color: rgba(0, 0, 0, .5);
 		background: $color-gray-dark;

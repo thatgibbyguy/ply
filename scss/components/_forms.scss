@@ -123,7 +123,7 @@ fieldset {
 	margin-bottom: $base-line;
 	border: 1px solid $color-fieldset-border;
 	@include color-opacity;
-	@extend .border-radius;
+	@extend %border-radius;
 
 	& *:last-child {
 		margin-bottom: 0 !important;
@@ -274,5 +274,41 @@ input.input-smaller {
 		display: block;
 		height: auto;
 		border-radius: 0 2px 2px 0;
+	}
+}
+
+/* Fancy Select */
+
+.fancy-select {
+	@extend %cursor-pointer;
+	@extend %relative;
+	@extend %width-100;
+
+	display: block;
+	overflow: hidden;
+	font-size: .8em;
+
+	&:after {
+		@extend %absolute;
+		@extend %text-centered;
+
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: $padding * 5;
+		display: block;
+		content: '\25BC';
+		background: $color-blue;
+		color: $color-white;
+		font-size: .75em;
+		border-radius: 0 $border-radius $border-radius 0;
+	}
+
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border-radius: $border-radius;
+		padding: $padding * .75;
 	}
 }

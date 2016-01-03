@@ -1,6 +1,8 @@
 # ply
 
-ply is a ratio based CSS Framework written in SCSS, and is currently a fork of [Kube v 4.0.2] that was converted to SCSS by me, [thatgibbyguy]. The purpose of ply is to provide Front End developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
+ply is a modernized, ratio based css framework built using flex-box. think of ply as the metric system for your grid-based layouts.
+
+the purpose of ply is to provide front-end developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
 
 ## ply versus foundation
 
@@ -39,7 +41,7 @@ An offset, three column layout in foundation:
 ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
 
 ### Version
-ply v 0.1.1  
+ply v 0.1.5  
 Kube v 4.0.2  
 
 ### Tech
@@ -96,11 +98,10 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 ### Roadmap
 
  - Add Webpack support
- - Add gulp-rev for revision tracking
  - Create project as npm module
  - Create project as meteor package
  - Split javascript into separate repo
- - Reorganize scss
+ - Style all form elements
 
 License
 ----
