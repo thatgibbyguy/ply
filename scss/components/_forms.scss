@@ -285,16 +285,21 @@ input.input-smaller {
 	@extend %width-100;
 
 	display: block;
-	overflow: hidden;
+	// overflow: hidden;
 	font-size: .8em;
+	background: $color-white;
+	border-radius: $border-radius;
+	padding-right: 1px;
 
 	&:after {
 		@extend %absolute;
 		@extend %text-centered;
 
-		right: 0;
+		right: -1px;
 		top: 0;
 		height: 100%;
+		overflow: hidden;
+		padding-top: 2px;
 		width: $padding * 5;
 		display: block;
 		content: '\25BC';
@@ -304,11 +309,47 @@ input.input-smaller {
 		border-radius: 0 $border-radius $border-radius 0;
 	}
 
+	&:hover {
+		box-shadow: 0 0 6px $color-blue-dark;
+	}
+
 	select {
+		@extend %relative;
+		@extend %width-100;
+
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
-		border-radius: $border-radius;
 		padding: $padding * .75;
+		background: transparent;
+		outline: none;
+		border: 0 none;
+		z-index: 10;
+		left: $padding;
 	}
+}
+
+// Mozilla hacks
+@-moz-document url-prefix() {
+	.fancy-select {
+		select {
+			left: 0;
+		}
+	}
+}
+
+// IE10&11 hack since IE10&11 doesn't allow for conditional comments
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  // this is necessary to avoid forcing a double click on the select
+  .lm-select select:focus {
+    border: 0 none;
+  }
+}
+
+// IE9 and below
+.lt-ie10 {
+  // this is necessary to avoid forcing a double click on the select
+  .lm-select select:focus {
+    border: 0 none;
+  }
 }
