@@ -356,11 +356,13 @@ img {
   position: absolute; }
 
 .relative,
-.fancy-select {
+.fancy-select,
+.fancy-select select {
   position: relative; }
 
 .width-100,
-.fancy-select {
+.fancy-select,
+.fancy-select select {
   width: 100%; }
 
 .width-90 {
@@ -1882,12 +1884,16 @@ input.input-smaller {
 /* Fancy Select */
 .fancy-select {
   display: block;
-  overflow: hidden;
-  font-size: .8em; }
+  font-size: .8em;
+  background: #fff;
+  border-radius: 4px;
+  padding-right: 1px; }
   .fancy-select:after {
-    right: 0;
+    right: -1px;
     top: 0;
     height: 100%;
+    overflow: hidden;
+    padding-top: 2px;
     width: 3.51562em;
     display: block;
     content: '\25BC';
@@ -1895,12 +1901,29 @@ input.input-smaller {
     color: #fff;
     font-size: .75em;
     border-radius: 0 4px 4px 0; }
+  .fancy-select:hover {
+    box-shadow: 0 0 6px #1a52a5; }
   .fancy-select select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 4px;
-    padding: 0.52734em; }
+    padding: 0.52734em;
+    background: transparent;
+    outline: none;
+    border: 0 none;
+    z-index: 10;
+    left: 0.70312em; }
+
+@-moz-document url-prefix() {
+  .fancy-select select {
+    left: 0; } }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .lm-select select:focus {
+    border: 0 none; } }
+
+.lt-ie10 .lm-select select:focus {
+  border: 0 none; }
 
 /* =Navs
 -----------------------------------------------------------------------------*/
