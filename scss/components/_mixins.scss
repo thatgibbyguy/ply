@@ -1,92 +1,94 @@
 @mixin clearfix() {
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 @mixin opacity($opacity: 100) {
-	filter: e(%("alpha(opacity=%d)", $opacity));
-	-moz-opacity: $opacity / 100;
-	opacity: $opacity / 100;
+  filter: e(%("alpha(opacity=%d)", $opacity));
+  -moz-opacity: $opacity / 100;
+  opacity: $opacity / 100;
 }
 
 @mixin selection($r, $g, $b) {
-	::selection { background: rgb($r, $g, $b); }
-	::-moz-selection { background: rgb($r, $g, $b); }
-	img::selection { background: transparent; }
-	img::-moz-selection { background: transparent; 	}
+  ::selection { background: rgb($r, $g, $b); }
+  ::-moz-selection { background: rgb($r, $g, $b); }
+  img::selection { background: transparent; }
+  img::-moz-selection { background: transparent;  }
 }
 
 @mixin box-sizing($box-model: border-box) {
-	box-sizing: $box-model;
+  box-sizing: $box-model;
 }
 
-@mixin square($width:100%, $height: 100%) {
-	width: $width;
-	height: $height;
+@mixin square($size:100%) {
+  box-sizing: border-box;
+  display: block;
+  width: $size;
+  height: $size;
 }
 
 @mixin gradient($start: #555, $end: #333) {
-	background-color: mix($start, $end, 60%);
-	background-image: linear-gradient(to bottom, $start, $end); // The standard
-	filter: e(%("progid:DXImageTransform.Microsoft@include gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$start,$end)); // IE9 and down
+  background-color: mix($start, $end, 60%);
+  background-image: linear-gradient(to bottom, $start, $end); // The standard
+  filter: e(%("progid:DXImageTransform.Microsoft@include gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$start,$end)); // IE9 and down
 }
 
 @mixin border-top-radius($radius) {
-	border-top-right-radius: $radius;
-	border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
 }
 
 @mixin border-right-radius($radius) {
-	border-bottom-right-radius: $radius;
-	border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
 }
 
 @mixin border-bottom-radius($radius) {
-	border-bottom-right-radius: $radius;
-	border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 
 @mixin border-left-radius($radius) {
-	border-bottom-left-radius: $radius;
-	border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
 }
 
 @mixin bordered($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
-	border-top: 1px solid $top-color;
-	border-right: 1px solid $right-color;
-	border-bottom: 1px solid $bottom-color;
-	border-left: 1px solid $left-color;
+  border-top: 1px solid $top-color;
+  border-right: 1px solid $right-color;
+  border-bottom: 1px solid $bottom-color;
+  border-left: 1px solid $left-color;
 }
 
 @mixin retina-image($file, $type, $width, $height) {
 background-image: url($file + '.' + $type);
 
-	@media only screen and (-webkit-min-device-pixel-ratio: 2),
-		only screen and (   min--moz-device-pixel-ratio: 2),
-		only screen and (     -o-min-device-pixel-ratio: 2/1),
-		only screen and (        min-device-pixel-ratio: 2),
-		only screen and (                min-resolution: 192dpi),
-		only screen and (                min-resolution: 2dppx){
-		& {
-			background-image: url($file + '@2x.' + $type);
-			-webkit-background-size: $width $height;
-		}
-	}
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx){
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+    }
+  }
 }
 
 @mixin transition($transition: all linear .2s) {
-	-moz-transition: $transition;
-	transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
 }
 
 @mixin blur($radius) {
-	-webkit-filter: blur($radius);
-	-moz-filter: blur($radius);
-	-ms-filter: blur($radius);
-	filter: blur($radius);
+  -webkit-filter: blur($radius);
+  -moz-filter: blur($radius);
+  -ms-filter: blur($radius);
+  filter: blur($radius);
 }
 
 @mixin rotate($deg) {
@@ -98,200 +100,203 @@ background-image: url($file + '.' + $type);
 }
 
 @mixin arrow-top($color: #fff, $size: 5px, $left: 5px) {
-	&:after {
-		bottom: 100%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-		border-bottom-color: $color;
-		border-width: $size;
-		left: $left;
-	}
+  &:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $color;
+    border-width: $size;
+    left: $left;
+  }
 }
 
 @mixin arrow-bottom($color: #fff, $size: 5px, $left: 5px) {
-	&:after {
-		top: 100%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-		border-top-color: $color;
-		border-width: $size;
-		left: $left;
-	}
+  &:after {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $color;
+    border-width: $size;
+    left: $left;
+  }
 }
 
 @mixin arrow-left($color: #fff, $size: 5px, $top: 5px) {
-	&:after {
-		right: 100%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-		border-right-color: $color;
-		border-width: $size;
-		top: $top;
-	}
+  &:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: $color;
+    border-width: $size;
+    top: $top;
+  }
 }
 
 @mixin arrow-right($color: #fff, $size: 5px, $top: 5px) {
-	&:after {
-		left: 100%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-		border-left-color: $color;
-		border-width: $size;
-		top: $top;
-	}
+  &:after {
+    left: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-left-color: $color;
+    border-width: $size;
+    top: $top;
+  }
 }
 
 @mixin close($r: 0, $g: 0, $b: 0) {
-	padding: 4px 6px;
-	line-height: 1;
-	font-size: 20px;
-	cursor: pointer;
-	color: rgba($r, $g, $b, 1);
-	text-decoration: none;
-	@include opacity(50);
-	&:before {
-		content: '\00D7';
-	}
-	&:hover {
-		@include opacity(100);
-	}
+  padding: 4px 6px;
+  line-height: 1;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgba($r, $g, $b, 1);
+  text-decoration: none;
+  @include opacity(50);
+  &:before {
+    content: '\00D7';
+  }
+  &:hover {
+    @include opacity(100);
+  }
 }
 
 @mixin striped($color: rgba(255, 255, 255, .2), $angle: 45deg) {
-	background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-	background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-	background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
 }
 
 @mixin animation($animation) {
-	-webkit-animation: $animation;
-	-o-animation: $animation;
-	animation: $animation;
+  -webkit-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
 }
 
 // Grid
 @mixin block($num) {
-	width: (($grid-width - ($grid-gutter-width * $num)) / $num / ($grid-width / 100)) * .01;
+  width: (($grid-width - ($grid-gutter-width * $num)) / $num / ($grid-width / 100)) * .01;
 }
 
 @mixin column($num) {
-	width: (($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * .01;
+  width: (($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * .01;
 }
 
 @mixin columns($factor, $num) {
-	width: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) * .01;
+  width: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) * .01;
 }
 
 @mixin column-push($num) {
-	left: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) + $grid-gutter-width/($grid-width/100)) * .01;
+  left: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) + $grid-gutter-width/($grid-width/100)) * .01;
 }
 
 @mixin columns-push($factor, $num) {
-	left: (((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) + $grid-gutter-width/($grid-width/100)) * .01;
+  left: (((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) + $grid-gutter-width/($grid-width/100)) * .01;
 }
 
 // Buttons
 @mixin create-button($base-color, $hover-color, $text-color, $active-shadow: .5) {
 
-	color: rgba(red($text-color), green($text-color), blue($text-color), 1);
-	background: $base-color;
+  color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+  background: $base-color;
 
-	&:hover,
-	&:active,
-	&:focus {
-		color: rgba(red($text-color), green($text-color), blue($text-color), 1);
-		background: $hover-color;
-	}
-	
-	&:hover {
-		transform: translateY(0) scale(1.05, 1.05);
-	}
+  &:hover,
+  &:active,
+  &:focus {
+    color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+    background: $hover-color;
+  }
+  
+  &:hover {
+    transform: translateY(0) scale(1.05, 1.05);
+  }
 
-	&:focus,
-	&:active {
-		transform: translateY(0) scale(.95, .95);
-		background: darken($hover-color,5%);
-		box-shadow: 0 0 10px darken($hover-color,15%) inset;
-	}
+  &:focus,
+  &:active {
+    transform: translateY(0) scale(.95, .95);
+    background: darken($hover-color,5%);
+    box-shadow: 0 0 10px darken($hover-color,15%) inset;
+  }
 
-	&.btn-active {
-		box-shadow: 0 1px 4px rgba(0, 0, 0, $active-shadow) inset;
-	}
+  &.btn-active {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, $active-shadow) inset;
+  }
 
-	&.btn-active,
-	&.btn-disabled,
-	&.btn[disabled] {
-		@extend %cursor-not-allowed;
-		color: rgba(red($text-color), green($text-color), blue($text-color), .5);
-		background: $hover-color;
+  &.btn-active,
+  &.btn-disabled,
+  &.btn[disabled] {
+    @extend %cursor-not-allowed;
+    color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+    background: $hover-color;
 
-		&:hover {
-			color: rgba(red($text-color), green($text-color), blue($text-color), .5);
-			transform: scale(1,1);
-		}
+    &:hover {
+      color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+      transform: scale(1,1);
+    }
 
-		&:active,
-		&:focus {
-			transform: scale(1,1);
-			box-shadow: 0 0 0;
-		}
-	}
+    &:active,
+    &:focus {
+      transform: scale(1,1);
+      box-shadow: 0 0 0;
+    }
+  }
 
-	&.btn-disabled,
-	&.btn[disabled] {
-		background: desaturate($hover-color, 50%);
-	}
+  &.btn-disabled,
+  &.btn[disabled] {
+    background: desaturate($hover-color, 50%);
+  }
 
-	&.btn-outline {
-		background: none;
-		border-color: $base-color;
-		color: $base-color;
-		&:hover {
-			color: rgba(red($text-color), green($text-color), blue($text-color), 1);
-			background: $base-color;
-		}
-	}
+  &.btn-outline {
+    background: none;
+    border-color: $base-color;
+    color: $base-color;
+    &:hover {
+      color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+      background: $base-color;
+    }
+  }
 
-	&.btn-outline.btn[disabled],
-	&.btn-outline.btn-disabled {
-		background: none;
-		box-shadow: none;
-		color: rgba(red($base-color), green($base-color), blue($base-color), .5);
-		border: 1px solid rgba(red($base-color), green($base-color), blue($base-color), .3);
-	}
-	&.btn-outline.btn-active {
-		background: none;
-		color: rgba(red($base-color), green($base-color), blue($base-color), 1);
-		border: none;
-		box-shadow: 0 1px 3px rgba(red($hover-color), green($hover-color), blue($hover-color), .6) inset;
-	}
+  &.btn-outline.btn[disabled],
+  &.btn-outline.btn-disabled {
+    background: none;
+    box-shadow: none;
+    color: rgba(red($base-color), green($base-color), blue($base-color), .5);
+    border: 1px solid rgba(red($base-color), green($base-color), blue($base-color), .3);
+  }
+  &.btn-outline.btn-active {
+    background: none;
+    color: rgba(red($base-color), green($base-color), blue($base-color), 1);
+    border: none;
+    box-shadow: 0 1px 3px rgba(red($hover-color), green($hover-color), blue($hover-color), .6) inset;
+  }
 }
 
 @mixin text-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
     text-shadow: $x $y $distance $color;
 }
 
-@mixin square($width:100%, $height: 100%) {
-	width: $width;
-	height: $height;
+@mixin box-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
+    box-shadow: $x $y $distance $color;
 }
 
 @mixin color-opacity($color: $color-white, $opacity: 0.5) {
-	background-color: rgba($color, $opacity);
+  background-color: rgba($color, $opacity);
+}
+
+@mixin centered($space: auto) {
+  margin: $space auto;
 }
