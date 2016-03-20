@@ -1,6 +1,8 @@
+import React from 'react';
+
 const types = ['button', 'reset', 'span', 'submit']
 
-Button = React.createClass({
+export default React.createClass({
 
 	propTypes: {
 		type: React.PropTypes.oneOf(types),

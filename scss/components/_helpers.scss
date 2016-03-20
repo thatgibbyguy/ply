@@ -221,6 +221,11 @@
 	border-radius: $border-radius;
 }
 
+.circle,
+%circle {
+	border-radius: 100%;
+}
+
 /* Colors */
 .color-gray-10,
 %color-gray-10 { color: rgba(0, 0, 0, .1); }
