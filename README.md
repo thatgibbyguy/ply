@@ -41,19 +41,29 @@ An offset, three column layout in foundation:
 ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
 
 ### Version
-ply v 0.1.6  
+ply v 0.2.0  
 Kube v 4.0.2  
 
 ### Tech
 ply utilizes following technologies:
 
 * [SCSS]
-* [jQuery]
 * [smacss]
 * [Gulp]
+* [jQuery]
+* [react.js]
 
 # Using ply
-To begin using ply, run the following commands.
+You can use ply one of two ways:
+
+## Install via NPM
+
+```sh
+$ cd /your-app-path/
+$ npm install plygrid --save
+```
+
+## Install via Github
 
 ```sh
 $ cd /your-app-path/
@@ -98,7 +108,6 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 ### Roadmap
 
  - Add Webpack support
- - Create project as npm module
  - Create project as meteor package
  - Convert all js components to react components
  - Style all form elements
@@ -121,6 +130,7 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
    [gulp]: <http://gulpjs.com/>
    [grunt]: <http://gruntjs.com/>
    [jQuery]: <http://jquery.com>
+   [react.js]: <https://facebook.github.io/react/>
    [dillinger.io]: <http://dillinger.io/>
    [imperavi]: <https://imperavi.com/>
 
