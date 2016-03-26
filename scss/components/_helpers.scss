@@ -7,29 +7,29 @@
 
 .vertical-align,
 %vertical-align {
-	align-items: center;
-	justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .full-screen,
 %full-screen {
-	position: relative;
-	@include square;
+  position: relative;
+  @include square;
 }
 
 .fixed,
 %fixed {
-	position: fixed;
+  position: fixed;
 }
 
 .absolute,
 %absolute {
-	position: absolute;
+  position: absolute;
 }
 
 .relative,
 %relative {
-	position: relative;
+  position: relative;
 }
 
 .width-100,
@@ -102,128 +102,139 @@
 
 .group,
 %group {
-	@include clearfix;
+  @include clearfix;
 }
 .hide,
 %hide {
-	display: none;
+  display: none;
 }
 .highlight,
 %highlight {
-	background-color: $color-yellow-pastel;
+  background-color: $color-yellow-pastel;
 }
 .big,
 %big {
-	font-size: $font-size-big;
+  font-size: $font-size-big;
 }
 .small,
 %small {
-	font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 .smaller,
 %smaller {
-	font-size: $font-size-smaller;
+  font-size: $font-size-smaller;
 }
+
+.serif,
+%serif {
+  font-family: $font-family-serif;
+}
+
+.italic,
+%italic {
+  font-style: italic;
+}
+
 .nowrap,
 %nowrap,
 .nowrap td {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 .req,
 .required,
 %required {
-	font-weight: normal;
-	color: $color-red;
+  font-weight: normal;
+  color: $color-red;
 }
 .error,
 %error {
-	color: $color-red;
+  color: $color-red;
 }
 .success,
 %success {
-	color: $color-green;
+  color: $color-green;
 }
 .text-centered,
 .text-center,
 %text-centered{
-	text-align: center;
+  text-align: center;
 }
 .text-right,
 %text-right {
-	text-align: right;
+  text-align: right;
 }
 .text-left,
 %text-left {
-	text-align: left;
+  text-align: left;
 }
 .hide-text,
 %hide-text {
-	text-indent: -5000px;
-	font-size: 0;
+  text-indent: -5000px;
+  font-size: 0;
 }
 .last,
 %last {
-	margin-right: 0 !important;
+  margin-right: 0 !important;
 }
 .pause,
 %pause {
-	margin-bottom: $base-line / 2 !important;
+  margin-bottom: $base-line / 2 !important;
 }
 .end,
 %end {
-	margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 .normal,
 %normal {
-	font-weight: normal;
+  font-weight: normal;
 }
 .light,
 %light {
-	font-weight: 300;
+  font-weight: 300;
 }
 .bold,
 %bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 .italic,
 %italic {
-	font-style: italic;
+  font-style: italic;
 }
 .left,
 %left {
-	float: left;
+  float: left;
 }
 .right,
 %right {
-	float: right;
+  float: right;
 }
 .uppercase,
 %uppercase,
 .capitalized,
 %capitalized {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 .list-flat,
 %list-flat {
-	margin-left: 0;
-	list-style: none;
+  margin-left: 0;
+  list-style: none;
 }
 .color-black,
 %color-black {
-	color: $color-black;
+  color: $color-black;
 }
 .color-white,
 %color-white {
-	color: $color-white;
+  color: $color-white;
 }
 .border-radius,
 %border-radius {
-	border-radius: $border-radius;
+  border-radius: $border-radius;
 }
 
 .circle,
 %circle {
-	border-radius: 100%;
+  border-radius: 100%;
 }
 
 /* Colors */
@@ -268,52 +279,52 @@
 /* Responsive embedded objects */
 .video-wrapper,
 %video-wrapper {
-	height: 0;
-	padding-bottom: 56.25%; // ratio 16:9
-	position: relative;
-	margin-bottom: $base-line;
-	& iframe,
-	& object,
-	& embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+  height: 0;
+  padding-bottom: 56.25%; // ratio 16:9
+  position: relative;
+  margin-bottom: $base-line;
+  & iframe,
+  & object,
+  & embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .no-bottom-margin,
 %no-bottom-margin {
-	margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .no-margin,
 %no-margin {
-	margin: 0;
+  margin: 0;
 }
 
 .hide-on-desktop,
 %hide-on-desktop {
-	display: none;
+  display: none;
 }
 
 
 /* =Responsive
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
-	.left,
-	%left,
-	.right,
-	%right {
-		float: none;
-	}
-	.hide-on-mobile,
-	%hide-on-mobile {
-		display: none;
-	}
-	.hide-on-desktop,
-	%hide-on-desktop {
-		display: block;
-	}
+  .left,
+  %left,
+  .right,
+  %right {
+    float: none;
+  }
+  .hide-on-mobile,
+  %hide-on-mobile {
+    display: none;
+  }
+  .hide-on-desktop,
+  %hide-on-desktop {
+    display: block;
+  }
 }

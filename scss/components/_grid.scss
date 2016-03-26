@@ -1,10 +1,11 @@
 /* =Grid
 -----------------------------------------------------------------------------*/
 .units-container {
+  margin: auto;
   max-width: $grid-width * 1px;
   overflow: hidden;
-  position: relative;
   padding: $padding;
+  position: relative;
   width: 100%;
 }
 

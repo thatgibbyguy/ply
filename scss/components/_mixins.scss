@@ -300,3 +300,6 @@ background-image: url($file + '.' + $type);
 @mixin centered($space: auto) {
   margin: $space auto;
 }
+@mixin uppercase() {
+  text-transform: uppercase;
+}
