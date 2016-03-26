@@ -5,14 +5,14 @@
 *,
 *:before,
 *:after {
-	@include box-sizing(border-box);
+  @include box-sizing(border-box);
 }
 
 html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    @include square;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  @include square;
 }
 
 html,
@@ -95,13 +95,13 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 a:active,
@@ -130,7 +130,7 @@ progress,
 meter,
 output,
 textarea {
-	display: block;
+  display: block;
 }
 
 audio:not([controls]) {
@@ -141,56 +141,56 @@ audio:not([controls]) {
 /* To prevent some browsers from inserting quotes on q and p */
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 blockquote p:before,
 blockquote p:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 
 /* Table reset */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 caption,
 th,
 td {
-	text-align: left;
-	vertical-align: top;
+  text-align: left;
+  vertical-align: top;
 }
 thead th,
 thead td {
-	font-weight: bold;
-	vertical-align: bottom;
+  font-weight: bold;
+  vertical-align: bottom;
 }
 
 /* Image inside */
 a img,
 th img,
 td img {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 button,
 input,
 select,
 textarea {
-	margin: 0;
+  margin: 0;
 }
 textarea {
-	overflow: auto;
-	vertical-align: top;
-	resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
 }
 
 /* Normalize buttons in IE */
 button {
-	width: auto;
-	overflow: visible;
+  width: auto;
+  overflow: visible;
 }
 
 /* Hand cursor on clickable controls */
@@ -201,34 +201,34 @@ input[type="radio"],
 input[type="checkbox"],
 select,
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 
 /* Trick with vertical align for radio and checkbox  */
 input[type="radio"],
 input[type="checkbox"] {
-	font-size: 110%;
-	position: relative;
-	top: -1px;
-	margin-right: 3px;
+  font-size: 110%;
+  position: relative;
+  top: -1px;
+  margin-right: 3px;
 }
 
 /* Normalize search fields */
 input[type="search"] {
-	-webkit-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /* Normalize horizontal line */
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ddd;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ddd;
 }
 
 /* Responsive media */
@@ -237,19 +237,19 @@ video,
 audio,
 embed,
 object {
-	max-width: 100%;
+  max-width: 100%;
 }
 img,
 video,
 embed,
 object {
-	height: auto;
+  height: auto;
 }
 embed,
 object {
     height: 100%;
 }
 img {
-	vertical-align: middle;
-	-ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
 }

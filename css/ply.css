@@ -479,6 +479,12 @@ img {
 .smaller {
   font-size: 11.25px; }
 
+.serif {
+  font-family: "Georgia", serif; }
+
+.italic {
+  font-style: italic; }
+
 .nowrap,
 .nowrap td {
   white-space: nowrap; }
@@ -664,6 +670,8 @@ body {
 /* =Links
 -----------------------------------------------------------------------------*/
 a {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
   color: #134da5; }
   a:focus, a:hover {
     color: #de2c3b; }
@@ -1041,10 +1049,11 @@ table {
 /* =Grid
 -----------------------------------------------------------------------------*/
 .units-container {
+  margin: auto;
   max-width: 1200px;
   overflow: hidden;
-  position: relative;
   padding: 0.70312em;
+  position: relative;
   width: 100%; }
 
 .units-container,
@@ -2873,7 +2882,7 @@ input[type="submit"].btn-white {
   padding: 0.4875em 2.5em; }
 
 /*
-	Buttons Group
+  Buttons Group
 */
 .btn-single,
 .btn-group {
