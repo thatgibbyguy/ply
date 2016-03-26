@@ -4,7 +4,24 @@ ply is a modernized, ratio based css framework built using flex-box. think of pl
 
 the purpose of ply is to provide front-end developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.
 
-## ply versus foundation
+# Using ply
+You can use ply one of two ways:
+
+## Install via NPM
+
+```sh
+$ cd /your-app-path/
+$ npm install plygrid --save
+```
+
+## Install via Github
+
+```sh
+$ cd /your-app-path/
+$ git clone https://github.com/thatgibbyguy/ply.git
+```
+
+# ply versus foundation
 
 An offset, three column layout in ply:  
 ```html
@@ -41,7 +58,7 @@ An offset, three column layout in foundation:
 ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
 
 ### Version
-ply v 0.2.0  
+ply v 0.2.2  
 Kube v 4.0.2  
 
 ### Tech
@@ -52,23 +69,6 @@ ply utilizes following technologies:
 * [Gulp]
 * [jQuery]
 * [react.js]
-
-# Using ply
-You can use ply one of two ways:
-
-## Install via NPM
-
-```sh
-$ cd /your-app-path/
-$ npm install plygrid --save
-```
-
-## Install via Github
-
-```sh
-$ cd /your-app-path/
-$ git clone https://github.com/thatgibbyguy/ply.git
-```
 
 ### Linking ply in your document head
 After cloning ply into your application, you will be able to link ply into your app by linking to it using the following code:
