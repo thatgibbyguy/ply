@@ -58,7 +58,7 @@ An offset, three column layout in foundation:
 ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
 
 ### Version
-ply v 0.2.2  
+ply v 0.3.0  
 Kube v 4.0.2  
 
 ### Tech
