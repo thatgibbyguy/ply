@@ -1,11 +1,13 @@
 /*
-	ply 0.1.5
+	ply 0.2.3
 	CSS Framework: ply :: https://github.com/thatgibbyguy/ply
 	Framework Author: @thatgibbyguy
 */
 
 @import 'components/reset';
+@import 'components/colors';
 @import 'components/variables';
+@import 'components/media-queries';
 @import 'components/mixins';
 @import 'components/helpers';
 
