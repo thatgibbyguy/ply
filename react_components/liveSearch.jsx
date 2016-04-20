@@ -18,12 +18,9 @@ export default React.createClass({
     const {dataQuery} = this.props;
     const searchQuery = e.target.value;
     const results = dataQuery(searchQuery);
-    
-    // self/this = this react class
-    const self = this;
 
     if (searchQuery !== '' && searchQuery.length > 1) {
-      self.setState({
+      this.setState({
         searchResults: results
       });
     }
