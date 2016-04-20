@@ -1,0 +1,57 @@
+/* =Alignments
+-----------------------------------------------------------------------------*/
+.fully-centered,
+%fully-centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-center,
+%justify-center {
+  justify-content: center;
+}
+
+.justify-flex-end,
+%justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-flex-start,
+%justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-space-around,
+%justify-space-around {
+  justify-content: space-around;
+}
+
+.justify-space-between,
+%justify-space-between {
+  justify-content: space-between;
+}
+
+.align-baseline,
+%align-baseline {
+  align-items: baseline;
+}
+
+.align-center,
+%align-center {
+  align-items: center;
+}
+
+.align-flex-end,
+%align-flex-end {
+  align-items: flex-end;
+}
+
+.align-flex-start,
+%align-flex-start {
+  align-items: flex-start;
+}
+
+.align-stretch,
+%align-stretch {
+  align-items: stretch;
+}

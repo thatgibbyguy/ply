@@ -135,6 +135,16 @@
   font-style: italic;
 }
 
+.mono,
+%mono {
+  font-family: $font-family-mono;
+}
+
+.code,
+%code {
+  font-family: $font-family-code;
+}
+
 .nowrap,
 %nowrap,
 .nowrap td {

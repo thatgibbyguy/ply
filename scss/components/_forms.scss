@@ -1,102 +1,102 @@
 /* =Forms
 -----------------------------------------------------------------------------*/
 .form  {
-	& .btn,
-	& input[type="submit"].btn,
-	& button,
-	& input[type="submit"],
-	& input[type="reset"] {
-		padding: $padding-btn-in-forms;
-	}
-	& .btn-outline, {
-		padding: $padding-btn-outline-in-forms;
-	}
-	& .btn-outline.bold {
-		padding: $padding-btn-outline-bold-in-forms;
-	}
+  & .btn,
+  & input[type="submit"].btn,
+  & button,
+  & input[type="submit"],
+  & input[type="reset"] {
+    padding: $padding-btn-in-forms;
+  }
+  & .btn-outline, {
+    padding: $padding-btn-outline-in-forms;
+  }
+  & .btn-outline.bold {
+    padding: $padding-btn-outline-bold-in-forms;
+  }
 }
 
 
 .form {
-	& label {
-		display: block;
-		margin-bottom: $base-line / 1.5;
-	}
+  & label {
+    display: block;
+    margin-bottom: $base-line / 1.5;
+  }
 
-	& input[type="text"],
-	& input[type="password"],
-	& input[type="email"],
-	& input[type="url"],
-	& input[type="phone"],
-	& input[type="tel"],
-	& input[type="number"],
-	& input[type="datetime"],
-	& input[type="date"],
-	& input[type="month"],
-	& input[type="color"],
-	& input[type="time"],
-	& input[type="search"],
-	& input[type="range"],
-	& input[type="file"],
-	& input[type="datetime-local"],
-	& textarea,
-	& select {
-		display: block;
-	}
+  & input[type="text"],
+  & input[type="password"],
+  & input[type="email"],
+  & input[type="url"],
+  & input[type="phone"],
+  & input[type="tel"],
+  & input[type="number"],
+  & input[type="datetime"],
+  & input[type="date"],
+  & input[type="month"],
+  & input[type="color"],
+  & input[type="time"],
+  & input[type="search"],
+  & input[type="range"],
+  & input[type="file"],
+  & input[type="datetime-local"],
+  & textarea,
+  & select {
+    display: block;
+  }
 }
 .form-inline,
 .form-inline-list {
-	& input[type="text"],
-	& input[type="password"],
-	& input[type="email"],
-	& input[type="url"],
-	& input[type="phone"],
-	& input[type="tel"],
-	& input[type="number"],
-	& input[type="datetime"],
-	& input[type="date"],
-	& input[type="month"],
-	& input[type="color"],
-	& input[type="time"],
-	& input[type="search"],
-	& input[type="range"],
-	& input[type="file"],
-	& input[type="datetime-local"],
-	& textarea,
-	& select {
-		display: inline-block;
-	}
+  & input[type="text"],
+  & input[type="password"],
+  & input[type="email"],
+  & input[type="url"],
+  & input[type="phone"],
+  & input[type="tel"],
+  & input[type="number"],
+  & input[type="datetime"],
+  & input[type="date"],
+  & input[type="month"],
+  & input[type="color"],
+  & input[type="time"],
+  & input[type="search"],
+  & input[type="range"],
+  & input[type="file"],
+  & input[type="datetime-local"],
+  & textarea,
+  & select {
+    display: inline-block;
+  }
 }
 
 .form-list,
 .form-inline,
 .form-inline-list {
-	margin: 0;
-	padding: 0;
-	margin-bottom: $base-line / 1.5;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: $base-line / 1.5;
+  list-style: none;
 }
 .form-list label,
 .form-inline label,
 .form-inline-list li,
 .form-inline-list li label {
-	display: inline-block;
-	margin-bottom: 0;
+  display: inline-block;
+  margin-bottom: 0;
 }
 .form-inline-list li label {
-	margin-right: $base-line / 2;
+  margin-right: $base-line / 2;
 }
 .form-inline-list li {
-	margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 .form-list li {
-	margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 .form-desc {
-	margin-top: 4px;
-	color: rgba(0, 0, 0, .4);
-	font-size: $font-size-small;
-	line-height: 1.4em;
+  margin-top: 4px;
+  color: rgba(0, 0, 0, .4);
+  font-size: $font-size-small;
+  line-height: 1.4em;
 }
 
 input[type="text"],
@@ -114,49 +114,49 @@ input[type="time"],
 input[type="search"],
 input[type="datetime-local"],
 textarea {
-	@include transition(border ease .5s);
+  @include transition(border ease .5s);
 }
 
 // Fieldset
 fieldset {
-	padding: $base-line;
-	margin-bottom: $base-line;
-	border: 1px solid $color-fieldset-border;
-	@include color-opacity;
-	@extend %border-radius;
+  padding: $base-line;
+  margin-bottom: $base-line;
+  border: 1px solid $color-fieldset-border;
+  @include color-opacity;
+  @extend %border-radius;
 
-	& *:last-child {
-		margin-bottom: 0 !important;
-	}
+  & *:last-child {
+    margin-bottom: 0 !important;
+  }
 }
 
 /* States */
 .error,
 .success {
-	font-weight: normal;
-	font-size: $font-size-small;
+  font-weight: normal;
+  font-size: $font-size-small;
 }
 input.input-error,
 textarea.input-error,
 select.input-error,
 .input-error {
-	border-color: $color-red;
-	box-shadow: 0 0 0 2px rgba(red($color-red), green($color-red), blue($color-red), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: $color-red;
+  box-shadow: 0 0 0 2px rgba(red($color-red), green($color-red), blue($color-red), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 input.input-success,
 textarea.input-success,
 select.input-success,
 .input-success  {
-	border-color: $color-green;
-	box-shadow: 0 0 0 2px rgba(red($color-green), green($color-green), blue($color-green), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: $color-green;
+  box-shadow: 0 0 0 2px rgba(red($color-green), green($color-green), blue($color-green), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 
 }
 input.input-gray,
 textarea.input-gray,
 select.input-gray,
 .input-gray {
-	border-color: $color-gray-dark;
-	box-shadow: 0 0 0 2px rgba(red($color-gray-dark), green($color-gray-dark), blue($color-gray-dark), .4), 0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: $color-gray-dark;
+  box-shadow: 0 0 0 2px rgba(red($color-gray-dark), green($color-gray-dark), blue($color-gray-dark), .4), 0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
 input[type="text"],
@@ -174,168 +174,174 @@ input[type="time"],
 input[type="search"],
 input[type="datetime-local"],
 textarea {
-	&:focus {
-		outline: none;
-		border-color: $color-blue;
-		box-shadow: 0 0 0 2px rgba(red($color-blue), green($color-blue), blue($color-blue), .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
-	}
+  &:focus {
+    outline: none;
+    border-color: $color-blue;
+    box-shadow: 0 0 0 2px rgba(red($color-blue), green($color-blue), blue($color-blue), .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
+  }
 }
 
 /*
-	Search
+  Search
 */
 input.input-search,
 input[type="search"] {
-	padding-right: .5em;
-	padding-left: .5em;
-	margin-bottom: 0;
-	border-radius: 15px;
+  padding-right: .5em;
+  padding-left: .5em;
+  margin-bottom: 0;
+  border-radius: 15px;
 }
 
 input.input-on-black {
-	border: 1px solid rgba(255, 255, 255, .1);
-	background: rgba(255, 255, 255, .35);
-	&::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, .6);
-	}
-	&::-moz-placeholder {
-		color: rgba(255, 255, 255, .6);
-	}
-	&:focus,
-	&.active {
-		border: 1px solid #fff;
-		background: #fff;
-		box-shadow: none;
-		&::-webkit-input-placeholder {
-			color: #aaa;
-		}
-		&::-moz-placeholder {
-			color: #aaa;
-		}
-	}
+  border: 1px solid rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .35);
+  &::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .6);
+  }
+  &::-moz-placeholder {
+    color: rgba(255, 255, 255, .6);
+  }
+  &:focus,
+  &.active {
+    border: 1px solid #fff;
+    background: #fff;
+    box-shadow: none;
+    &::-webkit-input-placeholder {
+      color: #aaa;
+    }
+    &::-moz-placeholder {
+      color: #aaa;
+    }
+  }
 }
 
 /* Sizes */
 input.input-big {
-	font-size: $font-size-big;
+  font-size: $font-size-big;
 }
 input.input-small {
-	font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 input.input-smaller {
-	font-size: $font-size-smaller;
+  font-size: $font-size-smaller;
 }
 
 /* Append & Prepend */
 .input-groups {
-	display: table !important;
+  display: table !important;
 
-	& input {
-		width: 100%;
-	}
+  & input {
+    width: 100%;
+  }
 
-	& input,
-	& .input-append,
-	& .input-prepend,
-	& .btn-append {
-		display: table-cell !important;
-	}
+  & input,
+  & .input-append,
+  & .input-prepend,
+  & .btn-append {
+    display: table-cell !important;
+  }
 
-	& .btn-append,
-	& .input-append,
-	& .input-prepend {
-		width: 1%;
-		vertical-align: middle;
-	}
+  & .btn-append,
+  & .input-append,
+  & .input-prepend {
+    width: 1%;
+    vertical-align: middle;
+  }
 
-	& .input-append,
-	& .input-prepend {
-		background-color: $color-input-append-background;
-		border: 1px solid $color-input-append-border;
-		margin: 0;
-		padding: .45em .75em .15em .75em;
-		color: rgba(0, 0, 0, .6);
-		line-height: $base-line;
-		font-size: $font-size-small;
-		white-space: nowrap;
-	}
+  & .input-append,
+  & .input-prepend {
+    background-color: $color-input-append-background;
+    border: 1px solid $color-input-append-border;
+    margin: 0;
+    padding: .45em .75em .15em .75em;
+    color: rgba(0, 0, 0, .6);
+    line-height: $base-line;
+    font-size: $font-size-small;
+    white-space: nowrap;
+  }
 
-	& .input-prepend {
-		border-right: none;
-	}
+  & .input-prepend {
+    border-right: none;
+  }
 
-	& .input-append {
-		position: relative;
-		z-index: 1;
-		border-left: none;
-	}
+  & .input-append {
+    position: relative;
+    z-index: 1;
+    border-left: none;
+  }
 
-	& .btn-append .btn {
-		display: block;
-		height: auto;
-		border-radius: 0 2px 2px 0;
-	}
+  & .btn-append .btn {
+    display: block;
+    height: auto;
+    border-radius: 0 2px 2px 0;
+  }
 }
 
 /* Fancy Select */
 
 .fancy-select {
-	@extend %cursor-pointer;
-	@extend %relative;
-	@extend %width-100;
+  @extend %cursor-pointer;
+  @extend %relative;
+  @extend %width-100;
 
-	display: block;
-	// overflow: hidden;
-	font-size: .8em;
-	background: $color-white;
-	border-radius: $border-radius;
-	padding-right: 1px;
+  display: block;
+  font-size: .8em;
+  background: $color-white;
+  border: 1px solid $color-blue-light;
+  border-radius: $border-radius;
+  padding-right: 1px;
 
-	&:after {
-		@extend %absolute;
-		@extend %text-centered;
+  &::after {
+    @extend %absolute;
+    @extend %text-centered;
 
-		right: -1px;
-		top: 0;
-		height: 100%;
-		overflow: hidden;
-		padding-top: 2px;
-		width: $padding * 5;
-		display: block;
-		content: '\25BC';
-		background: $color-blue;
-		color: $color-white;
-		font-size: .75em;
-		border-radius: 0 $border-radius $border-radius 0;
-	}
+    right: -1px;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 2px;
+    width: $padding * 5;
+    display: block;
+    content: '\25BC';
+    background: $color-blue;
+    border-right: $color-blue-light;
+    color: $color-white;
+    font-size: .75em;
+    border-radius: 0 $border-radius $border-radius 0;
+  }
 
-	&:hover {
-		box-shadow: 0 0 6px $color-blue-dark;
-	}
+  &:hover {
+    border: 1px solid $color-blue-dark;
+    box-shadow: 0 0 6px $color-blue-dark;
 
-	select {
-		@extend %relative;
-		@extend %width-100;
+    &::after {
+      border-right: $color-blue-light;
+    }
+  }
 
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		padding: $padding * .75;
-		background: transparent;
-		outline: none;
-		border: 0 none;
-		z-index: 10;
-		left: $padding;
-	}
+  select {
+    @extend %relative;
+    @extend %width-100;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: $padding * .75;
+    background: transparent;
+    outline: none;
+    border: 0 none;
+    z-index: 10;
+    left: $padding;
+  }
 }
 
 // Mozilla hacks
 @-moz-document url-prefix() {
-	.fancy-select {
-		select {
-			left: 0;
-		}
-	}
+  .fancy-select {
+    select {
+      left: 0;
+    }
+  }
 }
 
 // IE10&11 hack since IE10&11 doesn't allow for conditional comments
