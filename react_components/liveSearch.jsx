@@ -10,7 +10,8 @@ export default React.createClass({
   getInitialState() {
     return {
       searchResults: [],
-      searchStatus: null
+      searching: false,
+      searchValue: ''
     };
   },
 
@@ -18,6 +19,18 @@ export default React.createClass({
     const {dataQuery} = this.props;
     const searchQuery = e.target.value;
     const results = dataQuery(searchQuery);
+    const self = this;
+
+    this.setState({
+      searching: true,
+      searchValue: e.target.value
+    });
+
+    setTimeout(function(){
+      self.setState({
+        searching: false
+      });
+    }, 1000);
 
     if (searchQuery !== '' && searchQuery.length > 1) {
       this.setState({
@@ -29,13 +42,27 @@ export default React.createClass({
     }
   },
 
+  clearSearchResults(){
+    this.setState({
+      searchResults: [],
+      searching: false,
+      searchValue: ''
+    });
+  },
+
   render() {
     const {placeholder} = this.props;
-    const {searchResults} = this.state;
+    const {searchResults, searching, searchValue} = this.state;
     const placeholderText = placeholder ? placeholder : 'Search...';
-    const hideResultsContainer = searchResults ? '' : 'hide';
-    const inputClass = this.props.inputClass ? this.props.inputClass : '';
+    const hideResultsContainer = searchResults.length > 0 || searching ? '' : 'hide';
     const hasResults = searchResults.length > 0 ? 'has-results' : '';
+    const spinning = searching ? 'searching' : '';
+
+    let inputClass = this.props.inputClass ? this.props.inputClass : '';
+
+    if (hasResults) {
+      inputClass = `${inputClass} active`
+    }
 
     return(
       <div className="livesearch-container">
@@ -44,6 +71,7 @@ export default React.createClass({
                placeholder={placeholderText}
                onKeyUp={this.getSearchQuery}
                className={`${inputClass} ${hasResults}`} />
+        <span className={`close ${hideResultsContainer} ${spinning}`} onClick={this.clearSearchResults}></span>
         <ul className={`livesearch-results fade-in ${hideResultsContainer}`}>
           {searchResults.map(this.renderResults)}
         </ul>

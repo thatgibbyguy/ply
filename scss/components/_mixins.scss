@@ -6,6 +6,20 @@
   }
 }
 
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spinning($duration: 1s) {
+  animation-duration: $duration;
+  animation-name: spinning;
+}
+
 @mixin opacity($opacity: 100) {
   filter: e(%("alpha(opacity=%d)", $opacity));
   -moz-opacity: $opacity / 100;
@@ -300,6 +314,7 @@ background-image: url($file + '.' + $type);
 @mixin centered($space: auto) {
   margin: $space auto;
 }
+
 @mixin uppercase() {
   text-transform: uppercase;
 }

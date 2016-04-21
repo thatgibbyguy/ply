@@ -5,17 +5,27 @@
   display: inline-block;
   width: 100%;
 
-  & input {
+  input {
     border-radius: $border-radius * 1.75;
     width: 100%;
+
+    &.active {
+      border-radius: ($border-radius * 1.75) ($border-radius * 1.75) 0 0;
+      box-shadow: 0 none;
+      border-color: $color-gray;
+    }
   }
 
-  & .close {
+  .close {
     @include close();
     position: absolute;
-    top: .2em;
+    top: .1em;
     right: 5px;
     z-index: 2;
+  }
+
+  .searching {
+    @include spinning();
   }
 
 }
@@ -26,6 +36,7 @@
   left: 0;
   list-style: none;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   position: absolute;
   top: 100%;
