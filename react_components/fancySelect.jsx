@@ -49,23 +49,6 @@ export default React.createClass({
         </label>
       )
     }
-  },
-
-  _renderOptions(option, ii) {
-    if (option.children) {
-      return (
-        <optgroup key={ii} label={option.text}>
-          {option.children.map(this._renderOptions)}
-        </optgroup>
-      );
-    }
-    else {
-      return (
-        <option key={ii} value={option.id}>
-          {option.text}
-        </option>
-      );
-    }
   }
 
 });

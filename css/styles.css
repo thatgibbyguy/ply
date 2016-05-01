@@ -339,6 +339,7 @@ img {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
+              -ms-grid-row-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -356,7 +357,7 @@ img {
   position: fixed; }
 
 .absolute,
-.fancy-select:after {
+.fancy-select::after {
   position: absolute; }
 
 .relative,
@@ -488,6 +489,12 @@ img {
 .italic {
   font-style: italic; }
 
+.mono {
+  font-family: "Courier New", Courier, Menlo, Monaco, Consolas, monospace; }
+
+.code {
+  font-family: Menlo, Monaco, Consolas, monospace; }
+
 .nowrap,
 .nowrap td {
   white-space: nowrap; }
@@ -505,7 +512,7 @@ img {
 
 .text-centered,
 .text-center,
-.fancy-select:after {
+.fancy-select::after {
   text-align: center; }
 
 .text-right {
@@ -879,7 +886,7 @@ var,
 output {
   font-size: 90%;
   font-style: normal;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace; }
+  font-family: Menlo, Monaco, Consolas, monospace; }
 
 pre {
   margin-top: 1.65em;
@@ -1557,6 +1564,83 @@ table {
   float: none !important;
   margin: 0 auto 1.65em; }
 
+/* =Alignments
+-----------------------------------------------------------------------------*/
+.fully-centered {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.justify-flex-end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.justify-flex-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.justify-space-around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+
+.justify-space-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.align-baseline {
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+              -ms-grid-row-align: baseline;
+          align-items: baseline; }
+
+.align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center; }
+
+.align-flex-end {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end; }
+
+.align-flex-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+              -ms-grid-row-align: flex-start;
+          align-items: flex-start; }
+
+.align-stretch {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+              -ms-grid-row-align: stretch;
+          align-items: stretch; }
+
 /* =Blocks
 -----------------------------------------------------------------------------*/
 .blocks-2,
@@ -1846,7 +1930,7 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(37, 117, 237, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset; }
 
 /*
-	Search
+  Search
 */
 input.input-search,
 input[type="search"] {
@@ -1922,9 +2006,10 @@ input.input-smaller {
   display: block;
   font-size: .8em;
   background: #fff;
+  border: 1px solid #92baf6;
   border-radius: 4px;
   padding-right: 1px; }
-  .fancy-select:after {
+  .fancy-select::after {
     right: -1px;
     top: 0;
     height: 100%;
@@ -1934,11 +2019,15 @@ input.input-smaller {
     display: block;
     content: '\25BC';
     background: #2575ed;
+    border-right: #92baf6;
     color: #fff;
     font-size: .75em;
     border-radius: 0 4px 4px 0; }
   .fancy-select:hover {
+    border: 1px solid #1a52a5;
     box-shadow: 0 0 6px #1a52a5; }
+    .fancy-select:hover::after {
+      border-right: #92baf6; }
   .fancy-select select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -3303,17 +3392,14 @@ ul.dropdown {
 
 /* =Livesearch
 -----------------------------------------------------------------------------*/
-.livesearch-box {
+.livesearch-container {
   position: relative;
   display: inline-block;
   width: 100%; }
-  .livesearch-box input {
-    padding-left: 30px; }
-  .livesearch-box .close {
-    position: absolute;
-    top: .2em;
-    right: 5px;
-    z-index: 2;
+  .livesearch-container input {
+    border-radius: 7px;
+    width: 100%; }
+  .livesearch-container .close {
     padding: 4px 6px;
     line-height: 1;
     font-size: 20px;
@@ -3322,13 +3408,37 @@ ul.dropdown {
     text-decoration: none;
     filter: e(% "alpha(opacity=%d)", 50);
     -moz-opacity: 0.5;
-    opacity: 0.5; }
-    .livesearch-box .close:before {
+    opacity: 0.5;
+    position: absolute;
+    top: .2em;
+    right: 5px;
+    z-index: 2; }
+    .livesearch-container .close:before {
       content: '\00D7'; }
-    .livesearch-box .close:hover {
+    .livesearch-container .close:hover {
       filter: e(% "alpha(opacity=%d)", 100);
       -moz-opacity: 1;
       opacity: 1; }
+
+.livesearch-results {
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%; }
+  .livesearch-results li:not:last-child {
+    border-bottom: 1px solid #1a52a5; }
+  .livesearch-results a {
+    color: #1a52a5;
+    display: block;
+    padding: 0.35156em;
+    text-decoration: none; }
+    .livesearch-results a:hover {
+      background: #d3e3fb; }
 
 .livesearch-icon {
   position: absolute;
@@ -3349,12 +3459,12 @@ ul.dropdown {
     background: transparent;
     border-radius: 12px; }
   .livesearch-icon:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     left: 10px;
     width: 2px;
     height: 7px;
-    margin-top: 0;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
+    margin-top: 0; }
 
 /* =Upload
 -----------------------------------------------------------------------------*/
