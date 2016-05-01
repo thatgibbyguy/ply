@@ -35,7 +35,7 @@ export default React.createClass({
 
 		if (type === 'button') {
 			return (
-				<button className={buttonClass} disabled={disabled}>
+				<button className={buttonClass} disabled={disabled} onClick={onClick}>
 					{buttonText}
 				</button>
 			)
@@ -43,7 +43,7 @@ export default React.createClass({
 
 		else if (type === 'span') {
 			return (
-				<span className={buttonClass} disabled={disabled}>
+				<span className={buttonClass} disabled={disabled} onClick={onClick}>
 					{buttonText}
 				</span>
 			)
@@ -51,19 +51,19 @@ export default React.createClass({
 
 		else if (type === 'reset') {
 			return (
-				<input type="reset" value={buttonText} className={buttonClass} disabled={disabled} />
+				<input type="reset" value={buttonText} className={buttonClass} disabled={disabled} onClick={onClick} />
 			)
 		}
 
 		else if (type === 'submit') {
 			return (
-				<input type="submit" value={buttonText} className={buttonClass} disabled={disabled} />
+				<input type="submit" value={buttonText} className={buttonClass} disabled={disabled} onClick={onClick} />
 			)
 		}
 
 		else {
 			return (
-				<a href={href} className={buttonClass} disabled={disabled} >{buttonText}</a>
+				<a href={href} className={buttonClass} disabled={disabled}>{buttonText}</a>
 			)
 		}
 
