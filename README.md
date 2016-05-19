@@ -91,7 +91,7 @@ This task will watch the file located at `/src/scss/styles.scss`. Each time you 
 To use these styles in your webapp, use the following code:
 
 ```html
-<link rel="stylesheet" type="text/css" href="/ply/dist/css/styles.min.css">
+<link rel="stylesheet" type="text/css" href="/dist/css/styles.min.css">
 ```
 
 ### Additional [Gulp] functions
