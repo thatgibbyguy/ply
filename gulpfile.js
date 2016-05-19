@@ -1,20 +1,22 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    gutil = require('gulp-util'),
+    babel = require('gulp-babel');
 
 gulp.task('ply', function() {
-  gulp.src('./scss/ply-iso.scss')
+  gulp.src('./src/scss/ply-iso.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: true }
   ))
   .pipe(rename('ply.css'))
-  .pipe(gulp.dest('./css/'))
+  .pipe(gulp.dest('./dist/css/'))
 });
 
 gulp.task('plyMin', function() {
-  gulp.src('./scss/ply-iso.scss')
+  gulp.src('./src/scss/ply-iso.scss')
   .pipe(sass({
     outputStyle: 'compressed'
   }).on('error', sass.logError))
@@ -22,20 +24,20 @@ gulp.task('plyMin', function() {
     { cascade: false }
   ))
   .pipe(rename('ply.min.css'))
-  .pipe(gulp.dest('./css/'))
+  .pipe(gulp.dest('./dist/css/'))
 });
 
 gulp.task('styles', function() {
-  gulp.src('./scss/styles.scss')
+  gulp.src('./src/scss/styles.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: true }
   ))
-  .pipe(gulp.dest('./css/'))
-})
+  .pipe(gulp.dest('./dist/css/'))
+});
 
 gulp.task('stylesMin', function() {
-  gulp.src('./scss/styles.scss')
+  gulp.src('./src/scss/styles.scss')
   .pipe(sass({
     outputStyle: 'compressed'
   }).on('error', sass.logError))
@@ -43,9 +45,19 @@ gulp.task('stylesMin', function() {
     { cascade: true }
   ))
   .pipe(rename('styles.min.css'))
-  .pipe(gulp.dest('./css/'))
-})
+  .pipe(gulp.dest('./dist/css/'))
+});
+
+gulp.task('buildReactComponents', function() {
+  gulp.src('./src/react_components/*')
+  .pipe(babel())
+  .on('error', function(error){
+    gutil.log(gutil.colors.red(error.message));
+      this.emit('end');
+  })
+  .pipe(gulp.dest('./lib'));
+});
 
 gulp.task('default',function() {
-  gulp.watch('./scss/styles.scss',['styles','stylesMin']);
+  gulp.watch('./src/scss/styles.scss',['styles','stylesMin']);
 });
