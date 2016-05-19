@@ -58,7 +58,7 @@ An offset, three column layout in foundation:
 ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
 
 ### Version
-ply v 0.4.0  
+ply v 0.5.0  
 Kube v 4.0.2  
 
 ### Tech
@@ -74,7 +74,7 @@ ply utilizes following technologies:
 After cloning ply into your application, you will be able to link ply into your app by linking to it using the following code:
 
 ```html
-<link rel="stylesheet" type="text/css" href="/ply/css/ply.min.css">
+<link rel="stylesheet" type="text/css" href="/ply/dist/ply.min.css">
 <link rel="stylesheet" type="text/css" href="your-normal-css.css">
 ```
 Importing ply this way will allow you to code CSS the way you always have, with ply providing you a base framework for your elements. Make sure that your css file(s) comes after the ply import so that your styles will extend ply functionality.
@@ -91,7 +91,7 @@ This task will watch the file located at `/scss/styles.scss`. Each time you save
 To use these styles in your webapp, use the following code:
 
 ```html
-<link rel="stylesheet" type="text/css" href="/ply/css/styles.min.css">
+<link rel="stylesheet" type="text/css" href="/ply/dist/styles.min.css">
 ```
 
 ### Additional [Gulp] functions

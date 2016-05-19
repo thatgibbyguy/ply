@@ -38,7 +38,7 @@ export default React.createClass({
 				<button className={buttonClass} disabled={disabled} onClick={onClick}>
 					{buttonText}
 				</button>
-			)
+			);
 		}
 
 		else if (type === 'span') {
