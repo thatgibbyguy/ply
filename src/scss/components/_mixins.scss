@@ -15,9 +15,10 @@
   }
 }
 
-@mixin spinning($duration: 1s) {
+@mixin spinning($duration: 1s, $iteration: infinite) {
   animation-duration: $duration;
   animation-name: spinning;
+  animation-iteration-count: $iteration;
 }
 
 @mixin opacity($opacity: 100) {
