@@ -3,6 +3,21 @@
 	CSS Framework: ply :: https://github.com/thatgibbyguy/ply
 	Framework Author: @thatgibbyguy
 */
+@-webkit-keyframes spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 /* =Reset
 -----------------------------------------------------------------------------*/
 *,
@@ -243,6 +258,14 @@ img {
   vertical-align: middle;
   -ms-interpolation-mode: bicubic; }
 
+@keyframes spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 /* =Cursor Helpers
 -----------------------------------------------------------------------------*/
 .cursor-pointer,
@@ -336,7 +359,6 @@ img {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-              -ms-grid-row-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -470,6 +492,15 @@ img {
 
 .highlight {
   background-color: #fff4cc; }
+
+.spinning {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: spinning;
+          animation-name: spinning;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  display: inline-block; }
 
 .big {
   font-size: 18px; }
@@ -1567,7 +1598,6 @@ table {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-              -ms-grid-row-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1607,35 +1637,30 @@ table {
   -webkit-box-align: baseline;
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
-              -ms-grid-row-align: baseline;
           align-items: baseline; }
 
 .align-center {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-              -ms-grid-row-align: center;
           align-items: center; }
 
 .align-flex-end {
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
-              -ms-grid-row-align: flex-end;
           align-items: flex-end; }
 
 .align-flex-start {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
-              -ms-grid-row-align: flex-start;
           align-items: flex-start; }
 
 .align-stretch {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
-              -ms-grid-row-align: stretch;
           align-items: stretch; }
 
 /* =Blocks
@@ -3396,6 +3421,10 @@ ul.dropdown {
   .livesearch-container input {
     border-radius: 7px;
     width: 100%; }
+    .livesearch-container input.active {
+      border-radius: 7px 7px 0 0;
+      box-shadow: 0 none;
+      border-color: #e0e3e5; }
   .livesearch-container .close {
     padding: 4px 6px;
     line-height: 1;
@@ -3407,7 +3436,7 @@ ul.dropdown {
     -moz-opacity: 0.5;
     opacity: 0.5;
     position: absolute;
-    top: .2em;
+    top: .1em;
     right: 5px;
     z-index: 2; }
     .livesearch-container .close:before {
@@ -3416,6 +3445,13 @@ ul.dropdown {
       filter: e(% "alpha(opacity=%d)", 100);
       -moz-opacity: 1;
       opacity: 1; }
+  .livesearch-container .searching {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-name: spinning;
+            animation-name: spinning;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 .livesearch-results {
   background: #fff;
@@ -3423,19 +3459,24 @@ ul.dropdown {
   left: 0;
   list-style: none;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   position: absolute;
   top: 100%;
   width: 100%; }
   .livesearch-results li:not:last-child {
     border-bottom: 1px solid #1a52a5; }
-  .livesearch-results a {
+  .livesearch-results a,
+  .livesearch-results span {
     color: #1a52a5;
     display: block;
     padding: 0.35156em;
     text-decoration: none; }
-    .livesearch-results a:hover {
+    .livesearch-results a:hover,
+    .livesearch-results span:hover {
       background: #d3e3fb; }
+  .livesearch-results span:hover {
+    background: #fff; }
 
 .livesearch-icon {
   position: absolute;
