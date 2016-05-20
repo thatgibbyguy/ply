@@ -1,6 +1,6 @@
 {
   "name": "plygrid",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "ply - A ratio based CSS grid framework",
   "main": "lib/index.js",
   "directories": {
