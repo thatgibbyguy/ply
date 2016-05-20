@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.createClass({
+const liveSearch = React.createClass({
   propTypes: {
     placeholder: React.PropTypes.string,
     dataQuery: React.PropTypes.func,
@@ -113,3 +113,5 @@ export default React.createClass({
     }
   }
 });
+
+module.exports = liveSearch;
