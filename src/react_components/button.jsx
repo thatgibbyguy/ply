@@ -71,4 +71,4 @@ const button = React.createClass({
 
 });
 
-module.exports = button;
+module.exports.button = button;

@@ -114,4 +114,4 @@ const liveSearch = React.createClass({
   }
 });
 
-module.exports = liveSearch;
+module.exports.livesearch = liveSearch;

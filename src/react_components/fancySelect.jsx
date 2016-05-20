@@ -53,4 +53,4 @@ const fancySelect = React.createClass({
 
 });
 
-module.exports = fancySelect;
+module.exports.fancySelect = fancySelect;
