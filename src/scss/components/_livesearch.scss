@@ -46,7 +46,8 @@
     border-bottom: 1px solid $color-blue-dark;
   }
 
-  a {
+  a,
+  span {
     color: $color-blue-dark;
     display: block;
     padding: $padding / 2;
@@ -55,6 +56,10 @@
     &:hover {
       background: $color-blue-pastel;
     }
+  }
+
+  span:hover {
+    background: $color-white;
   }
 }
 

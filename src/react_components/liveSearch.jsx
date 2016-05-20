@@ -10,8 +10,7 @@ export default React.createClass({
   getInitialState() {
     return {
       searchResults: [],
-      searching: false,
-      searchValue: ''
+      searching: false
     };
   },
 
@@ -21,24 +20,35 @@ export default React.createClass({
     const results = dataQuery(searchQuery);
     const self = this;
 
-    this.setState({
-      searching: true,
-      searchValue: e.target.value
+    self.setState({
+      searching: true
     });
 
     setTimeout(function(){
       self.setState({
         searching: false
       });
-    }, 1000);
+    },500)
 
     if (searchQuery !== '' && searchQuery.length > 1) {
-      this.setState({
-        searchResults: results
-      });
-    }
-    else {
-      this.setState(this.getInitialState());
+      switch (results) {
+        case null:
+          this.setState({
+            searching: true
+          });
+          break;
+
+        case this.length === 0:
+          this.setState({
+            searchResults: ['no results']
+          });
+          break;
+
+        default:
+          this.setState({
+            searchResults: results
+          });
+      }
     }
   },
 
@@ -57,15 +67,13 @@ export default React.createClass({
     const hideResultsContainer = searchResults.length > 0 || searching ? '' : 'hide';
     const hasResults = searchResults.length > 0 ? 'has-results' : '';
     const spinning = searching ? 'searching' : '';
+    const activeClass = hasResults ? 'active' : '';
+
 
     let inputClass = this.props.inputClass ? this.props.inputClass : '';
 
-    if (hasResults) {
-      inputClass = `${inputClass} active`
-    }
-
     return(
-      <div className="livesearch-container">
+      <div className={`livesearch-container ${activeClass}`}>
         <input type="search" 
                name="livesearch" 
                placeholder={placeholderText}
@@ -80,19 +88,28 @@ export default React.createClass({
   },
 
   renderResults(result, ii) {
-    if (result.slug) {
-      return(
+    if (result === 'no results') {
+      return (
+        <li key={ii} className="livesearch-results__result">
+          <span>
+            No results...
+          </span>
+        </li>
+      );
+    }
+    else if (result.slug) {
+      return (
         <li key={ii} className="livesearch-results__result">
           <a href={result.slug}>{result.title}</a>
         </li>
-      )
+      );
     }
     else {
-      return(
+      return (
         <li key={ii} className="livesearch-results__result">
           {result.title}
         </li>
-      )
+      );
     }
   }
 });

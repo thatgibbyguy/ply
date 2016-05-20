@@ -112,6 +112,14 @@
 %highlight {
   background-color: $color-yellow-pastel;
 }
+
+.spinning,
+%spinning {
+  @include spinning(.75s);
+
+  display: inline-block;
+}
+
 .big,
 %big {
   font-size: $font-size-big;
