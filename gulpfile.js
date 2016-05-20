@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
     gutil = require('gulp-util'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    concat = require('gulp-concat');
 
 gulp.task('ply', function() {
   gulp.src('./src/scss/ply-iso.scss')
@@ -48,9 +49,10 @@ gulp.task('stylesMin', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('buildReactComponents', function() {
+gulp.task('buildJs', function() {
   gulp.src('./src/react_components/*')
   .pipe(babel())
+  .pipe(concat('index.js'))
   .on('error', function(error){
     gutil.log(gutil.colors.red(error.message));
       this.emit('end');
@@ -60,4 +62,5 @@ gulp.task('buildReactComponents', function() {
 
 gulp.task('default',function() {
   gulp.watch('./src/scss/styles.scss',['styles','stylesMin']);
+  gulp.watch('./src/**/*.js',['buildJs'])
 });

@@ -1,8 +1,12 @@
 {
   "name": "plygrid",
-  "version": "0.5.2",
+  "version": "0.5.5",
   "description": "ply - A ratio based CSS grid framework",
-  "main": "gulpfile.js",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib/",
+    "dist": "dist/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thatgibbyguy/ply.git"
@@ -13,9 +17,11 @@
     "babel-preset-react": "^6.5.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.7",
+    "map-stream": "0.0.6",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.createClass({
+const fancySelect = React.createClass({
   propTypes: {
     selectName: React.PropTypes.string.isRequired,
     selectValue: React.PropTypes.string,
@@ -52,3 +52,5 @@ export default React.createClass({
   }
 
 });
+
+module.exports.fancySelect = fancySelect;
