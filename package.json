@@ -2,7 +2,11 @@
   "name": "plygrid",
   "version": "0.5.2",
   "description": "ply - A ratio based CSS grid framework",
-  "main": "gulpfile.js",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib/",
+    "dist": "dist/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thatgibbyguy/ply.git"
