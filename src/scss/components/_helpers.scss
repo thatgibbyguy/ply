@@ -322,6 +322,17 @@
   margin: 0;
 }
 
+.no-spacing,
+%no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding,
+%no-padding {
+  padding: 0;
+}
+
 .hide-on-desktop,
 %hide-on-desktop {
   display: none;
