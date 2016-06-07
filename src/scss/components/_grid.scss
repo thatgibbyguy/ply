@@ -22,6 +22,10 @@
   flex-flow: row wrap;
   margin: 0 (-$grid-gutter-width) $base-line;
 
+  &.reverse-direction {
+    flex-direction: row-reverse;
+  }
+
   &.split {
     margin: 0 0 $base-line;
 
@@ -71,8 +75,8 @@
   flex-basis: 90%;
   max-width: 90%;  
 }
-.unit-87,
-%unit-87 { 
+.unit-88,
+%unit-88 { 
   flex-basis: 87.5%;
   max-width: 87.5%;  
 }
@@ -121,8 +125,8 @@
   flex-basis: 40%;
   max-width: 40%;  
 }
-.unit-37,
-%unit-37 { 
+.unit-38,
+%unit-38 { 
   flex-basis: 37.5%;
   max-width: 37.5%;  
 }

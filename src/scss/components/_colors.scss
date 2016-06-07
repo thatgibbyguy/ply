@@ -4,6 +4,7 @@
 $background-body: #f7f8f8;
 $color-body: #222;
 $color-headings: #000;
+$border-color: #ccc;
 
 // Colors
 $color-gray: #e0e3e5;
@@ -39,7 +40,7 @@ $color-yellow-pastel: #fff4cc;
 $color-green-pastel: #d5ecd9;
 
 // Table Color
-$color-table-border: #eee;
+$color-table-border: $border-color;
 $color-table-stripped: #f8f8f8;
 $color-table-hovered: #f4f4f4;
 

@@ -65,6 +65,111 @@
 .width-10,
 %width-10  { width: 10%;   }
 
+@media (max-width: $breakpoint-tablet) {
+  .tablet-width-100,
+  %tablet-width-100 { width: 100%;  }
+  .tablet-width-90,
+  %tablet-width-90  { width: 90%;   }
+  .tablet-width-80,
+  %tablet-width-80  { width: 80%;   }
+  .tablet-width-75,
+  %tablet-width-75  { width: 75%;   }
+  .tablet-width-70,
+  %tablet-width-70  { width: 70%;   }
+  .tablet-width-66,
+  %tablet-width-66  { width: 66.6%; }
+  .tablet-width-65,
+  %tablet-width-65  { width: 65%;   }
+  .tablet-width-60,
+  %tablet-width-60  { width: 60%;   }
+  .tablet-width-50,
+  %tablet-width-50  { width: 50%;   }
+  .tablet-width-40,
+  %tablet-width-40  { width: 40%;   }
+  .tablet-width-35,
+  %tablet-width-35  { width: 35%;   }
+  .tablet-width-33,
+  %tablet-width-33  { width: 33.3%; }
+  .tablet-width-30,
+  %tablet-width-30  { width: 30%;   }
+  .tablet-width-25,
+  %tablet-width-25  { width: 25%;   }
+  .tablet-width-20,
+  %tablet-width-20  { width: 20%;   }
+  .tablet-width-10,
+  %tablet-width-10  { width: 10%;   }
+}
+
+@media (max-width: $breakpoint-large-phone) {
+  .large-phone-width-100,
+  %large-phone-width-100 { width: 100%;  }
+  .large-phone-width-90,
+  %large-phone-width-90  { width: 90%;   }
+  .large-phone-width-80,
+  %large-phone-width-80  { width: 80%;   }
+  .large-phone-width-75,
+  %large-phone-width-75  { width: 75%;   }
+  .large-phone-width-70,
+  %large-phone-width-70  { width: 70%;   }
+  .large-phone-width-66,
+  %large-phone-width-66  { width: 66.6%; }
+  .large-phone-width-65,
+  %large-phone-width-65  { width: 65%;   }
+  .large-phone-width-60,
+  %large-phone-width-60  { width: 60%;   }
+  .large-phone-width-50,
+  %large-phone-width-50  { width: 50%;   }
+  .large-phone-width-40,
+  %large-phone-width-40  { width: 40%;   }
+  .large-phone-width-35,
+  %large-phone-width-35  { width: 35%;   }
+  .large-phone-width-33,
+  %large-phone-width-33  { width: 33.3%; }
+  .large-phone-width-30,
+  %large-phone-width-30  { width: 30%;   }
+  .large-phone-width-25,
+  %large-phone-width-25  { width: 25%;   }
+  .large-phone-width-20,
+  %large-phone-width-20  { width: 20%;   }
+  .large-phone-width-10,
+  %large-phone-width-10  { width: 10%;   }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .phone-width-100,
+  %phone-width-100 { width: 100%;  }
+  .phone-width-90,
+  %phone-width-90  { width: 90%;   }
+  .phone-width-80,
+  %phone-width-80  { width: 80%;   }
+  .phone-width-75,
+  %phone-width-75  { width: 75%;   }
+  .phone-width-70,
+  %phone-width-70  { width: 70%;   }
+  .phone-width-66,
+  %phone-width-66  { width: 66.6%; }
+  .phone-width-65,
+  %phone-width-65  { width: 65%;   }
+  .phone-width-60,
+  %phone-width-60  { width: 60%;   }
+  .phone-width-50,
+  %phone-width-50  { width: 50%;   }
+  .phone-width-40,
+  %phone-width-40  { width: 40%;   }
+  .phone-width-35,
+  %phone-width-35  { width: 35%;   }
+  .phone-width-33,
+  %phone-width-33  { width: 33.3%; }
+  .phone-width-30,
+  %phone-width-30  { width: 30%;   }
+  .phone-width-25,
+  %phone-width-25  { width: 25%;   }
+  .phone-width-20,
+  %phone-width-20  { width: 20%;   }
+  .phone-width-10,
+  %phone-width-10  { width: 10%;   }
+}
+
 .height-100,
 %height-100 { height: 100%;  }
 .height-90,
@@ -150,7 +255,12 @@
 
 .code,
 %code {
+  border: 1px solid $color-gray-light;
+  border-radius: $border-radius;
+  display: inline-block;
+  font-size: .8rem;
   font-family: $font-family-code;
+  padding: .05rem .35rem;
 }
 
 .nowrap,
@@ -317,14 +427,55 @@
   margin-bottom: 0 !important;
 }
 
+.bottom-margin,
+%bottom-margin {
+  margin-bottom: $margin;
+}
+
+.bottom-margin--extra,
+%bottom-margin--extra {
+  margin-bottom: $margin * 2;
+}
+
+.top-margin,
+%top-margin {
+  margin-top: $margin;
+}
+
+.top-margin--extra,
+%top-margin--extra {
+  margin-top: $margin * 2;
+}
+
 .no-margin,
 %no-margin {
   margin: 0;
 }
 
+.no-spacing,
+%no-spacing {
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding,
+%no-padding {
+  padding: 0;
+}
+
+.padding-bottom,
+%padding-bottom {
+  padding-bottom: $padding;
+}
+
 .hide-on-desktop,
 %hide-on-desktop {
   display: none;
+}
+
+.border-bottom,
+%border-bottom {
+  border-bottom: 1px solid $border-color;
 }
 
 
