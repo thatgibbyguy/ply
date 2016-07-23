@@ -272,7 +272,8 @@ img {
 /* =Cursor Helpers
 -----------------------------------------------------------------------------*/
 .cursor-pointer,
-.cursor-finger {
+.cursor-finger,
+.fancy-select {
   cursor: pointer; }
 
 .cursor-arrow,
@@ -315,7 +316,46 @@ img {
 .cursor-no-drop {
   cursor: no-drop; }
 
-.cursor-not-allowed {
+.cursor-not-allowed,
+.btn-blue.btn-active,
+.btn-blue.btn-disabled,
+.btn-blue.btn[disabled],
+.btn-blue-dark.btn-active,
+.btn-blue-dark.btn-disabled,
+.btn-blue-dark.btn[disabled],
+input[type="submit"].btn-blue.btn-active,
+input[type="submit"].btn-blue.btn-disabled,
+input[type="submit"].btn-blue.btn[disabled],
+.btn-red.btn-active,
+.btn-red.btn-disabled,
+.btn-red.btn[disabled],
+input[type="submit"].btn-red.btn-active,
+input[type="submit"].btn-red.btn-disabled,
+input[type="submit"].btn-red.btn[disabled],
+.btn-green.btn-active,
+.btn-green.btn-disabled,
+.btn-green.btn[disabled],
+input[type="submit"].btn-green.btn-active,
+input[type="submit"].btn-green.btn-disabled,
+input[type="submit"].btn-green.btn[disabled],
+.btn-black.btn-active,
+.btn-black.btn-disabled,
+.btn-black.btn[disabled],
+input[type="submit"].btn-black.btn-active,
+input[type="submit"].btn-black.btn-disabled,
+input[type="submit"].btn-black.btn[disabled],
+.btn-yellow.btn-active,
+.btn-yellow.btn-disabled,
+.btn-yellow.btn[disabled],
+input[type="submit"].btn-yellow.btn-active,
+input[type="submit"].btn-yellow.btn-disabled,
+input[type="submit"].btn-yellow.btn[disabled],
+.btn-white.btn-active,
+.btn-white.btn-disabled,
+.btn-white.btn[disabled],
+input[type="submit"].btn-white.btn-active,
+input[type="submit"].btn-white.btn-disabled,
+input[type="submit"].btn-white.btn[disabled] {
   cursor: not-allowed; }
 
 .cursor-all-scroll {
@@ -1228,10 +1268,6 @@ table {
   padding: 0.70312em;
   position: relative;
   width: 100%; }
-
-.units-container,
-.units-row {
-  height: 100%; }
 
 .units-row {
   box-sizing: border-box;
@@ -2612,6 +2648,9 @@ input[type="submit"].btn-outline {
 .btn-disabled {
   cursor: default;
   box-shadow: none; }
+
+.btn-straight {
+  border-radius: 0; }
 
 .btn-blue,
 input[type="submit"].btn-blue {
