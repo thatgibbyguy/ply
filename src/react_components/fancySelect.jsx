@@ -20,11 +20,11 @@ const fancySelect = React.createClass({
   },
 
   render() {
-    const {selectName, placeholder, selectOptions, selectValue} = this.props;
+    const {selectName, placeholder, selectOptions, selectValue, eventHandler} = this.props;
 
     if (placeholder) {
       return (
-        <label htmlFor={selectName} className="lm-select">
+        <label htmlFor={selectName} className="fancy-select">
           <select name={selectName} id={selectName} value={selectValue} onChange={eventHandler}>
             <option value={placeholder.optionValue}>{placeholder.optionText}</option>
             {selectOptions.map(function(option, i){
