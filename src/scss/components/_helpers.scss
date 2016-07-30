@@ -209,10 +209,12 @@
 %group {
   @include clearfix;
 }
+
 .hide,
 %hide {
   display: none;
 }
+
 .highlight,
 %highlight {
   background-color: $color-yellow-pastel;
@@ -229,13 +231,27 @@
 %big {
   font-size: $font-size-big;
 }
+
 .small,
 %small {
   font-size: $font-size-small;
 }
+
 .smaller,
 %smaller {
   font-size: $font-size-smaller;
+}
+
+.bold,
+%bold {
+  // scss-lint:disable ImportantRule
+  font-weight: bold !important;
+}
+
+.medium,
+%medium {
+  // scss-lint:disable ImportantRule
+  font-weight: 400 !important;
 }
 
 .serif,

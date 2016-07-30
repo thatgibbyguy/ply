@@ -38,7 +38,7 @@ const fancySelect = React.createClass({
     }
     else {
       return (
-        <label htmlFor={selectName} className="lm-select">
+        <label htmlFor={selectName} className="fancy-select">
           <select name={selectName} id={selectName} value={selectValue} onChange={eventHandler}>
             {selectOptions.map(function(option, i){
               return (
