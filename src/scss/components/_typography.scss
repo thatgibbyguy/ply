@@ -74,11 +74,13 @@ h4,
 h5,
 .h5 {
   font-size: $font-size-h5-lg;
+  font-weight: normal;
 }
 h6,
 .h6 {
   font-size: $font-size-h6-lg;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 

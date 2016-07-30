@@ -1,6 +1,7 @@
 import React from 'react';
 
 const fancySelect = React.createClass({
+  
   propTypes: {
     selectName: React.PropTypes.string.isRequired,
     selectValue: React.PropTypes.string,
