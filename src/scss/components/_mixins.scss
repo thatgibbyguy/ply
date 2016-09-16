@@ -22,7 +22,6 @@
 }
 
 @mixin opacity($opacity: 100) {
-  filter: e(%("alpha(opacity=%d)", $opacity));
   -moz-opacity: $opacity / 100;
   opacity: $opacity / 100;
 }
@@ -48,7 +47,6 @@
 @mixin gradient($start: #555, $end: #333) {
   background-color: mix($start, $end, 60%);
   background-image: linear-gradient(to bottom, $start, $end); // The standard
-  filter: e(%("progid:DXImageTransform.Microsoft@include gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$start,$end)); // IE9 and down
 }
 
 @mixin border-top-radius($radius) {
@@ -200,6 +198,22 @@ background-image: url($file + '.' + $type);
   -webkit-animation: $animation;
   -o-animation: $animation;
   animation: $animation;
+}
+
+@mixin fadeIn($duration: .25s) {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation-duration: $duration;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
 }
 
 // Grid

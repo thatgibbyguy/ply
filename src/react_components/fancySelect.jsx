@@ -1,6 +1,7 @@
 import React from 'react';
 
 const fancySelect = React.createClass({
+  
   propTypes: {
     selectName: React.PropTypes.string.isRequired,
     selectValue: React.PropTypes.string,
@@ -38,7 +39,7 @@ const fancySelect = React.createClass({
     }
     else {
       return (
-        <label htmlFor={selectName} className="lm-select">
+        <label htmlFor={selectName} className="fancy-select">
           <select name={selectName} id={selectName} value={selectValue} onChange={eventHandler}>
             {selectOptions.map(function(option, i){
               return (

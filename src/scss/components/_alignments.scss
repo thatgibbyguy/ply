@@ -4,20 +4,28 @@
 %fully-centered {
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .justify-center,
-%justify-center {
+%justify-center,
+.horizontally-centered,
+%horizontally-centered {
   justify-content: center;
+  text-align: center;
 }
 
 .justify-flex-end,
-%justify-flex-end {
+%justify-flex-end,
+.align-end,
+%align-end {
   justify-content: flex-end;
 }
 
 .justify-flex-start,
-%justify-flex-start {
+%justify-flex-start,
+.align-beginning,
+%align-beginning {
   justify-content: flex-start;
 }
 
