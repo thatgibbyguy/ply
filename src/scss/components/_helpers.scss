@@ -13,8 +13,9 @@
 
 .full-screen,
 %full-screen {
-  position: relative;
   @include square;
+
+  position: relative;
 }
 
 .fixed,
@@ -358,19 +359,23 @@
 %capitalized {
   text-transform: uppercase;
 }
+
 .list-flat,
 %list-flat {
   margin-left: 0;
   list-style: none;
 }
+
 .color-black,
 %color-black {
   color: $color-black;
 }
+
 .color-white,
 %color-white {
   color: $color-white;
 }
+
 .border-radius,
 %border-radius {
   border-radius: $border-radius;
@@ -379,6 +384,11 @@
 .circle,
 %circle {
   border-radius: 100%;
+}
+
+.fade-in,
+%fade-in {
+  @include fadeIn;
 }
 
 /* Colors */
@@ -441,6 +451,11 @@
 .no-bottom-margin,
 %no-bottom-margin {
   margin-bottom: 0 !important;
+}
+
+.no-top-margin,
+%no-top-margin {
+  margin-top: 0 !important;
 }
 
 .bottom-margin,
