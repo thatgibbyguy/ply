@@ -50,16 +50,22 @@
 }
 
 .align-flex-end,
-%align-flex-end {
+%align-flex-end,
+.vertical-bottom,
+%vertical-bottom {
   align-items: flex-end;
 }
 
 .align-flex-start,
-%align-flex-start {
+%align-flex-start,
+.vertical-top,
+%vertical-top {
   align-items: flex-start;
 }
 
 .align-stretch,
-%align-stretch {
+%align-stretch,
+.fill-height,
+%fill-height {
   align-items: stretch;
 }
