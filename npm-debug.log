@@ -1,117 +1,29 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
 2 info using npm@3.8.8
 3 info using node@v5.1.1
-4 verbose publish [ '.' ]
-5 silly cache add args [ '.', null ]
-6 verbose cache add spec .
-7 silly cache add parsed spec Result {
-7 silly cache add   raw: '.',
-7 silly cache add   scope: null,
-7 silly cache add   name: null,
-7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/Applications/AMPPS/www/plygrid.com/app/.assets/ply',
-7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /Users/gibby/.npm/plygrid/0.6.1/package.tgz not in flight; packing
-9 verbose correctMkdir /Users/gibby/.npm correctMkdir not in flight; initializing
-10 info lifecycle plygrid@0.6.1~prepublish: plygrid@0.6.1
-11 silly lifecycle plygrid@0.6.1~prepublish: no script for prepublish, continuing
-12 verbose tar pack [ '/Users/gibby/.npm/plygrid/0.6.1/package.tgz',
-12 verbose tar pack   '/Applications/AMPPS/www/plygrid.com/app/.assets/ply' ]
-13 verbose tarball /Users/gibby/.npm/plygrid/0.6.1/package.tgz
-14 verbose folder /Applications/AMPPS/www/plygrid.com/app/.assets/ply
-15 verbose addLocalTarball adding from inside cache /Users/gibby/.npm/plygrid/0.6.1/package.tgz
-16 verbose correctMkdir /Users/gibby/.npm correctMkdir not in flight; initializing
-17 silly cache afterAdd plygrid@0.6.1
-18 verbose afterAdd /Users/gibby/.npm/plygrid/0.6.1/package/package.json not in flight; writing
-19 verbose correctMkdir /Users/gibby/.npm correctMkdir not in flight; initializing
-20 verbose afterAdd /Users/gibby/.npm/plygrid/0.6.1/package/package.json written
-21 silly publish { name: 'plygrid',
-21 silly publish   version: '0.6.1',
-21 silly publish   description: 'ply - A ratio based CSS grid framework',
-21 silly publish   main: 'lib/index.js',
-21 silly publish   directories: { lib: 'lib/', dist: 'dist/' },
-21 silly publish   repository:
-21 silly publish    { type: 'git',
-21 silly publish      url: 'git+https://github.com/thatgibbyguy/ply.git' },
-21 silly publish   homepage: 'https://github.com/thatgibbyguy/ply',
-21 silly publish   devDependencies:
-21 silly publish    { 'babel-preset-es2015': '^6.9.0',
-21 silly publish      'babel-preset-react': '^6.5.0',
-21 silly publish      'gulp-autoprefixer': '^3.1.0',
-21 silly publish      'gulp-babel': '^6.1.2',
-21 silly publish      'gulp-concat': '^2.6.0',
-21 silly publish      'gulp-rename': '^1.2.2',
-21 silly publish      'gulp-sass': '^2.0.4',
-21 silly publish      'gulp-util': '^3.0.7',
-21 silly publish      'map-stream': '0.0.6',
-21 silly publish      react: '^15.0.2',
-21 silly publish      'react-dom': '^15.0.2' },
-21 silly publish   bugs: { url: 'https://github.com/thatgibbyguy/ply/issues' },
-21 silly publish   dependencies: {},
-21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
-21 silly publish   author: { name: 'John Gibby' },
-21 silly publish   license: 'MIT',
-21 silly publish   readme: '# ply\n\nply is a modernized, ratio based css framework built using flex-box. think of ply as the metric system for your grid-based layouts.\n\nthe purpose of ply is to provide front-end developers with an immediately understandable framework based on a ratio based grid system, versus arbitrary column based grid systems.\n\n# Using ply\nYou can use ply one of two ways:\n\n## Install via NPM\n\n```sh\n$ cd /your-app-path/\n$ npm install plygrid --save\n```\n\n## Install via Github\n\n```sh\n$ cd /your-app-path/\n$ git clone https://github.com/thatgibbyguy/ply.git\n```\n\n# ply versus foundation\n\nAn offset, three column layout in ply:  \n```html\n<section class="units-row">\n    <div class="unit-25">\n        <!-- A column of 25% width -->\n    </div>\n    <div class="unit-50">\n        <!-- A column of 50% width -->\n    </div>\n    <div class="unit-25">\n        <!-- A column of 25% width -->\n    </div>\n</section>\n```\n\nAn offset, three column layout in foundation:  \n```html\n<div class="row">\n    <div class="large-3 columns">\n        <!-- A column of ~25% width -->\n    </div>\n    <div class="large-6 columns">\n        <!-- A column of ~50% width -->\n    </div>\n    <div class="large-3 columns">\n        <!-- A column of ~25% width -->\n    </div>\n</div>\n```\n\n## Documentation \n\nply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.\n\n### Version\nply v 0.6.0  \nKube v 4.0.2  \n\n### Tech\nply utilizes following technologies:\n\n* [SCSS]\n* [smacss]\n* [Gulp]\n* [jQuery]\n* [react.js]\n\n### Linking ply in your document head\nAfter cloning ply into your application, you will be able to link ply into your app by linking to it using the following code:\n\n```html\n<link rel="stylesheet" type="text/css" href="/dist/css/ply.min.css">\n<link rel="stylesheet" type="text/css" href="your-normal-css.css">\n```\nImporting ply this way will allow you to code CSS the way you always have, with ply providing you a base framework for your elements. Make sure that your css file(s) comes after the ply import so that your styles will extend ply functionality.\n\n### Using [Gulp]\nply comes with a predefined gulp file for you. To code continuously with gulp simply run:\n\n```sh\n$ npm install\n$ gulp\n```\nThis task will watch the file located at `/src/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/dist/css/styles.css` and `/dist/css/styles.min.css`. \n\nTo use these styles in your webapp, use the following code:\n\n```html\n<link rel="stylesheet" type="text/css" href="/dist/css/styles.min.css">\n```\n\n### Additional [Gulp] functions\nIncluded with this gulp file are the following commands:  \n\n`gulp styles` `gulp stylesMin` `gulp ply` `gulp plyMin`\n\nEach of these gulp commands will output to the `/dist/css/` directory and you may use them as you see fit. \n\n# Development\n\nWant to contribute? Great! Simply fork this repo and create a Pull Request with your added features!\n\n### Roadmap\n\n - Convert all js components to react components\n - Style all form elements\n - Add slideout rollover component seen on plygrid.com\n - Complete documentation\n - Add Webpack support\n\nLicense\n----\n\nMIT\n\nSpecial thanks to [imperavi] for creating the css framework I could only invision at the time and special thanks to [dillinger.io] for their awesome readme generator.\n\n[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn\'t be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)\n\n   [Kube v 4.0.2]: <https://github.com/imperavi/kube>\n   [thatgibbyguy]: <https://twitter.com/thatgibbyguy>\n   [legacy Kube example page]: <http://k1.imperavi.com/>\n   [SCSS]: <http://sass-lang.com/>\n   [git-repo-url]: <https://github.com/thatgibbyguy/ply.git>\n   [smacss]: <https://smacss.com>\n   [gulp]: <http://gulpjs.com/>\n   [grunt]: <http://gruntjs.com/>\n   [jQuery]: <http://jquery.com>\n   [react.js]: <https://facebook.github.io/react/>\n   [dillinger.io]: <http://dillinger.io/>\n   [imperavi]: <https://imperavi.com/>\n\n\n',
-21 silly publish   readmeFilename: 'README.md',
-21 silly publish   _id: 'plygrid@0.6.1',
-21 silly publish   _shasum: '85e39e1595be2c5d8d4b74d63e6f369762c98dfa',
-21 silly publish   _from: '.' }
-22 verbose getPublishConfig undefined
-23 silly mapToRegistry name plygrid
-24 silly mapToRegistry using default registry
-25 silly mapToRegistry registry https://registry.npmjs.org/
-26 silly mapToRegistry data Result {
-26 silly mapToRegistry   raw: 'plygrid',
-26 silly mapToRegistry   scope: null,
-26 silly mapToRegistry   name: 'plygrid',
-26 silly mapToRegistry   rawSpec: '',
-26 silly mapToRegistry   spec: 'latest',
-26 silly mapToRegistry   type: 'tag' }
-27 silly mapToRegistry uri https://registry.npmjs.org/plygrid
-28 verbose publish registryBase https://registry.npmjs.org/
-29 silly publish uploading /Users/gibby/.npm/plygrid/0.6.1/package.tgz
-30 verbose request uri https://registry.npmjs.org/plygrid
-31 verbose request sending authorization for write operation
-32 info attempt registry request try #1 at 5:06:15 PM
-33 verbose request using bearer token for auth
-34 verbose request id 7b126df2866c0e0c
-35 http request PUT https://registry.npmjs.org/plygrid
-36 http 403 https://registry.npmjs.org/plygrid
-37 verbose headers { 'content-type': 'application/json',
-37 verbose headers   'cache-control': 'max-age=300',
-37 verbose headers   'content-length': '95',
-37 verbose headers   'accept-ranges': 'bytes',
-37 verbose headers   date: 'Sat, 30 Jul 2016 22:06:17 GMT',
-37 verbose headers   via: '1.1 varnish',
-37 verbose headers   connection: 'keep-alive',
-37 verbose headers   'x-served-by': 'cache-dfw1833-DFW',
-37 verbose headers   'x-cache': 'MISS',
-37 verbose headers   'x-cache-hits': '0',
-37 verbose headers   'x-timer': 'S1469916375.742391,VS0,VE1371',
-37 verbose headers   vary: 'Accept-Encoding' }
-38 verbose request invalidating /Users/gibby/.npm/registry.npmjs.org/plygrid on PUT
-39 error publish Failed PUT 403
-40 verbose stack Error: "You cannot publish over the previously published version 0.6.1." : plygrid
-40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
-40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
-40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
-40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
-40 verbose stack     at emitTwo (events.js:87:13)
-40 verbose stack     at Request.emit (events.js:172:7)
-40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
-40 verbose stack     at emitOne (events.js:82:20)
-40 verbose stack     at Request.emit (events.js:169:7)
-40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
-41 verbose statusCode 403
-42 verbose pkgid plygrid
-43 verbose cwd /Applications/AMPPS/www/plygrid.com/app/.assets/ply
-44 error Darwin 14.5.0
-45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
-46 error node v5.1.1
-47 error npm  v3.8.8
-48 error code E403
-49 error "You cannot publish over the previously published version 0.6.1." : plygrid
-50 error If you need help, you may report this error at:
-50 error     <https://github.com/npm/npm/issues>
-51 verbose exit [ 1, true ]
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack D npm-debug.log
+5 verbose stack     at /usr/local/lib/node_modules/npm/lib/version.js:246:19
+5 verbose stack     at ChildProcess.exithandler (child_process.js:204:7)
+5 verbose stack     at emitTwo (events.js:87:13)
+5 verbose stack     at ChildProcess.emit (events.js:172:7)
+5 verbose stack     at maybeClose (internal/child_process.js:818:16)
+5 verbose stack     at Socket.<anonymous> (internal/child_process.js:319:11)
+5 verbose stack     at emitOne (events.js:77:13)
+5 verbose stack     at Socket.emit (events.js:169:7)
+5 verbose stack     at Pipe._onclose (net.js:469:12)
+6 verbose cwd /Applications/AMPPS/www/ply
+7 error Darwin 14.5.0
+8 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "version" "patch"
+9 error node v5.1.1
+10 error npm  v3.8.8
+11 error Git working directory not clean.
+11 error D npm-debug.log
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
