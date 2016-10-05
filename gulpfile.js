@@ -16,15 +16,27 @@ gulp.task('ply', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('plyGrid', function() {
-  gulp.src('./src/scss/ply-grid.scss')
+gulp.task('plyEssentials', function() {
+  gulp.src('./src/scss/ply-essentials.scss')
   .pipe(sass({
     outputStyle: 'compressed'
   }).on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: false }
   ))
-  .pipe(rename('ply-grid.min.css'))
+  .pipe(rename('ply-essentials.min.css'))
+  .pipe(gulp.dest('./dist/css/'))
+});
+
+gulp.task('plyHelpers', function() {
+  gulp.src('./src/scss/ply-helpers.scss')
+  .pipe(sass({
+    outputStyle: 'compressed'
+  }).on('error', sass.logError))
+  .pipe(autoprefixer(
+    { cascade: false }
+  ))
+  .pipe(rename('ply-helpers.min.css'))
   .pipe(gulp.dest('./dist/css/'))
 });
 
@@ -73,6 +85,6 @@ gulp.task('buildJs', function() {
 });
 
 gulp.task('default',function() {
-  gulp.watch('./src/scss/styles.scss',['styles','stylesMin']);
+  gulp.watch('./src/scss/styles.scss',['styles','stylesMin','plyEssentials']);
   gulp.watch('./src/**/*.js',['buildJs'])
 });
