@@ -16,6 +16,18 @@ gulp.task('ply', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
+gulp.task('plyGrid', function() {
+  gulp.src('./src/scss/ply-grid.scss')
+  .pipe(sass({
+    outputStyle: 'compressed'
+  }).on('error', sass.logError))
+  .pipe(autoprefixer(
+    { cascade: false }
+  ))
+  .pipe(rename('ply-grid.min.css'))
+  .pipe(gulp.dest('./dist/css/'))
+});
+
 gulp.task('plyMin', function() {
   gulp.src('./src/scss/ply-iso.scss')
   .pipe(sass({
