@@ -38,6 +38,10 @@
     margin-bottom: 0;
   }
 
+  &.fill-width {
+    max-width: 100%;
+  }
+
   &.unit-role-right {
     float: right;
     margin-left: $grid-gutter-width / ($grid-width / 100) * .01;
@@ -51,8 +55,11 @@
 [class*='unit-'] {
   @include box-sizing;
 
-  // display: flex;
   padding: 0 $grid-gutter-width;
+
+  &.fill-height {
+    display: flex;
+  }
 }
 
 .unit-auto,
