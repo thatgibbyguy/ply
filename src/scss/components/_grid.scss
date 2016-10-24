@@ -7,6 +7,10 @@
   padding: $padding;
   position: relative;
   width: 100%;
+
+  &.fill-width {
+    max-width: 100%;
+  }
 }
 
 .units-row,
@@ -36,10 +40,6 @@
 
   &.stacked {
     margin-bottom: 0;
-  }
-
-  &.fill-width {
-    max-width: 100%;
   }
 
   &.unit-role-right {
