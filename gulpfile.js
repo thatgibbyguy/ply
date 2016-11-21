@@ -73,18 +73,6 @@ gulp.task('stylesMin', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('buildJs', function() {
-  gulp.src('./src/react_components/*')
-  .pipe(babel())
-  .pipe(concat('index.js'))
-  .on('error', function(error){
-    gutil.log(gutil.colors.red(error.message));
-      this.emit('end');
-  })
-  .pipe(gulp.dest('./lib'));
-});
-
 gulp.task('default',function() {
   gulp.watch('./src/scss/styles.scss',['styles','stylesMin','plyEssentials']);
-  gulp.watch('./src/**/*.js',['buildJs'])
 });
