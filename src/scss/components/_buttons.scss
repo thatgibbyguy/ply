@@ -1,7 +1,10 @@
 /* =Buttons
 -----------------------------------------------------------------------------*/
 .btn,
-input[type="submit"].btn {
+input[type="submit"].btn,
+input[type="button"].btn,
+input[type="reset"].btn,
+button.btn {
   transition: all 150ms ease-in-out, transform 50ms ease, background 150ms ease-in-out;
 
   display: inline-block;
@@ -13,7 +16,7 @@ input[type="submit"].btn {
 
   line-height: $base-line;
 
-    text-align: center;
+  text-align: center;
   text-decoration: none;
   color: $color-body;
 
@@ -36,42 +39,60 @@ input[type="submit"].btn {
     margin: auto $grid-gutter-width;
   }
 }
+
 .btn::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
 .btn-big,
-input[type="submit"].btn-big {
+input[type="submit"].btn-big,
+input[type="button"].btn-big,
+input[type="reset"].btn-big {
   font-size: $font-size-big;
 }
+
 .btn-small,
-input[type="submit"].btn-small {
+input[type="submit"].btn-small,
+input[type="button"].btn-small,
+input[type="reset"].btn-small {
   font-size: $font-size-small;
 }
 .btn-smaller,
-input[type="submit"].btn-smaller {
+input[type="submit"].btn-smaller,
+input[type="button"].btn-smaller,
+input[type="reset"].btn-smaller {
   font-size: $font-size-smaller;
   vertical-align: baseline;
 }
+
 .btn-round {
   border-radius: 15px;
 }
+
 .btn-outline,
-input[type="submit"].btn-outline {
+input[type="submit"].btn-outline,
+input[type="button"].btn-outline,
+input[type="reset"].btn-outline {
   background: none;
   padding: $padding-btn-outline;
   border: 1px solid $color-black;
+  color: $color-black;
+
   &:hover {
     border-color: $color-gray-dark;
   }
 }
+
 .btn-outline.btn-active {
   padding: $padding-btn;
 }
+
 .btn-outline.bold {
   border-width: 2px;
   padding: $padding-btn-outline-bold;
 }
+
 .btn-active,
 .btn[disabled],
 .btn-disabled {
@@ -84,9 +105,11 @@ input[type="submit"].btn-outline {
     background: $color-gray-dark;
   }
 }
+
 .btn-active {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .4) inset;
 }
+
 .btn-outline.btn[disabled],
 .btn-outline.btn-disabled {
   background: none;
@@ -94,12 +117,14 @@ input[type="submit"].btn-outline {
   color: rgba(0, 0, 0, .3);
   border: 1px solid rgba(0, 0, 0, .1);
 }
+
 .btn-outline.btn-active {
   background: none;
   color: rgba(0, 0, 0, .4);
   border: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
 }
+
 .btn[disabled],
 .btn-disabled {
   cursor: default;
@@ -110,44 +135,56 @@ input[type="submit"].btn-outline {
   border-radius: 0;
 }
 
-
 .btn-blue,
-input[type="submit"].btn-blue {
+input[type="submit"].btn-blue,
+input[type="button"].btn-blue,
+input[type="reset"].btn-blue {
   @include create-button($color-blue, $color-blue-dark, #fff);
 }
-.btn-blue-dark,
-input[type="submit"].btn-blue {
+.btn-blue--dark,
+input[type="submit"].btn-blue-dark,
+input[type="button"].btn-blue-dark,
+input[type="reset"].btn-blue-dark {
   @include create-button(darken($color-blue-dark, 10%), $color-blue-dark, #fff);
 }
 .btn-red,
-input[type="submit"].btn-red {
+input[type="submit"].btn-red,
+input[type="button"].btn-red,
+input[type="reset"].btn-red {
   @include create-button($color-red, $color-red-dark, #fff);
 }
 .btn-green,
-input[type="submit"].btn-green {
+input[type="submit"].btn-green,
+input[type="button"].btn-green,
+input[type="reset"].btn-green {
   @include create-button($color-green, $color-green-dark, #fff);
 }
 .btn-black,
-input[type="submit"].btn-black {
+input[type="submit"].btn-black,
+input[type="button"].btn-black,
+input[type="reset"].btn-black {
   @include create-button($color-black, $color-black-light, #fff, .7);
 }
 .btn-yellow,
-input[type="submit"].btn-yellow {
+input[type="submit"].btn-yellow,
+input[type="button"].btn-yellow,
+input[type="reset"].btn-yellow {
   @include create-button($color-yellow, $color-yellow-dark, #000);
 }
 .btn-white,
-input[type="submit"].btn-white {
+input[type="submit"].btn-white,
+input[type="button"].btn-white,
+input[type="reset"].btn-white {
   @include create-button($color-white, darken(#fff, 7%), #000, 1);
 }
 
 .btn-white {
   &.btn-outline.btn-active {
     box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, .3);
+    border: 1px solid rgba(0, 0, 0, .3);
     padding: $padding-btn-outline;
   }
 }
-
 
 /*
   Buttons Group

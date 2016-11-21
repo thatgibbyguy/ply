@@ -55,11 +55,14 @@ An offset, three column layout in foundation:
 
 ## Documentation 
 
-ply is currently a simple fork of [Kube v 4.0.2] which has been converted to use flexbox for its grid system. Kube documentation is currently available at the [legacy Kube example page]. An updated ply example page is coming soon.
+[ply documentation] is now live. 
+
+ply is a framework which aims to simplify the development process by allowing developers to think in rational, base-10, math versus arbitrary and ancient column based layouts.
+
+built on top of flexbox, ply allows developers to ply their craft and focus on executing without worry about structure.
 
 ### Version
-ply v 0.6.0  
-Kube v 4.0.2  
+ply v 0.7.1   
 
 ### Tech
 ply utilizes following technologies:
@@ -67,8 +70,6 @@ ply utilizes following technologies:
 * [SCSS]
 * [smacss]
 * [Gulp]
-* [jQuery]
-* [react.js]
 
 ### Linking ply in your document head
 After cloning ply into your application, you will be able to link ply into your app by linking to it using the following code:
@@ -107,11 +108,10 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 
 ### Roadmap
 
- - Convert all js components to react components
+ - Find all float based elements and convert to flexbox
  - Style all form elements
  - Add slideout rollover component seen on plygrid.com
  - Complete documentation
- - Add Webpack support
 
 License
 ----
@@ -122,7 +122,7 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-   [Kube v 4.0.2]: <https://github.com/imperavi/kube>
+   [ply documentation]: <https://plygrid.com>
    [thatgibbyguy]: <https://twitter.com/thatgibbyguy>
    [legacy Kube example page]: <http://k1.imperavi.com/>
    [SCSS]: <http://sass-lang.com/>
