@@ -11,40 +11,69 @@ nav {
 
 /* NavBar */
 .navbar {
-  font-size: 105%;
-  margin-bottom: $base-line;
-  @include clearfix;
-
-  &.navbar-left {
-    float: left;
-  }
-  &.navbar-right {
-    float: right;
-  }
-  & ul {
+  background: $color-white;
+  border-bottom: 1px solid $color-blue-dark;
+  box-sizing: border-box;
+  font-size: 1em;
+  
+  ul {
     list-style: none;
     margin: 0;
-    @include clearfix;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
   }
-  & li {
-    float: left;
-    margin-right: $base-line;
+
+  a {
+    box-sizing: border-box;
+    color: $color-blue-dark;
+    font-weight: bold;
+    padding: $padding;
   }
-  &.navbar-right li {
+
+  li {
+    @include box-sizing;
+
+    margin-right: $base-line / 2;
+
+    &:hover {
+      a {
+        color: $color-link-hover;
+        text-decoration: none;
+      }
+    }
+
+    &:not(:first-child) a {
+      margin-left: -$padding;
+    }
+  }
+
+  &.navbar--centered {
+    justify-content: center;
+  }
+
+  &.navbar--left {
+    justify-content: flex-start;
+  }
+
+  &.navbar--right {
+    justify-content: flex-end;
+  }
+  
+  &.navbar--right li {
     margin-right: 0;
     margin-left: $base-line;
   }
-  & a,
-  & span {
+  
+  a,
+  span {
     display: block;
     text-decoration: none;
   }
-  & a:hover {
-    color: $color-link-hover;
-    text-decoration: underline;
-  }
-  & li.active a,
-  & span {
+  
+  li.on a,
+  span {
+    border-bottom: 3px solid $color-blue-dark;
     text-decoration: none;
     cursor: text;
     color: rgba(0, 0, 0, .4);
