@@ -48,21 +48,21 @@ nav {
     }
   }
 
-  &.navbar--centered {
+  &.navbar--centered ul {
     justify-content: center;
   }
 
-  &.navbar--left {
+  &.navbar--left ul {
     justify-content: flex-start;
   }
 
-  &.navbar--right {
+  &.navbar--right ul {
     justify-content: flex-end;
-  }
-  
-  &.navbar--right li {
-    margin-right: 0;
-    margin-left: $base-line;
+
+    li {
+      margin-right: 0;
+      margin-left: $base-line;
+    }
   }
   
   a,
@@ -81,12 +81,21 @@ nav {
 }
 
 .navigation-toggle {
-  display: none;
+  @include transition();
+  @include box-sizing();
+
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  color: $color-black;
+  display: inline-block;
   text-transform: uppercase;
   position: relative;
 
-  color: $color-black;
-  background-color: $color-white;
+  &:hover {
+    background-color: $color-gray-pastel;
+    border: 1px solid $border-color;
+    box-shadow: 0 -.25em .25em $color-gray inset;
+  }
 
   &:after {
     position: absolute;
@@ -98,13 +107,23 @@ nav {
     font-size: 24px;
     line-height: 1;
   }
+
   &.navigation-toggle-black {
     background-color: $color-black;
+    border: 1px solid $color-black;
     color: $color-white;
+
+    &:hover {
+      background-color: $color-gray-pastel;
+      box-shadow: 0 -.25em .25em $color-gray inset;
+      color: $color-black;
+    }
   }
+  
   &.navigation-toggle-show {
     margin-bottom: $base-line;
   }
+  
   & span {
     position: relative;
     z-index: 2;
@@ -113,13 +132,13 @@ nav {
     padding: 10px 20px 10px 40px;
   }
 }
+
 .navigation-fixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 101;
 }
-
 
 /* Pills */
 .navbar-pills {
@@ -145,7 +164,6 @@ nav {
     margin-left: 1px;
   }
 }
-
 
 /* Fullwidth */
 .fullwidth {
