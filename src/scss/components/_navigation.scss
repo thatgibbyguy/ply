@@ -24,11 +24,14 @@ nav {
     flex-flow: row wrap;
   }
 
-  a {
+  a,
+  span {
     box-sizing: border-box;
     color: $color-blue-dark;
+    display: block;
     font-weight: bold;
     padding: $padding;
+    text-decoration: none;
   }
 
   li {
@@ -46,47 +49,75 @@ nav {
     &:not(:first-child) a {
       margin-left: -$padding;
     }
+
+    &.on a,
+    span {
+      border-bottom: 3px solid $color-blue-dark;
+      text-decoration: none;
+      cursor: text;
+      color: rgba(0, 0, 0, .4);
+    }
   }
 
-  &.navbar--centered {
+  &.navbar--centered ul {
     justify-content: center;
   }
 
-  &.navbar--left {
+  &.navbar--left ul {
     justify-content: flex-start;
   }
 
-  &.navbar--right {
+  &.navbar--right ul {
     justify-content: flex-end;
+
+    li {
+      margin-right: 0;
+      margin-left: $base-line;
+    }
   }
-  
-  &.navbar--right li {
-    margin-right: 0;
-    margin-left: $base-line;
-  }
-  
-  a,
-  span {
-    display: block;
-    text-decoration: none;
-  }
-  
-  li.on a,
-  span {
-    border-bottom: 3px solid $color-blue-dark;
-    text-decoration: none;
-    cursor: text;
-    color: rgba(0, 0, 0, .4);
+
+  &.navbar--vertical {
+    border: 1px solid $color-blue-dark;
+
+    ul {
+      display: inline-block;
+      width: 100%;
+    }
+
+    li {
+      margin-right: 0;
+
+      &.on a,
+      span {
+        background: $color-gray-pastel;
+        border-bottom: 0 none;
+        text-decoration: none;
+        cursor: text;
+      }
+
+      &:not(:first-child) a {
+        margin-left: 0;
+      }
+    }
   }
 }
 
 .navigation-toggle {
-  display: none;
+  @include transition();
+  @include box-sizing();
+
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  color: $color-blue-dark;
+  display: inline-block;
   text-transform: uppercase;
   position: relative;
 
-  color: $color-black;
-  background-color: $color-white;
+  &:hover {
+    background-color: $color-gray-pastel;
+    border: 1px solid $color-blue-dark;
+    box-shadow: .15em .15em 0 $color-blue-dark;
+  }
 
   &:after {
     position: absolute;
@@ -98,13 +129,23 @@ nav {
     font-size: 24px;
     line-height: 1;
   }
-  &.navigation-toggle-black {
-    background-color: $color-black;
+
+  &.navigation-toggle-solid {
+    background-color: $color-blue-dark;
+    border: 1px solid $color-blue-dark;
     color: $color-white;
+
+    &:hover {
+      background-color: $color-gray-pastel;
+      box-shadow: .15em .15em 0 $color-blue-dark;
+      color: $color-blue-dark;
+    }
   }
+  
   &.navigation-toggle-show {
     margin-bottom: $base-line;
   }
+  
   & span {
     position: relative;
     z-index: 2;
@@ -113,6 +154,7 @@ nav {
     padding: 10px 20px 10px 40px;
   }
 }
+
 .navigation-fixed {
   position: fixed;
   top: 0;
@@ -120,95 +162,43 @@ nav {
   z-index: 101;
 }
 
-
 /* Pills */
 .navbar-pills {
-  & a,
-  & span {
+  a,
+  span {
     padding: $base-line/2 $base-line;
   }
-  & a:hover {
+
+  a:hover {
     color: $color-black;
     background: #eee;
   }
-  & li.active a,
-  & span {
+
+  li.active a,
+  span {
     text-decoration: none;
     cursor: text;
     color: rgba(0, 0, 0, .4);
     background: #eee;
   }
-  & li {
+
+  li {
     margin-right: 1px;
   }
+  
   &.navbar-right li {
     margin-left: 1px;
   }
 }
 
-
-/* Fullwidth */
-.fullwidth {
-  & ul {
-    width: 100%;
-  }
-  & li {
-    float: none !important;
-    margin: 0;
-    display: table-cell;
-    width: 1%;
-    text-align: center;
-  }
-  & li a,
-  & li span {
-    display: block;
-  }
-}
-
-
-/* Vertical */
-.nav {
-  margin-bottom: $base-line;
-  & ul {
-    list-style: none;
-    margin: 0;
-  }
-  & ul li ul {
-    margin-left: 2em;
-    font-size: .95em;
-  }
-  & a,
-  & span {
-    display: block;
-    padding: .5em 0;
-  }
-  & a {
-    color: $color-black;
-    text-decoration: none;
-    &:hover {
-      color: $color-link-hover;
-      text-decoration: underline;
-    }
-  }
-  & li.active a,
-  & span {
-    text-decoration: none;
-    cursor: text;
-    color: rgba(0, 0, 0, .4);
-  }
-  & i.fa {
-    width: $base-line;
-  }
-}
-
-
 /* Stacked */
 .nav-stacked {
-  & li {
+  li {
     margin-bottom: 1px;
   }
-  & a,
-  & span {
+
+  a,
+  span {
     padding: .6em .7em;
   }
   & a {
@@ -218,8 +208,9 @@ nav {
       background: #eee;
     }
   }
-  & li.active a,
-  & span {
+
+  li.active a,
+  span {
     background: $color-white;
     text-decoration: none;
     cursor: text;
@@ -229,27 +220,30 @@ nav {
 
 /* Stats */
 .nav-stats {
-  & li {
+  li {
     position: relative;
   }
-  & a,
-  & span {
+
+  a,
+  span {
     padding-right: 50px;
   }
-  & sup,
-  & .badge {
+
+  sup,
+  .badge {
     position: absolute;
     top: 50%;
     right: 0;
   }
-  & sup {
+
+  sup {
     color: rgba(0, 0, 0, .4);
   }
-  & .badge {
+
+  .badge {
     margin-top: -8px;
   }
 }
-
 
 /* =Tabs
 -----------------------------------------------------------------------------*/
