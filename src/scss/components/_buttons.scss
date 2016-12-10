@@ -223,6 +223,8 @@ input[type="reset"].btn-white {
   }
 
   .btn {
+    border-right: 0;
+
     &:first-child {
       border-radius: ($border-radius / 2) 0 0 ($border-radius / 2);
     }
