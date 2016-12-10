@@ -53,16 +53,16 @@ An offset, three column layout in foundation:
 </div>
 ```
 
-## Documentation 
+## Documentation
 
-[ply documentation] is now live. 
+[ply documentation] is now live.
 
 ply is a framework which aims to simplify the development process by allowing developers to think in rational, base-10, math versus arbitrary and ancient column based layouts.
 
 built on top of flexbox, ply allows developers to ply their craft and focus on executing without worry about structure.
 
 ### Version
-ply v 0.7.1   
+ply v 0.7.6   
 
 ### Tech
 ply utilizes following technologies:
@@ -87,7 +87,7 @@ ply comes with a predefined gulp file for you. To code continuously with gulp si
 $ npm install
 $ gulp
 ```
-This task will watch the file located at `/src/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/dist/css/styles.css` and `/dist/css/styles.min.css`. 
+This task will watch the file located at `/src/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/dist/css/styles.css` and `/dist/css/styles.min.css`.
 
 To use these styles in your webapp, use the following code:
 
@@ -100,7 +100,7 @@ Included with this gulp file are the following commands:
 
 `gulp styles` `gulp stylesMin` `gulp ply` `gulp plyMin`
 
-Each of these gulp commands will output to the `/dist/css/` directory and you may use them as you see fit. 
+Each of these gulp commands will output to the `/dist/css/` directory and you may use them as you see fit.
 
 # Development
 
@@ -122,7 +122,7 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-   [ply documentation]: <https://plygrid.com>
+   [ply documentation]: <https://plygrid.com/docs/>
    [thatgibbyguy]: <https://twitter.com/thatgibbyguy>
    [legacy Kube example page]: <http://k1.imperavi.com/>
    [SCSS]: <http://sass-lang.com/>
@@ -134,5 +134,3 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
    [react.js]: <https://facebook.github.io/react/>
    [dillinger.io]: <http://dillinger.io/>
    [imperavi]: <https://imperavi.com/>
-
-

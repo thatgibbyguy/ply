@@ -191,34 +191,55 @@ input[type="reset"].btn-white {
 */
 .btn-single,
 .btn-group {
-  display: inline-block;
-  margin-right: 2px;
-  @include clearfix;
-  vertical-align: bottom;
-}
-.btn-single > .btn,
-.btn-single > input,
-.btn-group > .btn,
-.btn-group > input {
-  float: left;
-  border-radius: 0;
-  margin-left: -1px;
-}
-.btn-single > .btn {
-  border-radius: 2px;
-}
-.btn-group > .btn:first-child {
-  border-radius: 2px 0 0 2px;
-}
-.btn-group > .btn:last-child {
-  border-radius: 0 2px 2px 0;
-}
-.btn-group > .btn.btn-round:first-child,
-.btn-group > .input-search:first-child {
-  border-radius: 15px 0 0 15px;
-}
-.btn-group > .btn.btn-round:last-child,
-.btn-group > .input-search:last-child {
-  border-radius: 0 15px 15px 0;
-}
+  display: flex;
+  flex-flow: row wrap;
 
+  &.align-right {
+    justify-content: flex-end;
+  }
+
+  &.align-left {
+    justify-content: flex-start;
+  }
+
+  &.align-center {
+    justify-content: center;
+  }
+
+  &.fill-width {
+    .btn {
+      flex: 1;
+    }
+  }
+
+  .btn,
+  input {
+    margin-left: 0;
+    margin-right: 1px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .btn {
+    &:first-child {
+      border-radius: ($border-radius / 2) 0 0 ($border-radius / 2);
+    }
+    &:last-child {
+      border-radius: 0 ($border-radius / 2) ($border-radius / 2) 0;
+    }
+  }
+
+  &.rounded {
+    .btn,
+    .input-search {
+      &:first-child {
+        border-radius: ($border-radius * 2) 0 0 ($border-radius * 2);
+      }
+      &:last-child {
+        border-radius: 0 ($border-radius * 2) ($border-radius * 2) 0;
+      }
+    }
+  }
+}
