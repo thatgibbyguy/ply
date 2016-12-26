@@ -7,6 +7,12 @@
   text-align: center;
 }
 
+.vertically-centered-space-between, 
+%vertically-centered-space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .justify-center,
 %justify-center,
 .horizontally-centered,
@@ -47,6 +53,7 @@
 .align-center,
 %align-center {
   align-items: center;
+  text-align: center;
 }
 
 .align-flex-end,
