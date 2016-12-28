@@ -42,6 +42,67 @@
   margin-bottom: 0 !important;
 }
 
+.margin-top,
+.top-margin,
+%margin-top,
+.top-margin {
+  margin-top: $margin;
+}
+
+.top-margin--extra,
+.margin-top--extra,
+%top-margin--extra,
+%margin-top--extra {
+  margin-top: $margin * 2;
+}
+
+.right-margin,
+.margin-right,
+%right-margin,
+%margin-right {
+  margin-right: $margin;
+}
+
+.right-margin--extra,
+.margin-right--extra,
+%right-margin--extra,
+%margin-right--extra {
+  margin-right: $margin * 2;
+}
+
+.bottom-margin,
+.margin-bottom,
+%bottom-margin,
+%margin-bottom {
+  margin-bottom: $margin;
+}
+
+.bottom-margin--extra,
+.margin-bottom--extra,
+%bottom-margin--extra,
+%margin-bottom--extra {
+  margin-bottom: $margin * 2;
+}
+
+.left-margin,
+.margin-left,
+%left-margin,
+%margin-left {
+  margin-left: $margin;
+}
+
+.left-margin--extra,
+.margin-left--extra,
+%left-margin--extra,
+%margin-left--extra {
+  margin-left: $margin * 2;
+}
+
+.no-margin,
+%no-margin {
+  margin: 0;
+}
+
 .no-top-margin,
 %no-top-margin {
   margin-top: 0 !important;
@@ -62,51 +123,6 @@
   margin-left: 0 !important;
 }
 
-.top-margin,
-%top-margin {
-  margin-top: $margin;
-}
-
-.top-margin--extra,
-%top-margin--extra {
-  margin-top: $margin * 2;
-}
-
-.right-margin,
-%right-margin {
-  margin-right: $margin;
-}
-
-.right-margin--extra,
-%right-margin--extra {
-  margin-right: $margin * 2;
-}
-
-.bottom-margin,
-%bottom-margin {
-  margin-bottom: $margin;
-}
-
-.bottom-margin--extra,
-%bottom-margin--extra {
-  margin-bottom: $margin * 2;
-}
-
-.left-margin,
-%left-margin {
-  margin-left: $margin;
-}
-
-.left-margin--extra,
-%left-margin--extra {
-  margin-left: $margin * 2;
-}
-
-.no-margin,
-%no-margin {
-  margin: 0;
-}
-
 .no-spacing,
 %no-spacing {
   margin: 0;
@@ -119,23 +135,59 @@
 }
 
 .padding-top,
-%padding-top {
+.top-padding,
+%padding-top,
+%top-padding {
   padding-top: $padding;
 }
 
 .padding-right,
-%padding-right {
+.right-padding,
+%padding-right,
+%right-padding {
   padding-right: $padding;
 }
 
 .padding-bottom,
-%padding-bottom {
+.bottom-padding,
+%padding-bottom,
+%bottom-padding {
   padding-bottom: $padding;
 }
 
 .padding-left,
-%padding-left {
-  padding-left: $padding;
+.left-padding,
+%padding-left,
+%left-padding {
+  padding-left: $padding * 2;
+}
+
+.padding-top--extra,
+.top-padding--extra,
+%padding-top--extra,
+%top-padding--extra {
+  padding-top: $padding * 2;
+}
+
+.padding-right--extra,
+.right-padding--extra,
+%padding-right--extra,
+%right-padding--extra {
+  padding-right: $padding * 2;
+}
+
+.padding-bottom--extra,
+.bottom-padding--extra,
+%padding-bottom--extra,
+%bottom-padding--extra {
+  padding-bottom: $padding * 2;
+}
+
+.padding-left--extra,
+.left-padding--extra,
+%padding-left--extra,
+%left-padding--extra {
+  padding-left: $padding * 2;
 }
 
 .border-top,
