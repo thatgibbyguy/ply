@@ -48,20 +48,23 @@ button.btn {
 .btn-big,
 input[type="submit"].btn-big,
 input[type="button"].btn-big,
-input[type="reset"].btn-big {
+input[type="reset"].btn-big,
+button.btn-big {
   font-size: $font-size-big;
 }
 
 .btn-small,
 input[type="submit"].btn-small,
 input[type="button"].btn-small,
-input[type="reset"].btn-small {
+input[type="reset"].btn-small,
+button.btn-small {
   font-size: $font-size-small;
 }
 .btn-smaller,
 input[type="submit"].btn-smaller,
 input[type="button"].btn-smaller,
-input[type="reset"].btn-smaller {
+input[type="reset"].btn-smaller,
+button.btn-smaller {
   font-size: $font-size-smaller;
   vertical-align: baseline;
 }
@@ -69,7 +72,8 @@ input[type="reset"].btn-smaller {
 .btn-outline,
 input[type="submit"].btn-outline,
 input[type="button"].btn-outline,
-input[type="reset"].btn-outline {
+input[type="reset"].btn-outline,
+button.btn-outline {
   background: none;
   padding: $padding-btn-outline;
   border: 1px solid $color-black;
