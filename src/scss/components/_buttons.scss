@@ -135,56 +135,64 @@ input[type="reset"].btn-outline {
 .btn-blue,
 input[type="submit"].btn-blue,
 input[type="button"].btn-blue,
-input[type="reset"].btn-blue {
+input[type="reset"].btn-blue,
+button.btn-blue {
   @include create-button($color-blue, $color-blue-dark, #fff);
 }
 
 .btn-blue--dark,
-input[type="submit"].btn-blue-dark,
-input[type="button"].btn-blue-dark,
-input[type="reset"].btn-blue-dark {
+input[type="submit"].btn-blue--dark,
+input[type="button"].btn-blue--dark,
+input[type="reset"].btn-blue--dark,
+button.btn-blue--dark {
   @include create-button(darken($color-blue-dark, 10%), $color-blue-dark, #fff);
 }
 
 .btn-red,
 input[type="submit"].btn-red,
 input[type="button"].btn-red,
-input[type="reset"].btn-red {
+input[type="reset"].btn-red,
+button.btn-red {
   @include create-button($color-red, $color-red-dark, #fff);
 }
 
 .btn-green,
 input[type="submit"].btn-green,
 input[type="button"].btn-green,
-input[type="reset"].btn-green {
+input[type="reset"].btn-green,
+button.btn-green {
   @include create-button($color-green, $color-green-dark, #fff);
 }
 
 .btn-black,
 input[type="submit"].btn-black,
 input[type="button"].btn-black,
-input[type="reset"].btn-black {
+input[type="reset"].btn-black,
+button.btn-black {
   @include create-button($color-black, $color-black-light, #fff, .7);
 }
 
 .btn-yellow,
 input[type="submit"].btn-yellow,
 input[type="button"].btn-yellow,
-input[type="reset"].btn-yellow {
+input[type="reset"].btn-yellow,
+button.btn-yellow {
   @include create-button($color-yellow, $color-yellow-dark, #000);
 }
 
 .btn-white,
 input[type="submit"].btn-white,
 input[type="button"].btn-white,
-input[type="reset"].btn-white {
+input[type="reset"].btn-white,
+button.btn-white {
   @include create-button($color-white, darken(#fff, 7%), #000, 1);
 }
 
 .btn-white,
 input[type="submit"].btn-white,
 input[type="button"].btn-white,
-input[type="reset"].btn-white {
+input[type="reset"].btn-white,
+button.btn-white {
   &.btn-outline {
     border: 1px solid $color-black;
     color: $color-black;
