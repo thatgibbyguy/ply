@@ -100,7 +100,7 @@
 
 .no-margin,
 %no-margin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .no-top-margin,
@@ -125,13 +125,33 @@
 
 .no-spacing,
 %no-spacing {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .no-padding,
 %no-padding {
-  padding: 0;
+  padding: 0 !important;
+}
+
+.no-top-padding,
+%no-top-padding {
+  padding: 0 !important;
+}
+
+.no-right-padding,
+%no-right-padding {
+  padding: 0 !important;
+}
+
+.no-bottom-padding,
+%no-bottom-padding {
+  padding: 0 !important;
+}
+
+.no-left-padding,
+%no-left-padding {
+  padding: 0 !important;
 }
 
 .padding-top,
@@ -212,6 +232,56 @@
 
 .border,
 %border {
+  bottom: 1px solid $border-color;
+}
+
+.border-top--thick,
+%border-top--thick {
+  border-top: 3px solid $border-color;
+}
+
+.border-right--thick,
+%border-right--thick {
+  border-right: 1px solid $border-color;
+}
+
+.border-bottom--thick,
+%border-bottom--thick {
+  border-bottom: 1px solid $border-color;
+}
+
+.border-left--thick,
+%border-left--thick {
+  border-left: 1px solid $border-color;
+}
+
+.border--thick,
+%border--thick {
+  bottom: 1px solid $border-color;
+}
+
+.no-border-top,
+%no-border-top {
+  border-top: 0 none !important;
+}
+
+.no-border-right,
+%no-border-right {
+  border-right: 1px solid $border-color;
+}
+
+.no-border-bottom,
+%no-border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.no-border-left,
+%no-border-left {
+  border-left: 1px solid $border-color;
+}
+
+.no-border,
+%no-border {
   bottom: 1px solid $border-color;
 }
 
@@ -488,6 +558,11 @@
   background-color: $color-yellow-pastel;
 }
 
+.sans,
+%sans {
+  font-family: $font-family-base;
+}
+
 .serif,
 %serif {
   font-family: $font-family-serif;
@@ -565,6 +640,10 @@
 
 .background-white {
   background-color: $color-white;
+}
+
+.background-black {
+  background-color: $color-black;
 }
 
 .color-black,
