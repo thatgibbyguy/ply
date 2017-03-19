@@ -409,6 +409,10 @@
 
 // Small Desktop (iPad Landscape) Widths
 @media (max-width: $breakpoint-small-desktop) {
+  .small-desktop-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
   .small-desktop-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
