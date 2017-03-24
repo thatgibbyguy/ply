@@ -53,9 +53,9 @@ An offset, three column layout in foundation:
 </div>
 ```
 
-## Documentation 
+## Documentation
 
-[ply documentation] is now live. 
+[ply documentation] is now live.
 
 ply is a framework which aims to simplify the development process by allowing developers to think in rational, base-10, math versus arbitrary and ancient column based layouts.
 
@@ -89,7 +89,7 @@ ply comes with a predefined gulp file for you. To code continuously with gulp si
 $ npm install
 $ gulp
 ```
-This task will watch the file located at `/src/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/dist/css/styles.css` and `/dist/css/styles.min.css`. 
+This task will watch the file located at `/src/scss/styles.scss`. Each time you save this file, gulp will automatically compile, prefix and minify your code. This code is outputted to `/dist/css/styles.css` and `/dist/css/styles.min.css`.
 
 To use these styles in your webapp, use the following code:
 
@@ -102,7 +102,7 @@ Included with this gulp file are the following commands:
 
 `gulp styles` `gulp stylesMin` `gulp ply` `gulp plyMin`
 
-Each of these gulp commands will output to the `/dist/css/` directory and you may use them as you see fit. 
+Each of these gulp commands will output to the `/dist/css/` directory and you may use them as you see fit.
 
 # Development
 
@@ -131,5 +131,3 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
    [gulp]: <http://gulpjs.com/>
    [dillinger.io]: <http://dillinger.io/>
    [imperavi]: <https://imperavi.com/>
-
-

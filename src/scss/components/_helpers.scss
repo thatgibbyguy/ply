@@ -472,6 +472,18 @@
   margin-bottom: $margin;
 }
 
+
+.right-margin,
+%right-margin {
+  margin-right: $margin;
+}
+
+
+.left-margin,
+%left-margin {
+  margin-left: $margin;
+}
+
 .bottom-margin--extra,
 %bottom-margin--extra {
   margin-bottom: $margin * 2;

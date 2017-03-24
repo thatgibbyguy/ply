@@ -175,107 +175,107 @@
 
 // Forever Units
 .forever-unit-auto,
-%forever-unit-auto { 
+%forever-unit-auto {
   flex-basis: 0;
   flex-grow: 1;
 }
 .forever-unit-100,
-%forever-unit-100 { 
+%forever-unit-100 {
   flex-basis: 100%;
   max-width: 100%;
 }
 .forever-unit-90,
-%forever-unit-90 { 
+%forever-unit-90 {
   flex-basis: 90%;
   max-width: 90%;
 }
 .forever-unit-88,
-%forever-unit-88 { 
+%forever-unit-88 {
   flex-basis: 87.5%;
   max-width: 87.5%;
 }
 .forever-unit-80,
-%forever-unit-80 { 
+%forever-unit-80 {
   flex-basis: 80%;
   max-width: 80%;
 }
 .forever-unit-75,
-%forever-unit-75 { 
+%forever-unit-75 {
   flex-basis: 75%;
   max-width: 75%;
 }
 .forever-unit-70,
-%forever-unit-70 { 
+%forever-unit-70 {
   flex-basis: 70%;
   max-width: 70%;
 }
 .forever-unit-66,
-%forever-unit-66 { 
+%forever-unit-66 {
   flex-basis: 66.6%;
   max-width: 66.6%;
 }
 .forever-unit-65,
-%forever-unit-65 { 
+%forever-unit-65 {
   flex-basis: 65%;
   max-width: 65%;
 }
 .forever-unit-62,
-%forever-unit-62 { 
+%forever-unit-62 {
   flex-basis: 62.5%;
   max-width: 62.5%;
 }
 .forever-unit-60,
-%forever-unit-60 { 
+%forever-unit-60 {
   flex-basis: 60%;
   max-width: 60%;
 }
 .forever-unit-50,
-%forever-unit-50 { 
+%forever-unit-50 {
   flex-basis: 50%;
   max-width: 50%;
 }
 .forever-unit-40,
-%forever-unit-40 { 
+%forever-unit-40 {
   flex-basis: 40%;
   max-width: 40%;
 }
 .forever-unit-38,
-%forever-unit-38 { 
+%forever-unit-38 {
   flex-basis: 37.5%;
   max-width: 37.5%;
 }
 .forever-unit-35,
-%forever-unit-35 { 
+%forever-unit-35 {
   flex-basis: 35%;
   max-width: 35%;
 }
 .forever-unit-33,
-%forever-unit-33 { 
+%forever-unit-33 {
   flex-basis: 33.3%;
   max-width: 33.3%;
 }
 .forever-unit-30,
-%forever-unit-30 { 
+%forever-unit-30 {
   flex-basis: 30%;
   max-width: 30%;
 }
 .forever-unit-25,
-%forever-unit-25 { 
+%forever-unit-25 {
   flex-basis: 25%;
   max-width: 25%;
 }
 .forever-unit-20,
-%forever-unit-20 { 
+%forever-unit-20 {
   flex-basis: 20%;
   max-width: 20%;
 }
 .forever-unit-12,
-%forever-unit-12 { 
+%forever-unit-12 {
   flex-basis: 12.5%;
   max-width: 12.5%;
 }
 .forever-unit-10,
-%forever-unit-10 { 
+%forever-unit-10 {
   flex-basis: 10%;
   max-width: 10%;
 }
@@ -402,6 +402,74 @@
     flex-basis: 20%;
   }
   .x-large-screen-unit-10 {
+    max-width: 10%;
+    flex-basis: 10%;
+  }
+}
+
+// Small Desktop (iPad Landscape) Widths
+@media (max-width: $breakpoint-small-desktop) {
+  .small-desktop-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .small-desktop-unit-90 {
+    max-width: 90%;
+    flex-basis: 90%;
+  }
+  .small-desktop-unit-80 {
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+  .small-desktop-unit-75 {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .small-desktop-unit-70 {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+  .small-desktop-unit-66 {
+    max-width: 66.6%;
+    flex-basis: 66.6%;
+  }
+  .small-desktop-unit-65 {
+    max-width: 65%;
+    flex-basis: 65%;
+  }
+  .small-desktop-unit-60 {
+    max-width: 60%;
+    flex-basis: 60%;
+  }
+  .small-desktop-unit-50 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .small-desktop-unit-40 {
+    max-width: 40%;
+    flex-basis: 40%;
+  }
+  .small-desktop-unit-35 {
+    max-width: 35%;
+    flex-basis: 35%;
+  }
+  .small-desktop-unit-33 {
+    max-width: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .small-desktop-unit-30 {
+    max-width: 30%;
+    flex-basis: 30%;
+  }
+  .small-desktop-unit-25 {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .small-desktop-unit-20 {
+    max-width: 20%;
+    flex-basis: 20%;
+  }
+  .small-desktop-unit-10 {
     max-width: 10%;
     flex-basis: 10%;
   }
