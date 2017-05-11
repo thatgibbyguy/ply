@@ -282,6 +282,10 @@
 
 // Large Widths
 @media (max-width: $breakpoint-large-screen) {
+  .large-screen-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
   .large-screen-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
