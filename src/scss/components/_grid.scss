@@ -281,7 +281,7 @@
 }
 
 // Large Widths
-@media (max-width: $breakpoint-large-screen) {
+@media (min-width: $breakpoint-large-screen) {
   .large-screen-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
@@ -344,7 +344,7 @@
   }
 }
 
-@media (max-width: $breakpoint-x-large-screen) {
+@media (min-width: $breakpoint-x-large-screen) {
   .x-large-screen-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
@@ -408,7 +408,7 @@
 }
 
 // Small Desktop (iPad Landscape) Widths
-@media (max-width: $breakpoint-small-desktop) {
+@media (min-width: $breakpoint-small-desktop) {
   .small-desktop-unit-100 {
     max-width: 100%;
     flex-basis: 100%;

@@ -1,69 +1,94 @@
 /* =Forms
 -----------------------------------------------------------------------------*/
 .form  {
-  & .btn,
-  & input[type="submit"].btn,
-  & button,
-  & input[type="submit"],
-  & input[type="reset"] {
+  .btn,
+  input[type="submit"].btn,
+  button,
+  input[type="submit"],
+  input[type="reset"] {
     padding: $padding-btn-in-forms;
-  }
-  & .btn-outline, {
-    padding: $padding-btn-outline-in-forms;
-  }
-  & .btn-outline.bold {
-    padding: $padding-btn-outline-bold-in-forms;
-  }
-}
 
+    &.btn-outline, {
+      padding: $padding-btn-outline-in-forms;
+    }
+    &.btn-outline.bold {
+      padding: $padding-btn-outline-bold-in-forms;
+    }
+  }
 
-.form {
-  & label {
+  label {
+    @extend %cursor-pointer;
+
     display: block;
     margin-bottom: $base-line / 1.5;
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="phone"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="date"],
+    input[type="month"],
+    input[type="color"],
+    input[type="time"],
+    input[type="search"],
+    input[type="range"],
+    input[type="file"],
+    input[type="datetime-local"],
+    textarea,
+    select {
+      margin-top: $margin;
+      width: 100%;
+    }
   }
 
-  & input[type="text"],
-  & input[type="password"],
-  & input[type="email"],
-  & input[type="url"],
-  & input[type="phone"],
-  & input[type="tel"],
-  & input[type="number"],
-  & input[type="datetime"],
-  & input[type="date"],
-  & input[type="month"],
-  & input[type="color"],
-  & input[type="time"],
-  & input[type="search"],
-  & input[type="range"],
-  & input[type="file"],
-  & input[type="datetime-local"],
-  & textarea,
-  & select {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="phone"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="datetime"],
+  input[type="date"],
+  input[type="month"],
+  input[type="color"],
+  input[type="time"],
+  input[type="search"],
+  input[type="range"],
+  input[type="file"],
+  input[type="datetime-local"],
+  textarea,
+  select {
+    border-radius: $border-radius;
     display: block;
+    padding: $padding;
   }
 }
+
 .form-inline,
 .form-inline-list {
-  & input[type="text"],
-  & input[type="password"],
-  & input[type="email"],
-  & input[type="url"],
-  & input[type="phone"],
-  & input[type="tel"],
-  & input[type="number"],
-  & input[type="datetime"],
-  & input[type="date"],
-  & input[type="month"],
-  & input[type="color"],
-  & input[type="time"],
-  & input[type="search"],
-  & input[type="range"],
-  & input[type="file"],
-  & input[type="datetime-local"],
-  & textarea,
-  & select {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="phone"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="datetime"],
+  input[type="date"],
+  input[type="month"],
+  input[type="color"],
+  input[type="time"],
+  input[type="search"],
+  input[type="range"],
+  input[type="file"],
+  input[type="datetime-local"],
+  textarea,
+  select {
     display: inline-block;
   }
 }
@@ -75,23 +100,31 @@
   padding: 0;
   margin-bottom: $base-line / 1.5;
   list-style: none;
+
+  label,
+  li,
+  li label {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }
-.form-list label,
-.form-inline label,
-.form-inline-list li,
-.form-inline-list li label {
-  display: inline-block;
-  margin-bottom: 0;
+
+.form-inline-list {
+  li {
+    margin-bottom: 3px;
+
+    label {
+      margin-right: $base-line / 2;
+    }
+  }
 }
-.form-inline-list li label {
-  margin-right: $base-line / 2;
+
+.form-list {
+  li {
+    margin-bottom: 6px;
+  }
 }
-.form-inline-list li {
-  margin-bottom: 3px;
-}
-.form-list li {
-  margin-bottom: 6px;
-}
+
 .form-desc {
   margin-top: 4px;
   color: rgba(0, 0, 0, .4);
@@ -119,23 +152,25 @@ textarea {
 
 // Fieldset
 fieldset {
-  padding: $base-line;
-  margin-bottom: $base-line;
-  border: 1px solid $color-fieldset-border;
   @include color-opacity;
   @extend %border-radius;
 
-  & *:last-child {
-    margin-bottom: 0 !important;
+  padding: $base-line;
+  margin-bottom: $base-line;
+  border: 1px solid $color-fieldset-border;
+
+  *:last-child {
+    margin-bottom: 0;
   }
 }
 
 /* States */
 .error,
 .success {
-  font-weight: normal;
+  font-weight: bold;
   font-size: $font-size-small;
 }
+
 input.input-error,
 textarea.input-error,
 select.input-error,
@@ -143,6 +178,7 @@ select.input-error,
   border-color: $color-red;
   box-shadow: 0 0 0 2px rgba(red($color-red), green($color-red), blue($color-red), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
+
 input.input-success,
 textarea.input-success,
 select.input-success,
@@ -151,6 +187,7 @@ select.input-success,
   box-shadow: 0 0 0 2px rgba(red($color-green), green($color-green), blue($color-green), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 
 }
+
 input.input-gray,
 textarea.input-gray,
 select.input-gray,
@@ -195,17 +232,21 @@ input[type="search"] {
 input.input-on-black {
   border: 1px solid rgba(255, 255, 255, .1);
   background: rgba(255, 255, 255, .35);
+
   &::-webkit-input-placeholder {
     color: rgba(255, 255, 255, .6);
   }
+
   &::-moz-placeholder {
     color: rgba(255, 255, 255, .6);
   }
+
   &:focus,
   &.active {
     border: 1px solid #fff;
     background: #fff;
     box-shadow: none;
+
     &::-webkit-input-placeholder {
       color: #aaa;
     }
@@ -216,40 +257,44 @@ input.input-on-black {
 }
 
 /* Sizes */
-input.input-big {
-  font-size: $font-size-big;
-}
-input.input-small {
-  font-size: $font-size-small;
-}
-input.input-smaller {
-  font-size: $font-size-smaller;
+input {
+  &.input-big {
+    font-size: $font-size-big;
+  }
+
+  &.input-small {
+    font-size: $font-size-small;
+  }
+
+  &.input-smaller {
+    font-size: $font-size-smaller;
+  }
 }
 
 /* Append & Prepend */
 .input-groups {
   display: table !important;
 
-  & input {
+  input {
     width: 100%;
   }
 
-  & input,
-  & .input-append,
-  & .input-prepend,
-  & .btn-append {
+  input,
+  .input-append,
+  .input-prepend,
+  .btn-append {
     display: table-cell !important;
   }
 
-  & .btn-append,
-  & .input-append,
-  & .input-prepend {
+  .btn-append,
+  .input-append,
+  .input-prepend {
     width: 1%;
     vertical-align: middle;
   }
 
-  & .input-append,
-  & .input-prepend {
+  .input-append,
+  .input-prepend {
     background-color: $color-input-append-background;
     border: 1px solid $color-input-append-border;
     margin: 0;
@@ -260,17 +305,17 @@ input.input-smaller {
     white-space: nowrap;
   }
 
-  & .input-prepend {
+  .input-prepend {
     border-right: none;
   }
 
-  & .input-append {
+  .input-append {
     position: relative;
     z-index: 1;
     border-left: none;
   }
 
-  & .btn-append .btn {
+  .btn-append .btn {
     display: block;
     height: auto;
     border-radius: 0 2px 2px 0;
