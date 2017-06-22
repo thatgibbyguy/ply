@@ -62,7 +62,9 @@ ply is a framework which aims to simplify the development process by allowing de
 built on top of flexbox, ply allows developers to ply their craft and focus on executing without worry about structure.
 
 ### Version
-ply v 0.7.6   
+ply v 0.7.15
+
+ - changes in this version: adding small-desktop-unit-XX for added breakpoints.
 
 ### Tech
 ply utilizes following technologies:
@@ -108,7 +110,6 @@ Want to contribute? Great! Simply fork this repo and create a Pull Request with 
 
 ### Roadmap
 
- - Find all float based elements and convert to flexbox
  - Style all form elements
  - Add slideout rollover component seen on plygrid.com
  - Complete documentation
@@ -122,15 +123,11 @@ Special thanks to [imperavi] for creating the css framework I could only invisio
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-   [ply documentation]: <https://plygrid.com/docs/>
+   [ply documentation]: <https://plygrid.com>
    [thatgibbyguy]: <https://twitter.com/thatgibbyguy>
-   [legacy Kube example page]: <http://k1.imperavi.com/>
    [SCSS]: <http://sass-lang.com/>
    [git-repo-url]: <https://github.com/thatgibbyguy/ply.git>
    [smacss]: <https://smacss.com>
    [gulp]: <http://gulpjs.com/>
-   [grunt]: <http://gruntjs.com/>
-   [jQuery]: <http://jquery.com>
-   [react.js]: <https://facebook.github.io/react/>
    [dillinger.io]: <http://dillinger.io/>
    [imperavi]: <https://imperavi.com/>
