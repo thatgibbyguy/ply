@@ -1,0 +1,21 @@
+/* =Loader
+-----------------------------------------------------------------------------*/
+
+.loader,
+.loader::after {
+	@include square(5em);
+
+	border-radius: 100%;
+}
+
+.loader {
+	@include spinning();
+
+  margin: 5em auto;
+  font-size: .8em;
+  position: relative;
+  text-indent: -9999em;
+  border: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid $color-white;
+  transform: translateZ(0);
+}
