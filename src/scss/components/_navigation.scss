@@ -51,7 +51,7 @@ nav {
     }
 
     &.on a,
-    span {
+    &.on span {
       border-bottom: 3px solid $color-blue-dark;
       text-decoration: none;
       cursor: text;
