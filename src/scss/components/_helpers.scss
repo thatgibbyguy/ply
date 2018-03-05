@@ -28,6 +28,16 @@
   position: relative;
 }
 
+.static,
+%static {
+  position: static;
+}
+
+.sticky,
+%sticky {
+  position: sticky;
+}
+
 // Display
 
 .display-flex,
@@ -100,6 +110,11 @@
 .end,
 %end {
   margin-bottom: 0 !important;
+}
+
+.margin,
+%margin {
+  margin: $margin;
 }
 
 .margin-top,
@@ -214,6 +229,11 @@
   padding: 0 !important;
 }
 
+.padding,
+%padding {
+  padding: $padding;
+}
+
 .padding-top,
 .top-padding,
 %padding-top,
@@ -270,6 +290,8 @@
   padding-left: $padding * 2;
 }
 
+// Borders
+
 .border-top,
 %border-top {
   border-top: 1px solid $border-color;
@@ -292,7 +314,7 @@
 
 .border,
 %border {
-  bottom: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
 
 .border-top--thick,
@@ -327,22 +349,22 @@
 
 .no-border-right,
 %no-border-right {
-  border-right: 1px solid $border-color;
+  border-right: 0 none !important;
 }
 
 .no-border-bottom,
 %no-border-bottom {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 0 none !important;
 }
 
 .no-border-left,
 %no-border-left {
-  border-left: 1px solid $border-color;
+  border-left: 0 none !important;
 }
 
 .no-border,
 %no-border {
-  bottom: 1px solid $border-color;
+  bottom: 0 none !important;
 }
 
 .width-100,
@@ -377,6 +399,41 @@
 %width-20  { width: 20%;   }
 .width-10,
 %width-10  { width: 10%;   }
+
+@media (max-width: $breakpoint-small-desktop) {
+  .small-desktop-width-100,
+  %small-desktop-width-100 { width: 100%;  }
+  .small-desktop-width-90,
+  %small-desktop-width-90  { width: 90%;   }
+  .small-desktop-width-80,
+  %small-desktop-width-80  { width: 80%;   }
+  .small-desktop-width-75,
+  %small-desktop-width-75  { width: 75%;   }
+  .small-desktop-width-70,
+  %small-desktop-width-70  { width: 70%;   }
+  .small-desktop-width-66,
+  %small-desktop-width-66  { width: 66.6%; }
+  .small-desktop-width-65,
+  %small-desktop-width-65  { width: 65%;   }
+  .small-desktop-width-60,
+  %small-desktop-width-60  { width: 60%;   }
+  .small-desktop-width-50,
+  %small-desktop-width-50  { width: 50%;   }
+  .small-desktop-width-40,
+  %small-desktop-width-40  { width: 40%;   }
+  .small-desktop-width-35,
+  %small-desktop-width-35  { width: 35%;   }
+  .small-desktop-width-33,
+  %small-desktop-width-33  { width: 33.3%; }
+  .small-desktop-width-30,
+  %small-desktop-width-30  { width: 30%;   }
+  .small-desktop-width-25,
+  %small-desktop-width-25  { width: 25%;   }
+  .small-desktop-width-20,
+  %small-desktop-width-20  { width: 20%;   }
+  .small-desktop-width-10,
+  %small-desktop-width-10  { width: 10%;   }
+}
 
 @media (max-width: $breakpoint-tablet) {
   .tablet-width-100,
