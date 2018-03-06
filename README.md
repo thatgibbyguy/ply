@@ -62,9 +62,9 @@ ply is a framework which aims to simplify the development process by allowing de
 built on top of flexbox, ply allows developers to ply their craft and focus on executing without worry about structure.
 
 ### Version
-ply v 0.7.15
+ply v 0.8.1
 
- - changes in this version: adding small-desktop-unit-XX for added breakpoints.
+ - added helper classes for most cases.
 
 ### Tech
 ply utilizes following technologies:
