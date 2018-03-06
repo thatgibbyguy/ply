@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.vertically-centered-space-between, 
+.vertically-centered-space-between,
 %vertically-centered-space-between {
   align-items: center;
   justify-content: space-between;
@@ -54,6 +54,11 @@
 %align-center {
   align-items: center;
   text-align: center;
+}
+
+.align-middle,
+%align-middle {
+  align-items: center;
 }
 
 .align-flex-end,
