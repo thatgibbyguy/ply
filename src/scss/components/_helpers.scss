@@ -40,58 +40,58 @@
 
 // Display
 
-.display-flex,
-%display-flex {
+.display--flex,
+%display--flex {
   display: flex;
 }
 
-.display-block,
-%display-block {
+.display--block,
+%display--block {
   display: block;
 }
 
-.display-inline-block,
-%display-inline-block {
+.display--inline-block,
+%display--inline-block {
   display: inline-block;
 }
 
-.display-table,
-%display-table {
+.display--table,
+%display--table {
   display: table;
 }
 
-.display-inline-table,
-%display-inline-table {
+.display--inline-table,
+%display--inline-table {
   display: inline-table;
 }
 
-.display-table-cell,
-%display-table-cell {
+.display--table-cell,
+%display--table-cell {
   display: table-cell;
 }
 
-.display-list-item,
-%display-list-item {
+.display--list-item,
+%display--list-item {
   display: list-item;
 }
 
-.display-grid,
-%display-grid {
+.display--grid,
+%display--grid {
   display: grid;
 }
 
-.display-inline-grid,
-%display-inline-grid {
+.display--inline-grid,
+%display--inline-grid {
   display: inline-grid;
 }
 
-.display-subgrid,
-%display-subgrid {
+.display--subgrid,
+%display--subgrid {
   display: subgrid;
 }
 
-.display-none,
-%display-none {
+.display--none,
+%display--none {
   display: none;
 }
 
