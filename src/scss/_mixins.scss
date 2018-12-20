@@ -1,0 +1,10 @@
+@import 'components/mixins';
+@import 'variables';
+
+// Custom Mixins Go Below
+@mixin condensed-font($size: $ox-base-font-size, $color: $ox-text-color, $letter-spacing: .075em) {
+  font-family: $ox-base-condensed;
+  font-size: $size;
+  color: $color;
+  letter-spacing: $letter-spacing;
+}

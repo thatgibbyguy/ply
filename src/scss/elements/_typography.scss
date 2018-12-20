@@ -1,0 +1,20 @@
+@import '../variables';
+
+$ox-super-h1: ($font-size-root * 2.05) + 0rem;
+
+.super-h1 {
+  font-size: $ox-super-h1;
+}
+
+.emphasized-text {
+  color: $emphasized-color;
+}
+
+// =Lead
+// ----------------------------------------------------------------------------
+.lead-subhead,
+.lead {
+  font-size: $font-size-lead;
+  line-height: $line-height-lead;
+  margin-bottom: $base-line / 1.5;
+}

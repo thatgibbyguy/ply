@@ -1,0 +1,25 @@
+// =Tables
+// ----------------------------------------------------------------------------
+table {
+  max-width: 100%;
+  width: 100%;
+  empty-cells: show;
+
+  caption {
+    text-transform: uppercase;
+    padding: 0 $base-line / 1.5;
+    color: $color-gray-light;
+    font-size: $font-size-small;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid $color-table-border;
+    padding: $base-line / 2 $base-line / 1.5;
+  }
+
+  tfoot th,
+  tfoot td {
+    color: rgba(0, 0, 0, .4);
+  }
+}

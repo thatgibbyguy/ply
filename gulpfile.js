@@ -52,16 +52,17 @@ gulp.task('plyMin', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', function(done) {
   gulp.src('./src/scss/styles.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
     { cascade: true }
   ))
   .pipe(gulp.dest('./dist/css/'))
+  done()
 });
 
-gulp.task('stylesMin', function() {
+gulp.task('stylesMin', function(done) {
   gulp.src('./src/scss/styles.scss')
   .pipe(sass({
     outputStyle: 'compressed'
@@ -71,6 +72,7 @@ gulp.task('stylesMin', function() {
   ))
   .pipe(rename('styles.min.css'))
   .pipe(gulp.dest('./dist/css/'))
+  done()
 });
 
 gulp.task('default',function() {

@@ -1,0 +1,23 @@
+// These are custom helpers for all of our applications.
+
+.padding {
+  padding: $ox-base-spacing;
+}
+
+.input-padding {
+  padding: $ox-base-input-padding;
+}
+
+.super-padding {
+  padding: $ox-base-spacing * 3;
+}
+
+.condensed {
+  font-family: $ox-base-condensed;
+}
+
+.mobile-hidden {
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+@import './components/navigation';
+
+.navbar,
+nav.navbar {
+  //TODO reduce specificity here
+
+  @include condensed-font;
+
+  background: transparent;
+  border-bottom: 0 none;
+  text-transform: uppercase;
+}

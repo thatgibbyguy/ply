@@ -1,0 +1,127 @@
+// =Form
+// ----------------------------------------------------------------------------
+button:active,
+button:focus {
+  outline: none;
+}
+
+textarea,
+select {
+  font-family: $ox-base-font;
+  font-size: $ox-base-font-size;
+  box-shadow: none;
+}
+
+textarea,
+select[multiple],
+select[multiple="multiple"] {
+  padding: $ox-base-input-padding;
+  line-height: 1.35em;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="phone"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="color"],
+input[type="time"],
+input[type="search"],
+input[type="datetime-local"] {
+  font-family: $ox-base-font;
+  font-size: $ox-base-font-size * .75;
+  box-shadow: none;
+  padding: $ox-base-input-padding;
+  line-height: $base-line;
+  border-radius: 0;
+  outline: none;
+}
+
+select[multiple],
+select[multiple="multiple"],
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="phone"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="color"],
+input[type="time"],
+input[type="search"],
+input[type="datetime-local"] {
+  background: $ox-input-background;
+  border: 1px solid $ox-input-border-color;
+  position: relative;
+  z-index: 2;
+  -webkit-appearance: none;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="phone"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="color"],
+input[type="time"],
+input[type="search"],
+input[type="datetime-local"] {
+  &[disabled] {
+    resize: none;
+    color: rgba(0, 0, 0, .5);
+  }
+}
+
+select,
+input[type="checkbox"],
+input[type="radio"] {
+  &[disabled] {
+    cursor: disabled;
+  }
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input[type="range"] {
+  position: relative;
+  top: 3px;
+}
+
+select {
+  margin-bottom: 0 !important;
+}
+
+fieldset {
+  padding: $base-line;
+  margin-bottom: $base-line;
+  border: 1px solid $color-fieldset-border;
+  & *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 1em;
+  margin-left: -1em;
+}

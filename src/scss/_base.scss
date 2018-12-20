@@ -1,0 +1,271 @@
+// Base Styling Happens Here
+
+@import 'elements/forms';
+@import 'elements/headers';
+@import 'elements/tables';
+@import 'elements/typography';
+@import 'elements/nav';
+
+body,
+app-root {
+  @include square;
+
+  background: $color-white;
+  color: $ox-text-color;
+  font-family: $ox-base-font;
+  font-size: $ox-base-font-size;
+  line-height: $base-line;
+  overflow: auto;
+  text-rendering: optimizeLegibility;
+}
+
+.app-container {
+  @include square;
+  display: flex;
+  flex-direction: column;
+
+  .main-container {
+    flex: 1 1 auto;
+  }
+}
+
+.main-container {
+  @include square;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1 1 auto;
+  }
+}
+
+a {
+  @include transition;
+
+  color: $ox-link-blue;
+
+  &:hover {
+    color: $ox-link-hover;
+  }
+
+  &:focus,
+  &:active {
+    color: $ox-link-active;
+  }
+
+  &:visited {
+    color: $ox-link-visited;
+  }
+}
+
+// =Line height and margin
+// ----------------------------------------------------------------------------
+p,
+ul,
+ol,
+dl,
+dd,
+dt,
+blockquote,
+td,
+th {
+  line-height: $base-line;
+}
+
+ul,
+ol,
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin: 0 0 0 $base-line * 2;
+}
+
+ul li,
+ol li {
+  text-align: left;
+}
+
+ol ol li {
+  list-style-type: lower-alpha;
+}
+
+// scss-lint:disable SelectorDepth
+ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+// =Definition list
+// ----------------------------------------------------------------------------
+dl dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: $base-line;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+hr,
+pre,
+table,
+form,
+fieldset,
+figure,
+address {
+  margin-bottom: $base-line;
+}
+
+// =Blockquote
+// ----------------------------------------------------------------------------
+blockquote {
+  position: relative;
+  font-style: italic;
+  font-size: 1.125em;
+  margin-left: $base-line * 1.5;
+  padding-left: $base-line;
+  border-left: 2px solid $color-blockquote-border;
+
+  p {
+    margin-bottom: .5em;
+  }
+}
+
+small,
+blockquote small,
+blockquote p.small,
+blockquote p.citation
+cite,
+blockquote cite {
+  color: rgba(0, 0, 0, .4);
+  font-style: italic;
+  font-size: $font-size-small;
+  line-height: 1;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// =Address
+// ----------------------------------------------------------------------------
+address {
+  font-style: normal;
+}
+
+// =Text-level
+// ----------------------------------------------------------------------------
+s,
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted $color-black;
+  cursor: help;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sub,
+sup {
+  font-size: $font-size-smaller;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+figcaption {
+  margin: .3em 0;
+  font-size: $font-size-small;
+  font-style: italic;
+}
+
+ins,
+u {
+  text-decoration: underline;
+}
+
+mark {
+  background-color: $color-yellow;
+  color: $color-black;
+  text-decoration: none;
+}
+
+// =Code
+// ----------------------------------------------------------------------------
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+  font-size: 90%;
+  font-style: normal;
+  font-family: $font-family-code;
+}
+
+pre {
+  margin-top: $base-line;
+  font-size: 100%;
+  line-height: 1.5;
+  color: $color-body;
+  overflow: auto;
+}
+
+code,
+samp,
+kbd {
+  padding: 3px 6px 2px 6px;
+  display: inline-block;
+  line-height: 1;
+  border-radius: 2px;
+}
+
+code {
+  background: $color-code-background;
+  border: 1px solid $color-code-border;
+}
+
+pre code {
+  font-size: 100%;
+  border: none;
+  padding: 0;
+  background: none;
+  line-height: $base-line;
+}
+
+var {
+  color: rgba(0, 0, 0, .5);
+}
+
+samp {
+  background: $color-blue-pastel;
+  border: 1px solid darken($color-blue-pastel, 7%);
+}
+
+kbd {
+  background: $color-black;
+  color: rgba(255, 255, 255, .85);
+  white-space: nowrap;
+}

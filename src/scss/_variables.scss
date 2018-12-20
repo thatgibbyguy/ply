@@ -1,0 +1,49 @@
+// All project wide sass variables begin here.
+@import 'components/variables';
+@import 'components/colors';
+
+// ## OX Typography
+$ox-base-font: 'Roboto', $font-family-base; // "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+$ox-base-condensed: 'Roboto Condensed', 'Helvetica Neue Condensed', 'Arial Narrow', sans-serif;
+$ox-heading: 'Montserrat', $font-family-base; // "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+$ox-heading-weight: 700; // "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+$ox-monospace: $font-family-code; // Menlo, Monaco, Consolas, monospace;
+
+// ## Intralox Brand Colors
+$intralox-blue: #01244A;
+$intralox-blue--bright: lighten($intralox-blue, 5%);
+$intralox-red: #EC2027;
+
+// ## OX Text Colors
+$ox-blue: #00287B; // this is the primary action blue for this ui system
+$ox-link-blue: #0377BA; // used for all links
+$ox-link-active: #19174F;
+$ox-link-hover: $ox-blue;
+$ox-link-visited: #6F7CBC;
+$ox-footer-color: $color-black-light; // #363738
+$ox-text-color: $color-body; // #222 -- used for all body text
+$ox-heading-color: #01244A; // the default heading color
+/* for more colors, see plygrid's colors */
+
+// ## OX Input Colors
+$ox-input-border-color: #E3E3E3; // all border-colors use this
+$ox-input-placeholder-color: $color-gray-dark; // #9e9e9e -- used for placeholder and input icon colors
+$ox-input-label-color: $color-black-light; // #363738 -- non focused input label color
+$ox-input-label-color-focused: #42A4BA; // focused labels and borders
+$ox-input-background: $color-gray-pastel; // #F7F8F8 -- used for non focused backgrounds
+
+// ## OX Sizing
+$ox-base-font-size: $font-size-base; // 15/16px
+$ox-heading-size: $font-size-h2-lg; // 1.5em / 24px;
+$ox-base-spacing: $ox-base-font-size * 1.25; // 20px;
+$ox-base-input-padding: $ox-base-font-size * .75; // 12px -- applies to input value, labels, placeholders
+$ox-font-size-small: ($font-size-root * .75) + 0rem;
+/* for more font sizes, see plygrid's variables */
+
+// ## OX Shared Variables
+$nav-padding: $padding * 1.75;
+$nav-padding-extra: $padding * 2;
+
+// ## Colors
+$emphasized-color: #F5A623;
+$warning-color: $emphasized-color;

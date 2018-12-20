@@ -2,8 +2,258 @@
 	Author:
 */
 
-@import 'ply';
-
 // -----------------------------------------------
 //   Write Your Custom SCSS Below This Comment
 // -----------------------------------------------
+
+@import 'vendor';
+@import 'variables';
+@import 'helpers';
+@import 'mixins';
+@import 'base';
+
+// global header
+$intralox-logo-width: 98px;
+$light-nav-bg: rgba($color-white, 0.15);
+
+.ox-global-header {
+  background: $intralox-blue;
+  color: $color-white;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.navbar {
+  li {
+    margin-right: 0;
+
+    &:first-child {
+      a {
+        padding-left: $nav-padding-extra;
+        margin-left: 0;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $color-white;
+      }
+    }
+
+    &.navbar__callout {
+      margin-right: $padding;
+
+      a {
+        display: flex;
+        font-family: $ox-base-font;
+      }
+
+      &.lighter a {
+        background: $light-nav-bg;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: $breakpoint-phone) {
+        display: none;
+
+        &.lighter {
+          display: flex;
+        }
+      }
+    }
+
+    a {
+      color: $color-white;
+      font-weight: normal;
+      padding: $nav-padding;
+      position: relative;
+      font-size: $ox-font-size-small;
+
+      &::before {
+        @include transition;
+
+        content: '';
+        position: absolute;
+        height: 3px;
+        bottom: 1px;
+        left: 10%; // some weird jank but it works
+        width: 80%;
+        opacity: 0;
+      }
+
+      &:focus,
+      &:hover {
+        &::before {
+          content: '';
+          background: $intralox-red;
+          opacity: 1;
+        }
+      }
+    }
+
+    &.intralox-logo {
+      width: $intralox-logo-width;
+      margin-left: $padding / 2;
+
+      a::before,
+      a:hover::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.navbar--main {
+  .navbar__toggle {
+    display: none;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    position: relative;
+
+    .navbar__toggle {
+      @include transition;
+
+      background: $light-nav-bg;
+      display: flex;
+      align-items: center;
+      width: 44px;
+      height: 100%;
+      cursor: pointer;
+      z-index: 15;
+
+      i-menu {
+        color: $color-white;
+      }
+
+      &:hover,
+      &:focus,
+      &.show-nav {
+        background: $intralox-blue--bright;
+        border-right: 1px solid $light-nav-bg;
+      }
+    }
+
+    ul {
+      @include transition;
+
+      display: none;
+      opacity: 0;
+      left: -280px;
+
+      &.show-nav {
+        @include box-shadow(.1em, .1em, 2em, $color-black)
+
+        border-top: 1px solid $light-nav-bg;
+        display: block;
+        flex: none;
+        flex-flow: none;
+        position: absolute;
+        background: $intralox-blue--bright;
+        width: 280px;
+        left: 0;
+        opacity: 1;
+        z-index: 10;
+
+        li {
+          &:not(:first-child) a {
+            margin-left: 0;
+          }
+
+          a {
+            padding-left: $nav-padding-extra;
+          }
+
+          a::before {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.intralox-badge {
+  display: block;
+  width: $intralox-logo-width;
+  position: absolute;
+  top: 0;
+  right: $nav-padding;
+
+  // TODO - solve fill problem
+}
+
+.navbar-icon {
+  @include square(20px);
+  margin-right: $padding;
+}
+
+// product header
+
+.product-header {
+  @include box-shadow(0, .05em, .75em, $color-gray-dark);
+
+  display: flex;
+  align-items: center;
+  padding: 0 $nav-padding;
+  position: relative;
+  z-index: 5;
+
+  .product-header__h1 {
+    color: $intralox-red;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .navbar {
+    border-left: 1px solid $border-color;
+    margin-left: $nav-padding;
+    padding-left: $padding;
+
+    ul li a {
+      font-weight: normal;
+      font-size: .8rem;
+      color: $color-black-light;
+      padding: $nav-padding;
+    }
+  }
+}
+
+.ox-global-footer {
+  padding: $padding;
+  border-bottom: 5px solid $intralox-blue;
+  display: flex;
+  justify-content: space-between;
+  font-family: $ox-base-condensed;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.home-callout-image {
+  @include box-shadow(4em, 4em, 7em, rgba(15, 15, 10, .5));
+
+  margin: $ox-base-spacing * 3 0 0 $ox-base-spacing * 3;
+  border-radius: 5px;
+}
+
+.feather {
+  stroke: currentColor;
+  fill: transparent;
+  stroke-width: 2px;
+}
+
+i-phone .feather {
+  fill: currentColor;
+  stroke-width: 0;
+}
