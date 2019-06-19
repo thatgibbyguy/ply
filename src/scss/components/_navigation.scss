@@ -25,7 +25,7 @@ nav {
   }
 
   a,
-  span {
+  > span {
     box-sizing: border-box;
     color: $color-blue-dark;
     display: block;
