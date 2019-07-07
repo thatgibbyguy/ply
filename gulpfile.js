@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     concat = require('gulp-concat');
 
-gulp.task('ply', function() {
+gulp.task('ply', () => {
   gulp.src('./src/scss/ply-iso.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
@@ -16,7 +16,7 @@ gulp.task('ply', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('plyEssentials', function() {
+gulp.task('plyEssentials', () => {
   gulp.src('./src/scss/ply-essentials.scss')
   .pipe(sass({
     outputStyle: 'compressed'
@@ -28,7 +28,7 @@ gulp.task('plyEssentials', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('plyHelpers', function() {
+gulp.task('plyHelpers', () => {
   gulp.src('./src/scss/ply-helpers.scss')
   .pipe(sass({
     outputStyle: 'compressed'
@@ -40,7 +40,7 @@ gulp.task('plyHelpers', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('plyMin', function() {
+gulp.task('plyMin', () => {
   gulp.src('./src/scss/ply-iso.scss')
   .pipe(sass({
     outputStyle: 'compressed'
@@ -52,7 +52,7 @@ gulp.task('plyMin', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   gulp.src('./src/scss/styles.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer(
@@ -61,7 +61,7 @@ gulp.task('styles', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('stylesMin', function() {
+gulp.task('stylesMin', () => {
   gulp.src('./src/scss/styles.scss')
   .pipe(sass({
     outputStyle: 'compressed'
@@ -73,6 +73,6 @@ gulp.task('stylesMin', function() {
   .pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('default',function() {
+gulp.task('default',() => {
   gulp.watch('./src/scss/styles.scss',['styles','stylesMin','plyEssentials']);
 });

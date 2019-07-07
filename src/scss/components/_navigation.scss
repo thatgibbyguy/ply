@@ -15,7 +15,7 @@ nav {
   border-bottom: 1px solid $color-blue-dark;
   box-sizing: border-box;
   font-size: 1em;
-  
+
   ul {
     list-style: none;
     margin: 0;
@@ -25,7 +25,7 @@ nav {
   }
 
   a,
-  span {
+  > span {
     box-sizing: border-box;
     color: $color-blue-dark;
     display: block;
@@ -141,11 +141,11 @@ nav {
       color: $color-blue-dark;
     }
   }
-  
+
   &.navigation-toggle-show {
     margin-bottom: $base-line;
   }
-  
+
   & span {
     position: relative;
     z-index: 2;
@@ -185,7 +185,7 @@ nav {
   li {
     margin-right: 1px;
   }
-  
+
   &.navbar-right li {
     margin-left: 1px;
   }
