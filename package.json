@@ -2,9 +2,8 @@
   "name": "plygrid",
   "version": "0.8.1",
   "description": "ply - A ratio based CSS grid framework",
-  "main": "lib/index.js",
+  "main": "dist/css/ply.css",
   "directories": {
-    "lib": "lib/",
     "dist": "dist/"
   },
   "repository": {
@@ -13,27 +12,30 @@
   },
   "homepage": "https://github.com/thatgibbyguy/ply",
   "devDependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-util": "^3.0.7",
-    "map-stream": "0.0.6",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.86.0"
   },
   "bugs": {
     "url": "https://github.com/thatgibbyguy/ply/issues"
   },
-  "dependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildDis": "gulp ply plyEssentials plyHelpers plyMin styles stylesMin"
+    "build:ply": "sass src/scss/ply-iso.scss dist/css/ply.css --no-source-map",
+    "build:ply-min": "sass src/scss/ply-iso.scss dist/css/ply.min.css --no-source-map --style=compressed",
+    "build:essentials": "sass src/scss/ply-essentials.scss dist/css/ply-essentials.min.css --no-source-map --style=compressed",
+    "build:helpers": "sass src/scss/ply-helpers.scss dist/css/ply-helpers.min.css --no-source-map --style=compressed",
+    "build:styles": "sass src/scss/styles.scss dist/css/styles.css --no-source-map",
+    "build:styles-min": "sass src/scss/styles.scss dist/css/styles.min.css --no-source-map --style=compressed",
+    "build:sass": "npm run build:ply && npm run build:ply-min && npm run build:essentials && npm run build:helpers && npm run build:styles && npm run build:styles-min",
+    "postbuild:sass": "postcss dist/css/*.css --replace --no-map",
+    "build": "npm run build:sass",
+    "watch": "sass --watch src/scss/styles.scss:dist/css/styles.css src/scss/styles.scss:dist/css/styles.min.css src/scss/ply-essentials.scss:dist/css/ply-essentials.min.css --no-source-map"
   },
   "author": "John Gibby",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
 }
