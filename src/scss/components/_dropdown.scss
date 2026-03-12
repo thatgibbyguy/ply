@@ -1,3 +1,5 @@
+@use "colors";
+
 /* =Dropdown
 -----------------------------------------------------------------------------*/
 .dropdown {
@@ -7,8 +9,8 @@
   top: 0;
   right: 0;
   width: 250px;
-  color: $color-black;
-  background: $color-white;
+  color: colors.$color-black;
+  background: colors.$color-white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
   overflow: auto;
 
@@ -35,7 +37,7 @@ ul.dropdown {
     display: block;
     padding: 7px 15px;
     text-decoration: none;
-    color: $color-black;
+    color: colors.$color-black;
     &:hover {
       background: #eee;
     }

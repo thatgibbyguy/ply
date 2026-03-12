@@ -1,26 +1,33 @@
+@use "sass:math";
+
+@use "sass:color";
+@use "colors";
+@use "mixins";
+@use "variables";
+
 // =Typography
 // ----------------------------------------------------------------------------
 body {
-  @include square;
+  @include mixins.square;
 
-  background: $background-body;
-  color: $color-body;
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $base-line;
+  background: colors.$background-body;
+  color: colors.$color-body;
+  font-family: variables.$font-family-base;
+  font-size: variables.$font-size-base;
+  line-height: variables.$base-line;
   overflow: auto;
 }
 
 // =Links
 // ----------------------------------------------------------------------------
 a {
-  @include transition;
+  @include mixins.transition;
 
-  color: $color-link;
+  color: colors.$color-link;
 
   &:focus,
   &:hover {
-    color: $color-link-hover;
+    color: colors.$color-link-hover;
   }
 }
 
@@ -38,9 +45,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: $color-headings;
-  font-family: $font-family-headings;
-  font-weight: $header-font-weight;
+  color: colors.$color-headings;
+  font-family: variables.$font-family-headings;
+  font-weight: variables.$header-font-weight;
   margin: 0 0 .5em;
   text-rendering: optimizeLegibility;
 }
@@ -61,34 +68,34 @@ h4,
 
 h1,
 .h1 {
-  font-size: $font-size-h1-lg;
+  font-size: variables.$font-size-h1-lg;
 }
 
 h2,
 .h2 {
-  font-size: $font-size-h2-lg;
+  font-size: variables.$font-size-h2-lg;
   margin-bottom: .7em;
 }
 
 h3,
 .h3 {
-  font-size: $font-size-h3-lg;
+  font-size: variables.$font-size-h3-lg;
 }
 
 h4,
 .h4 {
-  font-size: $font-size-h4-lg;
+  font-size: variables.$font-size-h4-lg;
 }
 
 h5,
 .h5 {
-  font-size: $font-size-h5-lg;
+  font-size: variables.$font-size-h5-lg;
   font-weight: normal;
 }
 
 h6,
 .h6 {
-  font-size: $font-size-h6-lg;
+  font-size: variables.$font-size-h6-lg;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -98,9 +105,9 @@ h6,
 // ----------------------------------------------------------------------------
 .lead-subhead,
 .lead {
-  font-size: $font-size-lead;
-  line-height: $line-height-lead;
-  margin-bottom: $base-line / 1.5;
+  font-size: variables.$font-size-lead;
+  line-height: variables.$line-height-lead;
+  margin-bottom: math.div(variables.$base-line, 1.5);
 }
 
 // =Line height and margin
@@ -114,7 +121,7 @@ dt,
 blockquote,
 td,
 th {
-  line-height: $base-line;
+  line-height: variables.$base-line;
 }
 
 ul,
@@ -123,7 +130,7 @@ ul ul,
 ol ol,
 ul ol,
 ol ul {
-  margin: 0 0 0 $base-line * 2;
+  margin: 0 0 0 variables.$base-line * 2;
 }
 
 ul li,
@@ -147,7 +154,7 @@ dl dt {
 }
 
 dd {
-  margin-left: $base-line;
+  margin-left: variables.$base-line;
 }
 
 p,
@@ -162,7 +169,7 @@ form,
 fieldset,
 figure,
 address {
-  margin-bottom: $base-line;
+  margin-bottom: variables.$base-line;
 }
 
 // =Blockquote
@@ -171,9 +178,9 @@ blockquote {
   position: relative;
   font-style: italic;
   font-size: 1.125em;
-  margin-left: $base-line * 1.5;
-  padding-left: $base-line;
-  border-left: 2px solid $color-blockquote-border;
+  margin-left: variables.$base-line * 1.5;
+  padding-left: variables.$base-line;
+  border-left: 2px solid colors.$color-blockquote-border;
 
   p {
     margin-bottom: .5em;
@@ -188,7 +195,7 @@ cite,
 blockquote cite {
   color: rgba(0, 0, 0, .4);
   font-style: italic;
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
   line-height: 1;
 
   a {
@@ -212,7 +219,7 @@ del {
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted $color-black;
+  border-bottom: 1px dotted colors.$color-black;
   cursor: help;
 }
 
@@ -228,7 +235,7 @@ i {
 
 sub,
 sup {
-  font-size: $font-size-smaller;
+  font-size: variables.$font-size-smaller;
   line-height: 0;
   position: relative;
 }
@@ -243,7 +250,7 @@ sub {
 
 figcaption {
   margin: .3em 0;
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
   font-style: italic;
 }
 
@@ -253,8 +260,8 @@ u {
 }
 
 mark {
-  background-color: $color-yellow;
-  color: $color-black;
+  background-color: colors.$color-yellow;
+  color: colors.$color-black;
   text-decoration: none;
 }
 
@@ -268,14 +275,14 @@ var,
 output {
   font-size: 90%;
   font-style: normal;
-  font-family: $font-family-code;
+  font-family: variables.$font-family-code;
 }
 
 pre {
-  margin-top: $base-line;
+  margin-top: variables.$base-line;
   font-size: 100%;
   line-height: 1.5;
-  color: $color-body;
+  color: colors.$color-body;
   overflow: auto;
 }
 
@@ -289,8 +296,8 @@ kbd {
 }
 
 code {
-  background: $color-code-background;
-  border: 1px solid $color-code-border;
+  background: colors.$color-code-background;
+  border: 1px solid colors.$color-code-border;
 }
 
 pre code {
@@ -298,7 +305,7 @@ pre code {
   border: none;
   padding: 0;
   background: none;
-  line-height: $base-line;
+  line-height: variables.$base-line;
 }
 
 var {
@@ -306,12 +313,12 @@ var {
 }
 
 samp {
-  background: $color-blue-pastel;
-  border: 1px solid darken($color-blue-pastel, 7%);
+  background: colors.$color-blue-pastel;
+  border: 1px solid color.adjust(colors.$color-blue-pastel, $lightness: -7%);
 }
 
 kbd {
-  background: $color-black;
+  background: colors.$color-black;
   color: rgba(255, 255, 255, .85);
   white-space: nowrap;
 }
@@ -325,7 +332,7 @@ button:focus {
 
 textarea,
 select {
-  font-family: $font-family-controls;
+  font-family: variables.$font-family-controls;
   font-size: 1em;
   box-shadow: none;
 }
@@ -333,7 +340,7 @@ select {
 textarea,
 select[multiple],
 select[multiple="multiple"] {
-  padding: $padding-input;
+  padding: variables.$padding-input;
   line-height: 1.35em;
   width: 100%;
 }
@@ -352,11 +359,11 @@ input[type="color"],
 input[type="time"],
 input[type="search"],
 input[type="datetime-local"] {
-  font-family: $font-family-controls;
+  font-family: variables.$font-family-controls;
   font-size: 1em;
   box-shadow: none;
-  padding: $padding-input;
-  line-height: $base-line;
+  padding: variables.$padding-input;
+  line-height: variables.$base-line;
   border-radius: 0;
   outline: none;
 }
@@ -378,8 +385,8 @@ input[type="color"],
 input[type="time"],
 input[type="search"],
 input[type="datetime-local"] {
-  background: $color-white;
-  border: 1px solid $color-input-border;
+  background: colors.$color-white;
+  border: 1px solid colors.$color-input-border;
   position: relative;
   z-index: 2;
   -webkit-appearance: none;
@@ -430,9 +437,9 @@ select {
 }
 
 fieldset {
-  padding: $base-line;
-  margin-bottom: $base-line;
-  border: 1px solid $color-fieldset-border;
+  padding: variables.$base-line;
+  margin-bottom: variables.$base-line;
+  border: 1px solid colors.$color-fieldset-border;
   & *:last-child {
     margin-bottom: 0 !important;
   }
@@ -454,15 +461,15 @@ table {
 
   caption {
     text-transform: uppercase;
-    padding: 0 $base-line / 1.5;
+    padding: 0 math.div(variables.$base-line, 1.5);
     color: rgba(0, 0, 0, .4);
-    font-size: $font-size-small;
+    font-size: variables.$font-size-small;
   }
 
   th,
   td {
-    border-bottom: 1px solid $color-table-border;
-    padding: $base-line / 2 $base-line / 1.5;
+    border-bottom: 1px solid colors.$color-table-border;
+    padding: variables.$base-line * 0.5 math.div(variables.$base-line, 1.5);
   }
 
   tfoot th,
@@ -477,62 +484,62 @@ table {
 // Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
   h1 {
-    font-size: $font-size-h1-md;
+    font-size: variables.$font-size-h1-md;
     line-height: 1.125;
   }
 
   h2 {
-    font-size: $font-size-h2-md;
+    font-size: variables.$font-size-h2-md;
     line-height: 1.25;
   }
 
   h3 {
-    font-size: $font-size-h3-md;
+    font-size: variables.$font-size-h3-md;
     line-height: 1.25;
   }
 
   h4 {
-    font-size: $font-size-h4-md;
+    font-size: variables.$font-size-h4-md;
     line-height: 1.22222222;
   }
 
   h5 {
-    font-size: $font-size-h5-md;
+    font-size: variables.$font-size-h5-md;
   }
 
   h6 {
-    font-size: $font-size-h6-md;
+    font-size: variables.$font-size-h6-md;
   }
 }
 
 // Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   h1 {
-    font-size: $font-size-h1-sm;
+    font-size: variables.$font-size-h1-sm;
     line-height: 1.25;
   }
 
   h2 {
-    font-size: $font-size-h2-sm;
+    font-size: variables.$font-size-h2-sm;
     line-height: 1.15384615;
   }
 
   h3 {
-    font-size: $font-size-h3-sm;
+    font-size: variables.$font-size-h3-sm;
     line-height: 1.13636364;
   }
 
   h4 {
-    font-size: $font-size-h4-sm;
+    font-size: variables.$font-size-h4-sm;
     line-height: 1.11111111;
   }
 
   h5 {
-    font-size: $font-size-h5-sm;
+    font-size: variables.$font-size-h5-sm;
   }
 
   h6 {
-    font-size: $font-size-h6-sm;
+    font-size: variables.$font-size-h6-sm;
   }
 
   .lead,
@@ -546,7 +553,7 @@ table {
   ol ol,
   ul ol,
   ol ul {
-    margin-left: $base-line;
+    margin-left: variables.$base-line;
   }
 
   blockquote {

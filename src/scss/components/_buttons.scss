@@ -1,3 +1,9 @@
+@use "sass:color";
+@use "colors";
+@use "cursors";
+@use "mixins";
+@use "variables";
+
 /* =Buttons
 -----------------------------------------------------------------------------*/
 .btn,
@@ -10,33 +16,33 @@ button.btn {
   display: inline-block;
   vertical-align: top;
 
-  font-family: $font-family-controls;
+  font-family: variables.$font-family-controls;
   font-size: 1em;
   font-weight: 400;
 
-  line-height: $base-line;
+  line-height: variables.$base-line;
 
   text-align: center;
   text-decoration: none;
-  color: $color-body;
+  color: colors.$color-body;
 
   -webkit-appearance: none;
 
   outline: none;
   margin: 0;
   border: none;
-  border-radius: $button-radius;
+  border-radius: variables.$button-radius;
   box-shadow: none;
   cursor: pointer;
-  background: $color-gray;
-  padding: $padding-btn;
+  background: colors.$color-gray;
+  padding: variables.$padding-btn;
 
   &:hover {
-    background: $color-gray-dark;
+    background: colors.$color-gray-dark;
   }
 
   &[class*='unit-'] {
-    margin: auto $grid-gutter-width;
+    margin: auto variables.$grid-gutter-width;
   }
 }
 
@@ -50,7 +56,7 @@ input[type="submit"].btn-big,
 input[type="button"].btn-big,
 input[type="reset"].btn-big,
 button.btn-big {
-  font-size: $font-size-big;
+  font-size: variables.$font-size-big;
 }
 
 .btn-small,
@@ -58,14 +64,14 @@ input[type="submit"].btn-small,
 input[type="button"].btn-small,
 input[type="reset"].btn-small,
 button.btn-small {
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
 }
 .btn-smaller,
 input[type="submit"].btn-smaller,
 input[type="button"].btn-smaller,
 input[type="reset"].btn-smaller,
 button.btn-smaller {
-  font-size: $font-size-smaller;
+  font-size: variables.$font-size-smaller;
   vertical-align: baseline;
 }
 
@@ -75,34 +81,34 @@ input[type="button"].btn-outline,
 input[type="reset"].btn-outline,
 button.btn-outline {
   background: none;
-  padding: $padding-btn-outline;
-  border: 1px solid $color-black;
-  color: $color-black;
+  padding: variables.$padding-btn-outline;
+  border: 1px solid colors.$color-black;
+  color: colors.$color-black;
 
   &:hover {
-    border-color: $color-gray-dark;
+    border-color: colors.$color-gray-dark;
   }
 }
 
 .btn-outline.btn-active {
-  padding: $padding-btn;
+  padding: variables.$padding-btn;
 }
 
 .btn-outline.bold {
   border-width: 2px;
-  padding: $padding-btn-outline-bold;
+  padding: variables.$padding-btn-outline-bold;
 }
 
 .btn-active,
 .btn[disabled],
 .btn-disabled {
   background: none;
-  background: $color-gray-dark;
+  background: colors.$color-gray-dark;
   color: rgba(0, 0, 0, .5);
 
   &:hover {
     color: rgba(0, 0, 0, .5);
-    background: $color-gray-dark;
+    background: colors.$color-gray-dark;
   }
 }
 
@@ -141,7 +147,7 @@ input[type="submit"].btn-blue,
 input[type="button"].btn-blue,
 input[type="reset"].btn-blue,
 button.btn-blue {
-  @include create-button($color-blue, $color-blue-dark, #fff);
+  @include mixins.create-button(colors.$color-blue, colors.$color-blue-dark, #fff);
 }
 
 .btn-blue--dark,
@@ -149,7 +155,7 @@ input[type="submit"].btn-blue--dark,
 input[type="button"].btn-blue--dark,
 input[type="reset"].btn-blue--dark,
 button.btn-blue--dark {
-  @include create-button(darken($color-blue-dark, 10%), $color-blue-dark, #fff);
+  @include mixins.create-button(color.adjust(colors.$color-blue-dark, $lightness: -10%), colors.$color-blue-dark, #fff);
 }
 
 .btn-red,
@@ -157,7 +163,7 @@ input[type="submit"].btn-red,
 input[type="button"].btn-red,
 input[type="reset"].btn-red,
 button.btn-red {
-  @include create-button($color-red, $color-red-dark, #fff);
+  @include mixins.create-button(colors.$color-red, colors.$color-red-dark, #fff);
 }
 
 .btn-green,
@@ -165,7 +171,7 @@ input[type="submit"].btn-green,
 input[type="button"].btn-green,
 input[type="reset"].btn-green,
 button.btn-green {
-  @include create-button($color-green, $color-green-dark, #fff);
+  @include mixins.create-button(colors.$color-green, colors.$color-green-dark, #fff);
 }
 
 .btn-black,
@@ -173,7 +179,7 @@ input[type="submit"].btn-black,
 input[type="button"].btn-black,
 input[type="reset"].btn-black,
 button.btn-black {
-  @include create-button($color-black, $color-black-light, #fff, .7);
+  @include mixins.create-button(colors.$color-black, colors.$color-black-light, #fff, .7);
 }
 
 .btn-yellow,
@@ -181,7 +187,7 @@ input[type="submit"].btn-yellow,
 input[type="button"].btn-yellow,
 input[type="reset"].btn-yellow,
 button.btn-yellow {
-  @include create-button($color-yellow, $color-yellow-dark, #000);
+  @include mixins.create-button(colors.$color-yellow, colors.$color-yellow-dark, #000);
 }
 
 .btn-white,
@@ -189,7 +195,7 @@ input[type="submit"].btn-white,
 input[type="button"].btn-white,
 input[type="reset"].btn-white,
 button.btn-white {
-  @include create-button($color-white, darken(#fff, 7%), #000, 1);
+  @include mixins.create-button(colors.$color-white, color.adjust(#fff, $lightness: -7%), #000, 1);
 }
 
 .btn-white,
@@ -198,14 +204,14 @@ input[type="button"].btn-white,
 input[type="reset"].btn-white,
 button.btn-white {
   &.btn-outline {
-    border: 1px solid $color-black;
-    color: $color-black;
+    border: 1px solid colors.$color-black;
+    color: colors.$color-black;
   }
 
   &.btn-outline.btn-active {
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, .3);
-    padding: $padding-btn-outline;
+    padding: variables.$padding-btn-outline;
   }
 }
 
@@ -255,10 +261,10 @@ button.btn-white {
     border-radius: 0;
 
     &:first-child {
-      border-radius: ($border-radius / 2) 0 0 ($border-radius / 2);
+      border-radius: (variables.$border-radius * 0.5) 0 0 (variables.$border-radius * 0.5);
     }
     &:last-child {
-      border-radius: 0 ($border-radius / 2) ($border-radius / 2) 0;
+      border-radius: 0 (variables.$border-radius * 0.5) (variables.$border-radius * 0.5) 0;
     }
   }
 
@@ -266,10 +272,10 @@ button.btn-white {
     .btn,
     .input-search {
       &:first-child {
-        border-radius: ($border-radius * 2) 0 0 ($border-radius * 2);
+        border-radius: (variables.$border-radius * 2) 0 0 (variables.$border-radius * 2);
       }
       &:last-child {
-        border-radius: 0 ($border-radius * 2) ($border-radius * 2) 0;
+        border-radius: 0 (variables.$border-radius * 2) (variables.$border-radius * 2) 0;
       }
     }
   }

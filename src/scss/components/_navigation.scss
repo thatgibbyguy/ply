@@ -1,3 +1,7 @@
+@use "colors";
+@use "mixins";
+@use "variables";
+
 /* =Navs
 -----------------------------------------------------------------------------*/
 // Nav element reset
@@ -11,8 +15,8 @@ nav {
 
 /* NavBar */
 .navbar {
-  background: $color-white;
-  border-bottom: 1px solid $color-blue-dark;
+  background: colors.$color-white;
+  border-bottom: 1px solid colors.$color-blue-dark;
   box-sizing: border-box;
   font-size: 1em;
 
@@ -27,32 +31,32 @@ nav {
   a,
   > span {
     box-sizing: border-box;
-    color: $color-blue-dark;
+    color: colors.$color-blue-dark;
     display: block;
     font-weight: bold;
-    padding: $padding;
+    padding: variables.$padding;
     text-decoration: none;
   }
 
   li {
-    @include box-sizing;
+    @include mixins.box-sizing;
 
-    margin-right: $base-line / 2;
+    margin-right: variables.$base-line * 0.5;
 
     &:hover {
       a {
-        color: $color-link-hover;
+        color: colors.$color-link-hover;
         text-decoration: none;
       }
     }
 
     &:not(:first-child) a {
-      margin-left: -$padding;
+      margin-left: -(variables.$padding);
     }
 
     &.on a,
     &.on span {
-      border-bottom: 3px solid $color-blue-dark;
+      border-bottom: 3px solid colors.$color-blue-dark;
       text-decoration: none;
       cursor: text;
       color: rgba(0, 0, 0, .4);
@@ -72,12 +76,12 @@ nav {
 
     li {
       margin-right: 0;
-      margin-left: $base-line;
+      margin-left: variables.$base-line;
     }
   }
 
   &.navbar--vertical {
-    border: 1px solid $color-blue-dark;
+    border: 1px solid colors.$color-blue-dark;
 
     ul {
       display: inline-block;
@@ -89,7 +93,7 @@ nav {
 
       &.on a,
       span {
-        background: $color-gray-pastel;
+        background: colors.$color-gray-pastel;
         border-bottom: 0 none;
         text-decoration: none;
         cursor: text;
@@ -103,20 +107,20 @@ nav {
 }
 
 .navigation-toggle {
-  @include transition();
-  @include box-sizing();
+  @include mixins.transition();
+  @include mixins.box-sizing();
 
-  background-color: $color-white;
-  border: 1px solid $color-white;
-  color: $color-blue-dark;
+  background-color: colors.$color-white;
+  border: 1px solid colors.$color-white;
+  color: colors.$color-blue-dark;
   display: inline-block;
   text-transform: uppercase;
   position: relative;
 
   &:hover {
-    background-color: $color-gray-pastel;
-    border: 1px solid $color-blue-dark;
-    box-shadow: .15em .15em 0 $color-blue-dark;
+    background-color: colors.$color-gray-pastel;
+    border: 1px solid colors.$color-blue-dark;
+    box-shadow: .15em .15em 0 colors.$color-blue-dark;
   }
 
   &:after {
@@ -131,19 +135,19 @@ nav {
   }
 
   &.navigation-toggle-solid {
-    background-color: $color-blue-dark;
-    border: 1px solid $color-blue-dark;
-    color: $color-white;
+    background-color: colors.$color-blue-dark;
+    border: 1px solid colors.$color-blue-dark;
+    color: colors.$color-white;
 
     &:hover {
-      background-color: $color-gray-pastel;
-      box-shadow: .15em .15em 0 $color-blue-dark;
-      color: $color-blue-dark;
+      background-color: colors.$color-gray-pastel;
+      box-shadow: .15em .15em 0 colors.$color-blue-dark;
+      color: colors.$color-blue-dark;
     }
   }
 
   &.navigation-toggle-show {
-    margin-bottom: $base-line;
+    margin-bottom: variables.$base-line;
   }
 
   & span {
@@ -166,11 +170,11 @@ nav {
 .navbar-pills {
   a,
   span {
-    padding: $base-line/2 $base-line;
+    padding: variables.$base-line*0.5 variables.$base-line;
   }
 
   a:hover {
-    color: $color-black;
+    color: colors.$color-black;
     background: #eee;
   }
 
@@ -211,7 +215,7 @@ nav {
 
   li.active a,
   span {
-    background: $color-white;
+    background: colors.$color-white;
     text-decoration: none;
     cursor: text;
     color: rgba(0, 0, 0, .3);
@@ -249,8 +253,8 @@ nav {
 -----------------------------------------------------------------------------*/
 .nav-tabs {
   border-bottom: 1px solid #e3e3e3;
-  margin-bottom: $base-line;
-  @include clearfix;
+  margin-bottom: variables.$base-line;
+  @include mixins.clearfix;
 
   & ul {
     list-style: none;
@@ -264,7 +268,7 @@ nav {
   & span {
     display: block;
     line-height: 1;
-    padding: $base-line/2 $base-line;
+    padding: variables.$base-line*0.5 variables.$base-line;
     border: 1px solid transparent;
   }
   & a {
@@ -272,14 +276,14 @@ nav {
     text-decoration: none;
     &:focus,
     &:hover {
-      color: $color-black;
+      color: colors.$color-black;
       text-decoration: underline;
       background-color: #eee;
     }
   }
   & li.active a,
   & span {
-    color: $color-black;
+    color: colors.$color-black;
     background: #fff;
     position: relative;
     border: 1px solid #ddd;
@@ -294,15 +298,15 @@ nav {
 /* =Breadcrumbs
 -----------------------------------------------------------------------------*/
 .breadcrumbs {
-  margin-bottom: $base-line;
-  @include clearfix;
+  margin-bottom: variables.$base-line;
+  @include mixins.clearfix;
 
   & ul {
     font-size: .9em;
     color: rgba(0, 0, 0, .4);
     list-style: none;
     margin: 0;
-    @include clearfix;
+    @include mixins.clearfix;
   }
   & li {
     float: left;
@@ -321,10 +325,10 @@ nav {
     top: 0;
   }
   & a {
-    color: $color-black;
+    color: colors.$color-black;
     text-decoration: none;
     &:hover {
-      color: $color-black;
+      color: colors.$color-black;
       text-decoration: underline;
     }
   }
@@ -347,7 +351,7 @@ nav {
   left: -9px;
   margin-left: 0;
   list-style: none;
-  @include clearfix;
+  @include mixins.clearfix;
 
   & li {
     float: left;
@@ -359,20 +363,20 @@ nav {
     padding: 7px 9px;
     line-height: 1;
     border-radius: 2px;
-    color: $color-black;
+    color: colors.$color-black;
     text-decoration: none;
   }
   & span,
   & li.active a,
   & li.active a:hover {
-    color: $color-white;
-    background-color: $color-black;
+    color: colors.$color-white;
+    background-color: colors.$color-black;
     cursor: text;
   }
   & a:focus,
   & a:hover {
     text-decoration: none;
-    background-color: $color-black;
+    background-color: colors.$color-black;
     color: #fff;
   }
 

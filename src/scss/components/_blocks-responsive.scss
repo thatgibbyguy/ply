@@ -1,3 +1,8 @@
+@use "sass:math";
+
+@use "mixins";
+@use "variables";
+
 /* =Blocks Responsive
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
@@ -8,7 +13,7 @@
   .blocks-5,
   .blocks-6 {
     margin-left: 0;
-    margin-bottom: $base-line;
+    margin-bottom: variables.$base-line;
   }
 
   .blocks-2 > li,
@@ -24,18 +29,18 @@
   .blocks-mobile-50 > li,
   .blocks-mobile-33 > li {
     float: left;
-    margin-left: $grid-gutter-width / ( $grid-width / 100) * .01;
+    margin-left: math.div(variables.$grid-gutter-width, ( variables.$grid-width * 0.01)) * .01;
   }
   .blocks-mobile-33,
   .blocks-mobile-50 {
-    margin-left: -$grid-gutter-width / ( $grid-width / 100) * .01;
+    margin-left: math.div(-(variables.$grid-gutter-width), ( variables.$grid-width * 0.01)) * .01;
   }
 
   .blocks-mobile-50 > li {
-    @include block(2);
+    @include mixins.block(2);
   }
   .blocks-mobile-33 > li {
-    @include block(3);
+    @include mixins.block(3);
   }
 
 

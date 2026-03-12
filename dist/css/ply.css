@@ -276,20 +276,12 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-@keyframes spinning {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* =Cursor Helpers
 -----------------------------------------------------------------------------*/
 .cursor-pointer,
 .cursor-finger,
-.fancy-select,
-.form label {
+.form label,
+.fancy-select {
   cursor: pointer;
 }
 
@@ -346,81 +338,21 @@ img {
 }
 
 .cursor-not-allowed,
-.btn-white.btn-active,
-.btn-white.btn-disabled,
-.btn-white.btn[disabled],
-input[type=submit].btn-white.btn-active,
-input[type=submit].btn-white.btn-disabled,
-input[type=submit].btn-white.btn[disabled],
-input[type=button].btn-white.btn-active,
-input[type=button].btn-white.btn-disabled,
-input[type=button].btn-white.btn[disabled],
-input[type=reset].btn-white.btn-active,
-input[type=reset].btn-white.btn-disabled,
-input[type=reset].btn-white.btn[disabled],
-button.btn-white.btn-active,
-button.btn-white.btn-disabled,
-button.btn-white.btn[disabled],
-.btn-yellow.btn-active,
-.btn-yellow.btn-disabled,
-.btn-yellow.btn[disabled],
-input[type=submit].btn-yellow.btn-active,
-input[type=submit].btn-yellow.btn-disabled,
-input[type=submit].btn-yellow.btn[disabled],
-input[type=button].btn-yellow.btn-active,
-input[type=button].btn-yellow.btn-disabled,
-input[type=button].btn-yellow.btn[disabled],
-input[type=reset].btn-yellow.btn-active,
-input[type=reset].btn-yellow.btn-disabled,
-input[type=reset].btn-yellow.btn[disabled],
-button.btn-yellow.btn-active,
-button.btn-yellow.btn-disabled,
-button.btn-yellow.btn[disabled],
-.btn-black.btn-active,
-.btn-black.btn-disabled,
-.btn-black.btn[disabled],
-input[type=submit].btn-black.btn-active,
-input[type=submit].btn-black.btn-disabled,
-input[type=submit].btn-black.btn[disabled],
-input[type=button].btn-black.btn-active,
-input[type=button].btn-black.btn-disabled,
-input[type=button].btn-black.btn[disabled],
-input[type=reset].btn-black.btn-active,
-input[type=reset].btn-black.btn-disabled,
-input[type=reset].btn-black.btn[disabled],
-button.btn-black.btn-active,
-button.btn-black.btn-disabled,
-button.btn-black.btn[disabled],
-.btn-green.btn-active,
-.btn-green.btn-disabled,
-.btn-green.btn[disabled],
-input[type=submit].btn-green.btn-active,
-input[type=submit].btn-green.btn-disabled,
-input[type=submit].btn-green.btn[disabled],
-input[type=button].btn-green.btn-active,
-input[type=button].btn-green.btn-disabled,
-input[type=button].btn-green.btn[disabled],
-input[type=reset].btn-green.btn-active,
-input[type=reset].btn-green.btn-disabled,
-input[type=reset].btn-green.btn[disabled],
-button.btn-green.btn-active,
-button.btn-green.btn-disabled,
-button.btn-green.btn[disabled],
-.btn-red.btn-active,
-.btn-red.btn-disabled,
-.btn-red.btn[disabled],
-input[type=submit].btn-red.btn-active,
-input[type=submit].btn-red.btn-disabled,
-input[type=submit].btn-red.btn[disabled],
-input[type=button].btn-red.btn-active,
-input[type=button].btn-red.btn-disabled,
-input[type=button].btn-red.btn[disabled],
-input[type=reset].btn-red.btn-active,
-input[type=reset].btn-red.btn-disabled,
-input[type=reset].btn-red.btn[disabled],
-button.btn-red.btn-active,
-button.btn-red.btn-disabled,
-button.btn-red.btn[disabled],
+.btn-blue.btn-active,
+.btn-blue.btn-disabled,
+.btn-blue.btn[disabled],
+input[type=submit].btn-blue.btn-active,
+input[type=submit].btn-blue.btn-disabled,
+input[type=submit].btn-blue.btn[disabled],
+input[type=button].btn-blue.btn-active,
+input[type=button].btn-blue.btn-disabled,
+input[type=button].btn-blue.btn[disabled],
+input[type=reset].btn-blue.btn-active,
+input[type=reset].btn-blue.btn-disabled,
+input[type=reset].btn-blue.btn[disabled],
+button.btn-blue.btn-active,
+button.btn-blue.btn-disabled,
+button.btn-blue.btn[disabled],
 .btn-blue--dark.btn-active,
 .btn-blue--dark.btn-disabled,
 .btn-blue--dark.btn[disabled],
@@ -436,21 +368,81 @@ input[type=reset].btn-blue--dark.btn[disabled],
 button.btn-blue--dark.btn-active,
 button.btn-blue--dark.btn-disabled,
 button.btn-blue--dark.btn[disabled],
-.btn-blue.btn-active,
-.btn-blue.btn-disabled,
-.btn-blue.btn[disabled],
-input[type=submit].btn-blue.btn-active,
-input[type=submit].btn-blue.btn-disabled,
-input[type=submit].btn-blue.btn[disabled],
-input[type=button].btn-blue.btn-active,
-input[type=button].btn-blue.btn-disabled,
-input[type=button].btn-blue.btn[disabled],
-input[type=reset].btn-blue.btn-active,
-input[type=reset].btn-blue.btn-disabled,
-input[type=reset].btn-blue.btn[disabled],
-button.btn-blue.btn-active,
-button.btn-blue.btn-disabled,
-button.btn-blue.btn[disabled] {
+.btn-red.btn-active,
+.btn-red.btn-disabled,
+.btn-red.btn[disabled],
+input[type=submit].btn-red.btn-active,
+input[type=submit].btn-red.btn-disabled,
+input[type=submit].btn-red.btn[disabled],
+input[type=button].btn-red.btn-active,
+input[type=button].btn-red.btn-disabled,
+input[type=button].btn-red.btn[disabled],
+input[type=reset].btn-red.btn-active,
+input[type=reset].btn-red.btn-disabled,
+input[type=reset].btn-red.btn[disabled],
+button.btn-red.btn-active,
+button.btn-red.btn-disabled,
+button.btn-red.btn[disabled],
+.btn-green.btn-active,
+.btn-green.btn-disabled,
+.btn-green.btn[disabled],
+input[type=submit].btn-green.btn-active,
+input[type=submit].btn-green.btn-disabled,
+input[type=submit].btn-green.btn[disabled],
+input[type=button].btn-green.btn-active,
+input[type=button].btn-green.btn-disabled,
+input[type=button].btn-green.btn[disabled],
+input[type=reset].btn-green.btn-active,
+input[type=reset].btn-green.btn-disabled,
+input[type=reset].btn-green.btn[disabled],
+button.btn-green.btn-active,
+button.btn-green.btn-disabled,
+button.btn-green.btn[disabled],
+.btn-black.btn-active,
+.btn-black.btn-disabled,
+.btn-black.btn[disabled],
+input[type=submit].btn-black.btn-active,
+input[type=submit].btn-black.btn-disabled,
+input[type=submit].btn-black.btn[disabled],
+input[type=button].btn-black.btn-active,
+input[type=button].btn-black.btn-disabled,
+input[type=button].btn-black.btn[disabled],
+input[type=reset].btn-black.btn-active,
+input[type=reset].btn-black.btn-disabled,
+input[type=reset].btn-black.btn[disabled],
+button.btn-black.btn-active,
+button.btn-black.btn-disabled,
+button.btn-black.btn[disabled],
+.btn-yellow.btn-active,
+.btn-yellow.btn-disabled,
+.btn-yellow.btn[disabled],
+input[type=submit].btn-yellow.btn-active,
+input[type=submit].btn-yellow.btn-disabled,
+input[type=submit].btn-yellow.btn[disabled],
+input[type=button].btn-yellow.btn-active,
+input[type=button].btn-yellow.btn-disabled,
+input[type=button].btn-yellow.btn[disabled],
+input[type=reset].btn-yellow.btn-active,
+input[type=reset].btn-yellow.btn-disabled,
+input[type=reset].btn-yellow.btn[disabled],
+button.btn-yellow.btn-active,
+button.btn-yellow.btn-disabled,
+button.btn-yellow.btn[disabled],
+.btn-white.btn-active,
+.btn-white.btn-disabled,
+.btn-white.btn[disabled],
+input[type=submit].btn-white.btn-active,
+input[type=submit].btn-white.btn-disabled,
+input[type=submit].btn-white.btn[disabled],
+input[type=button].btn-white.btn-active,
+input[type=button].btn-white.btn-disabled,
+input[type=button].btn-white.btn[disabled],
+input[type=reset].btn-white.btn-active,
+input[type=reset].btn-white.btn-disabled,
+input[type=reset].btn-white.btn[disabled],
+button.btn-white.btn-active,
+button.btn-white.btn-disabled,
+button.btn-white.btn[disabled] {
   cursor: not-allowed;
 }
 
@@ -524,8 +516,8 @@ button.btn-blue.btn[disabled] {
 }
 
 .relative,
-.fancy-select select,
-.fancy-select {
+.fancy-select,
+.fancy-select select {
   position: relative;
 }
 
@@ -788,8 +780,8 @@ button.btn-blue.btn[disabled] {
 }
 
 .width-100,
-.fancy-select select,
-.fancy-select {
+.fancy-select,
+.fancy-select select {
   width: 100%;
 }
 
@@ -3985,8 +3977,8 @@ button.btn-blue--dark.btn-outline.btn[disabled],
 button.btn-blue--dark.btn-outline.btn-disabled {
   background: none;
   box-shadow: none;
-  color: rgba(19, 60, 121, 0.5);
-  border: 1px solid rgba(19, 60, 121, 0.3);
+  color: rgba(19.057591623, 60.1047120419, 120.942408377, 0.5);
+  border: 1px solid rgba(19.057591623, 60.1047120419, 120.942408377, 0.3);
 }
 .btn-blue--dark.btn-outline.btn-active,
 input[type=submit].btn-blue--dark.btn-outline.btn-active,
@@ -3994,7 +3986,7 @@ input[type=button].btn-blue--dark.btn-outline.btn-active,
 input[type=reset].btn-blue--dark.btn-outline.btn-active,
 button.btn-blue--dark.btn-outline.btn-active {
   background: none;
-  color: rgb(19, 60, 121);
+  color: rgb(19.057591623, 60.1047120419, 120.942408377);
   border: none;
   box-shadow: 0 1px 3px rgba(26, 82, 165, 0.6) inset;
 }
@@ -4816,7 +4808,7 @@ button.btn-white.btn-outline.btn-active {
   background: none;
   color: rgb(255, 255, 255);
   border: none;
-  box-shadow: 0 1px 3px rgba(237, 237, 237, 0.6) inset;
+  box-shadow: 0 1px 3px rgba(237.15, 237.15, 237.15, 0.6) inset;
 }
 
 .btn-white.btn-outline,

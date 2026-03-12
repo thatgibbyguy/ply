@@ -1,3 +1,9 @@
+@use "sass:math";
+
+@use "sass:color";
+@use "colors";
+@use "variables";
+
 @mixin clearfix() {
   &:after {
     content: "";
@@ -22,8 +28,8 @@
 }
 
 @mixin opacity($opacity: 100) {
-  -moz-opacity: $opacity / 100;
-  opacity: $opacity / 100;
+  -moz-opacity: $opacity * 0.01;
+  opacity: $opacity * 0.01;
 }
 
 @mixin selection($r, $g, $b) {
@@ -45,7 +51,7 @@
 }
 
 @mixin gradient($start: #555, $end: #333) {
-  background-color: mix($start, $end, 60%);
+  background-color: color.mix($start, $end, 60%);
   background-image: linear-gradient(to bottom, $start, $end); // The standard
 }
 
@@ -218,35 +224,35 @@ background-image: url($file + '.' + $type);
 
 // Grid
 @mixin block($num) {
-  width: (($grid-width - ($grid-gutter-width * $num)) / $num / ($grid-width / 100)) * .01;
+  width: math.div(math.div(variables.$grid-width - (variables.$grid-gutter-width * $num), $num), (variables.$grid-width * 0.01)) * .01;
 }
 
 @mixin column($num) {
-  width: (($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * .01;
+  width: math.div(math.div(variables.$grid-width - (variables.$grid-gutter-width * ($num - 1)), $num), (variables.$grid-width * 0.01)) * .01;
 }
 
 @mixin columns($factor, $num) {
-  width: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) * .01;
+  width: (math.div(math.div(variables.$grid-width - (variables.$grid-gutter-width * ($num - 1)), $num), (variables.$grid-width * 0.01)) * $factor) + (math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * ($factor - 1)) * .01;
 }
 
 @mixin column-push($num) {
-  left: ((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) + $grid-gutter-width/($grid-width/100)) * .01;
+  left: (math.div(math.div(variables.$grid-width - (variables.$grid-gutter-width * ($num - 1)), $num), (variables.$grid-width * 0.01)) + math.div(variables.$grid-gutter-width, (variables.$grid-width*0.01))) * .01;
 }
 
 @mixin columns-push($factor, $num) {
-  left: (((($grid-width - ($grid-gutter-width * ($num - 1))) / $num / ($grid-width / 100)) * $factor) + (($grid-gutter-width / ($grid-width / 100)) * ($factor - 1)) + $grid-gutter-width/($grid-width/100)) * .01;
+  left: ((math.div(math.div(variables.$grid-width - (variables.$grid-gutter-width * ($num - 1)), $num), (variables.$grid-width * 0.01)) * $factor) + (math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * ($factor - 1)) + math.div(variables.$grid-gutter-width, (variables.$grid-width*0.01))) * .01;
 }
 
 // Buttons
 @mixin create-button($base-color, $hover-color, $text-color, $active-shadow: .5) {
 
-  color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+  color: rgba(color.channel($text-color, "red", $space: rgb), color.channel($text-color, "green", $space: rgb), color.channel($text-color, "blue", $space: rgb), 1);
   background: $base-color;
 
   &:hover,
   &:active,
   &:focus {
-    color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+    color: rgba(color.channel($text-color, "red", $space: rgb), color.channel($text-color, "green", $space: rgb), color.channel($text-color, "blue", $space: rgb), 1);
     background: $hover-color;
   }
   
@@ -257,8 +263,8 @@ background-image: url($file + '.' + $type);
   &:focus,
   &:active {
     transform: translateY(0) scale(.95, .95);
-    background: darken($hover-color,5%);
-    box-shadow: 0 0 10px darken($hover-color,15%) inset;
+    background: color.adjust($hover-color,$lightness: -5%);
+    box-shadow: 0 0 10px color.adjust($hover-color,$lightness: -15%) inset;
   }
 
   &.btn-active {
@@ -269,11 +275,11 @@ background-image: url($file + '.' + $type);
   &.btn-disabled,
   &.btn[disabled] {
     @extend %cursor-not-allowed;
-    color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+    color: rgba(color.channel($text-color, "red", $space: rgb), color.channel($text-color, "green", $space: rgb), color.channel($text-color, "blue", $space: rgb), .5);
     background: $hover-color;
 
     &:hover {
-      color: rgba(red($text-color), green($text-color), blue($text-color), .5);
+      color: rgba(color.channel($text-color, "red", $space: rgb), color.channel($text-color, "green", $space: rgb), color.channel($text-color, "blue", $space: rgb), .5);
       transform: scale(1,1);
     }
 
@@ -286,7 +292,7 @@ background-image: url($file + '.' + $type);
 
   &.btn-disabled,
   &.btn[disabled] {
-    background: desaturate($hover-color, 50%);
+    background: color.adjust($hover-color, $saturation: -50%);
   }
 
   &.btn-outline {
@@ -294,7 +300,7 @@ background-image: url($file + '.' + $type);
     border-color: $base-color;
     color: $base-color;
     &:hover {
-      color: rgba(red($text-color), green($text-color), blue($text-color), 1);
+      color: rgba(color.channel($text-color, "red", $space: rgb), color.channel($text-color, "green", $space: rgb), color.channel($text-color, "blue", $space: rgb), 1);
       background: $base-color;
     }
   }
@@ -303,14 +309,14 @@ background-image: url($file + '.' + $type);
   &.btn-outline.btn-disabled {
     background: none;
     box-shadow: none;
-    color: rgba(red($base-color), green($base-color), blue($base-color), .5);
-    border: 1px solid rgba(red($base-color), green($base-color), blue($base-color), .3);
+    color: rgba(color.channel($base-color, "red", $space: rgb), color.channel($base-color, "green", $space: rgb), color.channel($base-color, "blue", $space: rgb), .5);
+    border: 1px solid rgba(color.channel($base-color, "red", $space: rgb), color.channel($base-color, "green", $space: rgb), color.channel($base-color, "blue", $space: rgb), .3);
   }
   &.btn-outline.btn-active {
     background: none;
-    color: rgba(red($base-color), green($base-color), blue($base-color), 1);
+    color: rgba(color.channel($base-color, "red", $space: rgb), color.channel($base-color, "green", $space: rgb), color.channel($base-color, "blue", $space: rgb), 1);
     border: none;
-    box-shadow: 0 1px 3px rgba(red($hover-color), green($hover-color), blue($hover-color), .6) inset;
+    box-shadow: 0 1px 3px rgba(color.channel($hover-color, "red", $space: rgb), color.channel($hover-color, "green", $space: rgb), color.channel($hover-color, "blue", $space: rgb), .6) inset;
   }
 }
 
@@ -322,7 +328,7 @@ background-image: url($file + '.' + $type);
     box-shadow: $x $y $distance $color;
 }
 
-@mixin color-opacity($color: $color-white, $opacity: 0.5) {
+@mixin color-opacity($color: colors.$color-white, $opacity: 0.5) {
   background-color: rgba($color, $opacity);
 }
 

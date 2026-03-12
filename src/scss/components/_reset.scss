@@ -1,18 +1,18 @@
-@import "mixins";
+@use "mixins";
 
 /* =Reset
 -----------------------------------------------------------------------------*/
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
+  @include mixins.box-sizing(border-box);
 }
 
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  @include square;
+  @include mixins.square;
 }
 
 html,

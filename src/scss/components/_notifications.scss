@@ -1,10 +1,13 @@
+@use "colors";
+@use "variables";
+
 /* =Notifications
 -----------------------------------------------------------------------------*/
 .tools-alert {
   padding: 12px 15px;
-  background: $color-gray-pastel;
-  color: $color-black;
-  margin-bottom: $base-line;
+  background: colors.$color-gray-pastel;
+  color: colors.$color-black;
+  margin-bottom: variables.$base-line;
 }
 .tools-message {
   display: none;
@@ -16,8 +19,8 @@
   line-height: 1.5;
   font-size: 95%;
   padding: 12px 15px;
-  color: $color-black;
-  background: $color-gray;
+  color: colors.$color-black;
+  background: colors.$color-gray;
 }
 .tools-message ul {
   margin: 0;
@@ -30,35 +33,35 @@
   color: rgba(255, 255, 255, .95);
 }
 .tools-message-black {
-  background: $color-black;
+  background: colors.$color-black;
 }
 .tools-message-blue {
-  background: $color-blue;
+  background: colors.$color-blue;
 }
 .tools-message-red {
-  background: $color-red;
+  background: colors.$color-red;
 }
 .tools-message-yellow {
-  background: $color-yellow;
+  background: colors.$color-yellow;
 }
 .tools-message-green {
-  background: $color-green;
+  background: colors.$color-green;
 }
 
 
 // Alerts
 .tools-alert-black {
-  background: $color-black-pastel;
+  background: colors.$color-black-pastel;
 }
 .tools-alert-blue {
-  background: $color-blue-pastel;
+  background: colors.$color-blue-pastel;
 }
 .tools-alert-red {
-  background: $color-red-pastel;
+  background: colors.$color-red-pastel;
 }
 .tools-alert-yellow {
-  background: $color-yellow-pastel;
+  background: colors.$color-yellow-pastel;
 }
 .tools-alert-green {
-  background: $color-green-pastel;
+  background: colors.$color-green-pastel;
 }

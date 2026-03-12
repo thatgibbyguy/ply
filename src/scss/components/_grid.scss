@@ -1,10 +1,16 @@
+@use "sass:math";
+
+@use "media-queries";
+@use "mixins";
+@use "variables";
+
 /* =Grid
 -----------------------------------------------------------------------------*/
 .units-container {
   margin: auto;
-  max-width: $grid-width * 1px;
+  max-width: variables.$grid-width * 1px;
   overflow: hidden;
-  padding: $padding;
+  padding: variables.$padding;
   position: relative;
   width: 100%;
 
@@ -19,7 +25,7 @@
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
-  margin: 0 (-$grid-gutter-width) $base-line;
+  margin: 0 (-(variables.$grid-gutter-width)) variables.$base-line;
 
   &.reverse-direction,
   &.right-to-left {
@@ -27,7 +33,7 @@
   }
 
   &.split {
-    margin: 0 0 $base-line;
+    margin: 0 0 variables.$base-line;
 
     [class*='unit-'] {
       padding: 0;
@@ -45,7 +51,7 @@
 
   &.unit-role-right {
     float: right;
-    margin-left: $grid-gutter-width / ($grid-width / 100) * .01;
+    margin-left: math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * .01;
   }
 
   &.unit-role-left {
@@ -58,9 +64,9 @@
 }
 
 [class*='unit-'] {
-  @include box-sizing;
+  @include mixins.box-sizing;
 
-  padding: 0 $grid-gutter-width;
+  padding: 0 variables.$grid-gutter-width;
 
   &.fill-height {
     display: flex;
@@ -281,7 +287,7 @@
 }
 
 // Large Widths
-@media (min-width: $breakpoint-large-screen) {
+@media (min-width: media-queries.$breakpoint-large-screen) {
   .large-screen-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
@@ -344,7 +350,7 @@
   }
 }
 
-@media (min-width: $breakpoint-x-large-screen) {
+@media (min-width: media-queries.$breakpoint-x-large-screen) {
   .x-large-screen-unit-90 {
     max-width: 90%;
     flex-basis: 90%;
@@ -408,7 +414,7 @@
 }
 
 // Small Desktop (iPad Landscape) Widths
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: media-queries.$breakpoint-small-desktop) {
   .small-desktop-unit-100 {
     max-width: 100%;
     flex-basis: 100%;
@@ -476,7 +482,7 @@
 }
 
 // Mobile Widths
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: media-queries.$breakpoint-tablet) {
   .unit-auto,
   .unit-100,
   .unit-90,
@@ -559,7 +565,7 @@
   }
 }
 
-@media (max-width: $breakpoint-large-phone) {
+@media (max-width: media-queries.$breakpoint-large-phone) {
   .large-phone-unit-100 {
     max-width: 100%;
     flex-basis: 100%;
@@ -626,7 +632,7 @@
   }
 }
 
-@media (max-width: $breakpoint-phone) {
+@media (max-width: media-queries.$breakpoint-phone) {
   .phone-unit-100 {
     max-width: 100%;
     flex-basis: 100%;
@@ -711,25 +717,25 @@
   position: relative;
 }
 
-.unit-push-90 { @include columns-push(9, 10); }
-.unit-push-80 { @include columns-push(4, 5); }
-.unit-push-75 { @include columns-push(3, 4); }
-.unit-push-70 { @include columns-push(7, 10); }
-.unit-push-66 { @include columns-push(2, 3); }
-.unit-push-65 { @include columns-push(2, 3); }
-.unit-push-60 { @include columns-push(3, 5); }
-.unit-push-50 { @include column-push(2); }
-.unit-push-40 { @include columns-push(2, 5); }
-.unit-push-35 { @include column-push(3); }
-.unit-push-33 { @include column-push(3); }
-.unit-push-30 { @include columns-push(3, 10); }
-.unit-push-25 { @include column-push(4); }
-.unit-push-20 { @include column-push(5); }
-.unit-push-10 { @include columns-push(1, 10); }
+.unit-push-90 { @include mixins.columns-push(9, 10); }
+.unit-push-80 { @include mixins.columns-push(4, 5); }
+.unit-push-75 { @include mixins.columns-push(3, 4); }
+.unit-push-70 { @include mixins.columns-push(7, 10); }
+.unit-push-66 { @include mixins.columns-push(2, 3); }
+.unit-push-65 { @include mixins.columns-push(2, 3); }
+.unit-push-60 { @include mixins.columns-push(3, 5); }
+.unit-push-50 { @include mixins.column-push(2); }
+.unit-push-40 { @include mixins.columns-push(2, 5); }
+.unit-push-35 { @include mixins.column-push(3); }
+.unit-push-33 { @include mixins.column-push(3); }
+.unit-push-30 { @include mixins.columns-push(3, 10); }
+.unit-push-25 { @include mixins.column-push(4); }
+.unit-push-20 { @include mixins.column-push(5); }
+.unit-push-10 { @include mixins.columns-push(1, 10); }
 
 .centered,
 .unit-centered,
 %centered {
   float: none !important;
-  margin: 0 auto $base-line;
+  margin: 0 auto variables.$base-line;
 }

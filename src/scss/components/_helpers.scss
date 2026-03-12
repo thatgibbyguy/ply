@@ -1,4 +1,8 @@
-@import 'cursors';
+@use 'cursors';
+@use "colors";
+@use "media-queries";
+@use "mixins";
+@use "variables";
 
 /* =Helpers
 -----------------------------------------------------------------------------*/
@@ -8,7 +12,7 @@
 
 .full-screen,
 %full-screen {
-  @include square;
+  @include mixins.square;
 
   position: relative;
 }
@@ -104,7 +108,7 @@
 
 .pause,
 %pause {
-  margin-bottom: $base-line / 2 !important;
+  margin-bottom: variables.$base-line * 0.5 !important;
 }
 
 .end,
@@ -114,63 +118,63 @@
 
 .margin,
 %margin {
-  margin: $margin;
+  margin: variables.$margin;
 }
 
 .margin-top,
 .top-margin,
 %margin-top,
 .top-margin {
-  margin-top: $margin;
+  margin-top: variables.$margin;
 }
 
 .top-margin--extra,
 .margin-top--extra,
 %top-margin--extra,
 %margin-top--extra {
-  margin-top: $margin * 2;
+  margin-top: variables.$margin * 2;
 }
 
 .right-margin,
 .margin-right,
 %right-margin,
 %margin-right {
-  margin-right: $margin;
+  margin-right: variables.$margin;
 }
 
 .right-margin--extra,
 .margin-right--extra,
 %right-margin--extra,
 %margin-right--extra {
-  margin-right: $margin * 2;
+  margin-right: variables.$margin * 2;
 }
 
 .bottom-margin,
 .margin-bottom,
 %bottom-margin,
 %margin-bottom {
-  margin-bottom: $margin;
+  margin-bottom: variables.$margin;
 }
 
 .bottom-margin--extra,
 .margin-bottom--extra,
 %bottom-margin--extra,
 %margin-bottom--extra {
-  margin-bottom: $margin * 2;
+  margin-bottom: variables.$margin * 2;
 }
 
 .left-margin,
 .margin-left,
 %left-margin,
 %margin-left {
-  margin-left: $margin;
+  margin-left: variables.$margin;
 }
 
 .left-margin--extra,
 .margin-left--extra,
 %left-margin--extra,
 %margin-left--extra {
-  margin-left: $margin * 2;
+  margin-left: variables.$margin * 2;
 }
 
 .no-margin,
@@ -231,115 +235,115 @@
 
 .padding,
 %padding {
-  padding: $padding;
+  padding: variables.$padding;
 }
 
 .padding-top,
 .top-padding,
 %padding-top,
 %top-padding {
-  padding-top: $padding;
+  padding-top: variables.$padding;
 }
 
 .padding-right,
 .right-padding,
 %padding-right,
 %right-padding {
-  padding-right: $padding;
+  padding-right: variables.$padding;
 }
 
 .padding-bottom,
 .bottom-padding,
 %padding-bottom,
 %bottom-padding {
-  padding-bottom: $padding;
+  padding-bottom: variables.$padding;
 }
 
 .padding-left,
 .left-padding,
 %padding-left,
 %left-padding {
-  padding-left: $padding * 2;
+  padding-left: variables.$padding * 2;
 }
 
 .padding-top--extra,
 .top-padding--extra,
 %padding-top--extra,
 %top-padding--extra {
-  padding-top: $padding * 2;
+  padding-top: variables.$padding * 2;
 }
 
 .padding-right--extra,
 .right-padding--extra,
 %padding-right--extra,
 %right-padding--extra {
-  padding-right: $padding * 2;
+  padding-right: variables.$padding * 2;
 }
 
 .padding-bottom--extra,
 .bottom-padding--extra,
 %padding-bottom--extra,
 %bottom-padding--extra {
-  padding-bottom: $padding * 2;
+  padding-bottom: variables.$padding * 2;
 }
 
 .padding-left--extra,
 .left-padding--extra,
 %padding-left--extra,
 %left-padding--extra {
-  padding-left: $padding * 2;
+  padding-left: variables.$padding * 2;
 }
 
 // Borders
 
 .border-top,
 %border-top {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid colors.$border-color;
 }
 
 .border-right,
 %border-right {
-  border-right: 1px solid $border-color;
+  border-right: 1px solid colors.$border-color;
 }
 
 .border-bottom,
 %border-bottom {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid colors.$border-color;
 }
 
 .border-left,
 %border-left {
-  border-left: 1px solid $border-color;
+  border-left: 1px solid colors.$border-color;
 }
 
 .border,
 %border {
-  border: 1px solid $border-color;
+  border: 1px solid colors.$border-color;
 }
 
 .border-top--thick,
 %border-top--thick {
-  border-top: 3px solid $border-color;
+  border-top: 3px solid colors.$border-color;
 }
 
 .border-right--thick,
 %border-right--thick {
-  border-right: 1px solid $border-color;
+  border-right: 1px solid colors.$border-color;
 }
 
 .border-bottom--thick,
 %border-bottom--thick {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid colors.$border-color;
 }
 
 .border-left--thick,
 %border-left--thick {
-  border-left: 1px solid $border-color;
+  border-left: 1px solid colors.$border-color;
 }
 
 .border--thick,
 %border--thick {
-  bottom: 1px solid $border-color;
+  bottom: 1px solid colors.$border-color;
 }
 
 .no-border-top,
@@ -400,7 +404,7 @@
 .width-10,
 %width-10  { width: 10%;   }
 
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: media-queries.$breakpoint-small-desktop) {
   .small-desktop-width-100,
   %small-desktop-width-100 { width: 100%;  }
   .small-desktop-width-90,
@@ -435,7 +439,7 @@
   %small-desktop-width-10  { width: 10%;   }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: media-queries.$breakpoint-tablet) {
   .tablet-width-100,
   %tablet-width-100 { width: 100%;  }
   .tablet-width-90,
@@ -470,7 +474,7 @@
   %tablet-width-10  { width: 10%;   }
 }
 
-@media (max-width: $breakpoint-large-phone) {
+@media (max-width: media-queries.$breakpoint-large-phone) {
   .large-phone-width-100,
   %large-phone-width-100 { width: 100%;  }
   .large-phone-width-90,
@@ -505,7 +509,7 @@
   %large-phone-width-10  { width: 10%;   }
 }
 
-@media (max-width: $breakpoint-phone) {
+@media (max-width: media-queries.$breakpoint-phone) {
   .phone-width-100,
   %phone-width-100 { width: 100%;  }
   .phone-width-90,
@@ -579,7 +583,7 @@
 %group,
 .clearfix,
 %clearfix {
-  @include clearfix;
+  @include mixins.clearfix;
 }
 
 .border-box {
@@ -609,7 +613,7 @@
 
 .border-radius,
 %border-radius {
-  border-radius: $border-radius;
+  border-radius: variables.$border-radius;
 }
 
 // UX Helpers
@@ -618,38 +622,38 @@
 .required,
 %required {
   font-weight: normal;
-  color: $color-red;
+  color: colors.$color-red;
 }
 
 .error,
 %error {
-  color: $color-red;
+  color: colors.$color-red;
 }
 
 .success,
 %success {
-  color: $color-green;
+  color: colors.$color-green;
 }
 
 .spinning,
 %spinning {
-  @include spinning(.75s);
+  @include mixins.spinning(.75s);
 
   display: inline-block;
 }
 
 .fade-in,
 %fade-in {
-  @include fadeIn;
+  @include mixins.fadeIn;
 }
 
 .code,
 %code {
-  border: 1px solid $color-gray-light;
-  border-radius: $border-radius;
+  border: 1px solid colors.$color-gray-light;
+  border-radius: variables.$border-radius;
   display: inline-block;
   font-size: .8rem;
-  font-family: $font-family-code;
+  font-family: variables.$font-family-code;
   padding: .05rem .35rem;
 }
 
@@ -657,37 +661,37 @@
 
 .big,
 %big {
-  font-size: $font-size-big;
+  font-size: variables.$font-size-big;
 }
 
 .small,
 %small {
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
 }
 
 .smaller,
 %smaller {
-  font-size: $font-size-smaller;
+  font-size: variables.$font-size-smaller;
 }
 
 .highlight,
 %highlight {
-  background-color: $color-yellow-pastel;
+  background-color: colors.$color-yellow-pastel;
 }
 
 .sans,
 %sans {
-  font-family: $font-family-base;
+  font-family: variables.$font-family-base;
 }
 
 .serif,
 %serif {
-  font-family: $font-family-serif;
+  font-family: variables.$font-family-serif;
 }
 
 .mono,
 %mono {
-  font-family: $font-family-mono;
+  font-family: variables.$font-family-mono;
 }
 
 .nowrap,
@@ -756,21 +760,21 @@
 // Color Helpers
 
 .background-white {
-  background-color: $color-white;
+  background-color: colors.$color-white;
 }
 
 .background-black {
-  background-color: $color-black;
+  background-color: colors.$color-black;
 }
 
 .color-black,
 %color-black {
-  color: $color-black;
+  color: colors.$color-black;
 }
 
 .color-white,
 %color-white {
-  color: $color-white;
+  color: colors.$color-white;
 }
 
 .color-gray-10,

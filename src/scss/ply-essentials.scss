@@ -4,12 +4,12 @@
 	Framework Author: @thatgibbyguy
 */
 
-@import 'components/colors';
-@import 'components/variables';
-@import 'components/media-queries';
-@import 'components/mixins';
-@import 'components/helpers';
+@forward 'components/colors';
+@forward 'components/variables';
+@forward 'components/media-queries';
+@forward 'components/mixins';
+@use 'components/helpers';
 
-@import 'components/grid';
-@import 'components/alignments';
-@import 'components/blocks';
+@use 'components/grid';
+@use 'components/alignments';
+@use 'components/blocks';

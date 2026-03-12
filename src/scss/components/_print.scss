@@ -1,3 +1,5 @@
+@use "variables";
+
 @media print {
 
   * {
@@ -5,32 +7,32 @@
     color: #000 !important;
     background: transparent !important;
     box-shadow: none !important;
-    font-size: $font-size-print;
+    font-size: variables.$font-size-print;
   }
 
   .h1,
   h1 {
-    font-size: $font-size-h1-print;
+    font-size: variables.$font-size-h1-print;
   }
   .h2,
   h2 {
-    font-size: $font-size-h2-print;
+    font-size: variables.$font-size-h2-print;
   }
   .h3,
   h3 {
-    font-size: $font-size-h3-print;
+    font-size: variables.$font-size-h3-print;
   }
   .h4,
   h4 {
-    font-size: $font-size-h4-print;
+    font-size: variables.$font-size-h4-print;
   }
   .h5,
   h5 {
-    font-size: $font-size-h5-print;
+    font-size: variables.$font-size-h5-print;
   }
   .h6,
   h6 {
-    font-size: $font-size-h6-print;
+    font-size: variables.$font-size-h6-print;
   }
 
   a,

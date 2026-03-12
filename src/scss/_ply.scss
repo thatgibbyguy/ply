@@ -4,37 +4,37 @@
 	Framework Author: @thatgibbyguy
 */
 
-@import 'components/reset';
-@import 'components/colors';
-@import 'components/variables';
-@import 'components/media-queries';
-@import 'components/mixins';
-@import 'components/helpers';
+@use 'components/reset';
+@forward 'components/colors';
+@forward 'components/variables';
+@forward 'components/media-queries';
+@forward 'components/mixins';
+@use 'components/helpers';
 
-@import 'components/typography';
+@use 'components/typography';
 
-@import 'components/grid';
-@import 'components/alignments';
-@import 'components/blocks';
+@use 'components/grid';
+@use 'components/alignments';
+@use 'components/blocks';
 
-@import 'components/tables';
-@import 'components/forms';
+@use 'components/tables';
+@use 'components/forms';
 
-@import 'components/navigation';
-@import 'components/buttons';
+@use 'components/navigation';
+@use 'components/buttons';
 
-@import 'components/notifications';
-@import 'components/labels';
+@use 'components/notifications';
+@use 'components/labels';
 
 
-@import 'components/dropdown';
-@import 'components/livesearch';
-@import 'components/loader';
-@import 'components/flexible-embed';
+@use 'components/dropdown';
+@use 'components/livesearch';
+@use 'components/loader';
+@use 'components/flexible-embed';
 
-@import 'components/prettyprint';
+@use 'components/prettyprint';
 
-@import 'components/blocks-responsive';
-@import 'components/navigation-responsive';
+@use 'components/blocks-responsive';
+@use 'components/navigation-responsive';
 
-@import 'components/print';
+@use 'components/print';

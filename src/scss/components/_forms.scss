@@ -1,3 +1,12 @@
+@use "sass:math";
+
+@use "sass:color";
+@use "colors";
+@use "cursors";
+@use "helpers";
+@use "mixins";
+@use "variables";
+
 /* =Forms
 -----------------------------------------------------------------------------*/
 .form  {
@@ -6,13 +15,13 @@
   button,
   input[type="submit"],
   input[type="reset"] {
-    padding: $padding-btn-in-forms;
+    padding: variables.$padding-btn-in-forms;
 
     &.btn-outline, {
-      padding: $padding-btn-outline-in-forms;
+      padding: variables.$padding-btn-outline-in-forms;
     }
     &.btn-outline.bold {
-      padding: $padding-btn-outline-bold-in-forms;
+      padding: variables.$padding-btn-outline-bold-in-forms;
     }
   }
 
@@ -20,7 +29,7 @@
     @extend %cursor-pointer;
 
     display: block;
-    margin-bottom: $base-line / 1.5;
+    margin-bottom: math.div(variables.$base-line, 1.5);
 
     input[type="text"],
     input[type="password"],
@@ -40,7 +49,7 @@
     input[type="datetime-local"],
     textarea,
     select {
-      margin-top: $margin;
+      margin-top: variables.$margin;
       width: 100%;
     }
   }
@@ -63,9 +72,9 @@
   input[type="datetime-local"],
   textarea,
   select {
-    border-radius: $border-radius;
+    border-radius: variables.$border-radius;
     display: block;
-    padding: $padding;
+    padding: variables.$padding;
   }
 }
 
@@ -98,7 +107,7 @@
 .form-inline-list {
   margin: 0;
   padding: 0;
-  margin-bottom: $base-line / 1.5;
+  margin-bottom: math.div(variables.$base-line, 1.5);
   list-style: none;
 
   label,
@@ -114,7 +123,7 @@
     margin-bottom: 3px;
 
     label {
-      margin-right: $base-line / 2;
+      margin-right: variables.$base-line * 0.5;
     }
   }
 }
@@ -128,7 +137,7 @@
 .form-desc {
   margin-top: 4px;
   color: rgba(0, 0, 0, .4);
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
   line-height: 1.4em;
 }
 
@@ -147,17 +156,17 @@ input[type="time"],
 input[type="search"],
 input[type="datetime-local"],
 textarea {
-  @include transition(border ease .5s);
+  @include mixins.transition(border ease .5s);
 }
 
 // Fieldset
 fieldset {
-  @include color-opacity;
+  @include mixins.color-opacity;
   @extend %border-radius;
 
-  padding: $base-line;
-  margin-bottom: $base-line;
-  border: 1px solid $color-fieldset-border;
+  padding: variables.$base-line;
+  margin-bottom: variables.$base-line;
+  border: 1px solid colors.$color-fieldset-border;
 
   *:last-child {
     margin-bottom: 0;
@@ -168,23 +177,23 @@ fieldset {
 .error,
 .success {
   font-weight: bold;
-  font-size: $font-size-small;
+  font-size: variables.$font-size-small;
 }
 
 input.input-error,
 textarea.input-error,
 select.input-error,
 .input-error {
-  border-color: $color-red;
-  box-shadow: 0 0 0 2px rgba(red($color-red), green($color-red), blue($color-red), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: colors.$color-red;
+  box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-red, "red", $space: rgb), color.channel(colors.$color-red, "green", $space: rgb), color.channel(colors.$color-red, "blue", $space: rgb), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
 input.input-success,
 textarea.input-success,
 select.input-success,
 .input-success  {
-  border-color: $color-green;
-  box-shadow: 0 0 0 2px rgba(red($color-green), green($color-green), blue($color-green), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: colors.$color-green;
+  box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-green, "red", $space: rgb), color.channel(colors.$color-green, "green", $space: rgb), color.channel(colors.$color-green, "blue", $space: rgb), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 
 }
 
@@ -192,8 +201,8 @@ input.input-gray,
 textarea.input-gray,
 select.input-gray,
 .input-gray {
-  border-color: $color-gray-dark;
-  box-shadow: 0 0 0 2px rgba(red($color-gray-dark), green($color-gray-dark), blue($color-gray-dark), .4), 0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: colors.$color-gray-dark;
+  box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-gray-dark, "red", $space: rgb), color.channel(colors.$color-gray-dark, "green", $space: rgb), color.channel(colors.$color-gray-dark, "blue", $space: rgb), .4), 0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
 input[type="text"],
@@ -213,8 +222,8 @@ input[type="datetime-local"],
 textarea {
   &:focus {
     outline: none;
-    border-color: $color-blue;
-    box-shadow: 0 0 0 2px rgba(red($color-blue), green($color-blue), blue($color-blue), .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
+    border-color: colors.$color-blue;
+    box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-blue, "red", $space: rgb), color.channel(colors.$color-blue, "green", $space: rgb), color.channel(colors.$color-blue, "blue", $space: rgb), .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
   }
 }
 
@@ -259,15 +268,15 @@ input.input-on-black {
 /* Sizes */
 input {
   &.input-big {
-    font-size: $font-size-big;
+    font-size: variables.$font-size-big;
   }
 
   &.input-small {
-    font-size: $font-size-small;
+    font-size: variables.$font-size-small;
   }
 
   &.input-smaller {
-    font-size: $font-size-smaller;
+    font-size: variables.$font-size-smaller;
   }
 }
 
@@ -295,13 +304,13 @@ input {
 
   .input-append,
   .input-prepend {
-    background-color: $color-input-append-background;
-    border: 1px solid $color-input-append-border;
+    background-color: colors.$color-input-append-background;
+    border: 1px solid colors.$color-input-append-border;
     margin: 0;
     padding: .45em .75em .15em .75em;
     color: rgba(0, 0, 0, .6);
-    line-height: $base-line;
-    font-size: $font-size-small;
+    line-height: variables.$base-line;
+    font-size: variables.$font-size-small;
     white-space: nowrap;
   }
 
@@ -331,9 +340,9 @@ input {
 
   display: block;
   font-size: .8em;
-  background: $color-white;
-  border: 1px solid $color-blue-light;
-  border-radius: $border-radius;
+  background: colors.$color-white;
+  border: 1px solid colors.$color-blue-light;
+  border-radius: variables.$border-radius;
   padding-right: 1px;
 
   &::after {
@@ -345,22 +354,22 @@ input {
     height: 100%;
     overflow: hidden;
     padding-top: 2px;
-    width: $padding * 5;
+    width: variables.$padding * 5;
     display: block;
     content: '\25BC';
-    background: $color-blue;
-    border-right: $color-blue-light;
-    color: $color-white;
+    background: colors.$color-blue;
+    border-right: colors.$color-blue-light;
+    color: colors.$color-white;
     font-size: .75em;
-    border-radius: 0 $border-radius $border-radius 0;
+    border-radius: 0 variables.$border-radius variables.$border-radius 0;
   }
 
   &:hover {
-    border: 1px solid $color-blue-dark;
-    box-shadow: 0 0 6px $color-blue-dark;
+    border: 1px solid colors.$color-blue-dark;
+    box-shadow: 0 0 6px colors.$color-blue-dark;
 
     &::after {
-      border-right: $color-blue-light;
+      border-right: colors.$color-blue-light;
     }
   }
 
@@ -371,12 +380,12 @@ input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: $padding * .75;
+    padding: variables.$padding * .75;
     background: transparent;
     outline: none;
     border: 0 none;
     z-index: 10;
-    left: $padding;
+    left: variables.$padding;
   }
 }
 

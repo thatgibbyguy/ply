@@ -1,27 +1,30 @@
+@use "colors";
+@use "variables";
+
 /* =Labels
 -----------------------------------------------------------------------------*/
 .label,
 .badge {
-  background: $color-gray;
-  font-size: $font-size-small;
+  background: colors.$color-gray;
+  font-size: variables.$font-size-small;
   display: inline-block;
   line-height: 1;
   padding: 4px 7px 3px 7px;
-  color: $color-black;
+  color: colors.$color-black;
   text-align: center;
   font-weight: normal;
   text-transform: uppercase;
 }
 .label-outline {
   background: none;
-  border: 1px solid $color-black;
+  border: 1px solid colors.$color-black;
   padding: 3px 6px 2px 6px;
 }
 .badge {
   border-radius: 15px;
 }
 .badge-small {
-  font-size: $font-size-smaller;
+  font-size: variables.$font-size-smaller;
   padding: 3px 5px;
 }
 .label-black,
@@ -32,31 +35,31 @@
 .badge-blue,
 .badge-red,
 .badge-green {
-  color: $color-white;
+  color: colors.$color-white;
 }
 .label-black,
 .badge-black {
-  background: $color-black;
+  background: colors.$color-black;
 }
 .label-blue,
 .badge-blue {
-  background: $color-blue;
+  background: colors.$color-blue;
 }
 .label-red,
 .badge-red {
-  background: $color-red;
+  background: colors.$color-red;
 }
 .label-green,
 .badge-green {
-  background: $color-green;
+  background: colors.$color-green;
 }
 .label-yellow,
 .badge-yellow {
-  background: $color-yellow;
+  background: colors.$color-yellow;
 }
 .label-white,
 .badge-white {
-  background: $color-white;
+  background: colors.$color-white;
 }
 .label-black,
 .label-blue,
@@ -66,36 +69,36 @@
 .label-white {
   &.label-outline {
     background: none;
-    color: $color-black;
+    color: colors.$color-black;
   }
 }
 .label-blue {
   &.label-outline {
-    border-color: $color-blue;
-    color: $color-blue;
+    border-color: colors.$color-blue;
+    color: colors.$color-blue;
   }
 }
 .label-red {
   &.label-outline {
-    border-color: $color-red;
-    color: $color-red;
+    border-color: colors.$color-red;
+    color: colors.$color-red;
   }
 }
 .label-green {
   &.label-outline {
-    border-color: $color-green;
-    color: $color-green;
+    border-color: colors.$color-green;
+    color: colors.$color-green;
   }
 }
 .label-yellow {
   &.label-outline {
-    border-color: $color-yellow;
-    color: $color-yellow;
+    border-color: colors.$color-yellow;
+    color: colors.$color-yellow;
   }
 }
 .label-white {
   &.label-outline {
-    border-color: $color-white;
-    color: $color-white;
+    border-color: colors.$color-white;
+    color: colors.$color-white;
   }
 }

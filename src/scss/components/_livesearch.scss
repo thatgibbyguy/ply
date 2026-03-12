@@ -1,3 +1,7 @@
+@use "colors";
+@use "mixins";
+@use "variables";
+
 /* =Livesearch
 -----------------------------------------------------------------------------*/
 .livesearch-container {
@@ -6,22 +10,22 @@
   width: 100%;
 
   input {
-    border-radius: $border-radius * 1.75;
+    border-radius: variables.$border-radius * 1.75;
     position: relative;
     width: 100%;
   }
 
   &.active {
     input {
-      border-radius: ($border-radius * 1.75) ($border-radius * 1.75) 0 0;
+      border-radius: (variables.$border-radius * 1.75) (variables.$border-radius * 1.75) 0 0;
       box-shadow: 0 none;
-      border-color: $color-gray;
+      border-color: colors.$color-gray;
       z-index: 102;
     }
   }
 
   .close {
-    @include close();
+    @include mixins.close();
     position: absolute;
     top: .1em;
     right: 5px;
@@ -29,15 +33,15 @@
   }
 
   .searching {
-    @include spinning();
+    @include mixins.spinning();
   }
 
 }
 
 .livesearch-results {
-  background: $color-white;
-  border-radius: 0 0 $border-radius $border-radius;
-  box-shadow: 0 0 $shadow-depth $color-black;left: 0;
+  background: colors.$color-white;
+  border-radius: 0 0 variables.$border-radius variables.$border-radius;
+  box-shadow: 0 0 variables.$shadow-depth colors.$color-black;left: 0;
   list-style: none;
   margin: 0;
   overflow: hidden;
@@ -48,23 +52,23 @@
   z-index: 101;
 
   li:not:last-child {
-    border-bottom: 1px solid $color-blue-dark;
+    border-bottom: 1px solid colors.$color-blue-dark;
   }
 
   a,
   span {
-    color: $color-blue-dark;
+    color: colors.$color-blue-dark;
     display: block;
-    padding: $padding / 2;
+    padding: variables.$padding * 0.5;
     text-decoration: none;
 
     &:hover {
-      background: $color-blue-pastel;
+      background: colors.$color-blue-pastel;
     }
   }
 
   span:hover {
-    background: $color-white;
+    background: colors.$color-white;
   }
 }
 
@@ -93,7 +97,7 @@
   }
 
   &:after {
-    @include rotate(-45deg);
+    @include mixins.rotate(-45deg);
 
     left: 10px;
     width: 2px;

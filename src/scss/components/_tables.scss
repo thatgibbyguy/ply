@@ -1,8 +1,11 @@
+@use "colors";
+@use "variables";
+
 // =Tables
 // -----------------------------------------------------------------------------*/
 table.table-bordered td,
 table.table-bordered th {
-  border: 1px solid $color-table-border;
+  border: 1px solid colors.$color-table-border;
 }
 table.table-simple td,
 table.table-simple th,
@@ -18,20 +21,20 @@ table.table-flat caption {
 }
 table.table-stroked td,
 table.table-stroked th {
-  border-bottom: 1px solid $color-table-border;
+  border-bottom: 1px solid colors.$color-table-border;
 }
 table.table-stripped tbody tr:nth-child(odd) td {
-  background: $color-table-stripped;
+  background: colors.$color-table-stripped;
 }
 table.table-hovered tbody tr:hover td {
-  background-color: $color-table-hovered;
+  background-color: colors.$color-table-hovered;
 }
 
 /* Responsive Tables */
 .table-container {
   width: 100%;
   overflow: auto;
-  margin-bottom: $base-line;
+  margin-bottom: variables.$base-line;
   & table {
     margin-bottom: 0;
   }

@@ -1,4 +1,6 @@
 // Font
+@use "sass:math";
+
 $font-family-base: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
 $font-family-headings: $font-family-base;
 $font-family-controls: $font-family-base;
@@ -9,7 +11,7 @@ $font-family-mono: "Courier New", monospace;
 
 // Grid
 $grid-width: 1200;
-$grid-gutter-width: 30 / ($grid-width / 100) * .2em;
+$grid-gutter-width: math.div(30, ($grid-width * 0.01)) * .2em;
 
 // Type
 $font-size-root: .9375; // .9375 = 15px/16px by default
@@ -76,8 +78,8 @@ $padding-btn-side-in-forms-base: 1.3em;
 
 $padding-input: $padding-input-base .35em;
 $padding-btn: $padding-btn-base $padding-btn-side-base;
-$padding-btn-outline: $padding-btn-base - (1/16*1) $padding-btn-side-base;
-$padding-btn-outline-bold: $padding-btn-base - (1/16*2) $padding-btn-side-base;
-$padding-btn-in-forms: $padding-input-base + (1/16*1) $padding-btn-side-in-forms-base;
+$padding-btn-outline: $padding-btn-base - (math.div(1, 16)*1) $padding-btn-side-base;
+$padding-btn-outline-bold: $padding-btn-base - (math.div(1, 16)*2) $padding-btn-side-base;
+$padding-btn-in-forms: $padding-input-base + (math.div(1, 16)*1) $padding-btn-side-in-forms-base;
 $padding-btn-outline-in-forms: $padding-input-base $padding-btn-side-in-forms-base;
-$padding-btn-outline-bold-in-forms: $padding-input-base - (1/16*1) $padding-btn-side-in-forms-base;
+$padding-btn-outline-bold-in-forms: $padding-input-base - (math.div(1, 16)*1) $padding-btn-side-in-forms-base;
