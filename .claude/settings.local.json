@@ -15,9 +15,11 @@
       "Bash(gzip:*)",
       "Bash(python3:*)",
       "Bash(npm publish:*)",
+      "Bash(npm pack:*)",
       "Bash(ls:*)",
       "Bash(for f:*)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(git add:*)"
     ]
   }
 }
