@@ -1,11 +1,12 @@
 {
   "name": "plygrid",
-  "version": "0.8.1",
+  "version": "0.9.1",
   "description": "ply - A ratio based CSS grid framework",
   "main": "dist/css/ply.css",
-  "directories": {
-    "dist": "dist/"
-  },
+  "files": [
+    "dist/css/",
+    "src/scss/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thatgibbyguy/ply.git"
@@ -34,7 +35,8 @@
     "postbuild:sass": "postcss dist/css/*.css --replace --no-map",
     "build": "npm run build:sass",
     "watch": "sass --watch src/scss/styles.scss:dist/css/styles.css src/scss/styles.scss:dist/css/styles.min.css src/scss/ply-essentials.scss:dist/css/ply-essentials.min.css --no-source-map",
-    "lint": "stylelint \"src/scss/**/*.scss\""
+    "lint": "stylelint \"src/scss/**/*.scss\"",
+    "prepublishOnly": "npm run build && npm run lint"
   },
   "author": "John Gibby",
   "license": "MIT",
