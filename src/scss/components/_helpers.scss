@@ -298,27 +298,27 @@
 
 .border-top,
 %border-top {
-  border-top: 1px solid colors.$border-color;
+  border-top: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-right,
 %border-right {
-  border-right: 1px solid colors.$border-color;
+  border-right: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-bottom,
 %border-bottom {
-  border-bottom: 1px solid colors.$border-color;
+  border-bottom: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-left,
 %border-left {
-  border-left: 1px solid colors.$border-color;
+  border-left: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border,
 %border {
-  border: 1px solid colors.$border-color;
+  border: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-top--thick,
@@ -328,17 +328,17 @@
 
 .border-right--thick,
 %border-right--thick {
-  border-right: 1px solid colors.$border-color;
+  border-right: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-bottom--thick,
 %border-bottom--thick {
-  border-bottom: 1px solid colors.$border-color;
+  border-bottom: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-left--thick,
 %border-left--thick {
-  border-left: 1px solid colors.$border-color;
+  border-left: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border--thick,
@@ -595,6 +595,20 @@
   display: none;
 }
 
+// Screen-reader only — visually hidden but accessible to assistive tech
+.sr-only,
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hide-on-desktop,
 %hide-on-desktop {
   display: none;
@@ -657,7 +671,33 @@
   padding: .05rem .35rem;
 }
 
-// Typography
+// Typography — Size Utilities
+
+.text-xs   { font-size: variables.$font-size-xs;   line-height: variables.$line-height-xs; }
+.text-sm   { font-size: variables.$font-size-sm;   line-height: variables.$line-height-sm; }
+.text-base { font-size: variables.$font-size-base; line-height: variables.$line-height-base; }
+.text-lg   { font-size: variables.$font-size-lg;   line-height: variables.$line-height-lg; }
+.text-xl   { font-size: variables.$font-size-xl;   line-height: variables.$line-height-xl; }
+.text-2xl  { font-size: variables.$font-size-2xl;  line-height: variables.$line-height-2xl; }
+.text-3xl  { font-size: variables.$font-size-3xl;  line-height: variables.$line-height-3xl; }
+.text-4xl  { font-size: variables.$font-size-4xl;  line-height: variables.$line-height-4xl; }
+.text-5xl  { font-size: variables.$font-size-5xl;  line-height: variables.$line-height-5xl; }
+
+// Typography — Weight Utilities
+
+.font-normal    { font-weight: variables.$font-weight-normal; }
+.font-medium    { font-weight: variables.$font-weight-medium; }
+.font-semibold  { font-weight: variables.$font-weight-semibold; }
+.font-bold      { font-weight: variables.$font-weight-bold; }
+
+// Typography — Line Height Utilities
+
+.leading-tight   { line-height: variables.$line-height-tight; }
+.leading-snug    { line-height: variables.$line-height-snug; }
+.leading-normal  { line-height: variables.$line-height-normal; }
+.leading-relaxed { line-height: variables.$line-height-relaxed; }
+
+// Typography — Legacy
 
 .big,
 %big {
@@ -760,7 +800,7 @@
 // Color Helpers
 
 .background-white {
-  background-color: colors.$color-white;
+  background-color: var(--ply-bg-surface);
 }
 
 .background-black {
