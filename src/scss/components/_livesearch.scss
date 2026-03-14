@@ -4,7 +4,8 @@
 
 /* =Typeahead / Autocomplete
 -----------------------------------------------------------------------------*/
-.typeahead {
+.typeahead,
+.livesearch-container {
   position: relative;
   width: 100%;
 
@@ -20,7 +21,8 @@
   }
 }
 
-.typeahead-results {
+.typeahead-results,
+.livesearch-results {
   display: none;
   position: absolute;
   top: 100%;
@@ -229,11 +231,3 @@
   }
 }
 
-// Legacy alias
-.livesearch-container {
-  @extend .typeahead;
-}
-
-.livesearch-results {
-  @extend .typeahead-results;
-}

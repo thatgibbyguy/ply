@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Ply</title>
+  <link rel="stylesheet" href="../dist/css/ply.min.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .login-card {
+      border: 1px solid var(--ply-border-color, #e0e0e0);
+      border-radius: 4px;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="units-container">
+    <div class="units-row centered-content">
+      <div class="unit-33 tablet-unit-66 phone-unit-100">
+        <div class="login-card">
+          <h1>Sign In</h1>
+          <form class="form" action="#" method="post" aria-label="Login form">
+            <label for="login-email">
+              Email
+              <input type="email" id="login-email" name="email" placeholder="you@example.com" required aria-required="true" autocomplete="email">
+            </label>
+
+            <label for="login-password">
+              Password
+              <input type="password" id="login-password" name="password" placeholder="Enter your password" required aria-required="true" autocomplete="current-password">
+            </label>
+
+            <button type="submit" class="btn btn-blue" style="width: 100%;">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

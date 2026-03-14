@@ -268,23 +268,35 @@ input.input-on-black {
 
 /* Sizes */
 .form .input-big,
+.form .input-lg,
 input.input-big[type],
+input.input-lg[type],
 textarea.input-big,
-select.input-big {
+textarea.input-lg,
+select.input-big,
+select.input-lg {
   font-size: variables.$font-size-xl;
 }
 
 .form .input-small,
+.form .input-sm,
 input.input-small[type],
+input.input-sm[type],
 textarea.input-small,
-select.input-small {
+textarea.input-sm,
+select.input-small,
+select.input-sm {
   font-size: variables.$font-size-small;
 }
 
 .form .input-smaller,
+.form .input-xs,
 input.input-smaller[type],
+input.input-xs[type],
 textarea.input-smaller,
-select.input-smaller {
+textarea.input-xs,
+select.input-smaller,
+select.input-xs {
   font-size: variables.$font-size-smaller;
 }
 
@@ -320,9 +332,9 @@ select.input-smaller {
   }
 
   // Middle element (both prepend and append)
-  input:not(:first-child):not(:last-child),
-  textarea:not(:first-child):not(:last-child),
-  select:not(:first-child):not(:last-child) {
+  input:not(:first-child, :last-child),
+  textarea:not(:first-child, :last-child),
+  select:not(:first-child, :last-child) {
     border-radius: 0;
   }
 

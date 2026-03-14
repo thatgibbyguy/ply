@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Cards - Ply</title>
+  <link rel="stylesheet" href="../dist/css/ply.min.css">
+  <style>
+    .pricing-card {
+      border: 1px solid var(--ply-border-color, #e0e0e0);
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ply-color-muted, #6f6f6f);
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--ply-border-color, #e0e0e0);
+    }
+    .pricing-card ul li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="units-container">
+    <div class="units-row" style="text-align: center; margin-bottom: 0;">
+      <div class="unit-100">
+        <h1>Choose Your Plan</h1>
+        <p>Simple, transparent pricing for teams of every size.</p>
+      </div>
+    </div>
+
+    <div class="units-row">
+      <div class="unit-33 tablet-unit-100">
+        <article class="pricing-card" aria-labelledby="plan-starter">
+          <h3 id="plan-starter">Starter</h3>
+          <div class="price">$9 <span>/ month</span></div>
+          <ul>
+            <li>5 Projects</li>
+            <li>10 GB Storage</li>
+            <li>Email Support</li>
+            <li>Basic Analytics</li>
+          </ul>
+          <a href="#starter" class="btn btn-outline" role="button">Get Started</a>
+        </article>
+      </div>
+
+      <div class="unit-33 tablet-unit-100">
+        <article class="pricing-card" aria-labelledby="plan-pro">
+          <h3 id="plan-pro">Pro</h3>
+          <div class="price">$29 <span>/ month</span></div>
+          <ul>
+            <li>Unlimited Projects</li>
+            <li>100 GB Storage</li>
+            <li>Priority Support</li>
+            <li>Advanced Analytics</li>
+          </ul>
+          <a href="#pro" class="btn btn-blue" role="button">Get Started</a>
+        </article>
+      </div>
+
+      <div class="unit-33 tablet-unit-100">
+        <article class="pricing-card" aria-labelledby="plan-enterprise">
+          <h3 id="plan-enterprise">Enterprise</h3>
+          <div class="price">$99 <span>/ month</span></div>
+          <ul>
+            <li>Unlimited Everything</li>
+            <li>1 TB Storage</li>
+            <li>Dedicated Account Manager</li>
+            <li>Custom Integrations</li>
+          </ul>
+          <a href="#enterprise" class="btn btn-outline" role="button">Contact Sales</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

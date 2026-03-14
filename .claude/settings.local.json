@@ -5,8 +5,21 @@
       "Bash(npm run:*)",
       "Bash(npx sass-migrator:*)",
       "Bash(npx stylelint:*)",
-      "WebFetch(domain:github.com)"
+      "mcp__figma-desktop__get_metadata",
+      "mcp__figma-desktop__get_figjam",
+      "WebSearch",
+      "WebFetch(domain:carbondesignsystem.com)",
+      "WebFetch(domain:v10.carbondesignsystem.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(wc:*)",
+      "Bash(gzip:*)",
+      "Bash(python3:*)",
+      "Bash(npm publish:*)",
       "Bash(npm pack:*)",
+      "Bash(ls:*)",
+      "Bash(for f:*)",
+      "Bash(open:*)",
+      "Bash(git add:*)"
     ]
   }
 }

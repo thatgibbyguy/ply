@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Ply</title>
+  <link rel="stylesheet" href="../dist/css/ply.min.css">
+  <style>
+    .stat-card {
+      border: 1px solid var(--ply-border-color, #e0e0e0);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-card .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .stat-card .stat-label {
+      font-size: 0.875rem;
+      color: var(--ply-color-muted, #6f6f6f);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <ul role="menubar">
+      <li class="active" role="none"><a href="#dashboard" role="menuitem" aria-current="page">Dashboard</a></li>
+      <li role="none"><a href="#analytics" role="menuitem">Analytics</a></li>
+      <li role="none"><a href="#users" role="menuitem">Users</a></li>
+      <li role="none"><a href="#settings" role="menuitem">Settings</a></li>
+    </ul>
+  </nav>
+
+  <div class="units-container">
+    <div class="units-row">
+      <aside class="unit-20 tablet-unit-100" aria-label="Dashboard sidebar">
+        <nav class="nav-stacked" aria-label="Sidebar navigation">
+          <ul>
+            <li class="active"><a href="#overview">Overview</a></li>
+            <li><a href="#revenue">Revenue</a></li>
+            <li><a href="#customers">Customers</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#reports">Reports</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="unit-80 tablet-unit-100">
+        <h1>Overview</h1>
+        <div class="units-row">
+          <div class="unit-33 tablet-unit-100">
+            <article class="stat-card" aria-label="Total users statistic">
+              <div class="stat-value">12,842</div>
+              <div class="stat-label">Total Users</div>
+            </article>
+          </div>
+          <div class="unit-33 tablet-unit-100">
+            <article class="stat-card" aria-label="Revenue statistic">
+              <div class="stat-value">$48,390</div>
+              <div class="stat-label">Revenue (MTD)</div>
+            </article>
+          </div>
+          <div class="unit-33 tablet-unit-100">
+            <article class="stat-card" aria-label="Conversion rate statistic">
+              <div class="stat-value">3.24%</div>
+              <div class="stat-label">Conversion Rate</div>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/*
+	ply-core 1.0
+	CSS Framework: ply :: https://github.com/thatgibbyguy/ply
+	Framework Author: @thatgibbyguy
+
+	Lean bundle for AI-generated prototypes.
+	Includes: reset, colors, variables, typography, full responsive grid,
+	buttons, forms, navigation, notifications, tables, and essential helpers.
+*/
+
+@use 'components/reset';
+@forward 'components/colors';
+@forward 'components/variables';
+@forward 'components/media-queries';
+@forward 'components/mixins';
+@use 'components/helpers-core';
+
+@use 'components/typography';
+
+@use 'components/grid';
+@use 'components/alignments';
+
+@use 'components/tables';
+@use 'components/forms';
+
+@use 'components/navigation';
+@use 'components/buttons';
+
+@use 'components/notifications';

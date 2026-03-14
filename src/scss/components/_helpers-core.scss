@@ -1,0 +1,421 @@
+@use 'cursors';
+@use "colors";
+@use "mixins";
+@use "variables";
+
+/* =Helpers (Core)
+-----------------------------------------------------------------------------*/
+
+// Layout Helpers
+// Positioning
+
+.full-screen,
+%full-screen {
+  @include mixins.square;
+
+  position: relative;
+}
+
+.fixed,
+%fixed {
+  position: fixed;
+}
+
+.absolute,
+%absolute {
+  position: absolute;
+}
+
+.relative,
+%relative {
+  position: relative;
+}
+
+.static,
+%static {
+  position: static;
+}
+
+.sticky,
+%sticky {
+  position: sticky;
+}
+
+// Display
+
+.display--flex,
+%display--flex {
+  display: flex;
+}
+
+.display--block,
+%display--block {
+  display: block;
+}
+
+.display--inline-block,
+%display--inline-block {
+  display: inline-block;
+}
+
+.display--grid,
+%display--grid {
+  display: grid;
+}
+
+.display--none,
+%display--none {
+  display: none;
+}
+
+// Spacing
+
+.last,
+%last {
+  margin-right: 0 !important;
+}
+
+.pause,
+%pause {
+  margin-bottom: variables.$base-line * 0.5 !important;
+}
+
+.end,
+%end {
+  margin-bottom: 0 !important;
+}
+
+.margin,
+%margin {
+  margin: variables.$margin;
+}
+
+.margin-top,
+.top-margin,
+%margin-top,
+.top-margin {
+  margin-top: variables.$margin;
+}
+
+.top-margin--extra,
+.margin-top--extra,
+%top-margin--extra,
+%margin-top--extra {
+  margin-top: variables.$margin * 2;
+}
+
+.right-margin,
+.margin-right,
+%right-margin,
+%margin-right {
+  margin-right: variables.$margin;
+}
+
+.bottom-margin,
+.margin-bottom,
+%bottom-margin,
+%margin-bottom {
+  margin-bottom: variables.$margin;
+}
+
+.bottom-margin--extra,
+.margin-bottom--extra,
+%bottom-margin--extra,
+%margin-bottom--extra {
+  margin-bottom: variables.$margin * 2;
+}
+
+.left-margin,
+.margin-left,
+%left-margin,
+%margin-left {
+  margin-left: variables.$margin;
+}
+
+.no-margin,
+%no-margin {
+  margin: 0 !important;
+}
+
+.no-top-margin,
+%no-top-margin {
+  margin-top: 0 !important;
+}
+
+.no-bottom-margin,
+%no-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+.no-spacing,
+%no-spacing {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.no-padding,
+%no-padding {
+  padding: 0 !important;
+}
+
+.padding,
+%padding {
+  padding: variables.$padding;
+}
+
+.padding-top,
+.top-padding,
+%padding-top,
+%top-padding {
+  padding-top: variables.$padding;
+}
+
+.padding-right,
+.right-padding,
+%padding-right,
+%right-padding {
+  padding-right: variables.$padding;
+}
+
+.padding-bottom,
+.bottom-padding,
+%padding-bottom,
+%bottom-padding {
+  padding-bottom: variables.$padding;
+}
+
+.padding-left,
+.left-padding,
+%padding-left,
+%left-padding {
+  padding-left: variables.$padding * 2;
+}
+
+// Borders
+
+.border-top,
+%border-top {
+  border-top: 1px solid var(--ply-border-color, colors.$border-color);
+}
+
+.border-bottom,
+%border-bottom {
+  border-bottom: 1px solid var(--ply-border-color, colors.$border-color);
+}
+
+.border,
+%border {
+  border: 1px solid var(--ply-border-color, colors.$border-color);
+}
+
+.no-border,
+%no-border {
+  bottom: 0 none !important;
+}
+
+// Width (base only — no responsive variants in core)
+
+.width-100,
+%width-100 { width: 100%;  }
+.width-50,
+%width-50  { width: 50%;   }
+
+// UI Helpers
+
+.group,
+%group,
+.clearfix,
+%clearfix {
+  @include mixins.clearfix;
+}
+
+.hide,
+%hide {
+  display: none;
+}
+
+.sr-only,
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hide-on-desktop,
+%hide-on-desktop {
+  display: none;
+}
+
+.flat-list,
+%flat-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+.border-radius,
+%border-radius {
+  border-radius: variables.$border-radius;
+}
+
+// UX Helpers
+
+.req,
+.required,
+%required {
+  font-weight: normal;
+  color: colors.$color-red;
+}
+
+.error,
+%error {
+  color: colors.$color-red;
+}
+
+.success,
+%success {
+  color: colors.$color-green;
+}
+
+// Typography — Size Utilities
+
+.text-xs {
+  font-size: variables.$font-size-xs;
+  line-height: variables.$line-height-xs;
+}
+
+.text-sm {
+  font-size: variables.$font-size-sm;
+  line-height: variables.$line-height-sm;
+}
+
+.text-base {
+  font-size: variables.$font-size-base;
+  line-height: variables.$line-height-base;
+}
+
+.text-lg {
+  font-size: variables.$font-size-lg;
+  line-height: variables.$line-height-lg;
+}
+
+.text-xl {
+  font-size: variables.$font-size-xl;
+  line-height: variables.$line-height-xl;
+}
+
+.text-2xl {
+  font-size: variables.$font-size-2xl;
+  line-height: variables.$line-height-2xl;
+}
+
+.text-3xl {
+  font-size: variables.$font-size-3xl;
+  line-height: variables.$line-height-3xl;
+}
+
+.text-4xl {
+  font-size: variables.$font-size-4xl;
+  line-height: variables.$line-height-4xl;
+}
+
+.text-5xl {
+  font-size: variables.$font-size-5xl;
+  line-height: variables.$line-height-5xl;
+}
+
+// Typography — Weight Utilities
+
+.font-normal    { font-weight: variables.$font-weight-normal; }
+.font-medium    { font-weight: variables.$font-weight-medium; }
+.font-semibold  { font-weight: variables.$font-weight-semibold; }
+.font-bold      { font-weight: variables.$font-weight-bold; }
+
+// Typography — Line Height Utilities
+
+.leading-tight   { line-height: variables.$line-height-tight; }
+.leading-snug    { line-height: variables.$line-height-snug; }
+.leading-normal  { line-height: variables.$line-height-normal; }
+.leading-relaxed { line-height: variables.$line-height-relaxed; }
+
+// Typography — Legacy
+
+.bold,
+%bold {
+  font-weight: bold !important;
+}
+
+.italic,
+%italic {
+  font-style: italic;
+}
+
+.uppercase,
+%uppercase {
+  text-transform: uppercase;
+}
+
+.nowrap,
+%nowrap {
+  white-space: nowrap;
+}
+
+.text-centered,
+.text-center,
+%text-centered{
+  text-align: center;
+}
+
+.text-right,
+%text-right {
+  text-align: right;
+}
+
+.text-left,
+%text-left {
+  text-align: left;
+}
+
+// Color Helpers
+
+.background-white {
+  background-color: var(--ply-bg-surface);
+}
+
+.background-black {
+  background-color: colors.$color-black;
+}
+
+.color-black,
+%color-black {
+  color: colors.$color-black;
+}
+
+.color-white,
+%color-white {
+  color: colors.$color-white;
+}
+
+/* =Responsive
+-----------------------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+  .left,
+  %left,
+  .right,
+  %right {
+    float: none;
+  }
+  .hide-on-mobile,
+  %hide-on-mobile {
+    display: none;
+  }
+  .hide-on-desktop,
+  %hide-on-desktop {
+    display: block;
+  }
+}

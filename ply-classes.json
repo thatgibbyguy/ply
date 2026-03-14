@@ -1,0 +1,1112 @@
+{
+  "version": "1.0.0",
+  "framework": "ply",
+  "classes": {
+    "units-container": {
+      "category": "grid",
+      "description": "Grid wrapper with max-width 1200px, auto-centered with padding.",
+      "example": "<div class=\"units-container\">...</div>"
+    },
+    "units-row": {
+      "category": "grid",
+      "description": "Flex row container for grid units. Uses flex-flow: row wrap.",
+      "children": ["unit-100", "unit-90", "unit-88", "unit-80", "unit-75", "unit-70", "unit-66", "unit-65", "unit-62", "unit-60", "unit-50", "unit-40", "unit-38", "unit-35", "unit-33", "unit-30", "unit-25", "unit-20", "unit-12", "unit-10", "unit-auto"],
+      "example": "<div class=\"units-row\"><div class=\"unit-50\">...</div><div class=\"unit-50\">...</div></div>"
+    },
+    "unit-100": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "example": "<div class=\"units-row\"><div class=\"unit-100\">Full width</div></div>"
+    },
+    "unit-90": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 90%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-88": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 87.5%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-80": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 80%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-75": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 75%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-70": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 70%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-66": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 66.6% (two-thirds).",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-65": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 65%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-62": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 62.5%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-60": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 60%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-50": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 50% (half).",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "example": "<div class=\"units-row\"><div class=\"unit-50\">Left</div><div class=\"unit-50\">Right</div></div>"
+    },
+    "unit-40": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 40%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-38": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 37.5%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-35": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 35%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-33": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 33.3% (one-third).",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "example": "<div class=\"units-row\"><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div></div>"
+    },
+    "unit-30": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 30%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-25": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 25% (one-quarter).",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-20": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 20%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-12": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 12.5%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-10": {
+      "category": "grid",
+      "description": "Grid unit — flex-basis: 10%.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "unit-auto": {
+      "category": "grid",
+      "description": "Grid unit — flex-grow: 1, fills remaining space.",
+      "parent": "units-row",
+      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+    },
+    "centered": {
+      "category": "grid",
+      "description": "Center a unit with margin: 0 auto.",
+      "parent": "units-row",
+      "example": "<div class=\"units-row\"><div class=\"unit-50 centered\">Centered column</div></div>"
+    },
+    "unit-centered": {
+      "category": "grid",
+      "description": "Alias for centered. Center a unit with margin: 0 auto.",
+      "parent": "units-row"
+    },
+    "reverse-direction": {
+      "category": "grid",
+      "description": "Reverse row direction (flex-direction: row-reverse). Applied to units-row.",
+      "example": "<div class=\"units-row reverse-direction\">...</div>"
+    },
+    "right-to-left": {
+      "category": "grid",
+      "description": "Alias for reverse-direction. Reverse row direction.",
+      "example": "<div class=\"units-row right-to-left\">...</div>"
+    },
+    "split": {
+      "category": "grid",
+      "description": "Remove gutters from child units. Applied to units-row.",
+      "example": "<div class=\"units-row split\">...</div>"
+    },
+    "centered-content": {
+      "category": "grid",
+      "description": "Center content within row (justify-content: center; text-align: center). Applied to units-row.",
+      "example": "<div class=\"units-row centered-content\">...</div>"
+    },
+    "stacked": {
+      "category": "grid",
+      "description": "Remove bottom margin from row. Applied to units-row.",
+      "example": "<div class=\"units-row stacked\">...</div>"
+    },
+    "btn": {
+      "category": "buttons",
+      "description": "Base button class. Inline-block, centered text, default dark background.",
+      "example": "<button class=\"btn\">Click</button>"
+    },
+    "btn-blue": {
+      "category": "buttons",
+      "description": "Blue color variant button.",
+      "example": "<button class=\"btn btn-blue\">Submit</button>"
+    },
+    "btn-red": {
+      "category": "buttons",
+      "description": "Red color variant button.",
+      "example": "<button class=\"btn btn-red\">Delete</button>"
+    },
+    "btn-green": {
+      "category": "buttons",
+      "description": "Green color variant button.",
+      "example": "<button class=\"btn btn-green\">Success</button>"
+    },
+    "btn-black": {
+      "category": "buttons",
+      "description": "Black color variant button.",
+      "example": "<button class=\"btn btn-black\">Action</button>"
+    },
+    "btn-yellow": {
+      "category": "buttons",
+      "description": "Yellow color variant button.",
+      "example": "<button class=\"btn btn-yellow\">Warning</button>"
+    },
+    "btn-white": {
+      "category": "buttons",
+      "description": "White color variant button.",
+      "example": "<button class=\"btn btn-white\">Light</button>"
+    },
+    "btn-outline": {
+      "category": "buttons",
+      "description": "Outlined button variant. Transparent background with border.",
+      "example": "<button class=\"btn btn-outline\">Outline</button>"
+    },
+    "btn-big": {
+      "category": "buttons",
+      "description": "Large button size.",
+      "example": "<button class=\"btn btn-big\">Large</button>"
+    },
+    "btn-lg": {
+      "category": "buttons",
+      "description": "Alias for btn-big. Large button size.",
+      "example": "<button class=\"btn btn-lg\">Large</button>"
+    },
+    "btn-small": {
+      "category": "buttons",
+      "description": "Small button size.",
+      "example": "<button class=\"btn btn-small\">Small</button>"
+    },
+    "btn-sm": {
+      "category": "buttons",
+      "description": "Alias for btn-small. Small button size.",
+      "example": "<button class=\"btn btn-sm\">Small</button>"
+    },
+    "btn-smaller": {
+      "category": "buttons",
+      "description": "Extra small button size.",
+      "example": "<button class=\"btn btn-smaller\">Tiny</button>"
+    },
+    "btn-xs": {
+      "category": "buttons",
+      "description": "Alias for btn-smaller. Extra small button size.",
+      "example": "<button class=\"btn btn-xs\">Tiny</button>"
+    },
+    "btn-active": {
+      "category": "buttons",
+      "description": "Active/pressed state. Muted background with inset shadow.",
+      "example": "<button class=\"btn btn-active\">Active</button>"
+    },
+    "btn-disabled": {
+      "category": "buttons",
+      "description": "Disabled state. Muted colors, default cursor.",
+      "example": "<button class=\"btn btn-disabled\">Disabled</button>"
+    },
+    "btn-straight": {
+      "category": "buttons",
+      "description": "Remove border-radius from button.",
+      "example": "<button class=\"btn btn-straight\">Square</button>"
+    },
+    "btn-square": {
+      "category": "buttons",
+      "description": "Alias for btn-straight. Remove border-radius from button.",
+      "example": "<button class=\"btn btn-square\">Square</button>"
+    },
+    "btn-group": {
+      "category": "buttons",
+      "description": "Button group container. Flex row that joins buttons together.",
+      "children": ["btn"],
+      "example": "<div class=\"btn-group\"><button class=\"btn\">One</button><button class=\"btn\">Two</button></div>"
+    },
+    "btn-single": {
+      "category": "buttons",
+      "description": "Single button container with flex layout.",
+      "children": ["btn"]
+    },
+    "form": {
+      "category": "forms",
+      "description": "Form wrapper class. Enables styled inputs with full width, border-radius, and consistent padding.",
+      "example": "<form class=\"form\"><label>Name<input type=\"text\"></label></form>"
+    },
+    "form-inline": {
+      "category": "forms",
+      "description": "Inline form layout. Labels and inputs display inline-block.",
+      "example": "<ul class=\"form-inline\"><li><label>Name <input type=\"text\"></label></li></ul>"
+    },
+    "form-inline-list": {
+      "category": "forms",
+      "description": "Inline form list layout with spacing between items.",
+      "example": "<ul class=\"form-inline-list\"><li><label>Name <input type=\"text\"></label></li></ul>"
+    },
+    "form-list": {
+      "category": "forms",
+      "description": "List-style form layout with vertical spacing between items.",
+      "example": "<ul class=\"form-list\"><li><label><input type=\"checkbox\"> Option</label></li></ul>"
+    },
+    "form-desc": {
+      "category": "forms",
+      "description": "Form description/help text. Small, muted color.",
+      "example": "<span class=\"form-desc\">Enter your full name</span>"
+    },
+    "input-error": {
+      "category": "forms",
+      "description": "Error state for inputs. Red border with red box-shadow.",
+      "example": "<input type=\"text\" class=\"input-error\">"
+    },
+    "input-success": {
+      "category": "forms",
+      "description": "Success state for inputs. Green border with green box-shadow.",
+      "example": "<input type=\"text\" class=\"input-success\">"
+    },
+    "input-gray": {
+      "category": "forms",
+      "description": "Gray/neutral state for inputs. Gray border with gray box-shadow.",
+      "example": "<input type=\"text\" class=\"input-gray\">"
+    },
+    "input-big": {
+      "category": "forms",
+      "description": "Large input size (xl font-size).",
+      "example": "<input type=\"text\" class=\"input-big\">"
+    },
+    "input-lg": {
+      "category": "forms",
+      "description": "Alias for input-big. Large input size.",
+      "example": "<input type=\"text\" class=\"input-lg\">"
+    },
+    "input-small": {
+      "category": "forms",
+      "description": "Small input size.",
+      "example": "<input type=\"text\" class=\"input-small\">"
+    },
+    "input-sm": {
+      "category": "forms",
+      "description": "Alias for input-small. Small input size.",
+      "example": "<input type=\"text\" class=\"input-sm\">"
+    },
+    "input-smaller": {
+      "category": "forms",
+      "description": "Extra small input size.",
+      "example": "<input type=\"text\" class=\"input-smaller\">"
+    },
+    "input-xs": {
+      "category": "forms",
+      "description": "Alias for input-smaller. Extra small input size.",
+      "example": "<input type=\"text\" class=\"input-xs\">"
+    },
+    "input-search": {
+      "category": "forms",
+      "description": "Rounded search input with pill-shaped border-radius.",
+      "example": "<input type=\"search\" class=\"input-search\">"
+    },
+    "input-on-black": {
+      "category": "forms",
+      "description": "Input styled for dark backgrounds. Semi-transparent white background.",
+      "example": "<input type=\"text\" class=\"input-on-black\" placeholder=\"Search...\">"
+    },
+    "input-groups": {
+      "category": "forms",
+      "description": "Input group container. Flex layout for prepend/append addons.",
+      "children": ["input-prepend", "input-append", "btn-append"],
+      "example": "<div class=\"input-groups\"><span class=\"input-prepend\">$</span><input type=\"text\"></div>"
+    },
+    "input-prepend": {
+      "category": "forms",
+      "description": "Prepended addon for input groups. Displays before the input.",
+      "parent": "input-groups"
+    },
+    "input-append": {
+      "category": "forms",
+      "description": "Appended addon for input groups. Displays after the input.",
+      "parent": "input-groups"
+    },
+    "btn-append": {
+      "category": "forms",
+      "description": "Button appended to an input group.",
+      "parent": "input-groups",
+      "example": "<div class=\"input-groups\"><input type=\"text\"><div class=\"btn-append\"><button class=\"btn\">Go</button></div></div>"
+    },
+    "select-outlined": {
+      "category": "forms",
+      "description": "Outlined select variant. Transparent background with visible border.",
+      "example": "<select class=\"select-outlined\"><option>Choose</option></select>"
+    },
+    "navbar": {
+      "category": "navigation",
+      "description": "Horizontal navigation bar with bottom border. Contains ul > li > a structure.",
+      "example": "<nav class=\"navbar\"><ul><li class=\"active\"><a href=\"#\">Home</a></li><li><a href=\"#\">About</a></li></ul></nav>"
+    },
+    "navbar--centered": {
+      "category": "navigation",
+      "description": "Center-align navbar items (justify-content: center).",
+      "parent": "navbar",
+      "example": "<nav class=\"navbar navbar--centered\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+    },
+    "navbar--left": {
+      "category": "navigation",
+      "description": "Left-align navbar items (justify-content: flex-start).",
+      "parent": "navbar"
+    },
+    "navbar--right": {
+      "category": "navigation",
+      "description": "Right-align navbar items (justify-content: flex-end).",
+      "parent": "navbar"
+    },
+    "navbar--vertical": {
+      "category": "navigation",
+      "description": "Vertical navbar layout with left border instead of bottom border.",
+      "parent": "navbar",
+      "example": "<nav class=\"navbar navbar--vertical\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
+    },
+    "navbar-pills": {
+      "category": "navigation",
+      "description": "Pill-style navigation. Horizontal flex layout with hover backgrounds.",
+      "example": "<nav class=\"navbar-pills\"><ul><li class=\"active\"><a href=\"#\">Tab</a></li></ul></nav>"
+    },
+    "nav-stacked": {
+      "category": "navigation",
+      "description": "Vertical stacked navigation with background and bottom borders.",
+      "example": "<nav class=\"nav-stacked\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
+    },
+    "nav-tabs": {
+      "category": "navigation",
+      "description": "Tab navigation with bottom border. Active tab has border-bottom highlight.",
+      "example": "<div class=\"nav-tabs\"><ul><li class=\"active\"><a href=\"#\">Tab 1</a></li><li><a href=\"#\">Tab 2</a></li></ul></div>"
+    },
+    "nav-stats": {
+      "category": "navigation",
+      "description": "Navigation with stats/badges. Positions badges absolutely to the right.",
+      "example": "<nav class=\"nav-stacked nav-stats\"><ul><li><a href=\"#\">Inbox <sup>12</sup></a></li></ul></nav>"
+    },
+    "breadcrumbs": {
+      "category": "navigation",
+      "description": "Breadcrumb navigation with slash separators between items.",
+      "example": "<div class=\"breadcrumbs\"><ul><li><a href=\"#\">Home</a></li><li class=\"active\"><a href=\"#\">Page</a></li></ul></div>"
+    },
+    "breadcrumbs-path": {
+      "category": "navigation",
+      "description": "Breadcrumb path-style variant. Modifier on breadcrumbs with spaced slashes.",
+      "parent": "breadcrumbs"
+    },
+    "pagination": {
+      "category": "navigation",
+      "description": "Pagination controls. Floated list items with hover and active states.",
+      "example": "<ul class=\"pagination\"><li><a href=\"#\">1</a></li><li class=\"active\"><a href=\"#\">2</a></li><li><a href=\"#\">3</a></li></ul>"
+    },
+    "active": {
+      "category": "navigation",
+      "description": "Active state for navigation items. Applied to li elements within navs.",
+      "example": "<li class=\"active\"><a href=\"#\">Current Page</a></li>"
+    },
+    "navigation-toggle": {
+      "category": "navigation",
+      "description": "Mobile menu toggle button with hamburger icon.",
+      "example": "<div class=\"navigation-toggle\"><span>Menu</span></div>"
+    },
+    "navigation-fixed": {
+      "category": "navigation",
+      "description": "Fixed positioning for navigation. position: fixed; top: 0; left: 0; z-index: 101.",
+      "example": "<nav class=\"navbar navigation-fixed\">...</nav>"
+    },
+    "tools-alert": {
+      "category": "notifications",
+      "description": "Base alert component. Flex layout with left border accent, supports dark mode.",
+      "children": ["tools-alert-icon", "tools-alert-content", "tools-alert-dismiss"],
+      "example": "<div class=\"tools-alert tools-alert-blue\"><div class=\"tools-alert-content\">Info message</div></div>"
+    },
+    "alert": {
+      "category": "notifications",
+      "description": "Alias for tools-alert. Base alert component.",
+      "children": ["alert-icon", "alert-content", "alert-dismiss"],
+      "example": "<div class=\"alert alert-blue\"><div class=\"alert-content\">Info message</div></div>"
+    },
+    "tools-alert-blue": {
+      "category": "notifications",
+      "description": "Blue/info alert variant. Blue tinted background with blue left border."
+    },
+    "alert-blue": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-blue. Blue/info alert variant."
+    },
+    "tools-alert-red": {
+      "category": "notifications",
+      "description": "Red/error alert variant. Red tinted background with red left border."
+    },
+    "alert-red": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-red. Red/error alert variant."
+    },
+    "tools-alert-green": {
+      "category": "notifications",
+      "description": "Green/success alert variant. Green tinted background with green left border."
+    },
+    "alert-green": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-green. Green/success alert variant."
+    },
+    "tools-alert-yellow": {
+      "category": "notifications",
+      "description": "Yellow/warning alert variant. Yellow tinted background with yellow left border."
+    },
+    "alert-yellow": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-yellow. Yellow/warning alert variant."
+    },
+    "tools-alert-black": {
+      "category": "notifications",
+      "description": "Black/neutral alert variant. Gray background with dark left border."
+    },
+    "alert-black": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-black. Black/neutral alert variant."
+    },
+    "tools-alert-outline": {
+      "category": "notifications",
+      "description": "Outlined alert variant. Keeps tinted background, adds full border."
+    },
+    "alert-outline": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-outline. Outlined alert variant."
+    },
+    "tools-alert-ghost": {
+      "category": "notifications",
+      "description": "Ghost alert variant. Transparent background, border only."
+    },
+    "alert-ghost": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant."
+    },
+    "tools-alert-icon": {
+      "category": "notifications",
+      "description": "Alert icon container. Flex-shrink: 0, 1.25rem square.",
+      "parent": "tools-alert"
+    },
+    "alert-icon": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-icon.",
+      "parent": "alert"
+    },
+    "tools-alert-content": {
+      "category": "notifications",
+      "description": "Alert content container. Flex: 1.",
+      "parent": "tools-alert"
+    },
+    "alert-content": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-content.",
+      "parent": "alert"
+    },
+    "tools-alert-dismiss": {
+      "category": "notifications",
+      "description": "Alert dismiss button. Renders multiplication sign, fades on hover.",
+      "parent": "tools-alert"
+    },
+    "alert-dismiss": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-dismiss.",
+      "parent": "alert"
+    },
+    "tools-message": {
+      "category": "notifications",
+      "description": "Toast message. Hidden by default (display: none), fixed position top-right.",
+      "example": "<div class=\"tools-message tools-message-green\">Saved!</div>"
+    },
+    "message": {
+      "category": "notifications",
+      "description": "Alias for tools-message. Toast message hidden by default.",
+      "example": "<div class=\"message message-green\">Saved!</div>"
+    },
+    "tools-message-black": {
+      "category": "notifications",
+      "description": "Black toast message variant."
+    },
+    "message-black": {
+      "category": "notifications",
+      "description": "Alias for tools-message-black."
+    },
+    "tools-message-blue": {
+      "category": "notifications",
+      "description": "Blue toast message variant."
+    },
+    "message-blue": {
+      "category": "notifications",
+      "description": "Alias for tools-message-blue."
+    },
+    "tools-message-red": {
+      "category": "notifications",
+      "description": "Red toast message variant."
+    },
+    "message-red": {
+      "category": "notifications",
+      "description": "Alias for tools-message-red."
+    },
+    "tools-message-yellow": {
+      "category": "notifications",
+      "description": "Yellow toast message variant."
+    },
+    "message-yellow": {
+      "category": "notifications",
+      "description": "Alias for tools-message-yellow."
+    },
+    "tools-message-green": {
+      "category": "notifications",
+      "description": "Green toast message variant."
+    },
+    "message-green": {
+      "category": "notifications",
+      "description": "Alias for tools-message-green."
+    },
+    "text-xs": {
+      "category": "typography",
+      "description": "Extra small font size utility."
+    },
+    "text-sm": {
+      "category": "typography",
+      "description": "Small font size utility."
+    },
+    "text-base": {
+      "category": "typography",
+      "description": "Base font size utility."
+    },
+    "text-lg": {
+      "category": "typography",
+      "description": "Large font size utility."
+    },
+    "text-xl": {
+      "category": "typography",
+      "description": "Extra large font size utility."
+    },
+    "text-2xl": {
+      "category": "typography",
+      "description": "2x large font size utility."
+    },
+    "text-3xl": {
+      "category": "typography",
+      "description": "3x large font size utility."
+    },
+    "text-4xl": {
+      "category": "typography",
+      "description": "4x large font size utility."
+    },
+    "text-5xl": {
+      "category": "typography",
+      "description": "5x large font size utility."
+    },
+    "font-normal": {
+      "category": "typography",
+      "description": "Normal font weight utility."
+    },
+    "font-medium": {
+      "category": "typography",
+      "description": "Medium font weight utility."
+    },
+    "font-semibold": {
+      "category": "typography",
+      "description": "Semibold font weight utility."
+    },
+    "font-bold": {
+      "category": "typography",
+      "description": "Bold font weight utility."
+    },
+    "leading-tight": {
+      "category": "typography",
+      "description": "Tight line-height utility."
+    },
+    "leading-snug": {
+      "category": "typography",
+      "description": "Snug line-height utility."
+    },
+    "leading-normal": {
+      "category": "typography",
+      "description": "Normal line-height utility."
+    },
+    "leading-relaxed": {
+      "category": "typography",
+      "description": "Relaxed line-height utility."
+    },
+    "lead": {
+      "category": "typography",
+      "description": "Lead paragraph style. Larger font size with relaxed line-height.",
+      "example": "<p class=\"lead\">This is a lead paragraph.</p>"
+    },
+    "lead-subhead": {
+      "category": "typography",
+      "description": "Lead subhead style. Same as lead — larger font size with relaxed line-height.",
+      "example": "<p class=\"lead-subhead\">Subheading text here.</p>"
+    },
+    "bold": {
+      "category": "typography",
+      "description": "Bold text (font-weight: bold !important)."
+    },
+    "italic": {
+      "category": "typography",
+      "description": "Italic text (font-style: italic)."
+    },
+    "uppercase": {
+      "category": "typography",
+      "description": "Uppercase text (text-transform: uppercase)."
+    },
+    "nowrap": {
+      "category": "typography",
+      "description": "Prevent text wrapping (white-space: nowrap)."
+    },
+    "text-centered": {
+      "category": "typography",
+      "description": "Center-aligned text.",
+      "example": "<p class=\"text-centered\">Centered text</p>"
+    },
+    "text-center": {
+      "category": "typography",
+      "description": "Alias for text-centered. Center-aligned text."
+    },
+    "text-right": {
+      "category": "typography",
+      "description": "Right-aligned text."
+    },
+    "text-left": {
+      "category": "typography",
+      "description": "Left-aligned text."
+    },
+    "h1": {
+      "category": "typography",
+      "description": "Apply h1 heading styles to any element.",
+      "example": "<span class=\"h1\">Large heading</span>"
+    },
+    "h2": {
+      "category": "typography",
+      "description": "Apply h2 heading styles to any element."
+    },
+    "h3": {
+      "category": "typography",
+      "description": "Apply h3 heading styles to any element."
+    },
+    "h4": {
+      "category": "typography",
+      "description": "Apply h4 heading styles to any element."
+    },
+    "h5": {
+      "category": "typography",
+      "description": "Apply h5 heading styles to any element."
+    },
+    "h6": {
+      "category": "typography",
+      "description": "Apply h6 heading styles to any element. Bold, uppercase."
+    },
+    "fixed": {
+      "category": "helpers",
+      "description": "position: fixed."
+    },
+    "absolute": {
+      "category": "helpers",
+      "description": "position: absolute."
+    },
+    "relative": {
+      "category": "helpers",
+      "description": "position: relative."
+    },
+    "static": {
+      "category": "helpers",
+      "description": "position: static."
+    },
+    "sticky": {
+      "category": "helpers",
+      "description": "position: sticky."
+    },
+    "display--flex": {
+      "category": "helpers",
+      "description": "display: flex."
+    },
+    "display--block": {
+      "category": "helpers",
+      "description": "display: block."
+    },
+    "display--inline-block": {
+      "category": "helpers",
+      "description": "display: inline-block."
+    },
+    "display--grid": {
+      "category": "helpers",
+      "description": "display: grid."
+    },
+    "display--none": {
+      "category": "helpers",
+      "description": "display: none."
+    },
+    "margin": {
+      "category": "helpers",
+      "description": "Add default margin on all sides."
+    },
+    "margin-top": {
+      "category": "helpers",
+      "description": "Add default margin-top."
+    },
+    "margin-top--extra": {
+      "category": "helpers",
+      "description": "Add double margin-top."
+    },
+    "margin-bottom": {
+      "category": "helpers",
+      "description": "Add default margin-bottom."
+    },
+    "margin-bottom--extra": {
+      "category": "helpers",
+      "description": "Add double margin-bottom."
+    },
+    "margin-left": {
+      "category": "helpers",
+      "description": "Add default margin-left."
+    },
+    "margin-left--extra": {
+      "category": "helpers",
+      "description": "Add double margin-left."
+    },
+    "margin-right": {
+      "category": "helpers",
+      "description": "Add default margin-right."
+    },
+    "margin-right--extra": {
+      "category": "helpers",
+      "description": "Add double margin-right."
+    },
+    "no-margin": {
+      "category": "helpers",
+      "description": "Remove all margin (!important)."
+    },
+    "no-spacing": {
+      "category": "helpers",
+      "description": "Remove all margin and padding (!important)."
+    },
+    "no-padding": {
+      "category": "helpers",
+      "description": "Remove all padding (!important)."
+    },
+    "padding": {
+      "category": "helpers",
+      "description": "Add default padding on all sides."
+    },
+    "padding-top": {
+      "category": "helpers",
+      "description": "Add default padding-top."
+    },
+    "padding-top--extra": {
+      "category": "helpers",
+      "description": "Add double padding-top."
+    },
+    "padding-bottom": {
+      "category": "helpers",
+      "description": "Add default padding-bottom."
+    },
+    "padding-bottom--extra": {
+      "category": "helpers",
+      "description": "Add double padding-bottom."
+    },
+    "padding-left": {
+      "category": "helpers",
+      "description": "Add default padding-left."
+    },
+    "padding-left--extra": {
+      "category": "helpers",
+      "description": "Add double padding-left."
+    },
+    "padding-right": {
+      "category": "helpers",
+      "description": "Add default padding-right."
+    },
+    "padding-right--extra": {
+      "category": "helpers",
+      "description": "Add double padding-right."
+    },
+    "border": {
+      "category": "helpers",
+      "description": "Add 1px solid border on all sides."
+    },
+    "border-top": {
+      "category": "helpers",
+      "description": "Add 1px solid border on top."
+    },
+    "border-bottom": {
+      "category": "helpers",
+      "description": "Add 1px solid border on bottom."
+    },
+    "border-left": {
+      "category": "helpers",
+      "description": "Add 1px solid border on left."
+    },
+    "border-right": {
+      "category": "helpers",
+      "description": "Add 1px solid border on right."
+    },
+    "no-border": {
+      "category": "helpers",
+      "description": "Remove all borders (!important)."
+    },
+    "width-100": {
+      "category": "helpers",
+      "description": "Width 100%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-90": {
+      "category": "helpers",
+      "description": "Width 90%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-80": {
+      "category": "helpers",
+      "description": "Width 80%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-75": {
+      "category": "helpers",
+      "description": "Width 75%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-70": {
+      "category": "helpers",
+      "description": "Width 70%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-66": {
+      "category": "helpers",
+      "description": "Width 66.6%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-50": {
+      "category": "helpers",
+      "description": "Width 50%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-40": {
+      "category": "helpers",
+      "description": "Width 40%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-33": {
+      "category": "helpers",
+      "description": "Width 33.3%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-25": {
+      "category": "helpers",
+      "description": "Width 25%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-20": {
+      "category": "helpers",
+      "description": "Width 20%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "width-10": {
+      "category": "helpers",
+      "description": "Width 10%.",
+      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+    },
+    "height-100": {
+      "category": "helpers",
+      "description": "Height 100%."
+    },
+    "height-90": {
+      "category": "helpers",
+      "description": "Height 90%."
+    },
+    "height-80": {
+      "category": "helpers",
+      "description": "Height 80%."
+    },
+    "height-75": {
+      "category": "helpers",
+      "description": "Height 75%."
+    },
+    "height-70": {
+      "category": "helpers",
+      "description": "Height 70%."
+    },
+    "height-50": {
+      "category": "helpers",
+      "description": "Height 50%."
+    },
+    "height-33": {
+      "category": "helpers",
+      "description": "Height 33.3%."
+    },
+    "height-25": {
+      "category": "helpers",
+      "description": "Height 25%."
+    },
+    "height-10": {
+      "category": "helpers",
+      "description": "Height 10%."
+    },
+    "hide": {
+      "category": "helpers",
+      "description": "display: none."
+    },
+    "sr-only": {
+      "category": "helpers",
+      "description": "Visually hidden but accessible to screen readers."
+    },
+    "hide-on-desktop": {
+      "category": "helpers",
+      "description": "Hidden on desktop, visible on mobile (display: block below 767px)."
+    },
+    "hide-on-mobile": {
+      "category": "helpers",
+      "description": "Hidden on mobile (display: none below 767px)."
+    },
+    "clearfix": {
+      "category": "helpers",
+      "description": "Clearfix for floated elements."
+    },
+    "flat-list": {
+      "category": "helpers",
+      "description": "Remove list styling (margin-left: 0, list-style: none)."
+    },
+    "circle": {
+      "category": "helpers",
+      "description": "border-radius: 100%."
+    },
+    "border-radius": {
+      "category": "helpers",
+      "description": "Apply default border-radius."
+    },
+    "color-black": {
+      "category": "helpers",
+      "description": "Set text color to black."
+    },
+    "color-white": {
+      "category": "helpers",
+      "description": "Set text color to white."
+    },
+    "background-white": {
+      "category": "helpers",
+      "description": "Set background to surface color (white in light mode)."
+    },
+    "background-black": {
+      "category": "helpers",
+      "description": "Set background to black."
+    },
+    "color-gray-10": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.1)."
+    },
+    "color-gray-20": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.2)."
+    },
+    "color-gray-30": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.3)."
+    },
+    "color-gray-40": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.4)."
+    },
+    "color-gray-50": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.5)."
+    },
+    "color-gray-60": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.6)."
+    },
+    "color-gray-70": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.7)."
+    },
+    "color-gray-80": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.8)."
+    },
+    "color-gray-90": {
+      "category": "helpers",
+      "description": "Text color rgba(0,0,0,0.9)."
+    },
+    "table-bordered": {
+      "category": "tables",
+      "description": "Add borders to all table cells. Applied to table element.",
+      "example": "<table class=\"table-bordered\"><tr><td>Cell</td></tr></table>"
+    },
+    "table-simple": {
+      "category": "tables",
+      "description": "Remove borders and left padding from table. Applied to table element.",
+      "example": "<table class=\"table-simple\"><tr><td>Cell</td></tr></table>"
+    },
+    "table-flat": {
+      "category": "tables",
+      "description": "Remove borders and all padding from table. Applied to table element."
+    },
+    "table-stroked": {
+      "category": "tables",
+      "description": "Only bottom borders on table cells. Applied to table element."
+    },
+    "table-stripped": {
+      "category": "tables",
+      "description": "Striped table rows (odd rows get background color). Applied to table element.",
+      "example": "<table class=\"table-stripped\"><tbody><tr><td>Row 1</td></tr><tr><td>Row 2</td></tr></tbody></table>"
+    },
+    "table-hovered": {
+      "category": "tables",
+      "description": "Highlight table rows on hover. Applied to table element.",
+      "example": "<table class=\"table-hovered\"><tbody><tr><td>Hoverable</td></tr></tbody></table>"
+    },
+    "table-container": {
+      "category": "tables",
+      "description": "Responsive table wrapper with overflow: auto and custom scrollbar.",
+      "example": "<div class=\"table-container\"><table>...</table></div>"
+    }
+  }
+}
