@@ -284,15 +284,50 @@
 
 // Typography — Size Utilities
 
-.text-xs   { font-size: variables.$font-size-xs;   line-height: variables.$line-height-xs; }
-.text-sm   { font-size: variables.$font-size-sm;   line-height: variables.$line-height-sm; }
-.text-base { font-size: variables.$font-size-base; line-height: variables.$line-height-base; }
-.text-lg   { font-size: variables.$font-size-lg;   line-height: variables.$line-height-lg; }
-.text-xl   { font-size: variables.$font-size-xl;   line-height: variables.$line-height-xl; }
-.text-2xl  { font-size: variables.$font-size-2xl;  line-height: variables.$line-height-2xl; }
-.text-3xl  { font-size: variables.$font-size-3xl;  line-height: variables.$line-height-3xl; }
-.text-4xl  { font-size: variables.$font-size-4xl;  line-height: variables.$line-height-4xl; }
-.text-5xl  { font-size: variables.$font-size-5xl;  line-height: variables.$line-height-5xl; }
+.text-xs {
+  font-size: variables.$font-size-xs;
+  line-height: variables.$line-height-xs;
+}
+
+.text-sm {
+  font-size: variables.$font-size-sm;
+  line-height: variables.$line-height-sm;
+}
+
+.text-base {
+  font-size: variables.$font-size-base;
+  line-height: variables.$line-height-base;
+}
+
+.text-lg {
+  font-size: variables.$font-size-lg;
+  line-height: variables.$line-height-lg;
+}
+
+.text-xl {
+  font-size: variables.$font-size-xl;
+  line-height: variables.$line-height-xl;
+}
+
+.text-2xl {
+  font-size: variables.$font-size-2xl;
+  line-height: variables.$line-height-2xl;
+}
+
+.text-3xl {
+  font-size: variables.$font-size-3xl;
+  line-height: variables.$line-height-3xl;
+}
+
+.text-4xl {
+  font-size: variables.$font-size-4xl;
+  line-height: variables.$line-height-4xl;
+}
+
+.text-5xl {
+  font-size: variables.$font-size-5xl;
+  line-height: variables.$line-height-5xl;
+}
 
 // Typography — Weight Utilities
 
