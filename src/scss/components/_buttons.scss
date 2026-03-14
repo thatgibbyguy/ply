@@ -24,7 +24,7 @@ button.btn {
 
   text-align: center;
   text-decoration: none;
-  color: colors.$color-body;
+  color: var(--ply-color-text-inverse, #fff);
 
   -webkit-appearance: none;
 
@@ -34,11 +34,27 @@ button.btn {
   border-radius: variables.$button-radius;
   box-shadow: none;
   cursor: pointer;
-  background: colors.$color-gray;
+  background: var(--ply-btn-default-bg, #393939);
   padding: variables.$padding-btn;
 
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: var(--ply-color-text-inverse, #fff);
+    background: var(--ply-btn-default-hover, #4c4c4c);
+  }
+
   &:hover {
-    background: colors.$color-gray-dark;
+    transform: translateY(0) scale(1.05, 1.05);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0) scale(.95, .95);
   }
 
   &[class*='unit-'] {
@@ -57,6 +73,7 @@ input[type="button"].btn-big,
 input[type="reset"].btn-big,
 button.btn-big {
   font-size: variables.$font-size-big;
+  padding: 0.875rem 2rem;
 }
 
 .btn-small,
@@ -65,6 +82,7 @@ input[type="button"].btn-small,
 input[type="reset"].btn-small,
 button.btn-small {
   font-size: variables.$font-size-small;
+  padding: 0.375rem 1rem;
 }
 .btn-smaller,
 input[type="submit"].btn-smaller,
@@ -72,6 +90,7 @@ input[type="button"].btn-smaller,
 input[type="reset"].btn-smaller,
 button.btn-smaller {
   font-size: variables.$font-size-smaller;
+  padding: 0.25rem 0.75rem;
   vertical-align: baseline;
 }
 
@@ -82,11 +101,20 @@ input[type="reset"].btn-outline,
 button.btn-outline {
   background: none;
   padding: variables.$padding-btn-outline;
-  border: 1px solid colors.$color-black;
-  color: colors.$color-black;
+  border: 1px solid var(--ply-color-body, colors.$color-black);
+  color: var(--ply-color-body, colors.$color-black);
 
-  &:hover {
-    border-color: colors.$color-gray-dark;
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background: var(--ply-color-body, colors.$color-black);
+    border-color: var(--ply-color-body, colors.$color-black);
+    color: var(--ply-color-text-inverse, #fff);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline-offset: 2px;
   }
 }
 
@@ -102,13 +130,14 @@ button.btn-outline {
 .btn-active,
 .btn[disabled],
 .btn-disabled {
-  background: none;
-  background: colors.$color-gray-dark;
-  color: rgba(0, 0, 0, .5);
+  background: var(--ply-bg-muted, colors.$color-gray-dark);
+  color: var(--ply-color-muted, #6f6f6f);
+  cursor: default;
 
   &:hover {
-    color: rgba(0, 0, 0, .5);
-    background: colors.$color-gray-dark;
+    color: var(--ply-color-muted, #6f6f6f);
+    background: var(--ply-bg-muted, colors.$color-gray-dark);
+    transform: none;
   }
 }
 
@@ -120,13 +149,13 @@ button.btn-outline {
 .btn-outline.btn-disabled {
   background: none;
   box-shadow: none;
-  color: rgba(0, 0, 0, .3);
-  border: 1px solid rgba(0, 0, 0, .1);
+  color: var(--ply-color-muted, #6f6f6f);
+  border: 1px solid var(--ply-border-color, #e0e0e0);
 }
 
 .btn-outline.btn-active {
   background: none;
-  color: rgba(0, 0, 0, .4);
+  color: var(--ply-color-secondary, #525252);
   border: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
 }
@@ -204,8 +233,8 @@ input[type="button"].btn-white,
 input[type="reset"].btn-white,
 button.btn-white {
   &.btn-outline {
-    border: 1px solid colors.$color-black;
-    color: colors.$color-black;
+    border: 1px solid var(--ply-color-body, colors.$color-black);
+    color: var(--ply-color-body, colors.$color-black);
   }
 
   &.btn-outline.btn-active {

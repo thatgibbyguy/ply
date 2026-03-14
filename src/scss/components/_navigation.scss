@@ -13,12 +13,13 @@ nav {
 }
 
 
-/* NavBar */
+/* NavBar — Swiss/Modernist */
 .navbar {
-  background: colors.$color-white;
-  border-bottom: 1px solid colors.$color-blue-dark;
+  background: var(--ply-nav-bg);
+  border-bottom: 2px solid var(--ply-nav-border);
   box-sizing: border-box;
-  font-size: 1em;
+  font-size: variables.$font-size-sm;
+  letter-spacing: 0.05em;
 
   ul {
     list-style: none;
@@ -26,40 +27,45 @@ nav {
     display: flex;
     flex: 0 1 auto;
     flex-flow: row wrap;
+    align-items: stretch;
+    gap: 0;
   }
 
   a,
   > span {
     box-sizing: border-box;
-    color: colors.$color-blue-dark;
+    color: var(--ply-nav-color);
     display: block;
-    font-weight: bold;
-    padding: variables.$padding;
+    font-weight: variables.$font-weight-medium;
+    padding: 0.75rem 1.25rem;
     text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:focus-visible {
+      outline: 2px solid var(--ply-color-focus, #0f62fe);
+      outline-offset: -2px;
+    }
   }
 
   li {
     @include mixins.box-sizing;
 
-    margin-right: variables.$base-line * 0.5;
+    margin-right: 0;
 
     &:hover {
       a {
-        color: colors.$color-link-hover;
+        background: var(--ply-nav-hover);
+        color: var(--ply-nav-color);
         text-decoration: none;
       }
     }
 
-    &:not(:first-child) a {
-      margin-left: -(variables.$padding);
-    }
-
     &.on a,
     &.on span {
-      border-bottom: 3px solid colors.$color-blue-dark;
+      border-bottom: 2px solid var(--ply-nav-border);
       text-decoration: none;
-      cursor: text;
-      color: rgba(0, 0, 0, .4);
+      cursor: default;
+      color: var(--ply-nav-active-color);
     }
   }
 
@@ -73,18 +79,15 @@ nav {
 
   &.navbar--right ul {
     justify-content: flex-end;
-
-    li {
-      margin-right: 0;
-      margin-left: variables.$base-line;
-    }
   }
 
   &.navbar--vertical {
-    border: 1px solid colors.$color-blue-dark;
+    border: none;
+    border-left: 2px solid var(--ply-nav-border);
 
     ul {
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -93,34 +96,32 @@ nav {
 
       &.on a,
       span {
-        background: colors.$color-gray-pastel;
+        background: var(--ply-nav-hover);
         border-bottom: 0 none;
+        border-left: 2px solid var(--ply-nav-border);
+        margin-left: -2px;
         text-decoration: none;
-        cursor: text;
-      }
-
-      &:not(:first-child) a {
-        margin-left: 0;
+        cursor: default;
       }
     }
   }
 }
 
 .navigation-toggle {
-  @include mixins.transition();
   @include mixins.box-sizing();
 
-  background-color: colors.$color-white;
-  border: 1px solid colors.$color-white;
-  color: colors.$color-blue-dark;
+  background-color: var(--ply-nav-bg);
+  border: 2px solid var(--ply-nav-border);
+  color: var(--ply-nav-color);
   display: inline-block;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: variables.$font-size-sm;
   position: relative;
+  transition: background 0.15s ease;
 
   &:hover {
-    background-color: colors.$color-gray-pastel;
-    border: 1px solid colors.$color-blue-dark;
-    box-shadow: .15em .15em 0 colors.$color-blue-dark;
+    background-color: var(--ply-nav-hover);
   }
 
   &:after {
@@ -135,14 +136,12 @@ nav {
   }
 
   &.navigation-toggle-solid {
-    background-color: colors.$color-blue-dark;
-    border: 1px solid colors.$color-blue-dark;
-    color: colors.$color-white;
+    background-color: var(--ply-nav-border);
+    border: 2px solid var(--ply-nav-border);
+    color: var(--ply-nav-bg);
 
     &:hover {
-      background-color: colors.$color-gray-pastel;
-      box-shadow: .15em .15em 0 colors.$color-blue-dark;
-      color: colors.$color-blue-dark;
+      opacity: 0.85;
     }
   }
 
@@ -166,59 +165,77 @@ nav {
   z-index: 101;
 }
 
-/* Pills */
+/* Pills — Swiss/Modernist */
 .navbar-pills {
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    gap: 2px;
+  }
+
   a,
   span {
-    padding: variables.$base-line*0.5 variables.$base-line;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: variables.$font-size-sm;
+    color: var(--ply-nav-color);
+    transition: background 0.15s ease;
   }
 
   a:hover {
-    color: colors.$color-black;
-    background: #eee;
+    color: var(--ply-nav-color);
+    background: var(--ply-nav-hover);
   }
 
   li.active a,
-  span {
+  li.active span {
     text-decoration: none;
-    cursor: text;
-    color: rgba(0, 0, 0, .4);
-    background: #eee;
-  }
-
-  li {
-    margin-right: 1px;
-  }
-
-  &.navbar-right li {
-    margin-left: 1px;
+    cursor: default;
+    color: var(--ply-nav-active-color);
+    background: var(--ply-bg-muted);
   }
 }
 
-/* Stacked */
+/* Stacked — Swiss/Modernist */
 .nav-stacked {
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
   li {
-    margin-bottom: 1px;
+    margin-bottom: 0;
   }
 
   a,
   span {
-    padding: .6em .7em;
+    display: block;
+    padding: 0.6rem 0.75rem;
+    font-size: variables.$font-size-sm;
   }
+
   & a {
-    background: #f6f6f6;
+    background: var(--ply-bg-surface-alt);
+    color: var(--ply-nav-color);
+    border-bottom: 1px solid var(--ply-border-color);
+    text-decoration: none;
+    transition: background 0.15s ease;
+
     &:hover {
-      color: #000;
-      background: #eee;
+      color: var(--ply-nav-color);
+      background: var(--ply-bg-muted);
     }
   }
 
   li.active a,
-  span {
-    background: colors.$color-white;
+  li.active span {
+    background: var(--ply-bg-surface);
     text-decoration: none;
-    cursor: text;
-    color: rgba(0, 0, 0, .3);
+    cursor: default;
+    color: var(--ply-nav-active-color);
   }
 }
 
@@ -241,7 +258,7 @@ nav {
   }
 
   sup {
-    color: rgba(0, 0, 0, .4);
+    color: var(--ply-color-muted);
   }
 
   .badge {
@@ -249,10 +266,10 @@ nav {
   }
 }
 
-/* =Tabs
+/* =Tabs — Swiss/Modernist
 -----------------------------------------------------------------------------*/
 .nav-tabs {
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 2px solid var(--ply-nav-border);
   margin-bottom: variables.$base-line;
   @include mixins.clearfix;
 
@@ -260,91 +277,102 @@ nav {
     list-style: none;
     margin: 0;
   }
+
   & li {
     float: left;
-    margin-right: 2px;
+    margin-right: 0;
   }
+
   & a,
   & span {
     display: block;
     line-height: 1;
-    padding: variables.$base-line*0.5 variables.$base-line;
-    border: 1px solid transparent;
+    padding: variables.$base-line * 0.5 variables.$base-line;
+    font-size: variables.$font-size-sm;
+    border: none;
   }
+
   & a {
-    color: rgba(0, 0, 0, .5);
+    color: var(--ply-color-muted);
     text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+
     &:focus,
     &:hover {
-      color: colors.$color-black;
-      text-decoration: underline;
-      background-color: #eee;
+      color: var(--ply-nav-color);
+      text-decoration: none;
+      background-color: var(--ply-nav-hover);
     }
   }
+
   & li.active a,
   & span {
-    color: colors.$color-black;
-    background: #fff;
+    color: var(--ply-nav-color);
+    background: var(--ply-bg-surface);
     position: relative;
-    border: 1px solid #ddd;
-    border-bottom: 1px solid #fff;
-    bottom: -1px;
+    border-bottom: 2px solid var(--ply-nav-border);
+    bottom: -2px;
     cursor: default;
     text-decoration: none;
   }
 }
 
 
-/* =Breadcrumbs
+/* =Breadcrumbs — Swiss/Modernist
 -----------------------------------------------------------------------------*/
 .breadcrumbs {
   margin-bottom: variables.$base-line;
   @include mixins.clearfix;
 
   & ul {
-    font-size: .9em;
-    color: rgba(0, 0, 0, .4);
+    font-size: variables.$font-size-sm;
+    color: var(--ply-color-muted);
     list-style: none;
     margin: 0;
     @include mixins.clearfix;
   }
+
   & li {
     float: left;
     margin-right: 5px;
   }
+
   & li + li:before {
-      content: " > ";
-      color: #aaa;
-      font-size: 12px;
+    content: "/";
+    color: var(--ply-color-muted);
+    font-size: 12px;
     margin: 0 7px 0 5px;
     position: relative;
     top: -1px;
   }
+
   &.breadcrumbs-path li + li:before {
-      content: " / ";
+    content: " / ";
     top: 0;
   }
+
   & a {
-    color: colors.$color-black;
+    color: var(--ply-nav-color);
     text-decoration: none;
+
     &:hover {
-      color: colors.$color-black;
+      color: var(--ply-nav-color);
       text-decoration: underline;
     }
   }
+
   & li.active a,
   & span,
   & li.active a:hover {
     text-decoration: none;
-    cursor: text;
-    color: rgba(0, 0, 0, .4);
+    cursor: default;
+    color: var(--ply-color-muted);
   }
-
 }
 
 
 
-/* =Pagination
+/* =Pagination — Swiss/Modernist
 -----------------------------------------------------------------------------*/
 .pagination {
   position: relative;
@@ -357,27 +385,31 @@ nav {
     float: left;
     margin-right: 2px;
   }
+
   & a,
   & span {
     display: block;
     padding: 7px 9px;
     line-height: 1;
-    border-radius: 2px;
-    color: colors.$color-black;
+    color: var(--ply-nav-color);
     text-decoration: none;
+    font-size: variables.$font-size-sm;
+    letter-spacing: 0.03em;
+    transition: background 0.15s ease, color 0.15s ease;
   }
+
   & span,
   & li.active a,
   & li.active a:hover {
-    color: colors.$color-white;
-    background-color: colors.$color-black;
-    cursor: text;
+    color: var(--ply-bg-surface);
+    background-color: var(--ply-nav-color);
+    cursor: default;
   }
+
   & a:focus,
   & a:hover {
     text-decoration: none;
-    background-color: colors.$color-black;
-    color: #fff;
+    background-color: var(--ply-nav-color);
+    color: var(--ply-bg-surface);
   }
-
 }

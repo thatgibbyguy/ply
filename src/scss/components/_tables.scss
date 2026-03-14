@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------*/
 table.table-bordered td,
 table.table-bordered th {
-  border: 1px solid colors.$color-table-border;
+  border: 1px solid var(--ply-color-table-border, colors.$color-table-border);
 }
 table.table-simple td,
 table.table-simple th,
@@ -21,13 +21,13 @@ table.table-flat caption {
 }
 table.table-stroked td,
 table.table-stroked th {
-  border-bottom: 1px solid colors.$color-table-border;
+  border-bottom: 1px solid var(--ply-color-table-border, colors.$color-table-border);
 }
 table.table-stripped tbody tr:nth-child(odd) td {
-  background: colors.$color-table-stripped;
+  background: var(--ply-color-table-stripped, colors.$color-table-stripped);
 }
 table.table-hovered tbody tr:hover td {
-  background-color: colors.$color-table-hovered;
+  background-color: var(--ply-color-table-hovered, colors.$color-table-hovered);
 }
 
 /* Responsive Tables */
@@ -45,8 +45,8 @@ table.table-hovered tbody tr:hover td {
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 3px solid #fff;
-    background-color: rgba(0, 0, 0, .3);
+    border: 3px solid var(--ply-bg-body);
+    background-color: var(--ply-color-muted);
   }
 }
 

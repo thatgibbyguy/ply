@@ -6,6 +6,161 @@ $color-body: #222;
 $color-headings: #000;
 $border-color: #ccc;
 
+// CSS Custom Properties for theming (light/dark)
+// Inspired by IBM Carbon Design System color tokens
+
+:root {
+  // Background
+  --ply-bg-body: #ffffff;
+  --ply-bg-surface: #ffffff;
+  --ply-bg-surface-alt: #f4f4f4;
+  --ply-bg-muted: #e0e0e0;
+
+  // Text
+  --ply-color-body: #161616;
+  --ply-color-headings: #161616;
+  --ply-color-secondary: #525252;
+  --ply-color-muted: #6f6f6f;
+  --ply-color-placeholder: #a8a8a8;
+  --ply-color-text-inverse: #ffffff;
+
+  // Borders
+  --ply-border-color: #e0e0e0;
+  --ply-border-strong: #8d8d8d;
+
+  // Interactive
+  --ply-color-link: #0f62fe;
+  --ply-color-link-hover: #0043ce;
+  --ply-color-focus: #0f62fe;
+
+  // Fields
+  --ply-color-field-bg: #f4f4f4;
+  --ply-color-input-border: #8d8d8d;
+  --ply-color-input-bg: #f4f4f4;
+
+  // Code
+  --ply-color-code-bg: #f4f4f4;
+  --ply-color-code-border: #e0e0e0;
+
+  // Tables
+  --ply-color-table-border: #e0e0e0;
+  --ply-color-table-stripped: #f4f4f4;
+  --ply-color-table-hovered: #e8e8e8;
+
+  // Buttons
+  --ply-btn-default-bg: #393939;
+  --ply-btn-default-hover: #4c4c4c;
+
+  // Navigation
+  --ply-nav-bg: #ffffff;
+  --ply-nav-color: #161616;
+  --ply-nav-border: #161616;
+  --ply-nav-hover: #e8e8e8;
+  --ply-nav-active-color: #525252;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    // Background — Carbon Gray 100
+    --ply-bg-body: #161616;
+    --ply-bg-surface: #262626;
+    --ply-bg-surface-alt: #262626;
+    --ply-bg-muted: #393939;
+
+    // Text
+    --ply-color-body: #f4f4f4;
+    --ply-color-headings: #f4f4f4;
+    --ply-color-secondary: #c6c6c6;
+    --ply-color-muted: #8d8d8d;
+    --ply-color-placeholder: #6f6f6f;
+    --ply-color-text-inverse: #161616;
+
+    // Borders
+    --ply-border-color: #393939;
+    --ply-border-strong: #6f6f6f;
+
+    // Interactive
+    --ply-color-link: #78a9ff;
+    --ply-color-link-hover: #a6c8ff;
+    --ply-color-focus: #0f62fe;
+
+    // Fields
+    --ply-color-field-bg: #262626;
+    --ply-color-input-border: #6f6f6f;
+    --ply-color-input-bg: #262626;
+
+    // Code
+    --ply-color-code-bg: #262626;
+    --ply-color-code-border: #393939;
+
+    // Tables
+    --ply-color-table-border: #393939;
+    --ply-color-table-stripped: #1c1c1c;
+    --ply-color-table-hovered: #353535;
+
+    // Buttons
+    --ply-btn-default-bg: #6f6f6f;
+    --ply-btn-default-hover: #8d8d8d;
+
+    // Navigation
+    --ply-nav-bg: #161616;
+    --ply-nav-color: #f4f4f4;
+    --ply-nav-border: #f4f4f4;
+    --ply-nav-hover: #353535;
+    --ply-nav-active-color: #8d8d8d;
+  }
+}
+
+[data-theme="dark"] {
+  // Background — Carbon Gray 100
+  --ply-bg-body: #161616;
+  --ply-bg-surface: #262626;
+  --ply-bg-surface-alt: #262626;
+  --ply-bg-muted: #393939;
+
+  // Text
+  --ply-color-body: #f4f4f4;
+  --ply-color-headings: #f4f4f4;
+  --ply-color-secondary: #c6c6c6;
+  --ply-color-muted: #8d8d8d;
+  --ply-color-placeholder: #6f6f6f;
+  --ply-color-text-inverse: #161616;
+
+  // Borders
+  --ply-border-color: #393939;
+  --ply-border-strong: #6f6f6f;
+
+  // Interactive
+  --ply-color-link: #78a9ff;
+  --ply-color-link-hover: #a6c8ff;
+  --ply-color-focus: #0f62fe;
+
+  // Fields
+  --ply-color-field-bg: #262626;
+  --ply-color-input-border: #6f6f6f;
+  --ply-color-input-bg: #262626;
+
+  // Code
+  --ply-color-code-bg: #262626;
+  --ply-color-code-border: #393939;
+
+  // Tables
+  --ply-color-table-border: #393939;
+  --ply-color-table-stripped: #1c1c1c;
+  --ply-color-table-hovered: #353535;
+
+  // Buttons
+  --ply-btn-default-bg: #6f6f6f;
+  --ply-btn-default-hover: #8d8d8d;
+
+  // Navigation
+  --ply-nav-bg: #161616;
+  --ply-nav-color: #f4f4f4;
+  --ply-nav-border: #f4f4f4;
+  --ply-nav-hover: #353535;
+  --ply-nav-active-color: #8d8d8d;
+}
+
 // Colors
 $color-gray: #e0e3e5;
 $color-black: #0f0f0f;
@@ -15,6 +170,14 @@ $color-yellow: #ffc800;
 $color-green: #2c9f42;
 $color-white: #fff;
 
+// Extended palette
+$color-indigo: #4f46e5;
+$color-purple: #7c3aed;
+$color-pink: #db2777;
+$color-orange: #ea580c;
+$color-teal: #0d9488;
+$color-cyan: #0891b2;
+
 // Colors Dark
 $color-gray-dark: #b3b6b7;
 $color-black-dark: #000;
@@ -22,6 +185,12 @@ $color-blue-dark: #1a52a5;
 $color-red-dark: #b2232f;
 $color-yellow-dark: #cca000;
 $color-green-dark: #237f35;
+$color-indigo-dark: #3730a3;
+$color-purple-dark: #5b21b6;
+$color-pink-dark: #9d174d;
+$color-orange-dark: #c2410c;
+$color-teal-dark: #0f766e;
+$color-cyan-dark: #0e7490;
 
 // Colors Light
 $color-gray-light: #f0f1f2;
@@ -30,6 +199,12 @@ $color-blue-light: #92baf6;
 $color-red-light: #ef969d;
 $color-yellow-light: #ffe480;
 $color-green-light: #96cfa1;
+$color-indigo-light: #a5b4fc;
+$color-purple-light: #c4b5fd;
+$color-pink-light: #f9a8d4;
+$color-orange-light: #fdba74;
+$color-teal-light: #5eead4;
+$color-cyan-light: #67e8f9;
 
 // Colors Pastel
 $color-gray-pastel: #f7f8f8;
@@ -38,6 +213,24 @@ $color-blue-pastel: #d3e3fb;
 $color-red-pastel: #f8d5d8;
 $color-yellow-pastel: #fff4cc;
 $color-green-pastel: #d5ecd9;
+$color-indigo-pastel: #e0e7ff;
+$color-purple-pastel: #ede9fe;
+$color-pink-pastel: #fce7f3;
+$color-orange-pastel: #ffedd5;
+$color-teal-pastel: #ccfbf1;
+$color-cyan-pastel: #cffafe;
+
+// Neutrals (gray scale)
+$color-neutral-50: #fafafa;
+$color-neutral-100: #f5f5f5;
+$color-neutral-200: #e5e5e5;
+$color-neutral-300: #d4d4d4;
+$color-neutral-400: #a3a3a3;
+$color-neutral-500: #737373;
+$color-neutral-600: #525252;
+$color-neutral-700: #404040;
+$color-neutral-800: #262626;
+$color-neutral-900: #171717;
 
 // Table Color
 $color-table-border: $border-color;

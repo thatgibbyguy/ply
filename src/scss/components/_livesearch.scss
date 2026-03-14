@@ -2,106 +2,238 @@
 @use "mixins";
 @use "variables";
 
-/* =Livesearch
+/* =Typeahead / Autocomplete
 -----------------------------------------------------------------------------*/
-.livesearch-container {
+.typeahead {
   position: relative;
-  display: inline-block;
   width: 100%;
 
   input {
-    border-radius: variables.$border-radius * 1.75;
-    position: relative;
     width: 100%;
+    position: relative;
+    z-index: 2;
   }
 
-  &.active {
-    input {
-      border-radius: (variables.$border-radius * 1.75) (variables.$border-radius * 1.75) 0 0;
-      box-shadow: 0 none;
-      border-color: colors.$color-gray;
-      z-index: 102;
+  &.active input {
+    border-radius: variables.$border-radius variables.$border-radius 0 0;
+    border-bottom-color: var(--ply-border-color, colors.$color-gray);
+  }
+}
+
+.typeahead-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--ply-bg-surface, colors.$color-white);
+  border: 1px solid var(--ply-color-input-border, colors.$color-input-border);
+  border-top: none;
+  border-radius: 0 0 variables.$border-radius variables.$border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  max-height: 240px;
+  overflow-y: auto;
+
+  .typeahead.active & {
+    display: block;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  .typeahead-item {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--ply-color-body, colors.$color-body);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.1s ease;
+
+    &:hover,
+    &[aria-selected="true"] {
+      background: var(--ply-bg-muted, colors.$color-gray-light);
+    }
+
+    // Already chosen in multi-select
+    &.disabled {
+      opacity: 0.4;
+      cursor: default;
+
+      &:hover {
+        background: none;
+      }
     }
   }
 
-  .close {
-    @include mixins.close();
-    position: absolute;
-    top: .1em;
-    right: 5px;
-    z-index: 103;
+  li + li {
+    border-top: 1px solid var(--ply-border-color, colors.$color-gray-light);
+  }
+}
+
+.typeahead-empty {
+  padding: 0.5rem 0.75rem;
+  color: var(--ply-color-muted);
+  font-size: variables.$font-size-sm;
+}
+
+/* =Multi-select
+-----------------------------------------------------------------------------*/
+.multiselect {
+  position: relative;
+  width: 100%;
+}
+
+.multiselect-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  padding: 0.375rem;
+  min-height: 2.5rem;
+  background: var(--ply-color-input-bg, colors.$color-white);
+  border: 1px solid var(--ply-color-input-border, colors.$color-input-border);
+  border-radius: variables.$border-radius;
+  cursor: text;
+  transition: border-color 0.15s ease;
+  align-items: center;
+
+  &:focus-within {
+    border-color: var(--ply-color-focus, colors.$color-blue);
+    box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.3);
   }
 
-  .searching {
-    @include mixins.spinning();
+  .multiselect.active & {
+    border-radius: variables.$border-radius variables.$border-radius 0 0;
+    border-bottom-color: var(--ply-border-color, colors.$color-gray);
   }
 
+  input {
+    flex: 1;
+    min-width: 80px;
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.375rem;
+    background: transparent;
+    color: var(--ply-color-body, colors.$color-body);
+    font-size: inherit;
+    font-family: inherit;
+    line-height: variables.$base-line;
+
+    &::placeholder {
+      color: var(--ply-color-placeholder, colors.$color-neutral-400);
+    }
+  }
+}
+
+.multiselect-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  background: var(--ply-bg-muted, colors.$color-gray);
+  color: var(--ply-color-body, colors.$color-body);
+  border-radius: variables.$border-radius;
+  font-size: variables.$font-size-sm;
+  line-height: 1.5;
+  white-space: nowrap;
+  max-width: 100%;
+
+  .multiselect-tag-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.5;
+    font-size: 1rem;
+    line-height: 1;
+    transition: opacity 0.1s ease;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+      outline-offset: 1px;
+      border-radius: 2px;
+    }
+
+    &::before {
+      content: '\00D7';
+    }
+  }
+}
+
+.multiselect-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--ply-bg-surface, colors.$color-white);
+  border: 1px solid var(--ply-color-input-border, colors.$color-input-border);
+  border-top: none;
+  border-radius: 0 0 variables.$border-radius variables.$border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  max-height: 240px;
+  overflow-y: auto;
+
+  .multiselect.active & {
+    display: block;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  .multiselect-item {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--ply-color-body, colors.$color-body);
+    cursor: pointer;
+    transition: background 0.1s ease;
+
+    &:hover,
+    &[aria-selected="true"] {
+      background: var(--ply-bg-muted, colors.$color-gray-light);
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      cursor: default;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  li + li {
+    border-top: 1px solid var(--ply-border-color, colors.$color-gray-light);
+  }
+}
+
+// Legacy alias
+.livesearch-container {
+  @extend .typeahead;
 }
 
 .livesearch-results {
-  background: colors.$color-white;
-  border-radius: 0 0 variables.$border-radius variables.$border-radius;
-  box-shadow: 0 0 variables.$shadow-depth colors.$color-black;left: 0;
-  list-style: none;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  z-index: 101;
-
-  li:not:last-child {
-    border-bottom: 1px solid colors.$color-blue-dark;
-  }
-
-  a,
-  span {
-    color: colors.$color-blue-dark;
-    display: block;
-    padding: variables.$padding * 0.5;
-    text-decoration: none;
-
-    &:hover {
-      background: colors.$color-blue-pastel;
-    }
-  }
-
-  span:hover {
-    background: colors.$color-white;
-  }
-}
-
-.livesearch-icon {
-  position: absolute;
-  top: 53%;
-  left: 10px;
-  z-index: 2;
-
-  &:before,
-  &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      margin: -8px 0 0;
-      background: rgba(0, 0, 0, .5);
-  }
-
-  &:before {
-    width: 10px;
-    height: 10px;
-    border: 2px solid rgba(0, 0, 0, .5);
-    background: transparent;
-    border-radius: 12px;
-  }
-
-  &:after {
-    @include mixins.rotate(-45deg);
-
-    left: 10px;
-    width: 2px;
-    height: 7px;
-    margin-top: 0;
-  }
+  @extend .typeahead-results;
 }

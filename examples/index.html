@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ply — Component Showcase</title>
+  <link rel="stylesheet" href="../dist/css/ply.css">
+  <style>
+    .swatch {
+      width: 100%;
+      height: 48px;
+      border-radius: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .section-title {
+      border-bottom: 2px solid var(--ply-nav-border, #0f0f0f);
+      padding-bottom: 0.5rem;
+      margin-top: 3rem;
+    }
+    .demo-box {
+      background: var(--ply-bg-muted, #e0e3e5);
+      color: var(--ply-color-body, #222);
+      padding: 1rem;
+      text-align: center;
+      border-radius: 0.25rem;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 200;
+      background: var(--ply-nav-color, #0f0f0f);
+      color: var(--ply-nav-bg, #fff);
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color scheme">Dark Mode</button>
+  <script>
+    (function() {
+      var btn = document.getElementById('theme-toggle');
+      var html = document.documentElement;
+
+      function isDark() {
+        if (html.dataset.theme) return html.dataset.theme === 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+
+      function updateLabel() {
+        var dark = isDark();
+        btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+        btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
+
+      btn.addEventListener('click', function() {
+        html.dataset.theme = isDark() ? 'light' : 'dark';
+        updateLabel();
+      });
+
+      updateLabel();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        if (!html.dataset.theme) updateLabel();
+      });
+    })();
+  </script>
+  <div class="units-container">
+
+    <!-- Header -->
+    <header class="units-row">
+      <div class="unit-100">
+        <h1>ply</h1>
+        <p class="lead">A modernized, ratio-based CSS framework built on flexbox.</p>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- 1. Typography -->
+      <section aria-labelledby="typography-heading">
+        <h2 id="typography-heading" class="section-title">Typography</h2>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <h1>Heading 1 — 60px desktop</h1>
+            <h2>Heading 2 — 48px desktop</h2>
+            <h3>Heading 3 — 36px desktop</h3>
+            <h4>Heading 4 — 30px desktop</h4>
+            <h5>Heading 5 — 24px desktop</h5>
+            <h6>Heading 6 — 14px uppercase</h6>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-60">
+            <p>Body text at 1rem (16px). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            <p class="lead">Lead paragraph at 1.25rem (20px). Used for introductory text that should stand out from the body.</p>
+            <p><strong>Bold text</strong>, <em>italic text</em>, <a href="#typography-heading">link text</a>, <s>strikethrough</s>, <mark>highlighted</mark>, <code>inline code</code>, <kbd>Ctrl+S</kbd>.</p>
+          </div>
+          <div class="unit-40">
+            <blockquote>
+              <p>This is a blockquote. It uses italic styling with a left border.</p>
+              <cite>— Attribution</cite>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Unordered List</h4>
+            <ul>
+              <li>First item</li>
+              <li>Second item
+                <ul>
+                  <li>Nested item</li>
+                  <li>Another nested item</li>
+                </ul>
+              </li>
+              <li>Third item</li>
+            </ul>
+          </div>
+          <div class="unit-50">
+            <h4>Ordered List</h4>
+            <ol>
+              <li>First item</li>
+              <li>Second item
+                <ol>
+                  <li>Nested item</li>
+                  <li>Another nested item</li>
+                </ol>
+              </li>
+              <li>Third item</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <h4>Definition List</h4>
+            <dl>
+              <dt>Term One</dt>
+              <dd>Definition for the first term.</dd>
+              <dt>Term Two</dt>
+              <dd>Definition for the second term.</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <h4>Code Block</h4>
+<pre><code>&lt;section class="units-row"&gt;
+  &lt;div class="unit-50"&gt;Half width&lt;/div&gt;
+  &lt;div class="unit-50"&gt;Half width&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Grid System -->
+      <section aria-labelledby="grid-heading">
+        <h2 id="grid-heading" class="section-title">Grid System</h2>
+
+        <h4>Two Columns</h4>
+        <div class="units-row">
+          <div class="unit-50"><div class="demo-box">.unit-50</div></div>
+          <div class="unit-50"><div class="demo-box">.unit-50</div></div>
+        </div>
+
+        <h4>Three Columns</h4>
+        <div class="units-row">
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+        </div>
+
+        <h4>Four Columns</h4>
+        <div class="units-row">
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+        </div>
+
+        <h4>Mixed Widths</h4>
+        <div class="units-row">
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+          <div class="unit-50"><div class="demo-box">.unit-50</div></div>
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-70"><div class="demo-box">.unit-70</div></div>
+          <div class="unit-30"><div class="demo-box">.unit-30</div></div>
+        </div>
+
+        <h4>Split (no gutters)</h4>
+        <div class="units-row split">
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+          <div class="unit-33"><div class="demo-box">.unit-33</div></div>
+        </div>
+
+        <div class="units-row split">
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+          <div class="unit-50"><div class="demo-box">.unit-50</div></div>
+          <div class="unit-25"><div class="demo-box">.unit-25</div></div>
+        </div>
+      </section>
+
+      <!-- 3. Buttons -->
+      <section aria-labelledby="buttons-heading">
+        <h2 id="buttons-heading" class="section-title">Buttons</h2>
+
+        <h4>Colors</h4>
+        <div class="units-row">
+          <div class="unit-100">
+            <button class="btn">Default</button>
+            <button class="btn btn-blue">Blue</button>
+            <button class="btn btn-red">Red</button>
+            <button class="btn btn-green">Green</button>
+            <button class="btn btn-black">Black</button>
+            <button class="btn btn-yellow">Yellow</button>
+            <button class="btn btn-white">White</button>
+          </div>
+        </div>
+
+        <h4>Outline</h4>
+        <div class="units-row">
+          <div class="unit-100">
+            <button class="btn btn-outline">Outline</button>
+            <button class="btn btn-outline bold">Outline Bold</button>
+          </div>
+        </div>
+
+        <h4>Sizes</h4>
+        <div class="units-row">
+          <div class="unit-100">
+            <button class="btn btn-blue btn-big">Big</button>
+            <button class="btn btn-blue">Normal</button>
+            <button class="btn btn-blue btn-small">Small</button>
+            <button class="btn btn-blue btn-smaller">Smaller</button>
+          </div>
+        </div>
+
+        <h4>States</h4>
+        <div class="units-row">
+          <div class="unit-100">
+            <button class="btn btn-active" aria-pressed="true">Active</button>
+            <button class="btn btn-disabled" disabled aria-disabled="true">Disabled</button>
+            <button class="btn btn-blue btn-straight">Straight</button>
+          </div>
+        </div>
+
+        <h4>Button Group</h4>
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="btn-group" role="group" aria-label="Action group">
+              <button class="btn btn-blue">Left</button>
+              <button class="btn btn-blue">Center</button>
+              <button class="btn btn-blue">Right</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Forms -->
+      <section aria-labelledby="forms-heading">
+        <h2 id="forms-heading" class="section-title">Forms</h2>
+
+        <h4>Standard Form</h4>
+        <form class="form">
+          <fieldset>
+            <legend>Account Details</legend>
+            <div class="units-row">
+              <div class="unit-25">
+                <label for="form-first">First Name</label>
+                <input type="text" id="form-first" placeholder="First name">
+              </div>
+              <div class="unit-25">
+                <label for="form-last">Last Name</label>
+                <input type="text" id="form-last" placeholder="Last name">
+              </div>
+              <div class="unit-50">
+                <label for="form-email">Email <span class="req" aria-label="required">*</span></label>
+                <input type="email" id="form-email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="units-row">
+              <div class="unit-33">
+                <label for="form-password">Password</label>
+                <input type="password" id="form-password" placeholder="Password">
+              </div>
+              <div class="unit-33">
+                <label for="form-confirm">Confirm Password</label>
+                <input type="password" id="form-confirm" placeholder="Confirm password">
+              </div>
+              <div class="unit-33">
+                <label for="form-role">Role</label>
+                <select id="form-role">
+                  <option>Select a role</option>
+                  <option>Admin</option>
+                  <option>Editor</option>
+                  <option>Viewer</option>
+                </select>
+              </div>
+            </div>
+            <div class="units-row">
+              <div class="unit-100">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="3" placeholder="Write something..."></textarea>
+              </div>
+            </div>
+            <div class="units-row">
+              <div class="unit-100">
+                <button type="submit" class="btn btn-blue">Submit</button>
+                <button type="reset" class="btn btn-outline">Reset</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        <h4>Input States</h4>
+        <form class="form">
+          <div class="units-row">
+            <div class="unit-25">
+              <label for="input-normal">Normal</label>
+              <input type="text" id="input-normal" placeholder="Normal input">
+            </div>
+            <div class="unit-25">
+              <label for="input-error">Error</label>
+              <input type="text" id="input-error" class="input-error" value="Bad value" aria-invalid="true">
+            </div>
+            <div class="unit-25">
+              <label for="input-success">Success</label>
+              <input type="text" id="input-success" class="input-success" value="Good value">
+            </div>
+            <div class="unit-25">
+              <label for="input-disabled">Disabled</label>
+              <input type="text" id="input-disabled" disabled value="Can't touch this">
+            </div>
+          </div>
+        </form>
+
+        <h4>Input Sizes</h4>
+        <form class="form">
+          <div class="units-row">
+            <div class="unit-33">
+              <label for="input-big">Big</label>
+              <input type="text" id="input-big" class="input-big" placeholder="Big input">
+            </div>
+            <div class="unit-33">
+              <label for="input-reg">Normal</label>
+              <input type="text" id="input-reg" placeholder="Normal input">
+            </div>
+            <div class="unit-33">
+              <label for="input-small">Small</label>
+              <input type="text" id="input-small" class="input-small" placeholder="Small input">
+            </div>
+          </div>
+        </form>
+
+        <h4>Select</h4>
+        <form class="form">
+          <div class="units-row">
+            <div class="unit-50">
+              <label for="select-default">Default</label>
+              <select id="select-default">
+                <option>Choose an option</option>
+                <option>Option One</option>
+                <option>Option Two</option>
+                <option>Option Three</option>
+              </select>
+            </div>
+            <div class="unit-50">
+              <label for="select-outlined">Outlined</label>
+              <select id="select-outlined" class="select-outlined">
+                <option>Choose an option</option>
+                <option>Option One</option>
+                <option>Option Two</option>
+                <option>Option Three</option>
+              </select>
+            </div>
+          </div>
+        </form>
+
+        <h4>Input Groups</h4>
+        <form class="form">
+          <div class="units-row">
+            <div class="unit-33">
+              <label for="ig-username">Prepend</label>
+              <div class="input-groups">
+                <span class="input-prepend">@</span>
+                <input type="text" id="ig-username" placeholder="Username">
+              </div>
+            </div>
+            <div class="unit-33">
+              <label for="ig-search">Button Append</label>
+              <div class="input-groups">
+                <input type="text" id="ig-search" placeholder="Search">
+                <span class="btn-append"><button type="submit" class="btn btn-blue">Go</button></span>
+              </div>
+            </div>
+            <div class="unit-33">
+              <label for="ig-url">Both</label>
+              <div class="input-groups">
+                <span class="input-prepend">https://</span>
+                <input type="text" id="ig-url" placeholder="example.com">
+                <span class="input-append">.com</span>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <h4>Inline Form</h4>
+        <form class="form-inline">
+          <label for="inline-search" class="hide">Search</label>
+          <input type="text" id="inline-search" placeholder="Search...">
+          <button type="submit" class="btn btn-blue">Go</button>
+        </form>
+
+        <h4>Typeahead / Autocomplete</h4>
+        <form class="form">
+          <div class="units-row">
+            <div class="unit-50">
+              <label id="typeahead-label" for="typeahead-demo">Search a framework</label>
+              <div class="typeahead" id="typeahead-container">
+                <input type="text" id="typeahead-demo"
+                  placeholder="Try typing &quot;re&quot; or &quot;vue&quot;..."
+                  autocomplete="off"
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-autocomplete="list"
+                  aria-controls="typeahead-results"
+                  aria-labelledby="typeahead-label">
+                <ul class="typeahead-results" id="typeahead-results" role="listbox" aria-label="Search results"></ul>
+                <div class="sr-only" id="typeahead-live" aria-live="polite" aria-atomic="true"></div>
+              </div>
+            </div>
+            <div class="unit-50">
+              <label id="multi-label" for="multi-demo">Select frameworks</label>
+              <div class="multiselect" id="multi-container">
+                <div class="multiselect-tags" id="multi-tags">
+                  <input type="text" id="multi-demo"
+                    placeholder="Type to search..."
+                    autocomplete="off"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-autocomplete="list"
+                    aria-controls="multi-results"
+                    aria-labelledby="multi-label">
+                </div>
+                <ul class="multiselect-results" id="multi-results" role="listbox" aria-label="Available options" aria-multiselectable="true"></ul>
+                <div class="sr-only" id="multi-live" aria-live="polite" aria-atomic="true"></div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <script>
+          // Typeahead (single select) — with ARIA
+          (function() {
+            var items = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Preact', 'Alpine.js', 'Solid', 'Lit', 'Next.js', 'Nuxt', 'Remix', 'Astro', 'Qwik'];
+            var input = document.getElementById('typeahead-demo');
+            var results = document.getElementById('typeahead-results');
+            var container = document.getElementById('typeahead-container');
+            var live = document.getElementById('typeahead-live');
+            var activeIdx = -1;
+
+            function optionId(i) { return 'ta-opt-' + i; }
+
+            function render(matches) {
+              activeIdx = -1;
+              input.removeAttribute('aria-activedescendant');
+              if (!matches.length) {
+                results.innerHTML = '<li role="option" aria-disabled="true"><span class="typeahead-empty">No results found</span></li>';
+                input.setAttribute('aria-expanded', 'true');
+                container.classList.add('active');
+                live.textContent = 'No results found';
+                return;
+              }
+              results.innerHTML = matches.map(function(m, i) {
+                return '<li role="option" id="' + optionId(i) + '"><span class="typeahead-item" data-value="' + m + '">' + m + '</span></li>';
+              }).join('');
+              input.setAttribute('aria-expanded', 'true');
+              container.classList.add('active');
+              live.textContent = matches.length + ' result' + (matches.length !== 1 ? 's' : '') + ' available';
+            }
+
+            function close() {
+              results.innerHTML = '';
+              container.classList.remove('active');
+              input.setAttribute('aria-expanded', 'false');
+              input.removeAttribute('aria-activedescendant');
+              activeIdx = -1;
+            }
+
+            function setActive(idx) {
+              var opts = results.querySelectorAll('[role="option"]');
+              opts.forEach(function(el) { el.setAttribute('aria-selected', 'false'); });
+              if (idx >= 0 && idx < opts.length) {
+                opts[idx].setAttribute('aria-selected', 'true');
+                input.setAttribute('aria-activedescendant', opts[idx].id);
+                opts[idx].scrollIntoView({ block: 'nearest' });
+              }
+            }
+
+            input.addEventListener('input', function() {
+              var q = this.value.toLowerCase().trim();
+              if (!q) { close(); return; }
+              render(items.filter(function(item) { return item.toLowerCase().indexOf(q) !== -1; }));
+            });
+
+            input.addEventListener('keydown', function(e) {
+              var opts = results.querySelectorAll('.typeahead-item');
+              if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (!opts.length) return;
+                activeIdx = Math.min(activeIdx + 1, opts.length - 1);
+                setActive(activeIdx);
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (!opts.length) return;
+                activeIdx = Math.max(activeIdx - 1, 0);
+                setActive(activeIdx);
+              } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (activeIdx >= 0 && opts[activeIdx]) { input.value = opts[activeIdx].dataset.value; close(); }
+              } else if (e.key === 'Escape') { close(); }
+            });
+
+            results.addEventListener('click', function(e) {
+              var item = e.target.closest('.typeahead-item');
+              if (item) { e.preventDefault(); input.value = item.dataset.value; close(); }
+            });
+
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) close();
+            });
+          })();
+
+          // Multi-select — with ARIA
+          (function() {
+            var items = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Preact', 'Alpine.js', 'Solid', 'Lit', 'Next.js', 'Nuxt', 'Remix', 'Astro', 'Qwik'];
+            var selected = [];
+            var input = document.getElementById('multi-demo');
+            var results = document.getElementById('multi-results');
+            var container = document.getElementById('multi-container');
+            var tagsContainer = document.getElementById('multi-tags');
+            var live = document.getElementById('multi-live');
+            var activeIdx = -1;
+
+            function optionId(i) { return 'ms-opt-' + i; }
+
+            function renderTags() {
+              // Remove existing tags
+              tagsContainer.querySelectorAll('.multiselect-tag').forEach(function(t) { t.remove(); });
+              selected.forEach(function(val, i) {
+                var tag = document.createElement('span');
+                tag.className = 'multiselect-tag';
+                tag.innerHTML = '<span>' + val + '</span>';
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'multiselect-tag-remove';
+                btn.setAttribute('aria-label', 'Remove ' + val);
+                btn.dataset.value = val;
+                tag.appendChild(btn);
+                tagsContainer.insertBefore(tag, input);
+              });
+              input.placeholder = selected.length ? '' : 'Type to search...';
+            }
+
+            function renderResults(matches) {
+              activeIdx = -1;
+              input.removeAttribute('aria-activedescendant');
+              if (!matches.length) {
+                results.innerHTML = '<li role="option" aria-disabled="true"><span class="typeahead-empty">No matches</span></li>';
+                input.setAttribute('aria-expanded', 'true');
+                container.classList.add('active');
+                live.textContent = 'No matches';
+                return;
+              }
+              results.innerHTML = matches.map(function(m, i) {
+                var chosen = selected.indexOf(m) !== -1;
+                return '<li role="option" id="' + optionId(i) + '"' + (chosen ? ' aria-disabled="true"' : '') + '>' +
+                  '<span class="multiselect-item' + (chosen ? ' disabled' : '') + '" data-value="' + m + '">' + m + (chosen ? ' (selected)' : '') + '</span></li>';
+              }).join('');
+              input.setAttribute('aria-expanded', 'true');
+              container.classList.add('active');
+              var available = matches.filter(function(m) { return selected.indexOf(m) === -1; });
+              live.textContent = available.length + ' option' + (available.length !== 1 ? 's' : '') + ' available' + (selected.length ? ', ' + selected.length + ' selected' : '');
+            }
+
+            function close() {
+              results.innerHTML = '';
+              container.classList.remove('active');
+              input.setAttribute('aria-expanded', 'false');
+              input.removeAttribute('aria-activedescendant');
+              activeIdx = -1;
+            }
+
+            function filter() {
+              var q = input.value.toLowerCase().trim();
+              if (!q) { close(); return; }
+              renderResults(items.filter(function(item) { return item.toLowerCase().indexOf(q) !== -1; }));
+            }
+
+            function selectItem(val) {
+              if (selected.indexOf(val) !== -1) return;
+              selected.push(val);
+              input.value = '';
+              renderTags();
+              close();
+              live.textContent = val + ' added. ' + selected.length + ' selected.';
+              input.focus();
+            }
+
+            function removeItem(val) {
+              selected = selected.filter(function(s) { return s !== val; });
+              renderTags();
+              live.textContent = val + ' removed. ' + selected.length + ' selected.';
+              input.focus();
+            }
+
+            function setActive(idx) {
+              var opts = results.querySelectorAll('[role="option"]');
+              opts.forEach(function(el) { el.setAttribute('aria-selected', 'false'); });
+              if (idx >= 0 && idx < opts.length) {
+                opts[idx].setAttribute('aria-selected', 'true');
+                input.setAttribute('aria-activedescendant', opts[idx].id);
+                opts[idx].scrollIntoView({ block: 'nearest' });
+              }
+            }
+
+            input.addEventListener('input', filter);
+
+            input.addEventListener('keydown', function(e) {
+              var opts = results.querySelectorAll('.multiselect-item:not(.disabled)');
+              var allOpts = results.querySelectorAll('.multiselect-item');
+
+              if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (!allOpts.length) return;
+                // Find next non-disabled
+                var next = activeIdx + 1;
+                while (next < allOpts.length && allOpts[next].classList.contains('disabled')) next++;
+                if (next < allOpts.length) { activeIdx = next; setActive(activeIdx); }
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (!allOpts.length) return;
+                var prev = activeIdx - 1;
+                while (prev >= 0 && allOpts[prev].classList.contains('disabled')) prev--;
+                if (prev >= 0) { activeIdx = prev; setActive(activeIdx); }
+              } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (activeIdx >= 0 && allOpts[activeIdx] && !allOpts[activeIdx].classList.contains('disabled')) {
+                  selectItem(allOpts[activeIdx].dataset.value);
+                }
+              } else if (e.key === 'Escape') {
+                close();
+              } else if (e.key === 'Backspace' && !input.value && selected.length) {
+                removeItem(selected[selected.length - 1]);
+              }
+            });
+
+            results.addEventListener('click', function(e) {
+              var item = e.target.closest('.multiselect-item');
+              if (item && !item.classList.contains('disabled')) {
+                selectItem(item.dataset.value);
+              }
+            });
+
+            tagsContainer.addEventListener('click', function(e) {
+              var btn = e.target.closest('.multiselect-tag-remove');
+              if (btn) { removeItem(btn.dataset.value); }
+              else { input.focus(); }
+            });
+
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) close();
+            });
+          })();
+        </script>
+      </section>
+
+      <!-- 5. Navigation -->
+      <section aria-labelledby="nav-heading">
+        <h2 id="nav-heading" class="section-title">Navigation</h2>
+
+        <h4>Navbar</h4>
+        <nav class="navbar" aria-label="Main navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Pills</h4>
+            <nav class="navbar-pills" aria-label="Pill navigation">
+              <ul>
+                <li class="active"><a href="#">Active</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="unit-50">
+            <h4>Tabs</h4>
+            <nav class="nav-tabs" aria-label="Tab navigation">
+              <ul role="tablist">
+                <li class="active"><a href="#" role="tab" aria-selected="true">Active</a></li>
+                <li><a href="#" role="tab" aria-selected="false">Tab</a></li>
+                <li><a href="#" role="tab" aria-selected="false">Tab</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Stacked Nav</h4>
+            <nav class="nav-stacked" aria-label="Stacked navigation">
+              <ul>
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Breadcrumbs</h4>
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li aria-current="page">Current Page</li>
+              </ul>
+            </nav>
+          </div>
+          <div class="unit-50">
+            <h4>Pagination</h4>
+            <nav class="pagination" aria-label="Pagination">
+              <ul>
+                <li><a href="#" aria-label="Previous page">&laquo;</a></li>
+                <li class="active"><a href="#" aria-current="page">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#" aria-label="Next page">&raquo;</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Labels & Badges -->
+      <section aria-labelledby="labels-heading">
+        <h2 id="labels-heading" class="section-title">Labels &amp; Badges</h2>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Labels</h4>
+            <span class="label">Default</span>
+            <span class="label label-blue">Blue</span>
+            <span class="label label-red">Red</span>
+            <span class="label label-green">Green</span>
+            <span class="label label-black">Black</span>
+            <span class="label label-yellow">Yellow</span>
+            <span class="label label-outline">Outline</span>
+          </div>
+          <div class="unit-50">
+            <h4>Badges</h4>
+            <span class="badge">1</span>
+            <span class="badge label-blue">24</span>
+            <span class="badge label-red">99+</span>
+            <span class="badge label-green">New</span>
+            <span class="badge label-black">0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Notifications -->
+      <section aria-labelledby="notifications-heading">
+        <h2 id="notifications-heading" class="section-title">Notifications</h2>
+
+        <h4>Standard</h4>
+        <div class="tools-alert" role="alert">Default alert — something to be aware of.</div>
+        <div class="tools-alert tools-alert-blue" role="alert">Info alert — here is some information.</div>
+        <div class="tools-alert tools-alert-red" role="alert">Error alert — something went wrong.</div>
+        <div class="tools-alert tools-alert-green" role="alert">Success alert — operation completed.</div>
+        <div class="tools-alert tools-alert-yellow" role="alert">Warning alert — proceed with caution.</div>
+        <div class="tools-alert tools-alert-black" role="alert">Dark alert — important notice.</div>
+
+        <h4>With Icons &amp; Dismiss</h4>
+        <div class="tools-alert tools-alert-blue" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span class="tools-alert-content">Info alert with a Feather icon and dismiss button.</span>
+          <button class="tools-alert-dismiss" aria-label="Dismiss"></button>
+        </div>
+        <div class="tools-alert tools-alert-red" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          <span class="tools-alert-content">Error alert with icon and dismiss.</span>
+          <button class="tools-alert-dismiss" aria-label="Dismiss"></button>
+        </div>
+        <div class="tools-alert tools-alert-green" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span class="tools-alert-content">Success alert with icon and dismiss.</span>
+          <button class="tools-alert-dismiss" aria-label="Dismiss"></button>
+        </div>
+        <div class="tools-alert tools-alert-yellow" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <span class="tools-alert-content">Warning alert with icon and dismiss.</span>
+          <button class="tools-alert-dismiss" aria-label="Dismiss"></button>
+        </div>
+
+        <h4>Outline (tinted bg + border)</h4>
+        <div class="tools-alert tools-alert-outline" role="alert">Default outline alert.</div>
+        <div class="tools-alert tools-alert-outline tools-alert-blue" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span class="tools-alert-content">Info outline with icon.</span>
+        </div>
+        <div class="tools-alert tools-alert-outline tools-alert-red" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          <span class="tools-alert-content">Error outline with icon.</span>
+        </div>
+        <div class="tools-alert tools-alert-outline tools-alert-green" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span class="tools-alert-content">Success outline with icon.</span>
+        </div>
+        <div class="tools-alert tools-alert-outline tools-alert-yellow" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <span class="tools-alert-content">Warning outline with icon.</span>
+        </div>
+
+        <h4>Ghost (transparent bg + border)</h4>
+        <div class="tools-alert tools-alert-ghost" role="alert">Default ghost alert.</div>
+        <div class="tools-alert tools-alert-ghost tools-alert-blue" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span class="tools-alert-content">Info ghost with icon.</span>
+        </div>
+        <div class="tools-alert tools-alert-ghost tools-alert-red" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          <span class="tools-alert-content">Error ghost with icon.</span>
+        </div>
+        <div class="tools-alert tools-alert-ghost tools-alert-green" role="alert">
+          <svg class="tools-alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span class="tools-alert-content">Success ghost with icon.</span>
+        </div>
+      </section>
+
+      <!-- 8. Tables -->
+      <section aria-labelledby="tables-heading">
+        <h2 id="tables-heading" class="section-title">Tables</h2>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Striped Table</h4>
+            <table class="table-stripped">
+              <thead>
+                <tr><th scope="col">Name</th><th scope="col">Role</th><th scope="col">Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Alice</td><td>Engineer</td><td><span class="label label-green">Active</span></td></tr>
+                <tr><td>Bob</td><td>Designer</td><td><span class="label label-blue">Away</span></td></tr>
+                <tr><td>Carol</td><td>Manager</td><td><span class="label label-red">Offline</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="unit-50">
+            <h4>Bordered Table</h4>
+            <table class="table-bordered">
+              <thead>
+                <tr><th scope="col">Item</th><th scope="col">Qty</th><th scope="col">Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Widget</td><td>10</td><td>$5.00</td></tr>
+                <tr><td>Gadget</td><td>3</td><td>$12.50</td></tr>
+                <tr><td>Doohickey</td><td>7</td><td>$3.25</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Color Palette -->
+      <section aria-labelledby="colors-heading">
+        <h2 id="colors-heading" class="section-title">Color Palette</h2>
+
+        <h4>Core Colors — Full Shades</h4>
+        <div class="units-row">
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Blue</p>
+            <div class="swatch" style="background: #1a52a5;"></div>
+            <div class="swatch" style="background: #2575ed;"></div>
+            <div class="swatch" style="background: #92baf6;"></div>
+            <div class="swatch" style="background: #d3e3fb;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Red</p>
+            <div class="swatch" style="background: #b2232f;"></div>
+            <div class="swatch" style="background: #de2c3b;"></div>
+            <div class="swatch" style="background: #ef969d;"></div>
+            <div class="swatch" style="background: #f8d5d8;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Green</p>
+            <div class="swatch" style="background: #237f35;"></div>
+            <div class="swatch" style="background: #2c9f42;"></div>
+            <div class="swatch" style="background: #96cfa1;"></div>
+            <div class="swatch" style="background: #d5ecd9;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Yellow</p>
+            <div class="swatch" style="background: #cca000;"></div>
+            <div class="swatch" style="background: #ffc800;"></div>
+            <div class="swatch" style="background: #ffe480;"></div>
+            <div class="swatch" style="background: #fff4cc;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Black</p>
+            <div class="swatch" style="background: #000;"></div>
+            <div class="swatch" style="background: #0f0f0f;"></div>
+            <div class="swatch" style="background: #363738;"></div>
+            <div class="swatch" style="background: #dadada;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-25">
+            <p class="text-xs text-center font-bold">Gray</p>
+            <div class="swatch" style="background: #b3b6b7;"></div>
+            <div class="swatch" style="background: #e0e3e5;"></div>
+            <div class="swatch" style="background: #f0f1f2;"></div>
+            <div class="swatch" style="background: #f7f8f8;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+        </div>
+
+        <h4>Extended Palette</h4>
+        <div class="units-row">
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Indigo</p>
+            <div class="swatch" style="background: #3730a3;"></div>
+            <div class="swatch" style="background: #4f46e5;"></div>
+            <div class="swatch" style="background: #a5b4fc;"></div>
+            <div class="swatch" style="background: #e0e7ff;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Purple</p>
+            <div class="swatch" style="background: #5b21b6;"></div>
+            <div class="swatch" style="background: #7c3aed;"></div>
+            <div class="swatch" style="background: #c4b5fd;"></div>
+            <div class="swatch" style="background: #ede9fe;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Pink</p>
+            <div class="swatch" style="background: #9d174d;"></div>
+            <div class="swatch" style="background: #db2777;"></div>
+            <div class="swatch" style="background: #f9a8d4;"></div>
+            <div class="swatch" style="background: #fce7f3;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Orange</p>
+            <div class="swatch" style="background: #c2410c;"></div>
+            <div class="swatch" style="background: #ea580c;"></div>
+            <div class="swatch" style="background: #fdba74;"></div>
+            <div class="swatch" style="background: #ffedd5;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Teal</p>
+            <div class="swatch" style="background: #0f766e;"></div>
+            <div class="swatch" style="background: #0d9488;"></div>
+            <div class="swatch" style="background: #5eead4;"></div>
+            <div class="swatch" style="background: #ccfbf1;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+          <div class="unit-33">
+            <p class="text-xs text-center font-bold">Cyan</p>
+            <div class="swatch" style="background: #0e7490;"></div>
+            <div class="swatch" style="background: #0891b2;"></div>
+            <div class="swatch" style="background: #67e8f9;"></div>
+            <div class="swatch" style="background: #cffafe;"></div>
+            <p class="text-xs text-center">Dark / Base / Light / Pastel</p>
+          </div>
+        </div>
+
+        <h4>Neutrals</h4>
+        <div class="units-row">
+          <div class="unit-20">
+            <div class="swatch" style="background: #fafafa; border: 1px solid #e5e5e5;"></div>
+            <p class="text-xs text-center">50</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+            <p class="text-xs text-center">100</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #e5e5e5;"></div>
+            <p class="text-xs text-center">200</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #d4d4d4;"></div>
+            <p class="text-xs text-center">300</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #a3a3a3;"></div>
+            <p class="text-xs text-center">400</p>
+          </div>
+        </div>
+        <div class="units-row">
+          <div class="unit-20">
+            <div class="swatch" style="background: #737373;"></div>
+            <p class="text-xs text-center">500</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #525252;"></div>
+            <p class="text-xs text-center">600</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #404040;"></div>
+            <p class="text-xs text-center">700</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #262626;"></div>
+            <p class="text-xs text-center">800</p>
+          </div>
+          <div class="unit-20">
+            <div class="swatch" style="background: #171717;"></div>
+            <p class="text-xs text-center">900</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Text Utilities -->
+      <section aria-labelledby="text-utils-heading">
+        <h2 id="text-utils-heading" class="section-title">Text Utilities</h2>
+
+        <div class="units-row">
+          <div class="unit-33">
+            <h4>Size Classes</h4>
+            <p class="text-xs">.text-xs (12px)</p>
+            <p class="text-sm">.text-sm (14px)</p>
+            <p class="text-base">.text-base (16px)</p>
+            <p class="text-lg">.text-lg (18px)</p>
+            <p class="text-xl">.text-xl (24px)</p>
+            <p class="text-2xl">.text-2xl (30px)</p>
+            <p class="text-3xl">.text-3xl (36px)</p>
+            <p class="text-4xl">.text-4xl (48px)</p>
+            <p class="text-5xl">.text-5xl (60px)</p>
+          </div>
+          <div class="unit-33">
+            <h4>Weight Classes</h4>
+            <p class="font-normal">.font-normal (400)</p>
+            <p class="font-medium">.font-medium (500)</p>
+            <p class="font-semibold">.font-semibold (600)</p>
+            <p class="font-bold">.font-bold (700)</p>
+          </div>
+          <div class="unit-33">
+            <h4>Line Height Classes</h4>
+            <p class="leading-tight" style="background: var(--ply-bg-muted); padding: 0.5rem; border-left: 3px solid var(--ply-nav-border);">.leading-tight (1.25)<br>Second line for comparison.</p>
+            <p class="leading-snug" style="background: var(--ply-bg-muted); padding: 0.5rem; border-left: 3px solid var(--ply-nav-border);">.leading-snug (1.375)<br>Second line for comparison.</p>
+            <p class="leading-normal" style="background: var(--ply-bg-muted); padding: 0.5rem; border-left: 3px solid var(--ply-nav-border);">.leading-normal (1.5)<br>Second line for comparison.</p>
+            <p class="leading-relaxed" style="background: var(--ply-bg-muted); padding: 0.5rem; border-left: 3px solid var(--ply-nav-border);">.leading-relaxed (1.625)<br>Second line for comparison.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Helpers -->
+      <section aria-labelledby="helpers-heading">
+        <h2 id="helpers-heading" class="section-title">Helpers</h2>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Text Alignment</h4>
+            <p class="text-left">.text-left</p>
+            <p class="text-center">.text-center</p>
+            <p class="text-right">.text-right</p>
+          </div>
+          <div class="unit-50">
+            <h4>Font Styles (Legacy)</h4>
+            <p class="bold">.bold</p>
+            <p class="light">.light</p>
+            <p class="italic">.italic</p>
+            <p class="uppercase">.uppercase</p>
+            <p class="big">.big</p>
+            <p class="small">.small</p>
+            <p class="smaller">.smaller</p>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <h4>Spacing — Margin</h4>
+            <p class="text-sm">Apply margin in any direction. <code>--extra</code> doubles the value.</p>
+          </div>
+        </div>
+        <div class="units-row">
+          <div class="unit-20"><div class="demo-box margin-top">.margin-top</div></div>
+          <div class="unit-20"><div class="demo-box margin-right">.margin-right</div></div>
+          <div class="unit-20"><div class="demo-box margin-bottom">.margin-bottom</div></div>
+          <div class="unit-20"><div class="demo-box margin-left">.margin-left</div></div>
+          <div class="unit-20"><div class="demo-box margin">.margin</div></div>
+        </div>
+        <div class="units-row">
+          <div class="unit-100">
+            <p class="text-sm">Remove: <code>.no-margin</code> <code>.no-top-margin</code> <code>.no-right-margin</code> <code>.no-bottom-margin</code> <code>.no-left-margin</code> &mdash; Shortcuts: <code>.pause</code> (half bottom) <code>.end</code> (no bottom) <code>.last</code> (no right)</p>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <h4>Spacing — Padding</h4>
+            <p class="text-sm">Apply padding in any direction. <code>--extra</code> doubles the value.</p>
+          </div>
+        </div>
+        <div class="units-row">
+          <div class="unit-20"><div style="background: var(--ply-bg-muted);"><div class="padding-top" style="background: var(--ply-bg-surface-alt);">.padding-top</div></div></div>
+          <div class="unit-20"><div style="background: var(--ply-bg-muted);"><div class="padding-right" style="background: var(--ply-bg-surface-alt);">.padding-right</div></div></div>
+          <div class="unit-20"><div style="background: var(--ply-bg-muted);"><div class="padding-bottom" style="background: var(--ply-bg-surface-alt);">.padding-bottom</div></div></div>
+          <div class="unit-20"><div style="background: var(--ply-bg-muted);"><div class="padding-left" style="background: var(--ply-bg-surface-alt);">.padding-left</div></div></div>
+          <div class="unit-20"><div style="background: var(--ply-bg-muted);"><div class="padding" style="background: var(--ply-bg-surface-alt);">.padding</div></div></div>
+        </div>
+        <div class="units-row">
+          <div class="unit-100">
+            <p class="text-sm">Remove: <code>.no-padding</code> <code>.no-spacing</code> (removes both margin &amp; padding)</p>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-50">
+            <h4>Display</h4>
+            <div class="display--flex" style="gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div class="demo-box" style="flex:1;">.display--flex</div>
+              <div class="demo-box" style="flex:1;">child</div>
+              <div class="demo-box" style="flex:1;">child</div>
+            </div>
+            <div class="display--grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div class="demo-box">.display--grid</div>
+              <div class="demo-box">child</div>
+            </div>
+            <p class="text-sm">Also: <code>.display--block</code> <code>.display--inline-block</code> <code>.display--table</code> <code>.display--none</code> <code>.hide</code></p>
+          </div>
+          <div class="unit-50">
+            <h4>Position</h4>
+            <div class="relative border" style="height: 80px; margin-bottom: 0.5rem;">
+              <div class="absolute demo-box" style="top: 0.5rem; left: 0.5rem; padding: 0.25rem 0.5rem;">.absolute inside .relative</div>
+            </div>
+            <p class="text-sm"><code>.relative</code> <code>.absolute</code> <code>.fixed</code> <code>.sticky</code> <code>.static</code></p>
+            <h4>Borders</h4>
+            <div class="display--flex" style="gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div class="border padding text-sm" style="flex:1;">.border</div>
+              <div class="border-top padding text-sm" style="flex:1;">.border-top</div>
+              <div class="border-bottom padding text-sm" style="flex:1;">.border-bottom</div>
+              <div class="border-left padding text-sm" style="flex:1;">.border-left</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="units-row">
+      <div class="unit-100 text-center" style="padding: 2rem 0; border-top: 1px solid var(--ply-border-color);">
+        <p class="text-sm" style="color: var(--ply-color-muted);">ply — A ratio-based CSS framework. Resize this page to see responsive heading scaling.</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

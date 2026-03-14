@@ -29,7 +29,7 @@
     @extend %cursor-pointer;
 
     display: block;
-    margin-bottom: math.div(variables.$base-line, 1.5);
+    margin-bottom: 0.25rem;
 
     input[type="text"],
     input[type="password"],
@@ -74,7 +74,8 @@
   select {
     border-radius: variables.$border-radius;
     display: block;
-    padding: variables.$padding;
+    width: 100%;
+    padding: 0.5em 0.75em;
   }
 }
 
@@ -136,7 +137,7 @@
 
 .form-desc {
   margin-top: 4px;
-  color: rgba(0, 0, 0, .4);
+  color: var(--ply-color-muted, rgba(0, 0, 0, .4));
   font-size: variables.$font-size-small;
   line-height: 1.4em;
 }
@@ -161,12 +162,12 @@ textarea {
 
 // Fieldset
 fieldset {
-  @include mixins.color-opacity;
   @extend %border-radius;
 
+  background-color: var(--ply-bg-surface);
   padding: variables.$base-line;
   margin-bottom: variables.$base-line;
-  border: 1px solid colors.$color-fieldset-border;
+  border: 1px solid var(--ply-border-color);
 
   *:last-child {
     margin-bottom: 0;
@@ -266,49 +267,74 @@ input.input-on-black {
 }
 
 /* Sizes */
-input {
-  &.input-big {
-    font-size: variables.$font-size-big;
-  }
+.form .input-big,
+input.input-big[type],
+textarea.input-big,
+select.input-big {
+  font-size: variables.$font-size-xl;
+}
 
-  &.input-small {
-    font-size: variables.$font-size-small;
-  }
+.form .input-small,
+input.input-small[type],
+textarea.input-small,
+select.input-small {
+  font-size: variables.$font-size-small;
+}
 
-  &.input-smaller {
-    font-size: variables.$font-size-smaller;
-  }
+.form .input-smaller,
+input.input-smaller[type],
+textarea.input-smaller,
+select.input-smaller {
+  font-size: variables.$font-size-smaller;
 }
 
 /* Append & Prepend */
 .input-groups {
-  display: table !important;
-
-  input {
-    width: 100%;
-  }
+  display: flex !important;
+  align-items: stretch;
+  margin-bottom: variables.$base-line;
 
   input,
-  .input-append,
-  .input-prepend,
-  .btn-append {
-    display: table-cell !important;
-  }
-
-  .btn-append,
-  .input-append,
-  .input-prepend {
+  textarea,
+  select {
+    flex: 1 1 auto;
     width: 1%;
-    vertical-align: middle;
+    min-width: 0;
+    display: block !important;
+    margin-bottom: 0;
+    border-radius: variables.$border-radius;
+  }
+
+  // Zero out joining edges
+  input:not(:last-child),
+  textarea:not(:last-child),
+  select:not(:last-child) {
+    border-right: none;
+    border-radius: variables.$border-radius 0 0 variables.$border-radius;
+  }
+
+  input:not(:first-child),
+  textarea:not(:first-child),
+  select:not(:first-child) {
+    border-radius: 0 variables.$border-radius variables.$border-radius 0;
+  }
+
+  // Middle element (both prepend and append)
+  input:not(:first-child):not(:last-child),
+  textarea:not(:first-child):not(:last-child),
+  select:not(:first-child):not(:last-child) {
+    border-radius: 0;
   }
 
   .input-append,
   .input-prepend {
-    background-color: colors.$color-input-append-background;
-    border: 1px solid colors.$color-input-append-border;
+    display: flex;
+    align-items: center;
+    background-color: var(--ply-bg-surface-alt);
+    border: 1px solid var(--ply-color-input-border);
     margin: 0;
-    padding: .45em .75em .15em .75em;
-    color: rgba(0, 0, 0, .6);
+    padding: 0 0.75rem;
+    color: var(--ply-color-secondary, rgba(0, 0, 0, .6));
     line-height: variables.$base-line;
     font-size: variables.$font-size-small;
     white-space: nowrap;
@@ -316,100 +342,79 @@ input {
 
   .input-prepend {
     border-right: none;
+    border-radius: variables.$border-radius 0 0 variables.$border-radius;
   }
 
   .input-append {
-    position: relative;
-    z-index: 1;
     border-left: none;
-  }
-
-  .btn-append .btn {
-    display: block;
-    height: auto;
-    border-radius: 0 2px 2px 0;
-  }
-}
-
-/* Fancy Select */
-
-.fancy-select {
-  @extend %cursor-pointer;
-  @extend %relative;
-  @extend %width-100;
-
-  display: block;
-  font-size: .8em;
-  background: colors.$color-white;
-  border: 1px solid colors.$color-blue-light;
-  border-radius: variables.$border-radius;
-  padding-right: 1px;
-
-  &::after {
-    @extend %absolute;
-    @extend %text-centered;
-
-    right: -1px;
-    top: 0;
-    height: 100%;
-    overflow: hidden;
-    padding-top: 2px;
-    width: variables.$padding * 5;
-    display: block;
-    content: '\25BC';
-    background: colors.$color-blue;
-    border-right: colors.$color-blue-light;
-    color: colors.$color-white;
-    font-size: .75em;
     border-radius: 0 variables.$border-radius variables.$border-radius 0;
   }
 
-  &:hover {
-    border: 1px solid colors.$color-blue-dark;
-    box-shadow: 0 0 6px colors.$color-blue-dark;
+  .btn-append {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
 
-    &::after {
-      border-right: colors.$color-blue-light;
+    .btn {
+      display: flex;
+      align-items: center;
+      border-radius: 0 variables.$border-radius variables.$border-radius 0;
+      margin: 0;
+      white-space: nowrap;
     }
   }
+}
 
-  select {
-    @extend %relative;
-    @extend %width-100;
+/* Select */
+.form select {
+  appearance: none;
+  background-color: var(--ply-color-input-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75em center;
+  background-size: 0.75em;
+  padding: 0.5em 2.5em 0.5em 0.75em;
+  font-size: 1em;
+  line-height: variables.$base-line;
+  border: 1px solid var(--ply-color-input-border);
+  color: var(--ply-color-body);
+  cursor: pointer;
 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: variables.$padding * .75;
-    background: transparent;
+  &:focus {
     outline: none;
-    border: 0 none;
-    z-index: 10;
-    left: variables.$padding;
+    border-color: var(--ply-color-focus, colors.$color-blue);
+    box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.3);
   }
 }
 
-// Mozilla hacks
-@-moz-document url-prefix() {
-  .fancy-select {
-    select {
-      left: 0;
-    }
+/* Select — outlined */
+.form select.select-outlined,
+select.select-outlined {
+  appearance: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75em center;
+  background-size: 0.75em;
+  padding: 0.5em 2.5em 0.5em 0.75em;
+  border: 1px solid var(--ply-border-strong, colors.$color-neutral-300);
+  border-radius: variables.$border-radius;
+  color: var(--ply-color-body);
+  font-size: 1em;
+  line-height: variables.$base-line;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: var(--ply-color-body);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--ply-color-focus, colors.$color-blue);
+    box-shadow: 0 0 0 1px var(--ply-color-focus, colors.$color-blue);
   }
 }
 
-// IE10&11 hack since IE10&11 doesn't allow for conditional comments
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  // this is necessary to avoid forcing a double click on the select
-  .lm-select select:focus {
-    border: 0 none;
-  }
-}
-
-// IE9 and below
-.lt-ie10 {
-  // this is necessary to avoid forcing a double click on the select
-  .lm-select select:focus {
-    border: 0 none;
-  }
-}
