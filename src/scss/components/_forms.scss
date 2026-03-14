@@ -399,22 +399,6 @@ select.input-xs {
   }
 }
 
-// AI-friendly size aliases — consistent with button naming
-.form .input-lg,
-input.input-lg[type],
-textarea.input-lg,
-select.input-lg { @extend .input-big; }
-
-.form .input-sm,
-input.input-sm[type],
-textarea.input-sm,
-select.input-sm { @extend .input-small; }
-
-.form .input-xs,
-input.input-xs[type],
-textarea.input-xs,
-select.input-xs { @extend .input-smaller; }
-
 /* Select — outlined */
 .form select.select-outlined,
 select.select-outlined {
