@@ -268,9 +268,13 @@ input.input-on-black {
 
 /* Sizes */
 .form .input-big,
+.form .input-lg,
 input.input-big[type],
+input.input-lg[type],
 textarea.input-big,
-select.input-big {
+textarea.input-lg,
+select.input-big,
+select.input-lg {
   font-size: variables.$font-size-xl;
 }
 
