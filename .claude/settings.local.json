@@ -10,7 +10,14 @@
       "WebSearch",
       "WebFetch(domain:carbondesignsystem.com)",
       "WebFetch(domain:v10.carbondesignsystem.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(wc:*)",
+      "Bash(gzip:*)",
+      "Bash(python3:*)",
+      "Bash(npm publish:*)",
+      "Bash(ls:*)",
+      "Bash(for f:*)",
+      "Bash(open:*)"
     ]
   }
 }

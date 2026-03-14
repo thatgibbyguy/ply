@@ -243,3 +243,22 @@
 [data-theme="dark"] {
   @include dark-alerts;
 }
+
+// AI-friendly aliases — predictable names that LLMs guess on first try
+.alert { @extend .tools-alert; }
+.alert-icon { @extend .tools-alert-icon; }
+.alert-content { @extend .tools-alert-content; }
+.alert-dismiss { @extend .tools-alert-dismiss; }
+.alert-outline { @extend .tools-alert-outline; }
+.alert-ghost { @extend .tools-alert-ghost; }
+.alert-black { @extend .tools-alert-black; }
+.alert-blue { @extend .tools-alert-blue; }
+.alert-red { @extend .tools-alert-red; }
+.alert-yellow { @extend .tools-alert-yellow; }
+.alert-green { @extend .tools-alert-green; }
+.message { @extend .tools-message; }
+.message-black { @extend .tools-message-black; }
+.message-blue { @extend .tools-message-blue; }
+.message-red { @extend .tools-message-red; }
+.message-yellow { @extend .tools-message-yellow; }
+.message-green { @extend .tools-message-green; }

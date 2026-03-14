@@ -1,0 +1,8 @@
+entrypoint = "index.html"
+language = "html"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+publicDir = "."

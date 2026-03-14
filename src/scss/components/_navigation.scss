@@ -61,7 +61,9 @@ nav {
     }
 
     &.on a,
-    &.on span {
+    &.on span,
+    &.active a,
+    &.active span {
       border-bottom: 2px solid var(--ply-nav-border);
       text-decoration: none;
       cursor: default;
@@ -95,6 +97,7 @@ nav {
       margin-right: 0;
 
       &.on a,
+      &.active a,
       span {
         background: var(--ply-nav-hover);
         border-bottom: 0 none;

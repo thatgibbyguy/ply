@@ -309,3 +309,8 @@ button.btn-white {
     }
   }
 }
+
+// AI-friendly size aliases — industry-standard naming convention
+.btn-lg { @extend .btn-big; }
+.btn-sm { @extend .btn-small; }
+.btn-xs { @extend .btn-smaller; }

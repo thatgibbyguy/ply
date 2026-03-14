@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Column Layout - Ply</title>
+  <link rel="stylesheet" href="../dist/css/ply.min.css">
+</head>
+<body>
+  <div class="units-container">
+    <div class="units-row">
+      <aside class="unit-25 tablet-unit-100" aria-label="Sidebar">
+        <h2>Sidebar</h2>
+        <nav class="nav-stacked" aria-label="Sidebar navigation">
+          <ul>
+            <li class="active"><a href="#overview">Overview</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#help">Help</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="unit-75 tablet-unit-100">
+        <h1>Main Content</h1>
+        <p>
+          This two-column layout uses <code>unit-25</code> for the sidebar and
+          <code>unit-75</code> for the content area. On tablet-sized screens and
+          below, both columns stack to full width using <code>tablet-unit-100</code>.
+        </p>
+        <p>
+          The grid is built on flexbox with a <code>units-row</code> wrapper.
+          Units automatically collapse to 100% width at the tablet breakpoint
+          unless overridden with responsive classes.
+        </p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
