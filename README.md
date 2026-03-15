@@ -1,105 +1,134 @@
 # ply
 
-ply is a modernized, ratio-based CSS framework built using flexbox. Think of ply as the metric system for your grid-based layouts.
+A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint.
 
-The purpose of ply is to provide front-end developers with an immediately understandable framework based on a ratio-based grid system, versus arbitrary column-based grid systems.
+**~18KB gzipped. No JavaScript. No build step. One `<link>` tag.**
 
 ## Install
 
-### via NPM
+### CDN
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+```
+
+### npm
 
 ```sh
 npm install plygrid
 ```
 
-### via GitHub
+```html
+<link rel="stylesheet" href="node_modules/plygrid/dist/css/ply.min.css">
+```
+
+### Git
 
 ```sh
 git clone https://github.com/thatgibbyguy/ply.git
 ```
 
-## Usage
+## Why ply?
 
-Link ply in your document head:
+CSS frameworks were designed for humans reading documentation. But increasingly, the first consumer of your framework is an AI — a coding agent in Replit, Claude, Cursor, or Copilot generating a UI from a prompt.
 
-```html
-<link rel="stylesheet" type="text/css" href="/dist/css/ply.min.css">
-<link rel="stylesheet" type="text/css" href="your-normal-css.css">
-```
+- **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
+- **Accessible by default** — `:focus-visible` outlines, `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast.
+- **Small footprint** — ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step, no tree-shaking.
+- **Ratio-based grid** — think in percentages, not arbitrary columns. `unit-50` is 50%, `unit-33` is 33%. Responsive prefixes: `tablet-unit-*`, `phone-unit-*`.
+- **Custom theming** — override `--ply-*` CSS custom properties to create any theme. Light and dark modes built in.
 
-Make sure your CSS comes after the ply import so your styles extend ply.
-
-## ply versus foundation
-
-An offset, three column layout in ply:
+## Quick Start
 
 ```html
-<section class="units-row">
-    <div class="unit-25">
-        <!-- A column of 25% width -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+</head>
+<body>
+  <div class="units-container">
+    <div class="units-row">
+      <div class="unit-50 tablet-unit-100">
+        <h1>Hello, ply</h1>
+        <p>A two-column layout. Stacks on tablet and below.</p>
+      </div>
+      <div class="unit-50 tablet-unit-100">
+        <button class="btn btn-blue">Get Started</button>
+      </div>
     </div>
-    <div class="unit-50">
-        <!-- A column of 50% width -->
-    </div>
-    <div class="unit-25">
-        <!-- A column of 25% width -->
-    </div>
-</section>
+  </div>
+</body>
+</html>
 ```
 
-An offset, three column layout in foundation:
+## Bundles
+
+| Bundle | File | Description |
+|--------|------|-------------|
+| Full | `ply.min.css` | Everything — grid, typography, forms, buttons, navigation, notifications, labels, dropdown, loader, helpers |
+| Core | `ply-core.min.css` | Grid, typography, forms, buttons, navigation, notifications, essential helpers |
+| Essentials | `ply-essentials.min.css` | Grid + helpers only |
+
+## Dark Mode
+
+ply respects `prefers-color-scheme` automatically. No configuration needed.
+
+To force a mode:
 
 ```html
-<div class="row">
-    <div class="large-3 columns">
-        <!-- A column of ~25% width -->
-    </div>
-    <div class="large-6 columns">
-        <!-- A column of ~50% width -->
-    </div>
-    <div class="large-3 columns">
-        <!-- A column of ~25% width -->
-    </div>
-</div>
+<html data-theme="dark">  <!-- Force dark -->
+<html data-theme="light"> <!-- Force light -->
+<html>                     <!-- Auto (follows OS) -->
 ```
 
-ply lets you think in rational, base-10 math versus arbitrary column-based layouts.
+## Custom Themes
+
+Override `--ply-*` CSS custom properties to create any theme:
+
+```css
+[data-theme="brand"] {
+  --ply-bg-body: #fefce8;
+  --ply-color-body: #1a1a1a;
+  --ply-color-link: #b45309;
+  --ply-btn-default-bg: #b45309;
+  /* ... */
+}
+```
+
+```html
+<html data-theme="brand">
+```
+
+See `snippets/custom-theme.html` for a full working example.
+
+## AI Integration
+
+For AI agents (Claude, Cursor, Copilot, Replit AI):
+
+- **`PLY.md`** — complete class reference, usage rules, anti-patterns, and snippets
+- **`ply-classes.json`** — machine-readable class map for programmatic tool use
+- **`snippets/`** — copy-paste HTML files for common patterns (dashboard, login, contact form, etc.)
 
 ## Development
 
-### Build
-
 ```sh
 npm install
-npm run build
+npm run build     # Compile all bundles
+npm run watch     # Watch for changes
+npm run lint      # Run stylelint
 ```
-
-This compiles the SCSS source to CSS in `/dist/css/`.
-
-### Watch
-
-```sh
-npm run watch
-```
-
-Watches for changes and recompiles automatically.
-
-### Lint
-
-```sh
-npm run lint
-```
-
-Runs stylelint on the SCSS source.
 
 ### Tech
 
-- [Sass](https://sass-lang.com/)
-- [PostCSS](https://postcss.org/) + [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Sass](https://sass-lang.com/) (modern `@use`/`@forward` modules)
+- [PostCSS](https://postcss.org/) + [Autoprefixer](https://github.com/postcss/autoprefixer) + [cssnano](https://cssnano.github.io/cssnano/)
 
 ## Contributing
 
-Want to contribute? Great! Simply fork this repo and create a Pull Request with your added features.
+Fork this repo and create a Pull Request with your changes.
 
 ## License
 

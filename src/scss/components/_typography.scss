@@ -219,7 +219,7 @@ del {
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted colors.$color-black;
+  border-bottom: 1px dotted var(--ply-color-body, colors.$color-black);
   cursor: help;
 }
 
@@ -260,8 +260,8 @@ u {
 }
 
 mark {
-  background-color: colors.$color-yellow;
-  color: colors.$color-black;
+  background-color: var(--ply-color-mark-bg, colors.$color-yellow);
+  color: var(--ply-color-mark, colors.$color-black);
   text-decoration: none;
 }
 
@@ -313,8 +313,8 @@ var {
 }
 
 samp {
-  background: colors.$color-blue-pastel;
-  border: 1px solid color.adjust(colors.$color-blue-pastel, $lightness: -7%);
+  background: var(--ply-color-code-bg, colors.$color-blue-pastel);
+  border: 1px solid var(--ply-color-code-border, color.adjust(colors.$color-blue-pastel, $lightness: -7%));
 }
 
 kbd {

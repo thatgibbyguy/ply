@@ -832,6 +832,39 @@
   text-transform: uppercase;
 }
 
+// Layer / Elevation Helpers
+
+.layer-0 {
+  background-color: var(--ply-layer-0);
+}
+
+.layer-1 {
+  background-color: var(--ply-layer-1);
+  box-shadow: var(--ply-shadow-1);
+}
+
+.layer-2 {
+  background-color: var(--ply-layer-2);
+  box-shadow: var(--ply-shadow-2);
+}
+
+.layer-3 {
+  background-color: var(--ply-layer-3);
+  box-shadow: var(--ply-shadow-3);
+}
+
+.shadow-1 {
+  box-shadow: var(--ply-shadow-1);
+}
+
+.shadow-2 {
+  box-shadow: var(--ply-shadow-2);
+}
+
+.shadow-3 {
+  box-shadow: var(--ply-shadow-3);
+}
+
 // Color Helpers
 
 .background-white {

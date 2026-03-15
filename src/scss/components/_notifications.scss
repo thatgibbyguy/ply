@@ -65,6 +65,37 @@
   }
 }
 
+// Light alert color variants — Carbon-inspired support tints
+.tools-alert-black,
+.alert-black {
+  background: #e0e0e0;
+  border-left-color: #161616;
+}
+
+.tools-alert-blue,
+.alert-blue {
+  background: #edf5ff;
+  border-left-color: #0043ce;
+}
+
+.tools-alert-red,
+.alert-red {
+  background: #fff1f1;
+  border-left-color: #da1e28;
+}
+
+.tools-alert-yellow,
+.alert-yellow {
+  background: #fdf6dd;
+  border-left-color: #f1c21b;
+}
+
+.tools-alert-green,
+.alert-green {
+  background: #defbe6;
+  border-left-color: #198038;
+}
+
 // Outline variant — keeps tinted bg, adds full border
 .tools-alert-outline,
 .alert-outline {
@@ -107,26 +138,31 @@
 
 .tools-alert-ghost.tools-alert-blue,
 .alert-ghost.alert-blue {
+  background: transparent;
   border-color: #0043ce;
 }
 
 .tools-alert-ghost.tools-alert-red,
 .alert-ghost.alert-red {
+  background: transparent;
   border-color: #da1e28;
 }
 
 .tools-alert-ghost.tools-alert-yellow,
 .alert-ghost.alert-yellow {
+  background: transparent;
   border-color: #f1c21b;
 }
 
 .tools-alert-ghost.tools-alert-green,
 .alert-ghost.alert-green {
+  background: transparent;
   border-color: #198038;
 }
 
 .tools-alert-ghost.tools-alert-black,
 .alert-ghost.alert-black {
+  background: transparent;
   border-color: #161616;
 }
 
@@ -189,37 +225,6 @@
 }
 
 // Alerts — dark mode uses muted/desaturated backgrounds
-
-// Light alert variants — Carbon-inspired support tints
-.tools-alert-black,
-.alert-black {
-  background: #e0e0e0;
-  border-left-color: #161616;
-}
-
-.tools-alert-blue,
-.alert-blue {
-  background: #edf5ff;
-  border-left-color: #0043ce;
-}
-
-.tools-alert-red,
-.alert-red {
-  background: #fff1f1;
-  border-left-color: #da1e28;
-}
-
-.tools-alert-yellow,
-.alert-yellow {
-  background: #fdf6dd;
-  border-left-color: #f1c21b;
-}
-
-.tools-alert-green,
-.alert-green {
-  background: #defbe6;
-  border-left-color: #198038;
-}
 
 // Dark alert variants — Carbon Gray 90 tinted
 @mixin dark-alerts {

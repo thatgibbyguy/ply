@@ -1,215 +1,781 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ply — The AI-Ready CSS Framework</title>
   <link rel="stylesheet" href="../dist/css/ply.min.css">
+  <style>
+    /* Page-specific layout helpers — not part of the framework */
+    .hero { padding: 6rem 0 4rem; }
+    .hero h1 { font-size: 4.5rem; letter-spacing: -0.04em; margin-bottom: 0.25rem; }
+    .hero .lead { font-size: 1.35rem; max-width: 38em; }
+    .section { padding: 4rem 0 2rem; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ply-color-muted);
+      margin-bottom: 0.5rem;
+    }
+    .section h2 { margin-top: 0; }
+    .card {
+      background: var(--ply-bg-surface);
+      border: 1px solid var(--ply-border-color);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3, .card h4 { margin-top: 0; }
+    .swatch {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--ply-border-color);
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    .theme-switcher select {
+      font-size: 0.85rem;
+      padding: 0.35rem 2rem 0.35rem 0.5rem;
+    }
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--ply-border-color);
+      margin: 3rem 0;
+    }
+    .layer-demo {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
-<body>
+<body style="background: var(--ply-bg-body); color: var(--ply-color-body);">
+
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
       <li class="active"><a href="#">ply</a></li>
+      <li><a href="#elements">Elements</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#layers">Layers</a></li>
       <li><a href="https://github.com/thatgibbyguy/ply">GitHub</a></li>
-      <li style="margin-left: auto;">
-        <button
-          class="btn btn-outline btn-xs"
-          type="button"
-          aria-label="Toggle dark mode"
-          onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')"
+      <li style="margin-left: auto;" class="theme-switcher">
+        <select
+          id="theme-select"
+          class="select-outlined"
+          aria-label="Choose theme"
+          onchange="document.documentElement.setAttribute('data-theme', this.value)"
         >
-          Toggle Dark Mode
-        </button>
+          <option value="">Auto</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
       </li>
     </ul>
   </nav>
 
   <div class="units-container">
     <main>
+
       <!-- Hero -->
-      <div class="units-row centered-content">
-        <div class="unit-66 tablet-unit-100">
-          <h1>ply</h1>
-          <p class="lead">A ratio-based CSS framework built for AI agents, accessible by default, and small enough to ship anywhere.</p>
-          <p class="text-lg">One stylesheet. ~18KB gzipped. Dark mode, responsive grid, semantic HTML — no build step, no JavaScript, no configuration.</p>
+      <div class="hero">
+        <div class="units-row">
+          <div class="unit-60 tablet-unit-100">
+            <p class="section-label">CSS Framework / v0.9.9</p>
+            <h1>ply</h1>
+            <p class="lead">A ratio-based CSS framework built for AI agents, accessible by default, and small enough to ship anywhere. One stylesheet. ~18KB gzipped. No JavaScript, no build step, no configuration.</p>
+            <div class="margin-top">
+              <button class="btn btn-blue btn-sm" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why ply</button>
+              <button class="btn btn-outline btn-sm" onclick="document.getElementById('elements').scrollIntoView({behavior:'smooth'})">View Elements</button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <hr class="divider">
 
       <!-- Why ply -->
-      <h2>Why ply?</h2>
-      <p>CSS frameworks were designed for humans reading documentation. But increasingly, the first consumer of your framework is an AI — a coding agent in Replit, Claude, Cursor, or Copilot generating a UI from a prompt. ply is designed for that world.</p>
+      <section class="section" id="why">
+        <p class="section-label">Rationale</p>
+        <h2>Why ply exists</h2>
+        <p>CSS frameworks were designed for humans reading documentation. But increasingly, the first consumer of your framework is an AI &mdash; a coding agent in Replit, Claude, Cursor, or Copilot generating a UI from a prompt. ply is designed for that world.</p>
 
-      <div class="units-row">
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h3>AI-Native</h3>
-            <p>ply ships with <code>PLY.md</code> — a complete class reference that any AI agent can read. It also includes <code>ply-classes.json</code> for programmatic tool use, and copy-paste snippets that agents emit directly.</p>
-            <p>Class names are predictable. <code>.alert-blue</code>, <code>.btn-sm</code>, <code>.unit-50</code> — an LLM guesses correctly on the first try. No memorizing utility shorthands or looking up obscure class prefixes.</p>
+        <div class="units-row">
+          <div class="unit-33 tablet-unit-100">
+            <div class="card">
+              <h3>AI-Native</h3>
+              <p>Ships with <code>PLY.md</code> and <code>ply-classes.json</code> &mdash; a complete class reference any AI agent can read. Class names are predictable: <code>.alert-blue</code>, <code>.btn-sm</code>, <code>.unit-50</code>. An LLM guesses correctly on the first try.</p>
+            </div>
+          </div>
+          <div class="unit-33 tablet-unit-100">
+            <div class="card">
+              <h3>Accessible by Default</h3>
+              <p>Accessibility is a civil rights issue. When your UI isn't accessible, you exclude people. ply bakes <code>:focus-visible</code> outlines, <code>prefers-reduced-motion</code>, semantic HTML styling, and WCAG AA contrast into the CSS itself.</p>
+            </div>
+          </div>
+          <div class="unit-33 tablet-unit-100">
+            <div class="card">
+              <h3>Small Footprint</h3>
+              <p>~18KB gzipped, full framework. No JavaScript runtime. No build step. No tree-shaking. One <code>&lt;link&gt;</code> tag. That matters when you're spinning up prototypes in Replit or shipping to users on slow connections.</p>
+            </div>
           </div>
         </div>
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h3>Accessible by Default</h3>
-            <p>Accessibility isn't a feature you bolt on — it's a civil rights issue. When your UI isn't accessible, you're excluding people. ply makes the right thing the easy thing:</p>
-            <ul>
-              <li>Visible <code>:focus-visible</code> outlines on all interactive elements for keyboard navigation</li>
-              <li><code>.sr-only</code> class for screen-reader-only content</li>
-              <li><code>prefers-reduced-motion</code> respected globally — animations are disabled automatically</li>
-              <li><code>prefers-color-scheme</code> dark mode — no flash, no toggle required</li>
-              <li>Semantic HTML styled out of the box — <code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>, <code>&lt;progress&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;table&gt;</code></li>
-              <li>Color contrast meets WCAG AA across light and dark themes</li>
-            </ul>
-            <p>When an AI generates ply markup, the output is accessible without the developer needing to think about it.</p>
-          </div>
-        </div>
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h3>Small Footprint</h3>
-            <p>The full framework is ~18KB gzipped. The core bundle is ~16KB. The essentials (grid + helpers only) is under 5KB.</p>
-            <p>No JavaScript runtime. No build step. No tree-shaking required. One <code>&lt;link&gt;</code> tag and you're done. That matters when you're spinning up a prototype in Replit or shipping to users on slow connections.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Replit -->
-      <h2>Built for Replit</h2>
-      <p>ply is designed to be the CSS framework you reach for when an AI agent is building your UI in Replit.</p>
-      <div class="units-row">
-        <div class="unit-50 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h4>Zero Config</h4>
-            <p>ply includes <code>.replit</code> and <code>replit.nix</code> configuration files. Fork the repo, open in Replit, and start building. No <code>npm install</code>, no webpack, no PostCSS pipeline — the compiled CSS is already in <code>dist/</code>.</p>
-          </div>
-        </div>
-        <div class="unit-50 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h4>AI Agent Friendly</h4>
-            <p>When Replit's AI agent needs to generate a dashboard, a form, or a landing page, it reads <code>PLY.md</code> and gets the complete class reference, usage rules, and ready-to-use snippets. The output is correct, accessible, and styled — on the first generation.</p>
-          </div>
-        </div>
-      </div>
+      <hr class="divider">
 
-      <!-- How a11y works -->
-      <h2>How ply Does Accessibility</h2>
-      <p>Most frameworks treat accessibility as a docs page you're supposed to read. ply bakes it into the CSS itself so that correct behavior is the default, not the exception.</p>
+      <!-- Native HTML Elements -->
+      <section class="section" id="elements">
+        <p class="section-label">Native Elements</p>
+        <h2>Every HTML element, styled</h2>
+        <p>ply styles semantic HTML so you get good defaults without adding classes. Below is every native element ply enhances.</p>
 
-      <div class="units-row">
-        <div class="unit-50 tablet-unit-100">
-          <h4>Keyboard Navigation</h4>
-          <p>Every interactive element — links, buttons, inputs, tabs — gets a visible <code>:focus-visible</code> outline. Keyboard users always know where they are. Try it: press <kbd>Tab</kbd> through this page.</p>
-          <div class="margin-bottom">
-            <button class="btn btn-blue">Tab to me</button>
-            <button class="btn btn-outline">Then me</button>
-            <button class="btn btn-green">Then me</button>
+        <!-- Typography -->
+        <div class="units-row">
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Headings</h4>
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+            </div>
+          </div>
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Inline Text</h4>
+              <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, <a href="#">a link</a>, <code>inline code</code>, <kbd>Ctrl+S</kbd>, <mark>highlighted text</mark>, <small>small text</small>, <abbr title="Abbreviation">abbr</abbr>, and <del>deleted text</del>.</p>
+              <p>Superscript: x<sup>2</sup> and subscript: H<sub>2</sub>O.</p>
+              <address>123 Example St, Internet, WWW 00000</address>
+            </div>
           </div>
         </div>
-        <div class="unit-50 tablet-unit-100">
-          <h4>Reduced Motion</h4>
-          <p>Users who set <code>prefers-reduced-motion: reduce</code> in their OS get all animations and transitions disabled automatically. No opt-in required, no extra classes.</p>
-          <p>This matters for people with vestibular disorders, motion sensitivity, or seizure conditions. The CSS handles it globally:</p>
-          <pre><code>@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+
+        <!-- Blockquote & Lists -->
+        <div class="units-row">
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Blockquote</h4>
+              <blockquote>
+                <p>Design is not just what it looks like and feels like. Design is how it works.</p>
+              </blockquote>
+
+              <h4>Ordered List</h4>
+              <ol>
+                <li>First item</li>
+                <li>Second item
+                  <ol>
+                    <li>Nested item</li>
+                  </ol>
+                </li>
+                <li>Third item</li>
+              </ol>
+
+              <h4>Unordered List</h4>
+              <ul>
+                <li>First item</li>
+                <li>Second item
+                  <ul>
+                    <li>Nested item</li>
+                  </ul>
+                </li>
+                <li>Third item</li>
+              </ul>
+            </div>
+          </div>
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Definition List</h4>
+              <dl>
+                <dt>ply</dt>
+                <dd>A ratio-based CSS framework built for AI agents.</dd>
+                <dt>Accessible</dt>
+                <dd>Designed to be usable by everyone, including people who rely on assistive technology.</dd>
+                <dt>Ratio-based</dt>
+                <dd>Grid columns defined as percentages of the parent: <code>unit-50</code>, <code>unit-33</code>, <code>unit-25</code>.</dd>
+              </dl>
+
+              <h4>Details &amp; Summary</h4>
+              <details>
+                <summary>Click to expand &mdash; native HTML disclosure</summary>
+                <p>This is a <code>&lt;details&gt;</code> element. It works with keyboard navigation, screen readers, and requires zero JavaScript. ply styles the indicator and spacing.</p>
+              </details>
+              <details>
+                <summary>Another disclosure widget</summary>
+                <p>Multiple details elements stack naturally.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Preformatted Code</h4>
+              <pre><code>&lt;div class="units-row"&gt;
+  &lt;div class="unit-50 tablet-unit-100"&gt;
+    &lt;h2&gt;Left column&lt;/h2&gt;
+    &lt;p&gt;Content here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="unit-50 tablet-unit-100"&gt;
+    &lt;h2&gt;Right column&lt;/h2&gt;
+    &lt;p&gt;More content.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Table</h4>
+              <table class="table-stripped table-hovered">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>ply</th>
+                    <th>Tailwind</th>
+                    <th>Bootstrap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Size (gzip)</td>
+                    <td><strong>~18KB</strong></td>
+                    <td>~10KB+ (varies)</td>
+                    <td>~30KB</td>
+                  </tr>
+                  <tr>
+                    <td>Build step</td>
+                    <td><strong>No</strong></td>
+                    <td>Yes</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>AI instruction file</td>
+                    <td><strong>PLY.md + JSON</strong></td>
+                    <td>No</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>Dark mode</td>
+                    <td><strong>Automatic</strong></td>
+                    <td>Automatic (v4)</td>
+                    <td>Attribute-based</td>
+                  </tr>
+                  <tr>
+                    <td>Custom themes</td>
+                    <td><strong>CSS custom properties</strong></td>
+                    <td>Config / CSS</td>
+                    <td>Sass + CSS vars</td>
+                  </tr>
+                  <tr>
+                    <td>Focus styles</td>
+                    <td><strong>Built-in</strong></td>
+                    <td>Utility-based</td>
+                    <td>Built-in</td>
+                  </tr>
+                  <tr>
+                    <td>Reduced motion</td>
+                    <td><strong>Built-in</strong></td>
+                    <td>Utility-based</td>
+                    <td>Built-in</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms -->
+        <div class="units-row">
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Form Elements</h4>
+              <form class="form" onsubmit="return false;">
+                <label>
+                  Text input
+                  <input type="text" placeholder="Type here...">
+                </label>
+                <label>
+                  Email
+                  <input type="email" placeholder="name@example.com">
+                </label>
+                <label>
+                  Password
+                  <input type="password" placeholder="Password">
+                </label>
+                <label>
+                  Select
+                  <select>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                </label>
+                <label>
+                  Textarea
+                  <textarea rows="3" placeholder="Write something..."></textarea>
+                </label>
+                <label>
+                  Date
+                  <input type="date">
+                </label>
+                <label>
+                  Color
+                  <input type="color" value="#2575ed">
+                </label>
+                <label>
+                  Range
+                  <input type="range" min="0" max="100" value="50">
+                </label>
+                <label>
+                  File
+                  <input type="file">
+                </label>
+              </form>
+            </div>
+          </div>
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Checkboxes &amp; Radios</h4>
+              <fieldset>
+                <legend>Choose your options</legend>
+                <label><input type="checkbox" checked> Option A</label>
+                <label><input type="checkbox"> Option B</label>
+                <label><input type="checkbox"> Option C</label>
+              </fieldset>
+              <fieldset>
+                <legend>Pick one</legend>
+                <label><input type="radio" name="pick" checked> Radio 1</label>
+                <label><input type="radio" name="pick"> Radio 2</label>
+                <label><input type="radio" name="pick"> Radio 3</label>
+              </fieldset>
+
+              <h4>Input States</h4>
+              <form class="form" onsubmit="return false;">
+                <label>
+                  Success
+                  <input type="text" class="input-success" value="Valid input">
+                </label>
+                <label>
+                  Error
+                  <input type="text" class="input-error" value="Invalid input">
+                </label>
+                <label>
+                  Disabled
+                  <input type="text" disabled value="Disabled input">
+                </label>
+              </form>
+
+              <h4>Input Groups</h4>
+              <div class="input-groups">
+                <span class="input-prepend">https://</span>
+                <input type="text" placeholder="example.com">
+              </div>
+
+              <h4>Progress &amp; Meter</h4>
+              <label>Progress (65%)
+                <progress value="65" max="100"></progress>
+              </label>
+              <label>Meter (7/10)
+                <meter min="0" max="10" low="3" high="7" optimum="8" value="7"></meter>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialog -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Dialog (Modal)</h4>
+              <p>Native <code>&lt;dialog&gt;</code> element &mdash; no JavaScript library required.</p>
+              <button class="btn btn-sm" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+              <dialog id="demo-dialog">
+                <h3>Native Dialog</h3>
+                <p>This is a <code>&lt;dialog&gt;</code> element styled by ply. It supports backdrop, focus trapping (browser-native), and Escape to close.</p>
+                <form method="dialog">
+                  <button class="btn btn-sm">Close</button>
+                </form>
+              </dialog>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Rule -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Horizontal Rule</h4>
+              <p>Content above the rule.</p>
+              <hr>
+              <p>Content below the rule.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- Components -->
+      <section class="section" id="components">
+        <p class="section-label">Components</p>
+        <h2>ply components</h2>
+
+        <!-- Buttons -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Buttons</h4>
+              <div class="margin-bottom">
+                <button class="btn">Default</button>
+                <button class="btn btn-blue">Blue</button>
+                <button class="btn btn-red">Red</button>
+                <button class="btn btn-green">Green</button>
+                <button class="btn btn-yellow">Yellow</button>
+                <button class="btn btn-black">Black</button>
+                <button class="btn btn-white">White</button>
+              </div>
+              <div class="margin-bottom">
+                <button class="btn btn-outline">Outline</button>
+                <button class="btn btn-outline bold">Outline Bold</button>
+                <button class="btn btn-active">Active</button>
+                <button class="btn" disabled>Disabled</button>
+              </div>
+              <div class="margin-bottom">
+                <button class="btn btn-lg">Large</button>
+                <button class="btn">Default</button>
+                <button class="btn btn-sm">Small</button>
+                <button class="btn btn-xs">Extra Small</button>
+              </div>
+              <h4>Button Group</h4>
+              <div class="btn-group">
+                <button class="btn btn-outline">Left</button>
+                <button class="btn btn-outline">Center</button>
+                <button class="btn btn-outline">Right</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Alerts</h4>
+              <div class="alert alert-blue">
+                <span class="alert-content">Info &mdash; This is a blue alert for informational messages.</span>
+                <button class="alert-dismiss" aria-label="Dismiss"></button>
+              </div>
+              <div class="alert alert-green">
+                <span class="alert-content">Success &mdash; Operation completed successfully.</span>
+                <button class="alert-dismiss" aria-label="Dismiss"></button>
+              </div>
+              <div class="alert alert-yellow">
+                <span class="alert-content">Warning &mdash; Please review before continuing.</span>
+                <button class="alert-dismiss" aria-label="Dismiss"></button>
+              </div>
+              <div class="alert alert-red">
+                <span class="alert-content">Error &mdash; Something went wrong.</span>
+                <button class="alert-dismiss" aria-label="Dismiss"></button>
+              </div>
+              <div class="alert alert-black">
+                <span class="alert-content">Neutral &mdash; A general-purpose notification.</span>
+              </div>
+
+              <h4>Alert Variants</h4>
+              <div class="alert alert-outline alert-blue">
+                <span class="alert-content">Outlined blue alert.</span>
+              </div>
+              <div class="alert alert-ghost alert-blue">
+                <span class="alert-content">Ghost blue alert &mdash; transparent background.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="units-row">
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Navigation Pills</h4>
+              <nav>
+                <ul class="navbar-pills">
+                  <li class="active"><a href="#">Active</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </nav>
+
+              <h4>Tabs</h4>
+              <nav>
+                <ul class="nav-tabs">
+                  <li class="active"><a href="#">Tab 1</a></li>
+                  <li><a href="#">Tab 2</a></li>
+                  <li><a href="#">Tab 3</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Breadcrumbs</h4>
+              <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Components</a></li>
+                  <li>Breadcrumbs</li>
+                </ul>
+              </nav>
+
+              <h4>Pagination</h4>
+              <nav aria-label="Pagination">
+                <ul class="pagination">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labels -->
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Labels</h4>
+              <span class="label">Default</span>
+              <span class="label label-blue">Blue</span>
+              <span class="label label-red">Red</span>
+              <span class="label label-green">Green</span>
+              <span class="label label-yellow">Yellow</span>
+              <span class="label label-black">Black</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- Layers & Depth -->
+      <section class="section" id="layers">
+        <p class="section-label">Elevation</p>
+        <h2>Layers &amp; Depth</h2>
+        <p>ply provides a 4-level elevation system using CSS custom properties. Each layer has a background and corresponding shadow that adapts across all themes.</p>
+
+        <div class="units-row">
+          <div class="unit-25 tablet-unit-50 phone-unit-100">
+            <div class="layer-demo layer-0">
+              <strong>Layer 0</strong>
+              <p class="text-sm">Base surface. No elevation.</p>
+            </div>
+          </div>
+          <div class="unit-25 tablet-unit-50 phone-unit-100">
+            <div class="layer-demo layer-1" style="border-radius: 6px;">
+              <strong>Layer 1</strong>
+              <p class="text-sm">Cards, panels. Subtle lift.</p>
+            </div>
+          </div>
+          <div class="unit-25 tablet-unit-50 phone-unit-100">
+            <div class="layer-demo layer-2" style="border-radius: 6px;">
+              <strong>Layer 2</strong>
+              <p class="text-sm">Dropdowns, popovers.</p>
+            </div>
+          </div>
+          <div class="unit-25 tablet-unit-50 phone-unit-100">
+            <div class="layer-demo layer-3" style="border-radius: 6px;">
+              <strong>Layer 3</strong>
+              <p class="text-sm">Modals, dialogs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Shadow Utilities</h4>
+              <p>Apply shadows independently with <code>.shadow-1</code>, <code>.shadow-2</code>, <code>.shadow-3</code>:</p>
+              <div class="units-row">
+                <div class="unit-33 tablet-unit-100">
+                  <div class="shadow-1 padding border-radius margin-bottom" style="background: var(--ply-bg-surface);">
+                    <code>.shadow-1</code> &mdash; subtle
+                  </div>
+                </div>
+                <div class="unit-33 tablet-unit-100">
+                  <div class="shadow-2 padding border-radius margin-bottom" style="background: var(--ply-bg-surface);">
+                    <code>.shadow-2</code> &mdash; medium
+                  </div>
+                </div>
+                <div class="unit-33 tablet-unit-100">
+                  <div class="shadow-3 padding border-radius margin-bottom" style="background: var(--ply-bg-surface);">
+                    <code>.shadow-3</code> &mdash; pronounced
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>CSS Custom Properties</h4>
+              <pre><code>/* Use in your own CSS */
+.my-card {
+  background: var(--ply-layer-1);
+  box-shadow: var(--ply-shadow-2);
+}
+
+/* Or use the utility classes */
+&lt;div class="layer-2"&gt;Elevated content&lt;/div&gt;
+&lt;div class="shadow-1"&gt;Subtle shadow only&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- Theming -->
+      <section class="section" id="themes">
+        <p class="section-label">Theming</p>
+        <h2>Build Your Own Theme</h2>
+        <p>ply uses CSS custom properties (<code>--ply-*</code>) for every color, border, shadow, and layer. To create a custom theme, override these tokens in a <code>[data-theme]</code> selector and set that attribute on <code>&lt;html&gt;</code>. No Sass, no build step.</p>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Three steps</h4>
+              <pre><code>&lt;!-- 1. Define your theme in a &lt;style&gt; block or stylesheet --&gt;
+&lt;style&gt;
+  [data-theme="brand"] {
+    --ply-bg-body: #fefce8;
+    --ply-bg-surface: #ffffff;
+    --ply-color-body: #1a1a1a;
+    --ply-color-link: #b45309;
+    --ply-border-color: #d6d3d1;
+    --ply-btn-default-bg: #b45309;
+    --ply-btn-default-hover: #92400e;
+    /* override as many or as few tokens as you need */
   }
-}</code></pre>
-        </div>
-      </div>
+&lt;/style&gt;
 
-      <div class="units-row">
-        <div class="unit-50 tablet-unit-100">
-          <h4>Screen Reader Support</h4>
-          <p>The <code>.sr-only</code> class hides content visually while keeping it accessible to screen readers. Use it for labels, descriptions, and skip links:</p>
-          <pre><code>&lt;a href="#main" class="sr-only"&gt;Skip to content&lt;/a&gt;</code></pre>
-        </div>
-        <div class="unit-50 tablet-unit-100">
-          <h4>Semantic HTML, Styled</h4>
-          <p>ply styles native HTML elements so you don't need wrapper divs or extra classes. When you use the right element, you get the right styling:</p>
-          <details>
-            <summary>Native &lt;details&gt; — no JavaScript needed</summary>
-            <p>This is a styled disclosure widget. It works with keyboard, screen readers, and has a smooth visual indicator. Zero classes added.</p>
-          </details>
-          <progress value="65" max="100"></progress>
-        </div>
-      </div>
+&lt;!-- 2. Activate it --&gt;
+&lt;html data-theme="brand"&gt;
 
-      <!-- vs others -->
-      <h2>ply vs. the Alternatives</h2>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>ply</th>
-            <th>Tailwind</th>
-            <th>Bootstrap</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Size (gzip)</td>
-            <td><strong>~18KB</strong></td>
-            <td>~30KB+ (purged)</td>
-            <td>~25KB</td>
-          </tr>
-          <tr>
-            <td>Build step required</td>
-            <td><strong>No</strong></td>
-            <td>Yes</td>
-            <td>No</td>
-          </tr>
-          <tr>
-            <td>AI instruction file</td>
-            <td><strong>PLY.md + JSON</strong></td>
-            <td>No</td>
-            <td>No</td>
-          </tr>
-          <tr>
-            <td>Dark mode</td>
-            <td><strong>Automatic</strong></td>
-            <td>Class-based</td>
-            <td>Attribute-based</td>
-          </tr>
-          <tr>
-            <td>Focus styles</td>
-            <td><strong>Built-in</strong></td>
-            <td>Opt-in</td>
-            <td>Built-in</td>
-          </tr>
-          <tr>
-            <td>Reduced motion</td>
-            <td><strong>Built-in</strong></td>
-            <td>Opt-in</td>
-            <td>Built-in</td>
-          </tr>
-          <tr>
-            <td>Semantic elements styled</td>
-            <td><strong>Yes</strong></td>
-            <td>No (utility-only)</td>
-            <td>Partial</td>
-          </tr>
-          <tr>
-            <td>JavaScript required</td>
-            <td><strong>None</strong></td>
-            <td>None</td>
-            <td>Optional</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Get started -->
-      <h2>Get Started</h2>
-      <p>Add one line to your HTML:</p>
-      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css"&gt;</code></pre>
-      <p>That's it. Start writing semantic HTML and ply handles the rest.</p>
-
-      <div class="units-row">
-        <div class="unit-50 tablet-unit-100">
-          <div class="alert alert-blue">
-            <span class="alert-content">Check out the other snippets in this directory for dashboards, forms, login pages, pricing cards, and more.</span>
+&lt;!-- 3. Or switch at runtime --&gt;
+&lt;script&gt;
+  document.documentElement.setAttribute('data-theme', 'brand');
+&lt;/script&gt;</code></pre>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="units-row">
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Built-in modes</h4>
+              <p>ply ships with <strong>light</strong> and <strong>dark</strong>. Dark mode activates automatically via <code>prefers-color-scheme</code>, or you can force it with <code>data-theme="dark"</code>.</p>
+            </div>
+          </div>
+          <div class="unit-50 tablet-unit-100">
+            <div class="card">
+              <h4>Everything adapts</h4>
+              <p>All components &mdash; alerts, buttons, forms, navigation, tables, layers &mdash; read from <code>--ply-*</code> tokens. Override the tokens and every component follows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <h4>Token reference</h4>
+              <table class="table-stripped">
+                <thead>
+                  <tr><th>Token</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>--ply-bg-body</code></td><td>Page background</td></tr>
+                  <tr><td><code>--ply-bg-surface</code></td><td>Card / panel background</td></tr>
+                  <tr><td><code>--ply-bg-surface-alt</code></td><td>Alternating surface</td></tr>
+                  <tr><td><code>--ply-bg-muted</code></td><td>Muted / disabled background</td></tr>
+                  <tr><td><code>--ply-color-body</code></td><td>Primary text</td></tr>
+                  <tr><td><code>--ply-color-headings</code></td><td>Heading text</td></tr>
+                  <tr><td><code>--ply-color-secondary</code></td><td>Secondary text</td></tr>
+                  <tr><td><code>--ply-color-muted</code></td><td>Muted text</td></tr>
+                  <tr><td><code>--ply-color-text-inverse</code></td><td>Text on dark buttons</td></tr>
+                  <tr><td><code>--ply-border-color</code></td><td>Default borders</td></tr>
+                  <tr><td><code>--ply-color-link</code></td><td>Link color</td></tr>
+                  <tr><td><code>--ply-color-focus</code></td><td>Focus ring</td></tr>
+                  <tr><td><code>--ply-color-input-bg</code></td><td>Input background</td></tr>
+                  <tr><td><code>--ply-color-input-border</code></td><td>Input border</td></tr>
+                  <tr><td><code>--ply-btn-default-bg</code></td><td>Default button</td></tr>
+                  <tr><td><code>--ply-nav-bg</code></td><td>Navigation background</td></tr>
+                  <tr><td><code>--ply-layer-0</code>&ndash;<code>3</code></td><td>Elevation backgrounds</td></tr>
+                  <tr><td><code>--ply-shadow-1</code>&ndash;<code>3</code></td><td>Elevation shadows</td></tr>
+                </tbody>
+              </table>
+              <p class="text-sm" style="color:var(--ply-color-muted);">See <a href="custom-theme.html">custom-theme.html</a> for a full working example with two custom themes (Midnight and Warm).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- Typography Scale -->
+      <section class="section" id="typography">
+        <p class="section-label">Typography</p>
+        <h2>Type Scale</h2>
+        <div class="units-row">
+          <div class="unit-100">
+            <div class="card">
+              <p class="text-5xl">text-5xl</p>
+              <p class="text-4xl">text-4xl</p>
+              <p class="text-3xl">text-3xl</p>
+              <p class="text-2xl">text-2xl</p>
+              <p class="text-xl">text-xl</p>
+              <p class="text-lg">text-lg</p>
+              <p class="text-base">text-base</p>
+              <p class="text-sm">text-sm</p>
+              <p class="text-xs">text-xs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- Get Started -->
+      <section class="section">
+        <p class="section-label">Install</p>
+        <h2>Get Started</h2>
+        <p>Add one line to your HTML:</p>
+        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid/dist/css/ply.min.css"&gt;</code></pre>
+        <p>That's it. Write semantic HTML. ply handles the rest.</p>
+      </section>
+
+      <hr class="divider">
+
+      <footer style="padding: 2rem 0; text-align: center;">
+        <p class="text-sm" style="color: var(--ply-color-muted);">ply v0.9.9 &mdash; MIT License &mdash; <a href="https://github.com/thatgibbyguy/ply">GitHub</a></p>
+      </footer>
+
     </main>
   </div>
+
 </body>
 </html>

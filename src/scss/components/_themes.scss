@@ -1,0 +1,6 @@
+// * -- ply theming system
+// ply uses CSS custom properties (--ply-*) for all colors, borders, shadows,
+// and layers. To create a custom theme, override these properties on a
+// [data-theme="your-name"] selector, then set that attribute on <html>.
+// See /snippets/custom-theme.html for a complete example.
+// The full list of tokens is defined in _colors.scss under :root.

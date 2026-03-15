@@ -9,9 +9,9 @@
   top: 0;
   right: 0;
   width: 250px;
-  color: colors.$color-black;
-  background: colors.$color-white;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+  color: var(--ply-color-body, colors.$color-black);
+  background: var(--ply-bg-surface, colors.$color-white);
+  box-shadow: var(--ply-shadow-2, 0 1px 5px rgba(0, 0, 0, .3));
   overflow: auto;
 
   & section {
@@ -37,14 +37,14 @@ ul.dropdown {
     display: block;
     padding: 7px 15px;
     text-decoration: none;
-    color: colors.$color-black;
+    color: var(--ply-color-body, colors.$color-black);
     &:hover {
-      background: #eee;
+      background: var(--ply-bg-surface-alt, #eee);
     }
   }
 
   & li.divider {
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid var(--ply-border-color, #e2e2e2);
   }
 
 }

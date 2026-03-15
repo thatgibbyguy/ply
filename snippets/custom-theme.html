@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ply — Custom Theme Example</title>
+  <link rel="stylesheet" href="../dist/css/ply.min.css">
+  <style>
+    /*
+      Custom Theme: Midnight
+      Override --ply-* custom properties on [data-theme="your-name"].
+      Set data-theme on <html> to activate.
+
+      You only need to override the tokens you want to change.
+      Everything else falls back to the light theme defaults.
+      For a dark theme, override all tokens to avoid light fallbacks.
+    */
+    [data-theme="midnight"] {
+      /* Background */
+      --ply-bg-body: #0f172a;
+      --ply-bg-surface: #1e293b;
+      --ply-bg-surface-alt: #1e293b;
+      --ply-bg-muted: #334155;
+
+      /* Text */
+      --ply-color-body: #e2e8f0;
+      --ply-color-headings: #f1f5f9;
+      --ply-color-secondary: #94a3b8;
+      --ply-color-muted: #64748b;
+      --ply-color-placeholder: #475569;
+      --ply-color-text-inverse: #0f172a;
+
+      /* Borders */
+      --ply-border-color: #334155;
+      --ply-border-strong: #475569;
+
+      /* Interactive */
+      --ply-color-link: #60a5fa;
+      --ply-color-link-hover: #93c5fd;
+      --ply-color-focus: #3b82f6;
+
+      /* Fields */
+      --ply-color-field-bg: #1e293b;
+      --ply-color-input-border: #475569;
+      --ply-color-input-bg: #1e293b;
+
+      /* Code */
+      --ply-color-code-bg: #1e293b;
+      --ply-color-code-border: #334155;
+
+      /* Tables */
+      --ply-color-table-border: #334155;
+      --ply-color-table-stripped: #162032;
+      --ply-color-table-hovered: #253349;
+
+      /* Buttons */
+      --ply-btn-default-bg: #3b82f6;
+      --ply-btn-default-hover: #2563eb;
+
+      /* Navigation */
+      --ply-nav-bg: #0f172a;
+      --ply-nav-color: #e2e8f0;
+      --ply-nav-border: #e2e8f0;
+      --ply-nav-hover: #253349;
+      --ply-nav-active-color: #64748b;
+
+      /* Layers / Elevation */
+      --ply-layer-0: #0f172a;
+      --ply-layer-1: #1e293b;
+      --ply-layer-2: #334155;
+      --ply-layer-3: #475569;
+      --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /*
+      Custom Theme: Warm
+      A light theme with cream/earthy tones.
+    */
+    [data-theme="warm"] {
+      /* Background */
+      --ply-bg-body: #faf8f5;
+      --ply-bg-surface: #ffffff;
+      --ply-bg-surface-alt: #f5f0ea;
+      --ply-bg-muted: #e8e0d6;
+
+      /* Text */
+      --ply-color-body: #292524;
+      --ply-color-headings: #1c1917;
+      --ply-color-secondary: #57534e;
+      --ply-color-muted: #78716c;
+      --ply-color-placeholder: #a8a29e;
+      --ply-color-text-inverse: #fafaf9;
+
+      /* Borders */
+      --ply-border-color: #d6d3d1;
+      --ply-border-strong: #a8a29e;
+
+      /* Interactive */
+      --ply-color-link: #b45309;
+      --ply-color-link-hover: #92400e;
+      --ply-color-focus: #d97706;
+
+      /* Fields */
+      --ply-color-field-bg: #f5f0ea;
+      --ply-color-input-border: #a8a29e;
+      --ply-color-input-bg: #faf8f5;
+
+      /* Code */
+      --ply-color-code-bg: #f5f0ea;
+      --ply-color-code-border: #d6d3d1;
+
+      /* Tables */
+      --ply-color-table-border: #d6d3d1;
+      --ply-color-table-stripped: #faf8f5;
+      --ply-color-table-hovered: #f0ebe4;
+
+      /* Buttons */
+      --ply-btn-default-bg: #292524;
+      --ply-btn-default-hover: #44403c;
+
+      /* Navigation */
+      --ply-nav-bg: #faf8f5;
+      --ply-nav-color: #292524;
+      --ply-nav-border: #292524;
+      --ply-nav-hover: #f0ebe4;
+      --ply-nav-active-color: #78716c;
+
+      /* Layers / Elevation */
+      --ply-layer-0: #faf8f5;
+      --ply-layer-1: #f5f0ea;
+      --ply-layer-2: #e8e0d6;
+      --ply-layer-3: #d6d3d1;
+      --ply-shadow-1: 0 1px 3px rgba(41, 37, 36, 0.06);
+      --ply-shadow-2: 0 2px 8px rgba(41, 37, 36, 0.08);
+      --ply-shadow-3: 0 4px 24px rgba(41, 37, 36, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li class="active"><a href="#">ply — Custom Theme</a></li>
+      <li style="margin-left: auto;">
+        <select
+          class="select-outlined"
+          aria-label="Choose theme"
+          style="font-size:0.85rem; padding:0.35rem 2rem 0.35rem 0.5rem;"
+          onchange="document.documentElement.setAttribute('data-theme', this.value)"
+        >
+          <option value="light">Light (default)</option>
+          <option value="dark">Dark (built-in)</option>
+          <option value="midnight" selected>Midnight (custom)</option>
+          <option value="warm">Warm (custom)</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="units-container">
+    <main>
+      <h1>Custom Theming</h1>
+      <p>ply's theming system is CSS custom properties. Override <code>--ply-*</code> tokens in a <code>[data-theme="your-name"]</code> block, then set that attribute on <code>&lt;html&gt;</code>. No Sass, no build step, no JavaScript framework.</p>
+
+      <h2>How it works</h2>
+      <pre><code>&lt;!-- 1. Define your theme in CSS --&gt;
+&lt;style&gt;
+  [data-theme="brand"] {
+    --ply-bg-body: #fefce8;
+    --ply-color-body: #1a1a1a;
+    --ply-color-link: #b45309;
+    /* ... override as many tokens as you need */
+  }
+&lt;/style&gt;
+
+&lt;!-- 2. Activate it --&gt;
+&lt;html data-theme="brand"&gt;
+
+&lt;!-- 3. Or switch at runtime --&gt;
+&lt;script&gt;
+  document.documentElement.setAttribute('data-theme', 'brand');
+&lt;/script&gt;</code></pre>
+
+      <h2>Components adapt automatically</h2>
+      <div class="units-row">
+        <div class="unit-50 tablet-unit-100">
+          <div class="alert alert-blue">
+            <span class="alert-content">Info alert — adapts to your theme colors.</span>
+          </div>
+          <div class="alert alert-green">
+            <span class="alert-content">Success alert.</span>
+          </div>
+          <div class="alert alert-ghost alert-red">
+            <span class="alert-content">Ghost alert — transparent background.</span>
+          </div>
+        </div>
+        <div class="unit-50 tablet-unit-100">
+          <button class="btn">Default</button>
+          <button class="btn btn-blue">Blue</button>
+          <button class="btn btn-outline">Outline</button>
+          <div class="margin-top">
+            <form class="form" onsubmit="return false;">
+              <label>
+                Text input
+                <input type="text" placeholder="Themed input...">
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h2>Elevation adapts too</h2>
+      <div class="units-row">
+        <div class="unit-25 tablet-unit-50 phone-unit-100">
+          <div class="layer-0 padding border-radius margin-bottom">
+            <strong>Layer 0</strong>
+          </div>
+        </div>
+        <div class="unit-25 tablet-unit-50 phone-unit-100">
+          <div class="layer-1 padding border-radius margin-bottom">
+            <strong>Layer 1</strong>
+          </div>
+        </div>
+        <div class="unit-25 tablet-unit-50 phone-unit-100">
+          <div class="layer-2 padding border-radius margin-bottom">
+            <strong>Layer 2</strong>
+          </div>
+        </div>
+        <div class="unit-25 tablet-unit-50 phone-unit-100">
+          <div class="layer-3 padding border-radius margin-bottom">
+            <strong>Layer 3</strong>
+          </div>
+        </div>
+      </div>
+
+      <h2>Available tokens</h2>
+      <table class="table-stripped">
+        <thead>
+          <tr><th>Token</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--ply-bg-body</code></td><td>Page background</td></tr>
+          <tr><td><code>--ply-bg-surface</code></td><td>Card/panel background</td></tr>
+          <tr><td><code>--ply-bg-surface-alt</code></td><td>Alternating surface</td></tr>
+          <tr><td><code>--ply-bg-muted</code></td><td>Muted/disabled background</td></tr>
+          <tr><td><code>--ply-color-body</code></td><td>Primary text</td></tr>
+          <tr><td><code>--ply-color-headings</code></td><td>Heading text</td></tr>
+          <tr><td><code>--ply-color-secondary</code></td><td>Secondary text</td></tr>
+          <tr><td><code>--ply-color-muted</code></td><td>Muted/placeholder text</td></tr>
+          <tr><td><code>--ply-color-text-inverse</code></td><td>Text on dark buttons</td></tr>
+          <tr><td><code>--ply-border-color</code></td><td>Default borders</td></tr>
+          <tr><td><code>--ply-border-strong</code></td><td>Prominent borders</td></tr>
+          <tr><td><code>--ply-color-link</code></td><td>Link color</td></tr>
+          <tr><td><code>--ply-color-link-hover</code></td><td>Link hover</td></tr>
+          <tr><td><code>--ply-color-focus</code></td><td>Focus ring</td></tr>
+          <tr><td><code>--ply-color-input-bg</code></td><td>Input background</td></tr>
+          <tr><td><code>--ply-color-input-border</code></td><td>Input border</td></tr>
+          <tr><td><code>--ply-btn-default-bg</code></td><td>Default button background</td></tr>
+          <tr><td><code>--ply-btn-default-hover</code></td><td>Default button hover</td></tr>
+          <tr><td><code>--ply-nav-bg</code></td><td>Navigation background</td></tr>
+          <tr><td><code>--ply-nav-color</code></td><td>Navigation text</td></tr>
+          <tr><td><code>--ply-layer-0</code> to <code>--ply-layer-3</code></td><td>Elevation backgrounds</td></tr>
+          <tr><td><code>--ply-shadow-1</code> to <code>--ply-shadow-3</code></td><td>Elevation shadows</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+</body>
+</html>

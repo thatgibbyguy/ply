@@ -236,7 +236,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--ply-border-color, #ddd);
 }
 
 /* Responsive media */
@@ -307,7 +307,7 @@ dialog {
   padding: 1.5rem;
   max-width: 32rem;
   width: 90%;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--ply-shadow-3, 0 4px 24px rgba(0, 0, 0, 0.15));
   background: var(--ply-bg-surface, #ffffff);
   color: var(--ply-color-body, #161616);
 
