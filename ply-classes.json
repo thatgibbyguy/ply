@@ -413,6 +413,43 @@
       "parent": "navbar",
       "example": "<nav class=\"navbar navbar--vertical\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
     },
+    "navbar--thick": {
+      "category": "navigation",
+      "description": "Bold 2px bottom border on navbar.",
+      "parent": "navbar",
+      "example": "<nav class=\"navbar navbar--thick\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+    },
+    "navbar--borderless": {
+      "category": "navigation",
+      "description": "No border on navbar. Active items use background highlight instead.",
+      "parent": "navbar",
+      "example": "<nav class=\"navbar navbar--borderless\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+    },
+    "navbar--border-blue": {
+      "category": "navigation",
+      "description": "Blue bottom border on navbar.",
+      "parent": "navbar"
+    },
+    "navbar--border-green": {
+      "category": "navigation",
+      "description": "Green bottom border on navbar.",
+      "parent": "navbar"
+    },
+    "navbar--border-red": {
+      "category": "navigation",
+      "description": "Red bottom border on navbar.",
+      "parent": "navbar"
+    },
+    "navbar--border-yellow": {
+      "category": "navigation",
+      "description": "Yellow bottom border on navbar.",
+      "parent": "navbar"
+    },
+    "navbar--stack": {
+      "category": "navigation",
+      "description": "On mobile, wrap navbar items instead of horizontal scrolling.",
+      "parent": "navbar"
+    },
     "navbar-pills": {
       "category": "navigation",
       "description": "Pill-style navigation. Horizontal flex layout with hover backgrounds.",
@@ -1006,6 +1043,72 @@
     "hide-on-mobile": {
       "category": "helpers",
       "description": "Hidden on mobile (display: none below 767px)."
+    },
+    "text-primary": {
+      "category": "helpers",
+      "description": "Body text color (theme-aware). Maps to --ply-color-body."
+    },
+    "text-secondary": {
+      "category": "helpers",
+      "description": "Secondary/subdued text color (theme-aware). Maps to --ply-color-secondary."
+    },
+    "text-tertiary": {
+      "category": "helpers",
+      "description": "Muted/tertiary text color (theme-aware). Maps to --ply-color-muted. Alias: text-muted."
+    },
+    "text-muted": {
+      "category": "helpers",
+      "description": "Muted/tertiary text color (theme-aware). Alias for text-tertiary."
+    },
+    "text-inverse": {
+      "category": "helpers",
+      "description": "Inverse text color (theme-aware). Maps to --ply-color-text-inverse."
+    },
+    "success": {
+      "category": "helpers",
+      "description": "Green text color for success states."
+    },
+    "error": {
+      "category": "helpers",
+      "description": "Red text color for error states."
+    },
+    "no-orphan": {
+      "category": "helpers",
+      "description": "Prevents orphaned words at the end of text blocks using text-wrap: pretty."
+    },
+    "text-balance": {
+      "category": "helpers",
+      "description": "Balances line lengths for headings using text-wrap: balance."
+    },
+    "gap-xs": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: 0.25rem."
+    },
+    "gap-sm": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: 0.5rem."
+    },
+    "gap": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: 0.75rem."
+    },
+    "gap-lg": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: 1.5rem."
+    },
+    "gap-xl": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: 2rem."
+    },
+    "no-link-style": {
+      "category": "helpers",
+      "description": "Suppresses link color and underline on all <a> tags inside the container. Useful for card-style links."
+    },
+    "equal-height": {
+      "category": "grid",
+      "description": "On units-row: makes all unit children stretch to the same height. Their direct children automatically fill the available height.",
+      "parent": "units-row",
+      "example": "<div class=\"units-row equal-height\"><div class=\"unit-33\"><div class=\"border padding\">Short</div></div><div class=\"unit-33\"><div class=\"border padding\">Taller content here</div></div></div>"
     },
     "clearfix": {
       "category": "helpers",

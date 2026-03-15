@@ -170,7 +170,15 @@ button.btn-outline {
 }
 
 .btn-straight,
-.btn-square {
+.btn-square,
+input[type="submit"].btn-straight,
+input[type="button"].btn-straight,
+input[type="reset"].btn-straight,
+button.btn-straight,
+input[type="submit"].btn-square,
+input[type="button"].btn-square,
+input[type="reset"].btn-square,
+button.btn-square {
   border-radius: 0;
 }
 

@@ -19,7 +19,12 @@
       "Bash(ls:*)",
       "Bash(for f:*)",
       "Bash(open:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(curl:*)",
+      "Bash(git status:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm whoami:*)"
     ]
   }
 }

@@ -13,20 +13,18 @@ nav {
 }
 
 
-/* NavBar — Swiss/Modernist */
+/* NavBar */
 .navbar {
   background: var(--ply-nav-bg);
-  border-bottom: 2px solid var(--ply-nav-border);
+  border-bottom: 1px solid var(--ply-border-color);
   box-sizing: border-box;
-  font-size: variables.$font-size-sm;
-  letter-spacing: 0.05em;
 
   ul {
     list-style: none;
     margin: 0;
     display: flex;
     flex: 0 1 auto;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: stretch;
     gap: 0;
   }
@@ -39,7 +37,10 @@ nav {
     font-weight: variables.$font-weight-medium;
     padding: 0.75rem 1.25rem;
     text-decoration: none;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
 
     &:focus-visible {
       outline: 2px solid var(--ply-color-focus, #0f62fe);
@@ -64,10 +65,11 @@ nav {
     &.on span,
     &.active a,
     &.active span {
-      border-bottom: 2px solid var(--ply-nav-border);
+      border-bottom-color: var(--ply-nav-border);
+      background: var(--ply-nav-active-bg, transparent);
       text-decoration: none;
       cursor: default;
-      color: var(--ply-nav-active-color);
+      color: var(--ply-nav-color);
     }
   }
 
@@ -83,28 +85,74 @@ nav {
     justify-content: flex-end;
   }
 
+  // Border variants
+  &.navbar--thick {
+    border-bottom-width: 2px;
+
+    a, > span {
+      margin-bottom: -2px;
+    }
+  }
+
+  &.navbar--borderless {
+    border-bottom: none;
+
+    a, > span {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    li {
+      &.on a, &.on span,
+      &.active a, &.active span {
+        background: var(--ply-nav-hover);
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.navbar--border-blue    { border-bottom-color: var(--ply-color-link, #0f62fe); }
+  &.navbar--border-green   { border-bottom-color: #198038; }
+  &.navbar--border-red     { border-bottom-color: #da1e28; }
+  &.navbar--border-yellow  { border-bottom-color: #f1c21b; }
+
+  // Vertical variant
   &.navbar--vertical {
-    border: none;
-    border-left: 2px solid var(--ply-nav-border);
+    border-bottom: none;
+    border-left: 1px solid var(--ply-border-color);
 
     ul {
       display: flex;
       flex-direction: column;
+      flex-wrap: nowrap;
       width: 100%;
+    }
+
+    a, > span {
+      border-bottom: none;
+      margin-bottom: 0;
+      border-left: 2px solid transparent;
+      margin-left: -1px;
     }
 
     li {
       margin-right: 0;
 
-      &.on a,
-      &.active a,
-      span {
+      &.on a, &.active a,
+      &.on span, &.active span {
         background: var(--ply-nav-hover);
-        border-bottom: 0 none;
-        border-left: 2px solid var(--ply-nav-border);
-        margin-left: -2px;
+        border-bottom: none;
+        border-left-color: var(--ply-nav-border);
         text-decoration: none;
         cursor: default;
+      }
+    }
+
+    &.navbar--thick {
+      border-left-width: 2px;
+
+      a, > span {
+        margin-left: -2px;
       }
     }
   }

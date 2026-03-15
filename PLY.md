@@ -4,6 +4,18 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
+## Philosophy: Start Semantic
+
+ply automatically styles semantic HTML elements — tables, code blocks, blockquotes, navs, details/summary, dialogs, progress bars, meters, forms, and more. Before reaching for a `<div>` with a custom class, check if a semantic element already does what you need. Custom styling is fine when you need it, but start with what HTML and ply give you for free.
+
+```html
+<!-- Start here — ply styles these automatically -->
+<nav>  <table>  <code>  <blockquote>  <details>  <dialog>  <progress>
+
+<!-- Then reach for ply classes when you need layout or variants -->
+<div class="units-row">  <div class="alert alert-blue">  <button class="btn">
+```
+
 ## Quick Start
 
 Add one line to your HTML `<head>`:
@@ -16,6 +28,19 @@ Or use the lean core bundle (no labels, dropdowns, loaders, print styles):
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
+```
+
+## Icons
+
+ply does not include icons. [Feather Icons](https://feathericons.com) is the recommended icon library — it's lightweight, clean, and pairs well with ply's aesthetic. Any icon library works.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>feather.replace();</script>
+
+<!-- Usage -->
+<i data-feather="check"></i> Saved
+<button class="btn btn-blue"><i data-feather="send"></i> Send</button>
 ```
 
 ## Dark Mode
@@ -122,6 +147,7 @@ Apply at specific breakpoints (all override the base `unit-*`):
 | `split` | Remove gutters |
 | `centered-content` | Center children horizontally |
 | `stacked` | Remove bottom margin |
+| `equal-height` | Stretch all cards/children to the same height |
 
 #### Unit Modifiers
 
@@ -270,6 +296,27 @@ Use `select-outlined` for a transparent-background outlined variant.
 Active state: use `class="active"` (or legacy `class="on"`) on the `<li>`.
 
 Alignment: `navbar--centered`, `navbar--left`, `navbar--right`, `navbar--vertical`
+
+##### Border Variants
+
+| Class | Effect |
+|-------|--------|
+| *(default)* | Thin 1px subtle border |
+| `navbar--thick` | Bold 2px border |
+| `navbar--borderless` | No border, active items use background highlight |
+| `navbar--border-blue` | Blue bottom border |
+| `navbar--border-green` | Green bottom border |
+| `navbar--border-red` | Red bottom border |
+| `navbar--border-yellow` | Yellow bottom border |
+
+##### Mobile Overflow
+
+On small screens (≤ 767px), the navbar scrolls horizontally with a hidden scrollbar. Items never wrap to a second line.
+
+| Class | Effect |
+|-------|--------|
+| *(default)* | Horizontal scroll on mobile |
+| `navbar--stack` | Wrap items instead of scrolling |
 
 #### Pills
 
@@ -456,6 +503,42 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `hide-on-desktop` | Hidden on desktop, visible on mobile |
 | `hide-on-mobile` | Hidden on mobile |
 
+#### Text Color
+
+| Class | Color |
+|-------|-------|
+| `text-primary` | Body text color (theme-aware) |
+| `text-secondary` | Secondary/subdued text (theme-aware) |
+| `text-tertiary` / `text-muted` | Muted/tertiary text (theme-aware) |
+| `text-inverse` | Inverse text color (theme-aware) |
+| `success` | Green |
+| `error` | Red |
+
+#### Other
+
+#### Text Wrap
+
+| Class | Effect |
+|-------|--------|
+| `no-orphan` | Prevents orphaned words (`text-wrap: pretty`) |
+| `text-balance` | Balances line lengths for headings (`text-wrap: balance`) |
+
+#### Gap
+
+| Class | Size |
+|-------|------|
+| `gap-xs` | 0.25rem |
+| `gap-sm` | 0.5rem |
+| `gap` | 0.75rem |
+| `gap-lg` | 1.5rem |
+| `gap-xl` | 2rem |
+
+#### Link Reset
+
+| Class | Effect |
+|-------|--------|
+| `no-link-style` | Suppresses link color and underline on all `<a>` inside the container |
+
 #### Other
 
 `clearfix`, `flat-list` (no bullets/margin), `circle` (border-radius 100%), `border-radius`, `spinning` (animation), `fade-in`
@@ -551,7 +634,7 @@ All colors are customizable via CSS custom properties:
   --ply-nav-color: #161616;
   --ply-nav-border: #161616;
   --ply-nav-hover: #e8e8e8;
-  --ply-nav-active-color: #525252;
+  --ply-nav-active-bg: transparent;
 }
 ```
 
@@ -559,20 +642,27 @@ All colors are customizable via CSS custom properties:
 
 ## Usage Rules
 
-1. **Always wrap units in `units-row`** — `unit-*` classes must be direct children of `units-row`.
-2. **Use `<button>` for buttons, not `<a>`** — Links are for navigation, buttons for actions.
-3. **Wrap forms in `.form`** for styled inputs — Without the wrapper, inputs get minimal styling.
-4. **Use semantic HTML** — ply enhances native elements (`<nav>`, `<table>`, `<details>`, etc.).
-5. **Use `units-container` for page width** — Centers content at 1200px max-width.
-6. **Add responsive classes for mobile** — At minimum use `tablet-unit-100` to stack on tablets.
+1. **ply is standalone** — Do NOT use Tailwind, Bootstrap, or other CSS frameworks alongside ply. Remove them first.
+2. **Always wrap units in `units-row`** — `unit-*` classes must be direct children of `units-row`.
+3. **Use `<button>` for buttons, not `<a>`** — Links are for navigation, buttons for actions.
+4. **Wrap forms in `.form`** for styled inputs — Without the wrapper, inputs get minimal styling.
+5. **Use semantic HTML first** — ply automatically styles `<code>`, `<pre>`, `<kbd>`, `<blockquote>`, `<mark>`, `<table>`, `<details>`, `<summary>`, `<dialog>`, `<progress>`, `<meter>`, `<nav>`, `<hr>`, and heading tags. Use the native element before creating custom classes.
+6. **Only use classes documented here** — Do NOT invent utility classes (e.g. `.color-gray-60` does not exist). If ply doesn't have a class for something, use a CSS custom property or write a small custom rule.
+7. **Use `units-container` for page width** — Centers content at 1200px max-width.
+8. **Add responsive classes for mobile** — At minimum use `tablet-unit-100` to stack on tablets.
+9. **Use CSS custom properties for theming** — All colors, backgrounds, and borders are customizable via `--ply-*` variables. Do not hard-code colors that break dark mode.
 
 ## Anti-Patterns
 
+- **DON'T** skip semantic HTML — Before adding `<div class="something">`, check if a semantic element works. ply styles `<nav>`, `<code>`, `<table>`, `<details>`, `<dialog>`, `<blockquote>`, etc. automatically.
+- **DON'T** use Tailwind, Bootstrap, or other frameworks with ply — They will conflict.
+- **DON'T** create custom classes for elements ply already styles — Use `<code>` not `.code-example`, use `<blockquote>` not `.quote-block`, etc.
+- **DON'T** invent ply class names — Only use classes from this reference (e.g. `.color-gray-60` does not exist — use `text-secondary` or `text-tertiary` instead).
 - **DON'T** use `role="button"` on links — Use actual `<button>` elements.
 - **DON'T** put `unit-*` classes outside a `units-row` — They won't work correctly.
 - **DON'T** use inline styles for layout — Use the grid system instead.
 - **DON'T** forget the `.form` wrapper — Without it, form elements won't be styled.
-- **DON'T** use `<div>` when a semantic element exists — Use `<nav>`, `<main>`, `<section>`, `<article>`.
+- **DON'T** hard-code colors — Use `var(--ply-color-*)` custom properties so dark mode works correctly.
 
 ---
 
@@ -813,7 +903,7 @@ All colors are customizable via CSS custom properties:
 
 ```html
 <div class="units-container">
-  <div class="units-row">
+  <div class="units-row equal-height">
     <div class="unit-33 tablet-unit-100">
       <div class="border border-radius padding text-center">
         <h3>Starter</h3>

@@ -649,6 +649,52 @@
   color: colors.$color-green;
 }
 
+// Text color helpers (theme-compatible)
+.text-primary {
+  color: var(--ply-color-body);
+}
+
+.text-secondary {
+  color: var(--ply-color-secondary);
+}
+
+.text-tertiary,
+.text-muted {
+  color: var(--ply-color-muted);
+}
+
+.text-inverse {
+  color: var(--ply-color-text-inverse);
+}
+
+.no-orphan {
+  text-wrap: pretty;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+// Gap utilities
+.gap-xs  { gap: 0.25rem; }
+.gap-sm  { gap: 0.5rem; }
+.gap     { gap: 0.75rem; }
+.gap-lg  { gap: 1.5rem; }
+.gap-xl  { gap: 2rem; }
+
+// Link reset — suppress link styling inside a container
+.no-link-style {
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
 .spinning,
 %spinning {
   @include mixins.spinning(.75s);

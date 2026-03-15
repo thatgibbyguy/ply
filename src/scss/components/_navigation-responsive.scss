@@ -3,6 +3,18 @@
 @media only screen and (max-width: 767px) {
 
   .navbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    // Hide scrollbar
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // Legacy float resets
     &.navbar-left,
     &.navbar-right,
     & li,
@@ -12,14 +24,32 @@
       text-align: left;
       width: auto;
     }
-  }
-  .navbar {
-    & li,
-    &.navbar-right li {
+
+    li {
       margin-left: 0;
       margin-right: 0;
     }
+
+    // Vertical navbar: stack normally, no scroll
+    &.navbar--vertical {
+      overflow-x: visible;
+      overflow-y: visible;
+    }
+
+    // Opt-in stacking behavior
+    &.navbar--stack {
+      overflow-x: visible;
+
+      ul {
+        flex-wrap: wrap;
+      }
+
+      a, > span {
+        white-space: normal;
+      }
+    }
   }
+
   .fullwidth {
     & ul,
     & li {

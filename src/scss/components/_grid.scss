@@ -49,6 +49,16 @@
     margin-bottom: 0;
   }
 
+  &.equal-height {
+    [class*='unit-'] {
+      display: flex;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
   &.unit-role-right {
     float: right;
     margin-left: math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * .01;

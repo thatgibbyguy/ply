@@ -58,6 +58,7 @@
     --ply-color-secondary: #c6c6c6;
     --ply-color-muted: #8d8d8d;
     --ply-color-placeholder: #6f6f6f;
+    --ply-color-text-inverse: #161616;
     --ply-border-color: #393939;
     --ply-border-strong: #6f6f6f;
     --ply-color-link: #78a9ff;
@@ -97,6 +98,7 @@
   --ply-color-secondary: #c6c6c6;
   --ply-color-muted: #8d8d8d;
   --ply-color-placeholder: #6f6f6f;
+  --ply-color-text-inverse: #161616;
   --ply-border-color: #393939;
   --ply-border-strong: #6f6f6f;
   --ply-color-link: #78a9ff;
@@ -1390,6 +1392,60 @@ fieldset {
   color: #2c9f42;
 }
 
+.text-primary {
+  color: var(--ply-color-body);
+}
+
+.text-secondary {
+  color: var(--ply-color-secondary);
+}
+
+.text-tertiary,
+.text-muted {
+  color: var(--ply-color-muted);
+}
+
+.text-inverse {
+  color: var(--ply-color-text-inverse);
+}
+
+.no-orphan {
+  text-wrap: pretty;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.gap-xs {
+  gap: 0.25rem;
+}
+
+.gap-sm {
+  gap: 0.5rem;
+}
+
+.gap {
+  gap: 0.75rem;
+}
+
+.gap-lg {
+  gap: 1.5rem;
+}
+
+.gap-xl {
+  gap: 2rem;
+}
+
+.no-link-style a {
+  color: inherit;
+  text-decoration: none;
+}
+.no-link-style a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .spinning {
   animation-duration: 0.75s;
   animation-name: spinning;
@@ -2244,6 +2300,12 @@ table tfoot td {
 }
 .units-row.stacked {
   margin-bottom: 0;
+}
+.units-row.equal-height [class*=unit-] {
+  display: flex;
+}
+.units-row.equal-height [class*=unit-] > * {
+  width: 100%;
 }
 .units-row.unit-role-right {
   float: right;
@@ -3581,20 +3643,18 @@ nav ul {
   margin: 0;
 }
 
-/* NavBar — Swiss/Modernist */
+/* NavBar */
 .navbar {
   background: var(--ply-nav-bg);
-  border-bottom: 2px solid var(--ply-nav-border);
+  border-bottom: 1px solid var(--ply-border-color);
   box-sizing: border-box;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
 }
 .navbar ul {
   list-style: none;
   margin: 0;
   display: flex;
   flex: 0 1 auto;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: stretch;
   gap: 0;
 }
@@ -3606,7 +3666,10 @@ nav ul {
   font-weight: 500;
   padding: 0.75rem 1.25rem;
   text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
 }
 .navbar a:focus-visible,
 .navbar > span:focus-visible {
@@ -3623,10 +3686,11 @@ nav ul {
   text-decoration: none;
 }
 .navbar li.on a, .navbar li.on span, .navbar li.active a, .navbar li.active span {
-  border-bottom: 2px solid var(--ply-nav-border);
+  border-bottom-color: var(--ply-nav-border);
+  background: var(--ply-nav-active-bg, transparent);
   text-decoration: none;
   cursor: default;
-  color: var(--ply-nav-active-color);
+  color: var(--ply-nav-color);
 }
 .navbar.navbar--centered ul {
   justify-content: center;
@@ -3637,26 +3701,66 @@ nav ul {
 .navbar.navbar--right ul {
   justify-content: flex-end;
 }
+.navbar.navbar--thick {
+  border-bottom-width: 2px;
+}
+.navbar.navbar--thick a, .navbar.navbar--thick > span {
+  margin-bottom: -2px;
+}
+.navbar.navbar--borderless {
+  border-bottom: none;
+}
+.navbar.navbar--borderless a, .navbar.navbar--borderless > span {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.navbar.navbar--borderless li.on a, .navbar.navbar--borderless li.on span, .navbar.navbar--borderless li.active a, .navbar.navbar--borderless li.active span {
+  background: var(--ply-nav-hover);
+  border-bottom: none;
+}
+.navbar.navbar--border-blue {
+  border-bottom-color: var(--ply-color-link, #0f62fe);
+}
+.navbar.navbar--border-green {
+  border-bottom-color: #198038;
+}
+.navbar.navbar--border-red {
+  border-bottom-color: #da1e28;
+}
+.navbar.navbar--border-yellow {
+  border-bottom-color: #f1c21b;
+}
 .navbar.navbar--vertical {
-  border: none;
-  border-left: 2px solid var(--ply-nav-border);
+  border-bottom: none;
+  border-left: 1px solid var(--ply-border-color);
 }
 .navbar.navbar--vertical ul {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   width: 100%;
+}
+.navbar.navbar--vertical a, .navbar.navbar--vertical > span {
+  border-bottom: none;
+  margin-bottom: 0;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
 }
 .navbar.navbar--vertical li {
   margin-right: 0;
 }
-.navbar.navbar--vertical li.on a, .navbar.navbar--vertical li.active a,
-.navbar.navbar--vertical li span {
+.navbar.navbar--vertical li.on a, .navbar.navbar--vertical li.active a, .navbar.navbar--vertical li.on span, .navbar.navbar--vertical li.active span {
   background: var(--ply-nav-hover);
-  border-bottom: 0 none;
-  border-left: 2px solid var(--ply-nav-border);
-  margin-left: -2px;
+  border-bottom: none;
+  border-left-color: var(--ply-nav-border);
   text-decoration: none;
   cursor: default;
+}
+.navbar.navbar--vertical.navbar--thick {
+  border-left-width: 2px;
+}
+.navbar.navbar--vertical.navbar--thick a, .navbar.navbar--vertical.navbar--thick > span {
+  margin-left: -2px;
 }
 
 .navigation-toggle {
@@ -4123,7 +4227,15 @@ button.btn-outline:focus-visible {
 }
 
 .btn-straight,
-.btn-square {
+.btn-square,
+input[type=submit].btn-straight,
+input[type=button].btn-straight,
+input[type=reset].btn-straight,
+button.btn-straight,
+input[type=submit].btn-square,
+input[type=button].btn-square,
+input[type=reset].btn-square,
+button.btn-square {
   border-radius: 0;
 }
 
@@ -6287,14 +6399,37 @@ ul.dropdown li.divider {
 /* =Navigation Responsive
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
+  .navbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
   .navbar.navbar-left, .navbar.navbar-right, .navbar li, .navbar.navbar-left li, .navbar.navbar-right li {
     float: none;
     text-align: left;
     width: auto;
   }
-  .navbar li, .navbar.navbar-right li {
+  .navbar li {
     margin-left: 0;
     margin-right: 0;
+  }
+  .navbar.navbar--vertical {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  .navbar.navbar--stack {
+    overflow-x: visible;
+  }
+  .navbar.navbar--stack ul {
+    flex-wrap: wrap;
+  }
+  .navbar.navbar--stack a, .navbar.navbar--stack > span {
+    white-space: normal;
   }
   .fullwidth ul, .fullwidth li {
     width: auto;
