@@ -46,23 +46,39 @@ These aliases are equivalent to their longer counterparts:
 | `input-xs` | `input-smaller` |
 | `li.active` (navbar) | `li.on` |
 
-## CDN
+## Installation
 
+### npm + Sass (recommended)
+For real projects, install ply and import the SCSS source. This gives access to the full color palette, spacing variables, mixins, and Sass-level customization.
+
+```sh
+npm install plygrid
+```
+
+```scss
+@use "plygrid/src/scss/components/colors" as colors;
+@use "plygrid/src/scss/components/variables" as variables;
+@use "plygrid/src/scss/components/mixins" as mixins;
+
+.custom {
+  color: colors.$color-blue;
+  background: colors.$color-blue-pastel;
+}
+```
+
+### CDN (prototyping only)
+For quick demos — gives you ply's classes and dark mode, but no Sass variables, color palette, or mixins.
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
 ```
 
-## Build
-
-```bash
-npm install
-npm run build
-```
-
 ## File Structure
 
-- `src/scss/` — SCSS source (modern `@use`/`@forward` modules)
-- `dist/css/` — Compiled CSS bundles
+- `src/scss/` — SCSS source (modern `@use`/`@forward` modules). **Use this when the project has a build step.**
+  - `components/_colors.scss` — Full color palette, brand colors, dark/light/pastel variants, neutral scale
+  - `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius
+  - `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, animations
+- `dist/css/` — Compiled CSS bundles (for CDN or direct linking)
 - `PLY.md` — Complete AI instruction file with class reference
 - `ply-classes.json` — Machine-readable class reference
 - `snippets/` — Copy-paste HTML examples

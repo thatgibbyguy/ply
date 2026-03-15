@@ -66,6 +66,41 @@ $border-color: #ccc;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.08);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.1);
   --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.12);
+
+  // Glass
+  --ply-bg-glass: rgba(255, 255, 255, 0.15);
+
+  // Brand palette (WCAG AA — 4.5:1 vs text-inverse per mode)
+  --ply-blue-1: #0f62fe;
+  --ply-blue-2: #0043ce;
+  --ply-blue-3: #002d9c;
+  --ply-red-1: #da1e28;
+  --ply-red-2: #a2191f;
+  --ply-red-3: #750e13;
+  --ply-green-1: #198038;
+  --ply-green-2: #0e6027;
+  --ply-green-3: #044317;
+  --ply-yellow-1: #f1c21b;
+  --ply-yellow-2: #d2a106;
+  --ply-yellow-3: #b28600;
+  --ply-indigo-1: #4f46e5;
+  --ply-indigo-2: #3730a3;
+  --ply-indigo-3: #312e81;
+  --ply-purple-1: #7c3aed;
+  --ply-purple-2: #6d28d9;
+  --ply-purple-3: #5b21b6;
+  --ply-pink-1: #be185d;
+  --ply-pink-2: #9d174d;
+  --ply-pink-3: #831843;
+  --ply-orange-1: #c2410c;
+  --ply-orange-2: #9a3412;
+  --ply-orange-3: #7c2d12;
+  --ply-teal-1: #0f766e;
+  --ply-teal-2: #115e59;
+  --ply-teal-3: #134e4a;
+  --ply-cyan-1: #0e7490;
+  --ply-cyan-2: #155e75;
+  --ply-cyan-3: #164e63;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -126,6 +161,41 @@ $border-color: #ccc;
     --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
     --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
     --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+    // Glass
+    --ply-bg-glass: rgba(38, 38, 38, 0.25);
+
+    // Brand palette (dark mode — lighter values, same levels)
+    --ply-blue-1: #4589ff;
+    --ply-blue-2: #78a9ff;
+    --ply-blue-3: #a6c8ff;
+    --ply-red-1: #ff8389;
+    --ply-red-2: #fa4d56;
+    --ply-red-3: #da1e28;
+    --ply-green-1: #42be65;
+    --ply-green-2: #6fdc8c;
+    --ply-green-3: #a7f0ba;
+    --ply-yellow-1: #f1c21b;
+    --ply-yellow-2: #d2a106;
+    --ply-yellow-3: #b28600;
+    --ply-indigo-1: #818cf8;
+    --ply-indigo-2: #a5b4fc;
+    --ply-indigo-3: #c7d2fe;
+    --ply-purple-1: #a78bfa;
+    --ply-purple-2: #c4b5fd;
+    --ply-purple-3: #ddd6fe;
+    --ply-pink-1: #f472b6;
+    --ply-pink-2: #f9a8d4;
+    --ply-pink-3: #fbcfe8;
+    --ply-orange-1: #fb923c;
+    --ply-orange-2: #fdba74;
+    --ply-orange-3: #fed7aa;
+    --ply-teal-1: #2dd4bf;
+    --ply-teal-2: #5eead4;
+    --ply-teal-3: #99f6e4;
+    --ply-cyan-1: #22d3ee;
+    --ply-cyan-2: #67e8f9;
+    --ply-cyan-3: #a5f3fc;
   }
 }
 
@@ -186,6 +256,38 @@ $border-color: #ccc;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
   --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  // Brand palette (dark mode — lighter values, same levels)
+  --ply-blue-1: #4589ff;
+  --ply-blue-2: #78a9ff;
+  --ply-blue-3: #a6c8ff;
+  --ply-red-1: #ff8389;
+  --ply-red-2: #fa4d56;
+  --ply-red-3: #da1e28;
+  --ply-green-1: #42be65;
+  --ply-green-2: #6fdc8c;
+  --ply-green-3: #a7f0ba;
+  --ply-yellow-1: #f1c21b;
+  --ply-yellow-2: #d2a106;
+  --ply-yellow-3: #b28600;
+  --ply-indigo-1: #818cf8;
+  --ply-indigo-2: #a5b4fc;
+  --ply-indigo-3: #c7d2fe;
+  --ply-purple-1: #a78bfa;
+  --ply-purple-2: #c4b5fd;
+  --ply-purple-3: #ddd6fe;
+  --ply-pink-1: #f472b6;
+  --ply-pink-2: #f9a8d4;
+  --ply-pink-3: #fbcfe8;
+  --ply-orange-1: #fb923c;
+  --ply-orange-2: #fdba74;
+  --ply-orange-3: #fed7aa;
+  --ply-teal-1: #2dd4bf;
+  --ply-teal-2: #5eead4;
+  --ply-teal-3: #99f6e4;
+  --ply-cyan-1: #22d3ee;
+  --ply-cyan-2: #67e8f9;
+  --ply-cyan-3: #a5f3fc;
 }
 
 // Colors

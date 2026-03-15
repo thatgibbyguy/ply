@@ -182,20 +182,13 @@ button.btn-square {
   border-radius: 0;
 }
 
+// Theme-aware brand buttons (colors swap between light/dark for WCAG AA)
 .btn-blue,
 input[type="submit"].btn-blue,
 input[type="button"].btn-blue,
 input[type="reset"].btn-blue,
 button.btn-blue {
-  @include mixins.create-button(colors.$color-blue, colors.$color-blue-dark, #fff);
-}
-
-.btn-blue--dark,
-input[type="submit"].btn-blue--dark,
-input[type="button"].btn-blue--dark,
-input[type="reset"].btn-blue--dark,
-button.btn-blue--dark {
-  @include mixins.create-button(color.adjust(colors.$color-blue-dark, $lightness: -10%), colors.$color-blue-dark, #fff);
+  @include mixins.create-theme-button(--ply-blue);
 }
 
 .btn-red,
@@ -203,7 +196,7 @@ input[type="submit"].btn-red,
 input[type="button"].btn-red,
 input[type="reset"].btn-red,
 button.btn-red {
-  @include mixins.create-button(colors.$color-red, colors.$color-red-dark, #fff);
+  @include mixins.create-theme-button(--ply-red);
 }
 
 .btn-green,
@@ -211,15 +204,7 @@ input[type="submit"].btn-green,
 input[type="button"].btn-green,
 input[type="reset"].btn-green,
 button.btn-green {
-  @include mixins.create-button(colors.$color-green, colors.$color-green-dark, #fff);
-}
-
-.btn-black,
-input[type="submit"].btn-black,
-input[type="button"].btn-black,
-input[type="reset"].btn-black,
-button.btn-black {
-  @include mixins.create-button(colors.$color-black, colors.$color-black-light, #fff, .7);
+  @include mixins.create-theme-button(--ply-green);
 }
 
 .btn-yellow,
@@ -227,7 +212,16 @@ input[type="submit"].btn-yellow,
 input[type="button"].btn-yellow,
 input[type="reset"].btn-yellow,
 button.btn-yellow {
-  @include mixins.create-button(colors.$color-yellow, colors.$color-yellow-dark, #000);
+  @include mixins.create-theme-button(--ply-yellow, #000);
+}
+
+// Static color buttons (don't change between themes)
+.btn-black,
+input[type="submit"].btn-black,
+input[type="button"].btn-black,
+input[type="reset"].btn-black,
+button.btn-black {
+  @include mixins.create-button(colors.$color-black, colors.$color-black-light, #fff, .7);
 }
 
 .btn-white,

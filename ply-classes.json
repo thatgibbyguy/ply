@@ -1104,6 +1104,10 @@
       "category": "helpers",
       "description": "Suppresses link color and underline on all <a> tags inside the container. Useful for card-style links."
     },
+    "bg-glass": {
+      "category": "helpers",
+      "description": "Transparent background with backdrop blur. Theme-aware: white tint in light mode, dark tint in dark mode. Customizable via --ply-bg-glass."
+    },
     "equal-height": {
       "category": "grid",
       "description": "On units-row: makes all unit children stretch to the same height. Their direct children automatically fill the available height.",

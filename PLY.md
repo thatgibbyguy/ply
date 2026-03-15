@@ -18,17 +18,51 @@ ply automatically styles semantic HTML elements — tables, code blocks, blockqu
 
 ## Quick Start
 
-Add one line to your HTML `<head>`:
+### npm + Sass (recommended)
+
+For any real project, install ply and work with the SCSS source. This gives you the full color palette, spacing variables, mixins, and the ability to customize everything at the Sass level.
+
+```sh
+npm install plygrid
+```
+
+```scss
+// Import all of ply
+@use "plygrid/src/scss/ply" as *;
+
+// Or import just what you need
+@use "plygrid/src/scss/components/colors" as colors;
+@use "plygrid/src/scss/components/variables" as variables;
+@use "plygrid/src/scss/components/mixins" as mixins;
+
+// Now you can use ply's Sass variables and mixins
+.my-component {
+  color: colors.$color-blue;
+  background: colors.$color-blue-pastel;
+  @include mixins.border-bottom-radius(variables.$border-radius);
+}
+```
+
+The SCSS source lives in `src/scss/`. Key files:
+- `components/_colors.scss` — Full color palette (brand colors, dark/light/pastel variants, neutral scale)
+- `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius
+- `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, animations
+
+### CDN (prototyping only)
+
+For quick demos or prototypes, drop in the CSS directly:
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
 ```
 
-Or use the lean core bundle (no labels, dropdowns, loaders, print styles):
+Or the lean core bundle (no labels, dropdowns, loaders, print styles):
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
 ```
+
+Note: The CDN approach gives you ply's classes and dark mode, but you won't have access to Sass variables, the full color palette, or mixins for custom components.
 
 ## Icons
 
@@ -539,6 +573,19 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 |-------|--------|
 | `no-link-style` | Suppresses link color and underline on all `<a>` inside the container |
 
+#### Glass Background
+
+| Class | Effect |
+|-------|--------|
+| `bg-glass` | Transparent background with backdrop blur. White tint in light mode, dark gray tint in dark mode. Customizable via `--ply-bg-glass`. |
+
+```html
+<!-- Frosted overlay on a colored or image background -->
+<div class="bg-glass border-radius padding">
+  <code>npm install plygrid</code>
+</div>
+```
+
 #### Other
 
 `clearfix`, `flat-list` (no bullets/margin), `circle` (border-radius 100%), `border-radius`, `spinning` (animation), `fade-in`
@@ -592,6 +639,86 @@ ply styles these elements without needing classes:
 
 ---
 
+### Color Palette
+
+Brand colors are **theme-aware** — they automatically shift between light and dark mode to maintain WCAG AA contrast (4.5:1) against the text-inverse color. Each color has 3 levels: level 1 is the primary action color, level 2 is hover/emphasis, level 3 is the strongest.
+
+Use the CSS custom properties (`var(--ply-blue-1)`, etc.) in custom styles to get automatic theme switching.
+
+#### Light Mode Values
+
+| Color | Level 1 | Level 2 | Level 3 |
+|-------|---------|---------|---------|
+| Blue | `#0f62fe` | `#0043ce` | `#002d9c` |
+| Red | `#da1e28` | `#a2191f` | `#750e13` |
+| Green | `#198038` | `#0e6027` | `#044317` |
+| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |
+| Indigo | `#4f46e5` | `#3730a3` | `#312e81` |
+| Purple | `#7c3aed` | `#6d28d9` | `#5b21b6` |
+| Pink | `#be185d` | `#9d174d` | `#831843` |
+| Orange | `#c2410c` | `#9a3412` | `#7c2d12` |
+| Teal | `#0f766e` | `#115e59` | `#134e4a` |
+| Cyan | `#0e7490` | `#155e75` | `#164e63` |
+
+#### Dark Mode Values
+
+| Color | Level 1 | Level 2 | Level 3 |
+|-------|---------|---------|---------|
+| Blue | `#4589ff` | `#78a9ff` | `#a6c8ff` |
+| Red | `#ff8389` | `#fa4d56` | `#da1e28` |
+| Green | `#42be65` | `#6fdc8c` | `#a7f0ba` |
+| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |
+| Indigo | `#818cf8` | `#a5b4fc` | `#c7d2fe` |
+| Purple | `#a78bfa` | `#c4b5fd` | `#ddd6fe` |
+| Pink | `#f472b6` | `#f9a8d4` | `#fbcfe8` |
+| Orange | `#fb923c` | `#fdba74` | `#fed7aa` |
+| Teal | `#2dd4bf` | `#5eead4` | `#99f6e4` |
+| Cyan | `#22d3ee` | `#67e8f9` | `#a5f3fc` |
+
+#### Usage
+
+```css
+/* These automatically adapt to the current theme */
+.my-badge {
+  background: var(--ply-blue-1);
+  color: var(--ply-color-text-inverse);
+}
+```
+
+#### Sass Variables (static, for build-time use)
+
+The full Sass palette is available in `_colors.scss` for build-time use. These do NOT change between themes.
+
+| Name | Base | Dark | Light | Pastel |
+|------|------|------|-------|--------|
+| Blue | `$color-blue` `#2575ed` | `$color-blue-dark` `#1a52a5` | `$color-blue-light` `#92baf6` | `$color-blue-pastel` `#d3e3fb` |
+| Red | `$color-red` `#de2c3b` | `$color-red-dark` `#b2232f` | `$color-red-light` `#ef969d` | `$color-red-pastel` `#f8d5d8` |
+| Green | `$color-green` `#2c9f42` | `$color-green-dark` `#237f35` | `$color-green-light` `#96cfa1` | `$color-green-pastel` `#d5ecd9` |
+| Yellow | `$color-yellow` `#ffc800` | `$color-yellow-dark` `#cca000` | `$color-yellow-light` `#ffe480` | `$color-yellow-pastel` `#fff4cc` |
+| Indigo | `$color-indigo` `#4f46e5` | `$color-indigo-dark` `#3730a3` | `$color-indigo-light` `#a5b4fc` | `$color-indigo-pastel` `#e0e7ff` |
+| Purple | `$color-purple` `#7c3aed` | `$color-purple-dark` `#5b21b6` | `$color-purple-light` `#c4b5fd` | `$color-purple-pastel` `#ede9fe` |
+| Pink | `$color-pink` `#db2777` | `$color-pink-dark` `#9d174d` | `$color-pink-light` `#f9a8d4` | `$color-pink-pastel` `#fce7f3` |
+| Orange | `$color-orange` `#ea580c` | `$color-orange-dark` `#c2410c` | `$color-orange-light` `#fdba74` | `$color-orange-pastel` `#ffedd5` |
+| Teal | `$color-teal` `#0d9488` | `$color-teal-dark` `#0f766e` | `$color-teal-light` `#5eead4` | `$color-teal-pastel` `#ccfbf1` |
+| Cyan | `$color-cyan` `#0891b2` | `$color-cyan-dark` `#0e7490` | `$color-cyan-light` `#67e8f9` | `$color-cyan-pastel` `#cffafe` |
+| Black | `$color-black` `#0f0f0f` | `$color-black-dark` `#000` | `$color-black-light` `#363738` | `$color-black-pastel` `#dadada` |
+| Gray | `$color-gray` `#e0e3e5` | `$color-gray-dark` `#b3b6b7` | `$color-gray-light` `#f0f1f2` | `$color-gray-pastel` `#f7f8f8` |
+
+#### Neutral Scale (Sass)
+
+| Variable | Hex |
+|----------|-----|
+| `$color-neutral-50` | `#fafafa` |
+| `$color-neutral-100` | `#f5f5f5` |
+| `$color-neutral-200` | `#e5e5e5` |
+| `$color-neutral-300` | `#d4d4d4` |
+| `$color-neutral-400` | `#a3a3a3` |
+| `$color-neutral-500` | `#737373` |
+| `$color-neutral-600` | `#525252` |
+| `$color-neutral-700` | `#404040` |
+| `$color-neutral-800` | `#262626` |
+| `$color-neutral-900` | `#171717` |
+
 ### CSS Custom Properties
 
 All colors are customizable via CSS custom properties:
@@ -635,6 +762,13 @@ All colors are customizable via CSS custom properties:
   --ply-nav-border: #161616;
   --ply-nav-hover: #e8e8e8;
   --ply-nav-active-bg: transparent;
+
+  /* Brand palette (swap automatically in dark mode — see Color Palette section) */
+  --ply-blue-1: #0f62fe;    --ply-blue-2: #0043ce;    --ply-blue-3: #002d9c;
+  --ply-red-1: #da1e28;     --ply-red-2: #a2191f;     --ply-red-3: #750e13;
+  --ply-green-1: #198038;   --ply-green-2: #0e6027;   --ply-green-3: #044317;
+  --ply-yellow-1: #f1c21b;  --ply-yellow-2: #d2a106;  --ply-yellow-3: #b28600;
+  /* ... plus indigo, purple, pink, orange, teal, cyan */
 }
 ```
 

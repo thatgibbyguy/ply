@@ -6,20 +6,22 @@ A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small
 
 ## Install
 
-### CDN
+### npm + Sass (recommended)
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
-```
-
-### npm
+For real projects, install ply and import the SCSS source to get the full color palette, variables, and mixins.
 
 ```sh
 npm install plygrid
 ```
 
+```scss
+@use "plygrid/src/scss/ply" as *;
+```
+
+### CDN (prototyping)
+
 ```html
-<link rel="stylesheet" href="node_modules/plygrid/dist/css/ply.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
 ```
 
 ### Git
@@ -34,7 +36,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 
 - **Start semantic** — ply automatically styles `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, and more. Start with what HTML gives you, then reach for classes when you need them.
 - **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
-- **Accessible by default** — `:focus-visible` outlines, `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast.
+- **Accessible by default** — `:focus-visible` outlines, `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast in both light and dark themes.
 - **Small footprint** — ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step, no tree-shaking.
 - **Ratio-based grid** — think in percentages, not arbitrary columns. `unit-50` is 50%, `unit-33` is 33%. Responsive prefixes: `tablet-unit-*`, `phone-unit-*`.
 - **Custom theming** — override `--ply-*` CSS custom properties to create any theme. Light and dark modes built in.

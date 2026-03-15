@@ -675,6 +675,13 @@
   text-wrap: balance;
 }
 
+// Transparent background overlay (theme-aware)
+.bg-glass {
+  background: var(--ply-bg-glass, rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 // Gap utilities
 .gap-xs  { gap: 0.25rem; }
 .gap-sm  { gap: 0.5rem; }

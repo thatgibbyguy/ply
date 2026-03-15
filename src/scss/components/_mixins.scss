@@ -320,6 +320,88 @@ background-image: url($file + '.' + $type);
   }
 }
 
+// Theme-aware button using CSS custom properties
+// $color-var: the custom property name (e.g. --ply-blue)
+// $text-color: text color for the filled button
+@mixin create-theme-button($color-var, $text-color: #fff) {
+  color: $text-color;
+  background: var(#{$color-var}-1);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-color;
+    background: var(#{$color-var}-2);
+  }
+
+  &:hover {
+    transform: translateY(0) scale(1.05, 1.05);
+  }
+
+  &:focus,
+  &:active {
+    transform: translateY(0) scale(.95, .95);
+    background: var(#{$color-var}-3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15) inset;
+  }
+
+  &.btn-active {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .5) inset;
+  }
+
+  &.btn-active,
+  &.btn-disabled,
+  &.btn[disabled] {
+    @extend %cursor-not-allowed;
+    opacity: 0.5;
+    background: var(#{$color-var}-2);
+
+    &:hover {
+      opacity: 0.5;
+      transform: scale(1,1);
+    }
+
+    &:active,
+    &:focus {
+      transform: scale(1,1);
+      box-shadow: 0 0 0;
+    }
+  }
+
+  &.btn-disabled,
+  &.btn[disabled] {
+    background: var(#{$color-var}-2);
+  }
+
+  &.btn-outline {
+    background: none;
+    border-color: var(#{$color-var}-1);
+    color: var(#{$color-var}-1);
+    opacity: 1;
+
+    &:hover {
+      color: $text-color;
+      background: var(#{$color-var}-1);
+    }
+  }
+
+  &.btn-outline.btn[disabled],
+  &.btn-outline.btn-disabled {
+    background: none;
+    box-shadow: none;
+    opacity: 0.4;
+    border: 1px solid var(#{$color-var}-1);
+    color: var(#{$color-var}-1);
+  }
+
+  &.btn-outline.btn-active {
+    background: none;
+    color: var(#{$color-var}-1);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3) inset;
+  }
+}
+
 @mixin text-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
     text-shadow: $x $y $distance $color;
 }
