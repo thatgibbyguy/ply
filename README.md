@@ -32,6 +32,7 @@ git clone https://github.com/thatgibbyguy/ply.git
 
 CSS frameworks were designed for humans reading documentation. But increasingly, the first consumer of your framework is an AI — a coding agent in Replit, Claude, Cursor, or Copilot generating a UI from a prompt.
 
+- **Start semantic** — ply automatically styles `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, and more. Start with what HTML gives you, then reach for classes when you need them.
 - **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
 - **Accessible by default** — `:focus-visible` outlines, `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast.
 - **Small footprint** — ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step, no tree-shaking.
@@ -104,6 +105,15 @@ Override `--ply-*` CSS custom properties to create any theme:
 
 See `snippets/custom-theme.html` for a full working example.
 
+## Icons
+
+ply doesn't include icons. [Feather Icons](https://feathericons.com) is recommended — lightweight, clean, and pairs well with ply. Any icon library works.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>feather.replace();</script>
+```
+
 ## AI Integration
 
 For AI agents (Claude, Cursor, Copilot, Replit AI):
@@ -111,6 +121,8 @@ For AI agents (Claude, Cursor, Copilot, Replit AI):
 - **`PLY.md`** — complete class reference, usage rules, anti-patterns, and snippets
 - **`ply-classes.json`** — machine-readable class map for programmatic tool use
 - **`snippets/`** — copy-paste HTML files for common patterns (dashboard, login, contact form, etc.)
+
+ply is standalone — it should not be used alongside Tailwind, Bootstrap, or other CSS frameworks.
 
 ## Development
 
