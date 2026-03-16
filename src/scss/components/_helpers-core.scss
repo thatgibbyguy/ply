@@ -43,27 +43,37 @@
 
 // Display
 
+.display-flex,
 .display--flex,
+%display-flex,
 %display--flex {
   display: flex;
 }
 
+.display-block,
 .display--block,
+%display-block,
 %display--block {
   display: block;
 }
 
+.display-inline-block,
 .display--inline-block,
+%display-inline-block,
 %display--inline-block {
   display: inline-block;
 }
 
+.display-grid,
 .display--grid,
+%display-grid,
 %display--grid {
   display: grid;
 }
 
+.display-none,
 .display--none,
+%display-none,
 %display--none {
   display: none;
 }
@@ -97,8 +107,12 @@
   margin-top: variables.$margin;
 }
 
+.top-margin-extra,
+.margin-top-extra,
 .top-margin--extra,
 .margin-top--extra,
+%top-margin-extra,
+%margin-top-extra,
 %top-margin--extra,
 %margin-top--extra {
   margin-top: variables.$margin * 2;
@@ -118,8 +132,12 @@
   margin-bottom: variables.$margin;
 }
 
+.bottom-margin-extra,
+.margin-bottom-extra,
 .bottom-margin--extra,
 .margin-bottom--extra,
+%bottom-margin-extra,
+%margin-bottom-extra,
 %bottom-margin--extra,
 %margin-bottom--extra {
   margin-bottom: variables.$margin * 2;

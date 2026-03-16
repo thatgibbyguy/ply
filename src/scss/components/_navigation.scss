@@ -73,19 +73,29 @@ nav {
     }
   }
 
-  &.navbar--centered ul {
-    justify-content: center;
+  &.navbar-centered,
+  &.navbar--centered {
+    ul {
+      justify-content: center;
+    }
   }
 
-  &.navbar--left ul {
-    justify-content: flex-start;
+  &.navbar-left,
+  &.navbar--left {
+    ul {
+      justify-content: flex-start;
+    }
   }
 
-  &.navbar--right ul {
-    justify-content: flex-end;
+  &.navbar-right,
+  &.navbar--right {
+    ul {
+      justify-content: flex-end;
+    }
   }
 
   // Border variants
+  &.navbar-thick,
   &.navbar--thick {
     border-bottom-width: 2px;
 
@@ -94,6 +104,7 @@ nav {
     }
   }
 
+  &.navbar-borderless,
   &.navbar--borderless {
     border-bottom: none;
 
@@ -111,12 +122,17 @@ nav {
     }
   }
 
+  &.navbar-border-blue,
   &.navbar--border-blue    { border-bottom-color: var(--ply-color-link, #0f62fe); }
+  &.navbar-border-green,
   &.navbar--border-green   { border-bottom-color: #198038; }
+  &.navbar-border-red,
   &.navbar--border-red     { border-bottom-color: #da1e28; }
+  &.navbar-border-yellow,
   &.navbar--border-yellow  { border-bottom-color: #f1c21b; }
 
   // Vertical variant
+  &.navbar-vertical,
   &.navbar--vertical {
     border-bottom: none;
     border-left: 1px solid var(--ply-border-color);
@@ -148,6 +164,7 @@ nav {
       }
     }
 
+    &.navbar-thick,
     &.navbar--thick {
       border-left-width: 2px;
 
@@ -162,7 +179,7 @@ nav {
   @include mixins.box-sizing();
 
   background-color: var(--ply-nav-bg);
-  border: 2px solid var(--ply-nav-border);
+  border: 1px solid var(--ply-border-color);
   color: var(--ply-nav-color);
   display: inline-block;
   text-transform: uppercase;
@@ -186,9 +203,29 @@ nav {
     line-height: 1;
   }
 
+  // Border variants — match navbar
+  &.navbar-thick,
+  &.navbar--thick {
+    border-width: 2px;
+  }
+
+  &.navbar-borderless,
+  &.navbar--borderless {
+    border: none;
+  }
+
+  &.navbar-border-blue,
+  &.navbar--border-blue    { border-color: var(--ply-color-link, #0f62fe); }
+  &.navbar-border-green,
+  &.navbar--border-green   { border-color: #198038; }
+  &.navbar-border-red,
+  &.navbar--border-red     { border-color: #da1e28; }
+  &.navbar-border-yellow,
+  &.navbar--border-yellow  { border-color: #f1c21b; }
+
   &.navigation-toggle-solid {
     background-color: var(--ply-nav-border);
-    border: 2px solid var(--ply-nav-border);
+    border: 1px solid var(--ply-nav-border);
     color: var(--ply-nav-bg);
 
     &:hover {
@@ -229,7 +266,7 @@ nav {
   a,
   span {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.625rem 1rem;
     text-decoration: none;
     font-size: variables.$font-size-sm;
     color: var(--ply-nav-color);
@@ -239,6 +276,11 @@ nav {
   a:hover {
     color: var(--ply-nav-color);
     background: var(--ply-nav-hover);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: 2px;
   }
 
   li.active a,
@@ -278,6 +320,11 @@ nav {
     &:hover {
       color: var(--ply-nav-color);
       background: var(--ply-bg-muted);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ply-color-focus, #0f62fe);
+      outline-offset: 2px;
     }
   }
 
@@ -354,6 +401,11 @@ nav {
       text-decoration: none;
       background-color: var(--ply-nav-hover);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--ply-color-focus, #0f62fe);
+      outline-offset: 2px;
+    }
   }
 
   & li.active a,
@@ -410,6 +462,11 @@ nav {
       color: var(--ply-nav-color);
       text-decoration: underline;
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--ply-color-focus, #0f62fe);
+      outline-offset: 2px;
+    }
   }
 
   & li.active a,
@@ -440,13 +497,18 @@ nav {
   & a,
   & span {
     display: block;
-    padding: 7px 9px;
+    padding: 0.625rem 0.75rem;
     line-height: 1;
     color: var(--ply-nav-color);
     text-decoration: none;
     font-size: variables.$font-size-sm;
     letter-spacing: 0.03em;
     transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  & a:focus-visible {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: 2px;
   }
 
   & span,

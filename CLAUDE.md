@@ -26,8 +26,12 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 - **Gap between flex/grid children** — Use `gap-xs`, `gap-sm`, `gap`, `gap-lg`, `gap-xl` instead of margin hacks
 - **Prevent orphaned words** — Use `no-orphan` on paragraphs, `text-balance` on headings
 - **Card-style links** — Use `no-link-style` on a container to suppress link color/underline on all `<a>` inside
-- **Navbar variants** — Default is a thin border. Use `navbar--thick`, `navbar--borderless`, or `navbar--border-blue/green/red/yellow`
+- **Navbar variants** — Default is a thin border. Use `navbar-thick`, `navbar-borderless`, or `navbar-border-blue/green/red/yellow`
 - **Text color hierarchy** — `text-primary`, `text-secondary`, `text-tertiary` (all theme-aware)
+
+## Class Naming
+
+ply uses single-dash names: `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash BEM-style names (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
 
 ## AI-Friendly Aliases
 
@@ -45,6 +49,16 @@ These aliases are equivalent to their longer counterparts:
 | `input-sm` | `input-small` |
 | `input-xs` | `input-smaller` |
 | `li.active` (navbar) | `li.on` |
+
+## Accessibility (WCAG 2.1 AA)
+
+ply targets Section 508 / WCAG 2.1 AA compliance:
+- `:focus-visible` outlines on all interactive elements (buttons, links, inputs, nav items, dropdowns)
+- `prefers-contrast: more` support for high contrast mode
+- `prefers-reduced-motion: reduce` disables animations
+- `prefers-color-scheme: dark` automatic dark mode with WCAG AA contrast
+- `.skip-link` — Add as the first focusable element inside `<body>` for keyboard navigation
+- `.sr-only` — Visually hidden, accessible to screen readers
 
 ## Installation
 

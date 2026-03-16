@@ -31,12 +31,14 @@
     }
 
     // Vertical navbar: stack normally, no scroll
+    &.navbar-vertical,
     &.navbar--vertical {
       overflow-x: visible;
       overflow-y: visible;
     }
 
     // Opt-in stacking behavior
+    &.navbar-stack,
     &.navbar--stack {
       overflow-x: visible;
 

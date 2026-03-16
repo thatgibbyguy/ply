@@ -130,6 +130,29 @@ button.btn-outline {
   padding: variables.$padding-btn-outline-bold;
 }
 
+// Ghost — transparent, no border, subtle hover background
+.btn-ghost,
+input[type="submit"].btn-ghost,
+input[type="button"].btn-ghost,
+input[type="reset"].btn-ghost,
+button.btn-ghost {
+  background: transparent;
+  color: var(--ply-color-body, colors.$color-black);
+  border: none;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    background: var(--ply-bg-muted, rgba(128, 128, 128, 0.1));
+    color: var(--ply-color-body, colors.$color-black);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline-offset: 2px;
+  }
+}
+
 .btn-active,
 .btn[disabled],
 .btn-disabled {
@@ -189,6 +212,9 @@ input[type="button"].btn-blue,
 input[type="reset"].btn-blue,
 button.btn-blue {
   @include mixins.create-theme-button(--ply-blue);
+  background: var(--ply-bg-blue);
+  &:hover, &:active, &:focus { background: var(--ply-bg-blue-hover); }
+  &:focus, &:active { background: var(--ply-bg-blue-active); }
 }
 
 .btn-red,
@@ -197,6 +223,9 @@ input[type="button"].btn-red,
 input[type="reset"].btn-red,
 button.btn-red {
   @include mixins.create-theme-button(--ply-red);
+  background: var(--ply-bg-red);
+  &:hover, &:active, &:focus { background: var(--ply-bg-red-hover); }
+  &:focus, &:active { background: var(--ply-bg-red-active); }
 }
 
 .btn-green,
@@ -205,6 +234,9 @@ input[type="button"].btn-green,
 input[type="reset"].btn-green,
 button.btn-green {
   @include mixins.create-theme-button(--ply-green);
+  background: var(--ply-bg-green);
+  &:hover, &:active, &:focus { background: var(--ply-bg-green-hover); }
+  &:focus, &:active { background: var(--ply-bg-green-active); }
 }
 
 .btn-yellow,
@@ -213,6 +245,9 @@ input[type="button"].btn-yellow,
 input[type="reset"].btn-yellow,
 button.btn-yellow {
   @include mixins.create-theme-button(--ply-yellow, #000);
+  background: var(--ply-bg-yellow);
+  &:hover, &:active, &:focus { background: var(--ply-bg-yellow-hover); }
+  &:focus, &:active { background: var(--ply-bg-yellow-active); }
 }
 
 // Static color buttons (don't change between themes)

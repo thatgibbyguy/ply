@@ -221,7 +221,7 @@ input[type="time"],
 input[type="search"],
 input[type="datetime-local"],
 textarea {
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: colors.$color-blue;
     box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-blue, "red", $space: rgb), color.channel(colors.$color-blue, "green", $space: rgb), color.channel(colors.$color-blue, "blue", $space: rgb), .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
@@ -392,7 +392,7 @@ select.input-xs {
   color: var(--ply-color-body);
   cursor: pointer;
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: var(--ply-color-focus, colors.$color-blue);
     box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.3);
@@ -423,7 +423,7 @@ select.select-outlined {
     border-color: var(--ply-color-body);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     border-color: var(--ply-color-focus, colors.$color-blue);
     box-shadow: 0 0 0 1px var(--ply-color-focus, colors.$color-blue);

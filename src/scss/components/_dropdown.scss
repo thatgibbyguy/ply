@@ -41,6 +41,10 @@ ul.dropdown {
     &:hover {
       background: var(--ply-bg-surface-alt, #eee);
     }
+    &:focus-visible {
+      outline: 2px solid var(--ply-color-focus, #0f62fe);
+      outline-offset: 2px;
+    }
   }
 
   & li.divider {

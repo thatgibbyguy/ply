@@ -391,63 +391,63 @@
       "description": "Horizontal navigation bar with bottom border. Contains ul > li > a structure.",
       "example": "<nav class=\"navbar\"><ul><li class=\"active\"><a href=\"#\">Home</a></li><li><a href=\"#\">About</a></li></ul></nav>"
     },
-    "navbar--centered": {
+    "navbar-centered": {
       "category": "navigation",
-      "description": "Center-align navbar items (justify-content: center).",
+      "description": "Center-align navbar items (justify-content: center). Legacy alias: navbar--centered.",
       "parent": "navbar",
-      "example": "<nav class=\"navbar navbar--centered\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+      "example": "<nav class=\"navbar navbar-centered\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
-    "navbar--left": {
+    "navbar-left": {
       "category": "navigation",
-      "description": "Left-align navbar items (justify-content: flex-start).",
+      "description": "Left-align navbar items (justify-content: flex-start). Legacy alias: navbar--left.",
       "parent": "navbar"
     },
-    "navbar--right": {
+    "navbar-right": {
       "category": "navigation",
-      "description": "Right-align navbar items (justify-content: flex-end).",
+      "description": "Right-align navbar items (justify-content: flex-end). Legacy alias: navbar--right.",
       "parent": "navbar"
     },
-    "navbar--vertical": {
+    "navbar-vertical": {
       "category": "navigation",
-      "description": "Vertical navbar layout with left border instead of bottom border.",
+      "description": "Vertical navbar layout with left border instead of bottom border. Legacy alias: navbar--vertical.",
       "parent": "navbar",
-      "example": "<nav class=\"navbar navbar--vertical\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
+      "example": "<nav class=\"navbar navbar-vertical\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
     },
-    "navbar--thick": {
+    "navbar-thick": {
       "category": "navigation",
-      "description": "Bold 2px bottom border on navbar.",
+      "description": "Bold 2px bottom border on navbar. Legacy alias: navbar--thick.",
       "parent": "navbar",
-      "example": "<nav class=\"navbar navbar--thick\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+      "example": "<nav class=\"navbar navbar-thick\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
-    "navbar--borderless": {
+    "navbar-borderless": {
       "category": "navigation",
-      "description": "No border on navbar. Active items use background highlight instead.",
+      "description": "No border on navbar. Active items use background highlight instead. Legacy alias: navbar--borderless.",
       "parent": "navbar",
-      "example": "<nav class=\"navbar navbar--borderless\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
+      "example": "<nav class=\"navbar navbar-borderless\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
-    "navbar--border-blue": {
+    "navbar-border-blue": {
       "category": "navigation",
-      "description": "Blue bottom border on navbar.",
+      "description": "Blue bottom border on navbar. Legacy alias: navbar--border-blue.",
       "parent": "navbar"
     },
-    "navbar--border-green": {
+    "navbar-border-green": {
       "category": "navigation",
-      "description": "Green bottom border on navbar.",
+      "description": "Green bottom border on navbar. Legacy alias: navbar--border-green.",
       "parent": "navbar"
     },
-    "navbar--border-red": {
+    "navbar-border-red": {
       "category": "navigation",
-      "description": "Red bottom border on navbar.",
+      "description": "Red bottom border on navbar. Legacy alias: navbar--border-red.",
       "parent": "navbar"
     },
-    "navbar--border-yellow": {
+    "navbar-border-yellow": {
       "category": "navigation",
-      "description": "Yellow bottom border on navbar.",
+      "description": "Yellow bottom border on navbar. Legacy alias: navbar--border-yellow.",
       "parent": "navbar"
     },
-    "navbar--stack": {
+    "navbar-stack": {
       "category": "navigation",
-      "description": "On mobile, wrap navbar items instead of horizontal scrolling.",
+      "description": "On mobile, wrap navbar items instead of horizontal scrolling. Legacy alias: navbar--stack.",
       "parent": "navbar"
     },
     "navbar-pills": {
@@ -804,25 +804,25 @@
       "category": "helpers",
       "description": "position: sticky."
     },
-    "display--flex": {
+    "display-flex": {
       "category": "helpers",
-      "description": "display: flex."
+      "description": "display: flex. Legacy alias: display--flex."
     },
-    "display--block": {
+    "display-block": {
       "category": "helpers",
-      "description": "display: block."
+      "description": "display: block. Legacy alias: display--block."
     },
-    "display--inline-block": {
+    "display-inline-block": {
       "category": "helpers",
-      "description": "display: inline-block."
+      "description": "display: inline-block. Legacy alias: display--inline-block."
     },
-    "display--grid": {
+    "display-grid": {
       "category": "helpers",
-      "description": "display: grid."
+      "description": "display: grid. Legacy alias: display--grid."
     },
-    "display--none": {
+    "display-none": {
       "category": "helpers",
-      "description": "display: none."
+      "description": "display: none. Legacy alias: display--none."
     },
     "margin": {
       "category": "helpers",
@@ -832,33 +832,33 @@
       "category": "helpers",
       "description": "Add default margin-top."
     },
-    "margin-top--extra": {
+    "margin-top-extra": {
       "category": "helpers",
-      "description": "Add double margin-top."
+      "description": "Add double margin-top. Legacy alias: margin-top--extra."
     },
     "margin-bottom": {
       "category": "helpers",
       "description": "Add default margin-bottom."
     },
-    "margin-bottom--extra": {
+    "margin-bottom-extra": {
       "category": "helpers",
-      "description": "Add double margin-bottom."
+      "description": "Add double margin-bottom. Legacy alias: margin-bottom--extra."
     },
     "margin-left": {
       "category": "helpers",
       "description": "Add default margin-left."
     },
-    "margin-left--extra": {
+    "margin-left-extra": {
       "category": "helpers",
-      "description": "Add double margin-left."
+      "description": "Add double margin-left. Legacy alias: margin-left--extra."
     },
     "margin-right": {
       "category": "helpers",
       "description": "Add default margin-right."
     },
-    "margin-right--extra": {
+    "margin-right-extra": {
       "category": "helpers",
-      "description": "Add double margin-right."
+      "description": "Add double margin-right. Legacy alias: margin-right--extra."
     },
     "no-margin": {
       "category": "helpers",
@@ -880,33 +880,33 @@
       "category": "helpers",
       "description": "Add default padding-top."
     },
-    "padding-top--extra": {
+    "padding-top-extra": {
       "category": "helpers",
-      "description": "Add double padding-top."
+      "description": "Add double padding-top. Legacy alias: padding-top--extra."
     },
     "padding-bottom": {
       "category": "helpers",
       "description": "Add default padding-bottom."
     },
-    "padding-bottom--extra": {
+    "padding-bottom-extra": {
       "category": "helpers",
-      "description": "Add double padding-bottom."
+      "description": "Add double padding-bottom. Legacy alias: padding-bottom--extra."
     },
     "padding-left": {
       "category": "helpers",
       "description": "Add default padding-left."
     },
-    "padding-left--extra": {
+    "padding-left-extra": {
       "category": "helpers",
-      "description": "Add double padding-left."
+      "description": "Add double padding-left. Legacy alias: padding-left--extra."
     },
     "padding-right": {
       "category": "helpers",
       "description": "Add default padding-right."
     },
-    "padding-right--extra": {
+    "padding-right-extra": {
       "category": "helpers",
-      "description": "Add double padding-right."
+      "description": "Add double padding-right. Legacy alias: padding-right--extra."
     },
     "border": {
       "category": "helpers",
@@ -1035,6 +1035,11 @@
     "sr-only": {
       "category": "helpers",
       "description": "Visually hidden but accessible to screen readers."
+    },
+    "skip-link": {
+      "category": "helpers",
+      "description": "Skip navigation link — hidden until focused. Use as the first focusable element inside <body>.",
+      "example": "<a href=\"#main\" class=\"skip-link\">Skip to main content</a>"
     },
     "hide-on-desktop": {
       "category": "helpers",

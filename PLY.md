@@ -329,19 +329,19 @@ Use `select-outlined` for a transparent-background outlined variant.
 
 Active state: use `class="active"` (or legacy `class="on"`) on the `<li>`.
 
-Alignment: `navbar--centered`, `navbar--left`, `navbar--right`, `navbar--vertical`
+Alignment: `navbar-centered`, `navbar-left`, `navbar-right`, `navbar-vertical`
 
 ##### Border Variants
 
 | Class | Effect |
 |-------|--------|
 | *(default)* | Thin 1px subtle border |
-| `navbar--thick` | Bold 2px border |
-| `navbar--borderless` | No border, active items use background highlight |
-| `navbar--border-blue` | Blue bottom border |
-| `navbar--border-green` | Green bottom border |
-| `navbar--border-red` | Red bottom border |
-| `navbar--border-yellow` | Yellow bottom border |
+| `navbar-thick` | Bold 2px border |
+| `navbar-borderless` | No border, active items use background highlight |
+| `navbar-border-blue` | Blue bottom border |
+| `navbar-border-green` | Green bottom border |
+| `navbar-border-red` | Red bottom border |
+| `navbar-border-yellow` | Yellow bottom border |
 
 ##### Mobile Overflow
 
@@ -350,7 +350,7 @@ On small screens (≤ 767px), the navbar scrolls horizontally with a hidden scro
 | Class | Effect |
 |-------|--------|
 | *(default)* | Horizontal scroll on mobile |
-| `navbar--stack` | Wrap items instead of scrolling |
+| `navbar-stack` | Wrap items instead of scrolling |
 
 #### Pills
 
@@ -488,7 +488,7 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 `fixed`, `absolute`, `relative`, `static`, `sticky`
 
 #### Display
-`display--flex`, `display--block`, `display--inline-block`, `display--grid`, `display--none`, `display--table`, `display--table-cell`
+`display-flex`, `display-block`, `display-inline-block`, `display-grid`, `display-none`, `display-table`, `display-table-cell`
 
 #### Spacing (margin)
 
@@ -499,8 +499,8 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `margin-bottom` | Bottom margin |
 | `margin-left` | Left margin |
 | `margin-right` | Right margin |
-| `margin-top--extra` | Double top margin |
-| `margin-bottom--extra` | Double bottom margin |
+| `margin-top-extra` | Double top margin |
+| `margin-bottom-extra` | Double bottom margin |
 | `no-margin` | Remove all margins |
 | `no-top-margin` | Remove top margin |
 | `no-bottom-margin` | Remove bottom margin |
@@ -514,7 +514,7 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `padding-bottom` | Bottom padding |
 | `padding-left` | Left padding |
 | `padding-right` | Right padding |
-| `padding-top--extra` | Double top padding |
+| `padding-top-extra` | Double top padding |
 | `no-padding` | Remove all padding |
 | `no-spacing` | Remove margin + padding |
 
@@ -534,6 +534,7 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 |-------|--------|
 | `hide` | `display: none` |
 | `sr-only` | Visually hidden, accessible to screen readers |
+| `skip-link` | Skip navigation link — visible only on keyboard focus |
 | `hide-on-desktop` | Hidden on desktop, visible on mobile |
 | `hide-on-mobile` | Hidden on mobile |
 
@@ -785,6 +786,25 @@ All colors are customizable via CSS custom properties:
 7. **Use `units-container` for page width** — Centers content at 1200px max-width.
 8. **Add responsive classes for mobile** — At minimum use `tablet-unit-100` to stack on tablets.
 9. **Use CSS custom properties for theming** — All colors, backgrounds, and borders are customizable via `--ply-*` variables. Do not hard-code colors that break dark mode.
+10. **Use single-dash class names** — `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
+
+## Accessibility (WCAG 2.1 AA)
+
+ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
+
+- **Focus indicators** — All interactive elements (buttons, links, inputs, nav items, dropdowns) use `:focus-visible` with a 2px blue outline. Keyboard users see clear focus rings; mouse users don't.
+- **High contrast mode** — `@media (prefers-contrast: more)` is supported. Text colors and link colors become stronger for users who need more contrast.
+- **Reduced motion** — `@media (prefers-reduced-motion: reduce)` disables animations and transitions.
+- **Dark mode** — `prefers-color-scheme: dark` is respected automatically. Theme-aware colors maintain WCAG AA contrast in both modes.
+- **Skip link** — Use `.skip-link` as the first focusable element to let keyboard users skip past navigation.
+- **Screen reader support** — `.sr-only` hides content visually while keeping it accessible to assistive technology.
+
+```html
+<!-- Skip link — first element inside <body> -->
+<a href="#main" class="skip-link">Skip to main content</a>
+<nav class="navbar">...</nav>
+<main id="main">...</main>
+```
 
 ## Anti-Patterns
 
