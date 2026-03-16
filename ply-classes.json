@@ -1030,6 +1030,46 @@
       "category": "helpers",
       "description": "display: none. Legacy alias: display--none."
     },
+    "items-center": {
+      "category": "helpers",
+      "description": "align-items: center. Use with display-flex."
+    },
+    "items-start": {
+      "category": "helpers",
+      "description": "align-items: flex-start. Use with display-flex."
+    },
+    "items-end": {
+      "category": "helpers",
+      "description": "align-items: flex-end. Use with display-flex."
+    },
+    "items-stretch": {
+      "category": "helpers",
+      "description": "align-items: stretch. Use with display-flex."
+    },
+    "items-baseline": {
+      "category": "helpers",
+      "description": "align-items: baseline. Use with display-flex."
+    },
+    "justify-center": {
+      "category": "helpers",
+      "description": "justify-content: center. Use with display-flex."
+    },
+    "justify-start": {
+      "category": "helpers",
+      "description": "justify-content: flex-start. Use with display-flex."
+    },
+    "justify-end": {
+      "category": "helpers",
+      "description": "justify-content: flex-end. Use with display-flex."
+    },
+    "justify-between": {
+      "category": "helpers",
+      "description": "justify-content: space-between. Use with display-flex."
+    },
+    "justify-around": {
+      "category": "helpers",
+      "description": "justify-content: space-around. Use with display-flex."
+    },
     "margin": {
       "category": "helpers",
       "description": "Add default margin on all sides."
@@ -1490,6 +1530,645 @@
       "category": "buttons",
       "description": "Ghost button. Transparent background, no border. Shows subtle background on hover. For icon-only or low-emphasis actions.",
       "example": "<button class=\"btn btn-ghost\">Ghost</button>"
+    },
+    "btn-icon": {
+      "category": "buttons",
+      "description": "Icon-only button modifier. Equal padding on all sides for a square aspect ratio. Combine with btn-ghost for toolbar-style icon buttons.",
+      "example": "<button class=\"btn btn-ghost btn-icon\" aria-label=\"Search\"><svg>...</svg></button>"
+    },
+    "align-right": {
+      "category": "buttons",
+      "description": "Right-align buttons inside btn-group.",
+      "parent": "btn-group"
+    },
+    "align-left": {
+      "category": "buttons",
+      "description": "Left-align buttons inside btn-group.",
+      "parent": "btn-group"
+    },
+    "align-center": {
+      "category": "buttons",
+      "description": "Center-align buttons inside btn-group.",
+      "parent": "btn-group"
+    },
+    "fill-width": {
+      "category": "buttons",
+      "description": "Stretch buttons to fill full width inside btn-group.",
+      "parent": "btn-group"
+    },
+    "rounded": {
+      "category": "buttons",
+      "description": "Round the outer corners of a btn-group.",
+      "parent": "btn-group"
+    },
+
+    "unit-role-right": {
+      "category": "grid",
+      "description": "Float a grid unit to the right."
+    },
+    "unit-role-left": {
+      "category": "grid",
+      "description": "Clear left float on a grid unit."
+    },
+    "fill-height": {
+      "category": "grid",
+      "description": "Set display: flex on a unit so children can stretch to fill height."
+    },
+
+    "code": {
+      "category": "helpers",
+      "description": "Inline code styling. Prefer the native <code> element instead."
+    },
+    "sans": {
+      "category": "helpers",
+      "description": "Apply system sans-serif font stack."
+    },
+    "serif": {
+      "category": "helpers",
+      "description": "Apply Georgia serif font family."
+    },
+    "mono": {
+      "category": "helpers",
+      "description": "Apply monospace font family."
+    },
+    "layer-0": {
+      "category": "helpers",
+      "description": "Background layer 0. Uses --ply-bg-body."
+    },
+    "layer-1": {
+      "category": "helpers",
+      "description": "Background layer 1 with subtle box-shadow. Uses --ply-bg-surface."
+    },
+    "layer-2": {
+      "category": "helpers",
+      "description": "Background layer 2 with medium box-shadow. Uses --ply-bg-surface-alt."
+    },
+    "layer-3": {
+      "category": "helpers",
+      "description": "Background layer 3 with large box-shadow. Uses --ply-bg-muted."
+    },
+    "shadow-1": {
+      "category": "helpers",
+      "description": "Small box-shadow. Uses --ply-shadow-1."
+    },
+    "shadow-2": {
+      "category": "helpers",
+      "description": "Medium box-shadow. Uses --ply-shadow-2."
+    },
+    "shadow-3": {
+      "category": "helpers",
+      "description": "Large box-shadow. Uses --ply-shadow-3."
+    },
+    "color-black": {
+      "category": "helpers",
+      "description": "Text color: black."
+    },
+    "color-white": {
+      "category": "helpers",
+      "description": "Text color: white."
+    },
+    "color-gray-10": {
+      "category": "helpers",
+      "description": "Text color: black at 10% opacity."
+    },
+    "color-gray-20": {
+      "category": "helpers",
+      "description": "Text color: black at 20% opacity."
+    },
+    "color-gray-30": {
+      "category": "helpers",
+      "description": "Text color: black at 30% opacity."
+    },
+    "color-gray-40": {
+      "category": "helpers",
+      "description": "Text color: black at 40% opacity."
+    },
+    "color-gray-50": {
+      "category": "helpers",
+      "description": "Text color: black at 50% opacity."
+    },
+    "color-gray-60": {
+      "category": "helpers",
+      "description": "Text color: black at 60% opacity."
+    },
+    "color-gray-70": {
+      "category": "helpers",
+      "description": "Text color: black at 70% opacity."
+    },
+    "color-gray-80": {
+      "category": "helpers",
+      "description": "Text color: black at 80% opacity."
+    },
+    "color-gray-90": {
+      "category": "helpers",
+      "description": "Text color: black at 90% opacity."
+    },
+    "color-white-10": {
+      "category": "helpers",
+      "description": "Text color: white at 10% opacity."
+    },
+    "color-white-20": {
+      "category": "helpers",
+      "description": "Text color: white at 20% opacity."
+    },
+    "color-white-30": {
+      "category": "helpers",
+      "description": "Text color: white at 30% opacity."
+    },
+    "color-white-40": {
+      "category": "helpers",
+      "description": "Text color: white at 40% opacity."
+    },
+    "color-white-50": {
+      "category": "helpers",
+      "description": "Text color: white at 50% opacity."
+    },
+    "color-white-60": {
+      "category": "helpers",
+      "description": "Text color: white at 60% opacity."
+    },
+    "color-white-70": {
+      "category": "helpers",
+      "description": "Text color: white at 70% opacity."
+    },
+    "color-white-80": {
+      "category": "helpers",
+      "description": "Text color: white at 80% opacity."
+    },
+    "color-white-90": {
+      "category": "helpers",
+      "description": "Text color: white at 90% opacity."
+    },
+    "color-blue": {
+      "category": "helpers",
+      "description": "Text color: theme-aware blue."
+    },
+    "color-red": {
+      "category": "helpers",
+      "description": "Text color: theme-aware red."
+    },
+    "color-green": {
+      "category": "helpers",
+      "description": "Text color: theme-aware green."
+    },
+    "color-yellow": {
+      "category": "helpers",
+      "description": "Text color: theme-aware yellow."
+    },
+    "bg-blue": {
+      "category": "helpers",
+      "description": "Blue background color. Theme-aware, WCAG AA with white text."
+    },
+    "bg-red": {
+      "category": "helpers",
+      "description": "Red background color. Theme-aware, WCAG AA with white text."
+    },
+    "bg-green": {
+      "category": "helpers",
+      "description": "Green background color. Theme-aware, WCAG AA with white text."
+    },
+    "bg-yellow": {
+      "category": "helpers",
+      "description": "Yellow background color. Theme-aware, WCAG AA with dark text."
+    },
+    "bg-surface": {
+      "category": "helpers",
+      "description": "Surface background color. Theme-aware. Alias: background-white."
+    },
+    "text-on-color": {
+      "category": "helpers",
+      "description": "White text for use on colored backgrounds."
+    },
+    "border-radius-lg": {
+      "category": "helpers",
+      "description": "Large border radius (0.75rem)."
+    },
+    "border-radius-xl": {
+      "category": "helpers",
+      "description": "Extra large border radius (1.5rem)."
+    },
+    "spinning": {
+      "category": "helpers",
+      "description": "Infinite 360° spin animation."
+    },
+    "fade-in": {
+      "category": "helpers",
+      "description": "Fade-in animation from opacity 0 to 1."
+    },
+
+    "fully-centered": {
+      "category": "helpers",
+      "description": "Flex center on both axes with text-align center."
+    },
+    "vertically-centered-space-between": {
+      "category": "helpers",
+      "description": "Vertical center with space-between horizontal distribution."
+    },
+    "horizontally-centered": {
+      "category": "helpers",
+      "description": "Justify-content center with text-align center."
+    },
+    "justify-flex-end": {
+      "category": "helpers",
+      "description": "justify-content: flex-end. Alias: align-end."
+    },
+    "justify-flex-start": {
+      "category": "helpers",
+      "description": "justify-content: flex-start. Alias: align-beginning."
+    },
+    "justify-space-around": {
+      "category": "helpers",
+      "description": "justify-content: space-around."
+    },
+    "justify-space-between": {
+      "category": "helpers",
+      "description": "justify-content: space-between."
+    },
+    "align-baseline": {
+      "category": "helpers",
+      "description": "align-items: baseline."
+    },
+    "align-center": {
+      "category": "helpers",
+      "description": "align-items: center with text-align center."
+    },
+    "align-middle": {
+      "category": "helpers",
+      "description": "align-items: center."
+    },
+    "align-flex-end": {
+      "category": "helpers",
+      "description": "align-items: flex-end. Alias: vertical-bottom."
+    },
+    "align-flex-start": {
+      "category": "helpers",
+      "description": "align-items: flex-start. Alias: vertical-top."
+    },
+    "align-stretch": {
+      "category": "helpers",
+      "description": "align-items: stretch. Alias: fill-height."
+    },
+
+    "blocks-2": {
+      "category": "grid",
+      "description": "2-column equal block layout using float.",
+      "example": "<div class=\"blocks-2\"><div>Block</div><div>Block</div></div>"
+    },
+    "blocks-3": {
+      "category": "grid",
+      "description": "3-column equal block layout using float.",
+      "example": "<div class=\"blocks-3\"><div>Block</div><div>Block</div><div>Block</div></div>"
+    },
+    "blocks-4": {
+      "category": "grid",
+      "description": "4-column equal block layout using float."
+    },
+    "blocks-5": {
+      "category": "grid",
+      "description": "5-column equal block layout using float."
+    },
+    "blocks-6": {
+      "category": "grid",
+      "description": "6-column equal block layout using float."
+    },
+    "block-first": {
+      "category": "grid",
+      "description": "Clear float for first block in a new row."
+    },
+    "blocks-mobile-50": {
+      "category": "grid",
+      "description": "2-column block layout on mobile."
+    },
+    "blocks-mobile-33": {
+      "category": "grid",
+      "description": "3-column block layout on mobile."
+    },
+
+    "cursor-pointer": {
+      "category": "helpers",
+      "description": "cursor: pointer. Alias: cursor-finger."
+    },
+    "cursor-default": {
+      "category": "helpers",
+      "description": "cursor: default. Alias: cursor-arrow."
+    },
+    "cursor-none": {
+      "category": "helpers",
+      "description": "cursor: none."
+    },
+    "cursor-progress": {
+      "category": "helpers",
+      "description": "cursor: progress."
+    },
+    "cursor-help": {
+      "category": "helpers",
+      "description": "cursor: help. Alias: cursor-question-mark."
+    },
+    "cursor-text": {
+      "category": "helpers",
+      "description": "cursor: text."
+    },
+    "cursor-cell": {
+      "category": "helpers",
+      "description": "cursor: cell. Alias: cursor-plus."
+    },
+    "cursor-crosshair": {
+      "category": "helpers",
+      "description": "cursor: crosshair."
+    },
+    "cursor-alias": {
+      "category": "helpers",
+      "description": "cursor: alias. Alias: cursor-shortcut."
+    },
+    "cursor-context-menu": {
+      "category": "helpers",
+      "description": "cursor: context-menu."
+    },
+    "cursor-copy": {
+      "category": "helpers",
+      "description": "cursor: copy."
+    },
+    "cursor-move": {
+      "category": "helpers",
+      "description": "cursor: move."
+    },
+    "cursor-no-drop": {
+      "category": "helpers",
+      "description": "cursor: no-drop."
+    },
+    "cursor-not-allowed": {
+      "category": "helpers",
+      "description": "cursor: not-allowed."
+    },
+    "cursor-all-scroll": {
+      "category": "helpers",
+      "description": "cursor: all-scroll."
+    },
+    "cursor-ew-resize": {
+      "category": "helpers",
+      "description": "cursor: ew-resize. Alias: cursor-col-resize."
+    },
+    "cursor-ns-resize": {
+      "category": "helpers",
+      "description": "cursor: ns-resize. Alias: cursor-row-resize."
+    },
+    "cursor-nesw-resize": {
+      "category": "helpers",
+      "description": "cursor: nesw-resize."
+    },
+    "cursor-n-resize": {
+      "category": "helpers",
+      "description": "cursor: n-resize."
+    },
+    "cursor-e-resize": {
+      "category": "helpers",
+      "description": "cursor: e-resize."
+    },
+    "cursor-s-resize": {
+      "category": "helpers",
+      "description": "cursor: s-resize."
+    },
+    "cursor-w-resize": {
+      "category": "helpers",
+      "description": "cursor: w-resize."
+    },
+    "cursor-ne-resize": {
+      "category": "helpers",
+      "description": "cursor: ne-resize."
+    },
+    "cursor-nw-resize": {
+      "category": "helpers",
+      "description": "cursor: nw-resize."
+    },
+    "cursor-sw-resize": {
+      "category": "helpers",
+      "description": "cursor: sw-resize."
+    },
+    "cursor-se-resize": {
+      "category": "helpers",
+      "description": "cursor: se-resize."
+    },
+
+    "accordion-title": {
+      "category": "helpers",
+      "description": "Accordion item header. Clickable to toggle panel visibility."
+    },
+    "accordion-title-opened": {
+      "category": "helpers",
+      "description": "Open state for accordion title."
+    },
+    "accordion-panel": {
+      "category": "helpers",
+      "description": "Accordion content panel. Hidden by default, shown when title is opened."
+    },
+    "accordion-toggle": {
+      "category": "helpers",
+      "description": "Toggle indicator element inside accordion title."
+    },
+    "accordion-toggle-closed": {
+      "category": "helpers",
+      "description": "Closed state toggle indicator (plus icon)."
+    },
+    "accordion-toggle-opened": {
+      "category": "helpers",
+      "description": "Open state toggle indicator (minus icon)."
+    },
+
+    "autocomplete": {
+      "category": "forms",
+      "description": "Autocomplete dropdown container for form inputs."
+    },
+
+    "dropdown": {
+      "category": "helpers",
+      "description": "Positioned absolute dropdown panel. Appears below trigger element."
+    },
+    "caret": {
+      "category": "helpers",
+      "description": "Downward-pointing dropdown arrow indicator."
+    },
+    "caret-up": {
+      "category": "helpers",
+      "description": "Upward-pointing caret. Modifier on caret."
+    },
+
+    "label": {
+      "category": "notifications",
+      "description": "Inline label/tag. Small, uppercase, bold text with background color."
+    },
+    "label-outline": {
+      "category": "notifications",
+      "description": "Outlined label variant with border instead of background fill."
+    },
+    "label-black": {
+      "category": "notifications",
+      "description": "Black label."
+    },
+    "label-blue": {
+      "category": "notifications",
+      "description": "Blue label."
+    },
+    "label-red": {
+      "category": "notifications",
+      "description": "Red label."
+    },
+    "label-green": {
+      "category": "notifications",
+      "description": "Green label."
+    },
+    "label-yellow": {
+      "category": "notifications",
+      "description": "Yellow label."
+    },
+    "label-white": {
+      "category": "notifications",
+      "description": "White label."
+    },
+    "badge": {
+      "category": "notifications",
+      "description": "Rounded pill badge for counts or status indicators."
+    },
+    "badge-small": {
+      "category": "notifications",
+      "description": "Small badge variant."
+    },
+    "badge-black": {
+      "category": "notifications",
+      "description": "Black badge."
+    },
+    "badge-blue": {
+      "category": "notifications",
+      "description": "Blue badge."
+    },
+    "badge-red": {
+      "category": "notifications",
+      "description": "Red badge."
+    },
+    "badge-green": {
+      "category": "notifications",
+      "description": "Green badge."
+    },
+    "badge-yellow": {
+      "category": "notifications",
+      "description": "Yellow badge."
+    },
+    "badge-white": {
+      "category": "notifications",
+      "description": "White badge."
+    },
+
+    "modal-blur": {
+      "category": "helpers",
+      "description": "Apply blur effect to background content behind a modal."
+    },
+    "modal-box": {
+      "category": "helpers",
+      "description": "Modal viewport container. Fixed position, full-screen overlay."
+    },
+    "modal": {
+      "category": "helpers",
+      "description": "Modal dialog box. Centered content panel with background and shadow."
+    },
+    "modal-close": {
+      "category": "helpers",
+      "description": "Modal close button. Positioned in top-right corner."
+    },
+
+    "tooltip": {
+      "category": "helpers",
+      "description": "Tooltip popup. Positioned element for contextual information."
+    },
+    "tooltip-theme-red": {
+      "category": "helpers",
+      "description": "Red-themed tooltip."
+    },
+    "tooltip-theme-blue": {
+      "category": "helpers",
+      "description": "Blue-themed tooltip."
+    },
+    "tooltip-theme-green": {
+      "category": "helpers",
+      "description": "Green-themed tooltip."
+    },
+    "tooltip-theme-yellow": {
+      "category": "helpers",
+      "description": "Yellow-themed tooltip."
+    },
+    "tooltip-theme-white": {
+      "category": "helpers",
+      "description": "White-themed tooltip."
+    },
+
+    "loader": {
+      "category": "helpers",
+      "description": "Spinning loader animation indicator."
+    },
+
+    "flexible-embed": {
+      "category": "helpers",
+      "description": "16:9 responsive embed container for videos and iframes."
+    },
+
+    "filterbox": {
+      "category": "forms",
+      "description": "Filterable input wrapper with dropdown list."
+    },
+    "filterbox-list": {
+      "category": "forms",
+      "description": "Dropdown list for filterbox results."
+    },
+
+    "typeahead": {
+      "category": "forms",
+      "description": "Typeahead/autocomplete wrapper. Alias: livesearch-container."
+    },
+    "typeahead-results": {
+      "category": "forms",
+      "description": "Results dropdown for typeahead. Alias: livesearch-results."
+    },
+    "typeahead-empty": {
+      "category": "forms",
+      "description": "Empty results message for typeahead."
+    },
+    "multiselect": {
+      "category": "forms",
+      "description": "Multi-select wrapper with tag-based selection."
+    },
+    "multiselect-tags": {
+      "category": "forms",
+      "description": "Tag container inside multiselect."
+    },
+    "multiselect-tag": {
+      "category": "forms",
+      "description": "Individual selected tag inside multiselect."
+    },
+    "multiselect-results": {
+      "category": "forms",
+      "description": "Dropdown results list for multiselect."
+    },
+
+    "tools-droparea": {
+      "category": "forms",
+      "description": "Drag-and-drop file upload area with dashed border."
+    },
+    "tools-droparea-placeholder": {
+      "category": "forms",
+      "description": "Placeholder text inside drag-and-drop upload area."
+    },
+
+    "navigation-toggle-solid": {
+      "category": "navigation",
+      "description": "Solid background variant of the mobile navigation toggle button."
+    },
+
+    "table-stroked": {
+      "category": "tables",
+      "description": "Table with bottom borders only on cells."
+    },
+    "table-container": {
+      "category": "tables",
+      "description": "Responsive scrollable wrapper for tables. Adds horizontal scroll on overflow.",
+      "example": "<div class=\"table-container\"><table>...</table></div>"
     }
   },
   "customProperties": {

@@ -19,7 +19,7 @@ nav {
   border-bottom: 1px solid var(--ply-border-color);
   box-sizing: border-box;
 
-  ul {
+  > ul {
     list-style: none;
     margin: 0;
     display: flex;
@@ -75,21 +75,21 @@ nav {
 
   &.navbar-centered,
   &.navbar--centered {
-    ul {
+    > ul {
       justify-content: center;
     }
   }
 
   &.navbar-left,
   &.navbar--left {
-    ul {
+    > ul {
       justify-content: flex-start;
     }
   }
 
   &.navbar-right,
   &.navbar--right {
-    ul {
+    > ul {
       justify-content: flex-end;
     }
   }
@@ -137,7 +137,7 @@ nav {
     border-bottom: none;
     border-left: 1px solid var(--ply-border-color);
 
-    ul {
+    > ul {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -234,7 +234,7 @@ nav {
   }
 
   &.navigation-toggle-show {
-    margin-bottom: variables.$base-line;
+    margin-bottom: 0;
   }
 
   & span {

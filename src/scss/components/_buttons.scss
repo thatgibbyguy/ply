@@ -153,6 +153,19 @@ button.btn-ghost {
   }
 }
 
+// Icon-only — equal padding, square aspect for buttons with just an icon
+.btn-icon,
+input[type="submit"].btn-icon,
+input[type="button"].btn-icon,
+input[type="reset"].btn-icon,
+button.btn-icon {
+  padding: 0.375rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn-active,
 .btn[disabled],
 .btn-disabled {

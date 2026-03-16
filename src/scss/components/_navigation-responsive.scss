@@ -42,7 +42,7 @@
     &.navbar--stack {
       overflow-x: visible;
 
-      ul {
+      > ul {
         flex-wrap: wrap;
       }
 
