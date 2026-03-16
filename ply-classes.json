@@ -10,137 +10,327 @@
     "units-row": {
       "category": "grid",
       "description": "Flex row container for grid units. Uses flex-flow: row wrap.",
-      "children": ["unit-100", "unit-90", "unit-88", "unit-80", "unit-75", "unit-70", "unit-66", "unit-65", "unit-62", "unit-60", "unit-50", "unit-40", "unit-38", "unit-35", "unit-33", "unit-30", "unit-25", "unit-20", "unit-12", "unit-10", "unit-auto"],
+      "children": [
+        "unit-100",
+        "unit-90",
+        "unit-88",
+        "unit-80",
+        "unit-75",
+        "unit-70",
+        "unit-66",
+        "unit-65",
+        "unit-62",
+        "unit-60",
+        "unit-50",
+        "unit-40",
+        "unit-38",
+        "unit-35",
+        "unit-33",
+        "unit-30",
+        "unit-25",
+        "unit-20",
+        "unit-12",
+        "unit-10",
+        "unit-auto"
+      ],
       "example": "<div class=\"units-row\"><div class=\"unit-50\">...</div><div class=\"unit-50\">...</div></div>"
     },
     "unit-100": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
+      "description": "Grid unit \u2014 flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ],
       "example": "<div class=\"units-row\"><div class=\"unit-100\">Full width</div></div>"
     },
     "unit-90": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 90%.",
+      "description": "Grid unit \u2014 flex-basis: 90%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-88": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 87.5%.",
+      "description": "Grid unit \u2014 flex-basis: 87.5%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-80": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 80%.",
+      "description": "Grid unit \u2014 flex-basis: 80%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-75": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 75%.",
+      "description": "Grid unit \u2014 flex-basis: 75%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-70": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 70%.",
+      "description": "Grid unit \u2014 flex-basis: 70%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-66": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 66.6% (two-thirds).",
+      "description": "Grid unit \u2014 flex-basis: 66.6% (two-thirds).",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-65": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 65%.",
+      "description": "Grid unit \u2014 flex-basis: 65%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-62": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 62.5%.",
+      "description": "Grid unit \u2014 flex-basis: 62.5%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-60": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 60%.",
+      "description": "Grid unit \u2014 flex-basis: 60%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-50": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 50% (half).",
+      "description": "Grid unit \u2014 flex-basis: 50% (half).",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ],
       "example": "<div class=\"units-row\"><div class=\"unit-50\">Left</div><div class=\"unit-50\">Right</div></div>"
     },
     "unit-40": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 40%.",
+      "description": "Grid unit \u2014 flex-basis: 40%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-38": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 37.5%.",
+      "description": "Grid unit \u2014 flex-basis: 37.5%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-35": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 35%.",
+      "description": "Grid unit \u2014 flex-basis: 35%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-33": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 33.3% (one-third).",
+      "description": "Grid unit \u2014 flex-basis: 33.3% (one-third).",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"],
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ],
       "example": "<div class=\"units-row\"><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div></div>"
     },
     "unit-30": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 30%.",
+      "description": "Grid unit \u2014 flex-basis: 30%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-25": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 25% (one-quarter).",
+      "description": "Grid unit \u2014 flex-basis: 25% (one-quarter).",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-20": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 20%.",
+      "description": "Grid unit \u2014 flex-basis: 20%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-12": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 12.5%.",
+      "description": "Grid unit \u2014 flex-basis: 12.5%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-10": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 10%.",
+      "description": "Grid unit \u2014 flex-basis: 10%.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "unit-auto": {
       "category": "grid",
-      "description": "Grid unit — flex-grow: 1, fills remaining space.",
+      "description": "Grid unit \u2014 flex-grow: 1, fills remaining space.",
       "parent": "units-row",
-      "responsive": ["tablet-unit-*", "phone-unit-*", "large-phone-unit-*", "small-desktop-unit-*", "large-screen-unit-*", "x-large-screen-unit-*", "forever-unit-*"]
+      "responsive": [
+        "tablet-unit-*",
+        "phone-unit-*",
+        "large-phone-unit-*",
+        "small-desktop-unit-*",
+        "large-screen-unit-*",
+        "x-large-screen-unit-*",
+        "forever-unit-*"
+      ]
     },
     "centered": {
       "category": "grid",
@@ -271,13 +461,17 @@
     "btn-group": {
       "category": "buttons",
       "description": "Button group container. Flex row that joins buttons together.",
-      "children": ["btn"],
+      "children": [
+        "btn"
+      ],
       "example": "<div class=\"btn-group\"><button class=\"btn\">One</button><button class=\"btn\">Two</button></div>"
     },
     "btn-single": {
       "category": "buttons",
       "description": "Single button container with flex layout.",
-      "children": ["btn"]
+      "children": [
+        "btn"
+      ]
     },
     "form": {
       "category": "forms",
@@ -362,7 +556,11 @@
     "input-groups": {
       "category": "forms",
       "description": "Input group container. Flex layout for prepend/append addons.",
-      "children": ["input-prepend", "input-append", "btn-append"],
+      "children": [
+        "input-prepend",
+        "input-append",
+        "btn-append"
+      ],
       "example": "<div class=\"input-groups\"><span class=\"input-prepend\">$</span><input type=\"text\"></div>"
     },
     "input-prepend": {
@@ -503,13 +701,21 @@
     "tools-alert": {
       "category": "notifications",
       "description": "Base alert component. Flex layout with left border accent, supports dark mode.",
-      "children": ["tools-alert-icon", "tools-alert-content", "tools-alert-dismiss"],
+      "children": [
+        "tools-alert-icon",
+        "tools-alert-content",
+        "tools-alert-dismiss"
+      ],
       "example": "<div class=\"tools-alert tools-alert-blue\"><div class=\"tools-alert-content\">Info message</div></div>"
     },
     "alert": {
       "category": "notifications",
       "description": "Alias for tools-alert. Base alert component.",
-      "children": ["alert-icon", "alert-content", "alert-dismiss"],
+      "children": [
+        "alert-icon",
+        "alert-content",
+        "alert-dismiss"
+      ],
       "example": "<div class=\"alert alert-blue\"><div class=\"alert-content\">Info message</div></div>"
     },
     "tools-alert-blue": {
@@ -723,7 +929,7 @@
     },
     "lead-subhead": {
       "category": "typography",
-      "description": "Lead subhead style. Same as lead — larger font size with relaxed line-height.",
+      "description": "Lead subhead style. Same as lead \u2014 larger font size with relaxed line-height.",
       "example": "<p class=\"lead-subhead\">Subheading text here.</p>"
     },
     "bold": {
@@ -935,62 +1141,122 @@
     "width-100": {
       "category": "helpers",
       "description": "Width 100%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-90": {
       "category": "helpers",
       "description": "Width 90%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-80": {
       "category": "helpers",
       "description": "Width 80%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-75": {
       "category": "helpers",
       "description": "Width 75%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-70": {
       "category": "helpers",
       "description": "Width 70%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-66": {
       "category": "helpers",
       "description": "Width 66.6%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-50": {
       "category": "helpers",
       "description": "Width 50%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-40": {
       "category": "helpers",
       "description": "Width 40%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-33": {
       "category": "helpers",
       "description": "Width 33.3%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-25": {
       "category": "helpers",
       "description": "Width 25%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-20": {
       "category": "helpers",
       "description": "Width 20%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "width-10": {
       "category": "helpers",
       "description": "Width 10%.",
-      "responsive": ["tablet-width-*", "phone-width-*", "large-phone-width-*", "small-desktop-width-*"]
+      "responsive": [
+        "tablet-width-*",
+        "phone-width-*",
+        "large-phone-width-*",
+        "small-desktop-width-*"
+      ]
     },
     "height-100": {
       "category": "helpers",
@@ -1038,7 +1304,7 @@
     },
     "skip-link": {
       "category": "helpers",
-      "description": "Skip navigation link — hidden until focused. Use as the first focusable element inside <body>.",
+      "description": "Skip navigation link \u2014 hidden until focused. Use as the first focusable element inside <body>.",
       "example": "<a href=\"#main\" class=\"skip-link\">Skip to main content</a>"
     },
     "hide-on-desktop": {
@@ -1219,6 +1485,164 @@
       "category": "tables",
       "description": "Responsive table wrapper with overflow: auto and custom scrollbar.",
       "example": "<div class=\"table-container\"><table>...</table></div>"
+    },
+    "btn-ghost": {
+      "category": "buttons",
+      "description": "Ghost button. Transparent background, no border. Shows subtle background on hover. For icon-only or low-emphasis actions.",
+      "example": "<button class=\"btn btn-ghost\">Ghost</button>"
+    }
+  },
+  "customProperties": {
+    "background": {
+      "--ply-bg-body": "Page background. Light: #ffffff, Dark: #161616",
+      "--ply-bg-surface": "Card/panel background. Light: #ffffff, Dark: #262626",
+      "--ply-bg-surface-alt": "Alternate surface. Light: #f4f4f4, Dark: #333333",
+      "--ply-bg-muted": "Muted/hover background. Light: #e0e0e0, Dark: #393939",
+      "--ply-bg-glass": "Frosted glass overlay. backdrop-filter: blur(8px). Light: rgba(255,255,255,0.15), Dark: rgba(38,38,38,0.25)"
+    },
+    "text": {
+      "--ply-color-body": "Primary text color. Light: #161616, Dark: #f4f4f4",
+      "--ply-color-headings": "Heading text color. Light: #161616, Dark: #ffffff",
+      "--ply-color-secondary": "Secondary text. Light: #525252, Dark: #c6c6c6",
+      "--ply-color-muted": "Muted/disabled text. Light: #6f6f6f, Dark: #8d8d8d",
+      "--ply-color-placeholder": "Input placeholder text. Light: #a8a8a8, Dark: #6f6f6f",
+      "--ply-color-text-inverse": "Inverse text (for colored backgrounds). Light: #fff, Dark: #fff"
+    },
+    "borders": {
+      "--ply-border-color": "Standard border. Light: #e0e0e0, Dark: #525252",
+      "--ply-border-strong": "Emphasized border. Light: #8d8d8d, Dark: #6f6f6f"
+    },
+    "interactive": {
+      "--ply-color-link": "Link color. Light: #0f62fe, Dark: #78a9ff",
+      "--ply-color-link-hover": "Link hover. Light: #0043ce, Dark: #a6c8ff",
+      "--ply-color-focus": "Focus ring color. #0f62fe in both themes"
+    },
+    "forms": {
+      "--ply-color-field-bg": "Field background. Light: #ffffff, Dark: #262626",
+      "--ply-color-input-border": "Input border. Light: #8d8d8d, Dark: #6f6f6f",
+      "--ply-color-input-bg": "Input background. Light: #ffffff, Dark: #393939"
+    },
+    "code": {
+      "--ply-color-code-bg": "Inline code background. Light: #f4f4f4, Dark: #333333",
+      "--ply-color-code-border": "Inline code border. Light: #e0e0e0, Dark: #525252"
+    },
+    "tables": {
+      "--ply-color-table-border": "Table cell border. Light: #e0e0e0, Dark: #525252",
+      "--ply-color-table-stripped": "Striped row background. Light: #f4f4f4, Dark: #1c1c1c",
+      "--ply-color-table-hovered": "Hovered row background. Light: #e8e8e8, Dark: #333333"
+    },
+    "buttons": {
+      "--ply-btn-default-bg": "Default button background. Light: #393939, Dark: #525252",
+      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f"
+    },
+    "navigation": {
+      "--ply-nav-bg": "Navbar background. Light: #ffffff, Dark: #262626",
+      "--ply-nav-color": "Nav link text. Light: #525252, Dark: #c6c6c6",
+      "--ply-nav-border": "Nav border. Light: #e0e0e0, Dark: #525252",
+      "--ply-nav-hover": "Nav item hover bg. Light: #f4f4f4, Dark: #333333",
+      "--ply-nav-active-color": "Active nav item text. Light: #161616, Dark: #ffffff"
+    },
+    "elevation": {
+      "--ply-layer-0": "Base layer bg. Same as bg-body",
+      "--ply-layer-1": "Elevated layer. Light: #f4f4f4, Dark: #262626",
+      "--ply-layer-2": "Higher layer. Light: #e0e0e0, Dark: #393939",
+      "--ply-layer-3": "Highest layer. Light: #c6c6c6, Dark: #525252",
+      "--ply-shadow-1": "Subtle shadow. Light: rgba(0,0,0,0.08), Dark: rgba(0,0,0,0.2)",
+      "--ply-shadow-2": "Medium shadow. Light: rgba(0,0,0,0.1), Dark: rgba(0,0,0,0.3)",
+      "--ply-shadow-3": "Heavy shadow. Light: rgba(0,0,0,0.12), Dark: rgba(0,0,0,0.4)"
+    },
+    "brand": {
+      "--ply-bg-blue": "Blue button/badge bg. #0f62fe (same both themes)",
+      "--ply-bg-blue-hover": "Blue hover. #0043ce",
+      "--ply-bg-blue-active": "Blue active. #002d9c",
+      "--ply-bg-red": "Red bg. #da1e28",
+      "--ply-bg-red-hover": "Red hover. #ba1b23",
+      "--ply-bg-red-active": "Red active. #750e13",
+      "--ply-bg-green": "Green bg. #198038",
+      "--ply-bg-green-hover": "Green hover. #0e6027",
+      "--ply-bg-green-active": "Green active. #044317",
+      "--ply-bg-yellow": "Yellow bg. #f1c21b",
+      "--ply-bg-yellow-hover": "Yellow hover. #d2a106",
+      "--ply-bg-yellow-active": "Yellow active. #b28600"
+    },
+    "palette": {
+      "--ply-blue-1 / -2 / -3": "Blue palette: base, light, pastel",
+      "--ply-red-1 / -2 / -3": "Red palette: base, light, pastel",
+      "--ply-green-1 / -2 / -3": "Green palette: base, light, pastel",
+      "--ply-yellow-1 / -2 / -3": "Yellow palette: base, light, pastel",
+      "--ply-indigo-1 / -2 / -3": "Indigo palette: base, light, pastel",
+      "--ply-purple-1 / -2 / -3": "Purple palette: base, light, pastel",
+      "--ply-pink-1 / -2 / -3": "Pink palette: base, light, pastel",
+      "--ply-orange-1 / -2 / -3": "Orange palette: base, light, pastel",
+      "--ply-teal-1 / -2 / -3": "Teal palette: base, light, pastel",
+      "--ply-cyan-1 / -2 / -3": "Cyan palette: base, light, pastel"
+    }
+  },
+  "semanticElements": {
+    "dialog": {
+      "file": "_reset.scss",
+      "styling": "border: none, border-radius: 0.25rem, padding: 1.5rem, max-width: 32rem, box-shadow, theme-aware background. ::backdrop overlay included.",
+      "tip": "Use native <dialog> with .showModal() instead of custom overlays. Add bg-glass class for frosted effect."
+    },
+    "details": {
+      "file": "_reset.scss",
+      "styling": "Border, border-radius, padding. Summary gets cursor: pointer, font-weight: 600. Rotation arrow on open state.",
+      "tip": "Use for collapsible content. No classes needed \u2014 just <details><summary>Title</summary>Content</details>."
+    },
+    "table": {
+      "file": "_typography.scss, _tables.scss",
+      "styling": "Full width, border-collapse, themed borders on th/td, bold thead. Caption gets uppercase muted styling.",
+      "tip": "Just write a <table>. Add table-bordered, table-striped, or table-hover classes for variants."
+    },
+    "nav": {
+      "file": "_navigation.scss",
+      "styling": "ul list-style: none, margin: 0. Add .navbar for horizontal nav bar.",
+      "tip": "Wrap <ul> in <nav class='navbar'> for a styled navigation bar."
+    },
+    "blockquote": {
+      "file": "_typography.scss",
+      "styling": "Italic, larger font, left padding with 2px left border. <small> and <cite> get muted color.",
+      "tip": "Just use <blockquote>. Add <small> or <cite> for attribution."
+    },
+    "code": {
+      "file": "_typography.scss",
+      "styling": "Monospace font, 90% size, inline padding, theme-aware background and border.",
+      "tip": "Inline: <code>. Block: <pre><code>. ply resets pre>code padding so it doesn't double up."
+    },
+    "kbd": {
+      "file": "_typography.scss",
+      "styling": "Black background, white text, monospace, no-wrap.",
+      "tip": "Use for keyboard shortcuts: <kbd>Ctrl</kbd>+<kbd>K</kbd>"
+    },
+    "mark": {
+      "file": "_typography.scss",
+      "styling": "Yellow background, black text. Theme-aware.",
+      "tip": "Use for highlighted/search result text."
+    },
+    "progress": {
+      "file": "_reset.scss",
+      "styling": "Full width, 0.5rem height, themed background, border-radius. WebKit and Firefox vendor prefixes.",
+      "tip": "Native <progress value='70' max='100'></progress>. No classes needed."
+    },
+    "meter": {
+      "file": "_reset.scss",
+      "styling": "Full width, 0.5rem height, themed background, border-radius.",
+      "tip": "Native <meter value='0.7'></meter>. No classes needed."
+    },
+    "hr": {
+      "file": "_reset.scss",
+      "styling": "1px height, theme-aware border-color, display: block.",
+      "tip": "Just <hr>. Adapts to light/dark theme automatically."
+    },
+    "headings": {
+      "file": "_typography.scss",
+      "styling": "h1-h6 get themed color, font-family, responsive sizing, margin-bottom: 0.5rem.",
+      "tip": "Use semantic headings. Responsive sizing is automatic across breakpoints."
+    },
+    "form-controls": {
+      "file": "_forms.scss",
+      "styling": "Inputs, textareas, selects get themed borders, backgrounds, focus states (blue border + shadow). Wrap in .form for full styling.",
+      "tip": "Wrap form in <div class='form'> to enable ply's input styling. Labels become block-level with pointer cursor."
     }
   }
 }
