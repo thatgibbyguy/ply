@@ -30,6 +30,33 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 10. **Dark mode is automatic** — override with `data-theme="dark"` or `data-theme="light"` on `<html>`. Use `var(--ply-*)` custom properties for colors (see `customProperties` in the JSON), never hard-code values that break dark mode.
 11. **Icons** — Use [Feather Icons](https://feathericons.com) as the preferred icon library. Any icon library works, but Feather pairs well with ply's aesthetic.
 
+## Custom Themes
+
+Create a custom theme by defining a `data-theme` value and overriding `--ply-*` custom properties. Every ply component respects these variables, so one block themes the entire app.
+
+```css
+[data-theme="brand"] {
+  --ply-bg-body: #fefce8;
+  --ply-bg-surface: #fef9c3;
+  --ply-bg-muted: #fef08a;
+  --ply-color-body: #1a1a1a;
+  --ply-color-headings: #78350f;
+  --ply-color-link: #b45309;
+  --ply-color-link-hover: #92400e;
+  --ply-border-color: #fbbf24;
+  --ply-btn-default-bg: #b45309;
+  --ply-btn-default-hover: #92400e;
+  --ply-nav-bg: #fef3c7;
+  --ply-nav-border: #f59e0b;
+}
+```
+
+```html
+<html data-theme="brand">
+```
+
+See `customProperties` in `ply-classes.json` for the full list of overridable variables.
+
 ## Common Patterns
 
 - **Equal-height cards** — Add `equal-height` to `units-row` so all children stretch to the tallest

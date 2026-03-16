@@ -14,6 +14,33 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 The JSON is the source of truth. If a class, variable, or semantic element already does what you need, use it instead of writing custom CSS.
 
+## Custom Themes
+
+Create a custom theme by defining a `data-theme` value and overriding `--ply-*` custom properties. Every ply component respects these variables, so one block themes the entire app.
+
+```css
+[data-theme="brand"] {
+  --ply-bg-body: #fefce8;
+  --ply-bg-surface: #fef9c3;
+  --ply-bg-muted: #fef08a;
+  --ply-color-body: #1a1a1a;
+  --ply-color-headings: #78350f;
+  --ply-color-link: #b45309;
+  --ply-color-link-hover: #92400e;
+  --ply-border-color: #fbbf24;
+  --ply-btn-default-bg: #b45309;
+  --ply-btn-default-hover: #92400e;
+  --ply-nav-bg: #fef3c7;
+  --ply-nav-border: #f59e0b;
+}
+```
+
+```html
+<html data-theme="brand">
+```
+
+See `customProperties` in `ply-classes.json` for the full list of overridable variables.
+
 ## Philosophy: Start Semantic
 
 ply automatically styles semantic HTML elements — tables, code blocks, blockquotes, navs, details/summary, dialogs, progress bars, meters, forms, and more. Before reaching for a `<div>` with a custom class, check if a semantic element already does what you need. Custom styling is fine when you need it, but start with what HTML and ply give you for free.
