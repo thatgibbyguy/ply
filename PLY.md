@@ -4,6 +4,16 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
+## Before Writing Custom CSS — Search ply-classes.json
+
+**`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
+
+- **`classes`** — Every ply class (265+) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
+- **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
+
+The JSON is the source of truth. If a class, variable, or semantic element already does what you need, use it instead of writing custom CSS.
+
 ## Philosophy: Start Semantic
 
 ply automatically styles semantic HTML elements — tables, code blocks, blockquotes, navs, details/summary, dialogs, progress bars, meters, forms, and more. Before reaching for a `<div>` with a custom class, check if a semantic element already does what you need. Custom styling is fine when you need it, but start with what HTML and ply give you for free.
@@ -1109,12 +1119,3 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 | `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~5KB |
 | `ply-helpers.min.css` | Helper utilities only | ~3KB |
 
-## Machine-Readable Reference
-
-**Before writing custom CSS, search `ply-classes.json` first.** It contains:
-
-- **`classes`** — Every ply class (265+) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
-- **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
-- **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
-
-The JSON is the source of truth. If a class, variable, or semantic element already does what you need, use it instead of writing custom CSS.

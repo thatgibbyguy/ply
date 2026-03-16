@@ -2,11 +2,7 @@
 
 This is the ply CSS framework repository. See **PLY.md** for the complete class reference, usage rules, and copy-paste snippets.
 
-## Start Semantic, Then Customize
-
-ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, `<progress>`, `<meter>`, headings, forms, and more. Start with semantic elements before reaching for `<div>` wrappers or custom classes. Custom styling is fine when you need it, but use what HTML and ply give you for free first.
-
-## Before Writing Custom CSS — Check the JSON
+## Before Writing Custom CSS — Search ply-classes.json
 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
@@ -15,6 +11,10 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, etc.) with tips on usage. Check here before building a custom component — ply may already style the native element.
 
 **Rule: If you're about to write custom CSS, search `ply-classes.json` first.** If a class, variable, or semantic element already does what you need, use it.
+
+## Start Semantic, Then Customize
+
+ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, `<progress>`, `<meter>`, headings, forms, and more. Start with semantic elements before reaching for `<div>` wrappers or custom classes. Custom styling is fine when you need it, but use what HTML and ply give you for free first.
 
 ## Key Rules for Generating ply Markup
 
