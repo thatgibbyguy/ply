@@ -6,6 +6,16 @@ This is the ply CSS framework repository. See **PLY.md** for the complete class 
 
 ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, `<progress>`, `<meter>`, headings, forms, and more. Start with semantic elements before reaching for `<div>` wrappers or custom classes. Custom styling is fine when you need it, but use what HTML and ply give you for free first.
 
+## Before Writing Custom CSS — Check the JSON
+
+**`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
+
+- **`classes`** — Every ply class with category, description, and examples. Search here before inventing a class name.
+- **`customProperties`** — All 60+ `--ply-*` CSS variables organized by category (background, text, borders, interactive, elevation, brand, palette) with light/dark values. Use these instead of hardcoding colors.
+- **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, etc.) with tips on usage. Check here before building a custom component — ply may already style the native element.
+
+**Rule: If you're about to write custom CSS, search `ply-classes.json` first.** If a class, variable, or semantic element already does what you need, use it.
+
 ## Key Rules for Generating ply Markup
 
 1. **ply is standalone** — Do NOT use Tailwind, Bootstrap, or other CSS frameworks alongside ply. Remove them first.
@@ -16,8 +26,8 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 6. **`units-row` can be nested** inside units for complex layouts
 7. **Add responsive classes** — at minimum `tablet-unit-100` to stack columns on mobile
 8. **Use semantic HTML first** — ply auto-styles `<code>`, `<pre>`, `<kbd>`, `<blockquote>`, `<mark>`, `<table>`, `<details>`, `<dialog>`, `<nav>`, etc. Use native elements before creating custom classes.
-9. **Only use documented ply classes** — Do NOT invent class names. Use `text-primary`, `text-secondary`, `text-tertiary` for text color hierarchy (not `.color-gray-60` etc.). See PLY.md for the full class reference.
-10. **Dark mode is automatic** — override with `data-theme="dark"` or `data-theme="light"` on `<html>`. Use `var(--ply-*)` custom properties for colors, never hard-code values that break dark mode.
+9. **Only use documented ply classes** — Do NOT invent class names. Search `ply-classes.json` to find the right class. See PLY.md for the full prose reference.
+10. **Dark mode is automatic** — override with `data-theme="dark"` or `data-theme="light"` on `<html>`. Use `var(--ply-*)` custom properties for colors (see `customProperties` in the JSON), never hard-code values that break dark mode.
 11. **Icons** — Use [Feather Icons](https://feathericons.com) as the preferred icon library. Any icon library works, but Feather pairs well with ply's aesthetic.
 
 ## Common Patterns

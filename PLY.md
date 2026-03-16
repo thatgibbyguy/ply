@@ -1111,4 +1111,10 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 
 ## Machine-Readable Reference
 
-See `ply-classes.json` for a complete structured class reference parseable by AI tools.
+**Before writing custom CSS, search `ply-classes.json` first.** It contains:
+
+- **`classes`** — Every ply class (265+) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
+- **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
+
+The JSON is the source of truth. If a class, variable, or semantic element already does what you need, use it instead of writing custom CSS.
