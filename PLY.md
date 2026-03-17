@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~18KB gzip full, ~16KB core).
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~19KB gzip full, ~17KB core). 414 utility classes, 60 CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -1141,8 +1141,8 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 
 | Bundle | Includes | Size (gzip) |
 |--------|----------|-------------|
-| `ply.min.css` | Everything | ~18KB |
-| `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~16KB |
-| `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~5KB |
-| `ply-helpers.min.css` | Helper utilities only | ~3KB |
+| `ply.min.css` | Everything | ~19KB |
+| `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
+| `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~6KB |
+| `ply-helpers.min.css` | Helper utilities only | ~4KB |
 
