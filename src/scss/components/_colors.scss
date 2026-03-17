@@ -21,7 +21,7 @@ $border-color: #ccc;
   --ply-color-body: #161616;
   --ply-color-headings: #161616;
   --ply-color-secondary: #525252;
-  --ply-color-muted: #636363;
+  --ply-color-muted: #767676;
   --ply-color-placeholder: #a8a8a8;
   --ply-color-text-inverse: #ffffff;
 
@@ -167,13 +167,14 @@ $border-color: #ccc;
     // Buttons
     --ply-btn-default-bg: #595959;
     --ply-btn-default-hover: #6b6b6b;
+    --ply-btn-default-color: #f4f4f4;
 
     // Navigation
     --ply-nav-bg: #161616;
     --ply-nav-color: #f4f4f4;
     --ply-nav-border: #f4f4f4;
     --ply-nav-hover: #353535;
-    --ply-nav-active-color: #8d8d8d;
+    --ply-nav-active-color: #a8a8a8;
 
     // Layers (elevation)
     --ply-layer-0: #161616;
@@ -276,13 +277,14 @@ $border-color: #ccc;
   // Buttons
   --ply-btn-default-bg: #6f6f6f;
   --ply-btn-default-hover: #8d8d8d;
+  --ply-btn-default-color: #f4f4f4;
 
   // Navigation
   --ply-nav-bg: #161616;
   --ply-nav-color: #f4f4f4;
   --ply-nav-border: #f4f4f4;
   --ply-nav-hover: #353535;
-  --ply-nav-active-color: #8d8d8d;
+  --ply-nav-active-color: #a8a8a8;
 
   // Layers (elevation)
   --ply-layer-0: #161616;

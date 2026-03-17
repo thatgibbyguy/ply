@@ -12,7 +12,7 @@
   --ply-color-body: #161616;
   --ply-color-headings: #161616;
   --ply-color-secondary: #525252;
-  --ply-color-muted: #636363;
+  --ply-color-muted: #767676;
   --ply-color-placeholder: #a8a8a8;
   --ply-color-text-inverse: #ffffff;
   --ply-border-color: #e0e0e0;
@@ -117,11 +117,12 @@
     --ply-color-table-hovered: #353535;
     --ply-btn-default-bg: #595959;
     --ply-btn-default-hover: #6b6b6b;
+    --ply-btn-default-color: #f4f4f4;
     --ply-nav-bg: #161616;
     --ply-nav-color: #f4f4f4;
     --ply-nav-border: #f4f4f4;
     --ply-nav-hover: #353535;
-    --ply-nav-active-color: #8d8d8d;
+    --ply-nav-active-color: #a8a8a8;
     --ply-layer-0: #161616;
     --ply-layer-1: #262626;
     --ply-layer-2: #393939;
@@ -200,11 +201,12 @@
   --ply-color-table-hovered: #353535;
   --ply-btn-default-bg: #6f6f6f;
   --ply-btn-default-hover: #8d8d8d;
+  --ply-btn-default-color: #f4f4f4;
   --ply-nav-bg: #161616;
   --ply-nav-color: #f4f4f4;
   --ply-nav-border: #f4f4f4;
   --ply-nav-hover: #353535;
-  --ply-nav-active-color: #8d8d8d;
+  --ply-nav-active-color: #a8a8a8;
   --ply-layer-0: #161616;
   --ply-layer-1: #262626;
   --ply-layer-2: #393939;
@@ -415,6 +417,7 @@ a:hover {
 /* Visible focus for keyboard navigation */
 a:focus-visible,
 button:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--ply-color-focus, #0f62fe);
   outline-offset: 2px;
@@ -2508,8 +2511,7 @@ kbd {
   white-space: nowrap;
 }
 
-button:active,
-button:focus {
+button:active {
   outline: none;
 }
 
@@ -4549,7 +4551,7 @@ button.btn {
   line-height: 1.5rem;
   text-align: center;
   text-decoration: none;
-  color: var(--ply-color-text-inverse, #fff);
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
   -webkit-appearance: none;
   outline: none;
   margin: 0;
@@ -4573,7 +4575,7 @@ input[type=reset].btn:focus-visible,
 button.btn:hover,
 button.btn:active,
 button.btn:focus-visible {
-  color: var(--ply-color-text-inverse, #fff);
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
   background: var(--ply-btn-default-hover, #4c4c4c);
 }
 .btn:hover,
@@ -6007,6 +6009,11 @@ button.btn-white.btn-outline.btn-active {
   display: flex;
   align-items: flex-start;
   gap: 0.625rem;
+}
+.tools-alert.tools-alert-stack, .tools-alert.alert-stack,
+.alert.tools-alert-stack,
+.alert.alert-stack {
+  flex-direction: column;
 }
 .tools-alert .tools-alert-icon,
 .tools-alert .alert-icon,

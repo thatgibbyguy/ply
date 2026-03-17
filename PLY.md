@@ -499,6 +499,7 @@ You can also use the original `tools-alert` class names. The `alert` aliases are
 |-------|-------|
 | `alert-outline` | Tinted background + full border |
 | `alert-ghost` | Transparent background, border only |
+| `alert-stack` | Stacked column layout for multi-line alerts with buttons |
 
 #### Toast Messages
 
@@ -820,7 +821,7 @@ All colors are customizable via CSS custom properties:
   --ply-color-body: #161616;
   --ply-color-headings: #161616;
   --ply-color-secondary: #525252;
-  --ply-color-muted: #6f6f6f;
+  --ply-color-muted: #767676;
   --ply-color-placeholder: #a8a8a8;
   --ply-color-text-inverse: #ffffff;
 
@@ -840,6 +841,7 @@ All colors are customizable via CSS custom properties:
   /* Buttons */
   --ply-btn-default-bg: #393939;
   --ply-btn-default-hover: #4c4c4c;
+  --ply-btn-default-color: (inherits --ply-color-text-inverse; Dark: #f4f4f4);
 
   /* Navigation */
   --ply-nav-bg: #ffffff;

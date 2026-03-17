@@ -24,7 +24,7 @@ button.btn {
 
   text-align: center;
   text-decoration: none;
-  color: var(--ply-color-text-inverse, #fff);
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
 
   -webkit-appearance: none;
 
@@ -40,7 +40,7 @@ button.btn {
   &:hover,
   &:active,
   &:focus-visible {
-    color: var(--ply-color-text-inverse, #fff);
+    color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
     background: var(--ply-btn-default-hover, #4c4c4c);
   }
 

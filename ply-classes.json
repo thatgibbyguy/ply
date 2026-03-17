@@ -775,6 +775,17 @@
       "category": "notifications",
       "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant."
     },
+    "tools-alert-stack": {
+      "category": "notifications",
+      "description": "Stacked alert layout (flex-direction: column). Use for multi-line alerts with buttons or CTAs.",
+      "parent": "tools-alert",
+      "example": "<div class=\"alert alert-blue alert-stack\"><p>Message text.</p><a class=\"btn btn-outline\">Action</a></div>"
+    },
+    "alert-stack": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-stack. Stacked column layout for alerts.",
+      "parent": "alert"
+    },
     "tools-alert-icon": {
       "category": "notifications",
       "description": "Alert icon container. Flex-shrink: 0, 1.25rem square.",
@@ -2377,7 +2388,7 @@
       "--ply-color-body": "Primary text color. Light: #161616, Dark: #f4f4f4",
       "--ply-color-headings": "Heading text color. Light: #161616, Dark: #ffffff",
       "--ply-color-secondary": "Secondary text. Light: #525252, Dark: #c6c6c6",
-      "--ply-color-muted": "Muted/disabled text. Light: #6f6f6f, Dark: #8d8d8d",
+      "--ply-color-muted": "Muted/tertiary text (supplementary content). Light: #767676, Dark: #8d8d8d",
       "--ply-color-placeholder": "Input placeholder text. Light: #a8a8a8, Dark: #6f6f6f",
       "--ply-color-text-inverse": "Inverse text (for colored backgrounds). Light: #fff, Dark: #fff"
     },
@@ -2406,7 +2417,8 @@
     },
     "buttons": {
       "--ply-btn-default-bg": "Default button background. Light: #393939, Dark: #525252",
-      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f"
+      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f",
+      "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4"
     },
     "navigation": {
       "--ply-nav-bg": "Navbar background. Light: #ffffff, Dark: #262626",
