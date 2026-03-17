@@ -262,6 +262,32 @@
   margin-left: variables.$margin * 2;
 }
 
+// Margin scale (matches gap-xs/sm/lg/xl)
+.margin-xs { margin: 0.25rem; }
+.margin-sm { margin: 0.5rem; }
+.margin-lg { margin: 1.5rem; }
+.margin-xl { margin: 2rem; }
+
+.margin-top-xs    { margin-top: 0.25rem; }
+.margin-top-sm    { margin-top: 0.5rem; }
+.margin-top-lg    { margin-top: 1.5rem; }
+.margin-top-xl    { margin-top: 2rem; }
+
+.margin-right-xs  { margin-right: 0.25rem; }
+.margin-right-sm  { margin-right: 0.5rem; }
+.margin-right-lg  { margin-right: 1.5rem; }
+.margin-right-xl  { margin-right: 2rem; }
+
+.margin-bottom-xs { margin-bottom: 0.25rem; }
+.margin-bottom-sm { margin-bottom: 0.5rem; }
+.margin-bottom-lg { margin-bottom: 1.5rem; }
+.margin-bottom-xl { margin-bottom: 2rem; }
+
+.margin-left-xs   { margin-left: 0.25rem; }
+.margin-left-sm   { margin-left: 0.5rem; }
+.margin-left-lg   { margin-left: 1.5rem; }
+.margin-left-xl   { margin-left: 2rem; }
+
 .no-margin,
 %no-margin {
   margin: 0 !important;
@@ -394,6 +420,32 @@
 %left-padding--extra {
   padding-left: variables.$padding * 2;
 }
+
+// Padding scale (matches gap-xs/sm/lg/xl)
+.padding-xs { padding: 0.25rem; }
+.padding-sm { padding: 0.5rem; }
+.padding-lg { padding: 1.5rem; }
+.padding-xl { padding: 2rem; }
+
+.padding-top-xs    { padding-top: 0.25rem; }
+.padding-top-sm    { padding-top: 0.5rem; }
+.padding-top-lg    { padding-top: 1.5rem; }
+.padding-top-xl    { padding-top: 2rem; }
+
+.padding-right-xs  { padding-right: 0.25rem; }
+.padding-right-sm  { padding-right: 0.5rem; }
+.padding-right-lg  { padding-right: 1.5rem; }
+.padding-right-xl  { padding-right: 2rem; }
+
+.padding-bottom-xs { padding-bottom: 0.25rem; }
+.padding-bottom-sm { padding-bottom: 0.5rem; }
+.padding-bottom-lg { padding-bottom: 1.5rem; }
+.padding-bottom-xl { padding-bottom: 2rem; }
+
+.padding-left-xs   { padding-left: 0.25rem; }
+.padding-left-sm   { padding-left: 0.5rem; }
+.padding-left-lg   { padding-left: 1.5rem; }
+.padding-left-xl   { padding-left: 2rem; }
 
 // Borders
 
@@ -1069,11 +1121,13 @@
 // Color Helpers
 
 .background-white,
+.bg-white,
 .bg-surface {
   background-color: var(--ply-bg-surface);
 }
 
-.background-black {
+.background-black,
+.bg-black {
   background-color: colors.$color-black;
 }
 

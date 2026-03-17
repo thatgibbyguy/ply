@@ -12,7 +12,7 @@ body {
 
   background: var(--ply-bg-body, colors.$background-body);
   color: var(--ply-color-body, colors.$color-body);
-  font-family: variables.$font-family-base;
+  font-family: var(--ply-font-body, #{variables.$font-family-base});
   font-size: variables.$font-size-base;
   line-height: variables.$base-line;
   overflow: auto;
@@ -47,7 +47,7 @@ h6,
 .h5,
 .h6 {
   color: var(--ply-color-headings, colors.$color-headings);
-  font-family: variables.$font-family-headings;
+  font-family: var(--ply-font-heading, #{variables.$font-family-headings});
   font-weight: variables.$header-font-weight;
   margin: 0 0 0.5rem;
   text-rendering: optimizeLegibility;
@@ -275,7 +275,7 @@ var,
 output {
   font-size: 90%;
   font-style: normal;
-  font-family: variables.$font-family-code;
+  font-family: var(--ply-font-mono, #{variables.$font-family-code});
 }
 
 pre {
@@ -329,14 +329,13 @@ kbd {
 
 // =Form
 // ----------------------------------------------------------------------------
-button:active,
-button:focus {
+button:active {
   outline: none;
 }
 
 textarea,
 select {
-  font-family: variables.$font-family-controls;
+  font-family: var(--ply-font-body, #{variables.$font-family-controls});
   font-size: 1em;
   box-shadow: none;
 }
@@ -363,7 +362,7 @@ input[type="color"],
 input[type="time"],
 input[type="search"],
 input[type="datetime-local"] {
-  font-family: variables.$font-family-controls;
+  font-family: var(--ply-font-body, #{variables.$font-family-controls});
   font-size: 1em;
   box-shadow: none;
   padding: variables.$padding-input;

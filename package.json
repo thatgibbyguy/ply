@@ -1,6 +1,6 @@
 {
   "name": "plygrid",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ply — A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint",
   "main": "dist/css/ply.css",
   "style": "dist/css/ply.min.css",
@@ -56,6 +56,7 @@
     "build": "npm run build:sass",
     "watch": "sass --watch src/scss/styles.scss:dist/css/styles.css src/scss/styles.scss:dist/css/styles.min.css src/scss/ply-essentials.scss:dist/css/ply-essentials.min.css --no-source-map",
     "lint": "stylelint \"src/scss/**/*.scss\"",
+    "validate": "node scripts/validate-classes.js snippets/*.html examples/*.html",
     "prepublishOnly": "npm run build && npm run lint"
   },
   "author": "John Gibby",

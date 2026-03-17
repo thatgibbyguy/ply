@@ -1,6 +1,7 @@
 {
   "version": "1.0.0",
   "framework": "ply",
+  "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "classes": {
     "units-container": {
       "category": "grid",
@@ -774,6 +775,17 @@
       "category": "notifications",
       "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant."
     },
+    "tools-alert-stack": {
+      "category": "notifications",
+      "description": "Stacked alert layout (flex-direction: column). Use for multi-line alerts with buttons or CTAs.",
+      "parent": "tools-alert",
+      "example": "<div class=\"alert alert-blue alert-stack\"><p>Message text.</p><a class=\"btn btn-outline\">Action</a></div>"
+    },
+    "alert-stack": {
+      "category": "notifications",
+      "description": "Alias for tools-alert-stack. Stacked column layout for alerts.",
+      "parent": "alert"
+    },
     "tools-alert-icon": {
       "category": "notifications",
       "description": "Alert icon container. Flex-shrink: 0, 1.25rem square.",
@@ -889,6 +901,26 @@
     "text-5xl": {
       "category": "typography",
       "description": "5x large font size utility."
+    },
+    "big": {
+      "category": "typography",
+      "description": "Legacy large font size class."
+    },
+    "small": {
+      "category": "typography",
+      "description": "Legacy small font size class."
+    },
+    "smaller": {
+      "category": "typography",
+      "description": "Legacy smaller font size class."
+    },
+    "light": {
+      "category": "typography",
+      "description": "Light font weight (300)."
+    },
+    "req": {
+      "category": "forms",
+      "description": "Marks a form field as required with a visual indicator. Alias: required."
     },
     "font-normal": {
       "category": "typography",
@@ -1074,37 +1106,117 @@
       "category": "helpers",
       "description": "Add default margin on all sides."
     },
+    "margin-xs": {
+      "category": "helpers",
+      "description": "Add extra-small margin on all sides (0.25rem)."
+    },
+    "margin-sm": {
+      "category": "helpers",
+      "description": "Add small margin on all sides (0.5rem)."
+    },
+    "margin-lg": {
+      "category": "helpers",
+      "description": "Add large margin on all sides (1.5rem)."
+    },
+    "margin-xl": {
+      "category": "helpers",
+      "description": "Add extra-large margin on all sides (2rem)."
+    },
     "margin-top": {
       "category": "helpers",
       "description": "Add default margin-top."
+    },
+    "margin-top-xs": {
+      "category": "helpers",
+      "description": "Add extra-small margin-top (0.25rem)."
+    },
+    "margin-top-sm": {
+      "category": "helpers",
+      "description": "Add small margin-top (0.5rem)."
     },
     "margin-top-extra": {
       "category": "helpers",
       "description": "Add double margin-top. Legacy alias: margin-top--extra."
     },
+    "margin-top-lg": {
+      "category": "helpers",
+      "description": "Add large margin-top (1.5rem)."
+    },
+    "margin-top-xl": {
+      "category": "helpers",
+      "description": "Add extra-large margin-top (2rem)."
+    },
     "margin-bottom": {
       "category": "helpers",
       "description": "Add default margin-bottom."
+    },
+    "margin-bottom-xs": {
+      "category": "helpers",
+      "description": "Add extra-small margin-bottom (0.25rem)."
+    },
+    "margin-bottom-sm": {
+      "category": "helpers",
+      "description": "Add small margin-bottom (0.5rem)."
     },
     "margin-bottom-extra": {
       "category": "helpers",
       "description": "Add double margin-bottom. Legacy alias: margin-bottom--extra."
     },
+    "margin-bottom-lg": {
+      "category": "helpers",
+      "description": "Add large margin-bottom (1.5rem)."
+    },
+    "margin-bottom-xl": {
+      "category": "helpers",
+      "description": "Add extra-large margin-bottom (2rem)."
+    },
     "margin-left": {
       "category": "helpers",
       "description": "Add default margin-left."
+    },
+    "margin-left-xs": {
+      "category": "helpers",
+      "description": "Add extra-small margin-left (0.25rem)."
+    },
+    "margin-left-sm": {
+      "category": "helpers",
+      "description": "Add small margin-left (0.5rem)."
     },
     "margin-left-extra": {
       "category": "helpers",
       "description": "Add double margin-left. Legacy alias: margin-left--extra."
     },
+    "margin-left-lg": {
+      "category": "helpers",
+      "description": "Add large margin-left (1.5rem)."
+    },
+    "margin-left-xl": {
+      "category": "helpers",
+      "description": "Add extra-large margin-left (2rem)."
+    },
     "margin-right": {
       "category": "helpers",
       "description": "Add default margin-right."
     },
+    "margin-right-xs": {
+      "category": "helpers",
+      "description": "Add extra-small margin-right (0.25rem)."
+    },
+    "margin-right-sm": {
+      "category": "helpers",
+      "description": "Add small margin-right (0.5rem)."
+    },
     "margin-right-extra": {
       "category": "helpers",
       "description": "Add double margin-right. Legacy alias: margin-right--extra."
+    },
+    "margin-right-lg": {
+      "category": "helpers",
+      "description": "Add large margin-right (1.5rem)."
+    },
+    "margin-right-xl": {
+      "category": "helpers",
+      "description": "Add extra-large margin-right (2rem)."
     },
     "no-margin": {
       "category": "helpers",
@@ -1122,37 +1234,117 @@
       "category": "helpers",
       "description": "Add default padding on all sides."
     },
+    "padding-xs": {
+      "category": "helpers",
+      "description": "Add extra-small padding on all sides (0.25rem)."
+    },
+    "padding-sm": {
+      "category": "helpers",
+      "description": "Add small padding on all sides (0.5rem)."
+    },
+    "padding-lg": {
+      "category": "helpers",
+      "description": "Add large padding on all sides (1.5rem)."
+    },
+    "padding-xl": {
+      "category": "helpers",
+      "description": "Add extra-large padding on all sides (2rem)."
+    },
     "padding-top": {
       "category": "helpers",
       "description": "Add default padding-top."
+    },
+    "padding-top-xs": {
+      "category": "helpers",
+      "description": "Add extra-small padding-top (0.25rem)."
+    },
+    "padding-top-sm": {
+      "category": "helpers",
+      "description": "Add small padding-top (0.5rem)."
     },
     "padding-top-extra": {
       "category": "helpers",
       "description": "Add double padding-top. Legacy alias: padding-top--extra."
     },
+    "padding-top-lg": {
+      "category": "helpers",
+      "description": "Add large padding-top (1.5rem)."
+    },
+    "padding-top-xl": {
+      "category": "helpers",
+      "description": "Add extra-large padding-top (2rem)."
+    },
     "padding-bottom": {
       "category": "helpers",
       "description": "Add default padding-bottom."
+    },
+    "padding-bottom-xs": {
+      "category": "helpers",
+      "description": "Add extra-small padding-bottom (0.25rem)."
+    },
+    "padding-bottom-sm": {
+      "category": "helpers",
+      "description": "Add small padding-bottom (0.5rem)."
     },
     "padding-bottom-extra": {
       "category": "helpers",
       "description": "Add double padding-bottom. Legacy alias: padding-bottom--extra."
     },
+    "padding-bottom-lg": {
+      "category": "helpers",
+      "description": "Add large padding-bottom (1.5rem)."
+    },
+    "padding-bottom-xl": {
+      "category": "helpers",
+      "description": "Add extra-large padding-bottom (2rem)."
+    },
     "padding-left": {
       "category": "helpers",
       "description": "Add default padding-left."
+    },
+    "padding-left-xs": {
+      "category": "helpers",
+      "description": "Add extra-small padding-left (0.25rem)."
+    },
+    "padding-left-sm": {
+      "category": "helpers",
+      "description": "Add small padding-left (0.5rem)."
     },
     "padding-left-extra": {
       "category": "helpers",
       "description": "Add double padding-left. Legacy alias: padding-left--extra."
     },
+    "padding-left-lg": {
+      "category": "helpers",
+      "description": "Add large padding-left (1.5rem)."
+    },
+    "padding-left-xl": {
+      "category": "helpers",
+      "description": "Add extra-large padding-left (2rem)."
+    },
     "padding-right": {
       "category": "helpers",
       "description": "Add default padding-right."
     },
+    "padding-right-xs": {
+      "category": "helpers",
+      "description": "Add extra-small padding-right (0.25rem)."
+    },
+    "padding-right-sm": {
+      "category": "helpers",
+      "description": "Add small padding-right (0.5rem)."
+    },
     "padding-right-extra": {
       "category": "helpers",
       "description": "Add double padding-right. Legacy alias: padding-right--extra."
+    },
+    "padding-right-lg": {
+      "category": "helpers",
+      "description": "Add large padding-right (1.5rem)."
+    },
+    "padding-right-xl": {
+      "category": "helpers",
+      "description": "Add extra-large padding-right (2rem)."
     },
     "border": {
       "category": "helpers",
@@ -1735,6 +1927,14 @@
       "category": "helpers",
       "description": "Surface background color. Theme-aware. Alias: background-white."
     },
+    "bg-black": {
+      "category": "helpers",
+      "description": "Alias for background-black. Set background to black."
+    },
+    "bg-white": {
+      "category": "helpers",
+      "description": "Alias for background-white. Set background to surface color (white in light mode)."
+    },
     "text-on-color": {
       "category": "helpers",
       "description": "White text for use on colored backgrounds."
@@ -2172,6 +2372,11 @@
     }
   },
   "customProperties": {
+    "typography": {
+      "--ply-font-body": "Font family for body text and form controls. Default: system font stack (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, etc.).",
+      "--ply-font-heading": "Font family for headings (h1-h6). Default: inherits from --ply-font-body.",
+      "--ply-font-mono": "Font family for code, pre, kbd, samp elements. Default: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace."
+    },
     "background": {
       "--ply-bg-body": "Page background. Light: #ffffff, Dark: #161616",
       "--ply-bg-surface": "Card/panel background. Light: #ffffff, Dark: #262626",
@@ -2183,7 +2388,7 @@
       "--ply-color-body": "Primary text color. Light: #161616, Dark: #f4f4f4",
       "--ply-color-headings": "Heading text color. Light: #161616, Dark: #ffffff",
       "--ply-color-secondary": "Secondary text. Light: #525252, Dark: #c6c6c6",
-      "--ply-color-muted": "Muted/disabled text. Light: #6f6f6f, Dark: #8d8d8d",
+      "--ply-color-muted": "Muted/tertiary text (supplementary content). Light: #767676, Dark: #8d8d8d",
       "--ply-color-placeholder": "Input placeholder text. Light: #a8a8a8, Dark: #6f6f6f",
       "--ply-color-text-inverse": "Inverse text (for colored backgrounds). Light: #fff, Dark: #fff"
     },
@@ -2212,7 +2417,8 @@
     },
     "buttons": {
       "--ply-btn-default-bg": "Default button background. Light: #393939, Dark: #525252",
-      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f"
+      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f",
+      "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4"
     },
     "navigation": {
       "--ply-nav-bg": "Navbar background. Light: #ffffff, Dark: #262626",
