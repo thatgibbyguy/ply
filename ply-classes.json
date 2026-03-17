@@ -2417,7 +2417,7 @@
     },
     "buttons": {
       "--ply-btn-default-bg": "Default button background. Light: #393939, Dark: #525252",
-      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #6f6f6f",
+      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #595959",
       "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4"
     },
     "navigation": {
