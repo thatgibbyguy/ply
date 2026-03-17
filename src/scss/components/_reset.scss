@@ -9,7 +9,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: var(--ply-font-body, sans-serif);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   @include mixins.square;
@@ -112,6 +112,7 @@ a:hover {
 /* Visible focus for keyboard navigation */
 a:focus-visible,
 button:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
     outline: 2px solid var(--ply-color-focus, #0f62fe);
     outline-offset: 2px;

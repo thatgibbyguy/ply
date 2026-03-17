@@ -31,6 +31,10 @@
     color: #000;
     text-decoration: none;
   }
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: -2px;
+  }
 }
 .accordion-panel {
   padding: $base-line;

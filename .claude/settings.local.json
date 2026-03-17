@@ -24,7 +24,9 @@
       "Bash(git status:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(npm whoami:*)"
+      "Bash(npm whoami:*)",
+      "Bash(npx vite:*)",
+      "Bash(grep:*)"
     ]
   }
 }

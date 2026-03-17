@@ -15,6 +15,12 @@
   align-items: flex-start;
   gap: 0.625rem;
 
+  // Stacked layout — column direction for multi-line alerts (e.g. CTA blocks)
+  &.tools-alert-stack,
+  &.alert-stack {
+    flex-direction: column;
+  }
+
   .tools-alert-icon,
   .alert-icon {
     flex-shrink: 0;
@@ -324,7 +330,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     @include dark-alerts;
   }
 }

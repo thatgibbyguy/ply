@@ -30,8 +30,8 @@
   margin: auto;
   margin-bottom: 20px;
   padding: 0;
-  background: #fff;
-  color: #000;
+  background: var(--ply-bg-surface, #fff);
+  color: var(--ply-color-body, #000);
   box-shadow: 0 1px 70px rgba(0, 0, 0, .5);
 
   & header {
@@ -56,11 +56,18 @@
   width: 30px;
   height: 30px;
   text-align: right;
-  color: #bbb;
+  color: var(--ply-color-secondary, #525252);
   font-size: 30px;
   font-weight: 300;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
   &:hover {
-    color: #000;
+    color: var(--ply-color-body, #000);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: 2px;
   }
 }
