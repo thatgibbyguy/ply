@@ -20,6 +20,7 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
 
 ```css
 [data-theme="brand"] {
+  /* Colors */
   --ply-bg-body: #fefce8;
   --ply-bg-surface: #fef9c3;
   --ply-bg-muted: #fef08a;
@@ -32,12 +33,19 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-btn-default-hover: #92400e;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
+
+  /* Typography (optional) */
+  --ply-font-body: "Palatino Linotype", Palatino, Georgia, serif;
+  --ply-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ply-font-mono: "Fira Code", "Source Code Pro", monospace;
 }
 ```
 
 ```html
 <html data-theme="brand">
 ```
+
+Setting a custom `data-theme` value prevents auto dark mode from interfering with the theme. The `--ply-font-body`, `--ply-font-heading`, and `--ply-font-mono` properties let you override typography alongside colors.
 
 See `customProperties` in `ply-classes.json` for the full list of overridable variables.
 
@@ -116,14 +124,20 @@ ply does not include icons. [Feather Icons](https://feathericons.com) is the rec
 
 ## Dark Mode
 
-ply auto-detects `prefers-color-scheme: dark`. To manually toggle:
+ply auto-detects `prefers-color-scheme: dark` only when no `data-theme` attribute is set on `<html>`. This means custom themes (e.g., `data-theme="warm"`) won't have dark styles applied over them. To manually set a mode:
 
 ```html
-<!-- Light mode -->
+<!-- Auto (OS preference) — no data-theme attribute -->
+<html>
+
+<!-- Explicit light mode -->
 <html data-theme="light">
 
-<!-- Dark mode -->
+<!-- Explicit dark mode -->
 <html data-theme="dark">
+
+<!-- Custom theme (no auto dark mode interference) -->
+<html data-theme="warm">
 ```
 
 Toggle with JavaScript:
@@ -324,6 +338,15 @@ Wrap in `.form` to enable ply form styling:
   <span class="input-prepend">$</span>
   <input type="text" placeholder="Amount">
   <span class="input-append">.00</span>
+</div>
+```
+
+A `.btn` inside `.input-append` automatically gets square left corners and zero margin, so no extra `.btn-append` wrapper is needed:
+
+```html
+<div class="input-groups">
+  <input type="text" placeholder="Search...">
+  <span class="input-append"><button class="btn btn-blue">Go</button></span>
 </div>
 ```
 
@@ -531,7 +554,11 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 
 | Class | Effect |
 |-------|--------|
+| `margin-xs` | All sides (0.25rem) |
+| `margin-sm` | All sides (0.5rem) |
 | `margin` | All sides (0.75rem) |
+| `margin-lg` | All sides (1.5rem) |
+| `margin-xl` | All sides (2rem) |
 | `margin-top` | Top margin |
 | `margin-bottom` | Bottom margin |
 | `margin-left` | Left margin |
@@ -542,11 +569,17 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `no-top-margin` | Remove top margin |
 | `no-bottom-margin` | Remove bottom margin |
 
+All scale sizes have directional variants: `margin-top-xs`, `margin-top-sm`, `margin-top-lg`, `margin-top-xl` (and `-bottom`, `-left`, `-right`).
+
 #### Spacing (padding)
 
 | Class | Effect |
 |-------|--------|
+| `padding-xs` | All sides (0.25rem) |
+| `padding-sm` | All sides (0.5rem) |
 | `padding` | All sides (0.75rem) |
+| `padding-lg` | All sides (1.5rem) |
+| `padding-xl` | All sides (2rem) |
 | `padding-top` | Top padding |
 | `padding-bottom` | Bottom padding |
 | `padding-left` | Left padding |
@@ -554,6 +587,8 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `padding-top-extra` | Double top padding |
 | `no-padding` | Remove all padding |
 | `no-spacing` | Remove margin + padding |
+
+All scale sizes have directional variants: `padding-top-xs`, `padding-top-sm`, `padding-top-lg`, `padding-top-xl` (and `-bottom`, `-left`, `-right`).
 
 #### Borders
 
@@ -585,6 +620,13 @@ Also: `bold`, `italic`, `uppercase`, `nowrap`
 | `text-inverse` | Inverse text color (theme-aware) |
 | `success` | Green |
 | `error` | Red |
+
+#### Background Color
+
+| Class | Alias | Color |
+|-------|-------|-------|
+| `background-black` | `bg-black` | Black background |
+| `background-white` | `bg-white` | White background |
 
 #### Other
 
@@ -763,6 +805,11 @@ All colors are customizable via CSS custom properties:
 
 ```css
 :root {
+  /* Typography */
+  --ply-font-body: /* system font stack */;
+  --ply-font-heading: /* system font stack */;
+  --ply-font-mono: /* monospace stack */;
+
   /* Backgrounds */
   --ply-bg-body: #ffffff;
   --ply-bg-surface: #ffffff;
@@ -832,7 +879,7 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 - **Focus indicators** — All interactive elements (buttons, links, inputs, nav items, dropdowns) use `:focus-visible` with a 2px blue outline. Keyboard users see clear focus rings; mouse users don't.
 - **High contrast mode** — `@media (prefers-contrast: more)` is supported. Text colors and link colors become stronger for users who need more contrast.
 - **Reduced motion** — `@media (prefers-reduced-motion: reduce)` disables animations and transitions.
-- **Dark mode** — `prefers-color-scheme: dark` is respected automatically. Theme-aware colors maintain WCAG AA contrast in both modes.
+- **Dark mode** — `prefers-color-scheme: dark` is respected automatically when no `data-theme` attribute is set. Theme-aware colors maintain WCAG AA contrast in both modes.
 - **Skip link** — Use `.skip-link` as the first focusable element to let keyboard users skip past navigation.
 - **Screen reader support** — `.sr-only` hides content visually while keeping it accessible to assistive technology.
 
@@ -842,6 +889,59 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 <nav class="navbar">...</nav>
 <main id="main">...</main>
 ```
+
+## Title II / WCAG 2.1 AA Compliance
+
+ply targets ADA Title II compliance (28 CFR Part 35) by meeting WCAG 2.1 Level AA success criteria at the framework level. As of June 2024, state and local government web content must conform to WCAG 2.1 AA. ply provides a compliant foundation so that applications built on it start closer to full conformance.
+
+### WCAG criteria ply satisfies at the framework level
+
+| WCAG Criterion | How ply addresses it |
+|----------------|---------------------|
+| **1.3.1 Info and Relationships** | Semantic HTML auto-styling encourages correct use of `<nav>`, `<main>`, `<aside>`, `<table>`, `<details>`, headings, and form elements. `.sr-only` exposes supplemental info to assistive technology. |
+| **1.4.3 Contrast (Minimum)** | All default color pairings (text on background, button labels, link colors) meet 4.5:1 contrast in both light and dark modes. The brand palette levels are tuned for AA. |
+| **1.4.6 Contrast (Enhanced)** | `@media (prefers-contrast: more)` strengthens text and link colors beyond AA minimums. |
+| **1.4.11 Non-Text Contrast** | Focus indicators, button borders, and input borders all meet the 3:1 non-text contrast ratio. |
+| **2.1.1 Keyboard** | All ply interactive elements (buttons, links, inputs, nav items, `<details>`, `<dialog>`) are natively keyboard-operable. No custom JS required. |
+| **2.3.3 Animation from Interactions** | `@media (prefers-reduced-motion: reduce)` disables all CSS animations and transitions. |
+| **2.4.1 Bypass Blocks** | `.skip-link` lets keyboard users jump past navigation to main content. |
+| **2.4.7 Focus Visible** | `:focus-visible` outlines appear on every interactive element. Mouse users do not see them; keyboard users always do. |
+| **4.1.2 Name, Role, Value** | ply ships zero JavaScript. All interactivity comes from native HTML elements (`<button>`, `<a>`, `<input>`, `<dialog>`, `<details>`), which expose correct roles and states automatically. No ARIA state management failures from framework code. |
+
+### WCAG criteria that require application-level work
+
+These criteria depend on content and custom code — ply cannot enforce them automatically:
+
+| WCAG Criterion | What you need to do |
+|----------------|---------------------|
+| **1.1.1 Non-text Content** | Add `alt` attributes to all `<img>` elements. Use `alt=""` for purely decorative images. Provide text alternatives for `<svg>` icons (`aria-label` or `<title>`). |
+| **1.3.1 Info and Relationships** (content) | Use one `<h1>` per page. Follow heading hierarchy (h1 > h2 > h3) without skipping levels. Use `<label>` elements for form inputs. Group related form fields with `<fieldset>` and `<legend>`. |
+| **1.3.2 Meaningful Sequence** | Ensure DOM order matches visual order. ply's `reverse-direction` class reverses visual order but not DOM order — use it only when the visual reorder is cosmetic. |
+| **1.4.1 Use of Color** | Do not rely on color alone to convey information. Pair colored status indicators (`.success`, `.error`) with text labels or icons. |
+| **1.4.3 Contrast (Minimum)** (custom colors) | If you override `--ply-*` variables or add custom colors, verify 4.5:1 contrast for normal text and 3:1 for large text (18px bold / 24px regular) and UI components. |
+| **2.1.1 Keyboard** (custom widgets) | Custom JavaScript components (tabs, carousels, drag-and-drop, custom dropdowns) must be fully operable with keyboard alone. Manage `tabindex`, arrow key navigation, and Escape to close. |
+| **2.4.2 Page Titled** | Every page needs a descriptive `<title>` element. |
+| **2.4.4 Link Purpose** | Link text should describe the destination. Avoid "click here" — use descriptive text or add `aria-label` when the visible text is ambiguous. |
+| **2.4.6 Headings and Labels** | Headings and form labels must describe their content or purpose. ply styles them, but you write the text. |
+| **3.1.1 Language of Page** | Set `lang` attribute on `<html>` (e.g., `<html lang="en">`). |
+| **3.3.1 Error Identification** | When form validation fails, identify the error in text (not just color). Use `input-error` alongside a visible error message. |
+| **3.3.2 Labels or Instructions** | Provide visible labels for form inputs. ply's `.form` wrapper styles `<label>` elements — use them. |
+| **4.1.2 Name, Role, Value** (custom widgets) | Custom interactive widgets (JS-powered dropdowns, modals, tab panels) need ARIA attributes: `aria-expanded`, `aria-controls`, `aria-selected`, `role="tablist"`, etc. |
+
+### AI agent guidance for accessible markup
+
+When generating ply markup, follow these practices to produce Title II compliant output:
+
+1. **Use semantic elements for landmarks** — `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`, `<section>`, `<article>`. Never use `<div>` for structural roles.
+2. **Add `aria-label` to custom widgets** — Any interactive element without a visible text label needs `aria-label` or `aria-labelledby`.
+3. **Use `<form role="search">` for search forms** — This creates a search landmark for screen reader users.
+4. **Include `.skip-link` in page templates** — Add `<a href="#main" class="skip-link">Skip to main content</a>` as the first focusable element inside `<body>`.
+5. **Add `alt` text to all images** — Describe the image content. Use `alt=""` only for decorative images.
+6. **Maintain heading hierarchy** — Start with `<h1>`, follow with `<h2>`, then `<h3>`. Never skip levels. Use `.h1`-`.h6` classes for visual sizing when the semantic level differs.
+7. **Label all form inputs** — Wrap inputs in `<label>` or use `for`/`id` pairing. Add `<fieldset>` and `<legend>` for radio/checkbox groups.
+8. **Set `lang` on `<html>`** — Always include `<html lang="en">` (or the appropriate language code).
+9. **Pair color with text** — When using `.success` or `.error` classes, include a text label (not just color) to convey meaning.
+10. **Use native elements over ARIA** — Prefer `<button>` over `<div role="button">`, `<dialog>` over `<div role="dialog">`, `<details>` over custom accordion JS. Native elements handle keyboard and ARIA automatically.
 
 ## Anti-Patterns
 

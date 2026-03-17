@@ -16,7 +16,7 @@ button.btn {
   display: inline-block;
   vertical-align: top;
 
-  font-family: variables.$font-family-controls;
+  font-family: var(--ply-font-body, #{variables.$font-family-controls});
   font-size: 1em;
   font-weight: 400;
 

@@ -11,9 +11,15 @@
       Override --ply-* custom properties on [data-theme="your-name"].
       Set data-theme on <html> to activate.
 
+      Auto dark mode only fires when no data-theme is set,
+      so custom themes won't have dark styles applied over them.
+
       You only need to override the tokens you want to change.
       Everything else falls back to the light theme defaults.
       For a dark theme, override all tokens to avoid light fallbacks.
+
+      Typography is also themeable:
+      --ply-font-body, --ply-font-heading, --ply-font-mono
     */
     [data-theme="midnight"] {
       /* Background */
@@ -139,6 +145,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="navbar">
     <ul>
@@ -160,7 +167,7 @@
   </nav>
 
   <div class="units-container">
-    <main>
+    <main id="main">
       <h1>Custom Theming</h1>
       <p>ply's theming system is CSS custom properties. Override <code>--ply-*</code> tokens in a <code>[data-theme="your-name"]</code> block, then set that attribute on <code>&lt;html&gt;</code>. No Sass, no build step, no JavaScript framework.</p>
 

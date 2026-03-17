@@ -1,4 +1,5 @@
 // * -- ply color variables
+@use "variables";
 
 // Base color
 $background-body: #f7f8f8;
@@ -116,10 +117,15 @@ $border-color: #ccc;
   --ply-cyan-1: #0e7490;
   --ply-cyan-2: #155e75;
   --ply-cyan-3: #164e63;
+
+  // Typography
+  --ply-font-body: #{variables.$font-family-base};
+  --ply-font-heading: #{variables.$font-family-headings};
+  --ply-font-mono: #{variables.$font-family-code};
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     // Background — Carbon Gray 100
     --ply-bg-body: #161616;
     --ply-bg-surface: #262626;
@@ -159,8 +165,8 @@ $border-color: #ccc;
     --ply-color-table-hovered: #353535;
 
     // Buttons
-    --ply-btn-default-bg: #6f6f6f;
-    --ply-btn-default-hover: #8d8d8d;
+    --ply-btn-default-bg: #595959;
+    --ply-btn-default-hover: #6b6b6b;
 
     // Navigation
     --ply-nav-bg: #161616;
@@ -349,7 +355,7 @@ $border-color: #ccc;
 }
 
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme]) {
     --ply-color-body: #ffffff;
     --ply-color-headings: #ffffff;
     --ply-color-secondary: #e5e5e5;
