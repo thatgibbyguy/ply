@@ -2,7 +2,7 @@
 
 ## VPAT 2.5 Rev — WCAG 2.1 Edition
 
-**Product name:** ply CSS Framework v1.0.5
+**Product name:** ply CSS Framework v1.0.5-1
 **Product description:** A ratio-based, AI-ready CSS framework with built-in accessibility support for semantic HTML styling, responsive layouts, dark mode, and theming via CSS custom properties.
 **Date:** March 2026
 **Contact:** GitHub Issues — <https://github.com/thatgibbyguy/ply/issues>
