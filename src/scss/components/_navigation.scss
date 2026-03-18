@@ -306,16 +306,14 @@ nav {
   a,
   span {
     display: block;
-    padding: 0.6rem 0.75rem;
+    padding: 0.25rem 0.75rem;
     font-size: variables.$font-size-sm;
   }
 
   & a {
-    background: var(--ply-bg-surface-alt);
     color: var(--ply-nav-color);
-    border-bottom: 1px solid var(--ply-border-color);
     text-decoration: none;
-    transition: background 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease;
 
     &:hover {
       color: var(--ply-nav-color);
@@ -330,10 +328,30 @@ nav {
 
   li.active a,
   li.active span {
-    background: var(--ply-bg-surface);
+    border-left: 2px solid var(--ply-btn-default-bg, #0353e9);
+    padding-left: calc(0.75rem - 2px);
     text-decoration: none;
-    cursor: default;
     color: var(--ply-nav-active-color);
+  }
+}
+
+/* Stacked blocked — background fills with bottom borders */
+.nav-stacked-blocked {
+  & a,
+  & span {
+    padding: 0.6rem 0.75rem;
+  }
+
+  & a {
+    background: var(--ply-bg-surface-alt);
+    border-bottom: 1px solid var(--ply-border-color);
+  }
+
+  li.active a,
+  li.active span {
+    background: var(--ply-bg-surface);
+    border-left: none;
+    padding-left: 0.75rem;
   }
 }
 

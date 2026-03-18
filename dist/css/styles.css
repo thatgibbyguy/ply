@@ -118,7 +118,7 @@
     --ply-color-table-border: #393939;
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
-    --ply-btn-default-bg: #78a9ff;
+    --ply-btn-default-bg: #4589ff;
     --ply-btn-secondary-bg: #a8a8a8;
     --ply-btn-default-color: #161616;
     --ply-btn-secondary-color: #161616;
@@ -203,7 +203,7 @@
   --ply-color-table-border: #393939;
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
-  --ply-btn-default-bg: #78a9ff;
+  --ply-btn-default-bg: #4589ff;
   --ply-btn-secondary-bg: #a8a8a8;
   --ply-btn-default-color: #161616;
   --ply-btn-secondary-color: #161616;
@@ -1207,67 +1207,67 @@ button.btn-white.btn-disabled {
   padding: 2rem;
 }
 
-.padding-top-xs {
+.padding-top-xs, .padding-xs-top {
   padding-top: 0.25rem;
 }
 
-.padding-top-sm {
+.padding-top-sm, .padding-sm-top {
   padding-top: 0.5rem;
 }
 
-.padding-top-lg {
+.padding-top-lg, .padding-lg-top {
   padding-top: 1.5rem;
 }
 
-.padding-top-xl {
+.padding-top-xl, .padding-xl-top {
   padding-top: 2rem;
 }
 
-.padding-right-xs {
+.padding-right-xs, .padding-xs-right {
   padding-right: 0.25rem;
 }
 
-.padding-right-sm {
+.padding-right-sm, .padding-sm-right {
   padding-right: 0.5rem;
 }
 
-.padding-right-lg {
+.padding-right-lg, .padding-lg-right {
   padding-right: 1.5rem;
 }
 
-.padding-right-xl {
+.padding-right-xl, .padding-xl-right {
   padding-right: 2rem;
 }
 
-.padding-bottom-xs {
+.padding-bottom-xs, .padding-xs-bottom {
   padding-bottom: 0.25rem;
 }
 
-.padding-bottom-sm {
+.padding-bottom-sm, .padding-sm-bottom {
   padding-bottom: 0.5rem;
 }
 
-.padding-bottom-lg {
+.padding-bottom-lg, .padding-lg-bottom {
   padding-bottom: 1.5rem;
 }
 
-.padding-bottom-xl {
+.padding-bottom-xl, .padding-xl-bottom {
   padding-bottom: 2rem;
 }
 
-.padding-left-xs {
+.padding-left-xs, .padding-xs-left {
   padding-left: 0.25rem;
 }
 
-.padding-left-sm {
+.padding-left-sm, .padding-sm-left {
   padding-left: 0.5rem;
 }
 
-.padding-left-lg {
+.padding-left-lg, .padding-lg-left {
   padding-left: 1.5rem;
 }
 
-.padding-left-xl {
+.padding-left-xl, .padding-xl-left {
   padding-left: 2rem;
 }
 
@@ -4294,15 +4294,13 @@ nav ul {
 .nav-stacked a,
 .nav-stacked span {
   display: block;
-  padding: 0.6rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
 }
 .nav-stacked a {
-  background: var(--ply-bg-surface-alt);
   color: var(--ply-nav-color);
-  border-bottom: 1px solid var(--ply-border-color);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 .nav-stacked a:hover {
   color: var(--ply-nav-color);
@@ -4314,10 +4312,25 @@ nav ul {
 }
 .nav-stacked li.active a,
 .nav-stacked li.active span {
-  background: var(--ply-bg-surface);
+  border-left: 2px solid var(--ply-btn-default-bg, #0353e9);
+  padding-left: calc(0.75rem - 2px);
   text-decoration: none;
-  cursor: default;
   color: var(--ply-nav-active-color);
+}
+
+/* Stacked blocked — background fills with bottom borders */
+.nav-stacked-blocked a, .nav-stacked-blocked span {
+  padding: 0.6rem 0.75rem;
+}
+.nav-stacked-blocked a {
+  background: var(--ply-bg-surface-alt);
+  border-bottom: 1px solid var(--ply-border-color);
+}
+.nav-stacked-blocked li.active a,
+.nav-stacked-blocked li.active span {
+  background: var(--ply-bg-surface);
+  border-left: none;
+  padding-left: 0.75rem;
 }
 
 /* Stats */
