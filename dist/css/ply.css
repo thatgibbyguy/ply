@@ -798,14 +798,20 @@ button.btn-white.btn-disabled {
   cursor: all-scroll;
 }
 
-.cursor-col-resize,
 .cursor-ew-resize {
   cursor: ew-resize;
 }
 
-.cursor-row-resize,
+.cursor-col-resize {
+  cursor: col-resize;
+}
+
 .cursor-ns-resize {
   cursor: ns-resize;
+}
+
+.cursor-row-resize {
+  cursor: row-resize;
 }
 
 .cursor-nesw-resize {
@@ -947,10 +953,6 @@ button.btn-white.btn-disabled {
 
 .items-baseline {
   align-items: baseline;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-start {

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "framework": "ply",
-  "totalClasses": 505,
-  "uniqueClasses": 462,
+  "totalClasses": 421,
+  "uniqueClasses": 421,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -384,28 +384,10 @@
         "forever-unit-*"
       ]
     },
-    "centered": {
-      "category": "grid",
-      "description": "Center a unit with margin: 0 auto.",
-      "parent": "units-row",
-      "example": "<div class=\"units-row\"><div class=\"unit-50 centered\">Centered column</div></div>"
-    },
-    "unit-centered": {
-      "category": "grid",
-      "description": "Alias for centered. Center a unit with margin: 0 auto.",
-      "parent": "units-row",
-      "aliasOf": "centered"
-    },
     "reverse-direction": {
       "category": "grid",
       "description": "Reverse row direction (flex-direction: row-reverse). Applied to units-row.",
       "example": "<div class=\"units-row reverse-direction\">...</div>"
-    },
-    "right-to-left": {
-      "category": "grid",
-      "description": "Alias for reverse-direction. Reverse row direction.",
-      "example": "<div class=\"units-row right-to-left\">...</div>",
-      "aliasOf": "reverse-direction"
     },
     "split": {
       "category": "grid",
@@ -482,39 +464,6 @@
       "description": "Outlined button variant. Transparent background with border.",
       "example": "<button class=\"btn btn-outline\">Outline</button>"
     },
-    "btn-big": {
-      "category": "buttons",
-      "description": "Large button size.",
-      "example": "<button class=\"btn btn-big\">Large</button>"
-    },
-    "btn-lg": {
-      "category": "buttons",
-      "description": "Alias for btn-big. Large button size.",
-      "example": "<button class=\"btn btn-lg\">Large</button>",
-      "aliasOf": "btn-big"
-    },
-    "btn-small": {
-      "category": "buttons",
-      "description": "Small button size.",
-      "example": "<button class=\"btn btn-small\">Small</button>"
-    },
-    "btn-sm": {
-      "category": "buttons",
-      "description": "Alias for btn-small. Small button size.",
-      "example": "<button class=\"btn btn-sm\">Small</button>",
-      "aliasOf": "btn-small"
-    },
-    "btn-smaller": {
-      "category": "buttons",
-      "description": "Extra small button size.",
-      "example": "<button class=\"btn btn-smaller\">Tiny</button>"
-    },
-    "btn-xs": {
-      "category": "buttons",
-      "description": "Alias for btn-smaller. Extra small button size.",
-      "example": "<button class=\"btn btn-xs\">Tiny</button>",
-      "aliasOf": "btn-smaller"
-    },
     "btn-active": {
       "category": "buttons",
       "description": "Active/pressed state. Muted background with inset shadow.",
@@ -524,11 +473,6 @@
       "category": "buttons",
       "description": "Disabled state. Muted colors, default cursor.",
       "example": "<button class=\"btn btn-disabled\">Disabled</button>"
-    },
-    "btn-straight": {
-      "category": "buttons",
-      "description": "Remove border-radius from button.",
-      "example": "<button class=\"btn btn-straight\">Square</button>"
     },
     "btn-square": {
       "category": "buttons",
@@ -542,13 +486,6 @@
         "btn"
       ],
       "example": "<div class=\"btn-group\"><button class=\"btn\">One</button><button class=\"btn\">Two</button></div>"
-    },
-    "btn-single": {
-      "category": "buttons",
-      "description": "Single button container with flex layout.",
-      "children": [
-        "btn"
-      ]
     },
     "form": {
       "category": "forms",
@@ -589,39 +526,6 @@
       "category": "forms",
       "description": "Gray/neutral state for inputs. Gray border with gray box-shadow.",
       "example": "<input type=\"text\" class=\"input-gray\">"
-    },
-    "input-big": {
-      "category": "forms",
-      "description": "Large input size (xl font-size).",
-      "example": "<input type=\"text\" class=\"input-big\">"
-    },
-    "input-lg": {
-      "category": "forms",
-      "description": "Alias for input-big. Large input size.",
-      "example": "<input type=\"text\" class=\"input-lg\">",
-      "aliasOf": "input-big"
-    },
-    "input-small": {
-      "category": "forms",
-      "description": "Small input size.",
-      "example": "<input type=\"text\" class=\"input-small\">"
-    },
-    "input-sm": {
-      "category": "forms",
-      "description": "Alias for input-small. Small input size.",
-      "example": "<input type=\"text\" class=\"input-sm\">",
-      "aliasOf": "input-small"
-    },
-    "input-smaller": {
-      "category": "forms",
-      "description": "Extra small input size.",
-      "example": "<input type=\"text\" class=\"input-smaller\">"
-    },
-    "input-xs": {
-      "category": "forms",
-      "description": "Alias for input-smaller. Extra small input size.",
-      "example": "<input type=\"text\" class=\"input-xs\">",
-      "aliasOf": "input-smaller"
     },
     "input-search": {
       "category": "forms",
@@ -783,191 +687,6 @@
       "description": "Fixed positioning for navigation. position: fixed; top: 0; left: 0; z-index: 101.",
       "example": "<nav class=\"navbar navigation-fixed\">...</nav>"
     },
-    "tools-alert": {
-      "category": "notifications",
-      "description": "Base alert component. Flex layout with left border accent, supports dark mode.",
-      "children": [
-        "tools-alert-icon",
-        "tools-alert-content",
-        "tools-alert-dismiss"
-      ],
-      "example": "<div class=\"tools-alert tools-alert-blue\"><div class=\"tools-alert-content\">Info message</div></div>"
-    },
-    "alert": {
-      "category": "notifications",
-      "description": "Alias for tools-alert. Base alert component.",
-      "children": [
-        "alert-icon",
-        "alert-content",
-        "alert-dismiss"
-      ],
-      "example": "<div class=\"alert alert-blue\"><div class=\"alert-content\">Info message</div></div>",
-      "aliasOf": "tools-alert"
-    },
-    "tools-alert-blue": {
-      "category": "notifications",
-      "description": "Blue/info alert variant. Blue tinted background with blue left border."
-    },
-    "alert-blue": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-blue. Blue/info alert variant.",
-      "aliasOf": "tools-alert-blue"
-    },
-    "tools-alert-red": {
-      "category": "notifications",
-      "description": "Red/error alert variant. Red tinted background with red left border."
-    },
-    "alert-red": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-red. Red/error alert variant.",
-      "aliasOf": "tools-alert-red"
-    },
-    "tools-alert-green": {
-      "category": "notifications",
-      "description": "Green/success alert variant. Green tinted background with green left border."
-    },
-    "alert-green": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-green. Green/success alert variant.",
-      "aliasOf": "tools-alert-green"
-    },
-    "tools-alert-yellow": {
-      "category": "notifications",
-      "description": "Yellow/warning alert variant. Yellow tinted background with yellow left border."
-    },
-    "alert-yellow": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-yellow. Yellow/warning alert variant.",
-      "aliasOf": "tools-alert-yellow"
-    },
-    "tools-alert-black": {
-      "category": "notifications",
-      "description": "Black/neutral alert variant. Gray background with dark left border."
-    },
-    "alert-black": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-black. Black/neutral alert variant.",
-      "aliasOf": "tools-alert-black"
-    },
-    "tools-alert-outline": {
-      "category": "notifications",
-      "description": "Outlined alert variant. Keeps tinted background, adds full border."
-    },
-    "alert-outline": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-outline. Outlined alert variant.",
-      "aliasOf": "tools-alert-outline"
-    },
-    "tools-alert-ghost": {
-      "category": "notifications",
-      "description": "Ghost alert variant. Transparent background, border only."
-    },
-    "alert-ghost": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant.",
-      "aliasOf": "tools-alert-ghost"
-    },
-    "tools-alert-stack": {
-      "category": "notifications",
-      "description": "Stacked alert layout (flex-direction: column). Use for multi-line alerts with buttons or CTAs.",
-      "parent": "tools-alert",
-      "example": "<div class=\"alert alert-blue alert-stack\"><p>Message text.</p><a class=\"btn btn-outline\">Action</a></div>"
-    },
-    "alert-stack": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-stack. Stacked column layout for alerts.",
-      "parent": "alert",
-      "aliasOf": "tools-alert-stack"
-    },
-    "tools-alert-icon": {
-      "category": "notifications",
-      "description": "Alert icon container. Flex-shrink: 0, 1.25rem square.",
-      "parent": "tools-alert"
-    },
-    "alert-icon": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-icon.",
-      "parent": "alert",
-      "aliasOf": "tools-alert-icon"
-    },
-    "tools-alert-content": {
-      "category": "notifications",
-      "description": "Alert content container. Flex: 1.",
-      "parent": "tools-alert"
-    },
-    "alert-content": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-content.",
-      "parent": "alert",
-      "aliasOf": "tools-alert-content"
-    },
-    "tools-alert-dismiss": {
-      "category": "notifications",
-      "description": "Alert dismiss button. Renders multiplication sign, fades on hover.",
-      "parent": "tools-alert"
-    },
-    "alert-dismiss": {
-      "category": "notifications",
-      "description": "Alias for tools-alert-dismiss.",
-      "parent": "alert",
-      "aliasOf": "tools-alert-dismiss"
-    },
-    "tools-message": {
-      "category": "notifications",
-      "description": "Toast message. Hidden by default (display: none), fixed position top-right.",
-      "example": "<div class=\"tools-message tools-message-green\">Saved!</div>"
-    },
-    "message": {
-      "category": "notifications",
-      "description": "Alias for tools-message. Toast message hidden by default.",
-      "example": "<div class=\"message message-green\">Saved!</div>",
-      "aliasOf": "tools-message"
-    },
-    "tools-message-black": {
-      "category": "notifications",
-      "description": "Black toast message variant."
-    },
-    "message-black": {
-      "category": "notifications",
-      "description": "Alias for tools-message-black.",
-      "aliasOf": "tools-message-black"
-    },
-    "tools-message-blue": {
-      "category": "notifications",
-      "description": "Blue toast message variant."
-    },
-    "message-blue": {
-      "category": "notifications",
-      "description": "Alias for tools-message-blue.",
-      "aliasOf": "tools-message-blue"
-    },
-    "tools-message-red": {
-      "category": "notifications",
-      "description": "Red toast message variant."
-    },
-    "message-red": {
-      "category": "notifications",
-      "description": "Alias for tools-message-red.",
-      "aliasOf": "tools-message-red"
-    },
-    "tools-message-yellow": {
-      "category": "notifications",
-      "description": "Yellow toast message variant."
-    },
-    "message-yellow": {
-      "category": "notifications",
-      "description": "Alias for tools-message-yellow.",
-      "aliasOf": "tools-message-yellow"
-    },
-    "tools-message-green": {
-      "category": "notifications",
-      "description": "Green toast message variant."
-    },
-    "message-green": {
-      "category": "notifications",
-      "description": "Alias for tools-message-green.",
-      "aliasOf": "tools-message-green"
-    },
     "text-xs": {
       "category": "typography",
       "description": "Extra small font size utility."
@@ -1020,10 +739,6 @@
       "category": "typography",
       "description": "Light font weight (300)."
     },
-    "req": {
-      "category": "forms",
-      "description": "Marks a form field as required with a visual indicator. Alias: required."
-    },
     "font-normal": {
       "category": "typography",
       "description": "Normal font weight utility."
@@ -1061,11 +776,6 @@
       "description": "Lead paragraph style. Larger font size with relaxed line-height.",
       "example": "<p class=\"lead\">This is a lead paragraph.</p>"
     },
-    "lead-subhead": {
-      "category": "typography",
-      "description": "Lead subhead style. Same as lead — larger font size with relaxed line-height.",
-      "example": "<p class=\"lead-subhead\">Subheading text here.</p>"
-    },
     "bold": {
       "category": "typography",
       "description": "Bold text (font-weight: bold !important)."
@@ -1081,16 +791,6 @@
     "nowrap": {
       "category": "typography",
       "description": "Prevent text wrapping (white-space: nowrap)."
-    },
-    "text-centered": {
-      "category": "typography",
-      "description": "Center-aligned text.",
-      "example": "<p class=\"text-centered\">Centered text</p>"
-    },
-    "text-center": {
-      "category": "typography",
-      "description": "Alias for text-centered. Center-aligned text.",
-      "aliasOf": "text-centered"
     },
     "text-right": {
       "category": "typography",
@@ -1189,16 +889,6 @@
       "category": "helpers",
       "description": "justify-content: center. Use with display-flex."
     },
-    "justify-start": {
-      "category": "helpers",
-      "description": "justify-content: flex-start. Use with display-flex.",
-      "aliasOf": "flex-start"
-    },
-    "justify-end": {
-      "category": "helpers",
-      "description": "justify-content: flex-end. Use with display-flex.",
-      "aliasOf": "flex-end"
-    },
     "justify-between": {
       "category": "helpers",
       "description": "justify-content: space-between. Use with display-flex."
@@ -1239,11 +929,6 @@
       "category": "helpers",
       "description": "Add small margin-top (0.5rem)."
     },
-    "margin-top-extra": {
-      "category": "helpers",
-      "description": "Alias for margin-top-lg. Legacy double-size class.",
-      "aliasOf": "margin-top-lg"
-    },
     "margin-top-lg": {
       "category": "helpers",
       "description": "Add large margin-top (1.5rem)."
@@ -1263,11 +948,6 @@
     "margin-bottom-sm": {
       "category": "helpers",
       "description": "Add small margin-bottom (0.5rem)."
-    },
-    "margin-bottom-extra": {
-      "category": "helpers",
-      "description": "Alias for margin-bottom-lg. Legacy double-size class.",
-      "aliasOf": "margin-bottom-lg"
     },
     "margin-bottom-lg": {
       "category": "helpers",
@@ -1289,11 +969,6 @@
       "category": "helpers",
       "description": "Add small margin-left (0.5rem)."
     },
-    "margin-left-extra": {
-      "category": "helpers",
-      "description": "Alias for margin-left-lg. Legacy double-size class.",
-      "aliasOf": "margin-left-lg"
-    },
     "margin-left-lg": {
       "category": "helpers",
       "description": "Add large margin-left (1.5rem)."
@@ -1313,11 +988,6 @@
     "margin-right-sm": {
       "category": "helpers",
       "description": "Add small margin-right (0.5rem)."
-    },
-    "margin-right-extra": {
-      "category": "helpers",
-      "description": "Alias for margin-right-lg. Legacy double-size class.",
-      "aliasOf": "margin-right-lg"
     },
     "margin-right-lg": {
       "category": "helpers",
@@ -1371,11 +1041,6 @@
       "category": "helpers",
       "description": "Add small padding-top (0.5rem)."
     },
-    "padding-top-extra": {
-      "category": "helpers",
-      "description": "Alias for padding-top-lg. Legacy double-size class.",
-      "aliasOf": "padding-top-lg"
-    },
     "padding-top-lg": {
       "category": "helpers",
       "description": "Add large padding-top (1.5rem)."
@@ -1395,11 +1060,6 @@
     "padding-bottom-sm": {
       "category": "helpers",
       "description": "Add small padding-bottom (0.5rem)."
-    },
-    "padding-bottom-extra": {
-      "category": "helpers",
-      "description": "Alias for padding-bottom-lg. Legacy double-size class.",
-      "aliasOf": "padding-bottom-lg"
     },
     "padding-bottom-lg": {
       "category": "helpers",
@@ -1421,11 +1081,6 @@
       "category": "helpers",
       "description": "Add small padding-left (0.5rem)."
     },
-    "padding-left-extra": {
-      "category": "helpers",
-      "description": "Alias for padding-left-lg. Legacy double-size class.",
-      "aliasOf": "padding-left-lg"
-    },
     "padding-left-lg": {
       "category": "helpers",
       "description": "Add large padding-left (1.5rem)."
@@ -1445,11 +1100,6 @@
     "padding-right-sm": {
       "category": "helpers",
       "description": "Add small padding-right (0.5rem)."
-    },
-    "padding-right-extra": {
-      "category": "helpers",
-      "description": "Alias for padding-right-lg. Legacy double-size class.",
-      "aliasOf": "padding-right-lg"
     },
     "padding-right-lg": {
       "category": "helpers",
@@ -1639,10 +1289,6 @@
       "category": "helpers",
       "description": "Height 10%."
     },
-    "hide": {
-      "category": "helpers",
-      "description": "display: none."
-    },
     "sr-only": {
       "category": "helpers",
       "description": "Visually hidden but accessible to screen readers."
@@ -1671,11 +1317,6 @@
     "text-tertiary": {
       "category": "helpers",
       "description": "Muted/tertiary text color (theme-aware). Maps to --ply-color-muted. Alias: text-muted."
-    },
-    "text-muted": {
-      "category": "helpers",
-      "description": "Muted/tertiary text color (theme-aware). Alias for text-tertiary.",
-      "aliasOf": "text-tertiary"
     },
     "text-inverse": {
       "category": "helpers",
@@ -1754,14 +1395,6 @@
     "color-white": {
       "category": "helpers",
       "description": "Text color: white."
-    },
-    "background-white": {
-      "category": "helpers",
-      "description": "Set background to surface color (white in light mode)."
-    },
-    "background-black": {
-      "category": "helpers",
-      "description": "Set background to black."
     },
     "color-gray-10": {
       "category": "helpers",
@@ -1873,11 +1506,6 @@
     "unit-role-left": {
       "category": "grid",
       "description": "Clear left float on a grid unit."
-    },
-    "fill-height": {
-      "category": "grid",
-      "description": "Set display: flex on a unit so children can stretch to fill height.",
-      "aliasOf": "align-stretch"
     },
     "code": {
       "category": "helpers",
@@ -1995,16 +1623,6 @@
       "category": "helpers",
       "description": "Surface background color. Theme-aware. Alias: background-white."
     },
-    "bg-black": {
-      "category": "helpers",
-      "description": "Alias for background-black. Set background to black.",
-      "aliasOf": "background-black"
-    },
-    "bg-white": {
-      "category": "helpers",
-      "description": "Alias for background-white. Set background to surface color (white in light mode).",
-      "aliasOf": "background-white"
-    },
     "text-on-color": {
       "category": "helpers",
       "description": "White text for use on colored backgrounds."
@@ -2032,46 +1650,6 @@
     "vertically-centered-space-between": {
       "category": "helpers",
       "description": "Vertical center with space-between horizontal distribution."
-    },
-    "horizontally-centered": {
-      "category": "helpers",
-      "description": "Justify-content center with text-align center."
-    },
-    "justify-flex-end": {
-      "category": "helpers",
-      "description": "justify-content: flex-end. Alias: align-end."
-    },
-    "justify-flex-start": {
-      "category": "helpers",
-      "description": "justify-content: flex-start. Alias: align-beginning."
-    },
-    "justify-space-around": {
-      "category": "helpers",
-      "description": "justify-content: space-around."
-    },
-    "justify-space-between": {
-      "category": "helpers",
-      "description": "justify-content: space-between."
-    },
-    "align-baseline": {
-      "category": "helpers",
-      "description": "align-items: baseline."
-    },
-    "align-middle": {
-      "category": "helpers",
-      "description": "align-items: center."
-    },
-    "align-flex-end": {
-      "category": "helpers",
-      "description": "align-items: flex-end. Alias: vertical-bottom."
-    },
-    "align-flex-start": {
-      "category": "helpers",
-      "description": "align-items: flex-start. Alias: vertical-top."
-    },
-    "align-stretch": {
-      "category": "helpers",
-      "description": "align-items: stretch. Alias: fill-height."
     },
     "blocks-2": {
       "category": "grid",
@@ -2371,16 +1949,6 @@
       "category": "forms",
       "description": "Dropdown list for filterbox results."
     },
-    "typeahead": {
-      "category": "forms",
-      "description": "Typeahead/autocomplete wrapper. Alias: livesearch-container.",
-      "aliasOf": "livesearch-container"
-    },
-    "typeahead-results": {
-      "category": "forms",
-      "description": "Results dropdown for typeahead. Alias: livesearch-results.",
-      "aliasOf": "livesearch-results"
-    },
     "typeahead-empty": {
       "category": "forms",
       "description": "Empty results message for typeahead."
@@ -2589,6 +2157,14 @@
     "border-inline-end": {
       "category": "rtl",
       "description": "Border on the end side (right in LTR, left in RTL)."
+    },
+    "cursor-col-resize": {
+      "category": "helpers",
+      "description": "Column resize cursor."
+    },
+    "cursor-row-resize": {
+      "category": "helpers",
+      "description": "Row resize cursor."
     }
   },
   "customProperties": {

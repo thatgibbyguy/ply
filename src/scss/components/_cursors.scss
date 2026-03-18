@@ -86,18 +86,24 @@
   cursor: all-scroll;
 }
 
-.cursor-col-resize,
 .cursor-ew-resize,
-%cursor-col-resize,
 %cursor-ew-resize {
   cursor: ew-resize;
 }
 
-.cursor-row-resize,
+.cursor-col-resize,
+%cursor-col-resize {
+  cursor: col-resize;
+}
+
 .cursor-ns-resize,
-%cursor-row-resize,
 %cursor-ns-resize {
   cursor: ns-resize;
+}
+
+.cursor-row-resize,
+%cursor-row-resize {
+  cursor: row-resize;
 }
 
 .cursor-nesw-resize,

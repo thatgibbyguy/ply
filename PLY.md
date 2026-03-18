@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~20KB gzip full, ~16KB core). 500 utility classes, 60 CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~20KB gzip full, ~16KB core). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -8,7 +8,7 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
-- **`classes`** — Every ply class (265+) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`classes`** — Every ply class (421) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
 - **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
 
@@ -26,11 +26,11 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-bg-muted: #fef08a;
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
-  --ply-color-link: #b45309;
-  --ply-color-link-hover: #92400e;
   --ply-border-color: #fbbf24;
   --ply-btn-default-bg: #b45309;
-  --ply-btn-default-hover: #92400e;
+  --ply-btn-default-bg-hover: #92400e;
+  --ply-btn-default-bg-active: #7c2d12;
+  --ply-btn-secondary-bg: #78350f;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 
