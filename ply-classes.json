@@ -676,8 +676,13 @@
     },
     "nav-stacked": {
       "category": "navigation",
-      "description": "Vertical stacked navigation with background and bottom borders.",
+      "description": "Vertical stacked navigation. Clean default with blue accent on active state. Use with nav-stacked-blocked for filled row style.",
       "example": "<nav class=\"nav-stacked\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
+    },
+    "nav-stacked-blocked": {
+      "category": "navigation",
+      "description": "Modifier for nav-stacked. Adds background fills and bottom borders to each row.",
+      "example": "<nav class=\"nav-stacked nav-stacked-blocked\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
     },
     "nav-tabs": {
       "category": "navigation",
@@ -1276,11 +1281,19 @@
     },
     "padding-top-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-top (0.25rem)."
+      "description": "Add extra-small padding-top (0.25rem). Alias: padding-xs-top."
+    },
+    "padding-xs-top": {
+      "category": "helpers",
+      "description": "Add extra-small padding-top (0.25rem). Alias: padding-top-xs."
     },
     "padding-top-sm": {
       "category": "helpers",
-      "description": "Add small padding-top (0.5rem)."
+      "description": "Add small padding-top (0.5rem). Alias: padding-sm-top."
+    },
+    "padding-sm-top": {
+      "category": "helpers",
+      "description": "Add small padding-top (0.5rem). Alias: padding-top-sm."
     },
     "padding-top-extra": {
       "category": "helpers",
@@ -1288,11 +1301,19 @@
     },
     "padding-top-lg": {
       "category": "helpers",
-      "description": "Add large padding-top (1.5rem)."
+      "description": "Add large padding-top (1.5rem). Alias: padding-lg-top."
+    },
+    "padding-lg-top": {
+      "category": "helpers",
+      "description": "Add large padding-top (1.5rem). Alias: padding-top-lg."
     },
     "padding-top-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-top (2rem)."
+      "description": "Add extra-large padding-top (2rem). Alias: padding-xl-top."
+    },
+    "padding-xl-top": {
+      "category": "helpers",
+      "description": "Add extra-large padding-top (2rem). Alias: padding-top-xl."
     },
     "padding-bottom": {
       "category": "helpers",
@@ -1300,11 +1321,19 @@
     },
     "padding-bottom-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-bottom (0.25rem)."
+      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-xs-bottom."
+    },
+    "padding-xs-bottom": {
+      "category": "helpers",
+      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-bottom-xs."
     },
     "padding-bottom-sm": {
       "category": "helpers",
-      "description": "Add small padding-bottom (0.5rem)."
+      "description": "Add small padding-bottom (0.5rem). Alias: padding-sm-bottom."
+    },
+    "padding-sm-bottom": {
+      "category": "helpers",
+      "description": "Add small padding-bottom (0.5rem). Alias: padding-bottom-sm."
     },
     "padding-bottom-extra": {
       "category": "helpers",
@@ -1312,11 +1341,19 @@
     },
     "padding-bottom-lg": {
       "category": "helpers",
-      "description": "Add large padding-bottom (1.5rem)."
+      "description": "Add large padding-bottom (1.5rem). Alias: padding-lg-bottom."
+    },
+    "padding-lg-bottom": {
+      "category": "helpers",
+      "description": "Add large padding-bottom (1.5rem). Alias: padding-bottom-lg."
     },
     "padding-bottom-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-bottom (2rem)."
+      "description": "Add extra-large padding-bottom (2rem). Alias: padding-xl-bottom."
+    },
+    "padding-xl-bottom": {
+      "category": "helpers",
+      "description": "Add extra-large padding-bottom (2rem). Alias: padding-bottom-xl."
     },
     "padding-left": {
       "category": "helpers",
@@ -1324,11 +1361,19 @@
     },
     "padding-left-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-left (0.25rem)."
+      "description": "Add extra-small padding-left (0.25rem). Alias: padding-xs-left."
+    },
+    "padding-xs-left": {
+      "category": "helpers",
+      "description": "Add extra-small padding-left (0.25rem). Alias: padding-left-xs."
     },
     "padding-left-sm": {
       "category": "helpers",
-      "description": "Add small padding-left (0.5rem)."
+      "description": "Add small padding-left (0.5rem). Alias: padding-sm-left."
+    },
+    "padding-sm-left": {
+      "category": "helpers",
+      "description": "Add small padding-left (0.5rem). Alias: padding-left-sm."
     },
     "padding-left-extra": {
       "category": "helpers",
@@ -1336,11 +1381,19 @@
     },
     "padding-left-lg": {
       "category": "helpers",
-      "description": "Add large padding-left (1.5rem)."
+      "description": "Add large padding-left (1.5rem). Alias: padding-lg-left."
+    },
+    "padding-lg-left": {
+      "category": "helpers",
+      "description": "Add large padding-left (1.5rem). Alias: padding-left-lg."
     },
     "padding-left-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-left (2rem)."
+      "description": "Add extra-large padding-left (2rem). Alias: padding-xl-left."
+    },
+    "padding-xl-left": {
+      "category": "helpers",
+      "description": "Add extra-large padding-left (2rem). Alias: padding-left-xl."
     },
     "padding-right": {
       "category": "helpers",
@@ -1348,11 +1401,19 @@
     },
     "padding-right-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-right (0.25rem)."
+      "description": "Add extra-small padding-right (0.25rem). Alias: padding-xs-right."
+    },
+    "padding-xs-right": {
+      "category": "helpers",
+      "description": "Add extra-small padding-right (0.25rem). Alias: padding-right-xs."
     },
     "padding-right-sm": {
       "category": "helpers",
-      "description": "Add small padding-right (0.5rem)."
+      "description": "Add small padding-right (0.5rem). Alias: padding-sm-right."
+    },
+    "padding-sm-right": {
+      "category": "helpers",
+      "description": "Add small padding-right (0.5rem). Alias: padding-right-sm."
     },
     "padding-right-extra": {
       "category": "helpers",
@@ -1360,11 +1421,19 @@
     },
     "padding-right-lg": {
       "category": "helpers",
-      "description": "Add large padding-right (1.5rem)."
+      "description": "Add large padding-right (1.5rem). Alias: padding-lg-right."
+    },
+    "padding-lg-right": {
+      "category": "helpers",
+      "description": "Add large padding-right (1.5rem). Alias: padding-right-lg."
     },
     "padding-right-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-right (2rem)."
+      "description": "Add extra-large padding-right (2rem). Alias: padding-xl-right."
+    },
+    "padding-xl-right": {
+      "category": "helpers",
+      "description": "Add extra-large padding-right (2rem). Alias: padding-right-xl."
     },
     "border": {
       "category": "helpers",
