@@ -140,7 +140,6 @@
 
   // Steps connector mirroring
   .steps .step:not(:last-child)::after {
-    left: auto;
     right: calc(50% + 1.25rem);
     left: calc(-50% + 1.25rem);
   }

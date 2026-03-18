@@ -7368,18 +7368,18 @@ dialog.dialog-confirm .dialog-footer {
 }
 
 /* Dialog with scrollable body */
-dialog.dialog-scroll {
+dialog.dialog-scroll[open] {
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - 4rem);
 }
-dialog.dialog-scroll .dialog-body {
+dialog.dialog-scroll[open] .dialog-body {
   flex: 1 1 auto;
   overflow-y: auto;
   min-height: 0;
 }
-dialog.dialog-scroll .dialog-header,
-dialog.dialog-scroll .dialog-footer {
+dialog.dialog-scroll[open] .dialog-header,
+dialog.dialog-scroll[open] .dialog-footer {
   flex-shrink: 0;
 }
 

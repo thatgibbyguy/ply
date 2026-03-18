@@ -627,7 +627,9 @@ dialog::backdrop {
 
 /* Native <progress> and <meter> */
 progress {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 100%;
   height: 0.5rem;
   border: none;
@@ -649,7 +651,9 @@ progress::-moz-progress-bar {
 }
 
 meter {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 100%;
   height: 0.5rem;
   border: none;
@@ -2223,7 +2227,6 @@ body {
 }
 
 a {
-  -moz-transition: all linear 0.2s;
   transition: all linear 0.2s;
   color: var(--ply-color-link, #134da5);
 }
@@ -3837,7 +3840,6 @@ input[type=time],
 input[type=search],
 input[type=datetime-local],
 textarea {
-  -moz-transition: border ease 0.5s;
   transition: border ease 0.5s;
 }
 
@@ -4049,7 +4051,9 @@ select.input-xs {
 
 /* Select */
 .form select {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: var(--ply-color-input-bg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -4071,7 +4075,9 @@ select.input-xs {
 /* Select — outlined */
 .form select.select-outlined,
 select.select-outlined {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -6709,6 +6715,9 @@ ul.dropdown li.divider {
   font-family: inherit;
   line-height: 1.5rem;
 }
+.multiselect-tags input::-moz-placeholder {
+  color: var(--ply-color-placeholder, #a3a3a3);
+}
 .multiselect-tags input::placeholder {
   color: var(--ply-color-placeholder, #a3a3a3);
 }
@@ -7011,7 +7020,9 @@ ul.dropdown li.divider {
 /* Sort Indicators */
 th.sortable {
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   position: relative;
   padding-right: 1.5rem;
   transition: background-color 0.15s ease;
