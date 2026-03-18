@@ -21,8 +21,8 @@
   --ply-color-text-inverse: #ffffff;
   --ply-border-color: #e0e0e0;
   --ply-border-strong: #8d8d8d;
-  --ply-color-link: #0353e9;
-  --ply-color-link-hover: #0043ce;
+  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #f4f4f4;
   --ply-color-input-border: #8d8d8d;
@@ -32,8 +32,8 @@
   --ply-color-table-border: #e0e0e0;
   --ply-color-table-stripped: #f4f4f4;
   --ply-color-table-hovered: #e8e8e8;
-  --ply-btn-default-bg: #393939;
-  --ply-btn-default-hover: #4c4c4c;
+  --ply-btn-default-bg: #0353e9;
+  --ply-btn-secondary-bg: #393939;
   --ply-nav-bg: #ffffff;
   --ply-nav-color: #161616;
   --ply-nav-border: #161616;
@@ -108,8 +108,8 @@
     --ply-color-text-inverse: #161616;
     --ply-border-color: #393939;
     --ply-border-strong: #6f6f6f;
-    --ply-color-link: #78a9ff;
-    --ply-color-link-hover: #a6c8ff;
+    --ply-color-link: var(--ply-btn-default-bg);
+    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-color-focus: #0f62fe;
     --ply-color-field-bg: #262626;
     --ply-color-input-border: #6f6f6f;
@@ -119,9 +119,10 @@
     --ply-color-table-border: #393939;
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
-    --ply-btn-default-bg: #4c4c4c;
-    --ply-btn-default-hover: #595959;
-    --ply-btn-default-color: #f4f4f4;
+    --ply-btn-default-bg: #78a9ff;
+    --ply-btn-secondary-bg: #a8a8a8;
+    --ply-btn-default-color: #161616;
+    --ply-btn-secondary-color: #161616;
     --ply-nav-bg: #161616;
     --ply-nav-color: #f4f4f4;
     --ply-nav-border: #f4f4f4;
@@ -192,8 +193,8 @@
   --ply-color-text-inverse: #161616;
   --ply-border-color: #393939;
   --ply-border-strong: #6f6f6f;
-  --ply-color-link: #78a9ff;
-  --ply-color-link-hover: #a6c8ff;
+  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #262626;
   --ply-color-input-border: #6f6f6f;
@@ -203,9 +204,9 @@
   --ply-color-table-border: #393939;
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
-  --ply-btn-default-bg: #4c4c4c;
-  --ply-btn-default-hover: #595959;
-  --ply-btn-default-color: #f4f4f4;
+  --ply-btn-default-bg: #78a9ff;
+  --ply-btn-secondary-bg: #6f6f6f;
+  --ply-btn-default-color: #161616;
   --ply-nav-bg: #161616;
   --ply-nav-color: #f4f4f4;
   --ply-nav-border: #f4f4f4;
@@ -738,62 +739,6 @@ meter {
 }
 
 .cursor-not-allowed,
-.btn-blue.btn-active,
-.btn-blue.btn-disabled,
-.btn-blue.btn[disabled],
-input[type=submit].btn-blue.btn-active,
-input[type=submit].btn-blue.btn-disabled,
-input[type=submit].btn-blue.btn[disabled],
-input[type=button].btn-blue.btn-active,
-input[type=button].btn-blue.btn-disabled,
-input[type=button].btn-blue.btn[disabled],
-input[type=reset].btn-blue.btn-active,
-input[type=reset].btn-blue.btn-disabled,
-input[type=reset].btn-blue.btn[disabled],
-button.btn-blue.btn-active,
-button.btn-blue.btn-disabled,
-.btn-red.btn-active,
-.btn-red.btn-disabled,
-.btn-red.btn[disabled],
-input[type=submit].btn-red.btn-active,
-input[type=submit].btn-red.btn-disabled,
-input[type=submit].btn-red.btn[disabled],
-input[type=button].btn-red.btn-active,
-input[type=button].btn-red.btn-disabled,
-input[type=button].btn-red.btn[disabled],
-input[type=reset].btn-red.btn-active,
-input[type=reset].btn-red.btn-disabled,
-input[type=reset].btn-red.btn[disabled],
-button.btn-red.btn-active,
-button.btn-red.btn-disabled,
-.btn-green.btn-active,
-.btn-green.btn-disabled,
-.btn-green.btn[disabled],
-input[type=submit].btn-green.btn-active,
-input[type=submit].btn-green.btn-disabled,
-input[type=submit].btn-green.btn[disabled],
-input[type=button].btn-green.btn-active,
-input[type=button].btn-green.btn-disabled,
-input[type=button].btn-green.btn[disabled],
-input[type=reset].btn-green.btn-active,
-input[type=reset].btn-green.btn-disabled,
-input[type=reset].btn-green.btn[disabled],
-button.btn-green.btn-active,
-button.btn-green.btn-disabled,
-.btn-yellow.btn-active,
-.btn-yellow.btn-disabled,
-.btn-yellow.btn[disabled],
-input[type=submit].btn-yellow.btn-active,
-input[type=submit].btn-yellow.btn-disabled,
-input[type=submit].btn-yellow.btn[disabled],
-input[type=button].btn-yellow.btn-active,
-input[type=button].btn-yellow.btn-disabled,
-input[type=button].btn-yellow.btn[disabled],
-input[type=reset].btn-yellow.btn-active,
-input[type=reset].btn-yellow.btn-disabled,
-input[type=reset].btn-yellow.btn[disabled],
-button.btn-yellow.btn-active,
-button.btn-yellow.btn-disabled,
 .btn-black.btn-active,
 .btn-black.btn-disabled,
 .btn-black.btn[disabled],
@@ -4915,7 +4860,7 @@ button.btn {
   line-height: 1.5rem;
   text-align: center;
   text-decoration: none;
-  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
+  color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
   -webkit-appearance: none;
   outline: none;
   margin: 0;
@@ -4923,7 +4868,7 @@ button.btn {
   border-radius: 2rem;
   box-shadow: none;
   cursor: pointer;
-  background: var(--ply-btn-default-bg, #393939);
+  background: var(--ply-btn-secondary-bg, #393939);
   padding: 0.625rem 1.5rem;
 }
 .btn:hover, .btn:active, .btn:focus-visible,
@@ -4939,8 +4884,15 @@ input[type=reset].btn:focus-visible,
 button.btn:hover,
 button.btn:active,
 button.btn:focus-visible {
-  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
-  background: var(--ply-btn-default-hover, #4c4c4c);
+  color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
+  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%);
+}
+.btn:active,
+input[type=submit].btn:active,
+input[type=button].btn:active,
+input[type=reset].btn:active,
+button.btn:active {
+  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%);
 }
 .btn:hover,
 input[type=submit].btn:hover,
@@ -5008,6 +4960,82 @@ button.btn-smaller {
   vertical-align: baseline;
 }
 
+.btn-primary,
+input[type=submit].btn-primary,
+input[type=button].btn-primary,
+input[type=reset].btn-primary,
+button.btn-primary {
+  background: var(--ply-btn-default-bg, #0353e9);
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus-visible,
+input[type=submit].btn-primary:hover,
+input[type=submit].btn-primary:active,
+input[type=submit].btn-primary:focus-visible,
+input[type=button].btn-primary:hover,
+input[type=button].btn-primary:active,
+input[type=button].btn-primary:focus-visible,
+input[type=reset].btn-primary:hover,
+input[type=reset].btn-primary:active,
+input[type=reset].btn-primary:focus-visible,
+button.btn-primary:hover,
+button.btn-primary:active,
+button.btn-primary:focus-visible {
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-primary:hover,
+input[type=submit].btn-primary:hover,
+input[type=button].btn-primary:hover,
+input[type=reset].btn-primary:hover,
+button.btn-primary:hover {
+  background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 15%);
+}
+.btn-primary:active,
+input[type=submit].btn-primary:active,
+input[type=button].btn-primary:active,
+input[type=reset].btn-primary:active,
+button.btn-primary:active {
+  background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 25%);
+}
+
+.btn-secondary,
+input[type=submit].btn-secondary,
+input[type=button].btn-secondary,
+input[type=reset].btn-secondary,
+button.btn-secondary {
+  background: var(--ply-btn-secondary-bg, #393939);
+  color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus-visible,
+input[type=submit].btn-secondary:hover,
+input[type=submit].btn-secondary:active,
+input[type=submit].btn-secondary:focus-visible,
+input[type=button].btn-secondary:hover,
+input[type=button].btn-secondary:active,
+input[type=button].btn-secondary:focus-visible,
+input[type=reset].btn-secondary:hover,
+input[type=reset].btn-secondary:active,
+input[type=reset].btn-secondary:focus-visible,
+button.btn-secondary:hover,
+button.btn-secondary:active,
+button.btn-secondary:focus-visible {
+  color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-secondary:hover,
+input[type=submit].btn-secondary:hover,
+input[type=button].btn-secondary:hover,
+input[type=reset].btn-secondary:hover,
+button.btn-secondary:hover {
+  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%);
+}
+.btn-secondary:active,
+input[type=submit].btn-secondary:active,
+input[type=button].btn-secondary:active,
+input[type=reset].btn-secondary:active,
+button.btn-secondary:active {
+  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%);
+}
+
 .btn-outline,
 input[type=submit].btn-outline,
 input[type=button].btn-outline,
@@ -5059,7 +5087,7 @@ input[type=button].btn-ghost,
 input[type=reset].btn-ghost,
 button.btn-ghost {
   background: transparent;
-  color: var(--ply-color-body, #0f0f0f);
+  color: var(--ply-btn-default-bg, #0353e9);
   border: none;
 }
 .btn-ghost:hover, .btn-ghost:active, .btn-ghost:focus-visible,
@@ -5076,13 +5104,85 @@ button.btn-ghost:hover,
 button.btn-ghost:active,
 button.btn-ghost:focus-visible {
   background: var(--ply-bg-muted, rgba(128, 128, 128, 0.1));
-  color: var(--ply-color-body, #0f0f0f);
+  color: var(--ply-btn-default-bg, #0353e9);
 }
 .btn-ghost:focus-visible,
 input[type=submit].btn-ghost:focus-visible,
 input[type=button].btn-ghost:focus-visible,
 input[type=reset].btn-ghost:focus-visible,
 button.btn-ghost:focus-visible {
+  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline-offset: 2px;
+}
+
+.btn-primary-outline,
+input[type=submit].btn-primary-outline,
+input[type=button].btn-primary-outline,
+input[type=reset].btn-primary-outline,
+button.btn-primary-outline {
+  background: transparent;
+  padding: 0.5625rem 1.5rem;
+  border: 1px solid var(--ply-btn-default-bg, #0353e9);
+  color: var(--ply-btn-default-bg, #0353e9);
+}
+.btn-primary-outline:hover, .btn-primary-outline:active, .btn-primary-outline:focus-visible,
+input[type=submit].btn-primary-outline:hover,
+input[type=submit].btn-primary-outline:active,
+input[type=submit].btn-primary-outline:focus-visible,
+input[type=button].btn-primary-outline:hover,
+input[type=button].btn-primary-outline:active,
+input[type=button].btn-primary-outline:focus-visible,
+input[type=reset].btn-primary-outline:hover,
+input[type=reset].btn-primary-outline:active,
+input[type=reset].btn-primary-outline:focus-visible,
+button.btn-primary-outline:hover,
+button.btn-primary-outline:active,
+button.btn-primary-outline:focus-visible {
+  background: var(--ply-btn-default-bg, #0353e9);
+  border-color: var(--ply-btn-default-bg, #0353e9);
+  color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-primary-outline:focus-visible,
+input[type=submit].btn-primary-outline:focus-visible,
+input[type=button].btn-primary-outline:focus-visible,
+input[type=reset].btn-primary-outline:focus-visible,
+button.btn-primary-outline:focus-visible {
+  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline-offset: 2px;
+}
+
+.btn-secondary-outline,
+input[type=submit].btn-secondary-outline,
+input[type=button].btn-secondary-outline,
+input[type=reset].btn-secondary-outline,
+button.btn-secondary-outline {
+  background: transparent;
+  padding: 0.5625rem 1.5rem;
+  border: 1px solid var(--ply-color-muted, #767676);
+  color: var(--ply-color-muted, #767676);
+}
+.btn-secondary-outline:hover, .btn-secondary-outline:active, .btn-secondary-outline:focus-visible,
+input[type=submit].btn-secondary-outline:hover,
+input[type=submit].btn-secondary-outline:active,
+input[type=submit].btn-secondary-outline:focus-visible,
+input[type=button].btn-secondary-outline:hover,
+input[type=button].btn-secondary-outline:active,
+input[type=button].btn-secondary-outline:focus-visible,
+input[type=reset].btn-secondary-outline:hover,
+input[type=reset].btn-secondary-outline:active,
+input[type=reset].btn-secondary-outline:focus-visible,
+button.btn-secondary-outline:hover,
+button.btn-secondary-outline:active,
+button.btn-secondary-outline:focus-visible {
+  background: var(--ply-btn-secondary-bg, #393939);
+  border-color: var(--ply-btn-secondary-bg, #393939);
+  color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
+}
+.btn-secondary-outline:focus-visible,
+input[type=submit].btn-secondary-outline:focus-visible,
+input[type=button].btn-secondary-outline:focus-visible,
+input[type=reset].btn-secondary-outline:focus-visible,
+button.btn-secondary-outline:focus-visible {
   outline: 2px solid var(--ply-color-focus, #2575ed);
   outline-offset: 2px;
 }
@@ -5157,198 +5257,37 @@ input[type=submit].btn-blue,
 input[type=button].btn-blue,
 input[type=reset].btn-blue,
 button.btn-blue {
+  background: #0f62fe;
   color: #fff;
-  background: var(--ply-blue-1);
 }
-.btn-blue:hover, .btn-blue:active, .btn-blue:focus,
+.btn-blue:hover, .btn-blue:active, .btn-blue:focus-visible,
 input[type=submit].btn-blue:hover,
 input[type=submit].btn-blue:active,
-input[type=submit].btn-blue:focus,
+input[type=submit].btn-blue:focus-visible,
 input[type=button].btn-blue:hover,
 input[type=button].btn-blue:active,
-input[type=button].btn-blue:focus,
+input[type=button].btn-blue:focus-visible,
 input[type=reset].btn-blue:hover,
 input[type=reset].btn-blue:active,
-input[type=reset].btn-blue:focus,
+input[type=reset].btn-blue:focus-visible,
 button.btn-blue:hover,
 button.btn-blue:active,
-button.btn-blue:focus {
+button.btn-blue:focus-visible {
   color: #fff;
-  background: var(--ply-blue-2);
 }
 .btn-blue:hover,
 input[type=submit].btn-blue:hover,
 input[type=button].btn-blue:hover,
 input[type=reset].btn-blue:hover,
 button.btn-blue:hover {
-  transform: translateY(0) scale(1.05, 1.05);
+  background: #0043ce;
 }
-.btn-blue:focus, .btn-blue:active,
-input[type=submit].btn-blue:focus,
+.btn-blue:active,
 input[type=submit].btn-blue:active,
-input[type=button].btn-blue:focus,
 input[type=button].btn-blue:active,
-input[type=reset].btn-blue:focus,
 input[type=reset].btn-blue:active,
-button.btn-blue:focus,
 button.btn-blue:active {
-  transform: translateY(0) scale(0.95, 0.95);
-  background: var(--ply-blue-3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) inset;
-}
-.btn-blue.btn-active,
-input[type=submit].btn-blue.btn-active,
-input[type=button].btn-blue.btn-active,
-input[type=reset].btn-blue.btn-active,
-button.btn-blue.btn-active {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-.btn-blue.btn-active, .btn-blue.btn-disabled, .btn-blue.btn[disabled],
-input[type=submit].btn-blue.btn-active,
-input[type=submit].btn-blue.btn-disabled,
-input[type=submit].btn-blue.btn[disabled],
-input[type=button].btn-blue.btn-active,
-input[type=button].btn-blue.btn-disabled,
-input[type=button].btn-blue.btn[disabled],
-input[type=reset].btn-blue.btn-active,
-input[type=reset].btn-blue.btn-disabled,
-input[type=reset].btn-blue.btn[disabled],
-button.btn-blue.btn-active,
-button.btn-blue.btn-disabled,
-button.btn-blue.btn[disabled] {
-  opacity: 0.5;
-  background: var(--ply-blue-2);
-}
-.btn-blue.btn-active:hover, .btn-blue.btn-disabled:hover, .btn-blue.btn[disabled]:hover,
-input[type=submit].btn-blue.btn-active:hover,
-input[type=submit].btn-blue.btn-disabled:hover,
-input[type=submit].btn-blue.btn[disabled]:hover,
-input[type=button].btn-blue.btn-active:hover,
-input[type=button].btn-blue.btn-disabled:hover,
-input[type=button].btn-blue.btn[disabled]:hover,
-input[type=reset].btn-blue.btn-active:hover,
-input[type=reset].btn-blue.btn-disabled:hover,
-input[type=reset].btn-blue.btn[disabled]:hover,
-button.btn-blue.btn-active:hover,
-button.btn-blue.btn-disabled:hover,
-button.btn-blue.btn[disabled]:hover {
-  opacity: 0.5;
-  transform: scale(1, 1);
-}
-.btn-blue.btn-active:active, .btn-blue.btn-active:focus, .btn-blue.btn-disabled:active, .btn-blue.btn-disabled:focus, .btn-blue.btn[disabled]:active, .btn-blue.btn[disabled]:focus,
-input[type=submit].btn-blue.btn-active:active,
-input[type=submit].btn-blue.btn-active:focus,
-input[type=submit].btn-blue.btn-disabled:active,
-input[type=submit].btn-blue.btn-disabled:focus,
-input[type=submit].btn-blue.btn[disabled]:active,
-input[type=submit].btn-blue.btn[disabled]:focus,
-input[type=button].btn-blue.btn-active:active,
-input[type=button].btn-blue.btn-active:focus,
-input[type=button].btn-blue.btn-disabled:active,
-input[type=button].btn-blue.btn-disabled:focus,
-input[type=button].btn-blue.btn[disabled]:active,
-input[type=button].btn-blue.btn[disabled]:focus,
-input[type=reset].btn-blue.btn-active:active,
-input[type=reset].btn-blue.btn-active:focus,
-input[type=reset].btn-blue.btn-disabled:active,
-input[type=reset].btn-blue.btn-disabled:focus,
-input[type=reset].btn-blue.btn[disabled]:active,
-input[type=reset].btn-blue.btn[disabled]:focus,
-button.btn-blue.btn-active:active,
-button.btn-blue.btn-active:focus,
-button.btn-blue.btn-disabled:active,
-button.btn-blue.btn-disabled:focus,
-button.btn-blue.btn[disabled]:active,
-button.btn-blue.btn[disabled]:focus {
-  transform: scale(1, 1);
-  box-shadow: 0 0 0;
-}
-.btn-blue.btn-disabled, .btn-blue.btn[disabled],
-input[type=submit].btn-blue.btn-disabled,
-input[type=submit].btn-blue.btn[disabled],
-input[type=button].btn-blue.btn-disabled,
-input[type=button].btn-blue.btn[disabled],
-input[type=reset].btn-blue.btn-disabled,
-input[type=reset].btn-blue.btn[disabled],
-button.btn-blue.btn-disabled,
-button.btn-blue.btn[disabled] {
-  background: var(--ply-blue-2);
-}
-.btn-blue.btn-outline,
-input[type=submit].btn-blue.btn-outline,
-input[type=button].btn-blue.btn-outline,
-input[type=reset].btn-blue.btn-outline,
-button.btn-blue.btn-outline {
-  background: none;
-  border-color: var(--ply-blue-1);
-  color: var(--ply-blue-1);
-  opacity: 1;
-}
-.btn-blue.btn-outline:hover,
-input[type=submit].btn-blue.btn-outline:hover,
-input[type=button].btn-blue.btn-outline:hover,
-input[type=reset].btn-blue.btn-outline:hover,
-button.btn-blue.btn-outline:hover {
-  color: #fff;
-  background: var(--ply-blue-1);
-}
-.btn-blue.btn-outline.btn[disabled], .btn-blue.btn-outline.btn-disabled,
-input[type=submit].btn-blue.btn-outline.btn[disabled],
-input[type=submit].btn-blue.btn-outline.btn-disabled,
-input[type=button].btn-blue.btn-outline.btn[disabled],
-input[type=button].btn-blue.btn-outline.btn-disabled,
-input[type=reset].btn-blue.btn-outline.btn[disabled],
-input[type=reset].btn-blue.btn-outline.btn-disabled,
-button.btn-blue.btn-outline.btn[disabled],
-button.btn-blue.btn-outline.btn-disabled {
-  background: none;
-  box-shadow: none;
-  opacity: 0.4;
-  border: 1px solid var(--ply-blue-1);
-  color: var(--ply-blue-1);
-}
-.btn-blue.btn-outline.btn-active,
-input[type=submit].btn-blue.btn-outline.btn-active,
-input[type=button].btn-blue.btn-outline.btn-active,
-input[type=reset].btn-blue.btn-outline.btn-active,
-button.btn-blue.btn-outline.btn-active {
-  background: none;
-  color: var(--ply-blue-1);
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
-}
-.btn-blue,
-input[type=submit].btn-blue,
-input[type=button].btn-blue,
-input[type=reset].btn-blue,
-button.btn-blue {
-  background: var(--ply-bg-blue);
-}
-.btn-blue:hover, .btn-blue:active, .btn-blue:focus,
-input[type=submit].btn-blue:hover,
-input[type=submit].btn-blue:active,
-input[type=submit].btn-blue:focus,
-input[type=button].btn-blue:hover,
-input[type=button].btn-blue:active,
-input[type=button].btn-blue:focus,
-input[type=reset].btn-blue:hover,
-input[type=reset].btn-blue:active,
-input[type=reset].btn-blue:focus,
-button.btn-blue:hover,
-button.btn-blue:active,
-button.btn-blue:focus {
-  background: var(--ply-bg-blue-hover);
-}
-.btn-blue:focus, .btn-blue:active,
-input[type=submit].btn-blue:focus,
-input[type=submit].btn-blue:active,
-input[type=button].btn-blue:focus,
-input[type=button].btn-blue:active,
-input[type=reset].btn-blue:focus,
-input[type=reset].btn-blue:active,
-button.btn-blue:focus,
-button.btn-blue:active {
-  background: var(--ply-bg-blue-active);
+  background: #002d9c;
 }
 
 .btn-red,
@@ -5356,198 +5295,37 @@ input[type=submit].btn-red,
 input[type=button].btn-red,
 input[type=reset].btn-red,
 button.btn-red {
+  background: #da1e28;
   color: #fff;
-  background: var(--ply-red-1);
 }
-.btn-red:hover, .btn-red:active, .btn-red:focus,
+.btn-red:hover, .btn-red:active, .btn-red:focus-visible,
 input[type=submit].btn-red:hover,
 input[type=submit].btn-red:active,
-input[type=submit].btn-red:focus,
+input[type=submit].btn-red:focus-visible,
 input[type=button].btn-red:hover,
 input[type=button].btn-red:active,
-input[type=button].btn-red:focus,
+input[type=button].btn-red:focus-visible,
 input[type=reset].btn-red:hover,
 input[type=reset].btn-red:active,
-input[type=reset].btn-red:focus,
+input[type=reset].btn-red:focus-visible,
 button.btn-red:hover,
 button.btn-red:active,
-button.btn-red:focus {
+button.btn-red:focus-visible {
   color: #fff;
-  background: var(--ply-red-2);
 }
 .btn-red:hover,
 input[type=submit].btn-red:hover,
 input[type=button].btn-red:hover,
 input[type=reset].btn-red:hover,
 button.btn-red:hover {
-  transform: translateY(0) scale(1.05, 1.05);
+  background: #ba1b23;
 }
-.btn-red:focus, .btn-red:active,
-input[type=submit].btn-red:focus,
+.btn-red:active,
 input[type=submit].btn-red:active,
-input[type=button].btn-red:focus,
 input[type=button].btn-red:active,
-input[type=reset].btn-red:focus,
 input[type=reset].btn-red:active,
-button.btn-red:focus,
 button.btn-red:active {
-  transform: translateY(0) scale(0.95, 0.95);
-  background: var(--ply-red-3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) inset;
-}
-.btn-red.btn-active,
-input[type=submit].btn-red.btn-active,
-input[type=button].btn-red.btn-active,
-input[type=reset].btn-red.btn-active,
-button.btn-red.btn-active {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-.btn-red.btn-active, .btn-red.btn-disabled, .btn-red.btn[disabled],
-input[type=submit].btn-red.btn-active,
-input[type=submit].btn-red.btn-disabled,
-input[type=submit].btn-red.btn[disabled],
-input[type=button].btn-red.btn-active,
-input[type=button].btn-red.btn-disabled,
-input[type=button].btn-red.btn[disabled],
-input[type=reset].btn-red.btn-active,
-input[type=reset].btn-red.btn-disabled,
-input[type=reset].btn-red.btn[disabled],
-button.btn-red.btn-active,
-button.btn-red.btn-disabled,
-button.btn-red.btn[disabled] {
-  opacity: 0.5;
-  background: var(--ply-red-2);
-}
-.btn-red.btn-active:hover, .btn-red.btn-disabled:hover, .btn-red.btn[disabled]:hover,
-input[type=submit].btn-red.btn-active:hover,
-input[type=submit].btn-red.btn-disabled:hover,
-input[type=submit].btn-red.btn[disabled]:hover,
-input[type=button].btn-red.btn-active:hover,
-input[type=button].btn-red.btn-disabled:hover,
-input[type=button].btn-red.btn[disabled]:hover,
-input[type=reset].btn-red.btn-active:hover,
-input[type=reset].btn-red.btn-disabled:hover,
-input[type=reset].btn-red.btn[disabled]:hover,
-button.btn-red.btn-active:hover,
-button.btn-red.btn-disabled:hover,
-button.btn-red.btn[disabled]:hover {
-  opacity: 0.5;
-  transform: scale(1, 1);
-}
-.btn-red.btn-active:active, .btn-red.btn-active:focus, .btn-red.btn-disabled:active, .btn-red.btn-disabled:focus, .btn-red.btn[disabled]:active, .btn-red.btn[disabled]:focus,
-input[type=submit].btn-red.btn-active:active,
-input[type=submit].btn-red.btn-active:focus,
-input[type=submit].btn-red.btn-disabled:active,
-input[type=submit].btn-red.btn-disabled:focus,
-input[type=submit].btn-red.btn[disabled]:active,
-input[type=submit].btn-red.btn[disabled]:focus,
-input[type=button].btn-red.btn-active:active,
-input[type=button].btn-red.btn-active:focus,
-input[type=button].btn-red.btn-disabled:active,
-input[type=button].btn-red.btn-disabled:focus,
-input[type=button].btn-red.btn[disabled]:active,
-input[type=button].btn-red.btn[disabled]:focus,
-input[type=reset].btn-red.btn-active:active,
-input[type=reset].btn-red.btn-active:focus,
-input[type=reset].btn-red.btn-disabled:active,
-input[type=reset].btn-red.btn-disabled:focus,
-input[type=reset].btn-red.btn[disabled]:active,
-input[type=reset].btn-red.btn[disabled]:focus,
-button.btn-red.btn-active:active,
-button.btn-red.btn-active:focus,
-button.btn-red.btn-disabled:active,
-button.btn-red.btn-disabled:focus,
-button.btn-red.btn[disabled]:active,
-button.btn-red.btn[disabled]:focus {
-  transform: scale(1, 1);
-  box-shadow: 0 0 0;
-}
-.btn-red.btn-disabled, .btn-red.btn[disabled],
-input[type=submit].btn-red.btn-disabled,
-input[type=submit].btn-red.btn[disabled],
-input[type=button].btn-red.btn-disabled,
-input[type=button].btn-red.btn[disabled],
-input[type=reset].btn-red.btn-disabled,
-input[type=reset].btn-red.btn[disabled],
-button.btn-red.btn-disabled,
-button.btn-red.btn[disabled] {
-  background: var(--ply-red-2);
-}
-.btn-red.btn-outline,
-input[type=submit].btn-red.btn-outline,
-input[type=button].btn-red.btn-outline,
-input[type=reset].btn-red.btn-outline,
-button.btn-red.btn-outline {
-  background: none;
-  border-color: var(--ply-red-1);
-  color: var(--ply-red-1);
-  opacity: 1;
-}
-.btn-red.btn-outline:hover,
-input[type=submit].btn-red.btn-outline:hover,
-input[type=button].btn-red.btn-outline:hover,
-input[type=reset].btn-red.btn-outline:hover,
-button.btn-red.btn-outline:hover {
-  color: #fff;
-  background: var(--ply-red-1);
-}
-.btn-red.btn-outline.btn[disabled], .btn-red.btn-outline.btn-disabled,
-input[type=submit].btn-red.btn-outline.btn[disabled],
-input[type=submit].btn-red.btn-outline.btn-disabled,
-input[type=button].btn-red.btn-outline.btn[disabled],
-input[type=button].btn-red.btn-outline.btn-disabled,
-input[type=reset].btn-red.btn-outline.btn[disabled],
-input[type=reset].btn-red.btn-outline.btn-disabled,
-button.btn-red.btn-outline.btn[disabled],
-button.btn-red.btn-outline.btn-disabled {
-  background: none;
-  box-shadow: none;
-  opacity: 0.4;
-  border: 1px solid var(--ply-red-1);
-  color: var(--ply-red-1);
-}
-.btn-red.btn-outline.btn-active,
-input[type=submit].btn-red.btn-outline.btn-active,
-input[type=button].btn-red.btn-outline.btn-active,
-input[type=reset].btn-red.btn-outline.btn-active,
-button.btn-red.btn-outline.btn-active {
-  background: none;
-  color: var(--ply-red-1);
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
-}
-.btn-red,
-input[type=submit].btn-red,
-input[type=button].btn-red,
-input[type=reset].btn-red,
-button.btn-red {
-  background: var(--ply-bg-red);
-}
-.btn-red:hover, .btn-red:active, .btn-red:focus,
-input[type=submit].btn-red:hover,
-input[type=submit].btn-red:active,
-input[type=submit].btn-red:focus,
-input[type=button].btn-red:hover,
-input[type=button].btn-red:active,
-input[type=button].btn-red:focus,
-input[type=reset].btn-red:hover,
-input[type=reset].btn-red:active,
-input[type=reset].btn-red:focus,
-button.btn-red:hover,
-button.btn-red:active,
-button.btn-red:focus {
-  background: var(--ply-bg-red-hover);
-}
-.btn-red:focus, .btn-red:active,
-input[type=submit].btn-red:focus,
-input[type=submit].btn-red:active,
-input[type=button].btn-red:focus,
-input[type=button].btn-red:active,
-input[type=reset].btn-red:focus,
-input[type=reset].btn-red:active,
-button.btn-red:focus,
-button.btn-red:active {
-  background: var(--ply-bg-red-active);
+  background: #750e13;
 }
 
 .btn-green,
@@ -5555,198 +5333,37 @@ input[type=submit].btn-green,
 input[type=button].btn-green,
 input[type=reset].btn-green,
 button.btn-green {
+  background: #198038;
   color: #fff;
-  background: var(--ply-green-1);
 }
-.btn-green:hover, .btn-green:active, .btn-green:focus,
+.btn-green:hover, .btn-green:active, .btn-green:focus-visible,
 input[type=submit].btn-green:hover,
 input[type=submit].btn-green:active,
-input[type=submit].btn-green:focus,
+input[type=submit].btn-green:focus-visible,
 input[type=button].btn-green:hover,
 input[type=button].btn-green:active,
-input[type=button].btn-green:focus,
+input[type=button].btn-green:focus-visible,
 input[type=reset].btn-green:hover,
 input[type=reset].btn-green:active,
-input[type=reset].btn-green:focus,
+input[type=reset].btn-green:focus-visible,
 button.btn-green:hover,
 button.btn-green:active,
-button.btn-green:focus {
+button.btn-green:focus-visible {
   color: #fff;
-  background: var(--ply-green-2);
 }
 .btn-green:hover,
 input[type=submit].btn-green:hover,
 input[type=button].btn-green:hover,
 input[type=reset].btn-green:hover,
 button.btn-green:hover {
-  transform: translateY(0) scale(1.05, 1.05);
+  background: #0e6027;
 }
-.btn-green:focus, .btn-green:active,
-input[type=submit].btn-green:focus,
+.btn-green:active,
 input[type=submit].btn-green:active,
-input[type=button].btn-green:focus,
 input[type=button].btn-green:active,
-input[type=reset].btn-green:focus,
 input[type=reset].btn-green:active,
-button.btn-green:focus,
 button.btn-green:active {
-  transform: translateY(0) scale(0.95, 0.95);
-  background: var(--ply-green-3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) inset;
-}
-.btn-green.btn-active,
-input[type=submit].btn-green.btn-active,
-input[type=button].btn-green.btn-active,
-input[type=reset].btn-green.btn-active,
-button.btn-green.btn-active {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-.btn-green.btn-active, .btn-green.btn-disabled, .btn-green.btn[disabled],
-input[type=submit].btn-green.btn-active,
-input[type=submit].btn-green.btn-disabled,
-input[type=submit].btn-green.btn[disabled],
-input[type=button].btn-green.btn-active,
-input[type=button].btn-green.btn-disabled,
-input[type=button].btn-green.btn[disabled],
-input[type=reset].btn-green.btn-active,
-input[type=reset].btn-green.btn-disabled,
-input[type=reset].btn-green.btn[disabled],
-button.btn-green.btn-active,
-button.btn-green.btn-disabled,
-button.btn-green.btn[disabled] {
-  opacity: 0.5;
-  background: var(--ply-green-2);
-}
-.btn-green.btn-active:hover, .btn-green.btn-disabled:hover, .btn-green.btn[disabled]:hover,
-input[type=submit].btn-green.btn-active:hover,
-input[type=submit].btn-green.btn-disabled:hover,
-input[type=submit].btn-green.btn[disabled]:hover,
-input[type=button].btn-green.btn-active:hover,
-input[type=button].btn-green.btn-disabled:hover,
-input[type=button].btn-green.btn[disabled]:hover,
-input[type=reset].btn-green.btn-active:hover,
-input[type=reset].btn-green.btn-disabled:hover,
-input[type=reset].btn-green.btn[disabled]:hover,
-button.btn-green.btn-active:hover,
-button.btn-green.btn-disabled:hover,
-button.btn-green.btn[disabled]:hover {
-  opacity: 0.5;
-  transform: scale(1, 1);
-}
-.btn-green.btn-active:active, .btn-green.btn-active:focus, .btn-green.btn-disabled:active, .btn-green.btn-disabled:focus, .btn-green.btn[disabled]:active, .btn-green.btn[disabled]:focus,
-input[type=submit].btn-green.btn-active:active,
-input[type=submit].btn-green.btn-active:focus,
-input[type=submit].btn-green.btn-disabled:active,
-input[type=submit].btn-green.btn-disabled:focus,
-input[type=submit].btn-green.btn[disabled]:active,
-input[type=submit].btn-green.btn[disabled]:focus,
-input[type=button].btn-green.btn-active:active,
-input[type=button].btn-green.btn-active:focus,
-input[type=button].btn-green.btn-disabled:active,
-input[type=button].btn-green.btn-disabled:focus,
-input[type=button].btn-green.btn[disabled]:active,
-input[type=button].btn-green.btn[disabled]:focus,
-input[type=reset].btn-green.btn-active:active,
-input[type=reset].btn-green.btn-active:focus,
-input[type=reset].btn-green.btn-disabled:active,
-input[type=reset].btn-green.btn-disabled:focus,
-input[type=reset].btn-green.btn[disabled]:active,
-input[type=reset].btn-green.btn[disabled]:focus,
-button.btn-green.btn-active:active,
-button.btn-green.btn-active:focus,
-button.btn-green.btn-disabled:active,
-button.btn-green.btn-disabled:focus,
-button.btn-green.btn[disabled]:active,
-button.btn-green.btn[disabled]:focus {
-  transform: scale(1, 1);
-  box-shadow: 0 0 0;
-}
-.btn-green.btn-disabled, .btn-green.btn[disabled],
-input[type=submit].btn-green.btn-disabled,
-input[type=submit].btn-green.btn[disabled],
-input[type=button].btn-green.btn-disabled,
-input[type=button].btn-green.btn[disabled],
-input[type=reset].btn-green.btn-disabled,
-input[type=reset].btn-green.btn[disabled],
-button.btn-green.btn-disabled,
-button.btn-green.btn[disabled] {
-  background: var(--ply-green-2);
-}
-.btn-green.btn-outline,
-input[type=submit].btn-green.btn-outline,
-input[type=button].btn-green.btn-outline,
-input[type=reset].btn-green.btn-outline,
-button.btn-green.btn-outline {
-  background: none;
-  border-color: var(--ply-green-1);
-  color: var(--ply-green-1);
-  opacity: 1;
-}
-.btn-green.btn-outline:hover,
-input[type=submit].btn-green.btn-outline:hover,
-input[type=button].btn-green.btn-outline:hover,
-input[type=reset].btn-green.btn-outline:hover,
-button.btn-green.btn-outline:hover {
-  color: #fff;
-  background: var(--ply-green-1);
-}
-.btn-green.btn-outline.btn[disabled], .btn-green.btn-outline.btn-disabled,
-input[type=submit].btn-green.btn-outline.btn[disabled],
-input[type=submit].btn-green.btn-outline.btn-disabled,
-input[type=button].btn-green.btn-outline.btn[disabled],
-input[type=button].btn-green.btn-outline.btn-disabled,
-input[type=reset].btn-green.btn-outline.btn[disabled],
-input[type=reset].btn-green.btn-outline.btn-disabled,
-button.btn-green.btn-outline.btn[disabled],
-button.btn-green.btn-outline.btn-disabled {
-  background: none;
-  box-shadow: none;
-  opacity: 0.4;
-  border: 1px solid var(--ply-green-1);
-  color: var(--ply-green-1);
-}
-.btn-green.btn-outline.btn-active,
-input[type=submit].btn-green.btn-outline.btn-active,
-input[type=button].btn-green.btn-outline.btn-active,
-input[type=reset].btn-green.btn-outline.btn-active,
-button.btn-green.btn-outline.btn-active {
-  background: none;
-  color: var(--ply-green-1);
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
-}
-.btn-green,
-input[type=submit].btn-green,
-input[type=button].btn-green,
-input[type=reset].btn-green,
-button.btn-green {
-  background: var(--ply-bg-green);
-}
-.btn-green:hover, .btn-green:active, .btn-green:focus,
-input[type=submit].btn-green:hover,
-input[type=submit].btn-green:active,
-input[type=submit].btn-green:focus,
-input[type=button].btn-green:hover,
-input[type=button].btn-green:active,
-input[type=button].btn-green:focus,
-input[type=reset].btn-green:hover,
-input[type=reset].btn-green:active,
-input[type=reset].btn-green:focus,
-button.btn-green:hover,
-button.btn-green:active,
-button.btn-green:focus {
-  background: var(--ply-bg-green-hover);
-}
-.btn-green:focus, .btn-green:active,
-input[type=submit].btn-green:focus,
-input[type=submit].btn-green:active,
-input[type=button].btn-green:focus,
-input[type=button].btn-green:active,
-input[type=reset].btn-green:focus,
-input[type=reset].btn-green:active,
-button.btn-green:focus,
-button.btn-green:active {
-  background: var(--ply-bg-green-active);
+  background: #044317;
 }
 
 .btn-yellow,
@@ -5754,198 +5371,37 @@ input[type=submit].btn-yellow,
 input[type=button].btn-yellow,
 input[type=reset].btn-yellow,
 button.btn-yellow {
+  background: #f1c21b;
   color: #000;
-  background: var(--ply-yellow-1);
 }
-.btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus,
+.btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus-visible,
 input[type=submit].btn-yellow:hover,
 input[type=submit].btn-yellow:active,
-input[type=submit].btn-yellow:focus,
+input[type=submit].btn-yellow:focus-visible,
 input[type=button].btn-yellow:hover,
 input[type=button].btn-yellow:active,
-input[type=button].btn-yellow:focus,
+input[type=button].btn-yellow:focus-visible,
 input[type=reset].btn-yellow:hover,
 input[type=reset].btn-yellow:active,
-input[type=reset].btn-yellow:focus,
+input[type=reset].btn-yellow:focus-visible,
 button.btn-yellow:hover,
 button.btn-yellow:active,
-button.btn-yellow:focus {
+button.btn-yellow:focus-visible {
   color: #000;
-  background: var(--ply-yellow-2);
 }
 .btn-yellow:hover,
 input[type=submit].btn-yellow:hover,
 input[type=button].btn-yellow:hover,
 input[type=reset].btn-yellow:hover,
 button.btn-yellow:hover {
-  transform: translateY(0) scale(1.05, 1.05);
+  background: #d2a106;
 }
-.btn-yellow:focus, .btn-yellow:active,
-input[type=submit].btn-yellow:focus,
+.btn-yellow:active,
 input[type=submit].btn-yellow:active,
-input[type=button].btn-yellow:focus,
 input[type=button].btn-yellow:active,
-input[type=reset].btn-yellow:focus,
 input[type=reset].btn-yellow:active,
-button.btn-yellow:focus,
 button.btn-yellow:active {
-  transform: translateY(0) scale(0.95, 0.95);
-  background: var(--ply-yellow-3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) inset;
-}
-.btn-yellow.btn-active,
-input[type=submit].btn-yellow.btn-active,
-input[type=button].btn-yellow.btn-active,
-input[type=reset].btn-yellow.btn-active,
-button.btn-yellow.btn-active {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-.btn-yellow.btn-active, .btn-yellow.btn-disabled, .btn-yellow.btn[disabled],
-input[type=submit].btn-yellow.btn-active,
-input[type=submit].btn-yellow.btn-disabled,
-input[type=submit].btn-yellow.btn[disabled],
-input[type=button].btn-yellow.btn-active,
-input[type=button].btn-yellow.btn-disabled,
-input[type=button].btn-yellow.btn[disabled],
-input[type=reset].btn-yellow.btn-active,
-input[type=reset].btn-yellow.btn-disabled,
-input[type=reset].btn-yellow.btn[disabled],
-button.btn-yellow.btn-active,
-button.btn-yellow.btn-disabled,
-button.btn-yellow.btn[disabled] {
-  opacity: 0.5;
-  background: var(--ply-yellow-2);
-}
-.btn-yellow.btn-active:hover, .btn-yellow.btn-disabled:hover, .btn-yellow.btn[disabled]:hover,
-input[type=submit].btn-yellow.btn-active:hover,
-input[type=submit].btn-yellow.btn-disabled:hover,
-input[type=submit].btn-yellow.btn[disabled]:hover,
-input[type=button].btn-yellow.btn-active:hover,
-input[type=button].btn-yellow.btn-disabled:hover,
-input[type=button].btn-yellow.btn[disabled]:hover,
-input[type=reset].btn-yellow.btn-active:hover,
-input[type=reset].btn-yellow.btn-disabled:hover,
-input[type=reset].btn-yellow.btn[disabled]:hover,
-button.btn-yellow.btn-active:hover,
-button.btn-yellow.btn-disabled:hover,
-button.btn-yellow.btn[disabled]:hover {
-  opacity: 0.5;
-  transform: scale(1, 1);
-}
-.btn-yellow.btn-active:active, .btn-yellow.btn-active:focus, .btn-yellow.btn-disabled:active, .btn-yellow.btn-disabled:focus, .btn-yellow.btn[disabled]:active, .btn-yellow.btn[disabled]:focus,
-input[type=submit].btn-yellow.btn-active:active,
-input[type=submit].btn-yellow.btn-active:focus,
-input[type=submit].btn-yellow.btn-disabled:active,
-input[type=submit].btn-yellow.btn-disabled:focus,
-input[type=submit].btn-yellow.btn[disabled]:active,
-input[type=submit].btn-yellow.btn[disabled]:focus,
-input[type=button].btn-yellow.btn-active:active,
-input[type=button].btn-yellow.btn-active:focus,
-input[type=button].btn-yellow.btn-disabled:active,
-input[type=button].btn-yellow.btn-disabled:focus,
-input[type=button].btn-yellow.btn[disabled]:active,
-input[type=button].btn-yellow.btn[disabled]:focus,
-input[type=reset].btn-yellow.btn-active:active,
-input[type=reset].btn-yellow.btn-active:focus,
-input[type=reset].btn-yellow.btn-disabled:active,
-input[type=reset].btn-yellow.btn-disabled:focus,
-input[type=reset].btn-yellow.btn[disabled]:active,
-input[type=reset].btn-yellow.btn[disabled]:focus,
-button.btn-yellow.btn-active:active,
-button.btn-yellow.btn-active:focus,
-button.btn-yellow.btn-disabled:active,
-button.btn-yellow.btn-disabled:focus,
-button.btn-yellow.btn[disabled]:active,
-button.btn-yellow.btn[disabled]:focus {
-  transform: scale(1, 1);
-  box-shadow: 0 0 0;
-}
-.btn-yellow.btn-disabled, .btn-yellow.btn[disabled],
-input[type=submit].btn-yellow.btn-disabled,
-input[type=submit].btn-yellow.btn[disabled],
-input[type=button].btn-yellow.btn-disabled,
-input[type=button].btn-yellow.btn[disabled],
-input[type=reset].btn-yellow.btn-disabled,
-input[type=reset].btn-yellow.btn[disabled],
-button.btn-yellow.btn-disabled,
-button.btn-yellow.btn[disabled] {
-  background: var(--ply-yellow-2);
-}
-.btn-yellow.btn-outline,
-input[type=submit].btn-yellow.btn-outline,
-input[type=button].btn-yellow.btn-outline,
-input[type=reset].btn-yellow.btn-outline,
-button.btn-yellow.btn-outline {
-  background: none;
-  border-color: var(--ply-yellow-1);
-  color: var(--ply-yellow-1);
-  opacity: 1;
-}
-.btn-yellow.btn-outline:hover,
-input[type=submit].btn-yellow.btn-outline:hover,
-input[type=button].btn-yellow.btn-outline:hover,
-input[type=reset].btn-yellow.btn-outline:hover,
-button.btn-yellow.btn-outline:hover {
-  color: #000;
-  background: var(--ply-yellow-1);
-}
-.btn-yellow.btn-outline.btn[disabled], .btn-yellow.btn-outline.btn-disabled,
-input[type=submit].btn-yellow.btn-outline.btn[disabled],
-input[type=submit].btn-yellow.btn-outline.btn-disabled,
-input[type=button].btn-yellow.btn-outline.btn[disabled],
-input[type=button].btn-yellow.btn-outline.btn-disabled,
-input[type=reset].btn-yellow.btn-outline.btn[disabled],
-input[type=reset].btn-yellow.btn-outline.btn-disabled,
-button.btn-yellow.btn-outline.btn[disabled],
-button.btn-yellow.btn-outline.btn-disabled {
-  background: none;
-  box-shadow: none;
-  opacity: 0.4;
-  border: 1px solid var(--ply-yellow-1);
-  color: var(--ply-yellow-1);
-}
-.btn-yellow.btn-outline.btn-active,
-input[type=submit].btn-yellow.btn-outline.btn-active,
-input[type=button].btn-yellow.btn-outline.btn-active,
-input[type=reset].btn-yellow.btn-outline.btn-active,
-button.btn-yellow.btn-outline.btn-active {
-  background: none;
-  color: var(--ply-yellow-1);
-  border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
-}
-.btn-yellow,
-input[type=submit].btn-yellow,
-input[type=button].btn-yellow,
-input[type=reset].btn-yellow,
-button.btn-yellow {
-  background: var(--ply-bg-yellow);
-}
-.btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus,
-input[type=submit].btn-yellow:hover,
-input[type=submit].btn-yellow:active,
-input[type=submit].btn-yellow:focus,
-input[type=button].btn-yellow:hover,
-input[type=button].btn-yellow:active,
-input[type=button].btn-yellow:focus,
-input[type=reset].btn-yellow:hover,
-input[type=reset].btn-yellow:active,
-input[type=reset].btn-yellow:focus,
-button.btn-yellow:hover,
-button.btn-yellow:active,
-button.btn-yellow:focus {
-  background: var(--ply-bg-yellow-hover);
-}
-.btn-yellow:focus, .btn-yellow:active,
-input[type=submit].btn-yellow:focus,
-input[type=submit].btn-yellow:active,
-input[type=button].btn-yellow:focus,
-input[type=button].btn-yellow:active,
-input[type=reset].btn-yellow:focus,
-input[type=reset].btn-yellow:active,
-button.btn-yellow:focus,
-button.btn-yellow:active {
-  background: var(--ply-bg-yellow-active);
+  background: #b28600;
 }
 
 .btn-black,

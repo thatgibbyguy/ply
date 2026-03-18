@@ -22,7 +22,7 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 2. **Always wrap `unit-*` classes inside `units-row`** — they are flex children and won't work alone
 3. **Use `units-container`** for page-width centering (1200px max)
 4. **Wrap forms in `.form`** to enable styled inputs
-5. **Use `<button class="btn">` for buttons** — not `<a>` tags
+5. **Use `<button class="btn">` for buttons** — not `<a>` tags. Use `btn-primary` for primary actions, `btn-secondary` (or plain `btn`) for secondary actions. Color buttons (`btn-blue`, `btn-red`, etc.) are static and immune to theming — use them for color-coded actions, not as primary/secondary.
 6. **`units-row` can be nested** inside units for complex layouts
 7. **Add responsive classes** — at minimum `tablet-unit-100` to stack columns on mobile
 8. **Use semantic HTML first** — ply auto-styles `<code>`, `<pre>`, `<kbd>`, `<blockquote>`, `<mark>`, `<table>`, `<details>`, `<dialog>`, `<nav>`, etc. Use native elements before creating custom classes.
@@ -42,11 +42,9 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-bg-muted: #fef08a;
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
-  --ply-color-link: #b45309;
-  --ply-color-link-hover: #92400e;
   --ply-border-color: #fbbf24;
-  --ply-btn-default-bg: #b45309;
-  --ply-btn-default-hover: #92400e;
+  --ply-btn-default-bg: #b45309;  /* Controls btn-primary + links */
+  --ply-btn-secondary-bg: #78350f;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 

@@ -31,8 +31,8 @@ $border-color: #ccc;
   --ply-border-strong: #8d8d8d;
 
   // Interactive
-  --ply-color-link: #0353e9;
-  --ply-color-link-hover: #0043ce;
+  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -50,8 +50,8 @@ $border-color: #ccc;
   --ply-color-table-hovered: #e8e8e8;
 
   // Buttons
-  --ply-btn-default-bg: #393939;
-  --ply-btn-default-hover: #4c4c4c;
+  --ply-btn-default-bg: #0353e9;
+  --ply-btn-secondary-bg: #393939;
 
   // Navigation
   --ply-nav-bg: #ffffff;
@@ -146,8 +146,8 @@ $border-color: #ccc;
     --ply-border-strong: #6f6f6f;
 
     // Interactive
-    --ply-color-link: #78a9ff;
-    --ply-color-link-hover: #a6c8ff;
+    --ply-color-link: var(--ply-btn-default-bg);
+    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-color-focus: #0f62fe;
 
     // Fields
@@ -165,9 +165,10 @@ $border-color: #ccc;
     --ply-color-table-hovered: #353535;
 
     // Buttons
-    --ply-btn-default-bg: #4c4c4c;
-    --ply-btn-default-hover: #595959;
-    --ply-btn-default-color: #f4f4f4;
+    --ply-btn-default-bg: #78a9ff;
+    --ply-btn-secondary-bg: #a8a8a8;
+    --ply-btn-default-color: #161616;
+    --ply-btn-secondary-color: #161616;
 
     // Navigation
     --ply-nav-bg: #161616;
@@ -256,8 +257,8 @@ $border-color: #ccc;
   --ply-border-strong: #6f6f6f;
 
   // Interactive
-  --ply-color-link: #78a9ff;
-  --ply-color-link-hover: #a6c8ff;
+  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -275,9 +276,9 @@ $border-color: #ccc;
   --ply-color-table-hovered: #353535;
 
   // Buttons
-  --ply-btn-default-bg: #4c4c4c;
-  --ply-btn-default-hover: #595959;
-  --ply-btn-default-color: #f4f4f4;
+  --ply-btn-default-bg: #78a9ff;
+  --ply-btn-secondary-bg: #6f6f6f;
+  --ply-btn-default-color: #161616;
 
   // Navigation
   --ply-nav-bg: #161616;

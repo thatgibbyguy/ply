@@ -60,6 +60,7 @@
 .label-white,
 .badge-white {
   background: colors.$color-white;
+  color: var(--ply-color-text-inverse, #161616);
 }
 .label-black,
 .label-blue,

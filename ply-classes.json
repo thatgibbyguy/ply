@@ -371,22 +371,42 @@
     },
     "btn": {
       "category": "buttons",
-      "description": "Base button class. Inline-block, centered text, default dark background. All btn variants include :focus-visible outlines for keyboard accessibility and meet WCAG AA color contrast requirements in both light and dark modes. Use <button> elements (not <a> tags) for actions. Custom color overrides must maintain 4.5:1 contrast for text on the button background.",
+      "description": "Base button class. Inline-block, centered text, secondary gray background (same as btn-secondary). All btn variants include :focus-visible outlines for keyboard accessibility and meet WCAG AA color contrast requirements in both light and dark modes. Use <button> elements (not <a> tags) for actions. For primary actions use btn-primary, for secondary actions use btn or btn-secondary.",
       "example": "<button class=\"btn\">Click</button>"
     },
-    "btn-blue": {
+    "btn-primary": {
       "category": "buttons",
-      "description": "Blue color variant button.",
+      "description": "Primary action button. Blue by default, themed via --ply-btn-default-bg. Use for the main call-to-action. WCAG AA compliant (4.56:1 contrast). Hover/active states derived via color-mix().",
+      "example": "<button class=\"btn btn-primary\">Submit</button>"
+    },
+    "btn-secondary": {
+      "category": "buttons",
+      "description": "Secondary action button. Dark gray by default, themed via --ply-btn-secondary-bg. Use for secondary actions alongside a primary button.",
+      "example": "<button class=\"btn btn-secondary\">Cancel</button>"
+    },
+    "btn-primary-outline": {
+      "category": "buttons",
+      "description": "Outlined primary button. Border and text color from --ply-btn-default-bg, transparent background. Fills with primary color on hover.",
+      "example": "<button class=\"btn btn-primary-outline\">Learn More</button>"
+    },
+    "btn-secondary-outline": {
+      "category": "buttons",
+      "description": "Outlined secondary button. Border and text color from --ply-btn-secondary-bg, transparent background. Fills with secondary color on hover.",
+      "example": "<button class=\"btn btn-secondary-outline\">Details</button>"
+    },
+"btn-blue": {
+      "category": "buttons",
+      "description": "Static blue button. Hardcoded color, immune to theming. Use for color-coded actions that should not change with custom themes.",
       "example": "<button class=\"btn btn-blue\">Submit</button>"
     },
     "btn-red": {
       "category": "buttons",
-      "description": "Red color variant button.",
+      "description": "Static red button. Hardcoded color, immune to theming. Use for destructive actions.",
       "example": "<button class=\"btn btn-red\">Delete</button>"
     },
     "btn-green": {
       "category": "buttons",
-      "description": "Green color variant button.",
+      "description": "Static green button. Hardcoded color, immune to theming. Use for success/confirmation actions.",
       "example": "<button class=\"btn btn-green\">Success</button>"
     },
     "btn-black": {
@@ -396,7 +416,7 @@
     },
     "btn-yellow": {
       "category": "buttons",
-      "description": "Yellow color variant button.",
+      "description": "Static yellow button. Hardcoded color, immune to theming. Dark text for contrast.",
       "example": "<button class=\"btn btn-yellow\">Warning</button>"
     },
     "btn-white": {
@@ -2517,8 +2537,8 @@
       "--ply-color-table-hovered": "Hovered row background. Light: #e8e8e8, Dark: #333333"
     },
     "buttons": {
-      "--ply-btn-default-bg": "Default button background. Light: #393939, Dark: #525252",
-      "--ply-btn-default-hover": "Default button hover. Light: #4c4c4c, Dark: #595959",
+      "--ply-btn-default-bg": "Primary button background. Controls btn-primary color and link colors. Light: #0353e9, Dark: #78a9ff. Override in custom themes to change primary + links together.",
+      "--ply-btn-secondary-bg": "Secondary button background. Controls btn, btn-secondary color. Light: #393939, Dark: #4c4c4c.",
       "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4"
     },
     "navigation": {

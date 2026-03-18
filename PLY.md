@@ -167,6 +167,27 @@ All classes, CSS custom properties, and semantic element styles are documented i
 9. **Use CSS custom properties for theming** — All colors, backgrounds, and borders are customizable via `--ply-*` variables. Do not hard-code colors that break dark mode.
 10. **Use single-dash class names** — `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
 
+### Button Hierarchy
+
+- **`btn-primary`** — Primary call-to-action. Blue by default, themed via `--ply-btn-default-bg`. WCAG AA compliant (4.56:1 contrast on white).
+- **`btn-secondary`** (or plain `btn`) — Secondary actions. Dark gray by default, themed via `--ply-btn-secondary-bg`.
+- **`btn-primary-outline`** / **`btn-secondary-outline`** — Outlined variants. Transparent bg, border + text from the respective theme color. Fills on hover.
+- **`btn-ghost`** — Ghost button. Text-only with subtle hover tint.
+- **`btn-blue`**, **`btn-red`**, **`btn-green`**, **`btn-yellow`** — Static color buttons with hardcoded hex values. Immune to theming. Use for color-coded actions (e.g., delete = red, success = green).
+
+```html
+<!-- Primary + Secondary pair -->
+<button class="btn btn-primary">Save</button>
+<button class="btn btn-secondary">Cancel</button>
+
+<!-- Themed: --ply-btn-default-bg controls primary + links -->
+<html data-theme="warm">
+<style>[data-theme="warm"] { --ply-btn-default-bg: #92400e; }</style>
+
+<!-- Static: btn-blue stays blue regardless of theme -->
+<button class="btn btn-blue">Always Blue</button>
+```
+
 ## Common Patterns
 
 ### Responsive Collapsible Header (CSS-Only)
