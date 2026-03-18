@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Drag-and-Drop — ply</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+  <style>
+    [role="option"] {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--ply-border-color);
+      border-radius: 0.375rem;
+      margin-bottom: 0.5rem;
+      background: var(--ply-bg-surface);
+      cursor: default;
+      list-style: none;
+    }
+    [role="option"]:focus-visible {
+      outline: 2px solid var(--ply-color-link);
+      outline-offset: 2px;
+    }
+    [aria-grabbed="true"] {
+      border-color: var(--ply-color-link);
+      background: var(--ply-bg-muted);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="units-container padding-top-extra">
+    <h1>Accessible Drag-and-Drop</h1>
+    <p class="text-secondary">Reorder items using keyboard or mouse. Keyboard: <kbd>Tab</kbd> to the list, <kbd>Space</kbd> to grab, <kbd>↑</kbd><kbd>↓</kbd> to move, <kbd>Enter</kbd> to drop, <kbd>Escape</kbd> to cancel.</p>
+
+    <div class="sr-only" aria-live="assertive" id="dnd-status"></div>
+
+    <ul role="listbox" aria-label="Sortable tasks" id="sortable-list" style="padding: 0;">
+      <li role="option" tabindex="0" aria-grabbed="false" data-index="0">Review pull request</li>
+      <li role="option" tabindex="-1" aria-grabbed="false" data-index="1">Update documentation</li>
+      <li role="option" tabindex="-1" aria-grabbed="false" data-index="2">Fix navigation bug</li>
+      <li role="option" tabindex="-1" aria-grabbed="false" data-index="3">Write unit tests</li>
+      <li role="option" tabindex="-1" aria-grabbed="false" data-index="4">Deploy to staging</li>
+    </ul>
+  </main>
+
+  <script>
+    const list = document.getElementById('sortable-list');
+    const status = document.getElementById('dnd-status');
+    let grabbed = null;
+
+    function announce(msg) { status.textContent = msg; }
+
+    function focusItem(item) {
+      list.querySelectorAll('[role="option"]').forEach(i => i.tabIndex = -1);
+      item.tabIndex = 0;
+      item.focus();
+    }
+
+    list.addEventListener('keydown', (e) => {
+      const item = e.target;
+      if (item.getAttribute('role') !== 'option') return;
+
+      switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          if (!grabbed) {
+            grabbed = item;
+            item.setAttribute('aria-grabbed', 'true');
+            announce(`Grabbed ${item.textContent}. Use arrow keys to move, Enter to drop, Escape to cancel.`);
+          }
+          break;
+
+        case 'ArrowDown':
+          e.preventDefault();
+          if (grabbed) {
+            const next = grabbed.nextElementSibling;
+            if (next) {
+              list.insertBefore(next, grabbed);
+              announce(`Moved ${grabbed.textContent} down to position ${[...list.children].indexOf(grabbed) + 1} of ${list.children.length}.`);
+            }
+          } else {
+            const nextItem = item.nextElementSibling;
+            if (nextItem) focusItem(nextItem);
+          }
+          break;
+
+        case 'ArrowUp':
+          e.preventDefault();
+          if (grabbed) {
+            const prev = grabbed.previousElementSibling;
+            if (prev) {
+              list.insertBefore(grabbed, prev);
+              announce(`Moved ${grabbed.textContent} up to position ${[...list.children].indexOf(grabbed) + 1} of ${list.children.length}.`);
+            }
+          } else {
+            const prevItem = item.previousElementSibling;
+            if (prevItem) focusItem(prevItem);
+          }
+          break;
+
+        case 'Enter':
+          if (grabbed) {
+            e.preventDefault();
+            grabbed.setAttribute('aria-grabbed', 'false');
+            announce(`Dropped ${grabbed.textContent} at position ${[...list.children].indexOf(grabbed) + 1} of ${list.children.length}.`);
+            grabbed = null;
+          }
+          break;
+
+        case 'Escape':
+          if (grabbed) {
+            e.preventDefault();
+            grabbed.setAttribute('aria-grabbed', 'false');
+            announce('Reorder cancelled.');
+            grabbed = null;
+          }
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

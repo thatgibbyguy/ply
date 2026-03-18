@@ -442,6 +442,102 @@ Test with VoiceOver (macOS) to verify your custom widgets are accessible:
 - Form inputs announce their label, required state, and error messages
 - Heading hierarchy is logical (use rotor > Headings to verify)
 
+## Custom Widget Accessibility Patterns
+
+When building custom interactive widgets beyond ply's built-in components, follow these patterns to maintain WCAG 2.1 AA compliance.
+
+### Drag-and-Drop Keyboard Pattern
+
+Drag-and-drop interfaces must be fully keyboard operable (WCAG 2.1.1). Use a listbox pattern with grab/move/drop states and an `aria-live` region to announce changes:
+
+```html
+<div class="sr-only" aria-live="assertive" id="dnd-status"></div>
+<p class="text-secondary text-sm">Keyboard: Tab to list, Space to grab, ↑↓ to move, Enter to drop, Escape to cancel.</p>
+<ul role="listbox" aria-label="Sortable list" id="sortable-list">
+  <li role="option" tabindex="0" aria-grabbed="false" data-index="0">Item 1</li>
+  <li role="option" tabindex="-1" aria-grabbed="false" data-index="1">Item 2</li>
+  <li role="option" tabindex="-1" aria-grabbed="false" data-index="2">Item 3</li>
+</ul>
+```
+
+```js
+const list = document.getElementById('sortable-list');
+const status = document.getElementById('dnd-status');
+let grabbed = null;
+
+list.addEventListener('keydown', (e) => {
+  const item = e.target;
+  if (item.role !== 'option') return;
+
+  if (e.key === ' ' && !grabbed) {
+    e.preventDefault();
+    grabbed = item;
+    item.setAttribute('aria-grabbed', 'true');
+    status.textContent = `Grabbed ${item.textContent}. Use arrow keys to move, Enter to drop.`;
+  } else if (e.key === 'ArrowDown' && grabbed) {
+    e.preventDefault();
+    const next = grabbed.nextElementSibling;
+    if (next) { list.insertBefore(next, grabbed); status.textContent = `Moved down to position ${[...list.children].indexOf(grabbed) + 1}.`; }
+  } else if (e.key === 'ArrowUp' && grabbed) {
+    e.preventDefault();
+    const prev = grabbed.previousElementSibling;
+    if (prev) { list.insertBefore(grabbed, prev); status.textContent = `Moved up to position ${[...list.children].indexOf(grabbed) + 1}.`; }
+  } else if (e.key === 'Enter' && grabbed) {
+    e.preventDefault();
+    grabbed.setAttribute('aria-grabbed', 'false');
+    status.textContent = `Dropped ${grabbed.textContent} at position ${[...list.children].indexOf(grabbed) + 1}.`;
+    grabbed = null;
+  } else if (e.key === 'Escape' && grabbed) {
+    e.preventDefault();
+    grabbed.setAttribute('aria-grabbed', 'false');
+    status.textContent = 'Reorder cancelled.';
+    grabbed = null;
+  }
+});
+```
+
+See `snippets/accessible-drag-and-drop.html` for a complete working example.
+
+### Focus Trap for Modals
+
+Prefer native `<dialog>` — ply styles it automatically and the browser handles focus trapping. For custom modals, trap Tab/Shift+Tab and set `aria-modal="true"`:
+
+```js
+function trapFocus(modal) {
+  const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  const first = focusable[0], last = focusable[focusable.length - 1];
+  modal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  first?.focus();
+}
+```
+
+### Focus Return After Close
+
+Always restore focus to the element that triggered the widget:
+
+```js
+const trigger = document.activeElement; // Store before opening
+modal.showModal();
+modal.addEventListener('close', () => trigger.focus(), { once: true });
+```
+
+### Custom Widget Checklist
+
+| Requirement | WCAG | How to verify |
+|---|---|---|
+| Keyboard operable (no mouse required) | 2.1.1 | Tab, Enter, Space, arrows all work |
+| Focus indicator visible | 2.4.7 | ply provides `:focus-visible` — don't override `outline: none` |
+| States announced to screen readers | 4.1.2 | `aria-grabbed`, `aria-expanded`, `aria-selected` update on interaction |
+| Focus trapped in modals | 2.4.3 | Tab does not leave an open dialog |
+| Focus restored on close | 2.4.3 | Closing returns focus to the trigger element |
+| Touch targets ≥ 44×44px | 2.5.5 | Measure interactive elements |
+| Alternative input available | 2.1.1 | Drag-and-drop has keyboard fallback |
+| Screen reader tested | 4.1.2 | Verify with VoiceOver (macOS) or NVDA (Windows) |
+
 ## Anti-Patterns
 
 - **DON'T** skip semantic HTML — Before adding `<div class="something">`, check if a semantic element works. ply styles `<nav>`, `<code>`, `<table>`, `<details>`, `<dialog>`, `<blockquote>`, etc. automatically.
@@ -474,6 +570,7 @@ Ready-to-use HTML examples are in the `snippets/` directory:
 | `pricing-cards.html` | Pricing tier cards |
 | `custom-theme.html` | Custom theme example |
 | `responsive-header.html` | CSS-only collapsible responsive header |
+| `accessible-drag-and-drop.html` | Keyboard-accessible sortable list with ARIA live announcements |
 
 ---
 
