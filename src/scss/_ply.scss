@@ -38,4 +38,9 @@
 @use 'components/blocks-responsive';
 @use 'components/navigation-responsive';
 
+@use 'components/table-interactive';
+@use 'components/multi-step-form';
+@use 'components/dialog-patterns';
+@use 'components/rtl';
+
 @use 'components/print';

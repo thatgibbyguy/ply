@@ -1,0 +1,110 @@
+@use "colors";
+@use "variables";
+
+/* =Table Interactive — Sort indicators, pagination, filter wrappers
+-----------------------------------------------------------------------------*/
+
+/* Sort Indicators */
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: variables.$base-line;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--ply-bg-surface-alt, colors.$color-table-hovered);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline-offset: -2px;
+  }
+
+  // Default unsorted indicator
+  &::after {
+    content: "";
+    position: absolute;
+    right: variables.$grid-gutter-width;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid var(--ply-color-muted);
+    margin-top: -4px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: variables.$grid-gutter-width;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--ply-color-muted);
+    margin-top: 4px;
+  }
+
+  // Ascending
+  &.sort-asc::after {
+    border-bottom-color: var(--ply-color-body);
+  }
+
+  &.sort-asc::before {
+    border-top-color: var(--ply-color-muted);
+  }
+
+  // Descending
+  &.sort-desc::before {
+    border-top-color: var(--ply-color-body);
+  }
+
+  &.sort-desc::after {
+    border-bottom-color: var(--ply-color-muted);
+  }
+}
+
+/* Table Filter — input-group style connected filter bar */
+.table-filter.input-groups {
+  select {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+/* Table Actions — right-aligned icon button bar */
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: variables.$grid-gutter-width * 0.5;
+  margin-bottom: variables.$base-line;
+}
+
+/* Pagination sizes */
+.pagination.pagination-sm {
+  a,
+  span {
+    min-width: variables.$base-line * 1.17;
+    height: variables.$base-line * 1.17;
+    padding: variables.$grid-gutter-width * 0.25 variables.$grid-gutter-width * 0.75;
+    font-size: variables.$font-size-xs;
+  }
+}
+
+.pagination.pagination-lg {
+  a,
+  span {
+    min-width: variables.$base-line * 1.83;
+    height: variables.$base-line * 1.83;
+    padding: variables.$grid-gutter-width * 0.75 variables.$padding * 1.17;
+    font-size: variables.$font-size-base;
+  }
+}
+
+/* Pagination info text — sits beside .pagination */
+.pagination-info {
+  font-size: variables.$font-size-sm;
+  color: var(--ply-color-secondary);
+}

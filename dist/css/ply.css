@@ -4024,6 +4024,10 @@ select.input-xs {
   border-left: none;
   border-radius: 0 0.25rem 0.25rem 0;
 }
+.input-groups .input-append:has(.btn) {
+  padding: 0;
+  border: none;
+}
 .input-groups .input-append .btn {
   display: flex;
   align-items: center;
@@ -4493,45 +4497,83 @@ nav ul {
   color: var(--ply-color-muted);
 }
 
-/* =Pagination — Swiss/Modernist
+/* =Pagination — Outlined (default) with solid variant
 -----------------------------------------------------------------------------*/
 .pagination {
-  position: relative;
-  left: -9px;
-  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
-.pagination:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .pagination li {
-  float: left;
-  margin-right: 2px;
+  margin: 0;
 }
 .pagination a, .pagination span {
-  display: block;
-  padding: 0.625rem 0.75rem;
-  line-height: 1;
-  color: var(--ply-nav-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--ply-border-color);
+  border-radius: 0.25rem;
+  background: var(--ply-bg-surface, #fff);
+  color: var(--ply-color-body);
   text-decoration: none;
   font-size: 0.875rem;
+  line-height: 1;
   letter-spacing: 0.03em;
-  transition: background 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.pagination a:hover {
+  background-color: var(--ply-bg-surface-alt);
+  border-color: var(--ply-color-secondary);
+  text-decoration: none;
 }
 .pagination a:focus-visible {
   outline: 2px solid var(--ply-color-focus, #0f62fe);
   outline-offset: 2px;
 }
-.pagination span, .pagination li.active a, .pagination li.active a:hover {
-  color: var(--ply-bg-surface);
+.pagination li.active a, .pagination li.active a:hover, .pagination li.active span {
   background-color: var(--ply-nav-color);
+  border-color: var(--ply-nav-color);
+  color: var(--ply-bg-surface);
   cursor: default;
 }
-.pagination a:focus, .pagination a:hover {
-  text-decoration: none;
+.pagination li.disabled a, .pagination li.disabled span {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.pagination li:first-child a, .pagination li:first-child span, .pagination li:last-child a, .pagination li:last-child span {
+  border-color: transparent;
+  background: transparent;
+}
+.pagination li:first-child a:hover, .pagination li:last-child a:hover {
+  background-color: var(--ply-bg-surface-alt);
+  border-color: transparent;
+}
+.pagination li.disabled:first-child span, .pagination li.disabled:last-child span, .pagination li.disabled:first-child a, .pagination li.disabled:last-child a {
+  color: var(--ply-color-muted);
+  opacity: 1;
+}
+
+/* Solid variant — filled background like the original Swiss style */
+.pagination-solid a, .pagination-solid span {
+  border-color: transparent;
+  background: transparent;
+}
+.pagination-solid a:hover {
   background-color: var(--ply-nav-color);
+  border-color: transparent;
+  color: var(--ply-bg-surface);
+}
+.pagination-solid li.active a, .pagination-solid li.active a:hover, .pagination-solid li.active span {
+  background-color: var(--ply-nav-color);
+  border-color: transparent;
   color: var(--ply-bg-surface);
 }
 
@@ -5937,6 +5979,7 @@ button.btn-white.btn-outline.btn-active {
 .btn-group {
   display: flex;
   flex-flow: row wrap;
+  gap: 0.5rem;
 }
 .btn-single.align-right,
 .btn-group.align-right {
@@ -6972,6 +7015,564 @@ ul.dropdown li.divider {
     display: block;
   }
 }
+/* =Table Interactive — Sort indicators, pagination, filter wrappers
+-----------------------------------------------------------------------------*/
+/* Sort Indicators */
+th.sortable {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  padding-right: 1.5rem;
+  transition: background-color 0.15s ease;
+}
+th.sortable:hover {
+  background-color: var(--ply-bg-surface-alt, #f4f4f4);
+}
+th.sortable:focus-visible {
+  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline-offset: -2px;
+}
+th.sortable::after {
+  content: "";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid var(--ply-color-muted);
+  margin-top: -4px;
+}
+th.sortable::before {
+  content: "";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--ply-color-muted);
+  margin-top: 4px;
+}
+th.sortable.sort-asc::after {
+  border-bottom-color: var(--ply-color-body);
+}
+th.sortable.sort-asc::before {
+  border-top-color: var(--ply-color-muted);
+}
+th.sortable.sort-desc::before {
+  border-top-color: var(--ply-color-body);
+}
+th.sortable.sort-desc::after {
+  border-bottom-color: var(--ply-color-muted);
+}
+
+/* Table Filter — input-group style connected filter bar */
+.table-filter.input-groups select {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+/* Table Actions — right-aligned icon button bar */
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Pagination sizes */
+.pagination.pagination-sm a,
+.pagination.pagination-sm span {
+  min-width: 1.755rem;
+  height: 1.755rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.75rem;
+}
+
+.pagination.pagination-lg a,
+.pagination.pagination-lg span {
+  min-width: 2.745rem;
+  height: 2.745rem;
+  padding: 0.375rem 0.8775rem;
+  font-size: 1rem;
+}
+
+/* Pagination info text — sits beside .pagination */
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--ply-color-secondary);
+}
+
+/* =Multi-Step Form — Step indicators, progress states
+-----------------------------------------------------------------------------*/
+/* Step Indicator */
+.steps {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0 0 2.25rem;
+  padding: 0;
+  counter-reset: step;
+}
+
+.step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  counter-increment: step;
+}
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: calc(50% + 1.25rem);
+  right: calc(-50% + 1.25rem);
+  height: 2px;
+  background: var(--ply-border-color);
+  z-index: 0;
+}
+.step::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--ply-border-color);
+  background: var(--ply-bg-surface, #fff);
+  color: var(--ply-color-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.step .step-label {
+  font-size: 0.875rem;
+  color: var(--ply-color-muted);
+  transition: color 0.2s ease;
+}
+.step .step-desc {
+  font-size: 0.75rem;
+  color: var(--ply-color-muted);
+  margin-top: 0.125rem;
+}
+.step.active::before {
+  border-color: var(--ply-color-body);
+  background: var(--ply-bg-surface, #fff);
+  color: var(--ply-color-body);
+}
+.step.active .step-label {
+  color: var(--ply-color-body);
+  font-weight: 600;
+}
+.step.completed::before {
+  border-color: var(--ply-border-color);
+  background: color-mix(in srgb, #2c9f42 13%, var(--ply-bg-surface, #fff));
+  color: #2c9f42;
+  content: "✓";
+}
+.step.completed:not(:last-child)::after {
+  background: var(--ply-border-color);
+}
+.step.completed .step-label {
+  color: var(--ply-color-secondary);
+}
+.step.step-error::before {
+  border-color: #de2c3b;
+  background: transparent;
+  color: #de2c3b;
+  content: "!";
+}
+.step.step-error .step-label {
+  color: #de2c3b;
+  font-weight: 600;
+}
+
+/* Vertical Steps */
+.steps-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.steps-vertical .step {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  padding-bottom: 1.5rem;
+  padding-left: 0;
+}
+.steps-vertical .step::before {
+  margin: 0 0.75rem 0 0;
+  flex-shrink: 0;
+}
+.steps-vertical .step:not(:last-child)::after {
+  top: 2rem;
+  left: calc(1rem - 1px);
+  right: auto;
+  width: 2px;
+  height: calc(100% - 2rem);
+}
+.steps-vertical .step .step-content {
+  padding-top: 0.25rem;
+}
+
+/* Steps sizes */
+.steps-sm .step::before {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+.steps-sm .step:not(:last-child)::after {
+  top: 0.75rem;
+  left: calc(50% + 1rem);
+  right: calc(-50% + 1rem);
+}
+.steps-sm .step .step-label {
+  font-size: 0.75rem;
+}
+
+/* Form Step Content Panels */
+.step-panel {
+  display: none;
+}
+.step-panel.active {
+  display: block;
+}
+
+/* Form Step Navigation */
+.step-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ply-border-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step::before,
+  .step .step-label {
+    transition: none;
+  }
+}
+/* =Dialog Patterns — Nested/stacked dialog styling
+-----------------------------------------------------------------------------*/
+/* Dialog Sizes */
+dialog.dialog-sm {
+  max-width: 24rem;
+}
+
+dialog.dialog-lg {
+  max-width: 48rem;
+}
+
+dialog.dialog-full {
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 2rem);
+  width: 100%;
+  height: 100%;
+}
+
+/* Dialog Layout Sections */
+dialog .dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9975rem 1.5rem;
+  border-bottom: 1px solid var(--ply-border-color);
+}
+dialog .dialog-header h1, dialog .dialog-header h2, dialog .dialog-header h3, dialog .dialog-header h4, dialog .dialog-header h5, dialog .dialog-header h6 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+dialog .dialog-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+dialog .dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.9975rem 1.5rem;
+  border-top: 1px solid var(--ply-border-color);
+}
+dialog .dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--ply-color-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease;
+}
+dialog .dialog-close:hover {
+  background-color: var(--ply-bg-surface-alt);
+  color: var(--ply-color-body);
+}
+dialog .dialog-close:focus-visible {
+  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline-offset: 2px;
+}
+
+/* Stacked Dialogs — z-index layering */
+dialog[open].dialog-layer-1 {
+  z-index: 100;
+}
+dialog[open].dialog-layer-2 {
+  z-index: 110;
+}
+dialog[open].dialog-layer-3 {
+  z-index: 120;
+}
+
+dialog::backdrop {
+  background: var(--ply-backdrop, rgba(0, 0, 0, 0.5));
+}
+
+dialog.dialog-layer-2::backdrop {
+  background: var(--ply-backdrop-nested, rgba(0, 0, 0, 0.35));
+}
+
+dialog.dialog-layer-3::backdrop {
+  background: var(--ply-backdrop-nested, rgba(0, 0, 0, 0.25));
+}
+
+/* Confirmation Dialog — compact variant */
+dialog.dialog-confirm {
+  max-width: 28rem;
+  text-align: center;
+}
+dialog.dialog-confirm .dialog-body {
+  padding: 1.995rem 1.5rem 0.9975rem;
+}
+dialog.dialog-confirm .dialog-footer {
+  justify-content: center;
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Dialog with scrollable body */
+dialog.dialog-scroll {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 4rem);
+}
+dialog.dialog-scroll .dialog-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+}
+dialog.dialog-scroll .dialog-header,
+dialog.dialog-scroll .dialog-footer {
+  flex-shrink: 0;
+}
+
+/* Dialog animation */
+dialog[open] {
+  animation: dialog-fade-in 0.15s ease;
+}
+
+dialog[open]::backdrop {
+  animation: dialog-backdrop-in 0.15s ease;
+}
+
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes dialog-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog[open],
+  dialog[open]::backdrop {
+    animation: none;
+  }
+}
+/* =RTL Support — Layout mirroring for right-to-left languages
+-----------------------------------------------------------------------------*/
+/* RTL base — apply dir="rtl" on <html> or any container */
+[dir=rtl] {
+  direction: rtl;
+  text-align: right;
+}
+[dir=rtl] [class*=unit-] {
+  float: right;
+}
+[dir=rtl] .text-left {
+  text-align: right;
+}
+[dir=rtl] .text-right {
+  text-align: left;
+}
+[dir=rtl] .margin-left,
+[dir=rtl] .margin-left-extra {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+[dir=rtl] .margin-left-extra {
+  margin-right: 1.5rem;
+}
+[dir=rtl] .margin-right,
+[dir=rtl] .margin-right-extra {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+[dir=rtl] .margin-right-extra {
+  margin-left: 1.5rem;
+}
+[dir=rtl] .margin-left-auto {
+  margin-left: unset;
+  margin-right: auto;
+}
+[dir=rtl] .margin-right-auto {
+  margin-right: unset;
+  margin-left: auto;
+}
+[dir=rtl] .padding-left {
+  padding-left: 0;
+  padding-right: 0.75rem;
+}
+[dir=rtl] .padding-right {
+  padding-right: 0;
+  padding-left: 0.75rem;
+}
+[dir=rtl] .navbar ul {
+  padding-right: 0;
+}
+[dir=rtl] .nav-stacked ul {
+  padding-right: 0;
+}
+[dir=rtl] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+[dir=rtl] .dropdown-menu-right {
+  right: auto;
+  left: 0;
+}
+[dir=rtl] .form select {
+  background-position: left 0.75em center;
+  padding-left: 2.4975rem;
+  padding-right: 0.75rem;
+}
+[dir=rtl] select.select-outlined {
+  background-position: left 0.75em center;
+  padding-left: 2.4975rem;
+  padding-right: 0.75rem;
+}
+[dir=rtl] .input-groups input:not(:last-child),
+[dir=rtl] .input-groups textarea:not(:last-child),
+[dir=rtl] .input-groups select:not(:last-child) {
+  border-right: initial;
+  border-left: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+[dir=rtl] .input-groups input:not(:first-child),
+[dir=rtl] .input-groups textarea:not(:first-child),
+[dir=rtl] .input-groups select:not(:first-child) {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+[dir=rtl] .input-groups .input-prepend {
+  border-right: initial;
+  border-left: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+[dir=rtl] .input-groups .input-append {
+  border-left: initial;
+  border-right: none;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+[dir=rtl] th.sortable {
+  padding-right: inherit;
+  padding-left: 1.5rem;
+}
+[dir=rtl] th.sortable::after, [dir=rtl] th.sortable::before {
+  right: auto;
+  left: 0.5rem;
+}
+[dir=rtl] .steps .step:not(:last-child)::after {
+  left: auto;
+  right: calc(50% + 1.25rem);
+  left: calc(-50% + 1.25rem);
+}
+[dir=rtl] .modal-close {
+  right: auto;
+  left: 0.75rem;
+}
+[dir=rtl] .skip-link {
+  left: auto;
+  right: 0;
+}
+[dir=rtl] .reverse-direction {
+  flex-direction: row;
+}
+[dir=rtl] ol,
+[dir=rtl] ul {
+  padding-inline-start: 2rem;
+}
+[dir=rtl] .float-left {
+  float: right;
+}
+[dir=rtl] .float-right {
+  float: left;
+}
+
+/* Bidirectional utility — opt out of mirroring for specific elements */
+[dir=rtl] .no-rtl {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Logical property helpers — work in both LTR and RTL automatically */
+.margin-inline-start {
+  margin-inline-start: 0.75rem;
+}
+
+.margin-inline-end {
+  margin-inline-end: 0.75rem;
+}
+
+.padding-inline-start {
+  padding-inline-start: 0.75rem;
+}
+
+.padding-inline-end {
+  padding-inline-end: 0.75rem;
+}
+
+.border-inline-start {
+  border-inline-start: 1px solid var(--ply-border-color);
+}
+
+.border-inline-end {
+  border-inline-end: 1px solid var(--ply-border-color);
+}
+
 @media print {
   * {
     text-shadow: none !important;

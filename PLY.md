@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~19KB gzip full, ~17KB core). 414 utility classes, 60 CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~21KB gzip full, ~17KB core). 500 utility classes, 60 CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -371,6 +371,56 @@ Use `select-outlined` for a transparent-background outlined variant.
 | `form-inline-list` | Inline list items |
 | `form-list` | Stacked list items |
 
+#### Native Date/Time Inputs
+
+Native `<input type="date">`, `<input type="time">`, `<input type="datetime-local">`, and `<input type="month">` are styled automatically inside `.form`. No extra classes needed.
+
+#### Multi-Step Forms
+
+Use `.steps` to create a step indicator for multi-step forms or wizards.
+
+```html
+<div class="steps">
+  <div class="step completed">
+    <span class="step-label">1</span>
+    <span class="step-desc">Account</span>
+  </div>
+  <div class="step active">
+    <span class="step-label">2</span>
+    <span class="step-desc">Profile</span>
+  </div>
+  <div class="step">
+    <span class="step-label">3</span>
+    <span class="step-desc">Confirm</span>
+  </div>
+</div>
+
+<div class="step-panel">
+  <div class="step-content">
+    <!-- Current step form fields -->
+  </div>
+  <div class="step-nav">
+    <button class="btn">Back</button>
+    <button class="btn btn-blue">Next</button>
+  </div>
+</div>
+```
+
+| Class | Effect |
+|-------|--------|
+| `steps` | Horizontal step indicator container |
+| `step` | Individual step |
+| `step active` | Current step (highlighted) |
+| `step completed` | Completed step (checkmark/green) |
+| `step step-error` | Step with error (red) |
+| `step-label` | Step number or icon |
+| `step-desc` | Step description text |
+| `step-content` | Content area for the current step |
+| `step-panel` | Wrapper for step content and navigation |
+| `step-nav` | Navigation buttons (Back/Next) |
+| `steps-vertical` | Vertical layout for the step indicator |
+| `steps-sm` | Smaller step indicators |
+
 ---
 
 ### Navigation
@@ -459,15 +509,29 @@ On small screens (≤ 767px), the navbar scrolls horizontally with a hidden scro
 
 #### Pagination
 
+Default style is outlined with rounded corners. The active page uses a solid fill.
+
 ```html
 <ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
+  <li class="disabled"><a href="#" aria-disabled="true">&laquo;</a></li>
   <li><a href="#">1</a></li>
-  <li class="active"><a href="#">2</a></li>
+  <li class="active"><a href="#" aria-current="page">2</a></li>
   <li><a href="#">3</a></li>
   <li><a href="#">&raquo;</a></li>
 </ul>
+<span class="pagination-info">Page 2 of 10</span>
 ```
+
+| Class | Effect |
+|-------|--------|
+| *(default)* | Outlined buttons with rounded corners |
+| `pagination-solid` | Solid filled background on all items |
+| `pagination-sm` | Smaller pagination |
+| `pagination-lg` | Larger pagination |
+| `disabled` | Muted color, no pointer events (use on `<li>` for prev/next arrows) |
+| `pagination-info` | Helper text for "Page X of Y" display |
+
+Use `aria-current="page"` on the active link and `aria-disabled="true"` on disabled arrows.
 
 ---
 
@@ -671,6 +735,28 @@ All scale sizes have directional variants: `padding-top-xs`, `padding-top-sm`, `
 
 `clearfix`, `flat-list` (no bullets/margin), `circle` (border-radius 100%), `border-radius`, `spinning` (animation), `fade-in`
 
+#### RTL (Right-to-Left) Support
+
+Set `dir="rtl"` on `<html>` or any container element. ply automatically mirrors grid columns, navigation, forms, margins, padding, floats, and text alignment.
+
+```html
+<html lang="ar" dir="rtl">
+```
+
+Add `.no-rtl` to any element that should not be mirrored (e.g., code blocks, LTR-only content).
+
+Logical property helpers for explicit inline-direction spacing:
+
+| Class | Effect |
+|-------|--------|
+| `margin-inline-start` | Margin on the start side (left in LTR, right in RTL) |
+| `margin-inline-end` | Margin on the end side |
+| `padding-inline-start` | Padding on the start side |
+| `padding-inline-end` | Padding on the end side |
+| `border-inline-start` | Border on the start side |
+| `border-inline-end` | Border on the end side |
+| `no-rtl` | Opt out of RTL mirroring on a specific element |
+
 ---
 
 ### Tables
@@ -692,6 +778,55 @@ Tables are styled automatically. Just use semantic HTML:
     </tr>
   </tbody>
 </table>
+```
+
+#### Sort Indicators
+
+Add `sortable` to `<th>` elements to show sort controls. Add `.sort-asc` or `.sort-desc` to indicate current sort direction.
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th class="sortable sort-asc">Name</th>
+      <th class="sortable">Email</th>
+    </tr>
+  </thead>
+  ...
+</table>
+```
+
+| Class | Effect |
+|-------|--------|
+| `sortable` | Shows sort indicator on `<th>`, adds pointer cursor |
+| `sort-asc` | Ascending arrow indicator |
+| `sort-desc` | Descending arrow indicator |
+
+#### Table Filter
+
+Use `.table-filter` with `.input-groups` to add a search/filter bar above a table.
+
+```html
+<div class="table-filter">
+  <div class="input-groups">
+    <input type="text" placeholder="Filter rows...">
+    <span class="input-append"><button class="btn btn-blue">Filter</button></span>
+  </div>
+</div>
+<table>...</table>
+```
+
+#### Table Actions
+
+Use `.table-actions` for inline action buttons (edit, delete, etc.) inside table cells. Buttons render as ghost icon buttons.
+
+```html
+<td>
+  <div class="table-actions">
+    <button class="btn" aria-label="Edit"><i data-feather="edit-2"></i></button>
+    <button class="btn" aria-label="Delete"><i data-feather="trash-2"></i></button>
+  </div>
+</td>
 ```
 
 ---
@@ -717,6 +852,42 @@ ply styles these elements without needing classes:
   <button class="btn" onclick="this.closest('dialog').close()">Close</button>
 </dialog>
 ```
+
+#### Dialog Patterns
+
+Size, layout, and stacking classes for `<dialog>`:
+
+```html
+<dialog class="dialog-lg">
+  <div class="dialog-header">
+    <h3>Edit Item</h3>
+    <button class="dialog-close" onclick="this.closest('dialog').close()" aria-label="Close">&times;</button>
+  </div>
+  <div class="dialog-body dialog-scroll">
+    <p>Scrollable dialog content...</p>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn" onclick="this.closest('dialog').close()">Cancel</button>
+    <button class="btn btn-blue dialog-confirm">Save</button>
+  </div>
+</dialog>
+```
+
+| Class | Effect |
+|-------|--------|
+| *(default)* | 32rem max-width |
+| `dialog-sm` | Smaller dialog (24rem) |
+| `dialog-lg` | Larger dialog (48rem) |
+| `dialog-full` | Full-screen dialog |
+| `dialog-header` | Header section with title and close button |
+| `dialog-body` | Main content area with padding |
+| `dialog-footer` | Footer with right-aligned actions |
+| `dialog-close` | Positioned close button (top-right) |
+| `dialog-confirm` | Primary action button styling |
+| `dialog-scroll` | Makes body scrollable when content overflows |
+| `dialog-layer-1` | z-index layer 1 (default) |
+| `dialog-layer-2` | z-index layer 2 (stacked dialog) |
+| `dialog-layer-3` | z-index layer 3 (topmost dialog) |
 
 ---
 
@@ -884,6 +1055,11 @@ ply is built for Section 508 / WCAG 2.1 AA compliance out of the box:
 - **Dark mode** — `prefers-color-scheme: dark` is respected automatically when no `data-theme` attribute is set. Theme-aware colors maintain WCAG AA contrast in both modes.
 - **Skip link** — Use `.skip-link` as the first focusable element to let keyboard users skip past navigation.
 - **Screen reader support** — `.sr-only` hides content visually while keeping it accessible to assistive technology.
+- **Sortable table headers** — `th.sortable` elements have `:focus-visible` outlines for keyboard users.
+- **Pagination** — Focus-visible outlines on all page links, disabled states prevent interaction, `aria-current="page"` supported on active items.
+- **Dialog patterns** — Dialog open/close respects `prefers-reduced-motion` (no animation when reduced motion is preferred).
+- **Multi-step forms** — Step transitions respect `prefers-reduced-motion`.
+- **RTL support** — `dir="rtl"` enables proper internationalization with automatic layout mirroring for Arabic, Hebrew, and other RTL languages.
 
 ```html
 <!-- Skip link — first element inside <body> -->
@@ -1243,7 +1419,7 @@ When generating ply markup, follow these practices to produce Title II compliant
 
 | Bundle | Includes | Size (gzip) |
 |--------|----------|-------------|
-| `ply.min.css` | Everything | ~19KB |
+| `ply.min.css` | Everything | ~21KB |
 | `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
 | `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~6KB |
 | `ply-helpers.min.css` | Helper utilities only | ~4KB |

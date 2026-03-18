@@ -361,6 +361,11 @@ select.input-xs {
     border-left: none;
     border-radius: 0 variables.$border-radius variables.$border-radius 0;
 
+    &:has(.btn) {
+      padding: 0;
+      border: none;
+    }
+
     .btn {
       display: flex;
       align-items: center;

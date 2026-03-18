@@ -480,30 +480,44 @@ nav {
 
 
 
-/* =Pagination — Swiss/Modernist
+/* =Pagination — Outlined (default) with solid variant
 -----------------------------------------------------------------------------*/
 .pagination {
-  position: relative;
-  left: -9px;
-  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: variables.$grid-gutter-width * 0.5;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  @include mixins.clearfix;
 
   & li {
-    float: left;
-    margin-right: 2px;
+    margin: 0;
   }
 
   & a,
   & span {
-    display: block;
-    padding: 0.625rem 0.75rem;
-    line-height: 1;
-    color: var(--ply-nav-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: variables.$base-line * 1.5;
+    height: variables.$base-line * 1.5;
+    padding: variables.$grid-gutter-width * 0.5 variables.$padding;
+    border: 1px solid var(--ply-border-color);
+    border-radius: variables.$border-radius;
+    background: var(--ply-bg-surface, #fff);
+    color: var(--ply-color-body);
     text-decoration: none;
     font-size: variables.$font-size-sm;
+    line-height: 1;
     letter-spacing: 0.03em;
-    transition: background 0.15s ease, color 0.15s ease;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  & a:hover {
+    background-color: var(--ply-bg-surface-alt);
+    border-color: var(--ply-color-secondary);
+    text-decoration: none;
   }
 
   & a:focus-visible {
@@ -511,18 +525,66 @@ nav {
     outline-offset: 2px;
   }
 
-  & span,
   & li.active a,
-  & li.active a:hover {
-    color: var(--ply-bg-surface);
+  & li.active a:hover,
+  & li.active span {
     background-color: var(--ply-nav-color);
+    border-color: var(--ply-nav-color);
+    color: var(--ply-bg-surface);
     cursor: default;
   }
 
-  & a:focus,
+  & li.disabled a,
+  & li.disabled span {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Prev/next arrows — ghost by default, fill on hover
+  & li:first-child a,
+  & li:first-child span,
+  & li:last-child a,
+  & li:last-child span {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  & li:first-child a:hover,
+  & li:last-child a:hover {
+    background-color: var(--ply-bg-surface-alt);
+    border-color: transparent;
+  }
+
+  // Disabled arrow — muted color
+  & li.disabled:first-child span,
+  & li.disabled:last-child span,
+  & li.disabled:first-child a,
+  & li.disabled:last-child a {
+    color: var(--ply-color-muted);
+    opacity: 1;
+  }
+}
+
+/* Solid variant — filled background like the original Swiss style */
+.pagination-solid {
+  & a,
+  & span {
+    border-color: transparent;
+    background: transparent;
+  }
+
   & a:hover {
-    text-decoration: none;
     background-color: var(--ply-nav-color);
+    border-color: transparent;
+    color: var(--ply-bg-surface);
+  }
+
+  & li.active a,
+  & li.active a:hover,
+  & li.active span {
+    background-color: var(--ply-nav-color);
+    border-color: transparent;
     color: var(--ply-bg-surface);
   }
 }

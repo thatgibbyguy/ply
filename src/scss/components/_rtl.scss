@@ -1,0 +1,214 @@
+@use "variables";
+
+/* =RTL Support — Layout mirroring for right-to-left languages
+-----------------------------------------------------------------------------*/
+
+/* RTL base — apply dir="rtl" on <html> or any container */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  // Grid gutter mirroring (units use padding-left/right)
+  [class*="unit-"] {
+    float: right;
+  }
+
+  // Text alignment overrides
+  .text-left {
+    text-align: right;
+  }
+
+  .text-right {
+    text-align: left;
+  }
+
+  // Margin directional utilities
+  .margin-left,
+  .margin-left-extra {
+    margin-left: 0;
+    margin-right: variables.$margin;
+  }
+
+  .margin-left-extra {
+    margin-right: variables.$margin * 2;
+  }
+
+  .margin-right,
+  .margin-right-extra {
+    margin-right: 0;
+    margin-left: variables.$margin;
+  }
+
+  .margin-right-extra {
+    margin-left: variables.$margin * 2;
+  }
+
+  .margin-left-auto {
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  .margin-right-auto {
+    margin-right: unset;
+    margin-left: auto;
+  }
+
+  // Padding directional utilities
+  .padding-left {
+    padding-left: 0;
+    padding-right: variables.$padding;
+  }
+
+  .padding-right {
+    padding-right: 0;
+    padding-left: variables.$padding;
+  }
+
+  // Navigation
+  .navbar ul {
+    padding-right: 0;
+  }
+
+  .nav-stacked ul {
+    padding-right: 0;
+  }
+
+  // Dropdown positioning
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+
+  .dropdown-menu-right {
+    right: auto;
+    left: 0;
+  }
+
+  // Forms — search icon positioning, select arrow
+  .form select {
+    background-position: left 0.75em center;
+    padding-left: variables.$padding * 3.33;
+    padding-right: variables.$padding;
+  }
+
+  select.select-outlined {
+    background-position: left 0.75em center;
+    padding-left: variables.$padding * 3.33;
+    padding-right: variables.$padding;
+  }
+
+  // Input groups
+  .input-groups {
+    input:not(:last-child),
+    textarea:not(:last-child),
+    select:not(:last-child) {
+      border-right: initial;
+      border-left: none;
+      border-radius: 0 variables.$border-radius variables.$border-radius 0;
+    }
+
+    input:not(:first-child),
+    textarea:not(:first-child),
+    select:not(:first-child) {
+      border-radius: variables.$border-radius 0 0 variables.$border-radius;
+    }
+
+    .input-prepend {
+      border-right: initial;
+      border-left: none;
+      border-radius: 0 variables.$border-radius variables.$border-radius 0;
+    }
+
+    .input-append {
+      border-left: initial;
+      border-right: none;
+      border-radius: variables.$border-radius 0 0 variables.$border-radius;
+    }
+  }
+
+  // Table sort indicators
+  th.sortable {
+    padding-right: inherit;
+    padding-left: variables.$base-line;
+
+    &::after,
+    &::before {
+      right: auto;
+      left: variables.$grid-gutter-width;
+    }
+  }
+
+  // Steps connector mirroring
+  .steps .step:not(:last-child)::after {
+    left: auto;
+    right: calc(50% + 1.25rem);
+    left: calc(-50% + 1.25rem);
+  }
+
+  // Modal close button
+  .modal-close {
+    right: auto;
+    left: variables.$padding;
+  }
+
+  .dialog-close {
+    // Already uses flexbox, just ensure placement
+  }
+
+  // Skip link
+  .skip-link {
+    left: auto;
+    right: 0;
+  }
+
+  // Reverse direction for flex utilities
+  .reverse-direction {
+    flex-direction: row;
+  }
+
+  // Breadcrumb separators and list markers
+  ol,
+  ul {
+    padding-inline-start: 2rem;
+  }
+
+  // Float mirroring
+  .float-left {
+    float: right;
+  }
+
+  .float-right {
+    float: left;
+  }
+}
+
+/* Bidirectional utility — opt out of mirroring for specific elements */
+[dir="rtl"] .no-rtl {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Logical property helpers — work in both LTR and RTL automatically */
+.margin-inline-start {
+  margin-inline-start: variables.$margin;
+}
+
+.margin-inline-end {
+  margin-inline-end: variables.$margin;
+}
+
+.padding-inline-start {
+  padding-inline-start: variables.$padding;
+}
+
+.padding-inline-end {
+  padding-inline-end: variables.$padding;
+}
+
+.border-inline-start {
+  border-inline-start: 1px solid var(--ply-border-color);
+}
+
+.border-inline-end {
+  border-inline-end: 1px solid var(--ply-border-color);
+}

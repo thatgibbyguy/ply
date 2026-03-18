@@ -304,6 +304,7 @@ button.btn-white {
 .btn-group {
   display: flex;
   flex-flow: row wrap;
+  gap: variables.$grid-gutter-width;
 
   &.align-right {
     justify-content: flex-end;

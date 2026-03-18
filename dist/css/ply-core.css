@@ -4346,6 +4346,10 @@ select.input-xs {
   border-left: none;
   border-radius: 0 0.25rem 0.25rem 0;
 }
+.input-groups .input-append:has(.btn) {
+  padding: 0;
+  border: none;
+}
 .input-groups .input-append .btn {
   display: flex;
   align-items: center;
@@ -4815,45 +4819,83 @@ nav ul {
   color: var(--ply-color-muted);
 }
 
-/* =Pagination — Swiss/Modernist
+/* =Pagination — Outlined (default) with solid variant
 -----------------------------------------------------------------------------*/
 .pagination {
-  position: relative;
-  left: -9px;
-  margin-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
-.pagination:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 .pagination li {
-  float: left;
-  margin-right: 2px;
+  margin: 0;
 }
 .pagination a, .pagination span {
-  display: block;
-  padding: 0.625rem 0.75rem;
-  line-height: 1;
-  color: var(--ply-nav-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--ply-border-color);
+  border-radius: 0.25rem;
+  background: var(--ply-bg-surface, #fff);
+  color: var(--ply-color-body);
   text-decoration: none;
   font-size: 0.875rem;
+  line-height: 1;
   letter-spacing: 0.03em;
-  transition: background 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.pagination a:hover {
+  background-color: var(--ply-bg-surface-alt);
+  border-color: var(--ply-color-secondary);
+  text-decoration: none;
 }
 .pagination a:focus-visible {
   outline: 2px solid var(--ply-color-focus, #0f62fe);
   outline-offset: 2px;
 }
-.pagination span, .pagination li.active a, .pagination li.active a:hover {
-  color: var(--ply-bg-surface);
+.pagination li.active a, .pagination li.active a:hover, .pagination li.active span {
   background-color: var(--ply-nav-color);
+  border-color: var(--ply-nav-color);
+  color: var(--ply-bg-surface);
   cursor: default;
 }
-.pagination a:focus, .pagination a:hover {
-  text-decoration: none;
+.pagination li.disabled a, .pagination li.disabled span {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.pagination li:first-child a, .pagination li:first-child span, .pagination li:last-child a, .pagination li:last-child span {
+  border-color: transparent;
+  background: transparent;
+}
+.pagination li:first-child a:hover, .pagination li:last-child a:hover {
+  background-color: var(--ply-bg-surface-alt);
+  border-color: transparent;
+}
+.pagination li.disabled:first-child span, .pagination li.disabled:last-child span, .pagination li.disabled:first-child a, .pagination li.disabled:last-child a {
+  color: var(--ply-color-muted);
+  opacity: 1;
+}
+
+/* Solid variant — filled background like the original Swiss style */
+.pagination-solid a, .pagination-solid span {
+  border-color: transparent;
+  background: transparent;
+}
+.pagination-solid a:hover {
   background-color: var(--ply-nav-color);
+  border-color: transparent;
+  color: var(--ply-bg-surface);
+}
+.pagination-solid li.active a, .pagination-solid li.active a:hover, .pagination-solid li.active span {
+  background-color: var(--ply-nav-color);
+  border-color: transparent;
   color: var(--ply-bg-surface);
 }
 
@@ -6259,6 +6301,7 @@ button.btn-white.btn-outline.btn-active {
 .btn-group {
   display: flex;
   flex-flow: row wrap;
+  gap: 0.5rem;
 }
 .btn-single.align-right,
 .btn-group.align-right {

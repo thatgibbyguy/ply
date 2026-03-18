@@ -1,0 +1,190 @@
+@use "colors";
+@use "variables";
+
+/* =Multi-Step Form — Step indicators, progress states
+-----------------------------------------------------------------------------*/
+
+/* Step Indicator */
+.steps {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0 0 variables.$base-line * 1.5;
+  padding: 0;
+  counter-reset: step;
+}
+
+.step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  counter-increment: step;
+
+  // Connector line
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: calc(50% + 1.25rem);
+    right: calc(-50% + 1.25rem);
+    height: 2px;
+    background: var(--ply-border-color);
+    z-index: 0;
+  }
+
+  // Step circle
+  &::before {
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto variables.$grid-gutter-width;
+    border-radius: 50%;
+    border: 1px solid var(--ply-border-color);
+    background: var(--ply-bg-surface, #fff);
+    color: var(--ply-color-muted);
+    font-size: variables.$font-size-sm;
+    font-weight: variables.$font-weight-semibold;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  // Step label
+  .step-label {
+    font-size: variables.$font-size-sm;
+    color: var(--ply-color-muted);
+    transition: color 0.2s ease;
+  }
+
+  .step-desc {
+    font-size: variables.$font-size-xs;
+    color: var(--ply-color-muted);
+    margin-top: variables.$grid-gutter-width * 0.25;
+  }
+
+  // Active step — text-primary border and number
+  &.active {
+    &::before {
+      border-color: var(--ply-color-body);
+      background: var(--ply-bg-surface, #fff);
+      color: var(--ply-color-body);
+    }
+
+    .step-label {
+      color: var(--ply-color-body);
+      font-weight: variables.$font-weight-semibold;
+    }
+  }
+
+  // Completed step — check in green, default gray border
+  &.completed {
+    &::before {
+      border-color: var(--ply-border-color);
+      background: color-mix(in srgb, #{colors.$color-green} 13%, var(--ply-bg-surface, #fff));
+      color: colors.$color-green;
+      content: "\2713";
+    }
+
+    &:not(:last-child)::after {
+      background: var(--ply-border-color);
+    }
+
+    .step-label {
+      color: var(--ply-color-secondary);
+    }
+  }
+
+  // Error step — red border and exclamation, transparent background
+  &.step-error {
+    &::before {
+      border-color: colors.$color-red;
+      background: transparent;
+      color: colors.$color-red;
+      content: "!";
+    }
+
+    .step-label {
+      color: colors.$color-red;
+      font-weight: variables.$font-weight-semibold;
+    }
+  }
+}
+
+/* Vertical Steps */
+.steps-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    padding-bottom: variables.$base-line;
+    padding-left: 0;
+
+    &::before {
+      margin: 0 variables.$padding 0 0;
+      flex-shrink: 0;
+    }
+
+    &:not(:last-child)::after {
+      top: 2rem;
+      left: calc(1rem - 1px);
+      right: auto;
+      width: 2px;
+      height: calc(100% - 2rem);
+    }
+
+    .step-content {
+      padding-top: variables.$grid-gutter-width * 0.5;
+    }
+  }
+}
+
+/* Steps sizes */
+.steps-sm .step {
+  &::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: variables.$font-size-xs;
+  }
+
+  &:not(:last-child)::after {
+    top: 0.75rem;
+    left: calc(50% + 1rem);
+    right: calc(-50% + 1rem);
+  }
+
+  .step-label {
+    font-size: variables.$font-size-xs;
+  }
+}
+
+/* Form Step Content Panels */
+.step-panel {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+/* Form Step Navigation */
+.step-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: variables.$base-line;
+  padding-top: variables.$base-line;
+  border-top: 1px solid var(--ply-border-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step::before,
+  .step .step-label {
+    transition: none;
+  }
+}

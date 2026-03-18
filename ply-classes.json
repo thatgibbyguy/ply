@@ -38,7 +38,7 @@
     },
     "unit-100": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
+      "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -53,7 +53,7 @@
     },
     "unit-90": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 90%.",
+      "description": "Grid unit — flex-basis: 90%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -67,7 +67,7 @@
     },
     "unit-88": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 87.5%.",
+      "description": "Grid unit — flex-basis: 87.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -81,7 +81,7 @@
     },
     "unit-80": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 80%.",
+      "description": "Grid unit — flex-basis: 80%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -95,7 +95,7 @@
     },
     "unit-75": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 75%.",
+      "description": "Grid unit — flex-basis: 75%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -109,7 +109,7 @@
     },
     "unit-70": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 70%.",
+      "description": "Grid unit — flex-basis: 70%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -123,7 +123,7 @@
     },
     "unit-66": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 66.6% (two-thirds).",
+      "description": "Grid unit — flex-basis: 66.6% (two-thirds).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -137,7 +137,7 @@
     },
     "unit-65": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 65%.",
+      "description": "Grid unit — flex-basis: 65%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -151,7 +151,7 @@
     },
     "unit-62": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 62.5%.",
+      "description": "Grid unit — flex-basis: 62.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -165,7 +165,7 @@
     },
     "unit-60": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 60%.",
+      "description": "Grid unit — flex-basis: 60%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -179,7 +179,7 @@
     },
     "unit-50": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 50% (half).",
+      "description": "Grid unit — flex-basis: 50% (half).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -194,7 +194,7 @@
     },
     "unit-40": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 40%.",
+      "description": "Grid unit — flex-basis: 40%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -208,7 +208,7 @@
     },
     "unit-38": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 37.5%.",
+      "description": "Grid unit — flex-basis: 37.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -222,7 +222,7 @@
     },
     "unit-35": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 35%.",
+      "description": "Grid unit — flex-basis: 35%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -236,7 +236,7 @@
     },
     "unit-33": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 33.3% (one-third).",
+      "description": "Grid unit — flex-basis: 33.3% (one-third).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -251,7 +251,7 @@
     },
     "unit-30": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 30%.",
+      "description": "Grid unit — flex-basis: 30%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -265,7 +265,7 @@
     },
     "unit-25": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 25% (one-quarter).",
+      "description": "Grid unit — flex-basis: 25% (one-quarter).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -279,7 +279,7 @@
     },
     "unit-20": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 20%.",
+      "description": "Grid unit — flex-basis: 20%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -293,7 +293,7 @@
     },
     "unit-12": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 12.5%.",
+      "description": "Grid unit — flex-basis: 12.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -307,7 +307,7 @@
     },
     "unit-10": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 10%.",
+      "description": "Grid unit — flex-basis: 10%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -321,7 +321,7 @@
     },
     "unit-auto": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-grow: 1, fills remaining space.",
+      "description": "Grid unit — flex-grow: 1, fills remaining space.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -961,7 +961,7 @@
     },
     "lead-subhead": {
       "category": "typography",
-      "description": "Lead subhead style. Same as lead \u2014 larger font size with relaxed line-height.",
+      "description": "Lead subhead style. Same as lead — larger font size with relaxed line-height.",
       "example": "<p class=\"lead-subhead\">Subheading text here.</p>"
     },
     "bold": {
@@ -1536,7 +1536,7 @@
     },
     "skip-link": {
       "category": "helpers",
-      "description": "Skip navigation link \u2014 hidden until focused. Use as the first focusable element inside <body>.",
+      "description": "Skip navigation link — hidden until focused. Use as the first focusable element inside <body>.",
       "example": "<a href=\"#main\" class=\"skip-link\">Skip to main content</a>"
     },
     "hide-on-desktop": {
@@ -1635,11 +1635,11 @@
     },
     "color-black": {
       "category": "helpers",
-      "description": "Set text color to black."
+      "description": "Text color: black."
     },
     "color-white": {
       "category": "helpers",
-      "description": "Set text color to white."
+      "description": "Text color: white."
     },
     "background-white": {
       "category": "helpers",
@@ -1651,39 +1651,39 @@
     },
     "color-gray-10": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.1)."
+      "description": "Text color: black at 10% opacity."
     },
     "color-gray-20": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.2)."
+      "description": "Text color: black at 20% opacity."
     },
     "color-gray-30": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.3)."
+      "description": "Text color: black at 30% opacity."
     },
     "color-gray-40": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.4)."
+      "description": "Text color: black at 40% opacity."
     },
     "color-gray-50": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.5)."
+      "description": "Text color: black at 50% opacity."
     },
     "color-gray-60": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.6)."
+      "description": "Text color: black at 60% opacity."
     },
     "color-gray-70": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.7)."
+      "description": "Text color: black at 70% opacity."
     },
     "color-gray-80": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.8)."
+      "description": "Text color: black at 80% opacity."
     },
     "color-gray-90": {
       "category": "helpers",
-      "description": "Text color rgba(0,0,0,0.9)."
+      "description": "Text color: black at 90% opacity."
     },
     "table-bordered": {
       "category": "tables",
@@ -1701,7 +1701,7 @@
     },
     "table-stroked": {
       "category": "tables",
-      "description": "Only bottom borders on table cells. Applied to table element."
+      "description": "Table with bottom borders only on cells."
     },
     "table-stripped": {
       "category": "tables",
@@ -1715,7 +1715,7 @@
     },
     "table-container": {
       "category": "tables",
-      "description": "Responsive table wrapper with overflow: auto and custom scrollbar.",
+      "description": "Responsive scrollable wrapper for tables. Adds horizontal scroll on overflow.",
       "example": "<div class=\"table-container\"><table>...</table></div>"
     },
     "btn-ghost": {
@@ -1739,9 +1739,8 @@
       "parent": "btn-group"
     },
     "align-center": {
-      "category": "buttons",
-      "description": "Center-align buttons inside btn-group.",
-      "parent": "btn-group"
+      "category": "helpers",
+      "description": "align-items: center with text-align center."
     },
     "fill-width": {
       "category": "buttons",
@@ -1753,7 +1752,6 @@
       "description": "Round the outer corners of a btn-group.",
       "parent": "btn-group"
     },
-
     "unit-role-right": {
       "category": "grid",
       "description": "Float a grid unit to the right."
@@ -1766,7 +1764,6 @@
       "category": "grid",
       "description": "Set display: flex on a unit so children can stretch to fill height."
     },
-
     "code": {
       "category": "helpers",
       "description": "Inline code styling. Prefer the native <code> element instead."
@@ -1810,50 +1807,6 @@
     "shadow-3": {
       "category": "helpers",
       "description": "Large box-shadow. Uses --ply-shadow-3."
-    },
-    "color-black": {
-      "category": "helpers",
-      "description": "Text color: black."
-    },
-    "color-white": {
-      "category": "helpers",
-      "description": "Text color: white."
-    },
-    "color-gray-10": {
-      "category": "helpers",
-      "description": "Text color: black at 10% opacity."
-    },
-    "color-gray-20": {
-      "category": "helpers",
-      "description": "Text color: black at 20% opacity."
-    },
-    "color-gray-30": {
-      "category": "helpers",
-      "description": "Text color: black at 30% opacity."
-    },
-    "color-gray-40": {
-      "category": "helpers",
-      "description": "Text color: black at 40% opacity."
-    },
-    "color-gray-50": {
-      "category": "helpers",
-      "description": "Text color: black at 50% opacity."
-    },
-    "color-gray-60": {
-      "category": "helpers",
-      "description": "Text color: black at 60% opacity."
-    },
-    "color-gray-70": {
-      "category": "helpers",
-      "description": "Text color: black at 70% opacity."
-    },
-    "color-gray-80": {
-      "category": "helpers",
-      "description": "Text color: black at 80% opacity."
-    },
-    "color-gray-90": {
-      "category": "helpers",
-      "description": "Text color: black at 90% opacity."
     },
     "color-white-10": {
       "category": "helpers",
@@ -1955,7 +1908,6 @@
       "category": "helpers",
       "description": "Fade-in animation from opacity 0 to 1."
     },
-
     "fully-centered": {
       "category": "helpers",
       "description": "Flex center on both axes with text-align center."
@@ -1988,10 +1940,6 @@
       "category": "helpers",
       "description": "align-items: baseline."
     },
-    "align-center": {
-      "category": "helpers",
-      "description": "align-items: center with text-align center."
-    },
     "align-middle": {
       "category": "helpers",
       "description": "align-items: center."
@@ -2008,7 +1956,6 @@
       "category": "helpers",
       "description": "align-items: stretch. Alias: fill-height."
     },
-
     "blocks-2": {
       "category": "grid",
       "description": "2-column equal block layout using float.",
@@ -2043,7 +1990,6 @@
       "category": "grid",
       "description": "3-column block layout on mobile."
     },
-
     "cursor-pointer": {
       "category": "helpers",
       "description": "cursor: pointer. Alias: cursor-finger."
@@ -2148,7 +2094,6 @@
       "category": "helpers",
       "description": "cursor: se-resize."
     },
-
     "accordion-title": {
       "category": "helpers",
       "description": "Accordion item header. Clickable to toggle panel visibility."
@@ -2173,12 +2118,10 @@
       "category": "helpers",
       "description": "Open state toggle indicator (minus icon)."
     },
-
     "autocomplete": {
       "category": "forms",
       "description": "Autocomplete dropdown container for form inputs."
     },
-
     "dropdown": {
       "category": "helpers",
       "description": "Positioned absolute dropdown panel. Appears below trigger element."
@@ -2191,7 +2134,6 @@
       "category": "helpers",
       "description": "Upward-pointing caret. Modifier on caret."
     },
-
     "label": {
       "category": "notifications",
       "description": "Inline label/tag. Small, uppercase, bold text with background color."
@@ -2256,7 +2198,6 @@
       "category": "notifications",
       "description": "White badge."
     },
-
     "modal-blur": {
       "category": "helpers",
       "description": "Apply blur effect to background content behind a modal."
@@ -2273,7 +2214,6 @@
       "category": "helpers",
       "description": "Modal close button. Positioned in top-right corner."
     },
-
     "tooltip": {
       "category": "helpers",
       "description": "Tooltip popup. Positioned element for contextual information."
@@ -2298,17 +2238,14 @@
       "category": "helpers",
       "description": "White-themed tooltip."
     },
-
     "loader": {
       "category": "helpers",
       "description": "Spinning loader animation indicator."
     },
-
     "flexible-embed": {
       "category": "helpers",
       "description": "16:9 responsive embed container for videos and iframes."
     },
-
     "filterbox": {
       "category": "forms",
       "description": "Filterable input wrapper with dropdown list."
@@ -2317,7 +2254,6 @@
       "category": "forms",
       "description": "Dropdown list for filterbox results."
     },
-
     "typeahead": {
       "category": "forms",
       "description": "Typeahead/autocomplete wrapper. Alias: livesearch-container."
@@ -2346,7 +2282,6 @@
       "category": "forms",
       "description": "Dropdown results list for multiselect."
     },
-
     "tools-droparea": {
       "category": "forms",
       "description": "Drag-and-drop file upload area with dashed border."
@@ -2355,20 +2290,186 @@
       "category": "forms",
       "description": "Placeholder text inside drag-and-drop upload area."
     },
-
     "navigation-toggle-solid": {
       "category": "navigation",
       "description": "Solid background variant of the mobile navigation toggle button."
     },
-
-    "table-stroked": {
+    "sortable": {
       "category": "tables",
-      "description": "Table with bottom borders only on cells."
+      "description": "Makes a th element show sort direction arrows on hover. Add to th elements.",
+      "example": "<th class=\"sortable\">Name</th>"
     },
-    "table-container": {
+    "sort-asc": {
       "category": "tables",
-      "description": "Responsive scrollable wrapper for tables. Adds horizontal scroll on overflow.",
-      "example": "<div class=\"table-container\"><table>...</table></div>"
+      "description": "Highlights ascending sort arrow on a sortable header.",
+      "example": "<th class=\"sortable sort-asc\">Name</th>"
+    },
+    "sort-desc": {
+      "category": "tables",
+      "description": "Highlights descending sort arrow on a sortable header.",
+      "example": "<th class=\"sortable sort-desc\">Name</th>"
+    },
+    "table-filter": {
+      "category": "tables",
+      "description": "Add alongside input-groups to auto-size selects for table filter bars.",
+      "example": "<div class=\"input-groups table-filter\">...</div>"
+    },
+    "table-actions": {
+      "category": "tables",
+      "description": "Right-aligned icon button toolbar above a table.",
+      "example": "<div class=\"table-actions\"><button class=\"btn btn-ghost btn-icon\">...</button></div>"
+    },
+    "pagination-solid": {
+      "category": "navigation",
+      "description": "Solid/filled pagination variant with no borders.",
+      "example": "<ul class=\"pagination pagination-solid\">...</ul>"
+    },
+    "pagination-sm": {
+      "category": "navigation",
+      "description": "Compact pagination with smaller padding and font.",
+      "example": "<ul class=\"pagination pagination-sm\">...</ul>"
+    },
+    "pagination-lg": {
+      "category": "navigation",
+      "description": "Spacious pagination with larger padding and font.",
+      "example": "<ul class=\"pagination pagination-lg\">...</ul>"
+    },
+    "pagination-info": {
+      "category": "navigation",
+      "description": "Summary text displayed beside pagination controls.",
+      "example": "<span class=\"pagination-info\">Showing 1-10 of 48</span>"
+    },
+    "steps": {
+      "category": "forms",
+      "description": "Horizontal step indicator container. Use with ol element.",
+      "example": "<ol class=\"steps\"><li class=\"step\">...</li></ol>"
+    },
+    "step": {
+      "category": "forms",
+      "description": "Individual step item inside steps container. Auto-numbered via CSS counter.",
+      "example": "<li class=\"step\"><span class=\"step-label\">Account</span></li>"
+    },
+    "steps-vertical": {
+      "category": "forms",
+      "description": "Vertical step layout modifier for steps container.",
+      "example": "<ol class=\"steps steps-vertical\">...</ol>"
+    },
+    "steps-sm": {
+      "category": "forms",
+      "description": "Smaller step circles and text.",
+      "example": "<ol class=\"steps steps-sm\">...</ol>"
+    },
+    "step-label": {
+      "category": "forms",
+      "description": "Step title text inside a step.",
+      "parent": "step"
+    },
+    "step-desc": {
+      "category": "forms",
+      "description": "Step description text below the label.",
+      "parent": "step"
+    },
+    "step-content": {
+      "category": "forms",
+      "description": "Wrapper for label and desc in vertical steps.",
+      "parent": "step"
+    },
+    "step-panel": {
+      "category": "forms",
+      "description": "Form content section, hidden by default. Add active class to show.",
+      "example": "<div class=\"step-panel active\">...</div>"
+    },
+    "step-nav": {
+      "category": "forms",
+      "description": "Back/Next button bar with top border for multi-step forms.",
+      "example": "<div class=\"step-nav\"><button class=\"btn\">Back</button><button class=\"btn btn-blue\">Next</button></div>"
+    },
+    "dialog-sm": {
+      "category": "dialogs",
+      "description": "Small dialog with 24rem max-width.",
+      "example": "<dialog class=\"dialog-sm\">...</dialog>"
+    },
+    "dialog-lg": {
+      "category": "dialogs",
+      "description": "Large dialog with 48rem max-width.",
+      "example": "<dialog class=\"dialog-lg\">...</dialog>"
+    },
+    "dialog-full": {
+      "category": "dialogs",
+      "description": "Full viewport dialog.",
+      "example": "<dialog class=\"dialog-full\">...</dialog>"
+    },
+    "dialog-header": {
+      "category": "dialogs",
+      "description": "Flex header with title and close button for dialog.",
+      "parent": "dialog"
+    },
+    "dialog-body": {
+      "category": "dialogs",
+      "description": "Padded content area for dialog.",
+      "parent": "dialog"
+    },
+    "dialog-footer": {
+      "category": "dialogs",
+      "description": "Right-aligned action button bar for dialog.",
+      "parent": "dialog"
+    },
+    "dialog-close": {
+      "category": "dialogs",
+      "description": "Styled close button for dialog header.",
+      "parent": "dialog"
+    },
+    "dialog-confirm": {
+      "category": "dialogs",
+      "description": "Compact centered confirmation dialog pattern.",
+      "example": "<dialog class=\"dialog-confirm\">...</dialog>"
+    },
+    "dialog-scroll": {
+      "category": "dialogs",
+      "description": "Scrollable body with pinned header and footer.",
+      "example": "<dialog class=\"dialog-scroll\">...</dialog>"
+    },
+    "dialog-layer-1": {
+      "category": "dialogs",
+      "description": "Z-index layer 1 for stacked dialogs (z-index: 100)."
+    },
+    "dialog-layer-2": {
+      "category": "dialogs",
+      "description": "Z-index layer 2 for stacked dialogs (z-index: 110, lighter backdrop)."
+    },
+    "dialog-layer-3": {
+      "category": "dialogs",
+      "description": "Z-index layer 3 for stacked dialogs (z-index: 120, lightest backdrop)."
+    },
+    "no-rtl": {
+      "category": "rtl",
+      "description": "Opt out of RTL mirroring for specific elements inside dir=rtl containers.",
+      "example": "<pre class=\"no-rtl\"><code>LTR content</code></pre>"
+    },
+    "margin-inline-start": {
+      "category": "rtl",
+      "description": "Margin on the start side (left in LTR, right in RTL).",
+      "example": "<div class=\"margin-inline-start\">...</div>"
+    },
+    "margin-inline-end": {
+      "category": "rtl",
+      "description": "Margin on the end side (right in LTR, left in RTL)."
+    },
+    "padding-inline-start": {
+      "category": "rtl",
+      "description": "Padding on the start side (left in LTR, right in RTL)."
+    },
+    "padding-inline-end": {
+      "category": "rtl",
+      "description": "Padding on the end side (right in LTR, left in RTL)."
+    },
+    "border-inline-start": {
+      "category": "rtl",
+      "description": "Border on the start side (left in LTR, right in RTL)."
+    },
+    "border-inline-end": {
+      "category": "rtl",
+      "description": "Border on the end side (right in LTR, left in RTL)."
     }
   },
   "customProperties": {
@@ -2472,7 +2573,7 @@
     "details": {
       "file": "_reset.scss",
       "styling": "Border, border-radius, padding. Summary gets cursor: pointer, font-weight: 600. Rotation arrow on open state.",
-      "tip": "Use for collapsible content. No classes needed \u2014 just <details><summary>Title</summary>Content</details>."
+      "tip": "Use for collapsible content. No classes needed — just <details><summary>Title</summary>Content</details>."
     },
     "table": {
       "file": "_typography.scss, _tables.scss",
