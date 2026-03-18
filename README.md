@@ -2,7 +2,7 @@
 
 A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint.
 
-**~21KB gzipped. No JavaScript. No build step. One `<link>` tag.**
+**~20KB gzipped. No JavaScript. No build step. One `<link>` tag.**
 
 ## Install
 
@@ -37,7 +37,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 - **Start semantic** — ply automatically styles `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, and more. Start with what HTML gives you, then reach for classes when you need them.
 - **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
 - **Accessible by default** — `:focus-visible` outlines on all interactive elements (including `<summary>` and legacy components), `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast in both light and dark themes. Published [VPAT 2.5](https://plycss.com/docs/vpat) documenting conformance against all WCAG 2.1 Level A and AA criteria.
-- **Small footprint** — ~21KB gzipped (full), ~17KB (core). No JavaScript runtime, no build step, no tree-shaking.
+- **Small footprint** — ~20KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step, no tree-shaking.
 - **Ratio-based grid** — think in percentages, not arbitrary columns. `unit-50` is 50%, `unit-33` is 33%. Responsive prefixes: `tablet-unit-*`, `phone-unit-*`.
 - **Custom theming** — override `--ply-*` CSS custom properties to create any theme. Light and dark modes built in.
 
@@ -59,7 +59,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
         <p>A two-column layout. Stacks on tablet and below.</p>
       </div>
       <div class="unit-50 tablet-unit-100">
-        <button class="btn btn-blue">Get Started</button>
+        <button class="btn btn-primary">Get Started</button>
       </div>
     </div>
   </div>
@@ -92,17 +92,20 @@ To force a mode:
 Override `--ply-*` CSS custom properties to create any theme:
 
 ```css
-[data-theme="brand"] {
-  --ply-bg-body: #fefce8;
-  --ply-color-body: #1a1a1a;
-  --ply-color-link: #b45309;
-  --ply-btn-default-bg: #b45309;
+[data-theme="warm"] {
+  --ply-bg-body: #faf5f0;
+  --ply-color-body: #1c1917;
+  --ply-color-headings: #44240e;
+  --ply-btn-default-bg: #92400e;   /* Primary button + links */
+  --ply-btn-secondary-bg: #78350f; /* Secondary button */
+  --ply-font-body: Palatino, Georgia, serif;
+  --ply-font-heading: Palatino, Georgia, serif;
   /* ... */
 }
 ```
 
 ```html
-<html data-theme="brand">
+<html data-theme="warm">
 ```
 
 See `snippets/custom-theme.html` for a full working example.

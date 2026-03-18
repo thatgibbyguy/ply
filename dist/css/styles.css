@@ -204,8 +204,9 @@
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
   --ply-btn-default-bg: #78a9ff;
-  --ply-btn-secondary-bg: #6f6f6f;
+  --ply-btn-secondary-bg: #a8a8a8;
   --ply-btn-default-color: #161616;
+  --ply-btn-secondary-color: #161616;
   --ply-nav-bg: #161616;
   --ply-nav-color: #f4f4f4;
   --ply-nav-border: #f4f4f4;
@@ -5714,22 +5715,23 @@ button.btn-white.btn-outline.btn-active {
 
 .tools-message-blue,
 .message-blue {
-  background: #2575ed;
+  background: var(--ply-bg-blue);
 }
 
 .tools-message-red,
 .message-red {
-  background: #de2c3b;
+  background: var(--ply-bg-red);
 }
 
 .tools-message-yellow,
 .message-yellow {
-  background: #ffc800;
+  background: var(--ply-bg-yellow);
+  color: #0f0f0f;
 }
 
 .tools-message-green,
 .message-green {
-  background: #2c9f42;
+  background: var(--ply-bg-green);
 }
 
 @media (prefers-color-scheme: dark) {

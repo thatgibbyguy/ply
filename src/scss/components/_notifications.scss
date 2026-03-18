@@ -212,22 +212,23 @@
 
 .tools-message-blue,
 .message-blue {
-  background: colors.$color-blue;
+  background: var(--ply-bg-blue);
 }
 
 .tools-message-red,
 .message-red {
-  background: colors.$color-red;
+  background: var(--ply-bg-red);
 }
 
 .tools-message-yellow,
 .message-yellow {
-  background: colors.$color-yellow;
+  background: var(--ply-bg-yellow);
+  color: colors.$color-black;
 }
 
 .tools-message-green,
 .message-green {
-  background: colors.$color-green;
+  background: var(--ply-bg-green);
 }
 
 // Alerts — dark mode uses muted/desaturated backgrounds
