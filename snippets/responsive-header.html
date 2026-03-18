@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header — ply</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+  <style>
+    /* Hamburger toggle — only needed for the <details> mobile menu */
+    nav.navbar details > ul {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: var(--ply-bg-surface);
+      border-bottom: 1px solid var(--ply-border-color);
+      padding: 0.5rem 0;
+      z-index: 99;
+    }
+    nav.navbar details > ul li {
+      display: block;
+    }
+    nav.navbar details > ul li a {
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+    nav.navbar details summary {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      list-style: none;
+    }
+    nav.navbar details summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Skip link — first focusable element -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Sticky responsive header -->
+  <header class="sticky" style="top: 0; z-index: 100;">
+    <nav class="navbar" aria-label="Main navigation" style="position: relative;">
+      <!-- Desktop nav — hidden on mobile -->
+      <ul class="phone-hide">
+        <li class="active"><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <!-- Mobile hamburger — hidden on tablet and desktop -->
+      <details class="tablet-hide desktop-hide">
+        <summary aria-label="Menu">&#9776; Menu</summary>
+        <ul>
+          <li class="active"><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="main">
+    <div class="units-container">
+      <h1>Responsive Header Demo</h1>
+      <p>Resize the browser to see the navbar collapse into a hamburger menu on small screens. The header stays sticky on scroll.</p>
+
+      <h2>How It Works</h2>
+      <ul>
+        <li><strong>Desktop (≥ 768px):</strong> Standard horizontal navbar with ply's default styling.</li>
+        <li><strong>Mobile (≤ 767px):</strong> A <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> element acts as a CSS-only hamburger toggle. No JavaScript needed.</li>
+        <li><strong>Sticky:</strong> The <code>sticky</code> class with <code>top: 0</code> keeps the header pinned on scroll.</li>
+        <li><strong>Accessible:</strong> <code>&lt;details&gt;</code> is natively keyboard-accessible (Enter/Space toggles). Skip link is provided. <code>aria-current="page"</code> marks the active page.</li>
+      </ul>
+
+      <!-- Spacer content to demonstrate sticky behavior -->
+      <div class="units-row margin-top-extra">
+        <div class="unit-50 tablet-unit-100">
+          <div class="border border-radius padding">
+            <h3>Feature One</h3>
+            <p>Scroll down to see the sticky header in action. The navigation stays visible at the top of the viewport.</p>
+          </div>
+        </div>
+        <div class="unit-50 tablet-unit-100">
+          <div class="border border-radius padding">
+            <h3>Feature Two</h3>
+            <p>The mobile menu uses native HTML disclosure — no JavaScript framework required, works with ply out of the box.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 120vh;"></div>
+      <p>End of page.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -148,887 +148,9 @@ document.documentElement.dataset.theme =
 
 ---
 
-## Class Reference
+## Class Reference — See ply-classes.json
 
-### Grid
-
-ply uses a **ratio-based flexbox grid**. Units are defined by percentage width.
-
-| Class | Width |
-|-------|-------|
-| `unit-100` | 100% |
-| `unit-90` | 90% |
-| `unit-80` | 80% |
-| `unit-75` | 75% |
-| `unit-70` | 70% |
-| `unit-66` | 66.6% |
-| `unit-65` | 65% |
-| `unit-60` | 60% |
-| `unit-50` | 50% |
-| `unit-40` | 40% |
-| `unit-35` | 35% |
-| `unit-33` | 33.3% |
-| `unit-30` | 30% |
-| `unit-25` | 25% |
-| `unit-20` | 20% |
-| `unit-10` | 10% |
-| `unit-auto` | auto |
-
-**Container:** `units-container` — max-width 1200px, centered. Use `units-container fill-width` for full-width.
-
-**Row:** `units-row` — flex row container. **All unit-\* classes MUST be direct children of units-row.**
-
-```html
-<div class="units-container">
-  <div class="units-row">
-    <div class="unit-25">Sidebar</div>
-    <div class="unit-75">Content</div>
-  </div>
-</div>
-```
-
-#### Responsive Prefixes
-
-Apply at specific breakpoints (all override the base `unit-*`):
-
-| Prefix | Breakpoint |
-|--------|-----------|
-| `x-large-screen-unit-*` | ≥ 1800px |
-| `large-screen-unit-*` | ≥ 1400px |
-| `small-desktop-unit-*` | ≤ 1024px |
-| `tablet-unit-*` | ≤ 767px |
-| `large-phone-unit-*` | ≤ 650px |
-| `phone-unit-*` | ≤ 480px |
-| `forever-unit-*` | Never collapses |
-
-```html
-<div class="units-row">
-  <div class="unit-25 tablet-unit-100">Sidebar (full-width on tablet)</div>
-  <div class="unit-75 tablet-unit-100">Content (full-width on tablet)</div>
-</div>
-```
-
-#### Nesting
-
-`units-row` **CAN be nested** inside units for complex multi-breakpoint layouts:
-
-```html
-<div class="units-row">
-  <div class="unit-50">
-    <div class="units-row">
-      <div class="unit-50">Quarter A</div>
-      <div class="unit-50">Quarter B</div>
-    </div>
-  </div>
-  <div class="unit-50">Half</div>
-</div>
-```
-
-#### Row Modifiers
-
-| Class | Effect |
-|-------|--------|
-| `reverse-direction` | Reverse row order |
-| `split` | Remove gutters |
-| `centered-content` | Center children horizontally |
-| `stacked` | Remove bottom margin |
-| `equal-height` | Stretch all cards/children to the same height |
-
-#### Unit Modifiers
-
-| Class | Effect |
-|-------|--------|
-| `centered` / `unit-centered` | Center unit with auto margins |
-| `unit-push-*` | Offset unit with margin-left |
-| `fill-height` | 100% height |
-| `fill-width` | 100% width |
-
----
-
-### Buttons
-
-```html
-<button class="btn">Default</button>
-<button class="btn btn-blue">Blue</button>
-<button class="btn btn-outline">Outline</button>
-```
-
-#### Colors
-
-| Class | Color |
-|-------|-------|
-| `btn-blue` | Blue (primary) |
-| `btn-red` | Red (danger) |
-| `btn-green` | Green (success) |
-| `btn-yellow` | Yellow (warning) |
-| `btn-black` | Black |
-| `btn-white` | White |
-
-#### Sizes
-
-| Class | Alias | Size |
-|-------|-------|------|
-| `btn-big` | `btn-lg` | Large |
-| *(default)* | | Normal |
-| `btn-small` | `btn-sm` | Small |
-| `btn-smaller` | `btn-xs` | Extra small |
-
-#### Variants
-
-| Class | Effect |
-|-------|--------|
-| `btn-outline` | Border only, transparent background |
-| `btn-outline bold` | Thicker border outline |
-| `btn-active` | Pressed/active state |
-| `btn-disabled` / `btn[disabled]` | Disabled state |
-| `btn-straight` / `btn-square` | No border-radius |
-
-#### Button Groups
-
-```html
-<div class="btn-group">
-  <button class="btn btn-blue">Save</button>
-  <button class="btn">Cancel</button>
-</div>
-```
-
-Modifiers: `align-right`, `align-left`, `align-center`, `fill-width`, `rounded`
-
----
-
-### Forms
-
-Wrap in `.form` to enable ply form styling:
-
-```html
-<form class="form">
-  <label>
-    Email
-    <input type="email" placeholder="you@example.com">
-  </label>
-  <label>
-    Message
-    <textarea></textarea>
-  </label>
-  <button class="btn btn-blue" type="submit">Send</button>
-</form>
-```
-
-#### Input Sizes
-
-| Class | Alias | Size |
-|-------|-------|------|
-| `input-big` | `input-lg` | Large |
-| *(default)* | | Normal |
-| `input-small` | `input-sm` | Small |
-| `input-smaller` | `input-xs` | Extra small |
-
-#### Input States
-
-| Class | Meaning |
-|-------|---------|
-| `input-error` | Red border — validation error |
-| `input-success` | Green border — valid |
-| `input-gray` | Gray border — neutral |
-
-#### Input Groups
-
-```html
-<div class="input-groups">
-  <span class="input-prepend">$</span>
-  <input type="text" placeholder="Amount">
-  <span class="input-append">.00</span>
-</div>
-```
-
-A `.btn` inside `.input-append` automatically gets square left corners and zero margin, so no extra `.btn-append` wrapper is needed:
-
-```html
-<div class="input-groups">
-  <input type="text" placeholder="Search...">
-  <span class="input-append"><button class="btn btn-blue">Go</button></span>
-</div>
-```
-
-#### Select
-
-```html
-<form class="form">
-  <select>
-    <option>Choose...</option>
-    <option>Option A</option>
-  </select>
-</form>
-```
-
-Use `select-outlined` for a transparent-background outlined variant.
-
-#### Form Layouts
-
-| Class | Layout |
-|-------|--------|
-| `form-inline` | Inline elements |
-| `form-inline-list` | Inline list items |
-| `form-list` | Stacked list items |
-
-#### Native Date/Time Inputs
-
-Native `<input type="date">`, `<input type="time">`, `<input type="datetime-local">`, and `<input type="month">` are styled automatically inside `.form`. No extra classes needed.
-
-#### Multi-Step Forms
-
-Use `.steps` to create a step indicator for multi-step forms or wizards.
-
-```html
-<div class="steps">
-  <div class="step completed">
-    <span class="step-label">1</span>
-    <span class="step-desc">Account</span>
-  </div>
-  <div class="step active">
-    <span class="step-label">2</span>
-    <span class="step-desc">Profile</span>
-  </div>
-  <div class="step">
-    <span class="step-label">3</span>
-    <span class="step-desc">Confirm</span>
-  </div>
-</div>
-
-<div class="step-panel">
-  <div class="step-content">
-    <!-- Current step form fields -->
-  </div>
-  <div class="step-nav">
-    <button class="btn">Back</button>
-    <button class="btn btn-blue">Next</button>
-  </div>
-</div>
-```
-
-| Class | Effect |
-|-------|--------|
-| `steps` | Horizontal step indicator container |
-| `step` | Individual step |
-| `step active` | Current step (highlighted) |
-| `step completed` | Completed step (checkmark/green) |
-| `step step-error` | Step with error (red) |
-| `step-label` | Step number or icon |
-| `step-desc` | Step description text |
-| `step-content` | Content area for the current step |
-| `step-panel` | Wrapper for step content and navigation |
-| `step-nav` | Navigation buttons (Back/Next) |
-| `steps-vertical` | Vertical layout for the step indicator |
-| `steps-sm` | Smaller step indicators |
-
----
-
-### Navigation
-
-#### Navbar (horizontal)
-
-```html
-<nav class="navbar">
-  <ul>
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-```
-
-Active state: use `class="active"` (or legacy `class="on"`) on the `<li>`.
-
-Alignment: `navbar-centered`, `navbar-left`, `navbar-right`, `navbar-vertical`
-
-##### Border Variants
-
-| Class | Effect |
-|-------|--------|
-| *(default)* | Thin 1px subtle border |
-| `navbar-thick` | Bold 2px border |
-| `navbar-borderless` | No border, active items use background highlight |
-| `navbar-border-blue` | Blue bottom border |
-| `navbar-border-green` | Green bottom border |
-| `navbar-border-red` | Red bottom border |
-| `navbar-border-yellow` | Yellow bottom border |
-
-##### Mobile Overflow
-
-On small screens (≤ 767px), the navbar scrolls horizontally with a hidden scrollbar. Items never wrap to a second line.
-
-| Class | Effect |
-|-------|--------|
-| *(default)* | Horizontal scroll on mobile |
-| `navbar-stack` | Wrap items instead of scrolling |
-
-#### Pills
-
-```html
-<nav class="navbar-pills">
-  <ul>
-    <li class="active"><a href="#">Tab 1</a></li>
-    <li><a href="#">Tab 2</a></li>
-  </ul>
-</nav>
-```
-
-#### Tabs
-
-```html
-<div class="nav-tabs">
-  <ul>
-    <li class="active"><a href="#">Tab 1</a></li>
-    <li><a href="#">Tab 2</a></li>
-  </ul>
-</div>
-```
-
-#### Stacked (vertical)
-
-```html
-<nav class="nav-stacked">
-  <ul>
-    <li class="active"><a href="#">Item 1</a></li>
-    <li><a href="#">Item 2</a></li>
-  </ul>
-</nav>
-```
-
-#### Breadcrumbs
-
-```html
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Products</a></li>
-    <li class="active"><span>Widget</span></li>
-  </ul>
-</nav>
-```
-
-#### Pagination
-
-Default style is outlined with rounded corners. The active page uses a solid fill.
-
-```html
-<ul class="pagination">
-  <li class="disabled"><a href="#" aria-disabled="true">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li class="active"><a href="#" aria-current="page">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>
-<span class="pagination-info">Page 2 of 10</span>
-```
-
-| Class | Effect |
-|-------|--------|
-| *(default)* | Outlined buttons with rounded corners |
-| `pagination-solid` | Solid filled background on all items |
-| `pagination-sm` | Smaller pagination |
-| `pagination-lg` | Larger pagination |
-| `disabled` | Muted color, no pointer events (use on `<li>` for prev/next arrows) |
-| `pagination-info` | Helper text for "Page X of Y" display |
-
-Use `aria-current="page"` on the active link and `aria-disabled="true"` on disabled arrows.
-
----
-
-### Notifications / Alerts
-
-```html
-<div class="alert alert-blue">
-  <span class="alert-content">This is an informational message.</span>
-  <button class="alert-dismiss" aria-label="Dismiss"></button>
-</div>
-```
-
-You can also use the original `tools-alert` class names. The `alert` aliases are equivalent.
-
-#### Alert Colors
-
-| Class | Use |
-|-------|-----|
-| `alert` | Default (gray) |
-| `alert-blue` | Info |
-| `alert-red` | Error / danger |
-| `alert-green` | Success |
-| `alert-yellow` | Warning |
-| `alert-black` | Neutral |
-
-#### Alert Variants
-
-| Class | Style |
-|-------|-------|
-| `alert-outline` | Tinted background + full border |
-| `alert-ghost` | Transparent background, border only |
-| `alert-stack` | Stacked column layout for multi-line alerts with buttons |
-
-#### Toast Messages
-
-`tools-message` / `message` — Fixed-position toast (hidden by default, show with JS).
-
----
-
-### Typography
-
-#### Text Size
-
-| Class | Size |
-|-------|------|
-| `text-xs` | 12px |
-| `text-sm` | 14px |
-| `text-base` | 16px |
-| `text-lg` | 18px |
-| `text-xl` | 24px |
-| `text-2xl` | 30px |
-| `text-3xl` | 36px |
-| `text-4xl` | 48px |
-| `text-5xl` | 60px |
-
-#### Font Weight
-
-`font-normal` (400), `font-medium` (500), `font-semibold` (600), `font-bold` (700)
-
-Also: `bold`, `italic`, `uppercase`, `nowrap`
-
-#### Line Height
-
-`leading-tight` (1.25), `leading-snug` (1.375), `leading-normal` (1.5), `leading-relaxed` (1.625)
-
-#### Text Alignment
-
-`text-centered` / `text-center`, `text-right`, `text-left`
-
-#### Heading Classes
-
-`.h1` through `.h6` — Apply heading styles to any element.
-
----
-
-### Helpers
-
-#### Position
-`fixed`, `absolute`, `relative`, `static`, `sticky`
-
-#### Display
-`display-flex`, `display-block`, `display-inline-block`, `display-grid`, `display-none`, `display-table`, `display-table-cell`
-
-#### Spacing (margin)
-
-| Class | Effect |
-|-------|--------|
-| `margin-xs` | All sides (0.25rem) |
-| `margin-sm` | All sides (0.5rem) |
-| `margin` | All sides (0.75rem) |
-| `margin-lg` | All sides (1.5rem) |
-| `margin-xl` | All sides (2rem) |
-| `margin-top` | Top margin |
-| `margin-bottom` | Bottom margin |
-| `margin-left` | Left margin |
-| `margin-right` | Right margin |
-| `margin-top-extra` | Double top margin |
-| `margin-bottom-extra` | Double bottom margin |
-| `no-margin` | Remove all margins |
-| `no-top-margin` | Remove top margin |
-| `no-bottom-margin` | Remove bottom margin |
-
-All scale sizes have directional variants: `margin-top-xs`, `margin-top-sm`, `margin-top-lg`, `margin-top-xl` (and `-bottom`, `-left`, `-right`).
-
-#### Spacing (padding)
-
-| Class | Effect |
-|-------|--------|
-| `padding-xs` | All sides (0.25rem) |
-| `padding-sm` | All sides (0.5rem) |
-| `padding` | All sides (0.75rem) |
-| `padding-lg` | All sides (1.5rem) |
-| `padding-xl` | All sides (2rem) |
-| `padding-top` | Top padding |
-| `padding-bottom` | Bottom padding |
-| `padding-left` | Left padding |
-| `padding-right` | Right padding |
-| `padding-top-extra` | Double top padding |
-| `no-padding` | Remove all padding |
-| `no-spacing` | Remove margin + padding |
-
-All scale sizes have directional variants: `padding-top-xs`, `padding-top-sm`, `padding-top-lg`, `padding-top-xl` (and `-bottom`, `-left`, `-right`).
-
-#### Borders
-
-`border`, `border-top`, `border-bottom`, `border-left`, `border-right`, `no-border`
-
-#### Width / Height
-
-`width-100` through `width-10` (percentage-based). Responsive: `tablet-width-*`, `phone-width-*`, `small-desktop-width-*`, `large-phone-width-*`
-
-`height-100` through `height-10` (percentage-based)
-
-#### Visibility
-
-| Class | Effect |
-|-------|--------|
-| `hide` | `display: none` |
-| `sr-only` | Visually hidden, accessible to screen readers |
-| `skip-link` | Skip navigation link — visible only on keyboard focus |
-| `hide-on-desktop` | Hidden on desktop, visible on mobile |
-| `hide-on-mobile` | Hidden on mobile |
-
-#### Text Color
-
-| Class | Color |
-|-------|-------|
-| `text-primary` | Body text color (theme-aware) |
-| `text-secondary` | Secondary/subdued text (theme-aware) |
-| `text-tertiary` / `text-muted` | Muted/tertiary text (theme-aware) |
-| `text-inverse` | Inverse text color (theme-aware) |
-| `success` | Green |
-| `error` | Red |
-
-#### Background Color
-
-| Class | Alias | Color |
-|-------|-------|-------|
-| `background-black` | `bg-black` | Black background |
-| `background-white` | `bg-white` | White background |
-
-#### Other
-
-#### Text Wrap
-
-| Class | Effect |
-|-------|--------|
-| `no-orphan` | Prevents orphaned words (`text-wrap: pretty`) |
-| `text-balance` | Balances line lengths for headings (`text-wrap: balance`) |
-
-#### Gap
-
-| Class | Size |
-|-------|------|
-| `gap-xs` | 0.25rem |
-| `gap-sm` | 0.5rem |
-| `gap` | 0.75rem |
-| `gap-lg` | 1.5rem |
-| `gap-xl` | 2rem |
-
-#### Link Reset
-
-| Class | Effect |
-|-------|--------|
-| `no-link-style` | Suppresses link color and underline on all `<a>` inside the container |
-
-#### Glass Background
-
-| Class | Effect |
-|-------|--------|
-| `bg-glass` | Transparent background with backdrop blur. White tint in light mode, dark gray tint in dark mode. Customizable via `--ply-bg-glass`. |
-
-```html
-<!-- Frosted overlay on a colored or image background -->
-<div class="bg-glass border-radius padding">
-  <code>npm install plygrid</code>
-</div>
-```
-
-#### Other
-
-`clearfix`, `flat-list` (no bullets/margin), `circle` (border-radius 100%), `border-radius`, `spinning` (animation), `fade-in`
-
-#### RTL (Right-to-Left) Support
-
-Set `dir="rtl"` on `<html>` or any container element. ply automatically mirrors grid columns, navigation, forms, margins, padding, floats, and text alignment.
-
-```html
-<html lang="ar" dir="rtl">
-```
-
-Add `.no-rtl` to any element that should not be mirrored (e.g., code blocks, LTR-only content).
-
-Logical property helpers for explicit inline-direction spacing:
-
-| Class | Effect |
-|-------|--------|
-| `margin-inline-start` | Margin on the start side (left in LTR, right in RTL) |
-| `margin-inline-end` | Margin on the end side |
-| `padding-inline-start` | Padding on the start side |
-| `padding-inline-end` | Padding on the end side |
-| `border-inline-start` | Border on the start side |
-| `border-inline-end` | Border on the end side |
-| `no-rtl` | Opt out of RTL mirroring on a specific element |
-
----
-
-### Tables
-
-Tables are styled automatically. Just use semantic HTML:
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Jane Doe</td>
-      <td>jane@example.com</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-#### Sort Indicators
-
-Add `sortable` to `<th>` elements to show sort controls. Add `.sort-asc` or `.sort-desc` to indicate current sort direction.
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th class="sortable sort-asc">Name</th>
-      <th class="sortable">Email</th>
-    </tr>
-  </thead>
-  ...
-</table>
-```
-
-| Class | Effect |
-|-------|--------|
-| `sortable` | Shows sort indicator on `<th>`, adds pointer cursor |
-| `sort-asc` | Ascending arrow indicator |
-| `sort-desc` | Descending arrow indicator |
-
-#### Table Filter
-
-Use `.table-filter` with `.input-groups` to add a search/filter bar above a table.
-
-```html
-<div class="table-filter">
-  <div class="input-groups">
-    <input type="text" placeholder="Filter rows...">
-    <span class="input-append"><button class="btn btn-blue">Filter</button></span>
-  </div>
-</div>
-<table>...</table>
-```
-
-#### Table Actions
-
-Use `.table-actions` for inline action buttons (edit, delete, etc.) inside table cells. Buttons render as ghost icon buttons.
-
-```html
-<td>
-  <div class="table-actions">
-    <button class="btn" aria-label="Edit"><i data-feather="edit-2"></i></button>
-    <button class="btn" aria-label="Delete"><i data-feather="trash-2"></i></button>
-  </div>
-</td>
-```
-
----
-
-### Native HTML Elements (styled automatically)
-
-ply styles these elements without needing classes:
-
-- **`<details>/<summary>`** — Styled accordion with arrow indicator
-- **`<dialog>`** — Modal with backdrop, max-width 32rem
-- **`<progress>`** — Styled progress bar
-- **`<meter>`** — Styled meter element
-
-```html
-<details>
-  <summary>Click to expand</summary>
-  <p>Hidden content here.</p>
-</details>
-
-<dialog id="myDialog">
-  <h3>Dialog Title</h3>
-  <p>Dialog content.</p>
-  <button class="btn" onclick="this.closest('dialog').close()">Close</button>
-</dialog>
-```
-
-#### Dialog Patterns
-
-Size, layout, and stacking classes for `<dialog>`:
-
-```html
-<dialog class="dialog-lg">
-  <div class="dialog-header">
-    <h3>Edit Item</h3>
-    <button class="dialog-close" onclick="this.closest('dialog').close()" aria-label="Close">&times;</button>
-  </div>
-  <div class="dialog-body dialog-scroll">
-    <p>Scrollable dialog content...</p>
-  </div>
-  <div class="dialog-footer">
-    <button class="btn" onclick="this.closest('dialog').close()">Cancel</button>
-    <button class="btn btn-blue dialog-confirm">Save</button>
-  </div>
-</dialog>
-```
-
-| Class | Effect |
-|-------|--------|
-| *(default)* | 32rem max-width |
-| `dialog-sm` | Smaller dialog (24rem) |
-| `dialog-lg` | Larger dialog (48rem) |
-| `dialog-full` | Full-screen dialog |
-| `dialog-header` | Header section with title and close button |
-| `dialog-body` | Main content area with padding |
-| `dialog-footer` | Footer with right-aligned actions |
-| `dialog-close` | Positioned close button (top-right) |
-| `dialog-confirm` | Primary action button styling |
-| `dialog-scroll` | Makes body scrollable when content overflows |
-| `dialog-layer-1` | z-index layer 1 (default) |
-| `dialog-layer-2` | z-index layer 2 (stacked dialog) |
-| `dialog-layer-3` | z-index layer 3 (topmost dialog) |
-
----
-
-### Color Palette
-
-Brand colors are **theme-aware** — they automatically shift between light and dark mode to maintain WCAG AA contrast (4.5:1) against the text-inverse color. Each color has 3 levels: level 1 is the primary action color, level 2 is hover/emphasis, level 3 is the strongest.
-
-Use the CSS custom properties (`var(--ply-blue-1)`, etc.) in custom styles to get automatic theme switching.
-
-#### Light Mode Values
-
-| Color | Level 1 | Level 2 | Level 3 |
-|-------|---------|---------|---------|
-| Blue | `#0f62fe` | `#0043ce` | `#002d9c` |
-| Red | `#da1e28` | `#a2191f` | `#750e13` |
-| Green | `#198038` | `#0e6027` | `#044317` |
-| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |
-| Indigo | `#4f46e5` | `#3730a3` | `#312e81` |
-| Purple | `#7c3aed` | `#6d28d9` | `#5b21b6` |
-| Pink | `#be185d` | `#9d174d` | `#831843` |
-| Orange | `#c2410c` | `#9a3412` | `#7c2d12` |
-| Teal | `#0f766e` | `#115e59` | `#134e4a` |
-| Cyan | `#0e7490` | `#155e75` | `#164e63` |
-
-#### Dark Mode Values
-
-| Color | Level 1 | Level 2 | Level 3 |
-|-------|---------|---------|---------|
-| Blue | `#4589ff` | `#78a9ff` | `#a6c8ff` |
-| Red | `#ff8389` | `#fa4d56` | `#da1e28` |
-| Green | `#42be65` | `#6fdc8c` | `#a7f0ba` |
-| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |
-| Indigo | `#818cf8` | `#a5b4fc` | `#c7d2fe` |
-| Purple | `#a78bfa` | `#c4b5fd` | `#ddd6fe` |
-| Pink | `#f472b6` | `#f9a8d4` | `#fbcfe8` |
-| Orange | `#fb923c` | `#fdba74` | `#fed7aa` |
-| Teal | `#2dd4bf` | `#5eead4` | `#99f6e4` |
-| Cyan | `#22d3ee` | `#67e8f9` | `#a5f3fc` |
-
-#### Usage
-
-```css
-/* These automatically adapt to the current theme */
-.my-badge {
-  background: var(--ply-blue-1);
-  color: var(--ply-color-text-inverse);
-}
-```
-
-#### Sass Variables (static, for build-time use)
-
-The full Sass palette is available in `_colors.scss` for build-time use. These do NOT change between themes.
-
-| Name | Base | Dark | Light | Pastel |
-|------|------|------|-------|--------|
-| Blue | `$color-blue` `#2575ed` | `$color-blue-dark` `#1a52a5` | `$color-blue-light` `#92baf6` | `$color-blue-pastel` `#d3e3fb` |
-| Red | `$color-red` `#de2c3b` | `$color-red-dark` `#b2232f` | `$color-red-light` `#ef969d` | `$color-red-pastel` `#f8d5d8` |
-| Green | `$color-green` `#2c9f42` | `$color-green-dark` `#237f35` | `$color-green-light` `#96cfa1` | `$color-green-pastel` `#d5ecd9` |
-| Yellow | `$color-yellow` `#ffc800` | `$color-yellow-dark` `#cca000` | `$color-yellow-light` `#ffe480` | `$color-yellow-pastel` `#fff4cc` |
-| Indigo | `$color-indigo` `#4f46e5` | `$color-indigo-dark` `#3730a3` | `$color-indigo-light` `#a5b4fc` | `$color-indigo-pastel` `#e0e7ff` |
-| Purple | `$color-purple` `#7c3aed` | `$color-purple-dark` `#5b21b6` | `$color-purple-light` `#c4b5fd` | `$color-purple-pastel` `#ede9fe` |
-| Pink | `$color-pink` `#db2777` | `$color-pink-dark` `#9d174d` | `$color-pink-light` `#f9a8d4` | `$color-pink-pastel` `#fce7f3` |
-| Orange | `$color-orange` `#ea580c` | `$color-orange-dark` `#c2410c` | `$color-orange-light` `#fdba74` | `$color-orange-pastel` `#ffedd5` |
-| Teal | `$color-teal` `#0d9488` | `$color-teal-dark` `#0f766e` | `$color-teal-light` `#5eead4` | `$color-teal-pastel` `#ccfbf1` |
-| Cyan | `$color-cyan` `#0891b2` | `$color-cyan-dark` `#0e7490` | `$color-cyan-light` `#67e8f9` | `$color-cyan-pastel` `#cffafe` |
-| Black | `$color-black` `#0f0f0f` | `$color-black-dark` `#000` | `$color-black-light` `#363738` | `$color-black-pastel` `#dadada` |
-| Gray | `$color-gray` `#e0e3e5` | `$color-gray-dark` `#b3b6b7` | `$color-gray-light` `#f0f1f2` | `$color-gray-pastel` `#f7f8f8` |
-
-#### Neutral Scale (Sass)
-
-| Variable | Hex |
-|----------|-----|
-| `$color-neutral-50` | `#fafafa` |
-| `$color-neutral-100` | `#f5f5f5` |
-| `$color-neutral-200` | `#e5e5e5` |
-| `$color-neutral-300` | `#d4d4d4` |
-| `$color-neutral-400` | `#a3a3a3` |
-| `$color-neutral-500` | `#737373` |
-| `$color-neutral-600` | `#525252` |
-| `$color-neutral-700` | `#404040` |
-| `$color-neutral-800` | `#262626` |
-| `$color-neutral-900` | `#171717` |
-
-### CSS Custom Properties
-
-All colors are customizable via CSS custom properties:
-
-```css
-:root {
-  /* Typography */
-  --ply-font-body: /* system font stack */;
-  --ply-font-heading: /* system font stack */;
-  --ply-font-mono: /* monospace stack */;
-
-  /* Backgrounds */
-  --ply-bg-body: #ffffff;
-  --ply-bg-surface: #ffffff;
-  --ply-bg-surface-alt: #f4f4f4;
-  --ply-bg-muted: #e0e0e0;
-
-  /* Text */
-  --ply-color-body: #161616;
-  --ply-color-headings: #161616;
-  --ply-color-secondary: #525252;
-  --ply-color-muted: #767676;
-  --ply-color-placeholder: #a8a8a8;
-  --ply-color-text-inverse: #ffffff;
-
-  /* Borders */
-  --ply-border-color: #e0e0e0;
-  --ply-border-strong: #8d8d8d;
-
-  /* Interactive */
-  --ply-color-link: #0f62fe;
-  --ply-color-link-hover: #0043ce;
-  --ply-color-focus: #0f62fe;
-
-  /* Inputs */
-  --ply-color-input-border: #8d8d8d;
-  --ply-color-input-bg: #f4f4f4;
-
-  /* Buttons */
-  --ply-btn-default-bg: #393939;
-  --ply-btn-default-hover: #4c4c4c;
-  --ply-btn-default-color: (inherits --ply-color-text-inverse; Dark: #f4f4f4);
-
-  /* Navigation */
-  --ply-nav-bg: #ffffff;
-  --ply-nav-color: #161616;
-  --ply-nav-border: #161616;
-  --ply-nav-hover: #e8e8e8;
-  --ply-nav-active-bg: transparent;
-
-  /* Brand palette (swap automatically in dark mode — see Color Palette section) */
-  --ply-blue-1: #0f62fe;    --ply-blue-2: #0043ce;    --ply-blue-3: #002d9c;
-  --ply-red-1: #da1e28;     --ply-red-2: #a2191f;     --ply-red-3: #750e13;
-  --ply-green-1: #198038;   --ply-green-2: #0e6027;   --ply-green-3: #044317;
-  --ply-yellow-1: #f1c21b;  --ply-yellow-2: #d2a106;  --ply-yellow-3: #b28600;
-  /* ... plus indigo, purple, pink, orange, teal, cyan */
-}
-```
+All classes, CSS custom properties, and semantic element styles are documented in **`ply-classes.json`**. Search it for class names, categories, descriptions, and usage examples. The JSON is the source of truth — do not invent class names that aren't in it.
 
 ---
 
@@ -1044,6 +166,59 @@ All colors are customizable via CSS custom properties:
 8. **Add responsive classes for mobile** — At minimum use `tablet-unit-100` to stack on tablets.
 9. **Use CSS custom properties for theming** — All colors, backgrounds, and borders are customizable via `--ply-*` variables. Do not hard-code colors that break dark mode.
 10. **Use single-dash class names** — `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
+
+## Common Patterns
+
+### Responsive Collapsible Header (CSS-Only)
+
+Use `<details>`/`<summary>` as a hamburger toggle for mobile. No JavaScript required. The nav shows inline on desktop and collapses behind a toggle on mobile.
+
+```html
+<header class="sticky" style="top: 0; z-index: 100;">
+  <nav class="navbar" aria-label="Main navigation">
+    <!-- Desktop nav — hidden on mobile -->
+    <ul class="phone-hide">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <!-- Mobile hamburger — hidden on desktop -->
+    <details class="tablet-hide desktop-hide">
+      <summary aria-label="Menu">&#9776; Menu</summary>
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </details>
+  </nav>
+</header>
+```
+
+**How it works:**
+- `sticky` + `top: 0` keeps the header pinned on scroll.
+- `phone-hide` hides the desktop `<ul>` on small screens (≤ 767px).
+- `tablet-hide desktop-hide` shows the `<details>` toggle only on mobile.
+- `<details>`/`<summary>` is natively keyboard-accessible — Enter/Space toggles it, no JS needed.
+- Start mobile-first: design the collapsed state first, then override with wider breakpoints.
+
+**Always include the viewport meta tag** in your `<head>` for responsive behavior:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+See `snippets/responsive-header.html` for a full working example.
+
+### Other Common Patterns
+
+- **Equal-height cards** — Add `equal-height` to `units-row` so all children stretch to the tallest
+- **Gap between flex/grid children** — Use `gap-xs`, `gap-sm`, `gap`, `gap-lg`, `gap-xl` instead of margin hacks
+- **Prevent orphaned words** — Use `no-orphan` on paragraphs, `text-balance` on headings
+- **Card-style links** — Use `no-link-style` on a container to suppress link color/underline on all `<a>` inside
+- **Navbar variants** — Default is a thin border. Use `navbar-thick`, `navbar-borderless`, or `navbar-border-blue/green/red/yellow`
+- **Text color hierarchy** — `text-primary`, `text-secondary`, `text-tertiary` (all theme-aware)
 
 ## Accessibility (WCAG 2.1 AA)
 
@@ -1121,6 +296,152 @@ When generating ply markup, follow these practices to produce Title II compliant
 9. **Pair color with text** — When using `.success` or `.error` classes, include a text label (not just color) to convey meaning.
 10. **Use native elements over ARIA** — Prefer `<button>` over `<div role="button">`, `<dialog>` over `<div role="dialog">`, `<details>` over custom accordion JS. Native elements handle keyboard and ARIA automatically.
 
+## Focus Management & Keyboard Patterns
+
+ply provides `:focus-visible` outlines on all native interactive elements. For custom widgets built with JavaScript, you need to manage focus order, keyboard navigation, and screen reader announcements yourself.
+
+### Focus Order Strategy
+
+1. **Use semantic HTML first** — Native `<button>`, `<a>`, `<input>`, `<select>`, `<details>`, and `<dialog>` are already in the tab order. No extra work needed.
+2. **`tabindex="0"`** — Add to custom interactive elements (e.g., a `<div>` that acts as a button) to include them in the natural tab order. ply's `:focus-visible` outline will apply automatically.
+3. **`tabindex="-1"`** — Use for elements that should receive focus programmatically (e.g., a modal container after opening, an error message after form validation) but should NOT be in the tab order.
+4. **Never use `tabindex` > 0** — It overrides natural DOM order and creates confusing navigation.
+
+```html
+<!-- Native elements — already focusable, no tabindex needed -->
+<button class="btn">Save</button>
+<a href="/settings">Settings</a>
+
+<!-- Custom interactive element — add tabindex="0" -->
+<div role="button" tabindex="0" onclick="doAction()" onkeydown="if(event.key==='Enter'||event.key===' ')doAction()">
+  Custom Action
+</div>
+
+<!-- Programmatic focus target — tabindex="-1" -->
+<div id="error-summary" tabindex="-1" role="alert">
+  Please fix the errors below.
+</div>
+<script>
+  // After form validation fails, move focus to the error summary
+  document.getElementById('error-summary').focus();
+</script>
+```
+
+### Arrow Key Navigation (Roving Tabindex)
+
+For grouped controls like tabs, toolbars, or menu items, use roving tabindex: only one item in the group has `tabindex="0"` (the active one), the rest have `tabindex="-1"`. Arrow keys move focus within the group.
+
+```html
+<!-- Roving tabindex — only the active tab is in the tab order -->
+<div role="tablist" aria-label="Settings">
+  <button role="tab" aria-selected="true" tabindex="0" aria-controls="panel-general" id="tab-general">General</button>
+  <button role="tab" aria-selected="false" tabindex="-1" aria-controls="panel-security" id="tab-security">Security</button>
+  <button role="tab" aria-selected="false" tabindex="-1" aria-controls="panel-notifications" id="tab-notifications">Notifications</button>
+</div>
+<div role="tabpanel" id="panel-general" aria-labelledby="tab-general">
+  <p>General settings content.</p>
+</div>
+```
+
+```js
+// Arrow key handler for roving tabindex
+tablist.addEventListener('keydown', (e) => {
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const current = tabs.indexOf(document.activeElement);
+  let next;
+  if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
+  else if (e.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+  else if (e.key === 'Home') next = 0;
+  else if (e.key === 'End') next = tabs.length - 1;
+  else return;
+  e.preventDefault();
+  tabs[current].setAttribute('tabindex', '-1');
+  tabs[current].setAttribute('aria-selected', 'false');
+  tabs[next].setAttribute('tabindex', '0');
+  tabs[next].setAttribute('aria-selected', 'true');
+  tabs[next].focus();
+  // Show corresponding panel
+  tabs.forEach((tab, i) => {
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = (i !== next);
+  });
+});
+```
+
+### ARIA Attributes Reference
+
+| Attribute | When to use | Example |
+|-----------|-------------|---------|
+| `aria-expanded` | Toggleable content (dropdowns, accordions, hamburger menus) | `<button aria-expanded="false" aria-controls="menu">Menu</button>` |
+| `aria-controls` | Links a trigger to the element it controls | `<button aria-controls="dropdown-1">Options</button>` |
+| `aria-selected` | Active item in tabs, listboxes | `<button role="tab" aria-selected="true">Tab 1</button>` |
+| `aria-current="page"` | Current page in navigation | `<a href="/" aria-current="page">Home</a>` |
+| `aria-live="polite"` | Dynamic content that updates (notifications, status messages) | `<div aria-live="polite">3 results found.</div>` |
+| `aria-live="assertive"` | Urgent announcements (errors) | `<div aria-live="assertive" role="alert">Session expired.</div>` |
+| `role="status"` | Non-urgent status updates | `<div role="status">Saving...</div>` |
+| `aria-label` | Labels for elements without visible text | `<button aria-label="Close">&#215;</button>` |
+| `aria-labelledby` | Points to another element for its label | `<div role="tabpanel" aria-labelledby="tab-1">` |
+| `aria-describedby` | Additional description for an element | `<input aria-describedby="password-hint">` |
+
+### Live Regions for Dynamic Content
+
+When content updates without a page reload (e.g., search results, form validation, notifications), screen readers need to be told about the change.
+
+```html
+<!-- Status message — announced politely after current speech -->
+<div aria-live="polite" role="status" class="sr-only" id="search-status"></div>
+<script>
+  document.getElementById('search-status').textContent = '12 results found.';
+</script>
+
+<!-- Error alert — announced immediately -->
+<div aria-live="assertive" role="alert">
+  Your session has expired. Please log in again.
+</div>
+```
+
+### Fieldset & Legend for Grouped Controls
+
+Group related radio buttons and checkboxes with `<fieldset>` and `<legend>`. This tells screen readers the group label.
+
+```html
+<form class="form">
+  <fieldset>
+    <legend>Notification preferences</legend>
+    <label><input type="checkbox" name="notify" value="email"> Email</label>
+    <label><input type="checkbox" name="notify" value="sms"> SMS</label>
+    <label><input type="checkbox" name="notify" value="push"> Push notification</label>
+  </fieldset>
+  <fieldset>
+    <legend>Frequency</legend>
+    <label><input type="radio" name="freq" value="immediate"> Immediate</label>
+    <label><input type="radio" name="freq" value="daily"> Daily digest</label>
+    <label><input type="radio" name="freq" value="weekly"> Weekly digest</label>
+  </fieldset>
+</form>
+```
+
+### Screen Reader Testing Quick Reference
+
+Test with VoiceOver (macOS) to verify your custom widgets are accessible:
+
+| Action | Shortcut |
+|--------|----------|
+| Turn on/off VoiceOver | Cmd + F5 |
+| Navigate next element | VO + Right Arrow (VO = Ctrl + Option) |
+| Navigate previous element | VO + Left Arrow |
+| Activate (click) element | VO + Space |
+| Read current element | VO + F3 |
+| Open rotor (landmarks, headings, links) | VO + U |
+| Enter/exit groups | VO + Shift + Down/Up |
+
+**What to check:**
+- Every interactive element is reachable with Tab or arrow keys
+- Buttons and links announce their label and role
+- Expanded/collapsed state is announced when toggling (`aria-expanded`)
+- Dynamic content changes are announced (`aria-live`)
+- Form inputs announce their label, required state, and error messages
+- Heading hierarchy is logical (use rotor > Headings to verify)
+
 ## Anti-Patterns
 
 - **DON'T** skip semantic HTML — Before adding `<div class="something">`, check if a semantic element works. ply styles `<nav>`, `<code>`, `<table>`, `<details>`, `<dialog>`, `<blockquote>`, etc. automatically.
@@ -1135,283 +456,24 @@ When generating ply markup, follow these practices to produce Title II compliant
 
 ---
 
-## Copy-Paste Snippets
+## Copy-Paste Snippets — See `snippets/`
 
-### Starter Page
+Ready-to-use HTML examples are in the `snippets/` directory:
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Page</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
-</head>
-<body>
-  <div class="units-container">
-    <h1>Hello, ply</h1>
-    <p>A ratio-based CSS framework.</p>
-    <button class="btn btn-blue">Get Started</button>
-  </div>
-</body>
-</html>
-```
-
-### Two-Column Layout
-
-```html
-<div class="units-container">
-  <div class="units-row">
-    <aside class="unit-25 tablet-unit-100">
-      <nav class="nav-stacked">
-        <ul>
-          <li class="active"><a href="#">Dashboard</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Profile</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="unit-75 tablet-unit-100">
-      <h2>Main Content</h2>
-      <p>Your content goes here.</p>
-    </main>
-  </div>
-</div>
-```
-
-### Card
-
-```html
-<div class="units-row">
-  <div class="unit-33 tablet-unit-100">
-    <div class="border border-radius padding">
-      <h3>Card Title</h3>
-      <p>Card description text goes here.</p>
-      <button class="btn btn-blue btn-sm">Learn More</button>
-    </div>
-  </div>
-</div>
-```
-
-### Contact Form
-
-```html
-<form class="form">
-  <label>
-    Name
-    <input type="text" placeholder="Your name" required>
-  </label>
-  <label>
-    Email
-    <input type="email" placeholder="you@example.com" required>
-  </label>
-  <label>
-    Subject
-    <select>
-      <option value="">Choose a topic...</option>
-      <option>General Inquiry</option>
-      <option>Support</option>
-      <option>Feedback</option>
-    </select>
-  </label>
-  <label>
-    Message
-    <textarea rows="4" placeholder="Your message..."></textarea>
-  </label>
-  <button class="btn btn-blue" type="submit">Send Message</button>
-</form>
-```
-
-### Navbar + Page
-
-```html
-<nav class="navbar">
-  <ul>
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-<div class="units-container">
-  <h1>Welcome</h1>
-  <p>Page content below the navbar.</p>
-</div>
-```
-
-### Dashboard
-
-```html
-<nav class="navbar">
-  <ul>
-    <li class="active"><a href="#">Dashboard</a></li>
-    <li><a href="#">Reports</a></li>
-    <li><a href="#">Settings</a></li>
-  </ul>
-</nav>
-<div class="units-container">
-  <div class="units-row">
-    <aside class="unit-20 tablet-unit-100">
-      <nav class="nav-stacked">
-        <ul>
-          <li class="active"><a href="#">Overview</a></li>
-          <li><a href="#">Analytics</a></li>
-          <li><a href="#">Users</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="unit-80 tablet-unit-100">
-      <div class="units-row">
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h4 class="text-sm uppercase">Revenue</h4>
-            <p class="text-3xl font-bold">$12,340</p>
-          </div>
-        </div>
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h4 class="text-sm uppercase">Users</h4>
-            <p class="text-3xl font-bold">1,234</p>
-          </div>
-        </div>
-        <div class="unit-33 tablet-unit-100">
-          <div class="border border-radius padding">
-            <h4 class="text-sm uppercase">Orders</h4>
-            <p class="text-3xl font-bold">567</p>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-</div>
-```
-
-### All Alert Variants
-
-```html
-<div class="alert">Default alert — neutral message.</div>
-<div class="alert alert-blue">
-  <span class="alert-content">Info — something to know about.</span>
-</div>
-<div class="alert alert-green">
-  <span class="alert-content">Success — operation completed.</span>
-</div>
-<div class="alert alert-yellow">
-  <span class="alert-content">Warning — proceed with caution.</span>
-</div>
-<div class="alert alert-red">
-  <span class="alert-content">Error — something went wrong.</span>
-  <button class="alert-dismiss" aria-label="Dismiss"></button>
-</div>
-<div class="alert alert-blue alert-outline">Outlined info alert.</div>
-<div class="alert alert-red alert-ghost">Ghost error alert.</div>
-```
-
-### Data Table
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Jane Cooper</td>
-      <td>jane@example.com</td>
-      <td>Admin</td>
-      <td><span class="success">Active</span></td>
-    </tr>
-    <tr>
-      <td>John Smith</td>
-      <td>john@example.com</td>
-      <td>Editor</td>
-      <td><span class="success">Active</span></td>
-    </tr>
-    <tr>
-      <td>Bob Johnson</td>
-      <td>bob@example.com</td>
-      <td>Viewer</td>
-      <td><span class="error">Inactive</span></td>
-    </tr>
-  </tbody>
-</table>
-```
-
-### Login Page
-
-```html
-<div class="units-container" style="min-height: 100vh; display: flex; align-items: center;">
-  <div class="units-row centered-content" style="width: 100%;">
-    <div class="unit-33 tablet-unit-66 phone-unit-100">
-      <div class="border border-radius padding">
-        <h2 class="text-center">Sign In</h2>
-        <form class="form">
-          <label>
-            Email
-            <input type="email" placeholder="you@example.com" required>
-          </label>
-          <label>
-            Password
-            <input type="password" placeholder="••••••••" required>
-          </label>
-          <button class="btn btn-blue width-100" type="submit">Sign In</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Pricing Cards
-
-```html
-<div class="units-container">
-  <div class="units-row equal-height">
-    <div class="unit-33 tablet-unit-100">
-      <div class="border border-radius padding text-center">
-        <h3>Starter</h3>
-        <p class="text-3xl font-bold">$9<span class="text-sm font-normal">/mo</span></p>
-        <ul class="flat-list">
-          <li>5 Projects</li>
-          <li>1 GB Storage</li>
-          <li>Email Support</li>
-        </ul>
-        <button class="btn btn-outline width-100">Choose Starter</button>
-      </div>
-    </div>
-    <div class="unit-33 tablet-unit-100">
-      <div class="border border-radius padding text-center">
-        <h3>Pro</h3>
-        <p class="text-3xl font-bold">$29<span class="text-sm font-normal">/mo</span></p>
-        <ul class="flat-list">
-          <li>25 Projects</li>
-          <li>10 GB Storage</li>
-          <li>Priority Support</li>
-        </ul>
-        <button class="btn btn-blue width-100">Choose Pro</button>
-      </div>
-    </div>
-    <div class="unit-33 tablet-unit-100">
-      <div class="border border-radius padding text-center">
-        <h3>Enterprise</h3>
-        <p class="text-3xl font-bold">$99<span class="text-sm font-normal">/mo</span></p>
-        <ul class="flat-list">
-          <li>Unlimited Projects</li>
-          <li>100 GB Storage</li>
-          <li>24/7 Support</li>
-        </ul>
-        <button class="btn btn-outline width-100">Choose Enterprise</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
+| File | Description |
+|------|-------------|
+| `starter-page.html` | Minimal ply page with CDN link |
+| `two-column-layout.html` | Sidebar + main content |
+| `card.html` | Card with border and button |
+| `contact-form.html` | Styled form with validation |
+| `navbar-page.html` | Navbar + page content |
+| `dashboard.html` | Dashboard with stats cards |
+| `notifications.html` | Alert variants |
+| `data-table.html` | Styled data table |
+| `login-page.html` | Centered login form |
+| `pricing-cards.html` | Pricing tier cards |
+| `custom-theme.html` | Custom theme example |
+| `responsive-header.html` | CSS-only collapsible responsive header |
 
 ---
 
@@ -1423,4 +485,3 @@ When generating ply markup, follow these practices to produce Title II compliant
 | `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
 | `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~6KB |
 | `ply-helpers.min.css` | Helper utilities only | ~4KB |
-

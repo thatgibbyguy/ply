@@ -371,7 +371,7 @@
     },
     "btn": {
       "category": "buttons",
-      "description": "Base button class. Inline-block, centered text, default dark background.",
+      "description": "Base button class. Inline-block, centered text, default dark background. All btn variants include :focus-visible outlines for keyboard accessibility and meet WCAG AA color contrast requirements in both light and dark modes. Use <button> elements (not <a> tags) for actions. Custom color overrides must maintain 4.5:1 contrast for text on the button background.",
       "example": "<button class=\"btn\">Click</button>"
     },
     "btn-blue": {

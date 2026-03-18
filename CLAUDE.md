@@ -140,6 +140,14 @@ When generating markup with ply, always:
 - Add `alt` text to all `<img>` elements
 - Maintain heading hierarchy (h1 > h2 > h3, no skipping levels)
 
+## Custom Widget Accessibility
+
+When building tabs, dropdowns, drag-and-drop, or other custom JS widgets with ply, see the **"Focus Management & Keyboard Patterns"** and **"Custom Widget Accessibility Patterns"** sections in PLY.md for complete ARIA attribute examples, roving tabindex patterns, `aria-live` region usage, and keyboard navigation code.
+
+## Responsive Headers
+
+For CSS-only collapsible navigation (hamburger menu on mobile, inline nav on desktop), see **"Responsive Collapsible Header"** in PLY.md's Navigation section and `snippets/responsive-header.html` for a full working example using `<details>`/`<summary>` — no JavaScript required.
+
 ## Installation
 
 ### npm + Sass (recommended)
