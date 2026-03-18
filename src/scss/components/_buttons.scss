@@ -41,11 +41,11 @@ button.btn {
   &:active,
   &:focus-visible {
     color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
-    background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%);
+    background: var(--ply-btn-secondary-bg-hover, #303030);
   }
 
   &:active {
-    background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%);
+    background: var(--ply-btn-secondary-bg-active, #2b2b2b);
   }
 
   &:hover {
@@ -115,8 +115,8 @@ button.btn-primary {
   &:focus-visible {
     color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
   }
-  &:hover { background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 15%); }
-  &:active { background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 25%); }
+  &:hover { background: var(--ply-btn-default-bg-hover, #0347c6); }
+  &:active { background: var(--ply-btn-default-bg-active, #023eaf); }
 }
 
 // Secondary — themed via --ply-btn-secondary-bg (dark gray by default)
@@ -133,8 +133,8 @@ button.btn-secondary {
   &:focus-visible {
     color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
   }
-  &:hover { background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%); }
-  &:active { background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%); }
+  &:hover { background: var(--ply-btn-secondary-bg-hover, #303030); }
+  &:active { background: var(--ply-btn-secondary-bg-active, #2b2b2b); }
 }
 
 .btn-outline,

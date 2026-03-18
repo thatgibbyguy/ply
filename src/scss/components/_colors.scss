@@ -7,6 +7,20 @@ $color-body: #222;
 $color-headings: #000;
 $border-color: #ccc;
 
+// Button base colors and pre-computed hover/active states (Sass build-time)
+$btn-primary-light: #0353e9;
+$btn-primary-light-hover: #0347c6;
+$btn-primary-light-active: #023eaf;
+$btn-secondary-light: #393939;
+$btn-secondary-light-hover: #303030;
+$btn-secondary-light-active: #2b2b2b;
+$btn-primary-dark: #4589ff;
+$btn-primary-dark-hover: #619bff;
+$btn-primary-dark-active: #73a6ff;
+$btn-secondary-dark: #a8a8a8;
+$btn-secondary-dark-hover: #b5b5b5;
+$btn-secondary-dark-active: #bebebe;
+
 // CSS Custom Properties for theming (light/dark)
 // Inspired by IBM Carbon Design System color tokens
 
@@ -32,7 +46,7 @@ $border-color: #ccc;
 
   // Interactive
   --ply-color-link: var(--ply-btn-default-bg);
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
+  --ply-color-link-hover: #{$btn-primary-light-hover};
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -50,8 +64,12 @@ $border-color: #ccc;
   --ply-color-table-hovered: #e8e8e8;
 
   // Buttons
-  --ply-btn-default-bg: #0353e9;
-  --ply-btn-secondary-bg: #393939;
+  --ply-btn-default-bg: #{$btn-primary-light};
+  --ply-btn-default-bg-hover: #{$btn-primary-light-hover};
+  --ply-btn-default-bg-active: #{$btn-primary-light-active};
+  --ply-btn-secondary-bg: #{$btn-secondary-light};
+  --ply-btn-secondary-bg-hover: #{$btn-secondary-light-hover};
+  --ply-btn-secondary-bg-active: #{$btn-secondary-light-active};
 
   // Navigation
   --ply-nav-bg: #ffffff;
@@ -147,7 +165,7 @@ $border-color: #ccc;
 
     // Interactive
     --ply-color-link: var(--ply-btn-default-bg);
-    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+    --ply-color-link-hover: #{$btn-primary-dark-hover};
     --ply-color-focus: #0f62fe;
 
     // Fields
@@ -165,8 +183,12 @@ $border-color: #ccc;
     --ply-color-table-hovered: #353535;
 
     // Buttons
-    --ply-btn-default-bg: #4589ff;
-    --ply-btn-secondary-bg: #a8a8a8;
+    --ply-btn-default-bg: #{$btn-primary-dark};
+    --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
+    --ply-btn-default-bg-active: #{$btn-primary-dark-active};
+    --ply-btn-secondary-bg: #{$btn-secondary-dark};
+    --ply-btn-secondary-bg-hover: #{$btn-secondary-dark-hover};
+    --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
     --ply-btn-default-color: #161616;
     --ply-btn-secondary-color: #161616;
 
@@ -258,7 +280,7 @@ $border-color: #ccc;
 
   // Interactive
   --ply-color-link: var(--ply-btn-default-bg);
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+  --ply-color-link-hover: #{$btn-primary-dark-hover};
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -276,8 +298,12 @@ $border-color: #ccc;
   --ply-color-table-hovered: #353535;
 
   // Buttons
-  --ply-btn-default-bg: #4589ff;
-  --ply-btn-secondary-bg: #a8a8a8;
+  --ply-btn-default-bg: #{$btn-primary-dark};
+  --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
+  --ply-btn-default-bg-active: #{$btn-primary-dark-active};
+  --ply-btn-secondary-bg: #{$btn-secondary-dark};
+  --ply-btn-secondary-bg-hover: #{$btn-secondary-dark-hover};
+  --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
   --ply-btn-default-color: #161616;
   --ply-btn-secondary-color: #161616;
 

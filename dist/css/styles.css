@@ -21,7 +21,7 @@
   --ply-border-color: #e0e0e0;
   --ply-border-strong: #8d8d8d;
   --ply-color-link: var(--ply-btn-default-bg);
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
+  --ply-color-link-hover: #0347c6;
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #f4f4f4;
   --ply-color-input-border: #8d8d8d;
@@ -32,7 +32,11 @@
   --ply-color-table-stripped: #f4f4f4;
   --ply-color-table-hovered: #e8e8e8;
   --ply-btn-default-bg: #0353e9;
+  --ply-btn-default-bg-hover: #0347c6;
+  --ply-btn-default-bg-active: #023eaf;
   --ply-btn-secondary-bg: #393939;
+  --ply-btn-secondary-bg-hover: #303030;
+  --ply-btn-secondary-bg-active: #2b2b2b;
   --ply-nav-bg: #ffffff;
   --ply-nav-color: #161616;
   --ply-nav-border: #161616;
@@ -108,7 +112,7 @@
     --ply-border-color: #393939;
     --ply-border-strong: #6f6f6f;
     --ply-color-link: var(--ply-btn-default-bg);
-    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+    --ply-color-link-hover: #619bff;
     --ply-color-focus: #0f62fe;
     --ply-color-field-bg: #262626;
     --ply-color-input-border: #6f6f6f;
@@ -119,7 +123,11 @@
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
     --ply-btn-default-bg: #4589ff;
+    --ply-btn-default-bg-hover: #619bff;
+    --ply-btn-default-bg-active: #73a6ff;
     --ply-btn-secondary-bg: #a8a8a8;
+    --ply-btn-secondary-bg-hover: #b5b5b5;
+    --ply-btn-secondary-bg-active: #bebebe;
     --ply-btn-default-color: #161616;
     --ply-btn-secondary-color: #161616;
     --ply-nav-bg: #161616;
@@ -193,7 +201,7 @@
   --ply-border-color: #393939;
   --ply-border-strong: #6f6f6f;
   --ply-color-link: var(--ply-btn-default-bg);
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+  --ply-color-link-hover: #619bff;
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #262626;
   --ply-color-input-border: #6f6f6f;
@@ -204,7 +212,11 @@
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
   --ply-btn-default-bg: #4589ff;
+  --ply-btn-default-bg-hover: #619bff;
+  --ply-btn-default-bg-active: #73a6ff;
   --ply-btn-secondary-bg: #a8a8a8;
+  --ply-btn-secondary-bg-hover: #b5b5b5;
+  --ply-btn-secondary-bg-active: #bebebe;
   --ply-btn-default-color: #161616;
   --ply-btn-secondary-color: #161616;
   --ply-nav-bg: #161616;
@@ -4580,14 +4592,14 @@ button.btn:hover,
 button.btn:active,
 button.btn:focus-visible {
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
-  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%);
+  background: var(--ply-btn-secondary-bg-hover, #303030);
 }
 .btn:active,
 input[type=submit].btn:active,
 input[type=button].btn:active,
 input[type=reset].btn:active,
 button.btn:active {
-  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%);
+  background: var(--ply-btn-secondary-bg-active, #2b2b2b);
 }
 .btn:hover,
 input[type=submit].btn:hover,
@@ -4683,14 +4695,14 @@ input[type=submit].btn-primary:hover,
 input[type=button].btn-primary:hover,
 input[type=reset].btn-primary:hover,
 button.btn-primary:hover {
-  background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 15%);
+  background: var(--ply-btn-default-bg-hover, #0347c6);
 }
 .btn-primary:active,
 input[type=submit].btn-primary:active,
 input[type=button].btn-primary:active,
 input[type=reset].btn-primary:active,
 button.btn-primary:active {
-  background: color-mix(in oklch, var(--ply-btn-default-bg, #0353e9), black 25%);
+  background: var(--ply-btn-default-bg-active, #023eaf);
 }
 
 .btn-secondary,
@@ -4721,14 +4733,14 @@ input[type=submit].btn-secondary:hover,
 input[type=button].btn-secondary:hover,
 input[type=reset].btn-secondary:hover,
 button.btn-secondary:hover {
-  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 15%);
+  background: var(--ply-btn-secondary-bg-hover, #303030);
 }
 .btn-secondary:active,
 input[type=submit].btn-secondary:active,
 input[type=button].btn-secondary:active,
 input[type=reset].btn-secondary:active,
 button.btn-secondary:active {
-  background: color-mix(in oklch, var(--ply-btn-secondary-bg, #393939), black 25%);
+  background: var(--ply-btn-secondary-bg-active, #2b2b2b);
 }
 
 .btn-outline,

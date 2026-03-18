@@ -1,7 +1,58 @@
 {
   "version": "1.0.0",
   "framework": "ply",
+  "totalClasses": 521,
+  "uniqueClasses": 470,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
+  "themeMinimum": {
+    "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
+    "variables": [
+      "--ply-bg-body",
+      "--ply-bg-surface",
+      "--ply-bg-muted",
+      "--ply-color-body",
+      "--ply-color-headings",
+      "--ply-color-secondary",
+      "--ply-border-color",
+      "--ply-btn-default-bg",
+      "--ply-btn-secondary-bg",
+      "--ply-nav-bg",
+      "--ply-nav-border"
+    ]
+  },
+  "themeRecommended": {
+    "description": "Override these for a polished theme. Not strictly required but prevents default values from leaking through.",
+    "variables": [
+      "--ply-bg-surface-alt",
+      "--ply-color-muted",
+      "--ply-color-placeholder",
+      "--ply-color-text-inverse",
+      "--ply-border-strong",
+      "--ply-color-focus",
+      "--ply-color-input-bg",
+      "--ply-color-input-border",
+      "--ply-color-code-bg",
+      "--ply-color-code-border",
+      "--ply-color-table-border",
+      "--ply-color-table-stripped",
+      "--ply-nav-color",
+      "--ply-nav-hover",
+      "--ply-layer-0",
+      "--ply-layer-1",
+      "--ply-layer-2",
+      "--ply-layer-3",
+      "--ply-shadow-1",
+      "--ply-shadow-2",
+      "--ply-shadow-3",
+      "--ply-btn-default-color",
+      "--ply-btn-default-bg-hover",
+      "--ply-btn-default-bg-active",
+      "--ply-btn-secondary-color",
+      "--ply-btn-secondary-bg-hover",
+      "--ply-btn-secondary-bg-active",
+      "--ply-color-link-hover"
+    ]
+  },
   "classes": {
     "units-container": {
       "category": "grid",
@@ -342,7 +393,8 @@
     "unit-centered": {
       "category": "grid",
       "description": "Alias for centered. Center a unit with margin: 0 auto.",
-      "parent": "units-row"
+      "parent": "units-row",
+      "aliasOf": "centered"
     },
     "reverse-direction": {
       "category": "grid",
@@ -352,7 +404,8 @@
     "right-to-left": {
       "category": "grid",
       "description": "Alias for reverse-direction. Reverse row direction.",
-      "example": "<div class=\"units-row right-to-left\">...</div>"
+      "example": "<div class=\"units-row right-to-left\">...</div>",
+      "aliasOf": "reverse-direction"
     },
     "split": {
       "category": "grid",
@@ -394,7 +447,7 @@
       "description": "Outlined secondary button. Border and text color from --ply-btn-secondary-bg, transparent background. Fills with secondary color on hover.",
       "example": "<button class=\"btn btn-secondary-outline\">Details</button>"
     },
-"btn-blue": {
+    "btn-blue": {
       "category": "buttons",
       "description": "Static blue button. Hardcoded color, immune to theming. Use for color-coded actions that should not change with custom themes.",
       "example": "<button class=\"btn btn-blue\">Submit</button>"
@@ -437,7 +490,8 @@
     "btn-lg": {
       "category": "buttons",
       "description": "Alias for btn-big. Large button size.",
-      "example": "<button class=\"btn btn-lg\">Large</button>"
+      "example": "<button class=\"btn btn-lg\">Large</button>",
+      "aliasOf": "btn-big"
     },
     "btn-small": {
       "category": "buttons",
@@ -447,7 +501,8 @@
     "btn-sm": {
       "category": "buttons",
       "description": "Alias for btn-small. Small button size.",
-      "example": "<button class=\"btn btn-sm\">Small</button>"
+      "example": "<button class=\"btn btn-sm\">Small</button>",
+      "aliasOf": "btn-small"
     },
     "btn-smaller": {
       "category": "buttons",
@@ -457,7 +512,8 @@
     "btn-xs": {
       "category": "buttons",
       "description": "Alias for btn-smaller. Extra small button size.",
-      "example": "<button class=\"btn btn-xs\">Tiny</button>"
+      "example": "<button class=\"btn btn-xs\">Tiny</button>",
+      "aliasOf": "btn-smaller"
     },
     "btn-active": {
       "category": "buttons",
@@ -542,7 +598,8 @@
     "input-lg": {
       "category": "forms",
       "description": "Alias for input-big. Large input size.",
-      "example": "<input type=\"text\" class=\"input-lg\">"
+      "example": "<input type=\"text\" class=\"input-lg\">",
+      "aliasOf": "input-big"
     },
     "input-small": {
       "category": "forms",
@@ -552,7 +609,8 @@
     "input-sm": {
       "category": "forms",
       "description": "Alias for input-small. Small input size.",
-      "example": "<input type=\"text\" class=\"input-sm\">"
+      "example": "<input type=\"text\" class=\"input-sm\">",
+      "aliasOf": "input-small"
     },
     "input-smaller": {
       "category": "forms",
@@ -562,7 +620,8 @@
     "input-xs": {
       "category": "forms",
       "description": "Alias for input-smaller. Extra small input size.",
-      "example": "<input type=\"text\" class=\"input-xs\">"
+      "example": "<input type=\"text\" class=\"input-xs\">",
+      "aliasOf": "input-smaller"
     },
     "input-search": {
       "category": "forms",
@@ -742,7 +801,8 @@
         "alert-content",
         "alert-dismiss"
       ],
-      "example": "<div class=\"alert alert-blue\"><div class=\"alert-content\">Info message</div></div>"
+      "example": "<div class=\"alert alert-blue\"><div class=\"alert-content\">Info message</div></div>",
+      "aliasOf": "tools-alert"
     },
     "tools-alert-blue": {
       "category": "notifications",
@@ -750,7 +810,8 @@
     },
     "alert-blue": {
       "category": "notifications",
-      "description": "Alias for tools-alert-blue. Blue/info alert variant."
+      "description": "Alias for tools-alert-blue. Blue/info alert variant.",
+      "aliasOf": "tools-alert-blue"
     },
     "tools-alert-red": {
       "category": "notifications",
@@ -758,7 +819,8 @@
     },
     "alert-red": {
       "category": "notifications",
-      "description": "Alias for tools-alert-red. Red/error alert variant."
+      "description": "Alias for tools-alert-red. Red/error alert variant.",
+      "aliasOf": "tools-alert-red"
     },
     "tools-alert-green": {
       "category": "notifications",
@@ -766,7 +828,8 @@
     },
     "alert-green": {
       "category": "notifications",
-      "description": "Alias for tools-alert-green. Green/success alert variant."
+      "description": "Alias for tools-alert-green. Green/success alert variant.",
+      "aliasOf": "tools-alert-green"
     },
     "tools-alert-yellow": {
       "category": "notifications",
@@ -774,7 +837,8 @@
     },
     "alert-yellow": {
       "category": "notifications",
-      "description": "Alias for tools-alert-yellow. Yellow/warning alert variant."
+      "description": "Alias for tools-alert-yellow. Yellow/warning alert variant.",
+      "aliasOf": "tools-alert-yellow"
     },
     "tools-alert-black": {
       "category": "notifications",
@@ -782,7 +846,8 @@
     },
     "alert-black": {
       "category": "notifications",
-      "description": "Alias for tools-alert-black. Black/neutral alert variant."
+      "description": "Alias for tools-alert-black. Black/neutral alert variant.",
+      "aliasOf": "tools-alert-black"
     },
     "tools-alert-outline": {
       "category": "notifications",
@@ -790,7 +855,8 @@
     },
     "alert-outline": {
       "category": "notifications",
-      "description": "Alias for tools-alert-outline. Outlined alert variant."
+      "description": "Alias for tools-alert-outline. Outlined alert variant.",
+      "aliasOf": "tools-alert-outline"
     },
     "tools-alert-ghost": {
       "category": "notifications",
@@ -798,7 +864,8 @@
     },
     "alert-ghost": {
       "category": "notifications",
-      "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant."
+      "description": "Alias for tools-alert-ghost. Ghost/transparent alert variant.",
+      "aliasOf": "tools-alert-ghost"
     },
     "tools-alert-stack": {
       "category": "notifications",
@@ -809,7 +876,8 @@
     "alert-stack": {
       "category": "notifications",
       "description": "Alias for tools-alert-stack. Stacked column layout for alerts.",
-      "parent": "alert"
+      "parent": "alert",
+      "aliasOf": "tools-alert-stack"
     },
     "tools-alert-icon": {
       "category": "notifications",
@@ -819,7 +887,8 @@
     "alert-icon": {
       "category": "notifications",
       "description": "Alias for tools-alert-icon.",
-      "parent": "alert"
+      "parent": "alert",
+      "aliasOf": "tools-alert-icon"
     },
     "tools-alert-content": {
       "category": "notifications",
@@ -829,7 +898,8 @@
     "alert-content": {
       "category": "notifications",
       "description": "Alias for tools-alert-content.",
-      "parent": "alert"
+      "parent": "alert",
+      "aliasOf": "tools-alert-content"
     },
     "tools-alert-dismiss": {
       "category": "notifications",
@@ -839,7 +909,8 @@
     "alert-dismiss": {
       "category": "notifications",
       "description": "Alias for tools-alert-dismiss.",
-      "parent": "alert"
+      "parent": "alert",
+      "aliasOf": "tools-alert-dismiss"
     },
     "tools-message": {
       "category": "notifications",
@@ -849,7 +920,8 @@
     "message": {
       "category": "notifications",
       "description": "Alias for tools-message. Toast message hidden by default.",
-      "example": "<div class=\"message message-green\">Saved!</div>"
+      "example": "<div class=\"message message-green\">Saved!</div>",
+      "aliasOf": "tools-message"
     },
     "tools-message-black": {
       "category": "notifications",
@@ -857,7 +929,8 @@
     },
     "message-black": {
       "category": "notifications",
-      "description": "Alias for tools-message-black."
+      "description": "Alias for tools-message-black.",
+      "aliasOf": "tools-message-black"
     },
     "tools-message-blue": {
       "category": "notifications",
@@ -865,7 +938,8 @@
     },
     "message-blue": {
       "category": "notifications",
-      "description": "Alias for tools-message-blue."
+      "description": "Alias for tools-message-blue.",
+      "aliasOf": "tools-message-blue"
     },
     "tools-message-red": {
       "category": "notifications",
@@ -873,7 +947,8 @@
     },
     "message-red": {
       "category": "notifications",
-      "description": "Alias for tools-message-red."
+      "description": "Alias for tools-message-red.",
+      "aliasOf": "tools-message-red"
     },
     "tools-message-yellow": {
       "category": "notifications",
@@ -881,7 +956,8 @@
     },
     "message-yellow": {
       "category": "notifications",
-      "description": "Alias for tools-message-yellow."
+      "description": "Alias for tools-message-yellow.",
+      "aliasOf": "tools-message-yellow"
     },
     "tools-message-green": {
       "category": "notifications",
@@ -889,7 +965,8 @@
     },
     "message-green": {
       "category": "notifications",
-      "description": "Alias for tools-message-green."
+      "description": "Alias for tools-message-green.",
+      "aliasOf": "tools-message-green"
     },
     "text-xs": {
       "category": "typography",
@@ -1012,7 +1089,8 @@
     },
     "text-center": {
       "category": "typography",
-      "description": "Alias for text-centered. Center-aligned text."
+      "description": "Alias for text-centered. Center-aligned text.",
+      "aliasOf": "text-centered"
     },
     "text-right": {
       "category": "typography",
@@ -1113,11 +1191,13 @@
     },
     "justify-start": {
       "category": "helpers",
-      "description": "justify-content: flex-start. Use with display-flex."
+      "description": "justify-content: flex-start. Use with display-flex.",
+      "aliasOf": "flex-start"
     },
     "justify-end": {
       "category": "helpers",
-      "description": "justify-content: flex-end. Use with display-flex."
+      "description": "justify-content: flex-end. Use with display-flex.",
+      "aliasOf": "flex-end"
     },
     "justify-between": {
       "category": "helpers",
@@ -1285,7 +1365,8 @@
     },
     "padding-xs-top": {
       "category": "helpers",
-      "description": "Add extra-small padding-top (0.25rem). Alias: padding-top-xs."
+      "description": "Add extra-small padding-top (0.25rem). Alias: padding-top-xs.",
+      "aliasOf": "padding-top-xs"
     },
     "padding-top-sm": {
       "category": "helpers",
@@ -1293,7 +1374,8 @@
     },
     "padding-sm-top": {
       "category": "helpers",
-      "description": "Add small padding-top (0.5rem). Alias: padding-top-sm."
+      "description": "Add small padding-top (0.5rem). Alias: padding-top-sm.",
+      "aliasOf": "padding-top-sm"
     },
     "padding-top-extra": {
       "category": "helpers",
@@ -1305,7 +1387,8 @@
     },
     "padding-lg-top": {
       "category": "helpers",
-      "description": "Add large padding-top (1.5rem). Alias: padding-top-lg."
+      "description": "Add large padding-top (1.5rem). Alias: padding-top-lg.",
+      "aliasOf": "padding-top-lg"
     },
     "padding-top-xl": {
       "category": "helpers",
@@ -1313,7 +1396,8 @@
     },
     "padding-xl-top": {
       "category": "helpers",
-      "description": "Add extra-large padding-top (2rem). Alias: padding-top-xl."
+      "description": "Add extra-large padding-top (2rem). Alias: padding-top-xl.",
+      "aliasOf": "padding-top-xl"
     },
     "padding-bottom": {
       "category": "helpers",
@@ -1325,7 +1409,8 @@
     },
     "padding-xs-bottom": {
       "category": "helpers",
-      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-bottom-xs."
+      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-bottom-xs.",
+      "aliasOf": "padding-bottom-xs"
     },
     "padding-bottom-sm": {
       "category": "helpers",
@@ -1333,7 +1418,8 @@
     },
     "padding-sm-bottom": {
       "category": "helpers",
-      "description": "Add small padding-bottom (0.5rem). Alias: padding-bottom-sm."
+      "description": "Add small padding-bottom (0.5rem). Alias: padding-bottom-sm.",
+      "aliasOf": "padding-bottom-sm"
     },
     "padding-bottom-extra": {
       "category": "helpers",
@@ -1345,7 +1431,8 @@
     },
     "padding-lg-bottom": {
       "category": "helpers",
-      "description": "Add large padding-bottom (1.5rem). Alias: padding-bottom-lg."
+      "description": "Add large padding-bottom (1.5rem). Alias: padding-bottom-lg.",
+      "aliasOf": "padding-bottom-lg"
     },
     "padding-bottom-xl": {
       "category": "helpers",
@@ -1353,7 +1440,8 @@
     },
     "padding-xl-bottom": {
       "category": "helpers",
-      "description": "Add extra-large padding-bottom (2rem). Alias: padding-bottom-xl."
+      "description": "Add extra-large padding-bottom (2rem). Alias: padding-bottom-xl.",
+      "aliasOf": "padding-bottom-xl"
     },
     "padding-left": {
       "category": "helpers",
@@ -1365,7 +1453,8 @@
     },
     "padding-xs-left": {
       "category": "helpers",
-      "description": "Add extra-small padding-left (0.25rem). Alias: padding-left-xs."
+      "description": "Add extra-small padding-left (0.25rem). Alias: padding-left-xs.",
+      "aliasOf": "padding-left-xs"
     },
     "padding-left-sm": {
       "category": "helpers",
@@ -1373,7 +1462,8 @@
     },
     "padding-sm-left": {
       "category": "helpers",
-      "description": "Add small padding-left (0.5rem). Alias: padding-left-sm."
+      "description": "Add small padding-left (0.5rem). Alias: padding-left-sm.",
+      "aliasOf": "padding-left-sm"
     },
     "padding-left-extra": {
       "category": "helpers",
@@ -1385,7 +1475,8 @@
     },
     "padding-lg-left": {
       "category": "helpers",
-      "description": "Add large padding-left (1.5rem). Alias: padding-left-lg."
+      "description": "Add large padding-left (1.5rem). Alias: padding-left-lg.",
+      "aliasOf": "padding-left-lg"
     },
     "padding-left-xl": {
       "category": "helpers",
@@ -1393,7 +1484,8 @@
     },
     "padding-xl-left": {
       "category": "helpers",
-      "description": "Add extra-large padding-left (2rem). Alias: padding-left-xl."
+      "description": "Add extra-large padding-left (2rem). Alias: padding-left-xl.",
+      "aliasOf": "padding-left-xl"
     },
     "padding-right": {
       "category": "helpers",
@@ -1405,7 +1497,8 @@
     },
     "padding-xs-right": {
       "category": "helpers",
-      "description": "Add extra-small padding-right (0.25rem). Alias: padding-right-xs."
+      "description": "Add extra-small padding-right (0.25rem). Alias: padding-right-xs.",
+      "aliasOf": "padding-right-xs"
     },
     "padding-right-sm": {
       "category": "helpers",
@@ -1413,7 +1506,8 @@
     },
     "padding-sm-right": {
       "category": "helpers",
-      "description": "Add small padding-right (0.5rem). Alias: padding-right-sm."
+      "description": "Add small padding-right (0.5rem). Alias: padding-right-sm.",
+      "aliasOf": "padding-right-sm"
     },
     "padding-right-extra": {
       "category": "helpers",
@@ -1425,7 +1519,8 @@
     },
     "padding-lg-right": {
       "category": "helpers",
-      "description": "Add large padding-right (1.5rem). Alias: padding-right-lg."
+      "description": "Add large padding-right (1.5rem). Alias: padding-right-lg.",
+      "aliasOf": "padding-right-lg"
     },
     "padding-right-xl": {
       "category": "helpers",
@@ -1433,7 +1528,8 @@
     },
     "padding-xl-right": {
       "category": "helpers",
-      "description": "Add extra-large padding-right (2rem). Alias: padding-right-xl."
+      "description": "Add extra-large padding-right (2rem). Alias: padding-right-xl.",
+      "aliasOf": "padding-right-xl"
     },
     "border": {
       "category": "helpers",
@@ -1650,7 +1746,8 @@
     },
     "text-muted": {
       "category": "helpers",
-      "description": "Muted/tertiary text color (theme-aware). Alias for text-tertiary."
+      "description": "Muted/tertiary text color (theme-aware). Alias for text-tertiary.",
+      "aliasOf": "text-tertiary"
     },
     "text-inverse": {
       "category": "helpers",
@@ -1851,7 +1948,8 @@
     },
     "fill-height": {
       "category": "grid",
-      "description": "Set display: flex on a unit so children can stretch to fill height."
+      "description": "Set display: flex on a unit so children can stretch to fill height.",
+      "aliasOf": "align-stretch"
     },
     "code": {
       "category": "helpers",
@@ -1971,11 +2069,13 @@
     },
     "bg-black": {
       "category": "helpers",
-      "description": "Alias for background-black. Set background to black."
+      "description": "Alias for background-black. Set background to black.",
+      "aliasOf": "background-black"
     },
     "bg-white": {
       "category": "helpers",
-      "description": "Alias for background-white. Set background to surface color (white in light mode)."
+      "description": "Alias for background-white. Set background to surface color (white in light mode).",
+      "aliasOf": "background-white"
     },
     "text-on-color": {
       "category": "helpers",
@@ -2345,11 +2445,13 @@
     },
     "typeahead": {
       "category": "forms",
-      "description": "Typeahead/autocomplete wrapper. Alias: livesearch-container."
+      "description": "Typeahead/autocomplete wrapper. Alias: livesearch-container.",
+      "aliasOf": "livesearch-container"
     },
     "typeahead-results": {
       "category": "forms",
-      "description": "Results dropdown for typeahead. Alias: livesearch-results."
+      "description": "Results dropdown for typeahead. Alias: livesearch-results.",
+      "aliasOf": "livesearch-results"
     },
     "typeahead-empty": {
       "category": "forms",
