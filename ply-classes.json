@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "framework": "ply",
-  "totalClasses": 521,
-  "uniqueClasses": 470,
+  "totalClasses": 505,
+  "uniqueClasses": 462,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -1241,7 +1241,8 @@
     },
     "margin-top-extra": {
       "category": "helpers",
-      "description": "Add double margin-top. Legacy alias: margin-top--extra."
+      "description": "Alias for margin-top-lg. Legacy double-size class.",
+      "aliasOf": "margin-top-lg"
     },
     "margin-top-lg": {
       "category": "helpers",
@@ -1265,7 +1266,8 @@
     },
     "margin-bottom-extra": {
       "category": "helpers",
-      "description": "Add double margin-bottom. Legacy alias: margin-bottom--extra."
+      "description": "Alias for margin-bottom-lg. Legacy double-size class.",
+      "aliasOf": "margin-bottom-lg"
     },
     "margin-bottom-lg": {
       "category": "helpers",
@@ -1289,7 +1291,8 @@
     },
     "margin-left-extra": {
       "category": "helpers",
-      "description": "Add double margin-left. Legacy alias: margin-left--extra."
+      "description": "Alias for margin-left-lg. Legacy double-size class.",
+      "aliasOf": "margin-left-lg"
     },
     "margin-left-lg": {
       "category": "helpers",
@@ -1313,7 +1316,8 @@
     },
     "margin-right-extra": {
       "category": "helpers",
-      "description": "Add double margin-right. Legacy alias: margin-right--extra."
+      "description": "Alias for margin-right-lg. Legacy double-size class.",
+      "aliasOf": "margin-right-lg"
     },
     "margin-right-lg": {
       "category": "helpers",
@@ -1361,43 +1365,24 @@
     },
     "padding-top-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-top (0.25rem). Alias: padding-xs-top."
-    },
-    "padding-xs-top": {
-      "category": "helpers",
-      "description": "Add extra-small padding-top (0.25rem). Alias: padding-top-xs.",
-      "aliasOf": "padding-top-xs"
+      "description": "Add extra-small padding-top (0.25rem)."
     },
     "padding-top-sm": {
       "category": "helpers",
-      "description": "Add small padding-top (0.5rem). Alias: padding-sm-top."
-    },
-    "padding-sm-top": {
-      "category": "helpers",
-      "description": "Add small padding-top (0.5rem). Alias: padding-top-sm.",
-      "aliasOf": "padding-top-sm"
+      "description": "Add small padding-top (0.5rem)."
     },
     "padding-top-extra": {
       "category": "helpers",
-      "description": "Add double padding-top. Legacy alias: padding-top--extra."
+      "description": "Alias for padding-top-lg. Legacy double-size class.",
+      "aliasOf": "padding-top-lg"
     },
     "padding-top-lg": {
       "category": "helpers",
-      "description": "Add large padding-top (1.5rem). Alias: padding-lg-top."
-    },
-    "padding-lg-top": {
-      "category": "helpers",
-      "description": "Add large padding-top (1.5rem). Alias: padding-top-lg.",
-      "aliasOf": "padding-top-lg"
+      "description": "Add large padding-top (1.5rem)."
     },
     "padding-top-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-top (2rem). Alias: padding-xl-top."
-    },
-    "padding-xl-top": {
-      "category": "helpers",
-      "description": "Add extra-large padding-top (2rem). Alias: padding-top-xl.",
-      "aliasOf": "padding-top-xl"
+      "description": "Add extra-large padding-top (2rem)."
     },
     "padding-bottom": {
       "category": "helpers",
@@ -1405,43 +1390,24 @@
     },
     "padding-bottom-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-xs-bottom."
-    },
-    "padding-xs-bottom": {
-      "category": "helpers",
-      "description": "Add extra-small padding-bottom (0.25rem). Alias: padding-bottom-xs.",
-      "aliasOf": "padding-bottom-xs"
+      "description": "Add extra-small padding-bottom (0.25rem)."
     },
     "padding-bottom-sm": {
       "category": "helpers",
-      "description": "Add small padding-bottom (0.5rem). Alias: padding-sm-bottom."
-    },
-    "padding-sm-bottom": {
-      "category": "helpers",
-      "description": "Add small padding-bottom (0.5rem). Alias: padding-bottom-sm.",
-      "aliasOf": "padding-bottom-sm"
+      "description": "Add small padding-bottom (0.5rem)."
     },
     "padding-bottom-extra": {
       "category": "helpers",
-      "description": "Add double padding-bottom. Legacy alias: padding-bottom--extra."
+      "description": "Alias for padding-bottom-lg. Legacy double-size class.",
+      "aliasOf": "padding-bottom-lg"
     },
     "padding-bottom-lg": {
       "category": "helpers",
-      "description": "Add large padding-bottom (1.5rem). Alias: padding-lg-bottom."
-    },
-    "padding-lg-bottom": {
-      "category": "helpers",
-      "description": "Add large padding-bottom (1.5rem). Alias: padding-bottom-lg.",
-      "aliasOf": "padding-bottom-lg"
+      "description": "Add large padding-bottom (1.5rem)."
     },
     "padding-bottom-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-bottom (2rem). Alias: padding-xl-bottom."
-    },
-    "padding-xl-bottom": {
-      "category": "helpers",
-      "description": "Add extra-large padding-bottom (2rem). Alias: padding-bottom-xl.",
-      "aliasOf": "padding-bottom-xl"
+      "description": "Add extra-large padding-bottom (2rem)."
     },
     "padding-left": {
       "category": "helpers",
@@ -1449,43 +1415,24 @@
     },
     "padding-left-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-left (0.25rem). Alias: padding-xs-left."
-    },
-    "padding-xs-left": {
-      "category": "helpers",
-      "description": "Add extra-small padding-left (0.25rem). Alias: padding-left-xs.",
-      "aliasOf": "padding-left-xs"
+      "description": "Add extra-small padding-left (0.25rem)."
     },
     "padding-left-sm": {
       "category": "helpers",
-      "description": "Add small padding-left (0.5rem). Alias: padding-sm-left."
-    },
-    "padding-sm-left": {
-      "category": "helpers",
-      "description": "Add small padding-left (0.5rem). Alias: padding-left-sm.",
-      "aliasOf": "padding-left-sm"
+      "description": "Add small padding-left (0.5rem)."
     },
     "padding-left-extra": {
       "category": "helpers",
-      "description": "Add double padding-left. Legacy alias: padding-left--extra."
+      "description": "Alias for padding-left-lg. Legacy double-size class.",
+      "aliasOf": "padding-left-lg"
     },
     "padding-left-lg": {
       "category": "helpers",
-      "description": "Add large padding-left (1.5rem). Alias: padding-lg-left."
-    },
-    "padding-lg-left": {
-      "category": "helpers",
-      "description": "Add large padding-left (1.5rem). Alias: padding-left-lg.",
-      "aliasOf": "padding-left-lg"
+      "description": "Add large padding-left (1.5rem)."
     },
     "padding-left-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-left (2rem). Alias: padding-xl-left."
-    },
-    "padding-xl-left": {
-      "category": "helpers",
-      "description": "Add extra-large padding-left (2rem). Alias: padding-left-xl.",
-      "aliasOf": "padding-left-xl"
+      "description": "Add extra-large padding-left (2rem)."
     },
     "padding-right": {
       "category": "helpers",
@@ -1493,43 +1440,24 @@
     },
     "padding-right-xs": {
       "category": "helpers",
-      "description": "Add extra-small padding-right (0.25rem). Alias: padding-xs-right."
-    },
-    "padding-xs-right": {
-      "category": "helpers",
-      "description": "Add extra-small padding-right (0.25rem). Alias: padding-right-xs.",
-      "aliasOf": "padding-right-xs"
+      "description": "Add extra-small padding-right (0.25rem)."
     },
     "padding-right-sm": {
       "category": "helpers",
-      "description": "Add small padding-right (0.5rem). Alias: padding-sm-right."
-    },
-    "padding-sm-right": {
-      "category": "helpers",
-      "description": "Add small padding-right (0.5rem). Alias: padding-right-sm.",
-      "aliasOf": "padding-right-sm"
+      "description": "Add small padding-right (0.5rem)."
     },
     "padding-right-extra": {
       "category": "helpers",
-      "description": "Add double padding-right. Legacy alias: padding-right--extra."
+      "description": "Alias for padding-right-lg. Legacy double-size class.",
+      "aliasOf": "padding-right-lg"
     },
     "padding-right-lg": {
       "category": "helpers",
-      "description": "Add large padding-right (1.5rem). Alias: padding-lg-right."
-    },
-    "padding-lg-right": {
-      "category": "helpers",
-      "description": "Add large padding-right (1.5rem). Alias: padding-right-lg.",
-      "aliasOf": "padding-right-lg"
+      "description": "Add large padding-right (1.5rem)."
     },
     "padding-right-xl": {
       "category": "helpers",
-      "description": "Add extra-large padding-right (2rem). Alias: padding-xl-right."
-    },
-    "padding-xl-right": {
-      "category": "helpers",
-      "description": "Add extra-large padding-right (2rem). Alias: padding-right-xl.",
-      "aliasOf": "padding-right-xl"
+      "description": "Add extra-large padding-right (2rem)."
     },
     "border": {
       "category": "helpers",
