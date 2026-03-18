@@ -47,6 +47,7 @@ $btn-secondary-dark-active: #bebebe;
   // Interactive
   --ply-color-link: var(--ply-btn-default-bg);
   --ply-color-link-hover: #{$btn-primary-light-hover};
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -63,13 +64,17 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-table-stripped: #f4f4f4;
   --ply-color-table-hovered: #e8e8e8;
 
-  // Buttons
+  // Buttons (hex fallback + color-mix for custom theme cascade)
   --ply-btn-default-bg: #{$btn-primary-light};
   --ply-btn-default-bg-hover: #{$btn-primary-light-hover};
+  --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-btn-default-bg-active: #{$btn-primary-light-active};
+  --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), black 25%);
   --ply-btn-secondary-bg: #{$btn-secondary-light};
   --ply-btn-secondary-bg-hover: #{$btn-secondary-light-hover};
+  --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-light-active};
+  --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
 
   // Navigation
   --ply-nav-bg: #ffffff;
@@ -166,6 +171,7 @@ $btn-secondary-dark-active: #bebebe;
     // Interactive
     --ply-color-link: var(--ply-btn-default-bg);
     --ply-color-link-hover: #{$btn-primary-dark-hover};
+    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-color-focus: #0f62fe;
 
     // Fields
@@ -182,13 +188,17 @@ $btn-secondary-dark-active: #bebebe;
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
 
-    // Buttons
+    // Buttons (hex fallback + color-mix for custom theme cascade)
     --ply-btn-default-bg: #{$btn-primary-dark};
     --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
+    --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-btn-default-bg-active: #{$btn-primary-dark-active};
+    --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), white 25%);
     --ply-btn-secondary-bg: #{$btn-secondary-dark};
     --ply-btn-secondary-bg-hover: #{$btn-secondary-dark-hover};
+    --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
     --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
+    --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
     --ply-btn-default-color: #161616;
     --ply-btn-secondary-color: #161616;
 
@@ -281,6 +291,7 @@ $btn-secondary-dark-active: #bebebe;
   // Interactive
   --ply-color-link: var(--ply-btn-default-bg);
   --ply-color-link-hover: #{$btn-primary-dark-hover};
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-color-focus: #0f62fe;
 
   // Fields
@@ -297,13 +308,17 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
 
-  // Buttons
+  // Buttons (hex fallback + color-mix for custom theme cascade)
   --ply-btn-default-bg: #{$btn-primary-dark};
   --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
+  --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-btn-default-bg-active: #{$btn-primary-dark-active};
+  --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), white 25%);
   --ply-btn-secondary-bg: #{$btn-secondary-dark};
   --ply-btn-secondary-bg-hover: #{$btn-secondary-dark-hover};
+  --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
+  --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
   --ply-btn-default-color: #161616;
   --ply-btn-secondary-color: #161616;
 

@@ -22,6 +22,7 @@
   --ply-border-strong: #8d8d8d;
   --ply-color-link: var(--ply-btn-default-bg);
   --ply-color-link-hover: #0347c6;
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #f4f4f4;
   --ply-color-input-border: #8d8d8d;
@@ -33,10 +34,14 @@
   --ply-color-table-hovered: #e8e8e8;
   --ply-btn-default-bg: #0353e9;
   --ply-btn-default-bg-hover: #0347c6;
+  --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-btn-default-bg-active: #023eaf;
+  --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), black 25%);
   --ply-btn-secondary-bg: #393939;
   --ply-btn-secondary-bg-hover: #303030;
+  --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #2b2b2b;
+  --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
   --ply-nav-bg: #ffffff;
   --ply-nav-color: #161616;
   --ply-nav-border: #161616;
@@ -113,6 +118,7 @@
     --ply-border-strong: #6f6f6f;
     --ply-color-link: var(--ply-btn-default-bg);
     --ply-color-link-hover: #619bff;
+    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-color-focus: #0f62fe;
     --ply-color-field-bg: #262626;
     --ply-color-input-border: #6f6f6f;
@@ -124,10 +130,14 @@
     --ply-color-table-hovered: #353535;
     --ply-btn-default-bg: #4589ff;
     --ply-btn-default-bg-hover: #619bff;
+    --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-btn-default-bg-active: #73a6ff;
+    --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), white 25%);
     --ply-btn-secondary-bg: #a8a8a8;
     --ply-btn-secondary-bg-hover: #b5b5b5;
+    --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
     --ply-btn-secondary-bg-active: #bebebe;
+    --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
     --ply-btn-default-color: #161616;
     --ply-btn-secondary-color: #161616;
     --ply-nav-bg: #161616;
@@ -202,6 +212,7 @@
   --ply-border-strong: #6f6f6f;
   --ply-color-link: var(--ply-btn-default-bg);
   --ply-color-link-hover: #619bff;
+  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #262626;
   --ply-color-input-border: #6f6f6f;
@@ -213,10 +224,14 @@
   --ply-color-table-hovered: #353535;
   --ply-btn-default-bg: #4589ff;
   --ply-btn-default-bg-hover: #619bff;
+  --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-btn-default-bg-active: #73a6ff;
+  --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), white 25%);
   --ply-btn-secondary-bg: #a8a8a8;
   --ply-btn-secondary-bg-hover: #b5b5b5;
+  --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
   --ply-btn-secondary-bg-active: #bebebe;
+  --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
   --ply-btn-default-color: #161616;
   --ply-btn-secondary-color: #161616;
   --ply-nav-bg: #161616;
