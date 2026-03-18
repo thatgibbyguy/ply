@@ -120,7 +120,7 @@ dialog.dialog-confirm {
 }
 
 /* Dialog with scrollable body */
-dialog.dialog-scroll {
+dialog.dialog-scroll[open] {
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - 4rem);
