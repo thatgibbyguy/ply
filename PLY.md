@@ -192,7 +192,7 @@ All classes, CSS custom properties, and semantic element styles are documented i
 7. **Use `units-container` for page width** — Centers content at 1200px max-width.
 8. **Add responsive classes for mobile** — At minimum use `tablet-unit-100` to stack on tablets.
 9. **Use CSS custom properties for theming** — All colors, backgrounds, and borders are customizable via `--ply-*` variables. Do not hard-code colors that break dark mode.
-10. **Use single-dash class names** — `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
+10. **Use single-dash class names** — `navbar-centered`, `display-flex`, `margin-top-extra`.
 
 ### Button Hierarchy
 

@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Clean up stale git lock files on exit/interrupt
+cleanup() {
+  rm -f "$PLY_ROOT/.git/index.lock" 2>/dev/null
+  rm -f "$PLY_ROOT/.git/modules/plygrid-web-and-docs/index.lock" 2>/dev/null
+}
+PLY_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+trap cleanup EXIT INT TERM
+
 # ply release script
 # Usage: ./scripts/release.sh 1.0.11 "Bug fixes, Sass loops, modernization"
 #
@@ -25,7 +33,6 @@ if [[ -z "$VERSION" ]]; then
   exit 1
 fi
 
-PLY_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WEBDOCS="$PLY_ROOT/plygrid-web-and-docs"
 OLD_VERSION=$(node -e "console.log(require('$PLY_ROOT/package.json').version)")
 
@@ -93,6 +100,7 @@ git add \
   src/scss/ \
   dist/css/ \
   ply-classes.json \
+  CLAUDE.md \
   README.md \
   PLY.md \
   scripts/ \

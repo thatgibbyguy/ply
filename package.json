@@ -1,12 +1,13 @@
 {
   "name": "plygrid",
-  "version": "1.0.11",
+  "version": "1.2.0",
   "description": "ply — A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint",
   "main": "dist/css/ply.css",
   "style": "dist/css/ply.min.css",
   "files": [
     "dist/",
     "src/scss/",
+    "CLAUDE.md",
     "PLY.md",
     "ply-classes.json",
     "snippets/",

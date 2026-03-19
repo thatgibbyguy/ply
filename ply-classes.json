@@ -1,8 +1,8 @@
 {
   "version": "1.0.10",
   "framework": "ply",
-  "totalClasses": 485,
-  "uniqueClasses": 485,
+  "totalClasses": 457,
+  "uniqueClasses": 457,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -108,7 +108,7 @@
     },
     "unit-100": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
+      "description": "Grid unit \u2014 flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -127,7 +127,7 @@
     },
     "unit-90": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 90%.",
+      "description": "Grid unit \u2014 flex-basis: 90%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -145,7 +145,7 @@
     },
     "unit-88": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 87.5%.",
+      "description": "Grid unit \u2014 flex-basis: 87.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -163,7 +163,7 @@
     },
     "unit-80": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 80%.",
+      "description": "Grid unit \u2014 flex-basis: 80%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -181,7 +181,7 @@
     },
     "unit-75": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 75%.",
+      "description": "Grid unit \u2014 flex-basis: 75%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -199,7 +199,7 @@
     },
     "unit-70": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 70%.",
+      "description": "Grid unit \u2014 flex-basis: 70%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -217,7 +217,7 @@
     },
     "unit-66": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 66.6% (two-thirds).",
+      "description": "Grid unit \u2014 flex-basis: 66.6% (two-thirds).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -235,7 +235,7 @@
     },
     "unit-65": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 65%.",
+      "description": "Grid unit \u2014 flex-basis: 65%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -253,7 +253,7 @@
     },
     "unit-62": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 62.5%.",
+      "description": "Grid unit \u2014 flex-basis: 62.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -271,7 +271,7 @@
     },
     "unit-60": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 60%.",
+      "description": "Grid unit \u2014 flex-basis: 60%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -289,7 +289,7 @@
     },
     "unit-50": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 50% (half).",
+      "description": "Grid unit \u2014 flex-basis: 50% (half).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -308,7 +308,7 @@
     },
     "unit-40": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 40%.",
+      "description": "Grid unit \u2014 flex-basis: 40%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -326,7 +326,7 @@
     },
     "unit-38": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 37.5%.",
+      "description": "Grid unit \u2014 flex-basis: 37.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -344,7 +344,7 @@
     },
     "unit-35": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 35%.",
+      "description": "Grid unit \u2014 flex-basis: 35%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -362,7 +362,7 @@
     },
     "unit-33": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 33.3% (one-third).",
+      "description": "Grid unit \u2014 flex-basis: 33.3% (one-third).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -381,7 +381,7 @@
     },
     "unit-30": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 30%.",
+      "description": "Grid unit \u2014 flex-basis: 30%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -399,7 +399,7 @@
     },
     "unit-25": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 25% (one-quarter).",
+      "description": "Grid unit \u2014 flex-basis: 25% (one-quarter).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -417,7 +417,7 @@
     },
     "unit-20": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 20%.",
+      "description": "Grid unit \u2014 flex-basis: 20%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -435,7 +435,7 @@
     },
     "unit-12": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 12.5%.",
+      "description": "Grid unit \u2014 flex-basis: 12.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -453,7 +453,7 @@
     },
     "unit-10": {
       "category": "grid",
-      "description": "Grid unit — flex-basis: 10%.",
+      "description": "Grid unit \u2014 flex-basis: 10%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -471,7 +471,7 @@
     },
     "unit-auto": {
       "category": "grid",
-      "description": "Grid unit — flex-grow: 1, fills remaining space.",
+      "description": "Grid unit \u2014 flex-grow: 1, fills remaining space.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -680,61 +680,61 @@
     },
     "navbar-centered": {
       "category": "navigation",
-      "description": "Center-align navbar items (justify-content: center). Legacy alias: navbar--centered.",
+      "description": "Center-align navbar items (justify-content: center).",
       "parent": "navbar",
       "example": "<nav class=\"navbar navbar-centered\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
     "navbar-left": {
       "category": "navigation",
-      "description": "Left-align navbar items (justify-content: flex-start). Legacy alias: navbar--left.",
+      "description": "Left-align navbar items (justify-content: flex-start).",
       "parent": "navbar"
     },
     "navbar-right": {
       "category": "navigation",
-      "description": "Right-align navbar items (justify-content: flex-end). Legacy alias: navbar--right.",
+      "description": "Right-align navbar items (justify-content: flex-end).",
       "parent": "navbar"
     },
     "navbar-vertical": {
       "category": "navigation",
-      "description": "Vertical navbar layout with left border instead of bottom border. Legacy alias: navbar--vertical.",
+      "description": "Vertical navbar layout with left border instead of bottom border.",
       "parent": "navbar",
       "example": "<nav class=\"navbar navbar-vertical\"><ul><li class=\"active\"><a href=\"#\">Item</a></li></ul></nav>"
     },
     "navbar-thick": {
       "category": "navigation",
-      "description": "Bold 2px bottom border on navbar. Legacy alias: navbar--thick.",
+      "description": "Bold 2px bottom border on navbar.",
       "parent": "navbar",
       "example": "<nav class=\"navbar navbar-thick\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
     "navbar-borderless": {
       "category": "navigation",
-      "description": "No border on navbar. Active items use background highlight instead. Legacy alias: navbar--borderless.",
+      "description": "No border on navbar. Active items use background highlight instead.",
       "parent": "navbar",
       "example": "<nav class=\"navbar navbar-borderless\"><ul><li><a href=\"#\">Link</a></li></ul></nav>"
     },
     "navbar-border-blue": {
       "category": "navigation",
-      "description": "Blue bottom border on navbar. Legacy alias: navbar--border-blue.",
+      "description": "Blue bottom border on navbar.",
       "parent": "navbar"
     },
     "navbar-border-green": {
       "category": "navigation",
-      "description": "Green bottom border on navbar. Legacy alias: navbar--border-green.",
+      "description": "Green bottom border on navbar.",
       "parent": "navbar"
     },
     "navbar-border-red": {
       "category": "navigation",
-      "description": "Red bottom border on navbar. Legacy alias: navbar--border-red.",
+      "description": "Red bottom border on navbar.",
       "parent": "navbar"
     },
     "navbar-border-yellow": {
       "category": "navigation",
-      "description": "Yellow bottom border on navbar. Legacy alias: navbar--border-yellow.",
+      "description": "Yellow bottom border on navbar.",
       "parent": "navbar"
     },
     "navbar-stack": {
       "category": "navigation",
-      "description": "On mobile, wrap navbar items instead of horizontal scrolling. Legacy alias: navbar--stack.",
+      "description": "On mobile, wrap navbar items instead of horizontal scrolling.",
       "parent": "navbar"
     },
     "navbar-pills": {
@@ -954,23 +954,23 @@
     },
     "display-flex": {
       "category": "helpers",
-      "description": "display: flex. Legacy alias: display--flex."
+      "description": "display: flex."
     },
     "display-block": {
       "category": "helpers",
-      "description": "display: block. Legacy alias: display--block."
+      "description": "display: block."
     },
     "display-inline-block": {
       "category": "helpers",
-      "description": "display: inline-block. Legacy alias: display--inline-block."
+      "description": "display: inline-block."
     },
     "display-grid": {
       "category": "helpers",
-      "description": "display: grid. Legacy alias: display--grid."
+      "description": "display: grid."
     },
     "display-none": {
       "category": "helpers",
-      "description": "display: none. Legacy alias: display--none."
+      "description": "display: none."
     },
     "items-center": {
       "category": "helpers",
@@ -1406,7 +1406,7 @@
     },
     "skip-link": {
       "category": "helpers",
-      "description": "Skip navigation link — hidden until focused. Use as the first focusable element inside <body>.",
+      "description": "Skip navigation link \u2014 hidden until focused. Use as the first focusable element inside <body>.",
       "example": "<a href=\"#main\" class=\"skip-link\">Skip to main content</a>"
     },
     "hide-on-desktop": {
@@ -1740,7 +1740,7 @@
     },
     "bg-surface": {
       "category": "helpers",
-      "description": "Surface background color. Theme-aware. Alias: background-white."
+      "description": "Surface background color. Theme-aware."
     },
     "text-on-color": {
       "category": "helpers",
@@ -1756,7 +1756,7 @@
     },
     "spinning": {
       "category": "helpers",
-      "description": "Infinite 360° spin animation."
+      "description": "Infinite 360\u00b0 spin animation."
     },
     "fade-in": {
       "category": "helpers",
@@ -2285,232 +2285,6 @@
       "category": "helpers",
       "description": "Row resize cursor."
     },
-    "display--flex": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-flex.",
-      "deprecated": true
-    },
-    "display--block": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-block.",
-      "deprecated": true
-    },
-    "display--inline-block": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-inline-block.",
-      "deprecated": true
-    },
-    "display--grid": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-grid.",
-      "deprecated": true
-    },
-    "display--none": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-none.",
-      "deprecated": true
-    },
-    "display--table": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-table.",
-      "deprecated": true
-    },
-    "display--inline-table": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-inline-table.",
-      "deprecated": true
-    },
-    "display--table-cell": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-table-cell.",
-      "deprecated": true
-    },
-    "display--list-item": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-list-item.",
-      "deprecated": true
-    },
-    "display--inline-grid": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-inline-grid.",
-      "deprecated": true
-    },
-    "display--subgrid": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for display-subgrid.",
-      "deprecated": true
-    },
-    "margin-top--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-top-extra.",
-      "deprecated": true
-    },
-    "top-margin--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-top-extra.",
-      "deprecated": true
-    },
-    "margin-right--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-right-extra.",
-      "deprecated": true
-    },
-    "right-margin--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-right-extra.",
-      "deprecated": true
-    },
-    "margin-bottom--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-bottom-extra.",
-      "deprecated": true
-    },
-    "bottom-margin--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-bottom-extra.",
-      "deprecated": true
-    },
-    "margin-left--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-left-extra.",
-      "deprecated": true
-    },
-    "left-margin--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for margin-left-extra.",
-      "deprecated": true
-    },
-    "padding-top--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-top-extra.",
-      "deprecated": true
-    },
-    "top-padding--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-top-extra.",
-      "deprecated": true
-    },
-    "padding-right--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-right-extra.",
-      "deprecated": true
-    },
-    "right-padding--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-right-extra.",
-      "deprecated": true
-    },
-    "padding-bottom--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-bottom-extra.",
-      "deprecated": true
-    },
-    "bottom-padding--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-bottom-extra.",
-      "deprecated": true
-    },
-    "padding-left--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-left-extra.",
-      "deprecated": true
-    },
-    "left-padding--extra": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for padding-left-extra.",
-      "deprecated": true
-    },
-    "border--thick": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for border-thick.",
-      "deprecated": true
-    },
-    "border-top--thick": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for border-top-thick.",
-      "deprecated": true
-    },
-    "border-right--thick": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for border-right-thick.",
-      "deprecated": true
-    },
-    "border-bottom--thick": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for border-bottom-thick.",
-      "deprecated": true
-    },
-    "border-left--thick": {
-      "category": "helpers",
-      "description": "Deprecated BEM alias for border-left-thick.",
-      "deprecated": true
-    },
-    "navbar--centered": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-centered.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--left": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-left.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--right": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-right.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--vertical": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-vertical.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--thick": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-thick.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--borderless": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-borderless.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--border-blue": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-border-blue.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--border-green": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-border-green.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--border-red": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-border-red.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--border-yellow": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-border-yellow.",
-      "parent": "navbar",
-      "deprecated": true
-    },
-    "navbar--stack": {
-      "category": "navigation",
-      "description": "Deprecated BEM alias for navbar-stack.",
-      "parent": "navbar",
-      "deprecated": true
-    },
     "no-top-margin": {
       "category": "helpers",
       "description": "Remove top margin (!important).",
@@ -2602,6 +2376,66 @@
       "description": "Center a grid unit (float: none !important, margin: 0 auto). Alias: centered.",
       "parent": "units-row",
       "important": true
+    },
+    "gap-xxl": {
+      "category": "helpers",
+      "description": "Gap between flex/grid children: var(--ply-space-xxl, 3rem)."
+    },
+    "margin-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large margin on all sides (3rem)."
+    },
+    "margin-top-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large margin-top (3rem)."
+    },
+    "margin-right-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large margin-right (3rem)."
+    },
+    "margin-bottom-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large margin-bottom (3rem)."
+    },
+    "margin-left-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large margin-left (3rem)."
+    },
+    "padding-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large padding on all sides (3rem)."
+    },
+    "padding-top-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large padding-top (3rem)."
+    },
+    "padding-right-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large padding-right (3rem)."
+    },
+    "padding-bottom-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large padding-bottom (3rem)."
+    },
+    "padding-left-xxl": {
+      "category": "helpers",
+      "description": "Add extra extra large padding-left (3rem)."
+    },
+    "padding-xxl-top": {
+      "category": "helpers",
+      "description": "Alias for padding-top-xxl. Add extra extra large padding-top (3rem)."
+    },
+    "padding-xxl-right": {
+      "category": "helpers",
+      "description": "Alias for padding-right-xxl. Add extra extra large padding-right (3rem)."
+    },
+    "padding-xxl-bottom": {
+      "category": "helpers",
+      "description": "Alias for padding-bottom-xxl. Add extra extra large padding-bottom (3rem)."
+    },
+    "padding-xxl-left": {
+      "category": "helpers",
+      "description": "Alias for padding-left-xxl. Add extra extra large padding-left (3rem)."
     }
   },
   "customProperties": {
@@ -2702,7 +2536,8 @@
       "--ply-space-sm": "Small spacing unit. Default: 0.5rem",
       "--ply-space-md": "Medium spacing unit. Default: 0.75rem",
       "--ply-space-lg": "Large spacing unit. Default: 1.5rem",
-      "--ply-space-xl": "Extra-large spacing unit. Default: 3rem"
+      "--ply-space-xl": "Extra-large spacing unit. Default: 2rem",
+      "--ply-space-xxl": "Extra extra large spacing unit. Default: 3rem"
     }
   },
   "semanticElements": {
@@ -2714,7 +2549,7 @@
     "details": {
       "file": "_reset.scss",
       "styling": "Border, border-radius, padding. Summary gets cursor: pointer, font-weight: 600. Rotation arrow on open state.",
-      "tip": "Use for collapsible content. No classes needed — just <details><summary>Title</summary>Content</details>."
+      "tip": "Use for collapsible content. No classes needed \u2014 just <details><summary>Title</summary>Content</details>."
     },
     "table": {
       "file": "_typography.scss, _tables.scss",
@@ -2771,5 +2606,20 @@
       "styling": "Inputs, textareas, selects get themed borders, backgrounds, focus states (blue border + shadow). Wrap in .form for full styling.",
       "tip": "Wrap form in <div class='form'> to enable ply's input styling. Labels become block-level with pointer cursor."
     }
+  },
+  "namingConvention": {
+    "pattern": "{property}-{direction}-{modifier}",
+    "examples": [
+      "margin-top",
+      "padding-left-extra",
+      "border-bottom-thick"
+    ],
+    "sizeModifiers": [
+      "xs",
+      "sm",
+      "lg",
+      "xl",
+      "xxl"
+    ]
   }
 }

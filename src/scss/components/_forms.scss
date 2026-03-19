@@ -2,7 +2,6 @@
 
 @use "sass:color";
 @use "colors";
-@use "cursors";
 @use "helpers";
 @use "mixins";
 @use "variables";
@@ -26,7 +25,7 @@
   }
 
   label {
-    @extend %cursor-pointer;
+    cursor: pointer;
 
     display: block;
     margin-bottom: 0.25rem;
@@ -162,7 +161,7 @@ textarea {
 
 // Fieldset
 fieldset {
-  @extend %border-radius;
+  border-radius: variables.$border-radius;
 
   background-color: var(--ply-bg-surface);
   padding: variables.$base-line;
@@ -267,35 +266,23 @@ input.input-on-black {
 }
 
 /* Sizes */
-.form .input-big,
 .form .input-lg,
-input.input-big[type],
 input.input-lg[type],
-textarea.input-big,
 textarea.input-lg,
-select.input-big,
 select.input-lg {
   font-size: variables.$font-size-xl;
 }
 
-.form .input-small,
 .form .input-sm,
-input.input-small[type],
 input.input-sm[type],
-textarea.input-small,
 textarea.input-sm,
-select.input-small,
 select.input-sm {
   font-size: variables.$font-size-small;
 }
 
-.form .input-smaller,
 .form .input-xs,
-input.input-smaller[type],
 input.input-xs[type],
-textarea.input-smaller,
 textarea.input-xs,
-select.input-smaller,
 select.input-xs {
   font-size: variables.$font-size-smaller;
 }

@@ -19,58 +19,6 @@
 }
 
 .units-row,
-%units-row {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-flow: row wrap;
-  margin: 0 (-(variables.$grid-gutter-width)) variables.$base-line;
-
-  &.reverse-direction,
-  &.right-to-left {
-    flex-direction: row-reverse;
-  }
-
-  &.split {
-    margin: 0 0 variables.$base-line;
-
-    [class*='unit-'] {
-      padding: 0;
-    }
-  }
-
-  &.centered-content {
-    justify-content: center;
-    text-align: center;
-  }
-
-  &.stacked {
-    margin-bottom: 0;
-  }
-
-  &.equal-height {
-    [class*='unit-'] {
-      display: flex;
-
-      > * {
-        width: 100%;
-      }
-    }
-  }
-
-  &.unit-role-right {
-    float: right;
-    margin-left: math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * .01;
-  }
-
-  &.unit-role-left {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 [class*='unit-'] {
   box-sizing: border-box;
@@ -83,45 +31,34 @@
 }
 
 // Base units
-.unit-auto,
-%unit-auto {
+.unit-auto {
   flex-basis: 0;
   flex-grow: 1;
 }
 
 @each $name, $value in variables.$unit-scale {
-  .unit-#{$name},
-  %unit-#{$name} {
+  .unit-#{$name} {
     flex-basis: $value;
     max-width: $value;
   }
 }
 
 // Forever units
-.forever-unit-auto,
-%forever-unit-auto {
+.forever-unit-auto {
   flex-basis: 0;
   flex-grow: 1;
 }
 
 @each $name, $value in variables.$unit-scale {
-  .forever-unit-#{$name},
-  %forever-unit-#{$name} {
+  .forever-unit-#{$name} {
     flex-basis: $value;
     max-width: $value;
   }
 }
 
-// Responsive unit scale (no 88, 62, 38, 12 at responsive breakpoints)
-$responsive-scale: (
-  100: 100%, 90: 90%, 80: 80%, 75: 75%, 70: 70%,
-  66: 66.6%, 65: 65%, 60: 60%, 50: 50%, 40: 40%,
-  35: 35%, 33: 33.3%, 30: 30%, 25: 25%, 20: 20%, 10: 10%
-);
-
 // Large screen (min-width)
 @media (min-width: media-queries.$breakpoint-large-screen) {
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     @if $name != 100 {
       .large-screen-unit-#{$name} {
         max-width: $value;
@@ -133,7 +70,7 @@ $responsive-scale: (
 
 // X-large screen (min-width)
 @media (min-width: media-queries.$breakpoint-x-large-screen) {
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     @if $name != 100 {
       .x-large-screen-unit-#{$name} {
         max-width: $value;
@@ -145,7 +82,7 @@ $responsive-scale: (
 
 // Small desktop (max-width)
 @media (max-width: media-queries.$breakpoint-small-desktop) {
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     .small-desktop-unit-#{$name} {
       max-width: $value;
       flex-basis: $value;
@@ -176,7 +113,7 @@ $responsive-scale: (
     max-width: 100%;
   }
 
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     .tablet-unit-#{$name} {
       max-width: $value;
       flex-basis: $value;
@@ -186,7 +123,7 @@ $responsive-scale: (
 
 // Large phone (max-width)
 @media (max-width: media-queries.$breakpoint-large-phone) {
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     .large-phone-unit-#{$name} {
       max-width: $value;
       flex-basis: $value;
@@ -196,7 +133,7 @@ $responsive-scale: (
 
 // Phone (max-width)
 @media (max-width: media-queries.$breakpoint-phone) {
-  @each $name, $value in $responsive-scale {
+  @each $name, $value in variables.$width-scale {
     .phone-unit-#{$name} {
       max-width: $value;
       flex-basis: $value;
@@ -216,8 +153,7 @@ $push-scale: (
 }
 
 .centered,
-.unit-centered,
-%centered {
+.unit-centered {
   float: none !important;
   margin: 0 auto variables.$base-line;
 }

@@ -79,26 +79,13 @@ See `customProperties` in `ply-classes.json` for the full list of overridable va
 
 ## Class Naming
 
-ply uses single-dash names: `navbar-centered`, `display-flex`, `margin-top-extra`. Double-dash BEM-style names (`navbar--centered`, `display--flex`) are supported as legacy aliases but single-dash is preferred.
+ply follows `{property}-{direction}-{modifier}` — mirrors CSS property names:
 
-## AI-Friendly Aliases
-
-These aliases are equivalent to their longer counterparts:
-
-| Short | Long |
-|-------|------|
-| `alert` | `tools-alert` |
-| `alert-blue` | `tools-alert-blue` |
-| `message` | `tools-message` |
-| `btn-lg` | `btn-big` |
-| `btn-sm` | `btn-small` |
-| `btn-xs` | `btn-smaller` |
-| `input-lg` | `input-big` |
-| `input-sm` | `input-small` |
-| `input-xs` | `input-smaller` |
-| `li.active` (navbar) | `li.on` |
-| `bg-black` | `background-black` |
-| `bg-white` | `background-white` |
+- `margin-top`, `padding-left-extra`, `border-top-thick`
+- `padding-top-xs`, `margin-bottom-xxl`
+- `btn-lg`, `btn-sm`, `btn-xs`, `input-lg`, `input-sm`, `input-xs`
+- `bg-white`, `bg-black`, `navbar-centered`, `display-flex`
+- **Size scale:** `xs`, `sm`, `lg`, `xl`, `xxl`
 
 ## Accessibility (WCAG 2.1 AA)
 

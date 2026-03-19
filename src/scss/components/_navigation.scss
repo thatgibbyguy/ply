@@ -73,30 +73,26 @@ nav {
     }
   }
 
-  &.navbar-centered,
-  &.navbar--centered {
+  &.navbar-centered {
     > ul {
       justify-content: center;
     }
   }
 
-  &.navbar-left,
-  &.navbar--left {
+  &.navbar-left {
     > ul {
       justify-content: flex-start;
     }
   }
 
-  &.navbar-right,
-  &.navbar--right {
+  &.navbar-right {
     > ul {
       justify-content: flex-end;
     }
   }
 
   // Border variants
-  &.navbar-thick,
-  &.navbar--thick {
+  &.navbar-thick {
     border-bottom-width: 2px;
 
     a, > span {
@@ -104,8 +100,7 @@ nav {
     }
   }
 
-  &.navbar-borderless,
-  &.navbar--borderless {
+  &.navbar-borderless {
     border-bottom: none;
 
     a, > span {
@@ -122,18 +117,13 @@ nav {
     }
   }
 
-  &.navbar-border-blue,
-  &.navbar--border-blue    { border-bottom-color: var(--ply-color-link, #0f62fe); }
-  &.navbar-border-green,
-  &.navbar--border-green   { border-bottom-color: #198038; }
-  &.navbar-border-red,
-  &.navbar--border-red     { border-bottom-color: #da1e28; }
-  &.navbar-border-yellow,
-  &.navbar--border-yellow  { border-bottom-color: #f1c21b; }
+  &.navbar-border-blue   { border-bottom-color: var(--ply-color-link, #0f62fe); }
+  &.navbar-border-green  { border-bottom-color: #198038; }
+  &.navbar-border-red    { border-bottom-color: #da1e28; }
+  &.navbar-border-yellow { border-bottom-color: #f1c21b; }
 
   // Vertical variant
-  &.navbar-vertical,
-  &.navbar--vertical {
+  &.navbar-vertical {
     border-bottom: none;
     border-left: 1px solid var(--ply-border-color);
 
@@ -164,8 +154,7 @@ nav {
       }
     }
 
-    &.navbar-thick,
-    &.navbar--thick {
+    &.navbar-thick {
       border-left-width: 2px;
 
       a, > span {
@@ -204,24 +193,18 @@ nav {
   }
 
   // Border variants — match navbar
-  &.navbar-thick,
-  &.navbar--thick {
+  &.navbar-thick {
     border-width: 2px;
   }
 
-  &.navbar-borderless,
-  &.navbar--borderless {
+  &.navbar-borderless {
     border: none;
   }
 
-  &.navbar-border-blue,
-  &.navbar--border-blue    { border-color: var(--ply-color-link, #0f62fe); }
-  &.navbar-border-green,
-  &.navbar--border-green   { border-color: #198038; }
-  &.navbar-border-red,
-  &.navbar--border-red     { border-color: #da1e28; }
-  &.navbar-border-yellow,
-  &.navbar--border-yellow  { border-color: #f1c21b; }
+  &.navbar-border-blue   { border-color: var(--ply-color-link, #0f62fe); }
+  &.navbar-border-green  { border-color: #198038; }
+  &.navbar-border-red    { border-color: #da1e28; }
+  &.navbar-border-yellow { border-color: #f1c21b; }
 
   &.navigation-toggle-solid {
     background-color: var(--ply-nav-border);

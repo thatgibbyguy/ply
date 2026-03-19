@@ -9,263 +9,186 @@
 // Layout Helpers
 // Positioning
 
-.full-screen,
-%full-screen {
+.full-screen {
   @include mixins.square;
 
   position: relative;
 }
 
-.fixed,
-%fixed {
+.fixed {
   position: fixed;
 }
 
-.absolute,
-%absolute {
+.absolute {
   position: absolute;
 }
 
-.relative,
-%relative {
+.relative {
   position: relative;
 }
 
-.static,
-%static {
+.static {
   position: static;
 }
 
-.sticky,
-%sticky {
+.sticky {
   position: sticky;
 }
 
 // Display
 
-.display-flex,
-.display--flex,
-%display-flex,
-%display--flex {
+.display-flex {
   display: flex;
 }
 
-.display-block,
-.display--block,
-%display-block,
-%display--block {
+.display-block {
   display: block;
 }
 
-.display-inline-block,
-.display--inline-block,
-%display-inline-block,
-%display--inline-block {
+.display-inline-block {
   display: inline-block;
 }
 
-.display-grid,
-.display--grid,
-%display-grid,
-%display--grid {
+.display-grid {
   display: grid;
 }
 
-.display-none,
-.display--none,
-%display-none,
-%display--none {
+.display-none {
   display: none;
 }
 
 // Spacing
 
-.last,
-%last {
+.last {
   margin-right: 0 !important;
 }
 
-.pause,
-%pause {
+.pause {
   margin-bottom: variables.$base-line * 0.5 !important;
 }
 
-.end,
-%end {
+.end {
   margin-bottom: 0 !important;
 }
 
-.margin,
-%margin {
+.margin {
   margin: variables.$margin;
 }
 
-.margin-top,
-.top-margin,
-%margin-top,
-.top-margin {
+.margin-top {
   margin-top: variables.$margin;
 }
 
-.top-margin-extra,
-.margin-top-extra,
-.top-margin--extra,
-.margin-top--extra,
-%top-margin-extra,
-%margin-top-extra,
-%top-margin--extra,
-%margin-top--extra {
+.margin-top-extra {
   margin-top: variables.$margin * 2;
 }
 
-.right-margin,
-.margin-right,
-%right-margin,
-%margin-right {
+.margin-right {
   margin-right: variables.$margin;
 }
 
-.bottom-margin,
-.margin-bottom,
-%bottom-margin,
-%margin-bottom {
+.margin-bottom {
   margin-bottom: variables.$margin;
 }
 
-.bottom-margin-extra,
-.margin-bottom-extra,
-.bottom-margin--extra,
-.margin-bottom--extra,
-%bottom-margin-extra,
-%margin-bottom-extra,
-%bottom-margin--extra,
-%margin-bottom--extra {
+.margin-bottom-extra {
   margin-bottom: variables.$margin * 2;
 }
 
-.left-margin,
-.margin-left,
-%left-margin,
-%margin-left {
+.margin-left {
   margin-left: variables.$margin;
 }
 
 // Margin scale
-.margin-xs { margin: 0.25rem; }
-.margin-sm { margin: 0.5rem; }
-.margin-lg { margin: 1.5rem; }
-.margin-xl { margin: 2rem; }
+.margin-xs  { margin: var(--ply-space-xs, 0.25rem); }
+.margin-sm  { margin: var(--ply-space-sm, 0.5rem); }
+.margin-lg  { margin: var(--ply-space-lg, 1.5rem); }
+.margin-xl  { margin: var(--ply-space-xl, 2rem); }
+.margin-xxl { margin: var(--ply-space-xxl, 3rem); }
 
-.no-margin,
-%no-margin {
+.no-margin {
   margin: 0 !important;
 }
 
-.no-top-margin,
-%no-top-margin {
+.no-top-margin {
   margin-top: 0 !important;
 }
 
-.no-bottom-margin,
-%no-bottom-margin {
+.no-bottom-margin {
   margin-bottom: 0 !important;
 }
 
-.no-spacing,
-%no-spacing {
+.no-spacing {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.no-padding,
-%no-padding {
+.no-padding {
   padding: 0 !important;
 }
 
-.padding,
-%padding {
+.padding {
   padding: variables.$padding;
 }
 
-.padding-top,
-.top-padding,
-%padding-top,
-%top-padding {
+.padding-top {
   padding-top: variables.$padding;
 }
 
-.padding-right,
-.right-padding,
-%padding-right,
-%right-padding {
+.padding-right {
   padding-right: variables.$padding;
 }
 
-.padding-bottom,
-.bottom-padding,
-%padding-bottom,
-%bottom-padding {
+.padding-bottom {
   padding-bottom: variables.$padding;
 }
 
-.padding-left,
-.left-padding,
-%padding-left,
-%left-padding {
+.padding-left {
   padding-left: variables.$padding * 2;
 }
 
 // Padding scale
-.padding-xs { padding: 0.25rem; }
-.padding-sm { padding: 0.5rem; }
-.padding-lg { padding: 1.5rem; }
-.padding-xl { padding: 2rem; }
+.padding-xs  { padding: var(--ply-space-xs, 0.25rem); }
+.padding-sm  { padding: var(--ply-space-sm, 0.5rem); }
+.padding-lg  { padding: var(--ply-space-lg, 1.5rem); }
+.padding-xl  { padding: var(--ply-space-xl, 2rem); }
+.padding-xxl { padding: var(--ply-space-xxl, 3rem); }
 
 // Borders
 
-.border-top,
-%border-top {
+.border-top {
   border-top: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
-.border-bottom,
-%border-bottom {
+.border-bottom {
   border-bottom: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
-.border,
-%border {
+.border {
   border: 1px solid var(--ply-border-color, colors.$border-color);
 }
 
-.no-border,
-%no-border {
+.no-border {
   border: 0 none !important;
 }
 
 // Width (base only — no responsive variants in core)
 
-.width-100,
-%width-100 { width: 100%;  }
-.width-50,
-%width-50  { width: 50%;   }
+.width-100 { width: 100%;  }
+.width-50 { width: 50%;   }
 
 // UI Helpers
 
 .group,
-%group,
-.clearfix,
-%clearfix {
+.clearfix {
   @include mixins.clearfix;
 }
 
-.hide,
-%hide {
+.hide {
   display: none;
 }
 
-.sr-only,
-%sr-only {
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -277,38 +200,32 @@
   border: 0;
 }
 
-.hide-on-desktop,
-%hide-on-desktop {
+.hide-on-desktop {
   display: none;
 }
 
-.flat-list,
-%flat-list {
+.flat-list {
   margin-left: 0;
   list-style: none;
 }
 
-.border-radius,
-%border-radius {
+.border-radius {
   border-radius: variables.$border-radius;
 }
 
 // UX Helpers
 
 .req,
-.required,
-%required {
+.required {
   font-weight: normal;
   color: colors.$color-red;
 }
 
-.error,
-%error {
+.error {
   color: colors.$color-red;
 }
 
-.success,
-%success {
+.success {
   color: colors.$color-green;
 }
 
@@ -375,61 +292,49 @@
 
 // Typography — Legacy
 
-.bold,
-%bold {
+.bold {
   font-weight: bold !important;
 }
 
-.italic,
-%italic {
+.italic {
   font-style: italic;
 }
 
-.uppercase,
-%uppercase {
+.uppercase {
   text-transform: uppercase;
 }
 
-.nowrap,
-%nowrap {
+.nowrap {
   white-space: nowrap;
 }
 
-.text-centered,
-.text-center,
-%text-centered{
+.text-center {
   text-align: center;
 }
 
-.text-right,
-%text-right {
+.text-right {
   text-align: right;
 }
 
-.text-left,
-%text-left {
+.text-left {
   text-align: left;
 }
 
 // Color Helpers
 
-.background-white,
 .bg-white {
   background-color: var(--ply-bg-surface);
 }
 
-.background-black,
 .bg-black {
   background-color: colors.$color-black;
 }
 
-.color-black,
-%color-black {
+.color-black {
   color: colors.$color-black;
 }
 
-.color-white,
-%color-white {
+.color-white {
   color: colors.$color-white;
 }
 
@@ -437,17 +342,13 @@
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
   .left,
-  %left,
-  .right,
-  %right {
+  .right {
     float: none;
   }
-  .hide-on-mobile,
-  %hide-on-mobile {
+  .hide-on-mobile {
     display: none;
   }
-  .hide-on-desktop,
-  %hide-on-desktop {
+  .hide-on-desktop {
     display: block;
   }
 }
