@@ -393,7 +393,7 @@ input[type="datetime-local"] {
   color: var(--ply-color-body, colors.$color-body);
   position: relative;
   z-index: 2;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 textarea,

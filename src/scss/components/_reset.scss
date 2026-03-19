@@ -5,13 +5,13 @@
 *,
 *:before,
 *:after {
-  @include mixins.box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 html {
   font-family: var(--ply-font-body, sans-serif);
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   @include mixins.square;
 }
 
@@ -225,11 +225,11 @@ input[type="checkbox"] {
 
 /* Normalize search fields */
 input[type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Normalize horizontal line */
@@ -260,7 +260,6 @@ object {
 }
 img {
   vertical-align: middle;
-  -ms-interpolation-mode: bicubic;
 }
 
 /* Native <details>/<summary> — Swiss/Modernist accordion */

@@ -26,7 +26,7 @@ button.btn {
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
 
-  -webkit-appearance: none;
+  appearance: none;
 
   outline: none;
   margin: 0;

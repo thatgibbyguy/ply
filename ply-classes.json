@@ -1,8 +1,8 @@
 {
   "version": "1.0.10",
   "framework": "ply",
-  "totalClasses": 424,
-  "uniqueClasses": 424,
+  "totalClasses": 485,
+  "uniqueClasses": 485,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -510,7 +510,8 @@
     "btn": {
       "category": "buttons",
       "description": "Base button class. Inline-block, centered text, secondary gray background (same as btn-secondary). All btn variants include :focus-visible outlines for keyboard accessibility and meet WCAG AA color contrast requirements in both light and dark modes. Use <button> elements (not <a> tags) for actions. For primary actions use btn-primary, for secondary actions use btn or btn-secondary.",
-      "example": "<button class=\"btn\">Click</button>"
+      "example": "<button class=\"btn\">Click</button>",
+      "note": "Produces the same styling as .btn-secondary by default"
     },
     "btn-primary": {
       "category": "buttons",
@@ -520,7 +521,8 @@
     "btn-secondary": {
       "category": "buttons",
       "description": "Secondary action button. Dark gray by default, themed via --ply-btn-secondary-bg. Use for secondary actions alongside a primary button.",
-      "example": "<button class=\"btn btn-secondary\">Cancel</button>"
+      "example": "<button class=\"btn btn-secondary\">Cancel</button>",
+      "note": "Identical to .btn (both produce secondary styling by default)"
     },
     "btn-primary-outline": {
       "category": "buttons",
@@ -840,7 +842,8 @@
     },
     "light": {
       "category": "typography",
-      "description": "Light font weight (300)."
+      "description": "Light font weight (300).",
+      "important": true
     },
     "font-normal": {
       "category": "typography",
@@ -881,7 +884,8 @@
     },
     "bold": {
       "category": "typography",
-      "description": "Bold text (font-weight: bold !important)."
+      "description": "Bold text (font-weight: bold !important).",
+      "important": true
     },
     "italic": {
       "category": "typography",
@@ -1102,15 +1106,18 @@
     },
     "no-margin": {
       "category": "helpers",
-      "description": "Remove all margin (!important)."
+      "description": "Remove all margin (!important).",
+      "important": true
     },
     "no-spacing": {
       "category": "helpers",
-      "description": "Remove all margin and padding (!important)."
+      "description": "Remove all margin and padding (!important).",
+      "important": true
     },
     "no-padding": {
       "category": "helpers",
-      "description": "Remove all padding (!important)."
+      "description": "Remove all padding (!important).",
+      "important": true
     },
     "padding": {
       "category": "helpers",
@@ -1234,7 +1241,8 @@
     },
     "no-border": {
       "category": "helpers",
-      "description": "Remove all borders (!important)."
+      "description": "Remove all borders (!important).",
+      "important": true
     },
     "width-100": {
       "category": "helpers",
@@ -2276,6 +2284,324 @@
     "cursor-row-resize": {
       "category": "helpers",
       "description": "Row resize cursor."
+    },
+    "display--flex": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-flex.",
+      "deprecated": true
+    },
+    "display--block": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-block.",
+      "deprecated": true
+    },
+    "display--inline-block": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-inline-block.",
+      "deprecated": true
+    },
+    "display--grid": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-grid.",
+      "deprecated": true
+    },
+    "display--none": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-none.",
+      "deprecated": true
+    },
+    "display--table": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-table.",
+      "deprecated": true
+    },
+    "display--inline-table": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-inline-table.",
+      "deprecated": true
+    },
+    "display--table-cell": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-table-cell.",
+      "deprecated": true
+    },
+    "display--list-item": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-list-item.",
+      "deprecated": true
+    },
+    "display--inline-grid": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-inline-grid.",
+      "deprecated": true
+    },
+    "display--subgrid": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for display-subgrid.",
+      "deprecated": true
+    },
+    "margin-top--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-top-extra.",
+      "deprecated": true
+    },
+    "top-margin--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-top-extra.",
+      "deprecated": true
+    },
+    "margin-right--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-right-extra.",
+      "deprecated": true
+    },
+    "right-margin--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-right-extra.",
+      "deprecated": true
+    },
+    "margin-bottom--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-bottom-extra.",
+      "deprecated": true
+    },
+    "bottom-margin--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-bottom-extra.",
+      "deprecated": true
+    },
+    "margin-left--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-left-extra.",
+      "deprecated": true
+    },
+    "left-margin--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for margin-left-extra.",
+      "deprecated": true
+    },
+    "padding-top--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-top-extra.",
+      "deprecated": true
+    },
+    "top-padding--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-top-extra.",
+      "deprecated": true
+    },
+    "padding-right--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-right-extra.",
+      "deprecated": true
+    },
+    "right-padding--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-right-extra.",
+      "deprecated": true
+    },
+    "padding-bottom--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-bottom-extra.",
+      "deprecated": true
+    },
+    "bottom-padding--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-bottom-extra.",
+      "deprecated": true
+    },
+    "padding-left--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-left-extra.",
+      "deprecated": true
+    },
+    "left-padding--extra": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for padding-left-extra.",
+      "deprecated": true
+    },
+    "border--thick": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for border-thick.",
+      "deprecated": true
+    },
+    "border-top--thick": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for border-top-thick.",
+      "deprecated": true
+    },
+    "border-right--thick": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for border-right-thick.",
+      "deprecated": true
+    },
+    "border-bottom--thick": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for border-bottom-thick.",
+      "deprecated": true
+    },
+    "border-left--thick": {
+      "category": "helpers",
+      "description": "Deprecated BEM alias for border-left-thick.",
+      "deprecated": true
+    },
+    "navbar--centered": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-centered.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--left": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-left.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--right": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-right.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--vertical": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-vertical.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--thick": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-thick.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--borderless": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-borderless.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--border-blue": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-border-blue.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--border-green": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-border-green.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--border-red": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-border-red.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--border-yellow": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-border-yellow.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "navbar--stack": {
+      "category": "navigation",
+      "description": "Deprecated BEM alias for navbar-stack.",
+      "parent": "navbar",
+      "deprecated": true
+    },
+    "no-top-margin": {
+      "category": "helpers",
+      "description": "Remove top margin (!important).",
+      "important": true
+    },
+    "no-right-margin": {
+      "category": "helpers",
+      "description": "Remove right margin (!important).",
+      "important": true
+    },
+    "no-bottom-margin": {
+      "category": "helpers",
+      "description": "Remove bottom margin (!important).",
+      "important": true
+    },
+    "no-left-margin": {
+      "category": "helpers",
+      "description": "Remove left margin (!important).",
+      "important": true
+    },
+    "no-top-padding": {
+      "category": "helpers",
+      "description": "Remove top padding (!important).",
+      "important": true
+    },
+    "no-right-padding": {
+      "category": "helpers",
+      "description": "Remove right padding (!important).",
+      "important": true
+    },
+    "no-bottom-padding": {
+      "category": "helpers",
+      "description": "Remove bottom padding (!important).",
+      "important": true
+    },
+    "no-left-padding": {
+      "category": "helpers",
+      "description": "Remove left padding (!important).",
+      "important": true
+    },
+    "no-border-top": {
+      "category": "helpers",
+      "description": "Remove top border (!important).",
+      "important": true
+    },
+    "no-border-right": {
+      "category": "helpers",
+      "description": "Remove right border (!important).",
+      "important": true
+    },
+    "no-border-bottom": {
+      "category": "helpers",
+      "description": "Remove bottom border (!important).",
+      "important": true
+    },
+    "no-border-left": {
+      "category": "helpers",
+      "description": "Remove left border (!important).",
+      "important": true
+    },
+    "last": {
+      "category": "helpers",
+      "description": "Remove right margin (!important).",
+      "important": true
+    },
+    "end": {
+      "category": "helpers",
+      "description": "Remove bottom margin (!important).",
+      "important": true
+    },
+    "pause": {
+      "category": "helpers",
+      "description": "Half-height bottom margin (!important).",
+      "important": true
+    },
+    "medium": {
+      "category": "typography",
+      "description": "Medium font weight (400 !important).",
+      "important": true
+    },
+    "centered": {
+      "category": "grid",
+      "description": "Center a grid unit (float: none !important, margin: 0 auto).",
+      "parent": "units-row",
+      "important": true
+    },
+    "unit-centered": {
+      "category": "grid",
+      "description": "Center a grid unit (float: none !important, margin: 0 auto). Alias: centered.",
+      "parent": "units-row",
+      "important": true
     }
   },
   "customProperties": {
@@ -2304,7 +2630,7 @@
       "--ply-border-strong": "Emphasized border. Light: #8d8d8d, Dark: #6f6f6f"
     },
     "interactive": {
-      "--ply-color-accent": "Brand accent color for icons, badges, focus rings, section accents. Independent of button color. Light: #0353e9, Dark: #4589ff. Override in custom themes without affecting buttons.",
+      "--ply-color-accent": "Brand accent color for icons, badges, and section accents. Independent of button color and focus rings. Light: #0353e9, Dark: #4589ff. Override in custom themes without affecting buttons.",
       "--ply-color-link": "Link color. Light: #0f62fe, Dark: #78a9ff",
       "--ply-color-link-hover": "Link hover. Light: #0043ce, Dark: #a6c8ff",
       "--ply-color-focus": "Focus ring color. #0f62fe in both themes",
@@ -2370,6 +2696,13 @@
       "--ply-orange-1 / -2 / -3": "Orange palette: base, light, pastel",
       "--ply-teal-1 / -2 / -3": "Teal palette: base, light, pastel",
       "--ply-cyan-1 / -2 / -3": "Cyan palette: base, light, pastel"
+    },
+    "spacing": {
+      "--ply-space-xs": "Extra-small spacing unit. Default: 0.25rem",
+      "--ply-space-sm": "Small spacing unit. Default: 0.5rem",
+      "--ply-space-md": "Medium spacing unit. Default: 0.75rem",
+      "--ply-space-lg": "Large spacing unit. Default: 1.5rem",
+      "--ply-space-xl": "Extra-large spacing unit. Default: 3rem"
     }
   },
   "semanticElements": {

@@ -96,7 +96,7 @@ Override `--ply-*` CSS custom properties to create any theme:
   --ply-bg-body: #faf5f0;
   --ply-color-body: #1c1917;
   --ply-color-headings: #44240e;
-  --ply-color-accent: #92400e;     /* Icons, badges, focus rings */
+  --ply-color-accent: #92400e;     /* Icons, badges, section accents */
   --ply-btn-default-bg: #92400e;   /* Primary button + links */
   --ply-btn-secondary-bg: #78350f; /* Secondary button */
   --ply-btn-border-radius: 0.5rem; /* Button corner radius */

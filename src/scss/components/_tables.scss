@@ -39,7 +39,7 @@ table.table-hovered tbody tr:hover td {
     margin-bottom: 0;
   }
   &::-webkit-scrollbar {
-    -webkit-appearance: none;
+    appearance: none;
     width: 14px;
     height: 14px;
   }

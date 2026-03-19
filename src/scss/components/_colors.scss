@@ -149,6 +149,13 @@ $btn-secondary-dark-active: #bebebe;
   --ply-font-body: #{variables.$font-family-base};
   --ply-font-heading: #{variables.$font-family-headings};
   --ply-font-mono: #{variables.$font-family-code};
+
+  // Spacing
+  --ply-space-xs: 0.25rem;
+  --ply-space-sm: 0.5rem;
+  --ply-space-md: 0.75rem;
+  --ply-space-lg: 1.5rem;
+  --ply-space-xl: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {

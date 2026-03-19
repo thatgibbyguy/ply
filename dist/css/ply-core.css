@@ -103,6 +103,11 @@
   --ply-font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --ply-font-heading: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --ply-font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --ply-space-xs: 0.25rem;
+  --ply-space-sm: 0.5rem;
+  --ply-space-md: 0.75rem;
+  --ply-space-lg: 1.5rem;
+  --ply-space-xl: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -349,8 +354,9 @@
 
 html {
   font-family: var(--ply-font-body, sans-serif);
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -571,11 +577,14 @@ input[type=checkbox] {
 /* Normalize search fields */
 input[type=search] {
   -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }
 
 input[type=search]::-webkit-search-decoration,
 input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
+          appearance: none;
 }
 
 /* Normalize horizontal line */
@@ -609,7 +618,6 @@ object {
 
 img {
   vertical-align: middle;
-  -ms-interpolation-mode: bicubic;
 }
 
 /* Native <details>/<summary> — Swiss/Modernist accordion */
@@ -1054,7 +1062,7 @@ button.btn-white.btn-disabled {
 }
 
 .no-border {
-  bottom: 0 none !important;
+  border: 0 none !important;
 }
 
 .width-100 {
@@ -1617,6 +1625,8 @@ input[type=datetime-local] {
   position: relative;
   z-index: 2;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 textarea[disabled],
@@ -1763,7 +1773,7 @@ table tfoot td {
 .units-container {
   margin: auto;
   max-width: 1200px;
-  overflow: hidden;
+  overflow-x: clip;
   padding: 0.75rem;
   position: relative;
   width: 100%;
@@ -2438,82 +2448,64 @@ table tfoot td {
     flex-basis: 10%;
   }
 }
-.unit-push-90,
-.unit-push-80,
-.unit-push-75,
-.unit-push-70,
-.unit-push-66,
-.unit-push-65,
-.unit-push-60,
-.unit-push-50,
-.unit-push-40,
-.unit-push-35,
-.unit-push-33,
-.unit-push-30,
-.unit-push-25,
-.unit-push-20,
-.unit-push-10 {
-  position: relative;
-}
-
 .unit-push-90 {
-  left: 0.900375rem;
+  margin-left: 90%;
 }
 
 .unit-push-80 {
-  left: 0.8003333333rem;
+  margin-left: 80%;
 }
 
 .unit-push-75 {
-  left: 0.7503125rem;
+  margin-left: 75%;
 }
 
 .unit-push-70 {
-  left: 0.7002916667rem;
+  margin-left: 70%;
 }
 
 .unit-push-66 {
-  left: 0.6669444444rem;
+  margin-left: 66.6%;
 }
 
 .unit-push-65 {
-  left: 0.6669444444rem;
+  margin-left: 65%;
 }
 
 .unit-push-60 {
-  left: 0.60025rem;
+  margin-left: 60%;
 }
 
 .unit-push-50 {
-  left: 0.5002083333rem;
+  margin-left: 50%;
 }
 
 .unit-push-40 {
-  left: 0.4001666667rem;
+  margin-left: 40%;
 }
 
 .unit-push-35 {
-  left: 0.3334722222rem;
+  margin-left: 35%;
 }
 
 .unit-push-33 {
-  left: 0.3334722222rem;
+  margin-left: 33.3%;
 }
 
 .unit-push-30 {
-  left: 0.300125rem;
+  margin-left: 30%;
 }
 
 .unit-push-25 {
-  left: 0.2501041667rem;
+  margin-left: 25%;
 }
 
 .unit-push-20 {
-  left: 0.2000833333rem;
+  margin-left: 20%;
 }
 
 .unit-push-10 {
-  left: 0.1000416667rem;
+  margin-left: 10%;
 }
 
 .centered,
@@ -2630,6 +2622,7 @@ table.table-hovered tbody tr:hover td {
 }
 .table-container::-webkit-scrollbar {
   -webkit-appearance: none;
+          appearance: none;
   width: 14px;
   height: 14px;
 }
@@ -2939,19 +2932,19 @@ table.table-hovered tbody tr:hover td {
 }
 
 .no-top-padding {
-  padding: 0 !important;
+  padding-top: 0 !important;
 }
 
 .no-right-padding {
-  padding: 0 !important;
+  padding-right: 0 !important;
 }
 
 .no-bottom-padding {
-  padding: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .no-left-padding {
-  padding: 0 !important;
+  padding-left: 0 !important;
 }
 
 .padding {
@@ -3108,27 +3101,27 @@ table.table-hovered tbody tr:hover td {
 
 .border-top-thick,
 .border-top--thick {
-  border-top: 3px solid #ccc;
+  border-top: 3px solid var(--ply-border-color, #ccc);
 }
 
 .border-right-thick,
 .border-right--thick {
-  border-right: 1px solid var(--ply-border-color, #ccc);
+  border-right: 3px solid var(--ply-border-color, #ccc);
 }
 
 .border-bottom-thick,
 .border-bottom--thick {
-  border-bottom: 1px solid var(--ply-border-color, #ccc);
+  border-bottom: 3px solid var(--ply-border-color, #ccc);
 }
 
 .border-left-thick,
 .border-left--thick {
-  border-left: 1px solid var(--ply-border-color, #ccc);
+  border-left: 3px solid var(--ply-border-color, #ccc);
 }
 
 .border-thick,
 .border--thick {
-  bottom: 1px solid #ccc;
+  border: 3px solid var(--ply-border-color, #ccc);
 }
 
 .no-border-top {
@@ -3148,7 +3141,7 @@ table.table-hovered tbody tr:hover td {
 }
 
 .no-border {
-  bottom: 0 none !important;
+  border: 0 none !important;
 }
 
 .width-100 {
@@ -3621,23 +3614,23 @@ fieldset {
 }
 
 .gap-xs {
-  gap: 0.25rem;
+  gap: var(--ply-space-xs, 0.25rem);
 }
 
 .gap-sm {
-  gap: 0.5rem;
+  gap: var(--ply-space-sm, 0.5rem);
 }
 
 .gap {
-  gap: 0.75rem;
+  gap: var(--ply-space-md, 0.75rem);
 }
 
 .gap-lg {
-  gap: 1.5rem;
+  gap: var(--ply-space-lg, 1.5rem);
 }
 
 .gap-xl {
-  gap: 2rem;
+  gap: var(--ply-space-xl, 3rem);
 }
 
 .no-link-style a {
@@ -4928,6 +4921,8 @@ button.btn {
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   margin: 0;
   border: none;

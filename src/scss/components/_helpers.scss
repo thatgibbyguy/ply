@@ -322,22 +322,22 @@
 
 .no-top-padding,
 %no-top-padding {
-  padding: 0 !important;
+  padding-top: 0 !important;
 }
 
 .no-right-padding,
 %no-right-padding {
-  padding: 0 !important;
+  padding-right: 0 !important;
 }
 
 .no-bottom-padding,
 %no-bottom-padding {
-  padding: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .no-left-padding,
 %no-left-padding {
-  padding: 0 !important;
+  padding-left: 0 !important;
 }
 
 .padding,
@@ -474,35 +474,35 @@
 .border-top--thick,
 %border-top-thick,
 %border-top--thick {
-  border-top: 3px solid colors.$border-color;
+  border-top: 3px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-right-thick,
 .border-right--thick,
 %border-right-thick,
 %border-right--thick {
-  border-right: 1px solid var(--ply-border-color, colors.$border-color);
+  border-right: 3px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-bottom-thick,
 .border-bottom--thick,
 %border-bottom-thick,
 %border-bottom--thick {
-  border-bottom: 1px solid var(--ply-border-color, colors.$border-color);
+  border-bottom: 3px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-left-thick,
 .border-left--thick,
 %border-left-thick,
 %border-left--thick {
-  border-left: 1px solid var(--ply-border-color, colors.$border-color);
+  border-left: 3px solid var(--ply-border-color, colors.$border-color);
 }
 
 .border-thick,
 .border--thick,
 %border-thick,
 %border--thick {
-  bottom: 1px solid colors.$border-color;
+  border: 3px solid var(--ply-border-color, colors.$border-color);
 }
 
 .no-border-top,
@@ -527,7 +527,7 @@
 
 .no-border,
 %no-border {
-  bottom: 0 none !important;
+  border: 0 none !important;
 }
 
 .width-100,
@@ -883,11 +883,11 @@
 .bg-yellow { background-color: var(--ply-bg-yellow); }
 
 // Gap utilities
-.gap-xs  { gap: 0.25rem; }
-.gap-sm  { gap: 0.5rem; }
-.gap     { gap: 0.75rem; }
-.gap-lg  { gap: 1.5rem; }
-.gap-xl  { gap: 2rem; }
+.gap-xs  { gap: var(--ply-space-xs, 0.25rem); }
+.gap-sm  { gap: var(--ply-space-sm, 0.5rem); }
+.gap     { gap: var(--ply-space-md, 0.75rem); }
+.gap-lg  { gap: var(--ply-space-lg, 1.5rem); }
+.gap-xl  { gap: var(--ply-space-xl, 3rem); }
 
 // Link reset — suppress link styling inside a container
 .no-link-style {
