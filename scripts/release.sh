@@ -79,6 +79,16 @@ echo "▸ Bumping version: $OLD_VERSION → $VERSION"
 cd "$PLY_ROOT"
 npm version "$VERSION" --no-git-tag-version --allow-same-version
 echo "  ✓ package.json updated"
+
+# Bump version in ply-classes.json
+node -e "
+const fs = require('fs');
+const f = '$PLY_ROOT/ply-classes.json';
+const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+j.version = '$VERSION';
+fs.writeFileSync(f, JSON.stringify(j, null, 2) + '\n');
+"
+echo "  ✓ ply-classes.json updated"
 echo ""
 
 # ─── Step 2: Build + lint ───────────────────────────────────────────────────
@@ -163,13 +173,26 @@ else
   NOTES=$(git log --oneline -10 --no-decorate | sed 's/^/- /')
 fi
 
-RELEASE_BODY="## v$VERSION"
-if [[ -n "$DESCRIPTION" ]]; then
+# Check for a release notes file
+NOTES_FILE="$HOME/Documents/ply-v${VERSION}-release-notes.md"
+if [[ -f "$NOTES_FILE" ]]; then
+  RELEASE_BODY=$(cat "$NOTES_FILE")
   RELEASE_BODY="$RELEASE_BODY
 
+### Commits
+$NOTES
+
+\`\`\`
+npm install plygrid@$VERSION
+\`\`\`"
+else
+  RELEASE_BODY="## v$VERSION"
+  if [[ -n "$DESCRIPTION" ]]; then
+    RELEASE_BODY="$RELEASE_BODY
+
 $DESCRIPTION"
-fi
-RELEASE_BODY="$RELEASE_BODY
+  fi
+  RELEASE_BODY="$RELEASE_BODY
 
 ### Changes
 $NOTES
@@ -177,6 +200,11 @@ $NOTES
 \`\`\`
 npm install plygrid@$VERSION
 \`\`\`"
+
+  # Save a copy for reference
+  echo "$RELEASE_BODY" > "$NOTES_FILE"
+  echo "  ✓ Release notes saved to $NOTES_FILE"
+fi
 
 gh release create "v$VERSION" \
   --repo thatgibbyguy/ply \

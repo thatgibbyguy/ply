@@ -1,5 +1,5 @@
 {
-  "version": "1.0.10",
+  "version": "1.2.1",
   "framework": "ply",
   "totalClasses": 457,
   "uniqueClasses": 457,
@@ -108,7 +108,7 @@
     },
     "unit-100": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
+      "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -127,7 +127,7 @@
     },
     "unit-90": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 90%.",
+      "description": "Grid unit — flex-basis: 90%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -145,7 +145,7 @@
     },
     "unit-88": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 87.5%.",
+      "description": "Grid unit — flex-basis: 87.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -163,7 +163,7 @@
     },
     "unit-80": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 80%.",
+      "description": "Grid unit — flex-basis: 80%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -181,7 +181,7 @@
     },
     "unit-75": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 75%.",
+      "description": "Grid unit — flex-basis: 75%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -199,7 +199,7 @@
     },
     "unit-70": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 70%.",
+      "description": "Grid unit — flex-basis: 70%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -217,7 +217,7 @@
     },
     "unit-66": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 66.6% (two-thirds).",
+      "description": "Grid unit — flex-basis: 66.6% (two-thirds).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -235,7 +235,7 @@
     },
     "unit-65": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 65%.",
+      "description": "Grid unit — flex-basis: 65%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -253,7 +253,7 @@
     },
     "unit-62": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 62.5%.",
+      "description": "Grid unit — flex-basis: 62.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -271,7 +271,7 @@
     },
     "unit-60": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 60%.",
+      "description": "Grid unit — flex-basis: 60%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -289,7 +289,7 @@
     },
     "unit-50": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 50% (half).",
+      "description": "Grid unit — flex-basis: 50% (half).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -308,7 +308,7 @@
     },
     "unit-40": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 40%.",
+      "description": "Grid unit — flex-basis: 40%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -326,7 +326,7 @@
     },
     "unit-38": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 37.5%.",
+      "description": "Grid unit — flex-basis: 37.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -344,7 +344,7 @@
     },
     "unit-35": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 35%.",
+      "description": "Grid unit — flex-basis: 35%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -362,7 +362,7 @@
     },
     "unit-33": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 33.3% (one-third).",
+      "description": "Grid unit — flex-basis: 33.3% (one-third).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -381,7 +381,7 @@
     },
     "unit-30": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 30%.",
+      "description": "Grid unit — flex-basis: 30%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -399,7 +399,7 @@
     },
     "unit-25": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 25% (one-quarter).",
+      "description": "Grid unit — flex-basis: 25% (one-quarter).",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -417,7 +417,7 @@
     },
     "unit-20": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 20%.",
+      "description": "Grid unit — flex-basis: 20%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -435,7 +435,7 @@
     },
     "unit-12": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 12.5%.",
+      "description": "Grid unit — flex-basis: 12.5%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -453,7 +453,7 @@
     },
     "unit-10": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-basis: 10%.",
+      "description": "Grid unit — flex-basis: 10%.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -471,7 +471,7 @@
     },
     "unit-auto": {
       "category": "grid",
-      "description": "Grid unit \u2014 flex-grow: 1, fills remaining space.",
+      "description": "Grid unit — flex-grow: 1, fills remaining space.",
       "parent": "units-row",
       "responsive": [
         "tablet-unit-*",
@@ -1406,7 +1406,7 @@
     },
     "skip-link": {
       "category": "helpers",
-      "description": "Skip navigation link \u2014 hidden until focused. Use as the first focusable element inside <body>.",
+      "description": "Skip navigation link — hidden until focused. Use as the first focusable element inside <body>.",
       "example": "<a href=\"#main\" class=\"skip-link\">Skip to main content</a>"
     },
     "hide-on-desktop": {
@@ -1756,7 +1756,7 @@
     },
     "spinning": {
       "category": "helpers",
-      "description": "Infinite 360\u00b0 spin animation."
+      "description": "Infinite 360° spin animation."
     },
     "fade-in": {
       "category": "helpers",
@@ -2549,7 +2549,7 @@
     "details": {
       "file": "_reset.scss",
       "styling": "Border, border-radius, padding. Summary gets cursor: pointer, font-weight: 600. Rotation arrow on open state.",
-      "tip": "Use for collapsible content. No classes needed \u2014 just <details><summary>Title</summary>Content</details>."
+      "tip": "Use for collapsible content. No classes needed — just <details><summary>Title</summary>Content</details>."
     },
     "table": {
       "file": "_typography.scss, _tables.scss",
