@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.9",
   "framework": "ply",
-  "totalClasses": 421,
-  "uniqueClasses": 421,
+  "totalClasses": 423,
+  "uniqueClasses": 423,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -16,6 +16,8 @@
       "--ply-border-color",
       "--ply-btn-default-bg",
       "--ply-btn-secondary-bg",
+      "--ply-color-accent",
+      "--ply-btn-border-radius",
       "--ply-nav-bg",
       "--ply-nav-border"
     ]
@@ -50,7 +52,9 @@
       "--ply-btn-secondary-color",
       "--ply-btn-secondary-bg-hover",
       "--ply-btn-secondary-bg-active",
-      "--ply-color-link-hover"
+      "--ply-color-link-hover",
+      "--ply-color-accent",
+      "--ply-btn-border-radius"
     ]
   },
   "classes": {
@@ -1619,6 +1623,14 @@
       "category": "helpers",
       "description": "Yellow background color. Theme-aware, WCAG AA with dark text."
     },
+    "color-accent": {
+      "category": "helpers",
+      "description": "Text color: accent/brand color. Uses --ply-color-accent. Theme-aware."
+    },
+    "bg-accent": {
+      "category": "helpers",
+      "description": "Accent/brand background color. Uses --ply-color-accent. Theme-aware."
+    },
     "bg-surface": {
       "category": "helpers",
       "description": "Surface background color. Theme-aware. Alias: background-white."
@@ -2193,9 +2205,11 @@
       "--ply-border-strong": "Emphasized border. Light: #8d8d8d, Dark: #6f6f6f"
     },
     "interactive": {
+      "--ply-color-accent": "Brand accent color for icons, badges, focus rings, section accents. Independent of button color. Light: #0353e9, Dark: #4589ff. Override in custom themes without affecting buttons.",
       "--ply-color-link": "Link color. Light: #0f62fe, Dark: #78a9ff",
       "--ply-color-link-hover": "Link hover. Light: #0043ce, Dark: #a6c8ff",
-      "--ply-color-focus": "Focus ring color. #0f62fe in both themes"
+      "--ply-color-focus": "Focus ring color. #0f62fe in both themes",
+      "--ply-btn-border-radius": "Button border-radius. Default: 2rem (pill shape). Override for square or rounded buttons."
     },
     "forms": {
       "--ply-color-field-bg": "Field background. Light: #ffffff, Dark: #262626",

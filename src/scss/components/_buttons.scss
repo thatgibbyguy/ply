@@ -31,7 +31,7 @@ button.btn {
   outline: none;
   margin: 0;
   border: none;
-  border-radius: variables.$button-radius;
+  border-radius: var(--ply-btn-border-radius, #{variables.$button-radius});
   box-shadow: none;
   cursor: pointer;
   background: var(--ply-btn-secondary-bg, #393939);
@@ -53,7 +53,7 @@ button.btn {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline: 2px solid var(--ply-color-accent, #{colors.$color-blue});
     outline-offset: 2px;
   }
 
@@ -156,7 +156,7 @@ button.btn-outline {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline: 2px solid var(--ply-color-accent, #{colors.$color-blue});
     outline-offset: 2px;
   }
 }
@@ -188,7 +188,7 @@ button.btn-ghost {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline: 2px solid var(--ply-color-accent, #{colors.$color-blue});
     outline-offset: 2px;
   }
 }
@@ -213,7 +213,7 @@ button.btn-primary-outline {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline: 2px solid var(--ply-color-accent, #{colors.$color-blue});
     outline-offset: 2px;
   }
 }
@@ -238,7 +238,7 @@ button.btn-secondary-outline {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, colors.$color-blue);
+    outline: 2px solid var(--ply-color-accent, #{colors.$color-blue});
     outline-offset: 2px;
   }
 }

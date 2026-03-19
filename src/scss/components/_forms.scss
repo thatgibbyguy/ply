@@ -306,6 +306,13 @@ select.input-xs {
   align-items: stretch;
   margin-bottom: variables.$base-line;
 
+  .btn {
+    &:hover,
+    &:active {
+      transform: none;
+    }
+  }
+
   input,
   textarea,
   select {
@@ -373,6 +380,11 @@ select.input-xs {
       margin: 0;
       border-left: none;
       white-space: nowrap;
+
+      &[class*="outline"] {
+        border: 1px solid var(--ply-color-input-border);
+        border-left: none;
+      }
     }
   }
 
@@ -387,6 +399,11 @@ select.input-xs {
       border-radius: 0 variables.$border-radius variables.$border-radius 0;
       margin: 0;
       white-space: nowrap;
+
+      &[class*="outline"] {
+        border: 1px solid var(--ply-color-input-border);
+        border-left: none;
+      }
     }
   }
 }

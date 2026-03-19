@@ -1,0 +1,785 @@
+# plygrid (ply) — Complete Documentation
+
+> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plygrid` or use the CDN.
+
+---
+
+## Install
+
+### npm + Sass (recommended)
+
+```sh
+npm install plygrid
+```
+
+```scss
+@use "plygrid/src/scss/ply" as *;
+
+// Or import individual modules
+@use "plygrid/src/scss/components/colors" as colors;
+@use "plygrid/src/scss/components/variables" as variables;
+@use "plygrid/src/scss/components/mixins" as mixins;
+
+.custom {
+  color: colors.$color-blue;
+  background: colors.$color-blue-pastel;
+  @include mixins.border-bottom-radius(variables.$border-radius);
+}
+```
+
+SCSS source: `src/scss/components/_colors.scss` (full color palette), `_variables.scss` (spacing, fonts, breakpoints), `_mixins.scss` (button generator, gradients, animations).
+
+### CDN (prototyping only)
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+```
+
+Core bundle (no labels, dropdowns, loaders, print):
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
+```
+
+Bundles: `ply.min.css` (~20KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~6KB, grid+helpers), `ply-helpers.min.css` (~4KB, helpers only).
+
+---
+
+## Core Rules
+
+1. **ply is standalone** — Do NOT use Tailwind, Bootstrap, or other CSS frameworks alongside ply.
+2. **Always wrap `unit-*` inside `units-row`** — they are flex children.
+3. **Use `units-container`** for page-width centering (1200px max).
+4. **Use `<button>` for buttons, not `<a>`** — links navigate, buttons act.
+5. **Wrap forms in `.form`** for styled inputs.
+6. **Use semantic HTML first** — ply auto-styles `<nav>`, `<table>`, `<code>`, `<pre>`, `<kbd>`, `<blockquote>`, `<mark>`, `<details>`, `<summary>`, `<dialog>`, `<progress>`, `<meter>`, `<hr>`, and headings.
+7. **Only use documented classes** — do not invent class names. Search `ply-classes.json` first.
+8. **Add responsive classes** — at minimum `tablet-unit-100` to stack on mobile.
+9. **Use `--ply-*` custom properties** for colors — never hard-code values that break dark mode.
+10. **Single-dash class names preferred** — `navbar-centered`, not `navbar--centered`.
+
+---
+
+## Grid System
+
+ply uses a ratio-based flexbox grid. Think in percentages, not arbitrary columns.
+
+```html
+<div class="units-container">
+  <div class="units-row gap">
+    <div class="unit-66 tablet-unit-100">Main content (2/3 width)</div>
+    <div class="unit-33 tablet-unit-100">Sidebar (1/3 width)</div>
+  </div>
+</div>
+```
+
+- `units-container` — centers content at 1200px max-width
+- `units-row` — creates the flex row
+- `unit-*` — sets width as percentage. Available: 10, 12, 20, 25, 30, 33, 35, 38, 40, 50, 60, 62, 65, 66, 70, 75, 80, 88, 90, 100, auto
+- Responsive prefixes: `tablet-unit-*` (≤ 1024px), `phone-unit-*` (≤ 767px), `small-desktop-unit-*`, `large-screen-unit-*`
+- `gap-xs`, `gap-sm`, `gap`, `gap-lg`, `gap-xl` — spacing between flex children
+- `equal-height` — on `units-row` to stretch all children to the tallest
+- `units-row` can be nested inside units for complex layouts
+
+### Two-Column Layout Example
+
+```html
+<div class="units-container">
+  <div class="units-row gap">
+    <div class="unit-66 tablet-unit-100">
+      <h2>Main Content</h2>
+      <p>Two-thirds width on desktop, full width on tablet.</p>
+    </div>
+    <div class="unit-33 tablet-unit-100">
+      <aside>
+        <h3>Sidebar</h3>
+        <p class="text-secondary">Supplementary content.</p>
+      </aside>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Buttons — Accessible by Default (WCAG 2.1 AA)
+
+All ply buttons are WCAG 2.1 AA compliant out of the box. Always use `<button>`, not `<a>`.
+
+### Button Hierarchy
+
+- **`btn btn-primary`** — Primary call-to-action. Blue by default, themed via `--ply-btn-default-bg`. **WCAG AA compliant: 4.56:1 contrast ratio** (white text on blue background). In dark mode, contrast is maintained at AA level. `:focus-visible` shows a 2px blue outline for keyboard users. `prefers-contrast: more` strengthens colors further (WCAG 1.4.6).
+- **`btn btn-secondary`** (or plain `btn`) — Secondary actions. Dark gray by default, themed via `--ply-btn-secondary-bg`. WCAG AA compliant.
+- **`btn btn-primary-outline`** / **`btn btn-secondary-outline`** — Outlined variants. Transparent bg, border + text from the theme color. Fills on hover.
+- **`btn btn-ghost`** — Ghost button. Text-only with subtle hover tint.
+- **`btn btn-blue`**, **`btn btn-red`**, **`btn btn-green`**, **`btn btn-yellow`** — Static color buttons with hardcoded hex values. Immune to theming. Use for color-coded actions (e.g., delete = red, success = green). All meet WCAG AA contrast.
+
+### Icon Buttons
+
+- **`btn-icon`** — Icon-only button modifier. Equal padding for a square aspect ratio. Always add `aria-label` (no visible text). Combine with `btn-ghost` for toolbar-style actions.
+- For icon + text buttons, use a regular `btn` with an inline SVG — no `btn-icon` needed.
+
+```html
+<button class="btn btn-ghost btn-icon" aria-label="Search"><svg>...</svg></button>
+<button class="btn btn-primary"><svg>...</svg> Save</button>
+```
+
+### Button Sizes
+
+- `btn-big` (alias: `btn-lg`) — larger button
+- `btn-small` (alias: `btn-sm`) — smaller button
+- `btn-smaller` (alias: `btn-xs`) — smallest button
+
+### Button Accessibility Features
+
+Every ply button automatically gets:
+- `:focus-visible` with a 2px solid blue outline and 2px offset — visible to keyboard users, invisible to mouse users (WCAG 2.4.7 Focus Visible)
+- `prefers-contrast: more` support — colors become stronger in high-contrast mode (WCAG 1.4.6 Contrast Enhanced)
+- `prefers-reduced-motion: reduce` — disables any hover/active transitions (WCAG 2.3.3)
+- 3:1 non-text contrast on borders and focus indicators (WCAG 1.4.11)
+- No JavaScript required — all button interactions are CSS-based
+
+```html
+<!-- Primary + Secondary pair -->
+<button class="btn btn-primary">Save</button>
+<button class="btn btn-secondary">Cancel</button>
+
+<!-- Themed button via CSS custom property -->
+<style>[data-theme="warm"] { --ply-btn-default-bg: #92400e; }</style>
+
+<!-- Static color button (ignores theme) -->
+<button class="btn btn-blue">Always Blue</button>
+```
+
+---
+
+## Dark Mode
+
+ply auto-detects `prefers-color-scheme: dark` when no `data-theme` attribute is set on `<html>`. All `--ply-*` custom properties swap automatically — backgrounds, text, borders, buttons, links. WCAG AA contrast is maintained in both light and dark modes.
+
+```html
+<html>                     <!-- Auto (follows OS preference) -->
+<html data-theme="light">  <!-- Force light -->
+<html data-theme="dark">   <!-- Force dark -->
+<html data-theme="warm">   <!-- Custom theme (no auto dark mode) -->
+```
+
+Components that adapt automatically — no configuration needed:
+
+```html
+<div class="layer-1 padding border-radius">
+  <h2>Dashboard</h2>
+  <p class="text-secondary">This card adapts to light/dark automatically.</p>
+  <button class="btn btn-primary">Action</button>
+</div>
+```
+
+`layer-1` uses `--ply-bg-surface` (white in light, `#262626` in dark). `text-secondary` uses `--ply-color-secondary` (`#525252` light, `#c6c6c6` dark). Every ply class is theme-aware.
+
+Toggle with JavaScript:
+
+```js
+document.documentElement.dataset.theme =
+  document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+```
+
+---
+
+## Custom Themes
+
+Override `--ply-*` custom properties to theme the entire app with one CSS block:
+
+```css
+[data-theme="brand"] {
+  --ply-bg-body: #fefce8;
+  --ply-bg-surface: #fef9c3;
+  --ply-bg-muted: #fef08a;
+  --ply-color-body: #1a1a1a;
+  --ply-color-headings: #78350f;
+  --ply-border-color: #fbbf24;
+  --ply-btn-default-bg: #b45309;
+  --ply-btn-default-bg-hover: #92400e;
+  --ply-btn-default-bg-active: #7c2d12;
+  --ply-btn-secondary-bg: #78350f;
+  --ply-nav-bg: #fef3c7;
+  --ply-nav-border: #f59e0b;
+  --ply-font-body: "Palatino Linotype", Palatino, Georgia, serif;
+  --ply-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ply-font-mono: "Fira Code", "Source Code Pro", monospace;
+}
+```
+
+```html
+<html data-theme="brand">
+```
+
+Setting any `data-theme` value prevents auto dark mode from interfering. All 60+ `--ply-*` variables are listed in the `customProperties` section of `ply-classes.json`.
+
+**Important:** If you override colors, verify 4.5:1 contrast for normal text and 3:1 for large text (18px bold / 24px) and UI components (WCAG 1.4.3).
+
+---
+
+## Navigation — Semantic and Responsive
+
+### Basic Navbar
+
+```html
+<nav class="navbar" aria-label="Main navigation">
+  <ul>
+    <li class="active"><a href="/" aria-current="page">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+```
+
+Navbar variants: `navbar-thick`, `navbar-borderless`, `navbar-border-blue`, `navbar-border-green`, `navbar-border-red`, `navbar-border-yellow`, `navbar-centered`.
+
+### Responsive Collapsible Header (CSS-Only, No JavaScript)
+
+Use `<details>`/`<summary>` as a hamburger toggle for mobile. The desktop nav shows inline; on mobile it collapses behind a toggle. Fully keyboard-accessible — Enter/Space toggles `<details>` natively.
+
+```html
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="sticky" style="top: 0; z-index: 100;">
+  <nav class="navbar" aria-label="Main navigation" style="position: relative;">
+    <!-- Desktop nav — hidden on mobile (≤ 767px) -->
+    <ul class="phone-hide">
+      <li class="active"><a href="#" aria-current="page">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <!-- Mobile hamburger — hidden on tablet (≥ 768px) and desktop -->
+    <details class="tablet-hide desktop-hide">
+      <summary aria-label="Menu">&#9776; Menu</summary>
+      <ul>
+        <li class="active"><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </details>
+  </nav>
+</header>
+
+<main id="main">...</main>
+```
+
+Required CSS for the mobile dropdown overlay:
+
+```css
+nav.navbar details > ul {
+  position: absolute;
+  left: 0; right: 0;
+  background: var(--ply-bg-surface);
+  border-bottom: 1px solid var(--ply-border-color);
+  padding: 0.5rem 0;
+  z-index: 99;
+}
+nav.navbar details > ul li { display: block; }
+nav.navbar details > ul li a { display: block; padding: 0.5rem 1rem; }
+nav.navbar details summary { cursor: pointer; padding: 0.5rem 1rem; list-style: none; }
+nav.navbar details summary::-webkit-details-marker { display: none; }
+```
+
+**How it works:**
+- `sticky` + `top: 0` pins the header on scroll
+- `phone-hide` hides the desktop `<ul>` on screens ≤ 767px
+- `tablet-hide desktop-hide` shows the `<details>` toggle only on mobile
+- `<details>`/`<summary>` is natively keyboard-accessible (Enter/Space toggles, no JS)
+- `aria-label="Menu"` on `<summary>` and `aria-current="page"` on the active link for screen readers
+
+**Responsive visibility classes:**
+- `phone-hide` — hidden ≤ 767px
+- `tablet-hide` — hidden 768px–1024px
+- `desktop-hide` — hidden ≥ 1025px
+- `phone-only` — visible only ≤ 767px
+- `tablet-only` — visible only 768px–1024px
+
+Always include: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+---
+
+## Cards and Surfaces
+
+```html
+<div class="layer-1 padding-lg margin-bottom border border-radius">
+  <h3>Card Title</h3>
+  <p class="text-secondary">Description with theme-aware text.</p>
+  <button class="btn btn-primary">Learn More</button>
+</div>
+```
+
+- `layer-1` — surface background (`--ply-bg-surface`) + subtle box-shadow
+- `layer-2` — elevated surface (`--ply-bg-muted`) + stronger shadow
+- `padding-xs` (0.25rem), `padding-sm` (0.5rem), `padding` (default), `padding-lg` (1.5rem), `padding-xl` (2rem)
+- `margin-bottom`, `margin-top-lg`, `margin-xl` — directional + size variants
+- `border` — 1px solid using `--ply-border-color` (theme-aware)
+- `border-radius` (default), `border-radius-lg` (0.75rem), `border-radius-xl` (1.5rem)
+
+Equal-height cards in a row:
+
+```html
+<div class="units-row gap-lg equal-height">
+  <div class="unit-33 tablet-unit-100">
+    <div class="layer-1 padding border-radius">Card 1</div>
+  </div>
+  <div class="unit-33 tablet-unit-100">
+    <div class="layer-2 padding border-radius">Card 2 (elevated)</div>
+  </div>
+  <div class="unit-33 tablet-unit-100">
+    <div class="layer-1 padding border-radius">Card 3</div>
+  </div>
+</div>
+```
+
+---
+
+## Typography and Text
+
+- `text-primary` — primary text color (theme-aware)
+- `text-secondary` — secondary/muted text
+- `text-tertiary` — tertiary/subtle text
+- `text-sm` — small text
+- `text-lg` — large text
+- `text-center`, `text-left`, `text-right` — alignment
+- `text-balance` — CSS `text-wrap: balance` for headings
+- `no-orphan` — prevents orphaned last words in paragraphs
+- `.h1` through `.h6` — visual heading sizes without semantic heading level
+
+---
+
+## Forms
+
+Wrap in `.form` to activate ply input styling:
+
+```html
+<form class="form">
+  <label for="name">Name</label>
+  <input type="text" id="name" required>
+  <label for="email">Email</label>
+  <input type="email" id="email" required>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+```
+
+Input sizes: `input-big` (alias: `input-lg`), `input-small` (alias: `input-sm`), `input-smaller` (alias: `input-xs`).
+
+Validation states: `input-error`, `input-success`.
+
+### Input Groups
+
+Use `.input-groups` for prepend/append addons on inputs. **Buttons must be wrapped** in `.input-append` or `.btn-append` — placing a button directly inside `.input-groups` without a wrapper won't work.
+
+```html
+<!-- Text addon -->
+<div class="input-groups">
+  <span class="input-prepend">$</span>
+  <input type="text" placeholder="Amount">
+  <span class="input-append">.00</span>
+</div>
+
+<!-- Button appended via input-append -->
+<div class="input-groups">
+  <input type="text" placeholder="Search...">
+  <span class="input-append">
+    <button class="btn btn-primary">Search</button>
+  </span>
+</div>
+
+<!-- Button appended via btn-append -->
+<div class="input-groups">
+  <input type="text" placeholder="Enter URL">
+  <div class="btn-append">
+    <button class="btn btn-primary-outline">Go</button>
+  </div>
+</div>
+```
+
+Outline buttons in input groups automatically match the input border. Button scale transforms are disabled inside input groups for a clean inline look.
+
+---
+
+## Alerts and Notifications
+
+```html
+<div class="alert">Default alert</div>
+<div class="alert alert-blue">Info alert</div>
+<div class="alert alert-green">Success alert</div>
+<div class="alert alert-red">Error alert</div>
+<div class="alert alert-yellow">Warning alert</div>
+```
+
+Aliases: `alert` = `tools-alert`, `message` = `tools-message`.
+
+---
+
+## Common Patterns
+
+- **Equal-height cards** — `equal-height` on `units-row`
+- **Gap between children** — `gap-xs`, `gap-sm`, `gap`, `gap-lg`, `gap-xl`
+- **Prevent orphans** — `no-orphan` on paragraphs, `text-balance` on headings
+- **Card-style links** — `no-link-style` on a container to suppress link color/underline
+- **Sticky elements** — `sticky` class + `top: 0` inline style
+- **Display utilities** — `display-flex`, `display-grid`, `display-block`, `display-none`
+
+---
+
+## Accessibility (WCAG 2.1 AA) — Built Into Every Component
+
+ply is built for Section 508 / WCAG 2.1 AA compliance. Every interactive element ships with accessibility features — no extra configuration needed.
+
+### What ply provides automatically
+
+- **Focus indicators** — All interactive elements (buttons, links, inputs, nav items, dropdowns, `<summary>`, `<dialog>`) get `:focus-visible` with a 2px solid blue outline and 2px offset. Keyboard users see clear focus rings; mouse users don't. (WCAG 2.4.7 Focus Visible)
+- **Color contrast** — All default color pairings meet 4.5:1 contrast in both light and dark modes. `btn-primary` delivers 4.56:1 contrast (white on blue). The entire brand palette is tuned for AA. (WCAG 1.4.3 Contrast Minimum)
+- **Non-text contrast** — Focus indicators, button borders, and input borders meet 3:1 ratio. (WCAG 1.4.11)
+- **High contrast mode** — `@media (prefers-contrast: more)` strengthens text and link colors beyond AA minimums. (WCAG 1.4.6 Contrast Enhanced)
+- **Reduced motion** — `@media (prefers-reduced-motion: reduce)` disables all CSS animations and transitions. (WCAG 2.3.3)
+- **Dark mode contrast** — `prefers-color-scheme: dark` maintains WCAG AA contrast. (WCAG 1.4.3)
+- **Skip link** — `.skip-link` as the first focusable element lets keyboard users bypass navigation. (WCAG 2.4.1)
+- **Screen reader support** — `.sr-only` hides content visually while keeping it accessible to assistive technology. (WCAG 1.3.1)
+- **Keyboard operability** — All ply interactive elements are natively keyboard-operable via semantic HTML. No custom JS required. (WCAG 2.1.1)
+- **Zero JavaScript** — No ARIA state management failures from framework code. (WCAG 4.1.2)
+- **Sortable table headers** — `th.sortable` gets `:focus-visible` outlines
+- **Pagination** — Focus-visible outlines on all page links, `aria-current="page"` supported
+- **RTL support** — `dir="rtl"` for Arabic, Hebrew, and other RTL languages
+
+### WCAG compliance summary
+
+| WCAG Criterion | How ply addresses it |
+|---|---|
+| 1.3.1 Info and Relationships | Semantic HTML auto-styling encourages `<nav>`, `<main>`, `<aside>`, `<table>`, `<details>`, headings. `.sr-only` exposes supplemental info. |
+| 1.4.3 Contrast (Minimum) | All default colors meet 4.5:1. `btn-primary` = 4.56:1. Dark mode maintains AA. |
+| 1.4.6 Contrast (Enhanced) | `prefers-contrast: more` strengthens colors beyond AA. |
+| 1.4.11 Non-Text Contrast | Focus indicators, button borders, input borders all meet 3:1. |
+| 2.1.1 Keyboard | All interactive elements keyboard-operable via native HTML. |
+| 2.3.3 Animation | `prefers-reduced-motion: reduce` disables all animations. |
+| 2.4.1 Bypass Blocks | `.skip-link` for keyboard bypass navigation. |
+| 2.4.7 Focus Visible | `:focus-visible` on every interactive element. |
+| 4.1.2 Name, Role, Value | Zero JS = no ARIA state failures. Native HTML exposes correct roles. |
+
+### What needs application-level work
+
+- **Alt text** — Add `alt` to every `<img>`; `alt=""` for decorative. (1.1.1)
+- **Heading hierarchy** — One `<h1>` per page, then h2-h6 in sequence. (1.3.1)
+- **Custom widget ARIA** — JS-powered dropdowns, modals, tabs need `aria-expanded`, `aria-controls`, `role`. (4.1.2)
+- **Custom color contrast** — If you override `--ply-*` variables, verify 4.5:1 for text, 3:1 for large text/UI. (1.4.3)
+- **Keyboard for custom widgets** — Custom JS components must be keyboard-operable. (2.1.1)
+- **Page title** — Every page needs `<title>`. (2.4.2)
+- **Language** — Set `<html lang="en">`. (3.1.1)
+- **Form labels** — Use `<label>` for all inputs. (3.3.2)
+- **Error identification** — Identify errors in text, not just color. (3.3.1)
+
+### AI agent guidance for accessible markup
+
+When generating ply markup, always:
+1. Use semantic elements for landmarks — `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`
+2. Add `aria-label` to custom widgets without visible text labels
+3. Use `<form role="search">` for search forms
+4. Include `.skip-link` as the first focusable element
+5. Add `alt` text to all `<img>` elements
+6. Maintain heading hierarchy (h1 > h2 > h3, no skipping)
+7. Label all form inputs with `<label>`
+8. Set `lang` on `<html>`
+9. Pair color with text for status indicators
+10. Prefer native elements over ARIA — `<button>` over `<div role="button">`, `<dialog>` over `<div role="dialog">`
+
+---
+
+## Focus Management & Keyboard Patterns
+
+ply provides `:focus-visible` outlines on all native interactive elements. For custom widgets, manage focus yourself.
+
+### Focus Order Strategy
+
+1. **Use semantic HTML first** — `<button>`, `<a>`, `<input>`, `<select>`, `<details>`, `<dialog>` are already in tab order.
+2. **`tabindex="0"`** — Add to custom interactive elements to include in tab order. ply's `:focus-visible` applies automatically.
+3. **`tabindex="-1"`** — For programmatic focus targets (modal containers, error summaries). NOT in tab order.
+4. **Never use `tabindex` > 0** — Overrides natural DOM order.
+
+```html
+<!-- Native — already focusable, ply styles focus -->
+<button class="btn">Save</button>
+<a href="/settings">Settings</a>
+
+<!-- Custom interactive element — add tabindex="0" -->
+<div role="button" tabindex="0"
+     onclick="doAction()"
+     onkeydown="if(event.key==='Enter'||event.key===' ')doAction()">
+  Custom Action
+</div>
+
+<!-- Programmatic focus target — tabindex="-1" -->
+<div id="error-summary" tabindex="-1" role="alert">
+  Please fix the errors below.
+</div>
+<script>
+  document.getElementById('error-summary').focus();
+</script>
+
+<!-- Screen-reader-only content -->
+<span class="sr-only">3 notifications</span>
+```
+
+### Arrow Key Navigation (Roving Tabindex)
+
+For grouped controls (tabs, toolbars, menu items): one item has `tabindex="0"` (active), the rest have `tabindex="-1"`. Arrow keys move focus within the group.
+
+```html
+<div role="tablist" aria-label="Settings">
+  <button role="tab" aria-selected="true" tabindex="0" aria-controls="panel-general">General</button>
+  <button role="tab" aria-selected="false" tabindex="-1" aria-controls="panel-security">Security</button>
+  <button role="tab" aria-selected="false" tabindex="-1" aria-controls="panel-notifications">Notifications</button>
+</div>
+<div role="tabpanel" id="panel-general" aria-labelledby="tab-general">
+  General settings content.
+</div>
+```
+
+```js
+tablist.addEventListener('keydown', (e) => {
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const current = tabs.indexOf(document.activeElement);
+  let next;
+  if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
+  else if (e.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+  else if (e.key === 'Home') next = 0;
+  else if (e.key === 'End') next = tabs.length - 1;
+  else return;
+  e.preventDefault();
+  tabs[current].setAttribute('tabindex', '-1');
+  tabs[current].setAttribute('aria-selected', 'false');
+  tabs[next].setAttribute('tabindex', '0');
+  tabs[next].setAttribute('aria-selected', 'true');
+  tabs[next].focus();
+  tabs.forEach((tab, i) => {
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = (i !== next);
+  });
+});
+```
+
+### ARIA Attributes Reference
+
+| Attribute | When to use | Example |
+|---|---|---|
+| `aria-expanded` | Toggleable content (dropdowns, accordions, menus) | `<button aria-expanded="false" aria-controls="menu">Menu</button>` |
+| `aria-controls` | Links trigger to controlled element | `<button aria-controls="dropdown-1">Options</button>` |
+| `aria-selected` | Active item in tabs, listboxes | `<button role="tab" aria-selected="true">Tab 1</button>` |
+| `aria-current="page"` | Current page in navigation | `<a href="/" aria-current="page">Home</a>` |
+| `aria-live="polite"` | Dynamic content updates | `<div aria-live="polite">3 results found.</div>` |
+| `aria-live="assertive"` | Urgent announcements | `<div aria-live="assertive" role="alert">Session expired.</div>` |
+| `aria-label` | Elements without visible text | `<button aria-label="Close">×</button>` |
+| `aria-labelledby` | Points to another element for label | `<div role="tabpanel" aria-labelledby="tab-1">` |
+| `aria-describedby` | Additional description | `<input aria-describedby="password-hint">` |
+
+### Live Regions for Dynamic Content
+
+```html
+<!-- Polite — announced after current speech -->
+<div aria-live="polite" role="status" class="sr-only" id="search-status"></div>
+<script>
+  document.getElementById('search-status').textContent = '12 results found.';
+</script>
+
+<!-- Assertive — announced immediately -->
+<div aria-live="assertive" role="alert">
+  Your session has expired. Please log in again.
+</div>
+```
+
+---
+
+## Custom Widget Accessibility Patterns
+
+When building custom interactive widgets beyond ply's built-in components, follow these patterns for WCAG 2.1 AA compliance.
+
+### Drag-and-Drop with Full Keyboard Support
+
+Drag-and-drop interfaces must be fully keyboard operable (WCAG 2.1.1). Use a listbox pattern with grab/move/drop states and an `aria-live` region for screen reader announcements.
+
+```html
+<!-- Live region for announcements -->
+<div class="sr-only" aria-live="assertive" id="dnd-status"></div>
+
+<!-- Visible keyboard instructions -->
+<p class="text-secondary text-sm">
+  Keyboard: Tab to list, Space to grab, Up/Down to move, Enter to drop, Escape to cancel.
+</p>
+
+<!-- Sortable list with ARIA roles -->
+<ul role="listbox" aria-label="Sortable tasks" id="sortable-list">
+  <li role="option" tabindex="0" aria-grabbed="false">Review pull request</li>
+  <li role="option" tabindex="-1" aria-grabbed="false">Update documentation</li>
+  <li role="option" tabindex="-1" aria-grabbed="false">Fix navigation bug</li>
+</ul>
+```
+
+```js
+const list = document.getElementById('sortable-list');
+const status = document.getElementById('dnd-status');
+let grabbed = null;
+
+list.addEventListener('keydown', (e) => {
+  const item = e.target;
+  if (item.getAttribute('role') !== 'option') return;
+
+  switch (e.key) {
+    case ' ':
+      e.preventDefault();
+      if (!grabbed) {
+        grabbed = item;
+        item.setAttribute('aria-grabbed', 'true');
+        status.textContent = `Grabbed ${item.textContent}. Use arrow keys to move, Enter to drop, Escape to cancel.`;
+      }
+      break;
+    case 'ArrowDown':
+      e.preventDefault();
+      if (grabbed) {
+        const next = grabbed.nextElementSibling;
+        if (next) {
+          list.insertBefore(next, grabbed);
+          status.textContent = `Moved down to position ${[...list.children].indexOf(grabbed) + 1}.`;
+        }
+      }
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      if (grabbed) {
+        const prev = grabbed.previousElementSibling;
+        if (prev) {
+          list.insertBefore(grabbed, prev);
+          status.textContent = `Moved up to position ${[...list.children].indexOf(grabbed) + 1}.`;
+        }
+      }
+      break;
+    case 'Enter':
+      if (grabbed) {
+        e.preventDefault();
+        grabbed.setAttribute('aria-grabbed', 'false');
+        status.textContent = `Dropped ${grabbed.textContent} at position ${[...list.children].indexOf(grabbed) + 1}.`;
+        grabbed = null;
+      }
+      break;
+    case 'Escape':
+      if (grabbed) {
+        e.preventDefault();
+        grabbed.setAttribute('aria-grabbed', 'false');
+        status.textContent = 'Reorder cancelled.';
+        grabbed = null;
+      }
+      break;
+  }
+});
+```
+
+**Accessibility features in this pattern:**
+- `aria-grabbed` toggles between "true" (grabbed) and "false" (released) — announced by screen readers (WCAG 4.1.2)
+- `aria-live="assertive"` region announces every move to screen readers
+- Roving tabindex — only the focused item has `tabindex="0"`
+- `role="listbox"` + `role="option"` — correct semantics for screen readers
+- Visible keyboard instructions for sighted users
+- `prefers-reduced-motion: reduce` — disable drag animations in CSS
+- Full keyboard alternative: Space=grab, Arrows=move, Enter=drop, Escape=cancel (WCAG 2.1.1)
+
+### Focus Trap for Modals
+
+Prefer native `<dialog>` — ply styles it automatically and browsers handle focus trapping. For custom modals:
+
+```js
+function trapFocus(modal) {
+  const focusable = modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const first = focusable[0], last = focusable[focusable.length - 1];
+  modal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  first?.focus();
+}
+```
+
+### Focus Return After Close
+
+Always restore focus to the element that triggered the widget:
+
+```js
+const trigger = document.activeElement;
+modal.showModal();
+modal.addEventListener('close', () => trigger.focus(), { once: true });
+```
+
+### Custom Widget Accessibility Checklist
+
+| Requirement | WCAG Criterion | How to verify |
+|---|---|---|
+| Keyboard operable (no mouse required) | 2.1.1 Keyboard | Tab, Enter, Space, arrow keys all work |
+| Focus indicator visible | 2.4.7 Focus Visible | ply provides `:focus-visible` — don't override `outline: none` |
+| States announced to screen readers | 4.1.2 Name, Role, Value | `aria-grabbed`, `aria-expanded`, `aria-selected` update on interaction |
+| Focus trapped in modals | 2.4.3 Focus Order | Tab does not leave an open dialog |
+| Focus restored on close | 2.4.3 Focus Order | Closing returns focus to the trigger element |
+| Touch targets >= 44x44px | 2.5.5 Target Size | Measure interactive elements |
+| Alternative input available | 2.1.1 Keyboard | Drag-and-drop has keyboard fallback |
+| Screen reader tested | 4.1.2 Name, Role, Value | Verify with VoiceOver (macOS) or NVDA (Windows) |
+
+### Screen Reader Testing (VoiceOver on macOS)
+
+| Action | Shortcut |
+|---|---|
+| Turn on/off VoiceOver | Cmd + F5 |
+| Navigate next element | VO + Right Arrow (VO = Ctrl + Option) |
+| Navigate previous | VO + Left Arrow |
+| Activate element | VO + Space |
+| Read current element | VO + F3 |
+| Open rotor (landmarks, headings) | VO + U |
+
+**Verify:** Every interactive element reachable by Tab/arrows. Buttons announce label + role. Expanded/collapsed state announced. Dynamic content announced via `aria-live`. Form inputs announce label + required + errors. Heading hierarchy logical.
+
+---
+
+## AI-Friendly Design
+
+ply is built for AI code generation:
+
+1. **Single-dash class names** read like English — `units-row`, `equal-height`, `padding`, `border-radius`
+2. **No abbreviation guessing** — `padding-lg` not `pl-6`, `margin-top` not `mt-4`
+3. **421 documented classes** in `ply-classes.json` — machine-readable reference
+4. **Semantic HTML first** — auto-styled elements reduce class clutter
+5. **AI-friendly aliases** — `btn-lg`/`btn-big`, `btn-sm`/`btn-small`, `alert`/`tools-alert` all work
+
+### Alias Table
+
+| Short | Long |
+|---|---|
+| `alert` | `tools-alert` |
+| `alert-blue` | `tools-alert-blue` |
+| `message` | `tools-message` |
+| `btn-lg` | `btn-big` |
+| `btn-sm` | `btn-small` |
+| `btn-xs` | `btn-smaller` |
+| `input-lg` | `input-big` |
+| `input-sm` | `input-small` |
+| `input-xs` | `input-smaller` |
+| `li.active` | `li.on` (navbar) |
+| `bg-black` | `background-black` |
+| `bg-white` | `background-white` |
+
+---
+
+## Anti-Patterns
+
+- **DON'T** use Tailwind, Bootstrap, or other frameworks with ply
+- **DON'T** skip semantic HTML — use `<nav>`, `<code>`, `<table>`, `<details>`, `<dialog>` before `<div>`
+- **DON'T** invent class names — only use classes from `ply-classes.json`
+- **DON'T** use `role="button"` on links — use `<button>`
+- **DON'T** put `unit-*` outside `units-row`
+- **DON'T** hard-code colors — use `var(--ply-*)` custom properties
+- **DON'T** forget the `.form` wrapper on forms
+- **DON'T** override `outline: none` on interactive elements — it breaks focus visibility

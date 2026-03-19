@@ -43,10 +43,12 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
   --ply-border-color: #fbbf24;
+  --ply-color-accent: #b45309;
   --ply-btn-default-bg: #b45309;  /* Controls btn-primary + links */
   --ply-btn-default-bg-hover: #92400e;
   --ply-btn-default-bg-active: #7c2d12;
   --ply-btn-secondary-bg: #78350f;
+  --ply-btn-border-radius: 0.5rem;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 

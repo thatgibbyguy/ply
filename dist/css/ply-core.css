@@ -33,6 +33,7 @@
   --ply-color-table-border: #e0e0e0;
   --ply-color-table-stripped: #f4f4f4;
   --ply-color-table-hovered: #e8e8e8;
+  --ply-color-accent: #0353e9;
   --ply-btn-default-bg: #0353e9;
   --ply-btn-default-bg-hover: #0347c6;
   --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
@@ -43,6 +44,7 @@
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #2b2b2b;
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
+  --ply-btn-border-radius: 2rem;
   --ply-nav-bg: #ffffff;
   --ply-nav-color: #161616;
   --ply-nav-border: #161616;
@@ -129,6 +131,7 @@
     --ply-color-table-border: #393939;
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
+    --ply-color-accent: #4589ff;
     --ply-btn-default-bg: #4589ff;
     --ply-btn-default-bg-hover: #619bff;
     --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
@@ -223,6 +226,7 @@
   --ply-color-table-border: #393939;
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
+  --ply-color-accent: #4589ff;
   --ply-btn-default-bg: #4589ff;
   --ply-btn-default-bg-hover: #619bff;
   --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
@@ -3592,6 +3596,14 @@ fieldset {
   -webkit-backdrop-filter: blur(8px);
 }
 
+.color-accent {
+  color: var(--ply-color-accent);
+}
+
+.bg-accent {
+  background-color: var(--ply-color-accent);
+}
+
 .bg-blue {
   background-color: var(--ply-bg-blue);
 }
@@ -4274,6 +4286,9 @@ select.input-xs {
   align-items: stretch;
   margin-bottom: 1.5rem;
 }
+.input-groups .btn:hover, .input-groups .btn:active {
+  transform: none;
+}
 .input-groups input,
 .input-groups textarea,
 .input-groups select {
@@ -4333,6 +4348,10 @@ select.input-xs {
   border-left: none;
   white-space: nowrap;
 }
+.input-groups .input-append .btn[class*=outline] {
+  border: 1px solid var(--ply-color-input-border);
+  border-left: none;
+}
 .input-groups .btn-append {
   display: flex;
   align-items: stretch;
@@ -4344,6 +4363,10 @@ select.input-xs {
   border-radius: 0 0.25rem 0.25rem 0;
   margin: 0;
   white-space: nowrap;
+}
+.input-groups .btn-append .btn[class*=outline] {
+  border: 1px solid var(--ply-color-input-border);
+  border-left: none;
 }
 
 /* Select */
@@ -4908,7 +4931,7 @@ button.btn {
   outline: none;
   margin: 0;
   border: none;
-  border-radius: 2rem;
+  border-radius: var(--ply-btn-border-radius, 2rem);
   box-shadow: none;
   cursor: pointer;
   background: var(--ply-btn-secondary-bg, #393939);
@@ -4949,7 +4972,7 @@ input[type=submit].btn:focus-visible,
 input[type=button].btn:focus-visible,
 input[type=reset].btn:focus-visible,
 button.btn:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline: 2px solid var(--ply-color-accent, #2575ed);
   outline-offset: 2px;
 }
 .btn:active,
@@ -5111,7 +5134,7 @@ input[type=submit].btn-outline:focus-visible,
 input[type=button].btn-outline:focus-visible,
 input[type=reset].btn-outline:focus-visible,
 button.btn-outline:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline: 2px solid var(--ply-color-accent, #2575ed);
   outline-offset: 2px;
 }
 
@@ -5154,7 +5177,7 @@ input[type=submit].btn-ghost:focus-visible,
 input[type=button].btn-ghost:focus-visible,
 input[type=reset].btn-ghost:focus-visible,
 button.btn-ghost:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline: 2px solid var(--ply-color-accent, #2575ed);
   outline-offset: 2px;
 }
 
@@ -5190,7 +5213,7 @@ input[type=submit].btn-primary-outline:focus-visible,
 input[type=button].btn-primary-outline:focus-visible,
 input[type=reset].btn-primary-outline:focus-visible,
 button.btn-primary-outline:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline: 2px solid var(--ply-color-accent, #2575ed);
   outline-offset: 2px;
 }
 
@@ -5226,7 +5249,7 @@ input[type=submit].btn-secondary-outline:focus-visible,
 input[type=button].btn-secondary-outline:focus-visible,
 input[type=reset].btn-secondary-outline:focus-visible,
 button.btn-secondary-outline:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #2575ed);
+  outline: 2px solid var(--ply-color-accent, #2575ed);
   outline-offset: 2px;
 }
 

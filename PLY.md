@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~20KB gzip full, ~16KB core). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~20KB gzip full, ~16KB core). 423 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -8,7 +8,7 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
-- **`classes`** — Every ply class (421) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`classes`** — Every ply class (423) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
 - **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
 
@@ -27,10 +27,12 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
   --ply-border-color: #fbbf24;
+  --ply-color-accent: #b45309;
   --ply-btn-default-bg: #b45309;
   --ply-btn-default-bg-hover: #92400e;
   --ply-btn-default-bg-active: #7c2d12;
   --ply-btn-secondary-bg: #78350f;
+  --ply-btn-border-radius: 0.5rem;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 
@@ -48,6 +50,10 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
 Setting a custom `data-theme` value prevents auto dark mode from interfering with the theme. The `--ply-font-body`, `--ply-font-heading`, and `--ply-font-mono` properties let you override typography alongside colors.
 
 See `customProperties` in `ply-classes.json` for the full list of overridable variables.
+
+### Custom Theme Browser Compatibility
+
+ply uses `color-mix()` to auto-compute hover/active button states from your base color. This works in all modern browsers (Chrome 111+, Firefox 113+, Safari 16.4+, Edge 111+). On older browsers (pre-2023), `color-mix()` is ignored and the fallback hex values from ply's default theme are used instead. For custom themes targeting legacy browsers, also set `--ply-btn-default-bg-hover`, `--ply-btn-default-bg-active`, `--ply-btn-secondary-bg-hover`, and `--ply-btn-secondary-bg-active` explicitly. In modern browsers, `color-mix()` overrides these fallbacks automatically.
 
 ## Philosophy: Start Semantic
 
@@ -187,6 +193,12 @@ All classes, CSS custom properties, and semantic element styles are documented i
 <!-- Static: btn-blue stays blue regardless of theme -->
 <button class="btn btn-blue">Always Blue</button>
 ```
+
+### Icon Buttons
+
+- **`btn-icon`** — Icon-only button modifier. Equal padding for a square aspect ratio. Always add `aria-label` (no visible text).
+- Combine with `btn-ghost` for toolbar-style icon buttons. Combine with size modifiers (`btn-sm`, `btn-xs`) for smaller icons.
+- For icon + text buttons, use a regular `btn` with an inline SVG — no `btn-icon` needed.
 
 ## Common Patterns
 

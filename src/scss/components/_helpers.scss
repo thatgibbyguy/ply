@@ -872,6 +872,10 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+// Accent color utilities (theme-aware)
+.color-accent { color: var(--ply-color-accent); }
+.bg-accent    { background-color: var(--ply-color-accent); }
+
 // Background color utilities (theme-aware, WCAG AA vs body text)
 .bg-blue   { background-color: var(--ply-bg-blue); }
 .bg-red    { background-color: var(--ply-bg-red); }

@@ -1,0 +1,34 @@
+# plygrid (ply)
+
+> ply is a ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step.
+
+ply is standalone — do not use Tailwind, Bootstrap, or other CSS frameworks alongside it. Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`plygrid`) or CDN.
+
+## Documentation
+
+- [Full AI Reference (PLY.md)](https://raw.githubusercontent.com/thatgibbyguy/ply/master/PLY.md): Complete class reference, usage rules, accessibility patterns, keyboard navigation, custom widget ARIA patterns, and code snippets
+- [Machine-Readable Class Map (ply-classes.json)](https://raw.githubusercontent.com/thatgibbyguy/ply/master/ply-classes.json): All 421 classes, 60+ CSS custom properties, and 13 semantic elements with descriptions, categories, and examples
+- [VPAT 2.5 Accessibility Conformance](https://raw.githubusercontent.com/thatgibbyguy/ply/master/docs/VPAT.md): Full WCAG 2.1 Level A and AA conformance report
+
+## Snippets
+
+- [Starter Page](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/starter-page.html): Minimal ply page template
+- [Two-Column Layout](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/two-column-layout.html): Sidebar + main content
+- [Dashboard](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/dashboard.html): Dashboard with stats cards
+- [Card](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/card.html): Card with border and button
+- [Contact Form](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/contact-form.html): Styled form with validation
+- [Login Page](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/login-page.html): Centered login form
+- [Navbar Page](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/navbar-page.html): Navbar + page content
+- [Responsive Header](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/responsive-header.html): CSS-only collapsible header with details/summary hamburger menu
+- [Data Table](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/data-table.html): Styled data table
+- [Pricing Cards](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/pricing-cards.html): Pricing tier cards
+- [Custom Theme](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/custom-theme.html): Custom theme example with --ply-* overrides
+- [Accessible Drag-and-Drop](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/accessible-drag-and-drop.html): Keyboard-accessible sortable list with ARIA live announcements
+- [Notifications](https://raw.githubusercontent.com/thatgibbyguy/ply/master/snippets/notifications.html): Alert variants
+
+## Optional
+
+- [README](https://raw.githubusercontent.com/thatgibbyguy/ply/master/README.md): Project overview, install instructions, quick start
+- [SCSS Colors](https://raw.githubusercontent.com/thatgibbyguy/ply/master/src/scss/components/_colors.scss): Full Sass color palette
+- [SCSS Variables](https://raw.githubusercontent.com/thatgibbyguy/ply/master/src/scss/components/_variables.scss): Spacing, font sizes, breakpoints
+- [SCSS Mixins](https://raw.githubusercontent.com/thatgibbyguy/ply/master/src/scss/components/_mixins.scss): Button generator, gradients, animations
