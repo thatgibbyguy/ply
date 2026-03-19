@@ -102,6 +102,55 @@ ply uses a ratio-based flexbox grid. Think in percentages, not arbitrary columns
 
 ---
 
+## Container Queries
+
+Container queries let units respond to their parent's width instead of the viewport. Useful for reusable components (cards, widgets, sidebars) that adapt to available space.
+
+**Wrapper:** `container-query` — sets `container-type: inline-size` on the parent.
+
+**Container prefixes** mirror viewport prefixes:
+
+| Container prefix | Breakpoint | Mirrors |
+|---|---|---|
+| `container-phone-unit-*` | 480px | `phone-unit-*` |
+| `container-large-phone-unit-*` | 650px | `large-phone-unit-*` |
+| `container-tablet-unit-*` | 767px | `tablet-unit-*` |
+| `container-small-desktop-unit-*` | 1024px | `small-desktop-unit-*` |
+
+All 21 unit sizes available (100, 90, 88, 80, 75, 70, 66, 65, 62, 60, 50, 40, 38, 35, 33, 30, 25, 20, 12, 10, auto).
+
+### Container Query Example
+
+```html
+<!-- A sidebar widget that stacks its columns when the sidebar is narrow -->
+<aside class="container-query">
+  <div class="units-row">
+    <div class="unit-50 container-tablet-unit-100">
+      <p>Left content — stacks when container ≤ 767px</p>
+    </div>
+    <div class="unit-50 container-tablet-unit-100">
+      <p>Right content — stacks when container ≤ 767px</p>
+    </div>
+  </div>
+</aside>
+```
+
+### Mixing Viewport and Container Prefixes
+
+```html
+<!-- Viewport prefix stacks on small screens; container prefix stacks when placed in a narrow parent -->
+<div class="container-query">
+  <div class="units-row">
+    <div class="unit-66 tablet-unit-100 container-small-desktop-unit-100">Main</div>
+    <div class="unit-33 tablet-unit-100 container-small-desktop-unit-100">Side</div>
+  </div>
+</div>
+```
+
+Container classes use `@container` rules (not `@media`) — they fire based on the `.container-query` element's inline size.
+
+---
+
 ## Buttons — Accessible by Default (WCAG 2.1 AA)
 
 All ply buttons are WCAG 2.1 AA compliant out of the box. Always use `<button>`, not `<a>`.

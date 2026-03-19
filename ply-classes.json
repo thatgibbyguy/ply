@@ -1,8 +1,8 @@
 {
-  "version": "1.0.9",
+  "version": "1.0.10",
   "framework": "ply",
-  "totalClasses": 423,
-  "uniqueClasses": 423,
+  "totalClasses": 424,
+  "uniqueClasses": 424,
   "darkMode": "Auto dark mode uses :root:not([data-theme]) and prefers-color-scheme: dark. Setting any data-theme value on <html> disables auto dark mode, so custom themes won't have dark styles applied over them.",
   "themeMinimum": {
     "description": "Override these variables for a minimum viable custom theme. All other variables are optional refinements.",
@@ -57,6 +57,10 @@
       "--ply-btn-border-radius"
     ]
   },
+  "themeTemplate": {
+    "description": "Copy-paste starting point for custom themes. Replace placeholder values with your design colors. Every ply component respects these variables.",
+    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
+  },
   "classes": {
     "units-container": {
       "category": "grid",
@@ -91,6 +95,17 @@
       ],
       "example": "<div class=\"units-row\"><div class=\"unit-50\">...</div><div class=\"unit-50\">...</div></div>"
     },
+    "container-query": {
+      "category": "grid",
+      "description": "Enables CSS container queries on an element (container-type: inline-size). Wrap around a units-row to use container-scoped responsive classes instead of viewport-based ones.",
+      "containerPrefixes": [
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
+      ],
+      "example": "<div class=\"container-query\"><div class=\"units-row\"><div class=\"unit-50 container-tablet-unit-100\">Stacks when container is narrow</div><div class=\"unit-50 container-tablet-unit-100\">Stacks when container is narrow</div></div></div>"
+    },
     "unit-100": {
       "category": "grid",
       "description": "Grid unit — flex-basis: 100%. Collapses to 100% on tablet breakpoint.",
@@ -102,7 +117,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ],
       "example": "<div class=\"units-row\"><div class=\"unit-100\">Full width</div></div>"
     },
@@ -117,7 +136,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-88": {
@@ -131,7 +154,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-80": {
@@ -145,7 +172,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-75": {
@@ -159,7 +190,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-70": {
@@ -173,7 +208,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-66": {
@@ -187,7 +226,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-65": {
@@ -201,7 +244,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-62": {
@@ -215,7 +262,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-60": {
@@ -229,7 +280,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-50": {
@@ -243,7 +298,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ],
       "example": "<div class=\"units-row\"><div class=\"unit-50\">Left</div><div class=\"unit-50\">Right</div></div>"
     },
@@ -258,7 +317,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-38": {
@@ -272,7 +335,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-35": {
@@ -286,7 +353,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-33": {
@@ -300,7 +371,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ],
       "example": "<div class=\"units-row\"><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div><div class=\"unit-33\">Col</div></div>"
     },
@@ -315,7 +390,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-25": {
@@ -329,7 +408,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-20": {
@@ -343,7 +426,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-12": {
@@ -357,7 +444,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-10": {
@@ -371,7 +462,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "unit-auto": {
@@ -385,7 +480,11 @@
         "small-desktop-unit-*",
         "large-screen-unit-*",
         "x-large-screen-unit-*",
-        "forever-unit-*"
+        "forever-unit-*",
+        "container-phone-unit-*",
+        "container-large-phone-unit-*",
+        "container-tablet-unit-*",
+        "container-small-desktop-unit-*"
       ]
     },
     "reverse-direction": {

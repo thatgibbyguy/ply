@@ -6940,6 +6940,356 @@ dialog[open]::backdrop {
     animation: none;
   }
 }
+/* =Container Queries
+-----------------------------------------------------------------------------*/
+.container-query {
+  container-type: inline-size;
+}
+
+@container (max-width: 480px) {
+  .container-phone-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .container-phone-unit-90 {
+    max-width: 90%;
+    flex-basis: 90%;
+  }
+  .container-phone-unit-88 {
+    max-width: 87.5%;
+    flex-basis: 87.5%;
+  }
+  .container-phone-unit-80 {
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+  .container-phone-unit-75 {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .container-phone-unit-70 {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+  .container-phone-unit-66 {
+    max-width: 66.6%;
+    flex-basis: 66.6%;
+  }
+  .container-phone-unit-65 {
+    max-width: 65%;
+    flex-basis: 65%;
+  }
+  .container-phone-unit-62 {
+    max-width: 62.5%;
+    flex-basis: 62.5%;
+  }
+  .container-phone-unit-60 {
+    max-width: 60%;
+    flex-basis: 60%;
+  }
+  .container-phone-unit-50 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .container-phone-unit-40 {
+    max-width: 40%;
+    flex-basis: 40%;
+  }
+  .container-phone-unit-38 {
+    max-width: 37.5%;
+    flex-basis: 37.5%;
+  }
+  .container-phone-unit-35 {
+    max-width: 35%;
+    flex-basis: 35%;
+  }
+  .container-phone-unit-33 {
+    max-width: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .container-phone-unit-30 {
+    max-width: 30%;
+    flex-basis: 30%;
+  }
+  .container-phone-unit-25 {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .container-phone-unit-20 {
+    max-width: 20%;
+    flex-basis: 20%;
+  }
+  .container-phone-unit-12 {
+    max-width: 12.5%;
+    flex-basis: 12.5%;
+  }
+  .container-phone-unit-10 {
+    max-width: 10%;
+    flex-basis: 10%;
+  }
+  .container-phone-unit-auto {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+@container (max-width: 650px) {
+  .container-large-phone-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .container-large-phone-unit-90 {
+    max-width: 90%;
+    flex-basis: 90%;
+  }
+  .container-large-phone-unit-88 {
+    max-width: 87.5%;
+    flex-basis: 87.5%;
+  }
+  .container-large-phone-unit-80 {
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+  .container-large-phone-unit-75 {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .container-large-phone-unit-70 {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+  .container-large-phone-unit-66 {
+    max-width: 66.6%;
+    flex-basis: 66.6%;
+  }
+  .container-large-phone-unit-65 {
+    max-width: 65%;
+    flex-basis: 65%;
+  }
+  .container-large-phone-unit-62 {
+    max-width: 62.5%;
+    flex-basis: 62.5%;
+  }
+  .container-large-phone-unit-60 {
+    max-width: 60%;
+    flex-basis: 60%;
+  }
+  .container-large-phone-unit-50 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .container-large-phone-unit-40 {
+    max-width: 40%;
+    flex-basis: 40%;
+  }
+  .container-large-phone-unit-38 {
+    max-width: 37.5%;
+    flex-basis: 37.5%;
+  }
+  .container-large-phone-unit-35 {
+    max-width: 35%;
+    flex-basis: 35%;
+  }
+  .container-large-phone-unit-33 {
+    max-width: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .container-large-phone-unit-30 {
+    max-width: 30%;
+    flex-basis: 30%;
+  }
+  .container-large-phone-unit-25 {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .container-large-phone-unit-20 {
+    max-width: 20%;
+    flex-basis: 20%;
+  }
+  .container-large-phone-unit-12 {
+    max-width: 12.5%;
+    flex-basis: 12.5%;
+  }
+  .container-large-phone-unit-10 {
+    max-width: 10%;
+    flex-basis: 10%;
+  }
+  .container-large-phone-unit-auto {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+@container (max-width: 767px) {
+  .container-tablet-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .container-tablet-unit-90 {
+    max-width: 90%;
+    flex-basis: 90%;
+  }
+  .container-tablet-unit-88 {
+    max-width: 87.5%;
+    flex-basis: 87.5%;
+  }
+  .container-tablet-unit-80 {
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+  .container-tablet-unit-75 {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .container-tablet-unit-70 {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+  .container-tablet-unit-66 {
+    max-width: 66.6%;
+    flex-basis: 66.6%;
+  }
+  .container-tablet-unit-65 {
+    max-width: 65%;
+    flex-basis: 65%;
+  }
+  .container-tablet-unit-62 {
+    max-width: 62.5%;
+    flex-basis: 62.5%;
+  }
+  .container-tablet-unit-60 {
+    max-width: 60%;
+    flex-basis: 60%;
+  }
+  .container-tablet-unit-50 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .container-tablet-unit-40 {
+    max-width: 40%;
+    flex-basis: 40%;
+  }
+  .container-tablet-unit-38 {
+    max-width: 37.5%;
+    flex-basis: 37.5%;
+  }
+  .container-tablet-unit-35 {
+    max-width: 35%;
+    flex-basis: 35%;
+  }
+  .container-tablet-unit-33 {
+    max-width: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .container-tablet-unit-30 {
+    max-width: 30%;
+    flex-basis: 30%;
+  }
+  .container-tablet-unit-25 {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .container-tablet-unit-20 {
+    max-width: 20%;
+    flex-basis: 20%;
+  }
+  .container-tablet-unit-12 {
+    max-width: 12.5%;
+    flex-basis: 12.5%;
+  }
+  .container-tablet-unit-10 {
+    max-width: 10%;
+    flex-basis: 10%;
+  }
+  .container-tablet-unit-auto {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+@container (max-width: 1024px) {
+  .container-small-desktop-unit-100 {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .container-small-desktop-unit-90 {
+    max-width: 90%;
+    flex-basis: 90%;
+  }
+  .container-small-desktop-unit-88 {
+    max-width: 87.5%;
+    flex-basis: 87.5%;
+  }
+  .container-small-desktop-unit-80 {
+    max-width: 80%;
+    flex-basis: 80%;
+  }
+  .container-small-desktop-unit-75 {
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .container-small-desktop-unit-70 {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+  .container-small-desktop-unit-66 {
+    max-width: 66.6%;
+    flex-basis: 66.6%;
+  }
+  .container-small-desktop-unit-65 {
+    max-width: 65%;
+    flex-basis: 65%;
+  }
+  .container-small-desktop-unit-62 {
+    max-width: 62.5%;
+    flex-basis: 62.5%;
+  }
+  .container-small-desktop-unit-60 {
+    max-width: 60%;
+    flex-basis: 60%;
+  }
+  .container-small-desktop-unit-50 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .container-small-desktop-unit-40 {
+    max-width: 40%;
+    flex-basis: 40%;
+  }
+  .container-small-desktop-unit-38 {
+    max-width: 37.5%;
+    flex-basis: 37.5%;
+  }
+  .container-small-desktop-unit-35 {
+    max-width: 35%;
+    flex-basis: 35%;
+  }
+  .container-small-desktop-unit-33 {
+    max-width: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .container-small-desktop-unit-30 {
+    max-width: 30%;
+    flex-basis: 30%;
+  }
+  .container-small-desktop-unit-25 {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .container-small-desktop-unit-20 {
+    max-width: 20%;
+    flex-basis: 20%;
+  }
+  .container-small-desktop-unit-12 {
+    max-width: 12.5%;
+    flex-basis: 12.5%;
+  }
+  .container-small-desktop-unit-10 {
+    max-width: 10%;
+    flex-basis: 10%;
+  }
+  .container-small-desktop-unit-auto {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
 /* =RTL Support — Layout mirroring for right-to-left languages
 -----------------------------------------------------------------------------*/
 /* RTL base — apply dir="rtl" on <html> or any container */

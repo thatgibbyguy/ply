@@ -50,6 +50,10 @@ const UNIT_PREFIXES = [
   "large-screen-unit-",
   "x-large-screen-unit-",
   "forever-unit-",
+  "container-phone-unit-",
+  "container-large-phone-unit-",
+  "container-tablet-unit-",
+  "container-small-desktop-unit-",
 ];
 
 // Valid unit suffixes (numbers that ply actually generates, plus "auto")

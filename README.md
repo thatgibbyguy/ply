@@ -153,6 +153,12 @@ ply targets ADA Title II (28 CFR Part 35) / WCAG 2.1 AA compliance at the framew
 
 Full interactive docs at [plyCSS.com](https://plycss.com) — browse every class with live examples, search the entire framework, and copy-paste code snippets.
 
+## Roadmap
+
+- CSS logical properties for native RTL support (replaces bolt-on mirroring)
+- Build-time class validator / VS Code extension
+- Automated accessibility test suite (VPAT evidence)
+
 ## Contributing
 
 Fork this repo and create a Pull Request with your changes.

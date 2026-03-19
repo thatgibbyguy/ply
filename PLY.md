@@ -154,6 +154,27 @@ document.documentElement.dataset.theme =
 
 ---
 
+## Container Queries
+
+Container queries let units respond to their parent's width instead of the viewport. This is useful for reusable components (cards, widgets, sidebars) that need to adapt based on the space they're placed in, not the screen size.
+
+**Wrapper:** Add `container-query` to the parent element to enable container queries.
+
+**Container prefixes** mirror viewport prefixes with a `container-` prefix:
+
+| Container prefix | Breakpoint | Mirrors |
+|---|---|---|
+| `container-phone-unit-*` | 480px | `phone-unit-*` |
+| `container-large-phone-unit-*` | 650px | `large-phone-unit-*` |
+| `container-tablet-unit-*` | 767px | `tablet-unit-*` |
+| `container-small-desktop-unit-*` | 1024px | `small-desktop-unit-*` |
+
+All 21 unit sizes are available (100, 90, 88, 80, 75, 70, 66, 65, 62, 60, 50, 40, 38, 35, 33, 30, 25, 20, 12, 10, auto).
+
+Container query classes use `@container` rules instead of `@media` — they fire based on the `.container-query` element's inline size. Mix viewport and container prefixes freely on the same element.
+
+---
+
 ## Class Reference — See ply-classes.json
 
 All classes, CSS custom properties, and semantic element styles are documented in **`ply-classes.json`**. Search it for class names, categories, descriptions, and usage examples. The JSON is the source of truth — do not invent class names that aren't in it.

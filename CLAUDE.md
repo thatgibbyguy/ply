@@ -29,6 +29,7 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 9. **Only use documented ply classes** — Do NOT invent class names. Search `ply-classes.json` to find the right class. See PLY.md for the full prose reference.
 10. **Dark mode is automatic** — Auto dark mode activates only when no `data-theme` attribute is set on `<html>`. Use `data-theme="dark"` for explicit dark mode, `data-theme="light"` for explicit light mode, or any custom value (e.g., `data-theme="warm"`) for a custom theme without dark-mode interference. Use `var(--ply-*)` custom properties for colors (see `customProperties` in the JSON), never hard-code values that break dark mode.
 11. **Icons** — Use [Feather Icons](https://feathericons.com) as the preferred icon library. Any icon library works, but Feather pairs well with ply's aesthetic.
+12. **Container queries** — Use `container-query` on a parent element and `container-tablet-unit-*`, `container-phone-unit-*`, etc. for component-level responsive behavior (responds to parent width, not viewport). See PLY.md for details.
 
 ## Custom Themes
 
@@ -65,7 +66,7 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
 
 Setting a custom `data-theme` value prevents auto dark mode from interfering with the theme. The `--ply-font-body`, `--ply-font-heading`, and `--ply-font-mono` properties let you override typography alongside colors.
 
-See `customProperties` in `ply-classes.json` for the full list of overridable variables.
+See `customProperties` in `ply-classes.json` for the full list of overridable variables. Use the `themeTemplate` key in `ply-classes.json` for a complete copy-paste CSS block with every overridable variable grouped by category.
 
 ## Common Patterns
 
