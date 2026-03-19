@@ -104,7 +104,7 @@ input[type="submit"].btn-primary,
 input[type="button"].btn-primary,
 input[type="reset"].btn-primary,
 button.btn-primary {
-  background: var(--ply-btn-default-bg, #0353e9);
+  background: var(--ply-btn-default-bg, #0f62fe);
   color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
 
   &:hover,
@@ -112,8 +112,8 @@ button.btn-primary {
   &:focus-visible {
     color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
   }
-  &:hover { background: var(--ply-btn-default-bg-hover, #0347c6); }
-  &:active { background: var(--ply-btn-default-bg-active, #023eaf); }
+  &:hover { background: var(--ply-btn-default-bg-hover, #0043ce); }
+  &:active { background: var(--ply-btn-default-bg-active, #002d9c); }
 }
 
 // Secondary — themed via --ply-btn-secondary-bg (dark gray by default)
@@ -174,14 +174,14 @@ input[type="button"].btn-ghost,
 input[type="reset"].btn-ghost,
 button.btn-ghost {
   background: transparent;
-  color: var(--ply-btn-default-bg, #0353e9);
+  color: var(--ply-btn-default-bg, #0f62fe);
   border: none;
 
   &:hover,
   &:active,
   &:focus-visible {
     background: var(--ply-bg-muted, rgba(128, 128, 128, 0.1));
-    color: var(--ply-btn-default-bg, #0353e9);
+    color: var(--ply-btn-default-bg, #0f62fe);
   }
 
   &:focus-visible {
@@ -198,14 +198,14 @@ input[type="reset"].btn-primary-outline,
 button.btn-primary-outline {
   background: transparent;
   padding: variables.$padding-btn-outline;
-  border: 1px solid var(--ply-btn-default-bg, #0353e9);
-  color: var(--ply-btn-default-bg, #0353e9);
+  border: 1px solid var(--ply-btn-default-bg, #0f62fe);
+  color: var(--ply-btn-default-bg, #0f62fe);
 
   &:hover,
   &:active,
   &:focus-visible {
-    background: var(--ply-btn-default-bg, #0353e9);
-    border-color: var(--ply-btn-default-bg, #0353e9);
+    background: var(--ply-btn-default-bg, #0f62fe);
+    border-color: var(--ply-btn-default-bg, #0f62fe);
     color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
   }
 

@@ -42,6 +42,10 @@
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .display-block {
   display: block;
 }
@@ -267,7 +271,7 @@
 }
 
 .padding-left {
-  padding-left: variables.$padding * 2;
+  padding-left: variables.$padding;
 }
 
 .padding-top-extra {

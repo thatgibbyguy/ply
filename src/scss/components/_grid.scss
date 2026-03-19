@@ -18,7 +18,58 @@
   }
 }
 
-.units-row,
+.units-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  margin: 0 (-(variables.$grid-gutter-width)) variables.$base-line;
+
+  &.reverse-direction,
+  &.right-to-left {
+    flex-direction: row-reverse;
+  }
+
+  &.split {
+    margin: 0 0 variables.$base-line;
+
+    [class*='unit-'] {
+      padding: 0;
+    }
+  }
+
+  &.centered-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &.stacked {
+    margin-bottom: 0;
+  }
+
+  &.equal-height {
+    [class*='unit-'] {
+      display: flex;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &.unit-role-right {
+    float: right;
+    margin-left: math.div(variables.$grid-gutter-width, (variables.$grid-width * 0.01)) * .01;
+  }
+
+  &.unit-role-left {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
 [class*='unit-'] {
   box-sizing: border-box;

@@ -291,6 +291,7 @@ nav {
     display: block;
     padding: 0.25rem 0.75rem;
     font-size: variables.$font-size-sm;
+    border-radius: var(--ply-nav-stacked-radius, 0.25rem);
   }
 
   & a {

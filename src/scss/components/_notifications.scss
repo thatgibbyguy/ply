@@ -172,63 +172,15 @@
   border-color: #161616;
 }
 
+// Toast messages — alerts positioned fixed in the top-right
 .tools-message,
 .message {
-  display: none;
   position: fixed;
   z-index: 110;
   top: 10px;
   right: 10px;
   max-width: 350px;
-  line-height: 1.5;
-  font-size: 95%;
-  padding: 0.75rem 1rem;
-  color: colors.$color-black;
-  background: colors.$color-gray;
-  border-radius: variables.$border-radius;
-}
-
-.tools-message ul,
-.message ul {
-  margin: 0;
-  list-style: none;
-}
-
-.tools-message-black,
-.message-black,
-.tools-message-blue,
-.message-blue,
-.tools-message-red,
-.message-red,
-.tools-message-green,
-.message-green {
-  color: rgba(255, 255, 255, .95);
-}
-
-.tools-message-black,
-.message-black {
-  background: colors.$color-black;
-}
-
-.tools-message-blue,
-.message-blue {
-  background: var(--ply-bg-blue);
-}
-
-.tools-message-red,
-.message-red {
-  background: var(--ply-bg-red);
-}
-
-.tools-message-yellow,
-.message-yellow {
-  background: var(--ply-bg-yellow);
-  color: colors.$color-black;
-}
-
-.tools-message-green,
-.message-green {
-  background: var(--ply-bg-green);
+  border-left: none;
 }
 
 // Alerts — dark mode uses muted/desaturated backgrounds
