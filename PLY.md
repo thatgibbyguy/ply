@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~20KB gzip full, ~16KB core). 423 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (18.5KB gzip full, ~15KB core). 457 utility classes, 100+ CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -8,7 +8,7 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
-- **`classes`** — Every ply class (423) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`classes`** — Every ply class (457) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
 - **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
 
@@ -264,6 +264,14 @@ Use `<details>`/`<summary>` as a hamburger toggle for mobile. No JavaScript requ
 ```
 
 See `snippets/responsive-header.html` for a full working example.
+
+### Borders
+
+- **`border`** — 1px solid border (all sides). Uses `var(--ply-border-color)`.
+- **`border-top`**, **`border-right`**, **`border-bottom`**, **`border-left`** — Single-side borders.
+- **`border-thick`** — 3px solid border (all sides). Also `border-top-thick`, `border-right-thick`, `border-bottom-thick`, `border-left-thick`.
+- **`no-border`** — Remove all borders. Also `no-border-top`, `no-border-right`, `no-border-bottom`, `no-border-left`.
+- **`border-radius`** — Default border radius. `border-radius-lg` (0.75rem), `border-radius-xl` (1.5rem), `circle` (100%).
 
 ### Other Common Patterns
 
@@ -632,7 +640,7 @@ Ready-to-use HTML examples are in the `snippets/` directory:
 
 | Bundle | Includes | Size (gzip) |
 |--------|----------|-------------|
-| `ply.min.css` | Everything | ~20KB |
+| `ply.min.css` | Everything | 18.5KB |
 | `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
 | `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~6KB |
 | `ply-helpers.min.css` | Helper utilities only | ~4KB |

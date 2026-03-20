@@ -1,119 +1,24 @@
 /* =Cursor Helpers
 -----------------------------------------------------------------------------*/
 
-.cursor-pointer,
-.cursor-finger {
-  cursor: pointer;
-}
+$cursor-map: (
+  "pointer": pointer, "finger": pointer,
+  "arrow": default, "default": default,
+  "none": none, "progress": progress,
+  "help": help, "question-mark": help,
+  "text": text, "cell": cell, "plus": cell,
+  "crosshair": crosshair, "alias": alias, "shortcut": alias,
+  "context-menu": context-menu, "copy": copy,
+  "move": move, "no-drop": no-drop, "not-allowed": not-allowed,
+  "all-scroll": all-scroll, "ew-resize": ew-resize,
+  "col-resize": col-resize, "ns-resize": ns-resize,
+  "row-resize": row-resize, "nesw-resize": nesw-resize,
+  "n-resize": n-resize, "e-resize": e-resize,
+  "s-resize": s-resize, "w-resize": w-resize,
+  "ne-resize": ne-resize, "nw-resize": nw-resize,
+  "sw-resize": sw-resize, "se-resize": se-resize,
+);
 
-.cursor-arrow,
-.cursor-default  {
-  cursor: default;
-}
-
-.cursor-none {
-  cursor: none;
-}
-
-.cursor-progress {
-  cursor: progress;
-}
-
-.cursor-help,
-.cursor-question-mark {
-  cursor: help;
-}
-
-.cursor-text {
-  cursor: text;
-}
-
-.cursor-cell,
-.cursor-plus {
-  cursor: cell;
-}
-
-.cursor-crosshair {
-  cursor: crosshair;
-}
-
-.cursor-alias,
-.cursor-shortcut {
-  cursor: alias;
-}
-
-.cursor-context-menu {
-  cursor: context-menu;
-}
-
-.cursor-copy {
-  cursor: copy;
-}
-
-.cursor-move {
-  cursor: move;
-}
-
-.cursor-no-drop {
-  cursor: no-drop;
-}
-
-.cursor-not-allowed {
-  cursor: not-allowed;
-}
-
-.cursor-all-scroll {
-  cursor: all-scroll;
-}
-
-.cursor-ew-resize {
-  cursor: ew-resize;
-}
-
-.cursor-col-resize {
-  cursor: col-resize;
-}
-
-.cursor-ns-resize {
-  cursor: ns-resize;
-}
-
-.cursor-row-resize {
-  cursor: row-resize;
-}
-
-.cursor-nesw-resize {
-  cursor: nesw-resize;
-}
-
-.cursor-n-resize {
-  cursor: n-resize;
-}
-
-.cursor-e-resize {
-  cursor: e-resize;
-}
-
-.cursor-s-resize {
-  cursor: s-resize;
-}
-
-.cursor-w-resize {
-  cursor: w-resize;
-}
-
-.cursor-ne-resize {
-  cursor: ne-resize;
-}
-
-.cursor-nw-resize {
-  cursor: nw-resize;
-}
-
-.cursor-sw-resize {
-  cursor: sw-resize;
-}
-
-.cursor-se-resize {
-  cursor: se-resize;
+@each $name, $value in $cursor-map {
+  .cursor-#{$name} { cursor: $value; }
 }

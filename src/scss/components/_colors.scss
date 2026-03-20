@@ -8,15 +8,15 @@ $color-headings: #000;
 $border-color: #ccc;
 
 // Button base colors and pre-computed hover/active states (Sass build-time)
-$btn-primary-light: #0f62fe;
-$btn-primary-light-hover: #0043ce;
-$btn-primary-light-active: #002d9c;
+$btn-primary-light: #0353e9;
+$btn-primary-light-hover: #0347c6;
+$btn-primary-light-active: #023eaf;
 $btn-secondary-light: #393939;
 $btn-secondary-light-hover: #303030;
 $btn-secondary-light-active: #2b2b2b;
-$btn-primary-dark: #0f62fe;
-$btn-primary-dark-hover: #0043ce;
-$btn-primary-dark-active: #002d9c;
+$btn-primary-dark: #4589ff;
+$btn-primary-dark-hover: #619bff;
+$btn-primary-dark-active: #73a6ff;
 $btn-secondary-dark: #a8a8a8;
 $btn-secondary-dark-hover: #b5b5b5;
 $btn-secondary-dark-active: #bebebe;
@@ -159,132 +159,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-space-xxl: 3rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    // Background — Carbon Gray 100
-    --ply-bg-body: #161616;
-    --ply-bg-surface: #262626;
-    --ply-bg-surface-alt: #262626;
-    --ply-bg-muted: #393939;
-
-    // Text
-    --ply-color-body: #f4f4f4;
-    --ply-color-headings: #f4f4f4;
-    --ply-color-secondary: #c6c6c6;
-    --ply-color-muted: #8d8d8d;
-    --ply-color-placeholder: #6f6f6f;
-    --ply-color-text-inverse: #161616;
-
-
-    // Borders
-    --ply-border-color: #393939;
-    --ply-border-strong: #6f6f6f;
-
-    // Interactive
-    --ply-color-link: var(--ply-btn-default-bg);
-    --ply-color-link-hover: #{$btn-primary-dark-hover};
-    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
-    --ply-color-focus: #0f62fe;
-
-    // Fields
-    --ply-color-field-bg: #262626;
-    --ply-color-input-border: #6f6f6f;
-    --ply-color-input-bg: #262626;
-
-    // Code
-    --ply-color-code-bg: #262626;
-    --ply-color-code-border: #393939;
-
-    // Tables
-    --ply-color-table-border: #393939;
-    --ply-color-table-stripped: #1c1c1c;
-    --ply-color-table-hovered: #353535;
-
-    // Accent
-    --ply-color-accent: #{$btn-primary-dark};
-
-    // Buttons (hex fallback + color-mix for custom theme cascade)
-    --ply-btn-default-bg: #{$btn-primary-dark};
-    --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
-    --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
-    --ply-btn-default-bg-active: #{$btn-primary-dark-active};
-    --ply-btn-default-bg-active: color-mix(in oklch, var(--ply-btn-default-bg), white 25%);
-    --ply-btn-secondary-bg: #{$btn-secondary-dark};
-    --ply-btn-secondary-bg-hover: #{$btn-secondary-dark-hover};
-    --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
-    --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
-    --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
-    --ply-btn-default-color: #161616;
-    --ply-btn-secondary-color: #161616;
-
-    // Navigation
-    --ply-nav-bg: #161616;
-    --ply-nav-color: #f4f4f4;
-    --ply-nav-border: #f4f4f4;
-    --ply-nav-hover: #353535;
-    --ply-nav-active-color: #a8a8a8;
-
-    // Layers (elevation)
-    --ply-layer-0: #161616;
-    --ply-layer-1: #262626;
-    --ply-layer-2: #393939;
-    --ply-layer-3: #525252;
-    --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
-    --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
-
-    // Glass
-    --ply-bg-glass: rgba(38, 38, 38, 0.25);
-
-    // Brand backgrounds (dark mode — same as light, saturated for contrast with white text)
-    --ply-bg-blue: #0f62fe;
-    --ply-bg-blue-hover: #0043ce;
-    --ply-bg-blue-active: #002d9c;
-    --ply-bg-red: #da1e28;
-    --ply-bg-red-hover: #a2191f;
-    --ply-bg-red-active: #750e13;
-    --ply-bg-green: #198038;
-    --ply-bg-green-hover: #0e6027;
-    --ply-bg-green-active: #044317;
-    --ply-bg-yellow: #f1c21b;
-    --ply-bg-yellow-hover: #d2a106;
-    --ply-bg-yellow-active: #b28600;
-
-    // Brand palette (dark mode — lighter values, same levels)
-    --ply-blue-1: #4589ff;
-    --ply-blue-2: #78a9ff;
-    --ply-blue-3: #a6c8ff;
-    --ply-red-1: #ff8389;
-    --ply-red-2: #fa4d56;
-    --ply-red-3: #da1e28;
-    --ply-green-1: #42be65;
-    --ply-green-2: #6fdc8c;
-    --ply-green-3: #a7f0ba;
-    --ply-yellow-1: #f1c21b;
-    --ply-yellow-2: #d2a106;
-    --ply-yellow-3: #b28600;
-    --ply-indigo-1: #818cf8;
-    --ply-indigo-2: #a5b4fc;
-    --ply-indigo-3: #c7d2fe;
-    --ply-purple-1: #a78bfa;
-    --ply-purple-2: #c4b5fd;
-    --ply-purple-3: #ddd6fe;
-    --ply-pink-1: #f472b6;
-    --ply-pink-2: #f9a8d4;
-    --ply-pink-3: #fbcfe8;
-    --ply-orange-1: #fb923c;
-    --ply-orange-2: #fdba74;
-    --ply-orange-3: #fed7aa;
-    --ply-teal-1: #2dd4bf;
-    --ply-teal-2: #5eead4;
-    --ply-teal-3: #99f6e4;
-    --ply-cyan-1: #22d3ee;
-    --ply-cyan-2: #67e8f9;
-    --ply-cyan-3: #a5f3fc;
-  }
-}
-
-[data-theme="dark"] {
+@mixin dark-theme {
   // Background — Carbon Gray 100
   --ply-bg-body: #161616;
   --ply-bg-surface: #262626;
@@ -356,6 +231,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
   --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
 
+  // Glass
+  --ply-bg-glass: rgba(38, 38, 38, 0.25);
+
   // Brand backgrounds (dark mode — same as light, saturated for contrast with white text)
   --ply-bg-blue: #0f62fe;
   --ply-bg-blue-hover: #0043ce;
@@ -403,43 +281,73 @@ $btn-secondary-dark-active: #bebebe;
   --ply-cyan-3: #a5f3fc;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-theme;
+  }
+}
+
+[data-theme="dark"] {
+  @include dark-theme;
+}
+
 // High contrast mode
+
+@mixin high-contrast-light {
+  --ply-color-body: #000000;
+  --ply-color-headings: #000000;
+  --ply-color-secondary: #1a1a1a;
+  --ply-color-muted: #333333;
+  --ply-border-color: #000000;
+  --ply-border-strong: #000000;
+  --ply-color-link: #0000ee;
+  --ply-color-link-hover: #0000cc;
+  --ply-color-code-bg: #ffffff;
+  --ply-color-code-border: #000000;
+  --ply-color-focus: #000000;
+  --ply-shadow-1: none;
+  --ply-shadow-2: none;
+  --ply-shadow-3: none;
+  --ply-layer-1: #ffffff;
+  --ply-layer-2: #ffffff;
+  --ply-layer-3: #ffffff;
+}
+
+@mixin high-contrast-dark {
+  --ply-color-body: #ffffff;
+  --ply-color-headings: #ffffff;
+  --ply-color-secondary: #e5e5e5;
+  --ply-color-muted: #cccccc;
+  --ply-border-color: #ffffff;
+  --ply-border-strong: #ffffff;
+  --ply-color-link: #6eb5ff;
+  --ply-color-link-hover: #a6d0ff;
+  --ply-color-code-bg: #000000;
+  --ply-color-code-border: #ffffff;
+  --ply-color-focus: #ffffff;
+  --ply-shadow-1: none;
+  --ply-shadow-2: none;
+  --ply-shadow-3: none;
+  --ply-layer-1: #161616;
+  --ply-layer-2: #161616;
+  --ply-layer-3: #161616;
+}
+
 @media (prefers-contrast: more) {
   :root {
-    --ply-color-body: #000000;
-    --ply-color-headings: #000000;
-    --ply-color-secondary: #1a1a1a;
-    --ply-color-muted: #333333;
-    --ply-border-color: #000000;
-    --ply-border-strong: #000000;
-    --ply-color-link: #0000ee;
-    --ply-color-link-hover: #0000cc;
+    @include high-contrast-light;
   }
 }
 
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --ply-color-body: #ffffff;
-    --ply-color-headings: #ffffff;
-    --ply-color-secondary: #e5e5e5;
-    --ply-color-muted: #cccccc;
-    --ply-border-color: #ffffff;
-    --ply-border-strong: #ffffff;
-    --ply-color-link: #6eb5ff;
-    --ply-color-link-hover: #a6d0ff;
+    @include high-contrast-dark;
   }
 }
 
 @media (prefers-contrast: more) {
   [data-theme="dark"] {
-    --ply-color-body: #ffffff;
-    --ply-color-headings: #ffffff;
-    --ply-color-secondary: #e5e5e5;
-    --ply-color-muted: #cccccc;
-    --ply-border-color: #ffffff;
-    --ply-border-strong: #ffffff;
-    --ply-color-link: #6eb5ff;
-    --ply-color-link-hover: #a6d0ff;
+    @include high-contrast-dark;
   }
 }
 

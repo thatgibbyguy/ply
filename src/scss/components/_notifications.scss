@@ -1,8 +1,18 @@
+@use "sass:list";
 @use "colors";
 @use "variables";
 
 /* =Notifications
 -----------------------------------------------------------------------------*/
+
+$alert-colors: (
+  "blue":   (#edf5ff, #0043ce, #001d6c, #4589ff),
+  "red":    (#fff1f1, #da1e28, #2d0709, #ff8389),
+  "yellow": (#fdf6dd, #f1c21b, #302400, #f1c21b),
+  "green":  (#defbe6, #198038, #071908, #42be65),
+  "black":  (#e0e0e0, #161616, #262626, #8d8d8d),
+);
+
 .tools-alert,
 .alert {
   padding: 0.75rem 1rem;
@@ -72,34 +82,15 @@
 }
 
 // Light alert color variants — Carbon-inspired support tints
-.tools-alert-black,
-.alert-black {
-  background: #e0e0e0;
-  border-left-color: #161616;
-}
+@each $name, $values in $alert-colors {
+  $light-bg: list.nth($values, 1);
+  $light-border: list.nth($values, 2);
 
-.tools-alert-blue,
-.alert-blue {
-  background: #edf5ff;
-  border-left-color: #0043ce;
-}
-
-.tools-alert-red,
-.alert-red {
-  background: #fff1f1;
-  border-left-color: #da1e28;
-}
-
-.tools-alert-yellow,
-.alert-yellow {
-  background: #fdf6dd;
-  border-left-color: #f1c21b;
-}
-
-.tools-alert-green,
-.alert-green {
-  background: #defbe6;
-  border-left-color: #198038;
+  .tools-alert-#{$name},
+  .alert-#{$name} {
+    background: $light-bg;
+    border-left-color: $light-border;
+  }
 }
 
 // Outline variant — keeps tinted bg, adds full border
@@ -109,29 +100,13 @@
   border-left-width: 4px;
 }
 
-.tools-alert-outline.tools-alert-blue,
-.alert-outline.alert-blue {
-  border-color: #0043ce;
-}
+@each $name, $values in $alert-colors {
+  $light-border: list.nth($values, 2);
 
-.tools-alert-outline.tools-alert-red,
-.alert-outline.alert-red {
-  border-color: #da1e28;
-}
-
-.tools-alert-outline.tools-alert-yellow,
-.alert-outline.alert-yellow {
-  border-color: #f1c21b;
-}
-
-.tools-alert-outline.tools-alert-green,
-.alert-outline.alert-green {
-  border-color: #198038;
-}
-
-.tools-alert-outline.tools-alert-black,
-.alert-outline.alert-black {
-  border-color: #161616;
+  .tools-alert-outline.tools-alert-#{$name},
+  .alert-outline.alert-#{$name} {
+    border-color: $light-border;
+  }
 }
 
 // Ghost variant — transparent bg, border only
@@ -142,34 +117,14 @@
   border-left-width: 4px;
 }
 
-.tools-alert-ghost.tools-alert-blue,
-.alert-ghost.alert-blue {
-  background: transparent;
-  border-color: #0043ce;
-}
+@each $name, $values in $alert-colors {
+  $light-border: list.nth($values, 2);
 
-.tools-alert-ghost.tools-alert-red,
-.alert-ghost.alert-red {
-  background: transparent;
-  border-color: #da1e28;
-}
-
-.tools-alert-ghost.tools-alert-yellow,
-.alert-ghost.alert-yellow {
-  background: transparent;
-  border-color: #f1c21b;
-}
-
-.tools-alert-ghost.tools-alert-green,
-.alert-ghost.alert-green {
-  background: transparent;
-  border-color: #198038;
-}
-
-.tools-alert-ghost.tools-alert-black,
-.alert-ghost.alert-black {
-  background: transparent;
-  border-color: #161616;
+  .tools-alert-ghost.tools-alert-#{$name},
+  .alert-ghost.alert-#{$name} {
+    background: transparent;
+    border-color: $light-border;
+  }
 }
 
 // Toast messages — alerts positioned fixed in the top-right
@@ -183,8 +138,6 @@
   border-left: none;
 }
 
-// Alerts — dark mode uses muted/desaturated backgrounds
-
 // Dark alert variants — Carbon Gray 90 tinted
 @mixin dark-alerts {
   .tools-alert,
@@ -194,91 +147,30 @@
     border-left-color: #6f6f6f;
   }
 
-  .tools-alert-black,
-  .alert-black {
-    background: #262626;
-    border-left-color: #8d8d8d;
+  @each $name, $values in $alert-colors {
+    $dark-bg: list.nth($values, 3);
+    $dark-border: list.nth($values, 4);
+
+    .tools-alert-#{$name},
+    .alert-#{$name} {
+      background: $dark-bg;
+      border-left-color: $dark-border;
+    }
+
+    .tools-alert-outline.tools-alert-#{$name},
+    .alert-outline.alert-#{$name} {
+      border-color: $dark-border;
+    }
+
+    .tools-alert-ghost.tools-alert-#{$name},
+    .alert-ghost.alert-#{$name} {
+      border-color: $dark-border;
+    }
   }
 
-  .tools-alert-blue,
-  .alert-blue {
-    background: #001d6c;
-    border-left-color: #4589ff;
-  }
-
-  .tools-alert-red,
-  .alert-red {
-    background: #2d0709;
-    border-left-color: #ff8389;
-  }
-
-  .tools-alert-yellow,
-  .alert-yellow {
-    background: #302400;
-    border-left-color: #f1c21b;
-  }
-
-  .tools-alert-green,
-  .alert-green {
-    background: #071908;
-    border-left-color: #42be65;
-  }
-
-  // Outline — keeps dark tinted bg, updates border colors
-  .tools-alert-outline.tools-alert-blue,
-  .alert-outline.alert-blue {
-    border-color: #4589ff;
-  }
-
-  .tools-alert-outline.tools-alert-red,
-  .alert-outline.alert-red {
-    border-color: #ff8389;
-  }
-
-  .tools-alert-outline.tools-alert-yellow,
-  .alert-outline.alert-yellow {
-    border-color: #f1c21b;
-  }
-
-  .tools-alert-outline.tools-alert-green,
-  .alert-outline.alert-green {
-    border-color: #42be65;
-  }
-
-  .tools-alert-outline.tools-alert-black,
-  .alert-outline.alert-black {
-    border-color: #8d8d8d;
-  }
-
-  // Ghost — transparent bg
   .tools-alert-ghost,
   .alert-ghost {
     background: transparent;
-  }
-
-  .tools-alert-ghost.tools-alert-blue,
-  .alert-ghost.alert-blue {
-    border-color: #4589ff;
-  }
-
-  .tools-alert-ghost.tools-alert-red,
-  .alert-ghost.alert-red {
-    border-color: #ff8389;
-  }
-
-  .tools-alert-ghost.tools-alert-yellow,
-  .alert-ghost.alert-yellow {
-    border-color: #f1c21b;
-  }
-
-  .tools-alert-ghost.tools-alert-green,
-  .alert-ghost.alert-green {
-    border-color: #42be65;
-  }
-
-  .tools-alert-ghost.tools-alert-black,
-  .alert-ghost.alert-black {
-    border-color: #8d8d8d;
   }
 }
 
@@ -291,4 +183,3 @@
 [data-theme="dark"] {
   @include dark-alerts;
 }
-
