@@ -137,7 +137,7 @@
     --ply-color-table-stripped: #1c1c1c;
     --ply-color-table-hovered: #353535;
     --ply-color-accent: #4589ff;
-    --ply-btn-default-bg: #4589ff;
+    --ply-btn-default-bg: #0f62fe;
     --ply-btn-default-bg-hover: #619bff;
     --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
     --ply-btn-default-bg-active: #73a6ff;
@@ -147,8 +147,9 @@
     --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
     --ply-btn-secondary-bg-active: #bebebe;
     --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
-    --ply-btn-default-color: #161616;
+    --ply-btn-default-color: #fff;
     --ply-btn-secondary-color: #161616;
+    --ply-btn-ghost-color: #4589ff;
     --ply-nav-bg: #161616;
     --ply-nav-color: #f4f4f4;
     --ply-nav-border: #f4f4f4;
@@ -232,7 +233,7 @@
   --ply-color-table-stripped: #1c1c1c;
   --ply-color-table-hovered: #353535;
   --ply-color-accent: #4589ff;
-  --ply-btn-default-bg: #4589ff;
+  --ply-btn-default-bg: #0f62fe;
   --ply-btn-default-bg-hover: #619bff;
   --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-btn-default-bg-active: #73a6ff;
@@ -242,8 +243,9 @@
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
   --ply-btn-secondary-bg-active: #bebebe;
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
-  --ply-btn-default-color: #161616;
+  --ply-btn-default-color: #fff;
   --ply-btn-secondary-color: #161616;
+  --ply-btn-ghost-color: #4589ff;
   --ply-nav-bg: #161616;
   --ply-nav-color: #f4f4f4;
   --ply-nav-border: #f4f4f4;
@@ -4814,7 +4816,7 @@ input[type=button].btn-ghost,
 input[type=reset].btn-ghost,
 button.btn-ghost {
   background: transparent;
-  color: var(--ply-btn-default-bg);
+  color: var(--ply-btn-ghost-color, var(--ply-btn-default-bg));
   border: none;
 }
 .btn-ghost:hover, .btn-ghost:active, .btn-ghost:focus-visible,
@@ -4831,7 +4833,7 @@ button.btn-ghost:hover,
 button.btn-ghost:active,
 button.btn-ghost:focus-visible {
   background: var(--ply-bg-muted, rgba(128, 128, 128, 0.1));
-  color: var(--ply-btn-default-bg);
+  color: var(--ply-btn-ghost-color, var(--ply-btn-default-bg));
 }
 .btn-ghost:focus-visible,
 input[type=submit].btn-ghost:focus-visible,
@@ -4849,8 +4851,8 @@ input[type=reset].btn-primary-outline,
 button.btn-primary-outline {
   background: transparent;
   padding: 0.5625rem 1.5rem;
-  border: 1px solid var(--ply-btn-default-bg);
-  color: var(--ply-btn-default-bg);
+  border: 1px solid var(--ply-btn-ghost-color, var(--ply-btn-default-bg));
+  color: var(--ply-btn-ghost-color, var(--ply-btn-default-bg));
 }
 .btn-primary-outline:hover, .btn-primary-outline:active, .btn-primary-outline:focus-visible,
 input[type=submit].btn-primary-outline:hover,

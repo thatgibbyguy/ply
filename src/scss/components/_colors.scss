@@ -202,7 +202,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-accent: #{$btn-primary-dark};
 
   // Buttons (hex fallback + color-mix for custom theme cascade)
-  --ply-btn-default-bg: #{$btn-primary-dark};
+  --ply-btn-default-bg: #0f62fe;
   --ply-btn-default-bg-hover: #{$btn-primary-dark-hover};
   --ply-btn-default-bg-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
   --ply-btn-default-bg-active: #{$btn-primary-dark-active};
@@ -212,8 +212,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), white 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-dark-active};
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), white 25%);
-  --ply-btn-default-color: #161616;
+  --ply-btn-default-color: #fff;
   --ply-btn-secondary-color: #161616;
+  --ply-btn-ghost-color: #{$btn-primary-dark};
 
   // Navigation
   --ply-nav-bg: #161616;
