@@ -144,13 +144,13 @@ For CSS-only collapsible navigation (hamburger menu on mobile, inline nav on des
 For real projects, install ply and import the SCSS source. This gives access to the full color palette, spacing variables, mixins, and Sass-level customization.
 
 ```sh
-npm install plygrid
+npm install plycss
 ```
 
 ```scss
-@use "plygrid/src/scss/components/colors" as colors;
-@use "plygrid/src/scss/components/variables" as variables;
-@use "plygrid/src/scss/components/mixins" as mixins;
+@use "plycss/src/scss/components/colors" as colors;
+@use "plycss/src/scss/components/variables" as variables;
+@use "plycss/src/scss/components/mixins" as mixins;
 
 .custom {
   color: colors.$color-blue;
@@ -161,7 +161,7 @@ npm install plygrid
 ### CDN (prototyping only)
 For quick demos — gives you ply's classes and dark mode, but no Sass variables, color palette, or mixins.
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plycss@1/dist/css/ply.min.css">
 ```
 
 ## File Structure

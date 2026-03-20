@@ -21,7 +21,7 @@ trap cleanup EXIT INT TERM
 #   6. npm publish (interactive — will prompt for 2FA)
 #   7. Wait for npm availability
 #   8. Create GitHub release
-#   9. Bump plygrid version in web-docs
+#   9. Bump plycss version in web-docs
 #  10. Commit + push web-docs → Vercel auto-deploys
 
 VERSION="${1:-}"
@@ -58,7 +58,7 @@ fi
 echo "  ✓ npm authenticated as $(npm whoami)"
 
 if [[ ! -e "$WEBDOCS/.git" ]]; then
-  echo "  ✗ plygrid-web-and-docs submodule not initialized"
+  echo "  ✗ plycss-web-and-docs submodule not initialized"
   exit 1
 fi
 echo "  ✓ web-docs submodule present"
@@ -141,13 +141,13 @@ echo "  ✓ npm publish completed"
 echo ""
 
 # ─── Step 5: Wait for npm availability ──────────────────────────────────────
-echo "▸ Waiting for plygrid@$VERSION to appear on npm registry..."
+echo "▸ Waiting for plycss@$VERSION to appear on npm registry..."
 MAX_WAIT=120
 WAITED=0
 while [[ $WAITED -lt $MAX_WAIT ]]; do
-  LIVE=$(npm view plygrid@"$VERSION" version 2>/dev/null || echo "")
+  LIVE=$(npm view plycss@"$VERSION" version 2>/dev/null || echo "")
   if [[ "$LIVE" == "$VERSION" ]]; then
-    echo "  ✓ plygrid@$VERSION is live on npm (${WAITED}s)"
+    echo "  ✓ plycss@$VERSION is live on npm (${WAITED}s)"
     break
   fi
   sleep 5
@@ -183,7 +183,7 @@ if [[ -f "$NOTES_FILE" ]]; then
 $NOTES
 
 \`\`\`
-npm install plygrid@$VERSION
+npm install plycss@$VERSION
 \`\`\`"
 else
   RELEASE_BODY="## v$VERSION"
@@ -198,7 +198,7 @@ $DESCRIPTION"
 $NOTES
 
 \`\`\`
-npm install plygrid@$VERSION
+npm install plycss@$VERSION
 \`\`\`"
 
   # Save a copy for reference
@@ -214,26 +214,26 @@ echo "  ✓ GitHub release created"
 echo ""
 
 # ─── Step 7: Update web-docs ────────────────────────────────────────────────
-echo "▸ Updating plygrid-web-and-docs..."
+echo "▸ Updating plycss-web-and-docs..."
 cd "$WEBDOCS"
 
-# Bump plygrid dependency
+# Bump plycss dependency
 node -e "
 const fs = require('fs');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-pkg.dependencies.plygrid = '^$VERSION';
+pkg.dependencies.plycss = '^$VERSION';
 fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
 "
-echo "  ✓ plygrid dependency → ^$VERSION"
+echo "  ✓ plycss dependency → ^$VERSION"
 
 # Install to update lockfile
-npm install plygrid@"$VERSION"
+npm install plycss@"$VERSION"
 echo "  ✓ npm install complete"
 
 # Commit and push
 git add package.json package-lock.json
 if ! git diff --cached --quiet; then
-  git commit -m "bump plygrid to v$VERSION"
+  git commit -m "bump plycss to v$VERSION"
   git push origin HEAD
   echo "  ✓ Pushed web-docs → Vercel will auto-deploy"
 else
@@ -254,7 +254,7 @@ echo ""
 echo "╔══════════════════════════════════════════════╗"
 echo "║  ✓ Release v$VERSION complete!"
 echo "║"
-echo "║  npm:    https://www.npmjs.com/package/plygrid"
+echo "║  npm:    https://www.npmjs.com/package/plycss"
 echo "║  GitHub: https://github.com/thatgibbyguy/ply/releases/tag/v$VERSION"
 echo "║  Docs:   https://plycss.com"
 echo "╚══════════════════════════════════════════════╝"

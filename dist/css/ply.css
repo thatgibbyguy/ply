@@ -1175,7 +1175,7 @@ meter {
 }
 
 .success {
-  color: #2c9f42;
+  color: #1a7a32;
 }
 
 .text-xs {
@@ -3851,8 +3851,8 @@ input.input-success,
 textarea.input-success,
 select.input-success,
 .input-success {
-  border-color: #2c9f42;
-  box-shadow: 0 0 0 2px rgba(44, 159, 66, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+  border-color: #1a7a32;
+  box-shadow: 0 0 0 2px rgba(26, 122, 50, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 input.input-gray,
@@ -4689,7 +4689,7 @@ input[type=submit].btn-primary,
 input[type=button].btn-primary,
 input[type=reset].btn-primary,
 button.btn-primary {
-  background: var(--ply-btn-default-bg, #0f62fe);
+  background: var(--ply-btn-default-bg);
   color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus-visible,
@@ -4712,14 +4712,14 @@ input[type=submit].btn-primary:hover,
 input[type=button].btn-primary:hover,
 input[type=reset].btn-primary:hover,
 button.btn-primary:hover {
-  background: var(--ply-btn-default-bg-hover, #0043ce);
+  background: var(--ply-btn-default-bg-hover);
 }
 .btn-primary:active,
 input[type=submit].btn-primary:active,
 input[type=button].btn-primary:active,
 input[type=reset].btn-primary:active,
 button.btn-primary:active {
-  background: var(--ply-btn-default-bg-active, #002d9c);
+  background: var(--ply-btn-default-bg-active);
 }
 
 .btn-secondary,
@@ -4811,7 +4811,7 @@ input[type=button].btn-ghost,
 input[type=reset].btn-ghost,
 button.btn-ghost {
   background: transparent;
-  color: var(--ply-btn-default-bg, #0f62fe);
+  color: var(--ply-btn-default-bg);
   border: none;
 }
 .btn-ghost:hover, .btn-ghost:active, .btn-ghost:focus-visible,
@@ -4828,7 +4828,7 @@ button.btn-ghost:hover,
 button.btn-ghost:active,
 button.btn-ghost:focus-visible {
   background: var(--ply-bg-muted, rgba(128, 128, 128, 0.1));
-  color: var(--ply-btn-default-bg, #0f62fe);
+  color: var(--ply-btn-default-bg);
 }
 .btn-ghost:focus-visible,
 input[type=submit].btn-ghost:focus-visible,
@@ -4846,8 +4846,8 @@ input[type=reset].btn-primary-outline,
 button.btn-primary-outline {
   background: transparent;
   padding: 0.5625rem 1.5rem;
-  border: 1px solid var(--ply-btn-default-bg, #0f62fe);
-  color: var(--ply-btn-default-bg, #0f62fe);
+  border: 1px solid var(--ply-btn-default-bg);
+  color: var(--ply-btn-default-bg);
 }
 .btn-primary-outline:hover, .btn-primary-outline:active, .btn-primary-outline:focus-visible,
 input[type=submit].btn-primary-outline:hover,
@@ -4862,8 +4862,8 @@ input[type=reset].btn-primary-outline:focus-visible,
 button.btn-primary-outline:hover,
 button.btn-primary-outline:active,
 button.btn-primary-outline:focus-visible {
-  background: var(--ply-btn-default-bg, #0f62fe);
-  border-color: var(--ply-btn-default-bg, #0f62fe);
+  background: var(--ply-btn-default-bg);
+  border-color: var(--ply-btn-default-bg);
   color: var(--ply-btn-default-color, var(--ply-color-text-inverse, #fff));
 }
 .btn-primary-outline:focus-visible,
@@ -5940,7 +5940,7 @@ button.btn-white.btn-outline.btn-active {
 
 .label-green,
 .badge-green {
-  background: #2c9f42;
+  background: #1a7a32;
 }
 
 .label-yellow,
@@ -5975,8 +5975,8 @@ button.btn-white.btn-outline.btn-active {
 }
 
 .label-green.label-outline {
-  border-color: #2c9f42;
-  color: #2c9f42;
+  border-color: #1a7a32;
+  color: #1a7a32;
 }
 
 .label-yellow.label-outline {
@@ -6618,8 +6618,8 @@ th.sortable.sort-desc::after {
 }
 .step.completed::before {
   border-color: var(--ply-border-color);
-  background: color-mix(in srgb, #2c9f42 13%, var(--ply-bg-surface, #fff));
-  color: #2c9f42;
+  background: color-mix(in srgb, #1a7a32 13%, var(--ply-bg-surface, #fff));
+  color: #1a7a32;
   content: "✓";
 }
 .step.completed:not(:last-child)::after {

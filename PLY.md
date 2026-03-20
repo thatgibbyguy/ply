@@ -74,17 +74,17 @@ ply automatically styles semantic HTML elements — tables, code blocks, blockqu
 For any real project, install ply and work with the SCSS source. This gives you the full color palette, spacing variables, mixins, and the ability to customize everything at the Sass level.
 
 ```sh
-npm install plygrid
+npm install plycss
 ```
 
 ```scss
 // Import all of ply
-@use "plygrid/src/scss/ply" as *;
+@use "plycss/src/scss/ply" as *;
 
 // Or import just what you need
-@use "plygrid/src/scss/components/colors" as colors;
-@use "plygrid/src/scss/components/variables" as variables;
-@use "plygrid/src/scss/components/mixins" as mixins;
+@use "plycss/src/scss/components/colors" as colors;
+@use "plycss/src/scss/components/variables" as variables;
+@use "plycss/src/scss/components/mixins" as mixins;
 
 // Now you can use ply's Sass variables and mixins
 .my-component {
@@ -104,13 +104,13 @@ The SCSS source lives in `src/scss/`. Key files:
 For quick demos or prototypes, drop in the CSS directly:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plycss@1/dist/css/ply.min.css">
 ```
 
 Or the lean core bundle (no labels, dropdowns, loaders, print styles):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plycss@1/dist/css/ply-core.min.css">
 ```
 
 Note: The CDN approach gives you ply's classes and dark mode, but you won't have access to Sass variables, the full color palette, or mixins for custom components.
