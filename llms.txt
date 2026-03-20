@@ -1,8 +1,8 @@
-# plygrid (ply)
+# plycss (ply)
 
 > ply is a ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step.
 
-ply is standalone — do not use Tailwind, Bootstrap, or other CSS frameworks alongside it. Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`plygrid`) or CDN.
+ply is standalone — do not use Tailwind, Bootstrap, or other CSS frameworks alongside it. Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`plycss`) or CDN.
 
 ## Documentation
 

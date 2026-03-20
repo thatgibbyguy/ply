@@ -1,6 +1,6 @@
-# plygrid (ply) — Complete Documentation
+# plycss (ply) — Complete Documentation
 
-> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plygrid` or use the CDN.
+> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plycss` or use the CDN.
 
 ---
 
@@ -9,16 +9,16 @@
 ### npm + Sass (recommended)
 
 ```sh
-npm install plygrid
+npm install ply-css
 ```
 
 ```scss
-@use "plygrid/src/scss/ply" as *;
+@use "ply-css/src/scss/ply" as *;
 
 // Or import individual modules
-@use "plygrid/src/scss/components/colors" as colors;
-@use "plygrid/src/scss/components/variables" as variables;
-@use "plygrid/src/scss/components/mixins" as mixins;
+@use "ply-css/src/scss/components/colors" as colors;
+@use "ply-css/src/scss/components/variables" as variables;
+@use "ply-css/src/scss/components/mixins" as mixins;
 
 .custom {
   color: colors.$color-blue;
@@ -32,13 +32,13 @@ SCSS source: `src/scss/components/_colors.scss` (full color palette), `_variable
 ### CDN (prototyping only)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 ```
 
 Core bundle (no labels, dropdowns, loaders, print):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply-core.min.css">
 ```
 
 Bundles: `ply.min.css` (~20KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~6KB, grid+helpers), `ply-helpers.min.css` (~4KB, helpers only).
