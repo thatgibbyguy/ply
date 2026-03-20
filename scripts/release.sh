@@ -135,19 +135,19 @@ echo ""
 echo "▸ Publishing to npm..."
 echo "  (You may be prompted for 2FA)"
 echo ""
-npm publish --access=public
+npm publish
 echo ""
 echo "  ✓ npm publish completed"
 echo ""
 
 # ─── Step 5: Wait for npm availability ──────────────────────────────────────
-echo "▸ Waiting for @plycss/ply@$VERSION to appear on npm registry..."
+echo "▸ Waiting for ply-css@$VERSION to appear on npm registry..."
 MAX_WAIT=120
 WAITED=0
 while [[ $WAITED -lt $MAX_WAIT ]]; do
-  LIVE=$(npm view @plycss/ply@"$VERSION" version 2>/dev/null || echo "")
+  LIVE=$(npm view ply-css@"$VERSION" version 2>/dev/null || echo "")
   if [[ "$LIVE" == "$VERSION" ]]; then
-    echo "  ✓ @plycss/ply@$VERSION is live on npm (${WAITED}s)"
+    echo "  ✓ ply-css@$VERSION is live on npm (${WAITED}s)"
     break
   fi
   sleep 5
@@ -183,7 +183,7 @@ if [[ -f "$NOTES_FILE" ]]; then
 $NOTES
 
 \`\`\`
-npm install @plycss/ply@$VERSION
+npm install ply-css@$VERSION
 \`\`\`"
 else
   RELEASE_BODY="## v$VERSION"
@@ -198,7 +198,7 @@ $DESCRIPTION"
 $NOTES
 
 \`\`\`
-npm install @plycss/ply@$VERSION
+npm install ply-css@$VERSION
 \`\`\`"
 
   # Save a copy for reference
@@ -217,23 +217,23 @@ echo ""
 echo "▸ Updating plycss-web-and-docs..."
 cd "$WEBDOCS"
 
-# Bump @plycss/ply dependency
+# Bump ply-css dependency
 node -e "
 const fs = require('fs');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-pkg.dependencies["@plycss/ply"] = '^$VERSION';
+pkg.dependencies["ply-css"] = '^$VERSION';
 fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
 "
-echo "  ✓ @plycss/ply dependency → ^$VERSION"
+echo "  ✓ ply-css dependency → ^$VERSION"
 
 # Install to update lockfile
-npm install @plycss/ply@"$VERSION"
+npm install ply-css@"$VERSION"
 echo "  ✓ npm install complete"
 
 # Commit and push
 git add package.json package-lock.json
 if ! git diff --cached --quiet; then
-  git commit -m "bump @plycss/ply to v$VERSION"
+  git commit -m "bump ply-css to v$VERSION"
   git push origin HEAD
   echo "  ✓ Pushed web-docs → Vercel will auto-deploy"
 else
@@ -254,7 +254,7 @@ echo ""
 echo "╔══════════════════════════════════════════════╗"
 echo "║  ✓ Release v$VERSION complete!"
 echo "║"
-echo "║  npm:    https://www.npmjs.com/package/@plycss/ply"
+echo "║  npm:    https://www.npmjs.com/package/ply-css"
 echo "║  GitHub: https://github.com/thatgibbyguy/ply/releases/tag/v$VERSION"
 echo "║  Docs:   https://plycss.com"
 echo "╚══════════════════════════════════════════════╝"

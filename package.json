@@ -1,5 +1,5 @@
 {
-  "name": "@plycss/ply",
+  "name": "ply-css",
   "version": "1.3.0",
   "description": "ply — A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint",
   "main": "dist/css/ply.css",

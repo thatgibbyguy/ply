@@ -11,17 +11,17 @@ A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small
 For real projects, install ply and import the SCSS source to get the full color palette, variables, and mixins.
 
 ```sh
-npm install @plycss/ply
+npm install ply-css
 ```
 
 ```scss
-@use "@plycss/ply/src/scss/ply" as *;
+@use "ply-css/src/scss/ply" as *;
 ```
 
 ### CDN (prototyping)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@plycss/ply@1/dist/css/ply.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 ```
 
 ### Git
@@ -49,7 +49,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@plycss/ply@1/dist/css/ply.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 </head>
 <body>
   <div class="units-container">
