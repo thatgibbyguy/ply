@@ -1167,15 +1167,15 @@ meter {
 .req,
 .required {
   font-weight: normal;
-  color: #de2c3b;
+  color: var(--ply-red-1);
 }
 
 .error {
-  color: #de2c3b;
+  color: var(--ply-red-1);
 }
 
 .success {
-  color: #1a7a32;
+  color: var(--ply-green-1);
 }
 
 .text-xs {
