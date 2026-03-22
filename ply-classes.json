@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.4.1",
   "framework": "ply",
   "totalClasses": 457,
   "uniqueClasses": 457,
@@ -494,7 +494,7 @@
     },
     "split": {
       "category": "grid",
-      "description": "Remove gutters from child units. Applied to units-row.",
+      "description": "Remove gap between child units. Applied to units-row.",
       "example": "<div class=\"units-row split\">...</div>"
     },
     "centered-content": {
@@ -1451,23 +1451,23 @@
     },
     "gap-xs": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: 0.25rem."
+      "description": "Gap between flex/grid children: 0.25rem. Works on units-row to override the default 1rem gap."
     },
     "gap-sm": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: 0.5rem."
+      "description": "Gap between flex/grid children: 0.5rem. Works on units-row to override the default 1rem gap."
     },
     "gap": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: 0.75rem."
+      "description": "Gap between flex/grid children: 0.75rem. Works on units-row to override the default 1rem gap."
     },
     "gap-lg": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: 1.5rem."
+      "description": "Gap between flex/grid children: 1.5rem. Works on units-row to override the default 1rem gap."
     },
     "gap-xl": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: 2rem."
+      "description": "Gap between flex/grid children: 2rem. Works on units-row to override the default 1rem gap."
     },
     "no-link-style": {
       "category": "helpers",
@@ -2379,7 +2379,7 @@
     },
     "gap-xxl": {
       "category": "helpers",
-      "description": "Gap between flex/grid children: var(--ply-space-xxl, 3rem)."
+      "description": "Gap between flex/grid children: 3rem. Works on units-row to override the default 1rem gap."
     },
     "margin-xxl": {
       "category": "helpers",
