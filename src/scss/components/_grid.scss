@@ -23,7 +23,8 @@
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
-  margin: 0 (-(variables.$grid-gutter-width)) variables.$base-line;
+  gap: var(--units-gap, #{variables.$grid-gutter-width * 2});
+  margin: 0 0 variables.$base-line;
 
   &.reverse-direction,
   &.right-to-left {
@@ -31,11 +32,8 @@
   }
 
   &.split {
-    margin: 0 0 variables.$base-line;
-
-    [class*='unit-'] {
-      padding: 0;
-    }
+    --units-gap: 0px;
+    gap: 0;
   }
 
   &.centered-content {
@@ -74,8 +72,6 @@
 [class*='unit-'] {
   box-sizing: border-box;
 
-  padding: 0 variables.$grid-gutter-width;
-
   &.fill-height {
     display: flex;
   }
@@ -89,8 +85,11 @@
 
 @each $name, $value in variables.$unit-scale {
   .unit-#{$name} {
-    flex-basis: $value;
-    max-width: $value;
+    @if $name == 100 {
+      flex-basis: 100%;
+    } @else {
+      flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+    }
   }
 }
 
@@ -102,8 +101,11 @@
 
 @each $name, $value in variables.$unit-scale {
   .forever-unit-#{$name} {
-    flex-basis: $value;
-    max-width: $value;
+    @if $name == 100 {
+      flex-basis: 100%;
+    } @else {
+      flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+    }
   }
 }
 
@@ -112,8 +114,7 @@
   @each $name, $value in variables.$width-scale {
     @if $name != 100 {
       .large-screen-unit-#{$name} {
-        max-width: $value;
-        flex-basis: $value;
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
       }
     }
   }
@@ -124,8 +125,7 @@
   @each $name, $value in variables.$width-scale {
     @if $name != 100 {
       .x-large-screen-unit-#{$name} {
-        max-width: $value;
-        flex-basis: $value;
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
       }
     }
   }
@@ -134,9 +134,14 @@
 // Small desktop (max-width)
 @media (max-width: media-queries.$breakpoint-small-desktop) {
   @each $name, $value in variables.$width-scale {
-    .small-desktop-unit-#{$name} {
-      max-width: $value;
-      flex-basis: $value;
+    @if $name == 100 {
+      .small-desktop-unit-#{$name} {
+        flex-basis: 100%;
+      }
+    } @else {
+      .small-desktop-unit-#{$name} {
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+      }
     }
   }
 }
@@ -161,13 +166,17 @@
   .unit-20,
   .unit-10 {
     flex-basis: 100%;
-    max-width: 100%;
   }
 
   @each $name, $value in variables.$width-scale {
-    .tablet-unit-#{$name} {
-      max-width: $value;
-      flex-basis: $value;
+    @if $name == 100 {
+      .tablet-unit-#{$name} {
+        flex-basis: 100%;
+      }
+    } @else {
+      .tablet-unit-#{$name} {
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+      }
     }
   }
 }
@@ -175,9 +184,14 @@
 // Large phone (max-width)
 @media (max-width: media-queries.$breakpoint-large-phone) {
   @each $name, $value in variables.$width-scale {
-    .large-phone-unit-#{$name} {
-      max-width: $value;
-      flex-basis: $value;
+    @if $name == 100 {
+      .large-phone-unit-#{$name} {
+        flex-basis: 100%;
+      }
+    } @else {
+      .large-phone-unit-#{$name} {
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+      }
     }
   }
 }
@@ -185,9 +199,14 @@
 // Phone (max-width)
 @media (max-width: media-queries.$breakpoint-phone) {
   @each $name, $value in variables.$width-scale {
-    .phone-unit-#{$name} {
-      max-width: $value;
-      flex-basis: $value;
+    @if $name == 100 {
+      .phone-unit-#{$name} {
+        flex-basis: 100%;
+      }
+    } @else {
+      .phone-unit-#{$name} {
+        flex-basis: calc(#{$value} - var(--units-gap, #{variables.$grid-gutter-width * 2}) * #{1 - math.div($name, 100)});
+      }
     }
   }
 }

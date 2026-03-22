@@ -330,13 +330,36 @@ $width-breakpoints: (
 .bg-green  { background-color: var(--ply-bg-green); }
 .bg-yellow { background-color: var(--ply-bg-yellow); }
 
-// Gap utilities
-.gap-xs  { gap: var(--ply-space-xs, 0.25rem); }
-.gap-sm  { gap: var(--ply-space-sm, 0.5rem); }
-.gap     { gap: var(--ply-space-md, 0.75rem); }
-.gap-lg  { gap: var(--ply-space-lg, 1.5rem); }
-.gap-xl  { gap: var(--ply-space-xl, 2rem); }
-.gap-xxl { gap: var(--ply-space-xxl, 3rem); }
+// Gap utilities — also set --units-gap so unit calc() sizing adjusts automatically
+.gap-xs {
+  --units-gap: var(--ply-space-xs, 0.25rem);
+  gap: var(--units-gap);
+}
+
+.gap-sm {
+  --units-gap: var(--ply-space-sm, 0.5rem);
+  gap: var(--units-gap);
+}
+
+.gap {
+  --units-gap: var(--ply-space-md, 0.75rem);
+  gap: var(--units-gap);
+}
+
+.gap-lg {
+  --units-gap: var(--ply-space-lg, 1.5rem);
+  gap: var(--units-gap);
+}
+
+.gap-xl {
+  --units-gap: var(--ply-space-xl, 2rem);
+  gap: var(--units-gap);
+}
+
+.gap-xxl {
+  --units-gap: var(--ply-space-xxl, 3rem);
+  gap: var(--units-gap);
+}
 
 // Link reset — suppress link styling inside a container
 .no-link-style {

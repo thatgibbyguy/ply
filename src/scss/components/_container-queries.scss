@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "media-queries";
 @use "variables";
 
@@ -23,8 +24,11 @@ $container-breakpoints: (
   @container (max-width: #{$bp-value}) {
     @each $name, $value in variables.$unit-scale {
       .container-#{$bp-name}-unit-#{$name} {
-        max-width: $value;
-        flex-basis: $value;
+        @if $name == 100 {
+          flex-basis: 100%;
+        } @else {
+          flex-basis: calc(#{$value} - var(--units-gap, 1rem) * #{1 - math.div($name, 100)});
+        }
       }
     }
     .container-#{$bp-name}-unit-auto {
