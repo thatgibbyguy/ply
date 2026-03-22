@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.5.0",
   "framework": "ply",
   "totalClasses": 457,
   "uniqueClasses": 457,
@@ -2520,16 +2520,16 @@
       "--ply-bg-yellow-active": "Yellow active. #b28600"
     },
     "palette": {
-      "--ply-blue-1 / -2 / -3": "Blue palette: base, light, pastel",
-      "--ply-red-1 / -2 / -3": "Red palette: base, light, pastel",
-      "--ply-green-1 / -2 / -3": "Green palette: base, light, pastel",
-      "--ply-yellow-1 / -2 / -3": "Yellow palette: base, light, pastel",
-      "--ply-indigo-1 / -2 / -3": "Indigo palette: base, light, pastel",
-      "--ply-purple-1 / -2 / -3": "Purple palette: base, light, pastel",
-      "--ply-pink-1 / -2 / -3": "Pink palette: base, light, pastel",
-      "--ply-orange-1 / -2 / -3": "Orange palette: base, light, pastel",
-      "--ply-teal-1 / -2 / -3": "Teal palette: base, light, pastel",
-      "--ply-cyan-1 / -2 / -3": "Cyan palette: base, light, pastel"
+      "--ply-blue-1 / -2 / -3": "Blue palette: base, darker, darkest",
+      "--ply-red-1 / -2 / -3": "Red palette: base, darker, darkest",
+      "--ply-green-1 / -2 / -3": "Green palette: base, darker, darkest",
+      "--ply-yellow-1 / -2 / -3": "Yellow palette: base, darker, darkest",
+      "--ply-indigo-1 / -2 / -3": "Indigo palette: base, darker, darkest",
+      "--ply-purple-1 / -2 / -3": "Purple palette: base, darker, darkest",
+      "--ply-pink-1 / -2 / -3": "Pink palette: base, darker, darkest",
+      "--ply-orange-1 / -2 / -3": "Orange palette: base, darker, darkest",
+      "--ply-teal-1 / -2 / -3": "Teal palette: base, darker, darkest",
+      "--ply-cyan-1 / -2 / -3": "Cyan palette: base, darker, darkest"
     },
     "spacing": {
       "--ply-space-xs": "Extra-small spacing unit. Default: 0.25rem",
@@ -2538,7 +2538,30 @@
       "--ply-space-lg": "Large spacing unit. Default: 1.5rem",
       "--ply-space-xl": "Extra-large spacing unit. Default: 2rem",
       "--ply-space-xxl": "Extra extra large spacing unit. Default: 3rem"
-    }
+    },
+    "colorSurfaces": {
+      "--ply-blue-surface": "Theme-aware blue pastel background. Light: blue pastel, Dark: dark muted blue. For cards, badges, alerts.",
+      "--ply-blue-border": "Theme-aware blue border. Light: light blue tint, Dark: medium-dark blue. For colored card borders.",
+      "--ply-red-surface": "Theme-aware red pastel background. Light: red pastel, Dark: dark muted red. For cards, badges, alerts.",
+      "--ply-red-border": "Theme-aware red border. Light: light red tint, Dark: medium-dark red. For colored card borders.",
+      "--ply-green-surface": "Theme-aware green pastel background. Light: green pastel, Dark: dark muted green. For cards, badges, alerts.",
+      "--ply-green-border": "Theme-aware green border. Light: light green tint, Dark: medium-dark green. For colored card borders.",
+      "--ply-yellow-surface": "Theme-aware yellow pastel background. Light: yellow pastel, Dark: dark muted yellow. For cards, badges, alerts.",
+      "--ply-yellow-border": "Theme-aware yellow border. Light: light yellow tint, Dark: medium-dark yellow. For colored card borders.",
+      "--ply-indigo-surface": "Theme-aware indigo pastel background. Light: indigo pastel, Dark: dark muted indigo. For cards, badges, alerts.",
+      "--ply-indigo-border": "Theme-aware indigo border. Light: light indigo tint, Dark: medium-dark indigo. For colored card borders.",
+      "--ply-purple-surface": "Theme-aware purple pastel background. Light: purple pastel, Dark: dark muted purple. For cards, badges, alerts.",
+      "--ply-purple-border": "Theme-aware purple border. Light: light purple tint, Dark: medium-dark purple. For colored card borders.",
+      "--ply-pink-surface": "Theme-aware pink pastel background. Light: pink pastel, Dark: dark muted pink. For cards, badges, alerts.",
+      "--ply-pink-border": "Theme-aware pink border. Light: light pink tint, Dark: medium-dark pink. For colored card borders.",
+      "--ply-orange-surface": "Theme-aware orange pastel background. Light: orange pastel, Dark: dark muted orange. For cards, badges, alerts.",
+      "--ply-orange-border": "Theme-aware orange border. Light: light orange tint, Dark: medium-dark orange. For colored card borders.",
+      "--ply-teal-surface": "Theme-aware teal pastel background. Light: teal pastel, Dark: dark muted teal. For cards, badges, alerts.",
+      "--ply-teal-border": "Theme-aware teal border. Light: light teal tint, Dark: medium-dark teal. For colored card borders.",
+      "--ply-cyan-surface": "Theme-aware cyan pastel background. Light: cyan pastel, Dark: dark muted cyan. For cards, badges, alerts.",
+      "--ply-cyan-border": "Theme-aware cyan border. Light: light cyan tint, Dark: medium-dark cyan. For colored card borders."
+    },
+    "totalCustomProperties": 92
   },
   "semanticElements": {
     "dialog": {

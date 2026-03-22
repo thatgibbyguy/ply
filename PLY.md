@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (18.5KB gzip full, ~15KB core). 457 utility classes, 100+ CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~21KB gzip full, ~17KB core). 457 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -9,7 +9,7 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
 - **`classes`** — Every ply class (457) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
-- **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
+- **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette, colorSurfaces, spacing). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
 
 The JSON is the source of truth. If a class, variable, or semantic element already does what you need, use it instead of writing custom CSS.
@@ -54,6 +54,33 @@ See `customProperties` in `ply-classes.json` for the full list of overridable va
 ### Custom Theme Browser Compatibility
 
 ply uses `color-mix()` to auto-compute hover/active button states from your base color. This works in all modern browsers (Chrome 111+, Firefox 113+, Safari 16.4+, Edge 111+). On older browsers (pre-2023), `color-mix()` is ignored and the fallback hex values from ply's default theme are used instead. For custom themes targeting legacy browsers, also set `--ply-btn-default-bg-hover`, `--ply-btn-default-bg-active`, `--ply-btn-secondary-bg-hover`, and `--ply-btn-secondary-bg-active` explicitly. In modern browsers, `color-mix()` overrides these fallbacks automatically.
+
+## Color Surfaces
+
+Theme-aware surface and border colors for building colored cards, badges, and alerts that work in both light and dark mode. Available for all 10 palette colors: blue, red, green, yellow, indigo, purple, pink, orange, teal, cyan.
+
+| Variable | Light Mode | Dark Mode | Use |
+|---|---|---|---|
+| `--ply-{color}-surface` | Pastel | Dark muted | Card/badge background |
+| `--ply-{color}-border` | Light tint | Medium dark | Colored borders |
+| `--ply-{color}-1` | Base | Lighter | Text on surface, icons |
+| `--ply-{color}-2` | Darker | Medium | Emphasis |
+| `--ply-{color}-3` | Darkest | Lightest | Subtle accent |
+
+```css
+/* Theme-aware colored card */
+.card-info {
+  background: var(--ply-blue-surface);
+  border: 1px solid var(--ply-blue-border);
+  color: var(--ply-blue-1);
+}
+
+.card-danger {
+  background: var(--ply-red-surface);
+  border: 1px solid var(--ply-red-border);
+  color: var(--ply-red-1);
+}
+```
 
 ## Philosophy: Start Semantic
 
@@ -640,7 +667,7 @@ Ready-to-use HTML examples are in the `snippets/` directory:
 
 | Bundle | Includes | Size (gzip) |
 |--------|----------|-------------|
-| `ply.min.css` | Everything | 18.5KB |
+| `ply.min.css` | Everything | ~21KB |
 | `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
-| `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~6KB |
-| `ply-helpers.min.css` | Helper utilities only | ~4KB |
+| `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~7KB |
+| `ply-helpers.min.css` | Helper utilities only | ~5KB |

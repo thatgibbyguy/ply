@@ -113,6 +113,30 @@ $btn-secondary-dark-active: #bebebe;
   --ply-bg-yellow-hover: #d2a106;
   --ply-bg-yellow-active: #b28600;
 
+  // Color surfaces — pastel bg for cards, badges, alerts (theme-aware)
+  --ply-blue-surface: #d3e3fb;
+  --ply-red-surface: #f8d5d8;
+  --ply-green-surface: #d5ecd9;
+  --ply-yellow-surface: #fff4cc;
+  --ply-indigo-surface: #e0e7ff;
+  --ply-purple-surface: #ede9fe;
+  --ply-pink-surface: #fce7f3;
+  --ply-orange-surface: #ffedd5;
+  --ply-teal-surface: #ccfbf1;
+  --ply-cyan-surface: #cffafe;
+
+  // Color borders — light tint borders for colored cards (theme-aware)
+  --ply-blue-border: #92baf6;
+  --ply-red-border: #ef969d;
+  --ply-green-border: #96cfa1;
+  --ply-yellow-border: #ffe480;
+  --ply-indigo-border: #a5b4fc;
+  --ply-purple-border: #c4b5fd;
+  --ply-pink-border: #f9a8d4;
+  --ply-orange-border: #fdba74;
+  --ply-teal-border: #5eead4;
+  --ply-cyan-border: #67e8f9;
+
   // Brand palette (WCAG AA — 4.5:1 vs text-inverse per mode)
   --ply-blue-1: #0f62fe;
   --ply-blue-2: #0043ce;
@@ -234,6 +258,30 @@ $btn-secondary-dark-active: #bebebe;
 
   // Glass
   --ply-bg-glass: rgba(38, 38, 38, 0.25);
+
+  // Color surfaces — dark muted bg for cards, badges, alerts
+  --ply-blue-surface: #1a2744;
+  --ply-red-surface: #3b1c1e;
+  --ply-green-surface: #1a2e1e;
+  --ply-yellow-surface: #332b10;
+  --ply-indigo-surface: #1e1b4b;
+  --ply-purple-surface: #2e1065;
+  --ply-pink-surface: #3b0a2a;
+  --ply-orange-surface: #331a08;
+  --ply-teal-surface: #132f2e;
+  --ply-cyan-surface: #133040;
+
+  // Color borders — medium-dark borders for colored cards
+  --ply-blue-border: #1a52a5;
+  --ply-red-border: #b2232f;
+  --ply-green-border: #237f35;
+  --ply-yellow-border: #cca000;
+  --ply-indigo-border: #3730a3;
+  --ply-purple-border: #5b21b6;
+  --ply-pink-border: #9d174d;
+  --ply-orange-border: #c2410c;
+  --ply-teal-border: #0f766e;
+  --ply-cyan-border: #0e7490;
 
   // Brand backgrounds (dark mode — same as light, saturated for contrast with white text)
   --ply-bg-blue: #0f62fe;

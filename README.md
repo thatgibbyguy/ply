@@ -2,7 +2,7 @@
 
 A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint.
 
-**18.5KB gzipped. No JavaScript. No build step. One `<link>` tag.**
+**~21KB gzipped. No JavaScript. No build step. One `<link>` tag.**
 
 ## Install
 
@@ -37,7 +37,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 - **Start semantic** — ply automatically styles `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, and more. Start with what HTML gives you, then reach for classes when you need them.
 - **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
 - **Accessible by default** — `:focus-visible` outlines on all interactive elements (including `<summary>` and legacy components), `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast in both light and dark themes. Published [VPAT 2.5](https://plycss.com/docs/vpat) documenting conformance against all WCAG 2.1 Level A and AA criteria.
-- **Small footprint** — 18.5KB gzipped (full), ~15KB (core). No JavaScript runtime, no build step, no tree-shaking.
+- **Small footprint** — ~21KB gzipped (full), ~17KB (core). No JavaScript runtime, no build step, no tree-shaking.
 - **Ratio-based grid** — think in percentages, not arbitrary columns. `unit-50` is 50%, `unit-33` is 33%. Responsive prefixes: `tablet-unit-*`, `phone-unit-*`.
 - **Custom theming** — override `--ply-*` CSS custom properties to create any theme. Light and dark modes built in.
 

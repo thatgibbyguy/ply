@@ -7,7 +7,7 @@ This is the ply CSS framework repository. See **PLY.md** for the complete class 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
 - **`classes`** — Every ply class with category, description, and examples. Search here before inventing a class name.
-- **`customProperties`** — All 60+ `--ply-*` CSS variables organized by category (typography, background, text, borders, interactive, elevation, brand, palette) with light/dark values. Use these instead of hardcoding colors or font stacks.
+- **`customProperties`** — All 120+ `--ply-*` CSS variables organized by category (typography, background, text, borders, interactive, elevation, brand, palette, color surfaces) with light/dark values. Use these instead of hardcoding colors or font stacks.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, etc.) with tips on usage. Check here before building a custom component — ply may already style the native element.
 
 **Rule: If you're about to write custom CSS, search `ply-classes.json` first.** If a class, variable, or semantic element already does what you need, use it.
