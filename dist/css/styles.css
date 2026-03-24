@@ -144,9 +144,9 @@
     --ply-color-text-inverse: #161616;
     --ply-border-color: #393939;
     --ply-border-strong: #6f6f6f;
-    --ply-color-link: var(--ply-btn-default-bg);
+    --ply-color-link: #4589ff;
     --ply-color-link-hover: #619bff;
-    --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+    --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
     --ply-color-focus: #0f62fe;
     --ply-color-field-bg: #262626;
     --ply-color-input-border: #6f6f6f;
@@ -260,9 +260,9 @@
   --ply-color-text-inverse: #161616;
   --ply-border-color: #393939;
   --ply-border-strong: #6f6f6f;
-  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link: #4589ff;
   --ply-color-link-hover: #619bff;
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+  --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
   --ply-color-focus: #0f62fe;
   --ply-color-field-bg: #262626;
   --ply-color-input-border: #6f6f6f;
@@ -2821,7 +2821,7 @@ table tfoot td {
 .units-row.reverse-direction, .units-row.right-to-left {
   flex-direction: row-reverse;
 }
-.units-row.split {
+.units-row.joined, .units-row.split {
   --units-gap: 0px;
   gap: 0;
 }
@@ -4511,13 +4511,15 @@ input[type=button].btn,
 input[type=reset].btn,
 button.btn {
   transition: all 150ms ease-in-out, transform 50ms ease, background 150ms ease-in-out;
-  display: inline-block;
+  display: inline-flex;
   vertical-align: top;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ply-btn-gap, 0.5em);
   font-family: var(--ply-font-body, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji);
-  font-size: 1em;
+  font-size: var(--ply-btn-font-size, 1em);
   font-weight: 400;
   line-height: 1.5rem;
-  text-align: center;
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
   -webkit-appearance: none;
@@ -5463,6 +5465,10 @@ button.btn-white.btn-outline.btn-active {
 .btn-single .btn:last-child,
 .btn-group .btn:last-child {
   border-radius: 0 0.125rem 0.125rem 0;
+}
+.btn-single.joined,
+.btn-group.joined {
+  gap: 0;
 }
 .btn-single.rounded .btn:first-child,
 .btn-single.rounded .input-search:first-child,

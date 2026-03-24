@@ -203,9 +203,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-border-strong: #6f6f6f;
 
   // Interactive
-  --ply-color-link: var(--ply-btn-default-bg);
+  --ply-color-link: #{$btn-primary-dark};
   --ply-color-link-hover: #{$btn-primary-dark-hover};
-  --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), white 15%);
+  --ply-color-link-hover: color-mix(in oklch, #{$btn-primary-dark}, white 15%);
   --ply-color-focus: #0f62fe;
 
   // Fields

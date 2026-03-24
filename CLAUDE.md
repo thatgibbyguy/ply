@@ -28,7 +28,7 @@ ply automatically styles semantic HTML elements — `<nav>`, `<table>`, `<code>`
 8. **Use semantic HTML first** — ply auto-styles `<code>`, `<pre>`, `<kbd>`, `<blockquote>`, `<mark>`, `<table>`, `<details>`, `<dialog>`, `<nav>`, etc. Use native elements before creating custom classes.
 9. **Only use documented ply classes** — Do NOT invent class names. Search `ply-classes.json` to find the right class. See PLY.md for the full prose reference.
 10. **Dark mode is automatic** — Auto dark mode activates only when no `data-theme` attribute is set on `<html>`. Use `data-theme="dark"` for explicit dark mode, `data-theme="light"` for explicit light mode, or any custom value (e.g., `data-theme="warm"`) for a custom theme without dark-mode interference. Use `var(--ply-*)` custom properties for colors (see `customProperties` in the JSON), never hard-code values that break dark mode.
-11. **Icons** — Use [Feather Icons](https://feathericons.com) as the preferred icon library. Any icon library works, but Feather pairs well with ply's aesthetic.
+11. **Icons** — Use [Lucide](https://lucide.dev) as the preferred icon library. Any icon library works, but Lucide pairs well with ply's aesthetic. For icon + text buttons, place the icon before or after the label — the button's built-in `inline-flex` layout with `gap: 0.5em` handles alignment automatically. Use `btn-icon` only for icon-only buttons (no visible text).
 12. **Container queries** — Use `container-query` on a parent element and `container-tablet-unit-*`, `container-phone-unit-*`, etc. for component-level responsive behavior (responds to parent width, not viewport). See PLY.md for details.
 
 ## Custom Themes
@@ -50,6 +50,8 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-btn-default-bg-active: #7c2d12;
   --ply-btn-secondary-bg: #78350f;
   --ply-btn-border-radius: 0.5rem;
+  --ply-btn-font-size: 0.875rem;   /* button text size */
+  --ply-btn-gap: 0.375rem;         /* icon-to-text gap */
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 

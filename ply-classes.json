@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
+  "version": "1.6.0",
   "framework": "ply",
   "totalClasses": 457,
   "uniqueClasses": 457,
@@ -59,7 +59,7 @@
   },
   "themeTemplate": {
     "description": "Copy-paste starting point for custom themes. Replace placeholder values with your design colors. Every ply component respects these variables.",
-    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
+    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n  --ply-btn-font-size: 1em;\n  --ply-btn-gap: 0.5em;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
   },
   "classes": {
     "units-container": {
@@ -494,7 +494,7 @@
     },
     "split": {
       "category": "grid",
-      "description": "Remove gap between child units. Applied to units-row.",
+      "description": "Remove gap between child units. Applied to units-row. Kept for backwards compatibility — prefer joined.",
       "example": "<div class=\"units-row split\">...</div>"
     },
     "centered-content": {
@@ -1610,6 +1610,11 @@
       "description": "Round the outer corners of a btn-group.",
       "parent": "btn-group"
     },
+    "joined": {
+      "category": "buttons",
+      "description": "Remove gap so children connect as a single visual unit. On btn-group: buttons touch with a 1px divider, connected border-radius on outer edges. On units-row: removes column gutters (alias for split, which is kept for backwards compatibility).",
+      "example": "<div class=\"btn-group joined\"><button class=\"btn\">Left</button><button class=\"btn\">Middle</button><button class=\"btn\">Right</button></div>\n<div class=\"units-row joined\"><div class=\"unit-50\">...</div><div class=\"unit-50\">...</div></div>"
+    },
     "unit-role-right": {
       "category": "grid",
       "description": "Float a grid unit to the right."
@@ -2487,7 +2492,9 @@
     "buttons": {
       "--ply-btn-default-bg": "Primary button background. Controls btn-primary color and link colors. Light: #0353e9, Dark: #78a9ff. Override in custom themes to change primary + links together.",
       "--ply-btn-secondary-bg": "Secondary button background. Controls btn, btn-secondary color. Light: #393939, Dark: #4c4c4c.",
-      "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4"
+      "--ply-btn-default-color": "Default button text color. Light: inherits --ply-color-text-inverse (#fff), Dark: #f4f4f4",
+      "--ply-btn-font-size": "Button font size. Default: 1em (inherits from context). Override to set a fixed size for all buttons in a theme.",
+      "--ply-btn-gap": "Gap between icon and text inside a button. Default: 0.5em. Applies to all btn variants via inline-flex layout."
     },
     "navigation": {
       "--ply-nav-bg": "Navbar background. Light: #ffffff, Dark: #262626",

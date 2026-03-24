@@ -114,11 +114,11 @@ See `snippets/custom-theme.html` for a full working example.
 
 ## Icons
 
-ply doesn't include icons. [Feather Icons](https://feathericons.com) is recommended — lightweight, clean, and pairs well with ply. Any icon library works.
+ply doesn't include icons. [Lucide](https://lucide.dev) is recommended — lightweight, clean, and pairs well with ply. Any icon library works.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script>feather.replace();</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
 ```
 
 ## AI Integration
@@ -151,7 +151,7 @@ ply targets ADA Title II (28 CFR Part 35) / WCAG 2.1 AA compliance at the framew
 
 ## Documentation
 
-Full interactive docs at [plyCSS.com](https://plycss.com) — browse every class with live examples, search the entire framework, and copy-paste code snippets.
+Full interactive docs at [plycss.com](https://plycss.com) — browse every class with live examples, search the entire framework, and copy-paste code snippets.
 
 ## Roadmap
 

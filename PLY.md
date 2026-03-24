@@ -1,6 +1,6 @@
 # PLY — AI-Ready CSS Framework
 
-ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~21KB gzip full, ~17KB core). 457 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements.
+ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaults, and a small footprint (~21KB gzip full, ~17KB core). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements.
 
 **Differentiators:** Small bundle, AI-parseable class system, accessible out of the box, dark mode built-in.
 
@@ -8,7 +8,7 @@ ply is a ratio-based, flexbox CSS framework with dark mode, accessibility defaul
 
 **`ply-classes.json`** is the complete searchable reference. Before writing any custom CSS, search it first:
 
-- **`classes`** — Every ply class (457) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
+- **`classes`** — Every ply class (458) with category, description, and usage examples. Search here before inventing a class name or writing a custom style.
 - **`customProperties`** — All `--ply-*` CSS variables organized by category (background, text, borders, interactive, forms, code, tables, buttons, navigation, elevation, brand, palette, colorSurfaces, spacing). Each entry includes light and dark mode values. Use these instead of hardcoding colors.
 - **`semanticElements`** — Every HTML element ply auto-styles (`<dialog>`, `<details>`, `<table>`, `<code>`, `<kbd>`, `<mark>`, `<progress>`, `<meter>`, headings, form controls) with styling details and usage tips. Check here before building a custom component.
 
@@ -33,6 +33,8 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-btn-default-bg-active: #7c2d12;
   --ply-btn-secondary-bg: #78350f;
   --ply-btn-border-radius: 0.5rem;
+  --ply-btn-font-size: 0.875rem;   /* button text size — default 1em inherits from context */
+  --ply-btn-gap: 0.375rem;         /* icon-to-text gap — default 0.5em */
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
 
@@ -144,15 +146,16 @@ Note: The CDN approach gives you ply's classes and dark mode, but you won't have
 
 ## Icons
 
-ply does not include icons. [Feather Icons](https://feathericons.com) is the recommended icon library — it's lightweight, clean, and pairs well with ply's aesthetic. Any icon library works.
+ply does not include icons. [Lucide](https://lucide.dev) is the recommended icon library — it's lightweight, clean, and pairs well with ply's aesthetic. Any icon library works.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script>feather.replace();</script>
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
 
 <!-- Usage -->
-<i data-feather="check"></i> Saved
-<button class="btn btn-blue"><i data-feather="send"></i> Send</button>
+<i data-lucide="check"></i> Saved
+<button class="btn btn-primary"><i data-lucide="send"></i> Send</button>
 ```
 
 ## Dark Mode
@@ -246,7 +249,61 @@ All classes, CSS custom properties, and semantic element styles are documented i
 
 - **`btn-icon`** — Icon-only button modifier. Equal padding for a square aspect ratio. Always add `aria-label` (no visible text).
 - Combine with `btn-ghost` for toolbar-style icon buttons. Combine with size modifiers (`btn-sm`, `btn-xs`) for smaller icons.
-- For icon + text buttons, use a regular `btn` with an inline SVG — no `btn-icon` needed.
+- **Icon + text buttons** — Place the icon before or after the label text inside a regular `btn`. The button automatically uses `inline-flex` with `align-items: center` and `gap: 0.5em`, so icon and text are vertically centered with consistent spacing. No extra classes needed.
+
+```html
+<!-- Icon left -->
+<button class="btn btn-primary">
+  <i data-lucide="save"></i> Save
+</button>
+
+<!-- Icon right -->
+<button class="btn btn-secondary">
+  Next <i data-lucide="arrow-right"></i>
+</button>
+
+<!-- Icon-only (always include aria-label) -->
+<button class="btn btn-ghost btn-icon" aria-label="Delete">
+  <i data-lucide="trash-2"></i>
+</button>
+
+<!-- Size variants work the same way -->
+<button class="btn btn-primary btn-sm">
+  <i data-lucide="download"></i> Export
+</button>
+```
+
+### Button Groups
+
+Wrap buttons in `.btn-group` for a flex row with consistent gap and connected border-radius on the outer edges.
+
+- **`btn-group`** — Default: buttons with `0.5rem` gap between them.
+- **`btn-group joined`** — No gap; buttons connect as a single unit with a 1px divider between them. Use for segmented controls, toolbars, and pagination-style groups.
+- **`align-right`** / **`align-left`** / **`align-center`** — Justify the group within its container.
+- **`fill-width`** — Stretch all buttons to share equal width.
+- **`rounded`** — Larger border-radius on the outer edges.
+
+```html
+<!-- Default: gapped -->
+<div class="btn-group">
+  <button class="btn btn-primary">Save</button>
+  <button class="btn">Cancel</button>
+</div>
+
+<!-- Joined: connected, no gap -->
+<div class="btn-group joined">
+  <button class="btn">Week</button>
+  <button class="btn btn-primary">Month</button>
+  <button class="btn">Year</button>
+</div>
+
+<!-- Joined icon toolbar -->
+<div class="btn-group joined">
+  <button class="btn btn-ghost btn-icon" aria-label="Bold"><i data-lucide="bold"></i></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Italic"><i data-lucide="italic"></i></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Underline"><i data-lucide="underline"></i></button>
+</div>
+```
 
 ## Common Patterns
 

@@ -12,16 +12,18 @@ input[type="reset"].btn,
 button.btn {
   transition: all 150ms ease-in-out, transform 50ms ease, background 150ms ease-in-out;
 
-  display: inline-block;
+  display: inline-flex;
   vertical-align: top;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ply-btn-gap, 0.5em);
 
   font-family: var(--ply-font-body, #{variables.$font-family-controls});
-  font-size: 1em;
+  font-size: var(--ply-btn-font-size, 1em);
   font-weight: 400;
 
   line-height: variables.$base-line;
 
-  text-align: center;
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
 
@@ -436,6 +438,11 @@ button.btn-white {
     &:last-child {
       border-radius: 0 (variables.$border-radius * 0.5) (variables.$border-radius * 0.5) 0;
     }
+  }
+
+  // Joined — no gap between buttons, connected as a single unit
+  &.joined {
+    gap: 0;
   }
 
   &.rounded {
