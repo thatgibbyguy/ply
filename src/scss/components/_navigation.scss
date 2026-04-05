@@ -291,7 +291,7 @@ nav {
     display: block;
     padding: 0.25rem 0.75rem;
     font-size: variables.$font-size-sm;
-    border-radius: var(--ply-nav-stacked-radius, 0.25rem);
+    border-radius: var(--ply-nav-stacked-radius, var(--ply-border-radius));
   }
 
   & a {
@@ -505,7 +505,7 @@ nav {
     height: variables.$base-line * 1.5;
     padding: variables.$grid-gutter-width * 0.5 variables.$padding;
     border: 1px solid var(--ply-border-color);
-    border-radius: variables.$border-radius;
+    border-radius: var(--ply-border-radius);
     background: var(--ply-bg-surface, #fff);
     color: var(--ply-color-body);
     text-decoration: none;

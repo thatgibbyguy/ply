@@ -61,7 +61,7 @@ dialog {
     color: var(--ply-color-secondary);
     font-size: variables.$font-size-xl;
     cursor: pointer;
-    border-radius: variables.$border-radius;
+    border-radius: var(--ply-border-radius);
     transition: background-color 0.15s ease;
 
     &:hover {

@@ -44,6 +44,7 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
   --ply-border-color: #fbbf24;
+  --ply-border-radius: 0.375rem;
   --ply-color-accent: #b45309;
   --ply-btn-default-bg: #b45309;  /* Controls btn-primary + links */
   --ply-btn-default-bg-hover: #92400e;

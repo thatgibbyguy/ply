@@ -104,25 +104,25 @@
     select:not(:last-child) {
       border-right: initial;
       border-left: none;
-      border-radius: 0 variables.$border-radius variables.$border-radius 0;
+      border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
     }
 
     input:not(:first-child),
     textarea:not(:first-child),
     select:not(:first-child) {
-      border-radius: variables.$border-radius 0 0 variables.$border-radius;
+      border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
     }
 
     .input-prepend {
       border-right: initial;
       border-left: none;
-      border-radius: 0 variables.$border-radius variables.$border-radius 0;
+      border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
     }
 
     .input-append {
       border-left: initial;
       border-right: none;
-      border-radius: variables.$border-radius 0 0 variables.$border-radius;
+      border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
     }
   }
 

@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.6.1",
   "framework": "ply",
   "totalClasses": 457,
   "uniqueClasses": 457,
@@ -14,6 +14,7 @@
       "--ply-color-headings",
       "--ply-color-secondary",
       "--ply-border-color",
+      "--ply-border-radius",
       "--ply-btn-default-bg",
       "--ply-btn-secondary-bg",
       "--ply-color-accent",
@@ -54,12 +55,13 @@
       "--ply-btn-secondary-bg-active",
       "--ply-color-link-hover",
       "--ply-color-accent",
+      "--ply-border-radius",
       "--ply-btn-border-radius"
     ]
   },
   "themeTemplate": {
     "description": "Copy-paste starting point for custom themes. Replace placeholder values with your design colors. Every ply component respects these variables.",
-    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n  --ply-btn-font-size: 1em;\n  --ply-btn-gap: 0.5em;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
+    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n  --ply-border-radius: 0.25rem;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n  --ply-btn-font-size: 1em;\n  --ply-btn-gap: 0.5em;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
   },
   "classes": {
     "units-container": {
@@ -1497,7 +1499,7 @@
     },
     "border-radius": {
       "category": "helpers",
-      "description": "Apply default border-radius."
+      "description": "Apply border-radius using var(--ply-border-radius). Default 0.25rem, themeable."
     },
     "color-black": {
       "category": "helpers",
@@ -1753,11 +1755,11 @@
     },
     "border-radius-lg": {
       "category": "helpers",
-      "description": "Large border radius (0.75rem)."
+      "description": "Large border radius (3x --ply-border-radius)."
     },
     "border-radius-xl": {
       "category": "helpers",
-      "description": "Extra large border radius (1.5rem)."
+      "description": "Extra large border radius (6x --ply-border-radius)."
     },
     "spinning": {
       "category": "helpers",
@@ -2466,7 +2468,8 @@
     },
     "borders": {
       "--ply-border-color": "Standard border. Light: #e0e0e0, Dark: #525252",
-      "--ply-border-strong": "Emphasized border. Light: #8d8d8d, Dark: #6f6f6f"
+      "--ply-border-strong": "Emphasized border. Light: #8d8d8d, Dark: #6f6f6f",
+      "--ply-border-radius": "Global border-radius for inputs, cards, dialogs, details, notifications, and other components. Default: 0.25rem. Override to change the overall shape language (e.g., 0 for sharp, 0.5rem for softer)."
     },
     "interactive": {
       "--ply-color-accent": "Brand accent color for icons, badges, and section accents. Independent of button color and focus rings. Light: #0353e9, Dark: #4589ff. Override in custom themes without affecting buttons.",

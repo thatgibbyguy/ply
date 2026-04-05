@@ -27,6 +27,7 @@ Create a custom theme by defining a `data-theme` value and overriding `--ply-*` 
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
   --ply-border-color: #fbbf24;
+  --ply-border-radius: 0.375rem;
   --ply-color-accent: #b45309;
   --ply-btn-default-bg: #b45309;
   --ply-btn-default-bg-hover: #92400e;
@@ -355,7 +356,7 @@ See `snippets/responsive-header.html` for a full working example.
 - **`border-top`**, **`border-right`**, **`border-bottom`**, **`border-left`** — Single-side borders.
 - **`border-thick`** — 3px solid border (all sides). Also `border-top-thick`, `border-right-thick`, `border-bottom-thick`, `border-left-thick`.
 - **`no-border`** — Remove all borders. Also `no-border-top`, `no-border-right`, `no-border-bottom`, `no-border-left`.
-- **`border-radius`** — Default border radius. `border-radius-lg` (0.75rem), `border-radius-xl` (1.5rem), `circle` (100%).
+- **`border-radius`** — Uses `var(--ply-border-radius)` (default 0.25rem, themeable). `border-radius-lg`, `border-radius-xl`, `circle` (100%).
 
 ### Other Common Patterns
 

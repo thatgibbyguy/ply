@@ -284,7 +284,7 @@ pre {
   color: var(--ply-color-body, colors.$color-body);
   background: var(--ply-color-code-bg, colors.$color-code-background);
   border: 1px solid var(--ply-color-code-border, colors.$color-code-border);
-  border-radius: variables.$border-radius;
+  border-radius: var(--ply-border-radius);
   padding: 1rem;
   overflow: auto;
 }

@@ -211,7 +211,7 @@
 }
 
 .border-radius {
-  border-radius: variables.$border-radius;
+  border-radius: var(--ply-border-radius);
 }
 
 // UX Helpers

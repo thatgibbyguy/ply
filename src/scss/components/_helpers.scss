@@ -276,11 +276,11 @@ $width-breakpoints: (
 }
 
 .border-radius-lg {
-  border-radius: 0.75rem;
+  border-radius: calc(var(--ply-border-radius) * 3);
 }
 
 .border-radius-xl {
-  border-radius: 1.5rem;
+  border-radius: calc(var(--ply-border-radius) * 6);
 }
 
 // Text color helpers (theme-compatible)
@@ -386,7 +386,7 @@ $width-breakpoints: (
 
 .code {
   border: 1px solid colors.$color-gray-light;
-  border-radius: variables.$border-radius;
+  border-radius: var(--ply-border-radius);
   display: inline-block;
   font-size: .8rem;
   font-family: variables.$font-family-code;

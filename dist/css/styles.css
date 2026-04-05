@@ -43,6 +43,7 @@
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #2b2b2b;
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
+  --ply-border-radius: 0.25rem;
   --ply-btn-border-radius: 2rem;
   --ply-nav-bg: #ffffff;
   --ply-nav-color: #161616;
@@ -713,7 +714,7 @@ img {
 /* Native <details>/<summary> — Swiss/Modernist accordion */
 details {
   border: 1px solid var(--ply-border-color, #e0e0e0);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   padding: 0.75rem 1rem;
   margin-bottom: 1.5rem;
 }
@@ -748,7 +749,7 @@ details[open] > summary {
 /* Native <dialog> — modal styling */
 dialog {
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   padding: 1.5rem;
   max-width: 32rem;
   width: 90%;
@@ -768,21 +769,21 @@ progress {
   width: 100%;
   height: 0.5rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   background: var(--ply-bg-muted, #e0e0e0);
   margin-bottom: 1.5rem;
 }
 progress::-webkit-progress-bar {
   background: var(--ply-bg-muted, #e0e0e0);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 progress::-webkit-progress-value {
   background: var(--ply-color-link, #0f62fe);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 progress::-moz-progress-bar {
   background: var(--ply-color-link, #0f62fe);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 
 meter {
@@ -792,7 +793,7 @@ meter {
   width: 100%;
   height: 0.5rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   background: var(--ply-bg-muted, #e0e0e0);
   margin-bottom: 1.5rem;
 }
@@ -1226,7 +1227,7 @@ meter {
 }
 
 .border-radius {
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 
 .req,
@@ -1990,11 +1991,11 @@ meter {
 }
 
 .border-radius-lg {
-  border-radius: 0.75rem;
+  border-radius: calc(var(--ply-border-radius) * 3);
 }
 
 .border-radius-xl {
-  border-radius: 1.5rem;
+  border-radius: calc(var(--ply-border-radius) * 6);
 }
 
 .text-primary {
@@ -2118,7 +2119,7 @@ meter {
 
 .code {
   border: 1px solid #f0f1f2;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   display: inline-block;
   font-size: 0.8rem;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
@@ -2546,7 +2547,7 @@ pre {
   color: var(--ply-color-body, #222);
   background: var(--ply-color-code-bg, #f4f4f4);
   border: 1px solid var(--ply-color-code-border, #d4d4d4);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   padding: 1rem;
   overflow: auto;
 }
@@ -3653,7 +3654,7 @@ table.table-hovered tbody tr:hover td {
 .form input[type=datetime-local],
 .form textarea,
 .form select {
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   display: block;
   width: 100%;
   padding: 0.5em 0.75em;
@@ -3756,7 +3757,7 @@ textarea {
 }
 
 fieldset {
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   background-color: var(--ply-bg-surface);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -3889,18 +3890,18 @@ select.input-xs {
   min-width: 0;
   display: block !important;
   margin-bottom: 0;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 .input-groups input:not(:last-child),
 .input-groups textarea:not(:last-child),
 .input-groups select:not(:last-child) {
   border-right: none;
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
 }
 .input-groups input:not(:first-child),
 .input-groups textarea:not(:first-child),
 .input-groups select:not(:first-child) {
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
 }
 .input-groups input:not(:first-child, :last-child),
 .input-groups textarea:not(:first-child, :last-child),
@@ -3922,11 +3923,11 @@ select.input-xs {
 }
 .input-groups .input-prepend {
   border-right: none;
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
 }
 .input-groups .input-append {
   border-left: none;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
 }
 .input-groups .input-append:has(.btn) {
   padding: 0;
@@ -3935,7 +3936,7 @@ select.input-xs {
 .input-groups .input-append .btn {
   display: flex;
   align-items: center;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
   margin: 0;
   border-left: none;
   white-space: nowrap;
@@ -3952,7 +3953,7 @@ select.input-xs {
 .input-groups .btn-append .btn {
   display: flex;
   align-items: center;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
   margin: 0;
   white-space: nowrap;
 }
@@ -3997,7 +3998,7 @@ select.select-outlined {
   background-size: 0.75em;
   padding: 0.5em 2.5em 0.5em 0.75em;
   border: 1px solid var(--ply-border-strong, #d4d4d4);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   color: var(--ply-color-body);
   font-size: 1em;
   line-height: 1.5rem;
@@ -4259,7 +4260,7 @@ nav ul {
   display: block;
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
-  border-radius: var(--ply-nav-stacked-radius, 0.25rem);
+  border-radius: var(--ply-nav-stacked-radius, var(--ply-border-radius));
 }
 .nav-stacked a {
   color: var(--ply-nav-color);
@@ -4444,7 +4445,7 @@ nav ul {
   height: 2.25rem;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--ply-border-color);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   background: var(--ply-bg-surface, #fff);
   color: var(--ply-color-body);
   text-decoration: none;
@@ -5460,11 +5461,11 @@ button.btn-white.btn-outline.btn-active {
 }
 .btn-single .btn:first-child,
 .btn-group .btn:first-child {
-  border-radius: 0.125rem 0 0 0.125rem;
+  border-radius: calc(var(--ply-border-radius) * 0.5) 0 0 calc(var(--ply-border-radius) * 0.5);
 }
 .btn-single .btn:last-child,
 .btn-group .btn:last-child {
-  border-radius: 0 0.125rem 0.125rem 0;
+  border-radius: 0 calc(var(--ply-border-radius) * 0.5) calc(var(--ply-border-radius) * 0.5) 0;
 }
 .btn-single.joined,
 .btn-group.joined {
@@ -5474,13 +5475,13 @@ button.btn-white.btn-outline.btn-active {
 .btn-single.rounded .input-search:first-child,
 .btn-group.rounded .btn:first-child,
 .btn-group.rounded .input-search:first-child {
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: calc(var(--ply-border-radius) * 2) 0 0 calc(var(--ply-border-radius) * 2);
 }
 .btn-single.rounded .btn:last-child,
 .btn-single.rounded .input-search:last-child,
 .btn-group.rounded .btn:last-child,
 .btn-group.rounded .input-search:last-child {
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0 calc(var(--ply-border-radius) * 2) calc(var(--ply-border-radius) * 2) 0;
 }
 
 /* =Notifications
@@ -5491,7 +5492,7 @@ button.btn-white.btn-outline.btn-active {
   background: var(--ply-bg-surface-alt, #f7f8f8);
   color: var(--ply-color-body, #0f0f0f);
   margin-bottom: 1.5rem;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   border-left: 4px solid #b3b6b7;
   display: flex;
   align-items: flex-start;
@@ -5538,7 +5539,7 @@ button.btn-white.btn-outline.btn-active {
   align-items: center;
   justify-content: center;
   margin: -0.5rem -0.375rem -0.5rem 0;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
 }
 .tools-alert .tools-alert-dismiss:hover,
 .tools-alert .alert-dismiss:hover,
@@ -6007,7 +6008,7 @@ ul.dropdown li.divider {
 }
 .typeahead.active input,
 .livesearch-container.active input {
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-radius: var(--ply-border-radius) var(--ply-border-radius) 0 0;
   border-bottom-color: var(--ply-border-color, #e0e3e5);
 }
 
@@ -6025,7 +6026,7 @@ ul.dropdown li.divider {
   background: var(--ply-bg-surface, #fff);
   border: 1px solid var(--ply-color-input-border, #ccc);
   border-top: none;
-  border-radius: 0 0 0.25rem 0.25rem;
+  border-radius: 0 0 var(--ply-border-radius) var(--ply-border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 240px;
   overflow-y: auto;
@@ -6087,7 +6088,7 @@ ul.dropdown li.divider {
   min-height: 2.5rem;
   background: var(--ply-color-input-bg, #fff);
   border: 1px solid var(--ply-color-input-border, #ccc);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   cursor: text;
   transition: border-color 0.15s ease;
   align-items: center;
@@ -6097,7 +6098,7 @@ ul.dropdown li.divider {
   box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.3);
 }
 .multiselect.active .multiselect-tags {
-  border-radius: 0.25rem 0.25rem 0 0;
+  border-radius: var(--ply-border-radius) var(--ply-border-radius) 0 0;
   border-bottom-color: var(--ply-border-color, #e0e3e5);
 }
 .multiselect-tags input {
@@ -6126,7 +6127,7 @@ ul.dropdown li.divider {
   padding: 0.125rem 0.375rem;
   background: var(--ply-bg-muted, #e0e3e5);
   color: var(--ply-color-body, #222);
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   font-size: 0.875rem;
   line-height: 1.5;
   white-space: nowrap;
@@ -6174,7 +6175,7 @@ ul.dropdown li.divider {
   background: var(--ply-bg-surface, #fff);
   border: 1px solid var(--ply-color-input-border, #ccc);
   border-top: none;
-  border-radius: 0 0 0.25rem 0.25rem;
+  border-radius: 0 0 var(--ply-border-radius) var(--ply-border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 240px;
   overflow-y: auto;
@@ -6699,7 +6700,7 @@ dialog .dialog-close {
   color: var(--ply-color-secondary);
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 0.25rem;
+  border-radius: var(--ply-border-radius);
   transition: background-color 0.15s ease;
 }
 dialog .dialog-close:hover {
@@ -7144,22 +7145,22 @@ dialog[open]::backdrop {
 [dir=rtl] .input-groups select:not(:last-child) {
   border-right: initial;
   border-left: none;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
 }
 [dir=rtl] .input-groups input:not(:first-child),
 [dir=rtl] .input-groups textarea:not(:first-child),
 [dir=rtl] .input-groups select:not(:first-child) {
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
 }
 [dir=rtl] .input-groups .input-prepend {
   border-right: initial;
   border-left: none;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 var(--ply-border-radius) var(--ply-border-radius) 0;
 }
 [dir=rtl] .input-groups .input-append {
   border-left: initial;
   border-right: none;
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: var(--ply-border-radius) 0 0 var(--ply-border-radius);
 }
 [dir=rtl] th.sortable {
   padding-right: inherit;

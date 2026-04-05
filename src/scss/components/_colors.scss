@@ -78,6 +78,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-light-active};
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
+  --ply-border-radius: #{variables.$border-radius};
   --ply-btn-border-radius: #{variables.$button-radius};
 
   // Navigation

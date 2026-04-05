@@ -433,10 +433,10 @@ button.btn-white {
     border-radius: 0;
 
     &:first-child {
-      border-radius: (variables.$border-radius * 0.5) 0 0 (variables.$border-radius * 0.5);
+      border-radius: calc(var(--ply-border-radius) * 0.5) 0 0 calc(var(--ply-border-radius) * 0.5);
     }
     &:last-child {
-      border-radius: 0 (variables.$border-radius * 0.5) (variables.$border-radius * 0.5) 0;
+      border-radius: 0 calc(var(--ply-border-radius) * 0.5) calc(var(--ply-border-radius) * 0.5) 0;
     }
   }
 
@@ -449,10 +449,10 @@ button.btn-white {
     .btn,
     .input-search {
       &:first-child {
-        border-radius: (variables.$border-radius * 2) 0 0 (variables.$border-radius * 2);
+        border-radius: calc(var(--ply-border-radius) * 2) 0 0 calc(var(--ply-border-radius) * 2);
       }
       &:last-child {
-        border-radius: 0 (variables.$border-radius * 2) (variables.$border-radius * 2) 0;
+        border-radius: 0 calc(var(--ply-border-radius) * 2) calc(var(--ply-border-radius) * 2) 0;
       }
     }
   }
