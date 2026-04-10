@@ -729,3 +729,39 @@ Ready-to-use HTML examples are in the `snippets/` directory:
 | `ply-core.min.css` | Grid, buttons, forms, nav, alerts, tables, typography, essential helpers | ~17KB |
 | `ply-essentials.min.css` | Grid, helpers, alignments, blocks only | ~7KB |
 | `ply-helpers.min.css` | Helper utilities only | ~5KB |
+
+## Tree-Shaking (Purge Unused CSS)
+
+For production builds, purge unused ply classes to get bundle sizes comparable
+to Tailwind's JIT output (~5KB gzipped for a typical page).
+
+### PostCSS Plugin (recommended for build pipelines)
+
+```sh
+npm install -D @fullhuman/postcss-purgecss
+```
+
+```js
+// postcss.config.js
+const plyPurge = require('ply-css/purge');
+
+module.exports = {
+  plugins: [
+    plyPurge({ content: ['./src/**/*.{html,jsx,tsx,vue}'] }),
+  ],
+};
+```
+
+### CLI (standalone or CI)
+
+```sh
+npm install -D purgecss
+npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
+              --content 'src/**/*.{html,jsx,tsx}' \
+              -o public/ply.css
+```
+
+The purge tool auto-safelists dynamically-toggled classes (`active`,
+`sort-asc`, responsive grid variants) so they aren't incorrectly removed.
+Extend the safelist with `--safelist <class>` (CLI) or `safelist` option
+(PostCSS plugin).
