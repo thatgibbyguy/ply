@@ -4,9 +4,15 @@
   "description": "ply — A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint",
   "main": "dist/css/ply.css",
   "style": "dist/css/ply.min.css",
+  "bin": {
+    "ply-purge": "bin/ply-purge.js"
+  },
   "files": [
     "dist/",
     "src/scss/",
+    "bin/",
+    "purge.js",
+    "safelist.js",
     "CLAUDE.md",
     "PLY.md",
     "ply-classes.json",
@@ -33,9 +39,19 @@
     "url": "git+https://github.com/thatgibbyguy/ply.git"
   },
   "homepage": "https://github.com/thatgibbyguy/ply",
+  "peerDependencies": {
+    "@fullhuman/postcss-purgecss": ">=6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@fullhuman/postcss-purgecss": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
+    "purgecss": "^6.0.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "sass": "^1.86.0",
@@ -60,6 +76,7 @@
     "watch": "sass --watch src/scss/styles.scss:dist/css/styles.css src/scss/styles.scss:dist/css/styles.min.css src/scss/ply-essentials.scss:dist/css/ply-essentials.min.css --no-source-map",
     "lint": "stylelint \"src/scss/**/*.scss\"",
     "validate": "node scripts/validate-classes.js snippets/*.html examples/*.html",
+    "purge:demo": "node bin/ply-purge.js --css dist/css/ply.min.css --content 'snippets/*.html' -o dist/css/ply.purged.min.css",
     "prepublishOnly": "npm run build && npm run lint"
   },
   "author": "John Gibby",

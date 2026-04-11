@@ -1,6 +1,9 @@
 # Ignore docs files
 node_modules/
 
+# Purge demo output
+dist/css/*.purged.*
+
 
 # Claude Code settings
 .claude/

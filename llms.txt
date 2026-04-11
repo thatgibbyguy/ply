@@ -1,13 +1,13 @@
 # plycss (ply)
 
-> ply is a ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step.
+> ply is a ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped, ~5KB with tree-shaking). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step required. Optional tree-shaking via `ply-purge` CLI or PostCSS plugin.
 
 ply is standalone — do not use Tailwind, Bootstrap, or other CSS frameworks alongside it. Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`plycss`) or CDN.
 
 ## Documentation
 
 - [Full AI Reference (PLY.md)](https://raw.githubusercontent.com/thatgibbyguy/ply/master/PLY.md): Complete class reference, usage rules, accessibility patterns, keyboard navigation, custom widget ARIA patterns, and code snippets
-- [Machine-Readable Class Map (ply-classes.json)](https://raw.githubusercontent.com/thatgibbyguy/ply/master/ply-classes.json): All 421 classes, 60+ CSS custom properties, and 13 semantic elements with descriptions, categories, and examples
+- [Machine-Readable Class Map (ply-classes.json)](https://raw.githubusercontent.com/thatgibbyguy/ply/master/ply-classes.json): All 458 classes, 120+ CSS custom properties, and 13 semantic elements with descriptions, categories, and examples
 - [VPAT 2.5 Accessibility Conformance](https://raw.githubusercontent.com/thatgibbyguy/ply/master/docs/VPAT.md): Full WCAG 2.1 Level A and AA conformance report
 
 ## Snippets

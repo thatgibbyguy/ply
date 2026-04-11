@@ -51,17 +51,20 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-focus: #0f62fe;
 
   // Fields
-  --ply-color-field-bg: #f4f4f4;
-  --ply-color-input-border: #8d8d8d;
-  --ply-color-input-bg: #f4f4f4;
+  --ply-color-field-bg: var(--ply-bg-surface-alt);
+  --ply-color-input-border: var(--ply-border-strong);
+  --ply-color-input-bg: var(--ply-bg-surface-alt);
+  --ply-color-error: var(--ply-red-1);
+  --ply-color-success: var(--ply-green-1);
 
   // Code
-  --ply-color-code-bg: #f4f4f4;
-  --ply-color-code-border: #e0e0e0;
+  --ply-color-code-bg: var(--ply-bg-surface-alt);
+  --ply-color-code-border: var(--ply-border-color);
 
   // Tables
-  --ply-color-table-border: #e0e0e0;
-  --ply-color-table-stripped: #f4f4f4;
+  --ply-color-table-border: var(--ply-border-color);
+  --ply-color-table-striped: #f4f4f4;
+  --ply-color-table-stripped: var(--ply-color-table-striped); // deprecated alias
   --ply-color-table-hovered: #e8e8e8;
 
   // Accent (brand-neutral — for icons, badges, focus rings. Independent of button color.)
@@ -82,16 +85,16 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-border-radius: #{variables.$button-radius};
 
   // Navigation
-  --ply-nav-bg: #ffffff;
-  --ply-nav-color: #161616;
-  --ply-nav-border: #161616;
+  --ply-nav-bg: var(--ply-bg-body);
+  --ply-nav-color: var(--ply-color-body);
+  --ply-nav-border: var(--ply-color-body);
   --ply-nav-hover: #e8e8e8;
   --ply-nav-active-color: #525252;
 
   // Layers (elevation)
-  --ply-layer-0: #ffffff;
-  --ply-layer-1: #f4f4f4;
-  --ply-layer-2: #e0e0e0;
+  --ply-layer-0: var(--ply-bg-body);
+  --ply-layer-1: var(--ply-bg-surface-alt);
+  --ply-layer-2: var(--ply-bg-muted);
   --ply-layer-3: #c6c6c6;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.08);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -209,18 +212,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-link-hover: color-mix(in oklch, #{$btn-primary-dark}, white 15%);
   --ply-color-focus: #0f62fe;
 
-  // Fields
-  --ply-color-field-bg: #262626;
-  --ply-color-input-border: #6f6f6f;
-  --ply-color-input-bg: #262626;
-
-  // Code
-  --ply-color-code-bg: #262626;
-  --ply-color-code-border: #393939;
-
-  // Tables
-  --ply-color-table-border: #393939;
-  --ply-color-table-stripped: #1c1c1c;
+  // Tables (table-striped intentionally differs from surface-alt in dark)
+  --ply-color-table-striped: #1c1c1c;
+  --ply-color-table-stripped: var(--ply-color-table-striped); // deprecated alias
   --ply-color-table-hovered: #353535;
 
   // Accent
@@ -241,17 +235,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-secondary-color: #161616;
   --ply-btn-ghost-color: #{$btn-primary-dark};
 
-  // Navigation
-  --ply-nav-bg: #161616;
-  --ply-nav-color: #f4f4f4;
-  --ply-nav-border: #f4f4f4;
+  // Navigation (nav-hover and nav-active-color intentionally differ from structural tokens in dark)
   --ply-nav-hover: #353535;
   --ply-nav-active-color: #a8a8a8;
-
-  // Layers (elevation)
-  --ply-layer-0: #161616;
-  --ply-layer-1: #262626;
-  --ply-layer-2: #393939;
   --ply-layer-3: #525252;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -474,7 +460,8 @@ $color-neutral-900: #171717;
 
 // Table Color
 $color-table-border: $border-color;
-$color-table-stripped: #f8f8f8;
+$color-table-striped: #f8f8f8;
+$color-table-stripped: $color-table-striped; // deprecated alias
 $color-table-hovered: #f4f4f4;
 
 // Fieldset

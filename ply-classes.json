@@ -34,10 +34,12 @@
       "--ply-color-focus",
       "--ply-color-input-bg",
       "--ply-color-input-border",
+      "--ply-color-error",
+      "--ply-color-success",
       "--ply-color-code-bg",
       "--ply-color-code-border",
       "--ply-color-table-border",
-      "--ply-color-table-stripped",
+      "--ply-color-table-striped",
       "--ply-nav-color",
       "--ply-nav-hover",
       "--ply-layer-0",
@@ -61,7 +63,7 @@
   },
   "themeTemplate": {
     "description": "Copy-paste starting point for custom themes. Replace placeholder values with your design colors. Every ply component respects these variables.",
-    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n  --ply-border-radius: 0.25rem;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n  --ply-btn-font-size: 1em;\n  --ply-btn-gap: 0.5em;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-stripped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
+    "css": "[data-theme=\"my-theme\"] {\n  /* Background */\n  --ply-bg-body: #___;\n  --ply-bg-surface: #___;\n  --ply-bg-surface-alt: #___;\n  --ply-bg-muted: #___;\n\n  /* Text */\n  --ply-color-body: #___;\n  --ply-color-headings: #___;\n  --ply-color-secondary: #___;\n  --ply-color-muted: #___;\n  --ply-color-placeholder: #___;\n  --ply-color-text-inverse: #___;\n\n  /* Borders */\n  --ply-border-color: #___;\n  --ply-border-strong: #___;\n  --ply-border-radius: 0.25rem;\n\n  /* Interactive */\n  --ply-color-accent: #___;\n  --ply-color-focus: #___;\n  --ply-color-link-hover: #___;\n\n  /* Buttons */\n  --ply-btn-default-bg: #___;\n  --ply-btn-default-color: #___;\n  --ply-btn-default-bg-hover: #___;\n  --ply-btn-default-bg-active: #___;\n  --ply-btn-secondary-bg: #___;\n  --ply-btn-secondary-color: #___;\n  --ply-btn-secondary-bg-hover: #___;\n  --ply-btn-secondary-bg-active: #___;\n  --ply-btn-border-radius: 2rem;\n  --ply-btn-font-size: 1em;\n  --ply-btn-gap: 0.5em;\n\n  /* Forms */\n  --ply-color-input-bg: #___;\n  --ply-color-input-border: #___;\n  --ply-color-error: #___;\n  --ply-color-success: #___;\n\n  /* Navigation */\n  --ply-nav-bg: #___;\n  --ply-nav-color: #___;\n  --ply-nav-border: #___;\n  --ply-nav-hover: #___;\n\n  /* Code */\n  --ply-color-code-bg: #___;\n  --ply-color-code-border: #___;\n\n  /* Tables */\n  --ply-color-table-border: #___;\n  --ply-color-table-striped: #___;\n\n  /* Elevation */\n  --ply-layer-0: #___;\n  --ply-layer-1: #___;\n  --ply-layer-2: #___;\n  --ply-layer-3: #___;\n  --ply-shadow-1: rgba(0, 0, 0, 0.08);\n  --ply-shadow-2: rgba(0, 0, 0, 0.1);\n  --ply-shadow-3: rgba(0, 0, 0, 0.12);\n\n  /* Typography (optional) */\n  --ply-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  --ply-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}"
   },
   "classes": {
     "units-container": {
@@ -1563,10 +1565,14 @@
       "category": "tables",
       "description": "Table with bottom borders only on cells."
     },
-    "table-stripped": {
+    "table-striped": {
       "category": "tables",
       "description": "Striped table rows (odd rows get background color). Applied to table element.",
-      "example": "<table class=\"table-stripped\"><tbody><tr><td>Row 1</td></tr><tr><td>Row 2</td></tr></tbody></table>"
+      "example": "<table class=\"table-striped\"><tbody><tr><td>Row 1</td></tr><tr><td>Row 2</td></tr></tbody></table>"
+    },
+    "table-stripped": {
+      "category": "tables",
+      "description": "Deprecated alias for table-striped. Use table-striped instead."
     },
     "table-hovered": {
       "category": "tables",
@@ -2479,9 +2485,11 @@
       "--ply-btn-border-radius": "Button border-radius. Default: 2rem (pill shape). Override for square or rounded buttons."
     },
     "forms": {
-      "--ply-color-field-bg": "Field background. Light: #ffffff, Dark: #262626",
-      "--ply-color-input-border": "Input border. Light: #8d8d8d, Dark: #6f6f6f",
-      "--ply-color-input-bg": "Input background. Light: #ffffff, Dark: #393939"
+      "--ply-color-field-bg": "Field background. Defaults to var(--ply-bg-surface-alt). Override for custom field backgrounds.",
+      "--ply-color-input-border": "Input border. Defaults to var(--ply-border-strong). Override for custom input borders.",
+      "--ply-color-input-bg": "Input background. Defaults to var(--ply-bg-surface-alt). Override for custom input backgrounds.",
+      "--ply-color-error": "Error state color for borders and text. Defaults to var(--ply-red-1). Used by .input-error, .error, .required, and stepper error states.",
+      "--ply-color-success": "Success state color for borders and text. Defaults to var(--ply-green-1). Used by .input-success, .success, and stepper completed states."
     },
     "code": {
       "--ply-color-code-bg": "Inline code background. Light: #f4f4f4, Dark: #333333",
@@ -2489,7 +2497,8 @@
     },
     "tables": {
       "--ply-color-table-border": "Table cell border. Light: #e0e0e0, Dark: #525252",
-      "--ply-color-table-stripped": "Striped row background. Light: #f4f4f4, Dark: #1c1c1c",
+      "--ply-color-table-striped": "Striped row background. Light: #f4f4f4, Dark: #1c1c1c",
+      "--ply-color-table-stripped": "Deprecated alias for --ply-color-table-striped.",
       "--ply-color-table-hovered": "Hovered row background. Light: #e8e8e8, Dark: #333333"
     },
     "buttons": {

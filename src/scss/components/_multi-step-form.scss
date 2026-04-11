@@ -83,8 +83,8 @@
   &.completed {
     &::before {
       border-color: var(--ply-border-color);
-      background: color-mix(in srgb, #{colors.$color-green} 13%, var(--ply-bg-surface, #fff));
-      color: colors.$color-green;
+      background: color-mix(in srgb, var(--ply-color-success) 13%, var(--ply-bg-surface, #fff));
+      color: var(--ply-color-success);
       content: "\2713";
     }
 
@@ -100,14 +100,14 @@
   // Error step — red border and exclamation, transparent background
   &.step-error {
     &::before {
-      border-color: colors.$color-red;
+      border-color: var(--ply-color-error);
       background: transparent;
-      color: colors.$color-red;
+      color: var(--ply-color-error);
       content: "!";
     }
 
     .step-label {
-      color: colors.$color-red;
+      color: var(--ply-color-error);
       font-weight: variables.$font-weight-semibold;
     }
   }

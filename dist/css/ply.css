@@ -21,13 +21,16 @@
   --ply-color-link-hover: #0347c6;
   --ply-color-link-hover: color-mix(in oklch, var(--ply-btn-default-bg), black 15%);
   --ply-color-focus: #0f62fe;
-  --ply-color-field-bg: #f4f4f4;
-  --ply-color-input-border: #8d8d8d;
-  --ply-color-input-bg: #f4f4f4;
-  --ply-color-code-bg: #f4f4f4;
-  --ply-color-code-border: #e0e0e0;
-  --ply-color-table-border: #e0e0e0;
-  --ply-color-table-stripped: #f4f4f4;
+  --ply-color-field-bg: var(--ply-bg-surface-alt);
+  --ply-color-input-border: var(--ply-border-strong);
+  --ply-color-input-bg: var(--ply-bg-surface-alt);
+  --ply-color-error: var(--ply-red-1);
+  --ply-color-success: var(--ply-green-1);
+  --ply-color-code-bg: var(--ply-bg-surface-alt);
+  --ply-color-code-border: var(--ply-border-color);
+  --ply-color-table-border: var(--ply-border-color);
+  --ply-color-table-striped: #f4f4f4;
+  --ply-color-table-stripped: var(--ply-color-table-striped);
   --ply-color-table-hovered: #e8e8e8;
   --ply-color-accent: #0353e9;
   --ply-btn-default-bg: #0353e9;
@@ -42,14 +45,14 @@
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
   --ply-border-radius: 0.25rem;
   --ply-btn-border-radius: 2rem;
-  --ply-nav-bg: #ffffff;
-  --ply-nav-color: #161616;
-  --ply-nav-border: #161616;
+  --ply-nav-bg: var(--ply-bg-body);
+  --ply-nav-color: var(--ply-color-body);
+  --ply-nav-border: var(--ply-color-body);
   --ply-nav-hover: #e8e8e8;
   --ply-nav-active-color: #525252;
-  --ply-layer-0: #ffffff;
-  --ply-layer-1: #f4f4f4;
-  --ply-layer-2: #e0e0e0;
+  --ply-layer-0: var(--ply-bg-body);
+  --ply-layer-1: var(--ply-bg-surface-alt);
+  --ply-layer-2: var(--ply-bg-muted);
   --ply-layer-3: #c6c6c6;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.08);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -146,13 +149,8 @@
     --ply-color-link-hover: #619bff;
     --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
     --ply-color-focus: #0f62fe;
-    --ply-color-field-bg: #262626;
-    --ply-color-input-border: #6f6f6f;
-    --ply-color-input-bg: #262626;
-    --ply-color-code-bg: #262626;
-    --ply-color-code-border: #393939;
-    --ply-color-table-border: #393939;
-    --ply-color-table-stripped: #1c1c1c;
+    --ply-color-table-striped: #1c1c1c;
+    --ply-color-table-stripped: var(--ply-color-table-striped);
     --ply-color-table-hovered: #353535;
     --ply-color-accent: #4589ff;
     --ply-btn-default-bg: #0f62fe;
@@ -168,14 +166,8 @@
     --ply-btn-default-color: #fff;
     --ply-btn-secondary-color: #161616;
     --ply-btn-ghost-color: #4589ff;
-    --ply-nav-bg: #161616;
-    --ply-nav-color: #f4f4f4;
-    --ply-nav-border: #f4f4f4;
     --ply-nav-hover: #353535;
     --ply-nav-active-color: #a8a8a8;
-    --ply-layer-0: #161616;
-    --ply-layer-1: #262626;
-    --ply-layer-2: #393939;
     --ply-layer-3: #525252;
     --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
     --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -262,13 +254,8 @@
   --ply-color-link-hover: #619bff;
   --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
   --ply-color-focus: #0f62fe;
-  --ply-color-field-bg: #262626;
-  --ply-color-input-border: #6f6f6f;
-  --ply-color-input-bg: #262626;
-  --ply-color-code-bg: #262626;
-  --ply-color-code-border: #393939;
-  --ply-color-table-border: #393939;
-  --ply-color-table-stripped: #1c1c1c;
+  --ply-color-table-striped: #1c1c1c;
+  --ply-color-table-stripped: var(--ply-color-table-striped);
   --ply-color-table-hovered: #353535;
   --ply-color-accent: #4589ff;
   --ply-btn-default-bg: #0f62fe;
@@ -284,14 +271,8 @@
   --ply-btn-default-color: #fff;
   --ply-btn-secondary-color: #161616;
   --ply-btn-ghost-color: #4589ff;
-  --ply-nav-bg: #161616;
-  --ply-nav-color: #f4f4f4;
-  --ply-nav-border: #f4f4f4;
   --ply-nav-hover: #353535;
   --ply-nav-active-color: #a8a8a8;
-  --ply-layer-0: #161616;
-  --ply-layer-1: #262626;
-  --ply-layer-2: #393939;
   --ply-layer-3: #525252;
   --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
   --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -1230,15 +1211,15 @@ meter {
 .req,
 .required {
   font-weight: normal;
-  color: var(--ply-red-1);
+  color: var(--ply-color-error);
 }
 
 .error {
-  color: var(--ply-red-1);
+  color: var(--ply-color-error);
 }
 
 .success {
-  color: var(--ply-green-1);
+  color: var(--ply-color-success);
 }
 
 .text-xs {
@@ -3555,8 +3536,9 @@ table.table-stroked th {
   border-bottom: 1px solid var(--ply-color-table-border, #ccc);
 }
 
+table.table-striped tbody tr:nth-child(odd) td,
 table.table-stripped tbody tr:nth-child(odd) td {
-  background: var(--ply-color-table-stripped, #f8f8f8);
+  background: var(--ply-color-table-striped, var(--ply-color-table-stripped, #f8f8f8));
 }
 
 table.table-hovered tbody tr:hover td {
@@ -3775,16 +3757,16 @@ input.input-error,
 textarea.input-error,
 select.input-error,
 .input-error {
-  border-color: #de2c3b;
-  box-shadow: 0 0 0 2px rgba(222, 44, 59, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+  border-color: var(--ply-color-error);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ply-color-error) 30%, transparent), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 input.input-success,
 textarea.input-success,
 select.input-success,
 .input-success {
-  border-color: #1a7a32;
-  box-shadow: 0 0 0 2px rgba(26, 122, 50, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+  border-color: var(--ply-color-success);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ply-color-success) 30%, transparent), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 input.input-gray,
@@ -6556,8 +6538,8 @@ th.sortable.sort-desc::after {
 }
 .step.completed::before {
   border-color: var(--ply-border-color);
-  background: color-mix(in srgb, #1a7a32 13%, var(--ply-bg-surface, #fff));
-  color: #1a7a32;
+  background: color-mix(in srgb, var(--ply-color-success) 13%, var(--ply-bg-surface, #fff));
+  color: var(--ply-color-success);
   content: "✓";
 }
 .step.completed:not(:last-child)::after {
@@ -6567,13 +6549,13 @@ th.sortable.sort-desc::after {
   color: var(--ply-color-secondary);
 }
 .step.step-error::before {
-  border-color: #de2c3b;
+  border-color: var(--ply-color-error);
   background: transparent;
-  color: #de2c3b;
+  color: var(--ply-color-error);
   content: "!";
 }
 .step.step-error .step-label {
-  color: #de2c3b;
+  color: var(--ply-color-error);
   font-weight: 600;
 }
 

@@ -219,15 +219,15 @@
 .req,
 .required {
   font-weight: normal;
-  color: var(--ply-red-1);
+  color: var(--ply-color-error);
 }
 
 .error {
-  color: var(--ply-red-1);
+  color: var(--ply-color-error);
 }
 
 .success {
-  color: var(--ply-green-1);
+  color: var(--ply-color-success);
 }
 
 // Typography — Size Utilities

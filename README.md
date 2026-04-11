@@ -37,7 +37,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 - **Start semantic** — ply automatically styles `<nav>`, `<table>`, `<code>`, `<blockquote>`, `<details>`, `<dialog>`, and more. Start with what HTML gives you, then reach for classes when you need them.
 - **AI-native** — ships with `PLY.md` (AI instruction file) and `ply-classes.json` (machine-readable class reference). Class names are predictable: `.alert-blue`, `.btn-sm`, `.unit-50`.
 - **Accessible by default** — `:focus-visible` outlines on all interactive elements (including `<summary>` and legacy components), `prefers-reduced-motion`, `prefers-color-scheme` dark mode, semantic HTML styling, WCAG AA contrast in both light and dark themes. Published [VPAT 2.5](https://plycss.com/docs/vpat) documenting conformance against all WCAG 2.1 Level A and AA criteria.
-- **Small footprint** — ~21KB gzipped (full), ~17KB (core). No JavaScript runtime, no build step, no tree-shaking.
+- **Small footprint** — ~21KB gzipped (full), ~17KB (core), ~5KB with tree-shaking. No JavaScript runtime, no build step required.
 - **Ratio-based grid** — think in percentages, not arbitrary columns. `unit-50` is 50%, `unit-33` is 33%. Responsive prefixes: `tablet-unit-*`, `phone-unit-*`.
 - **Custom theming** — override `--ply-*` CSS custom properties to create any theme. Light and dark modes built in.
 
@@ -131,6 +131,54 @@ For AI agents (Claude, Cursor, Copilot, Replit AI):
 - **`snippets/`** — copy-paste HTML files for common patterns (dashboard, login, contact form, etc.)
 
 ply is standalone — it should not be used alongside Tailwind, Bootstrap, or other CSS frameworks.
+
+## Tree-Shaking (Purge Unused CSS)
+
+ply ships all 457 classes in every bundle. For production, you can purge unused
+classes to get Tailwind-level bundle sizes (~5KB gzipped for a typical page).
+
+### PostCSS Plugin
+
+The recommended approach for projects with an existing PostCSS pipeline:
+
+```sh
+npm install -D @fullhuman/postcss-purgecss
+```
+
+```js
+// postcss.config.js
+const plyPurge = require('ply-css/purge');
+
+module.exports = {
+  plugins: [
+    plyPurge({ content: ['./src/**/*.{html,jsx,tsx,vue}'] }),
+  ],
+};
+```
+
+### CLI
+
+For standalone use or CI pipelines:
+
+```sh
+npm install -D purgecss
+npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
+              --content 'src/**/*.{html,jsx,tsx}' \
+              -o public/ply.css
+```
+
+### Results
+
+| Scenario | Before | After (gzipped) | Reduction |
+|----------|--------|-----------------|-----------|
+| Single page (card) | 21 KB | ~5 KB | ~75% |
+| All snippets (13 pages) | 21 KB | ~11 KB | ~48% |
+| Real-world app page | 21 KB | ~5.5 KB | ~74% |
+
+The purge tool auto-safelists dynamically-toggled classes (`active`,
+`sort-asc`, etc.) and responsive grid variants so they aren't incorrectly
+removed. Pass additional safelisted classes with `--safelist` (CLI) or the
+`safelist` option (PostCSS).
 
 ## Development
 
