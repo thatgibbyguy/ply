@@ -493,7 +493,7 @@ ply auto-styles `<table>` with borders, padding, and readable spacing. No classe
 |---|---|
 | `table-bordered` | Borders on all cells |
 | `table-stroked` | Bottom borders only |
-| `table-stripped` | Striped odd rows |
+| `table-striped` | Striped odd rows |
 | `table-hovered` | Row highlight on hover |
 | `table-simple` | Remove borders and left padding |
 | `table-flat` | Remove all borders and padding |
@@ -505,7 +505,7 @@ ply auto-styles `<table>` with borders, padding, and readable spacing. No classe
 
 ```html
 <div class="table-container">
-  <table class="table-stripped table-hovered">
+  <table class="table-striped table-hovered">
     <thead>
       <tr>
         <th class="sortable sort-asc">Name</th>
@@ -521,7 +521,7 @@ ply auto-styles `<table>` with borders, padding, and readable spacing. No classe
 </div>
 ```
 
-Tables respond to dark mode automatically — borders, stripe colors, and hover colors adapt via `--ply-color-table-border`, `--ply-color-table-stripped`, and `--ply-color-table-hovered`. Combine classes freely: `table-stripped table-hovered table-bordered` gives striped rows with hover highlights and full borders.
+Tables respond to dark mode automatically — borders, stripe colors, and hover colors adapt via `--ply-color-table-border`, `--ply-color-table-striped`, and `--ply-color-table-hovered`. Combine classes freely: `table-striped table-hovered table-bordered` gives striped rows with hover highlights and full borders.
 
 Wrap any table in `<div class="table-container">` to get horizontal scrolling on small screens instead of layout overflow.
 

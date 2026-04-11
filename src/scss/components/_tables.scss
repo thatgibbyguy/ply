@@ -23,8 +23,9 @@ table.table-stroked td,
 table.table-stroked th {
   border-bottom: 1px solid var(--ply-color-table-border, colors.$color-table-border);
 }
+table.table-striped tbody tr:nth-child(odd) td,
 table.table-stripped tbody tr:nth-child(odd) td {
-  background: var(--ply-color-table-stripped, colors.$color-table-stripped);
+  background: var(--ply-color-table-striped, var(--ply-color-table-stripped, colors.$color-table-stripped));
 }
 table.table-hovered tbody tr:hover td {
   background-color: var(--ply-color-table-hovered, colors.$color-table-hovered);

@@ -33,7 +33,8 @@
   --ply-color-code-bg: var(--ply-bg-surface-alt);
   --ply-color-code-border: var(--ply-border-color);
   --ply-color-table-border: var(--ply-border-color);
-  --ply-color-table-stripped: #f4f4f4;
+  --ply-color-table-striped: #f4f4f4;
+  --ply-color-table-stripped: var(--ply-color-table-striped);
   --ply-color-table-hovered: #e8e8e8;
   --ply-color-accent: #0353e9;
   --ply-btn-default-bg: #0353e9;
@@ -152,7 +153,8 @@
     --ply-color-link-hover: #619bff;
     --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
     --ply-color-focus: #0f62fe;
-    --ply-color-table-stripped: #1c1c1c;
+    --ply-color-table-striped: #1c1c1c;
+    --ply-color-table-stripped: var(--ply-color-table-striped);
     --ply-color-table-hovered: #353535;
     --ply-color-accent: #4589ff;
     --ply-btn-default-bg: #0f62fe;
@@ -256,7 +258,8 @@
   --ply-color-link-hover: #619bff;
   --ply-color-link-hover: color-mix(in oklch, #4589ff, white 15%);
   --ply-color-focus: #0f62fe;
-  --ply-color-table-stripped: #1c1c1c;
+  --ply-color-table-striped: #1c1c1c;
+  --ply-color-table-stripped: var(--ply-color-table-striped);
   --ply-color-table-hovered: #353535;
   --ply-color-accent: #4589ff;
   --ply-btn-default-bg: #0f62fe;
@@ -2565,8 +2568,9 @@ table.table-stroked th {
   border-bottom: 1px solid var(--ply-color-table-border, #ccc);
 }
 
+table.table-striped tbody tr:nth-child(odd) td,
 table.table-stripped tbody tr:nth-child(odd) td {
-  background: var(--ply-color-table-stripped, #f8f8f8);
+  background: var(--ply-color-table-striped, var(--ply-color-table-stripped, #f8f8f8));
 }
 
 table.table-hovered tbody tr:hover td {

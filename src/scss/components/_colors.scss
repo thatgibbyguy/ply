@@ -63,7 +63,8 @@ $btn-secondary-dark-active: #bebebe;
 
   // Tables
   --ply-color-table-border: var(--ply-border-color);
-  --ply-color-table-stripped: #f4f4f4;
+  --ply-color-table-striped: #f4f4f4;
+  --ply-color-table-stripped: var(--ply-color-table-striped); // deprecated alias
   --ply-color-table-hovered: #e8e8e8;
 
   // Accent (brand-neutral — for icons, badges, focus rings. Independent of button color.)
@@ -211,8 +212,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-color-link-hover: color-mix(in oklch, #{$btn-primary-dark}, white 15%);
   --ply-color-focus: #0f62fe;
 
-  // Tables (table-stripped intentionally differs from surface-alt in dark)
-  --ply-color-table-stripped: #1c1c1c;
+  // Tables (table-striped intentionally differs from surface-alt in dark)
+  --ply-color-table-striped: #1c1c1c;
+  --ply-color-table-stripped: var(--ply-color-table-striped); // deprecated alias
   --ply-color-table-hovered: #353535;
 
   // Accent
@@ -458,7 +460,8 @@ $color-neutral-900: #171717;
 
 // Table Color
 $color-table-border: $border-color;
-$color-table-stripped: #f8f8f8;
+$color-table-striped: #f8f8f8;
+$color-table-stripped: $color-table-striped; // deprecated alias
 $color-table-hovered: #f4f4f4;
 
 // Fieldset
