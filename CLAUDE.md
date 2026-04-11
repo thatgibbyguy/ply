@@ -167,6 +167,20 @@ For quick demos — gives you ply's classes and dark mode, but no Sass variables
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 ```
 
+## Tree-Shaking
+
+For production builds, purge unused ply classes with the built-in `ply-purge` CLI or PostCSS plugin. Typical result: ~5KB gzipped per page.
+
+- **PostCSS plugin**: `require('ply-css/purge')` — recommended for build pipelines
+- **CLI**: `npx ply-purge --css <file> --content '<glob>' -o <output>`
+- Auto-safelists dynamically-toggled classes (`active`, `sort-asc`, responsive grid variants)
+
+See PLY.md "Tree-Shaking" section for full usage examples.
+
+## Semantic Color Tokens
+
+Use `--ply-color-error` and `--ply-color-success` for error/success states instead of hardcoding red/green. These tokens are used by `.input-error`, `.input-success`, `.error`, `.success`, `.required`, and multi-step form states. They're themeable via custom `data-theme` overrides.
+
 ## File Structure
 
 - `src/scss/` — SCSS source (modern `@use`/`@forward` modules). **Use this when the project has a build step.**
@@ -174,6 +188,9 @@ For quick demos — gives you ply's classes and dark mode, but no Sass variables
   - `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius
   - `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, animations
 - `dist/css/` — Compiled CSS bundles (for CDN or direct linking)
+- `bin/ply-purge.js` — Standalone CLI for tree-shaking unused CSS
+- `purge.js` — PostCSS plugin for tree-shaking in build pipelines
+- `safelist.js` — Shared safelist for dynamically-toggled classes
 - `PLY.md` — Complete AI instruction file with class reference
 - `ply-classes.json` — Machine-readable class reference
 - `snippets/` — Copy-paste HTML examples
