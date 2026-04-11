@@ -184,17 +184,16 @@ input.input-error,
 textarea.input-error,
 select.input-error,
 .input-error {
-  border-color: colors.$color-red;
-  box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-red, "red", $space: rgb), color.channel(colors.$color-red, "green", $space: rgb), color.channel(colors.$color-red, "blue", $space: rgb), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+  border-color: var(--ply-color-error);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ply-color-error) 30%, transparent), 0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
 input.input-success,
 textarea.input-success,
 select.input-success,
-.input-success  {
-  border-color: colors.$color-green;
-  box-shadow: 0 0 0 2px rgba(color.channel(colors.$color-green, "red", $space: rgb), color.channel(colors.$color-green, "green", $space: rgb), color.channel(colors.$color-green, "blue", $space: rgb), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
-
+.input-success {
+  border-color: var(--ply-color-success);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ply-color-success) 30%, transparent), 0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
 input.input-gray,
