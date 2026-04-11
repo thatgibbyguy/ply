@@ -2,11 +2,11 @@
 
 ## VPAT 2.5 Rev — WCAG 2.1 Edition
 
-**Product name:** ply CSS Framework v1.0.5-1
+**Product name:** ply CSS Framework v1.6.0
 **Product description:** A ratio-based, AI-ready CSS framework with built-in accessibility support for semantic HTML styling, responsive layouts, dark mode, and theming via CSS custom properties.
 **Date:** March 2026
 **Contact:** GitHub Issues — <https://github.com/thatgibbyguy/ply/issues>
-**Evaluation methods used:** Source code review of SCSS components, compiled CSS analysis, and manual inspection of rendered output.
+**Evaluation methods used:** Source code review of SCSS components, compiled CSS analysis, manual inspection of rendered output, and automated Lighthouse accessibility audits (v12.8.2) across six pages of the plycss.com documentation site (scores: 95–96/100).
 
 ---
 
@@ -77,7 +77,7 @@ This VPAT evaluates the **ply CSS framework itself** — its stylesheets, CSS cu
 |----------|-------------------|--------------------------|
 | **1.3.4 Orientation** | Supports | ply does not restrict display to a single orientation. Responsive breakpoints adapt layout to both portrait and landscape viewports. |
 | **1.3.5 Identify Input Purpose** | Not Applicable | Input `autocomplete` attributes are an application-level concern. ply styles inputs visually but does not generate or require specific `autocomplete` values. |
-| **1.4.3 Contrast (Minimum)** | Supports | ply's default light theme uses `#161616` text on `#ffffff` background (~15.4:1). Dark theme uses `#f4f4f4` text on `#161616` (~13.9:1). Secondary text: `#525252` on white (~7.5:1 light), `#c6c6c6` on `#161616` (~9.6:1 dark). Muted/tertiary text (supplementary content only): `#767676` on white (~4.5:1 light), `#8d8d8d` on `#161616` (~4.3:1 dark). Link colors: `#0f62fe` on white (~4.6:1 light), `#78a9ff` on `#161616` (~8.1:1 dark). Brand blue text: `#0f62fe` on white (~4.6:1 light), `#4589ff` on `#161616` (~4.9:1 dark). Default buttons use `--ply-btn-default-color` token to maintain 4.5:1+ contrast in both modes. The `prefers-contrast: more` media query further increases contrast by switching to pure black/white text and borders. |
+| **1.4.3 Contrast (Minimum)** | Supports | ply's default light theme uses `#161616` text on `#ffffff` background (~15.4:1). Dark theme uses `#f4f4f4` text on `#161616` (~13.9:1). Secondary text: `#525252` on white (~7.5:1 light), `#c6c6c6` on `#161616` (~9.6:1 dark). Muted/tertiary text (supplementary content only): `#767676` on white (~4.5:1 light), `#8d8d8d` on `#161616` (~4.3:1 dark). Link colors: `#0353e9` on white (~4.6:1 light), `#4589ff` on `#161616` (~5.3:1 dark). Ghost button and link colors share the same token in dark mode (`--ply-btn-ghost-color: #4589ff`), ensuring visual consistency and AA compliance. Default buttons use `--ply-btn-default-color` token to maintain 4.5:1+ contrast in both modes. The `prefers-contrast: more` media query further increases contrast by switching to pure black/white text and borders. |
 | **1.4.4 Resize Text** | Supports | ply uses relative units (`em`, `rem`) for font sizes and spacing. Typography scales responsively across three breakpoints (small, medium, large). Layout containers use percentage-based widths. Text can be resized up to 200% without loss of content or functionality. |
 | **1.4.5 Images of Text** | Not Applicable | ply does not use images of text. All text is rendered as styled HTML text. |
 | **1.4.10 Reflow** | Supports | ply's responsive grid system (`units-row` with `tablet-unit-*` and `phone-unit-*` classes) reflows content to a single column at narrow viewports. The `units-container` class uses `max-width` with percentage fallbacks. Content reflows without requiring horizontal scrolling at 320px CSS width. |
@@ -111,11 +111,13 @@ The following accessibility features are built into the ply CSS framework at the
 - Dark theme: `#f4f4f4` on `#161616` (~13.9:1 contrast ratio)
 - Secondary text: `#525252` light (~7.5:1), `#c6c6c6` dark (~9.6:1)
 - Muted/tertiary text (supplementary content only): `#767676` light (~4.5:1), `#8d8d8d` dark (~4.3:1)
-- Default button text uses `--ply-btn-default-color` token — white text on dark bg in light mode, `#f4f4f4` text on gray bg in dark mode, both exceeding 4.5:1
+- Link colors: `#0353e9` light (~4.6:1 on white), `#4589ff` dark (~5.3:1 on `#161616`)
+- Ghost button and link colors share `#4589ff` in dark mode via `--ply-btn-ghost-color`, ensuring visual consistency
+- Default button text uses `--ply-btn-default-color` token — white text on dark bg in light mode, `#fff` on dark bg in dark mode, both exceeding 4.5:1
 - `prefers-color-scheme: dark` automatic dark mode with WCAG AA contrast
 - `prefers-contrast: more` support — enhances text to pure black/white and borders to maximum contrast
 - `prefers-contrast: more` + dark mode combination handled separately
-- 60+ CSS custom properties for theming, all respecting light/dark modes
+- 120+ CSS custom properties for theming, all respecting light/dark modes
 - Brand color tokens annotated as "WCAG AA" in source
 
 ### Motion and Animation
