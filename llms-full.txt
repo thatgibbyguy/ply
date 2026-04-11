@@ -1,6 +1,6 @@
 # plycss (ply) — Complete Documentation
 
-> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped). 457 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plycss` or use the CDN.
+> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped, ~5KB with tree-shaking). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step required. Optional tree-shaking via `ply-purge` CLI or PostCSS plugin. Install via npm as `ply-css` or use the CDN.
 
 ---
 
@@ -41,7 +41,7 @@ Core bundle (no labels, dropdowns, loaders, print):
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply-core.min.css">
 ```
 
-Bundles: `ply.min.css` (~21KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~7KB, grid+helpers), `ply-helpers.min.css` (~5KB, helpers only).
+Bundles: `ply.min.css` (~21KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~7KB, grid+helpers), `ply-helpers.min.css` (~5KB, helpers only). For production, use `ply-purge` to tree-shake unused classes (~5KB gzipped for a typical page). See the Tree-Shaking section below.
 
 ---
 
@@ -246,6 +246,7 @@ Override `--ply-*` custom properties to theme the entire app with one CSS block:
   --ply-color-body: #1a1a1a;
   --ply-color-headings: #78350f;
   --ply-border-color: #fbbf24;
+  --ply-border-radius: 0.375rem;
   --ply-btn-default-bg: #b45309;
   --ply-btn-default-bg-hover: #92400e;
   --ply-btn-default-bg-active: #7c2d12;
@@ -290,7 +291,7 @@ When integrating third-party components that don't use `--ply-*` variables, map 
 Key variables for mapping:
 - Backgrounds: `--ply-bg-body`, `--ply-bg-surface`, `--ply-bg-surface-alt`, `--ply-bg-muted`
 - Text: `--ply-color-body`, `--ply-color-secondary`, `--ply-color-muted`
-- Borders: `--ply-border-color`, `--ply-border-strong`
+- Borders: `--ply-border-color`, `--ply-border-strong`, `--ply-border-radius`
 - Interactive: `--ply-btn-default-bg`, `--ply-color-link`, `--ply-color-focus`
 - Inverse text: `--ply-color-text-inverse` (white in light, dark in dark)
 
@@ -399,7 +400,7 @@ Always include: `<meta name="viewport" content="width=device-width, initial-scal
 - `padding-xs` (0.25rem), `padding-sm` (0.5rem), `padding` (default), `padding-lg` (1.5rem), `padding-xl` (2rem)
 - `margin-bottom`, `margin-top-lg`, `margin-xl` — directional + size variants
 - `border` — 1px solid using `--ply-border-color` (theme-aware)
-- `border-radius` (default), `border-radius-lg` (0.75rem), `border-radius-xl` (1.5rem)
+- `border-radius` — uses `var(--ply-border-radius)` (default 0.25rem, themeable). `border-radius-lg`, `border-radius-xl`
 
 Equal-height cards in a row:
 
@@ -871,7 +872,7 @@ ply is built for AI code generation:
 
 1. **Single-dash class names** read like English — `units-row`, `equal-height`, `padding`, `border-radius`
 2. **No abbreviation guessing** — `padding-lg` not `pl-6`, `margin-top` not `mt-4`
-3. **457 documented classes** in `ply-classes.json` — machine-readable reference
+3. **458 documented classes** in `ply-classes.json` — machine-readable reference
 4. **Semantic HTML first** — auto-styled elements reduce class clutter
 5. **AI-friendly aliases** — `btn-lg`/`btn-big`, `btn-sm`/`btn-small`, `alert`/`tools-alert` all work
 
@@ -891,6 +892,38 @@ ply is built for AI code generation:
 | `li.active` | `li.on` (navbar) |
 | `bg-black` | `background-black` |
 | `bg-white` | `background-white` |
+
+---
+
+## Tree-Shaking (Purge Unused CSS)
+
+For production, purge unused ply classes to get ~5KB gzipped (typical single page).
+
+**PostCSS plugin** (recommended for build pipelines):
+
+```js
+// postcss.config.js
+const plyPurge = require('ply-css/purge');
+module.exports = {
+  plugins: [
+    plyPurge({ content: ['./src/**/*.{html,jsx,tsx,vue}'] }),
+  ],
+};
+```
+
+Requires: `npm install -D @fullhuman/postcss-purgecss`
+
+**CLI** (standalone or CI):
+
+```sh
+npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
+              --content 'src/**/*.{html,jsx,tsx}' \
+              -o public/ply.css
+```
+
+Requires: `npm install -D purgecss`
+
+The purge tool auto-safelists dynamically-toggled classes (`active`, `sort-asc`, responsive grid variants) so they aren't incorrectly removed. Extend with `--safelist <class>` (CLI) or `safelist` option (PostCSS).
 
 ---
 
