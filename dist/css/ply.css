@@ -443,8 +443,7 @@
 html {
   font-family: var(--ply-font-body, sans-serif);
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-       text-size-adjust: 100%;
+  text-size-adjust: 100%;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -664,15 +663,12 @@ input[type=checkbox] {
 
 /* Normalize search fields */
 input[type=search] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 
 input[type=search]::-webkit-search-decoration,
 input[type=search]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 /* Normalize horizontal line */
@@ -760,9 +756,7 @@ dialog::backdrop {
 
 /* Native <progress> and <meter> */
 progress {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 100%;
   height: 0.5rem;
   border: none;
@@ -784,9 +778,7 @@ progress::-moz-progress-bar {
 }
 
 meter {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 100%;
   height: 0.5rem;
   border: none;
@@ -2650,9 +2642,7 @@ input[type=datetime-local] {
   color: var(--ply-color-body, #222);
   position: relative;
   z-index: 2;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 textarea[disabled],
@@ -3573,8 +3563,7 @@ table.table-hovered tbody tr:hover td {
   margin-bottom: 0;
 }
 .table-container::-webkit-scrollbar {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 14px;
   height: 14px;
 }
@@ -3961,9 +3950,7 @@ select.input-xs {
 
 /* Select */
 .form select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--ply-color-input-bg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -3985,9 +3972,7 @@ select.input-xs {
 /* Select — outlined */
 .form select.select-outlined,
 select.select-outlined {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23525252' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -4520,9 +4505,7 @@ button.btn {
   line-height: 1.5rem;
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   outline: none;
   margin: 0;
   border: none;
@@ -5927,69 +5910,6 @@ button.btn-white.btn-outline.btn-active {
   color: #fff;
 }
 
-/* =Dropdown
------------------------------------------------------------------------------*/
-.dropdown {
-  display: none;
-  position: absolute;
-  z-index: 102;
-  top: 0;
-  right: 0;
-  width: 250px;
-  color: var(--ply-color-body, #0f0f0f);
-  background: var(--ply-bg-surface, #fff);
-  box-shadow: var(--ply-shadow-2, 0 1px 5px rgba(0, 0, 0, 0.3));
-  overflow: auto;
-}
-.dropdown section {
-  max-height: 250px;
-  overflow: auto;
-  padding: 20px;
-}
-.dropdown footer {
-  padding: 20px;
-}
-
-ul.dropdown {
-  max-height: 300px;
-  list-style: none;
-  margin: 0;
-  line-height: 1.5;
-  font-size: 95%;
-  padding: 0;
-}
-ul.dropdown a {
-  display: block;
-  padding: 7px 15px;
-  text-decoration: none;
-  color: var(--ply-color-body, #0f0f0f);
-}
-ul.dropdown a:hover {
-  background: var(--ply-bg-surface-alt, #eee);
-}
-ul.dropdown a:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #0f62fe);
-  outline-offset: 2px;
-}
-ul.dropdown li.divider {
-  border-bottom: 1px solid var(--ply-border-color, #e2e2e2);
-}
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 0.3em;
-  vertical-align: middle;
-  border-top: 5px solid;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-}
-.caret.caret-up {
-  border-top: 0;
-  border-bottom: 4px solid;
-}
-
 /* =Typeahead / Autocomplete
 -----------------------------------------------------------------------------*/
 .typeahead,
@@ -6109,9 +6029,6 @@ ul.dropdown li.divider {
   font-size: inherit;
   font-family: inherit;
   line-height: 1.5rem;
-}
-.multiselect-tags input::-moz-placeholder {
-  color: var(--ply-color-placeholder, #a3a3a3);
 }
 .multiselect-tags input::placeholder {
   color: var(--ply-color-placeholder, #a3a3a3);
@@ -6402,9 +6319,7 @@ ul.dropdown li.divider {
 /* Sort Indicators */
 th.sortable {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   position: relative;
   padding-right: 1.5rem;
   transition: background-color 0.15s ease;
@@ -7118,14 +7033,6 @@ dialog[open]::backdrop {
 }
 [dir=rtl] .nav-stacked ul {
   padding-right: 0;
-}
-[dir=rtl] .dropdown-menu {
-  left: auto;
-  right: 0;
-}
-[dir=rtl] .dropdown-menu-right {
-  right: auto;
-  left: 0;
 }
 [dir=rtl] .form select {
   background-position: left 0.75em center;

@@ -1943,18 +1943,6 @@
       "category": "forms",
       "description": "Autocomplete dropdown container for form inputs."
     },
-    "dropdown": {
-      "category": "helpers",
-      "description": "Positioned absolute dropdown panel. Appears below trigger element."
-    },
-    "caret": {
-      "category": "helpers",
-      "description": "Downward-pointing dropdown arrow indicator."
-    },
-    "caret-up": {
-      "category": "helpers",
-      "description": "Upward-pointing caret. Modifier on caret."
-    },
     "label": {
       "category": "notifications",
       "description": "Inline label/tag. Small, uppercase, bold text with background color."
