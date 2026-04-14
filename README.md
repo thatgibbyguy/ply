@@ -71,7 +71,7 @@ CSS frameworks were designed for humans reading documentation. But increasingly,
 
 | Bundle | File | Description |
 |--------|------|-------------|
-| Full | `ply.min.css` | Everything — grid, typography, forms, buttons, navigation, notifications, labels, dropdown, loader, helpers |
+| Full | `ply.min.css` | Everything — grid, typography, forms, buttons, navigation, notifications, labels, loader, helpers |
 | Core | `ply-core.min.css` | Grid, typography, forms, buttons, navigation, notifications, essential helpers |
 | Essentials | `ply-essentials.min.css` | Grid + helpers only |
 

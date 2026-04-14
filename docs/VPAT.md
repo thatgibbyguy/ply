@@ -102,7 +102,7 @@ The following accessibility features are built into the ply CSS framework at the
 
 ### Focus Management
 - `:focus-visible` outlines on all interactive elements via `_reset.scss` (links, buttons, `<summary>`, `[tabindex]`)
-- Component-specific focus styles in `_buttons.scss`, `_navigation.scss`, `_forms.scss`, `_dropdown.scss`, `_notifications.scss`, `_modal.scss`, `_accordion.scss`
+- Component-specific focus styles in `_buttons.scss`, `_navigation.scss`, `_forms.scss`, `_notifications.scss`, `_modal.scss`, `_accordion.scss`
 - Consistent focus indicator: `2px solid var(--ply-color-focus, #0f62fe)` with `outline-offset: 2px`
 - `button:active` suppresses outlines only during click, preserving `:focus-visible` for keyboard users
 
