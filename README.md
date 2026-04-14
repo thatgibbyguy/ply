@@ -137,13 +137,14 @@ ply is standalone — it should not be used alongside Tailwind, Bootstrap, or ot
 ply ships all 457 classes in every bundle. For production, you can purge unused
 classes to get Tailwind-level bundle sizes (~5KB gzipped for a typical page).
 
+The purge tool scans your content files for class names actually in use and
+removes only the CSS rules whose classes are entirely absent. Everything else
+stays by default — CSS custom properties, element resets, `@keyframes`,
+`@media print`, dark mode, and children of used classes are never removed.
+
 ### PostCSS Plugin
 
 The recommended approach for projects with an existing PostCSS pipeline:
-
-```sh
-npm install -D @fullhuman/postcss-purgecss
-```
 
 ```js
 // postcss.config.js
@@ -161,7 +162,6 @@ module.exports = {
 For standalone use or CI pipelines:
 
 ```sh
-npm install -D purgecss
 npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
               --content 'src/**/*.{html,jsx,tsx}' \
               -o public/ply.css
@@ -175,10 +175,9 @@ npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
 | All snippets (13 pages) | 21 KB | ~11 KB | ~48% |
 | Real-world app page | 21 KB | ~5.5 KB | ~74% |
 
-The purge tool auto-safelists dynamically-toggled classes (`active`,
-`sort-asc`, etc.) and responsive grid variants so they aren't incorrectly
-removed. Pass additional safelisted classes with `--safelist` (CLI) or the
-`safelist` option (PostCSS).
+Dynamically-toggled classes (`active`, `sort-asc`, etc.) are auto-safelisted
+since they won't appear in static content. Add extra safelisted classes with
+`--safelist` (CLI) or the `safelist` option (PostCSS plugin).
 
 ## Development
 

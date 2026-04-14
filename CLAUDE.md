@@ -169,11 +169,11 @@ For quick demos — gives you ply's classes and dark mode, but no Sass variables
 
 ## Tree-Shaking
 
-For production builds, purge unused ply classes with the built-in `ply-purge` CLI or PostCSS plugin. Typical result: ~5KB gzipped per page.
+For production builds, purge unused ply classes with the built-in `ply-purge` CLI or PostCSS plugin. Typical result: ~5KB gzipped per page. The purge tool only removes rules whose classes are entirely absent from content — CSS custom properties, element resets, `@keyframes`, dark mode, and children of used classes are never removed.
 
 - **PostCSS plugin**: `require('ply-css/purge')` — recommended for build pipelines
 - **CLI**: `npx ply-purge --css <file> --content '<glob>' -o <output>`
-- Auto-safelists dynamically-toggled classes (`active`, `sort-asc`, responsive grid variants)
+- Auto-safelists dynamically-toggled classes (`active`, `sort-asc`, etc.)
 
 See PLY.md "Tree-Shaking" section for full usage examples.
 

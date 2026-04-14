@@ -40,18 +40,17 @@
   },
   "homepage": "https://github.com/thatgibbyguy/ply",
   "peerDependencies": {
-    "@fullhuman/postcss-purgecss": ">=6.0.0"
+    "postcss": ">=8.0.0"
   },
   "peerDependenciesMeta": {
-    "@fullhuman/postcss-purgecss": {
+    "postcss": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^6.0.0",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
-    "purgecss": "^6.0.0",
+    "glob": "^10.0.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "sass": "^1.86.0",

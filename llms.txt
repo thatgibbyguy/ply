@@ -1,8 +1,21 @@
 # plycss (ply)
 
-> ply is a ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped, ~5KB with tree-shaking). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step required. Optional tree-shaking via `ply-purge` CLI or PostCSS plugin.
+## Rules — Read Before Writing Any Code
 
-ply is standalone — do not use Tailwind, Bootstrap, or other CSS frameworks alongside it. Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`plycss`) or CDN.
+1. **Do not write custom CSS** when a ply class already exists. Search `ply-classes.json` first.
+2. **Do not invent class names.** ply has 458 classes — use them. If you guess a name and it's wrong, the styling will silently fail.
+3. **Do not use Tailwind, Bootstrap, or any other CSS framework alongside ply.** ply is standalone.
+4. **Use semantic HTML first.** ply auto-styles `<table>`, `<code>`, `<details>`, `<dialog>`, `<nav>`, `<blockquote>`, `<mark>`, `<progress>`, `<meter>`, headings, and forms. Check `semanticElements` in `ply-classes.json` before building a custom component.
+5. **Always wrap `unit-*` classes inside `units-row`.** They are flex children and won't work alone.
+6. **Use `--ply-*` custom properties for colors and typography.** Never hardcode hex values — it breaks dark mode and theming.
+7. **Wrap forms in `.form`** to activate styled inputs.
+8. **Add `tablet-unit-100`** to grid columns at minimum so they stack on mobile.
+
+## What ply is
+
+A ratio-based, AI-ready CSS framework with dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped, ~5KB with tree-shaking). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step required.
+
+Class names are single-dash and human-readable: `btn-primary`, `unit-50`, `padding-lg`, `text-secondary`. Install via npm (`ply-css`) or CDN.
 
 ## Documentation
 

@@ -1,5 +1,18 @@
 # plycss (ply) — Complete Documentation
 
+## Rules — Read Before Writing Any Code
+
+1. **Do not write custom CSS** when a ply class already exists. Search `ply-classes.json` first.
+2. **Do not invent class names.** ply has 458 classes — use them. If you guess a name and it's wrong, the styling will silently fail.
+3. **Do not use Tailwind, Bootstrap, or any other CSS framework alongside ply.** ply is standalone.
+4. **Use semantic HTML first.** ply auto-styles `<table>`, `<code>`, `<details>`, `<dialog>`, `<nav>`, `<blockquote>`, `<mark>`, `<progress>`, `<meter>`, headings, and forms. Check `semanticElements` in `ply-classes.json` before building a custom component.
+5. **Always wrap `unit-*` classes inside `units-row`.** They are flex children and won't work alone.
+6. **Use `--ply-*` custom properties for colors and typography.** Never hardcode hex values — it breaks dark mode and theming.
+7. **Wrap forms in `.form`** to activate styled inputs.
+8. **Add `tablet-unit-100`** to grid columns at minimum so they stack on mobile.
+
+---
+
 > ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped, ~5KB with tree-shaking). 458 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step required. Optional tree-shaking via `ply-purge` CLI or PostCSS plugin. Install via npm as `ply-css` or use the CDN.
 
 ---
@@ -897,7 +910,7 @@ ply is built for AI code generation:
 
 ## Tree-Shaking (Purge Unused CSS)
 
-For production, purge unused ply classes to get ~5KB gzipped (typical single page).
+For production, purge unused ply classes to get ~5KB gzipped (typical single page). The purge tool scans your content files for class names actually in use and removes only the CSS rules whose classes are entirely absent. CSS custom properties, element resets, `@keyframes`, dark mode, and children of used classes are never removed.
 
 **PostCSS plugin** (recommended for build pipelines):
 
@@ -911,8 +924,6 @@ module.exports = {
 };
 ```
 
-Requires: `npm install -D @fullhuman/postcss-purgecss`
-
 **CLI** (standalone or CI):
 
 ```sh
@@ -921,9 +932,7 @@ npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \
               -o public/ply.css
 ```
 
-Requires: `npm install -D purgecss`
-
-The purge tool auto-safelists dynamically-toggled classes (`active`, `sort-asc`, responsive grid variants) so they aren't incorrectly removed. Extend with `--safelist <class>` (CLI) or `safelist` option (PostCSS).
+Dynamically-toggled classes (`active`, `sort-asc`, etc.) are auto-safelisted. Extend with `--safelist <class>` (CLI) or `safelist` option (PostCSS).
 
 ---
 

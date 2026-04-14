@@ -82,18 +82,18 @@ async function main() {
     process.exit(1);
   }
 
-  let PurgeCSS;
+  let postcss;
   try {
-    PurgeCSS = require("purgecss").PurgeCSS;
+    postcss = require("postcss");
   } catch {
     console.error(
-      "ply-purge requires purgecss.\n" +
-        "Install it: npm install -D purgecss"
+      "ply-purge requires postcss.\n" +
+        "Install it: npm install -D postcss"
     );
     process.exit(1);
   }
 
-  const { safelistClasses, safelistPatterns } = require("../safelist");
+  const plyPurge = require("../purge");
 
   const cssPath = path.resolve(opts.css);
   if (!fs.existsSync(cssPath)) {
@@ -104,28 +104,13 @@ async function main() {
   const rawCss = fs.readFileSync(cssPath, "utf8");
   const originalSize = Buffer.byteLength(rawCss, "utf8");
 
-  const purger = new PurgeCSS();
-  const results = await purger.purge({
+  const plugin = plyPurge({
     content: opts.content,
-    css: [{ raw: rawCss }],
-    safelist: {
-      standard: [...safelistClasses, ...opts.safelist],
-      deep: safelistPatterns,
-      greedy: [/^:root$/, /^html$/, /^body$/],
-    },
-    defaultExtractor: (content) => {
-      const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
-      const innerMatches = content.match(/[^<>"'`\s.(){}[\]#,;]+/g) || [];
-      return [...new Set([...broadMatches, ...innerMatches])];
-    },
+    safelist: opts.safelist,
   });
 
-  if (results.length === 0) {
-    console.error("Error: PurgeCSS returned no results");
-    process.exit(1);
-  }
-
-  const purgedCss = results[0].css;
+  const result = await postcss([plugin]).process(rawCss, { from: cssPath });
+  const purgedCss = result.css;
   const purgedSize = Buffer.byteLength(purgedCss, "utf8");
 
   const outputPath = opts.output
