@@ -5912,69 +5912,6 @@ button.btn-white.btn-outline.btn-active {
   color: #fff;
 }
 
-/* =Dropdown
------------------------------------------------------------------------------*/
-.dropdown {
-  display: none;
-  position: absolute;
-  z-index: 102;
-  top: 0;
-  right: 0;
-  width: 250px;
-  color: var(--ply-color-body, #0f0f0f);
-  background: var(--ply-bg-surface, #fff);
-  box-shadow: var(--ply-shadow-2, 0 1px 5px rgba(0, 0, 0, 0.3));
-  overflow: auto;
-}
-.dropdown section {
-  max-height: 250px;
-  overflow: auto;
-  padding: 20px;
-}
-.dropdown footer {
-  padding: 20px;
-}
-
-ul.dropdown {
-  max-height: 300px;
-  list-style: none;
-  margin: 0;
-  line-height: 1.5;
-  font-size: 95%;
-  padding: 0;
-}
-ul.dropdown a {
-  display: block;
-  padding: 7px 15px;
-  text-decoration: none;
-  color: var(--ply-color-body, #0f0f0f);
-}
-ul.dropdown a:hover {
-  background: var(--ply-bg-surface-alt, #eee);
-}
-ul.dropdown a:focus-visible {
-  outline: 2px solid var(--ply-color-focus, #0f62fe);
-  outline-offset: 2px;
-}
-ul.dropdown li.divider {
-  border-bottom: 1px solid var(--ply-border-color, #e2e2e2);
-}
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 0.3em;
-  vertical-align: middle;
-  border-top: 5px solid;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-}
-.caret.caret-up {
-  border-top: 0;
-  border-bottom: 4px solid;
-}
-
 /* =Typeahead / Autocomplete
 -----------------------------------------------------------------------------*/
 .typeahead,
@@ -7103,14 +7040,6 @@ dialog[open]::backdrop {
 }
 [dir=rtl] .nav-stacked ul {
   padding-right: 0;
-}
-[dir=rtl] .dropdown-menu {
-  left: auto;
-  right: 0;
-}
-[dir=rtl] .dropdown-menu-right {
-  right: auto;
-  left: 0;
 }
 [dir=rtl] .form select {
   background-position: left 0.75em center;

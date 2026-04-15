@@ -1,6 +1,6 @@
 {
   "name": "ply-css",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "ply — A ratio-based, AI-ready CSS framework with dark mode, accessibility, and a small footprint",
   "main": "dist/css/ply.css",
   "style": "dist/css/ply.min.css",

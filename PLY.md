@@ -137,7 +137,7 @@ For quick demos or prototypes, drop in the CSS directly:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 ```
 
-Or the lean core bundle (no labels, dropdowns, loaders, print styles):
+Or the lean core bundle (no labels, loaders, print styles):
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply-core.min.css">
