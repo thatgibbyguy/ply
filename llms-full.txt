@@ -35,7 +35,7 @@ SCSS source: `src/scss/components/_colors.scss` (full color palette), `_variable
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply.min.css">
 ```
 
-Core bundle (no labels, dropdowns, loaders, print):
+Core bundle (no labels, loaders, print):
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply-core.min.css">

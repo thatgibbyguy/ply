@@ -15,13 +15,16 @@
   font-weight: normal;
   text-transform: uppercase;
 }
+.label {
+  border-radius: var(--ply-label-radius);
+}
 .label-outline {
   background: none;
   border: 1px solid var(--ply-color-body, colors.$color-black);
   padding: 3px 6px 2px 6px;
 }
 .badge {
-  border-radius: 15px;
+  border-radius: var(--ply-badge-radius);
 }
 .badge-small {
   font-size: variables.$font-size-smaller;

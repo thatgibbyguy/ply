@@ -30,6 +30,15 @@ $btn-secondary-dark-active: #bebebe;
   --ply-bg-surface: #ffffff;
   --ply-bg-surface-alt: #f4f4f4;
   --ply-bg-muted: #e0e0e0;
+  // Inverse surface = the body text color (flips opposite the body automatically).
+  // Referencing the parent vars means a themer who changes the text color gets the
+  // inverse surface for free, or can override these directly to manage independently.
+  --ply-bg-inverse: var(--ply-color-body);
+  --ply-layer-inverse-0: var(--ply-color-body);
+  --ply-layer-inverse-1: var(--ply-color-secondary);
+
+  // Absolute black — stays #000 in every mode/theme (intentionally not derived)
+  --ply-color-black: #000000;
 
   // Text
   --ply-color-body: #161616;
@@ -81,8 +90,41 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-light-active};
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
-  --ply-border-radius: #{variables.$border-radius};
-  --ply-btn-border-radius: #{variables.$button-radius};
+  // Border radius scale
+  --ply-radius-none: 0;
+  --ply-radius-xs: 0.125rem;   // 2px
+  --ply-radius-sm: 0.25rem;    // 4px
+  --ply-radius-md: 0.5rem;     // 8px
+  --ply-radius-lg: 0.75rem;    // 12px
+  --ply-radius-xl: 1rem;       // 16px
+  --ply-radius-full: 9999px;   // pill / circle
+
+  // Semantic component radius aliases — components consume these, themers can override either layer
+  --ply-border-radius: var(--ply-radius-sm);
+  --ply-btn-border-radius: var(--ply-radius-full);
+  --ply-label-radius: var(--ply-radius-sm);    // labels: small radius by default
+  --ply-badge-radius: var(--ply-radius-full);  // badges: pill by default
+
+  // Control sizing scale — shared by inputs, buttons, selects, textareas so a given
+  // size produces the same height across every form control. Height is emergent
+  // (font-size + vertical padding + line-height), never a fixed dimension.
+  --ply-control-font-lg: 1.125rem;   // 18px
+  --ply-control-font:     1rem;       // 16px
+  --ply-control-font-sm:  0.875rem;   // 14px
+  --ply-control-font-xs:  0.75rem;    // 12px
+  --ply-control-py-lg: 0.875rem;      // 14px
+  --ply-control-py:     0.625rem;     // 10px
+  --ply-control-py-sm:  0.375rem;     // 6px
+  --ply-control-py-xs:  0.25rem;      // 4px
+  --ply-control-px-lg: 2rem;          // 32px
+  --ply-control-px:     1.5rem;       // 24px
+  --ply-control-px-sm:  1rem;         // 16px
+  --ply-control-px-xs:  0.75rem;      // 12px
+  --ply-control-lh-lg: 1.75rem;       // 28px
+  --ply-control-lh:     1.5rem;       // 24px
+  --ply-control-lh-sm:  1.25rem;      // 20px
+  --ply-control-lh-xs:  1rem;         // 16px
+  --ply-input-radius: var(--ply-radius-sm);
 
   // Navigation
   --ply-nav-bg: var(--ply-bg-body);
@@ -182,6 +224,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-space-xs: 0.25rem;
   --ply-space-sm: 0.5rem;
   --ply-space-md: 0.75rem;
+  --ply-space: 1rem;           // 16px — the default ply spacing unit
   --ply-space-lg: 1.5rem;
   --ply-space-xl: 2rem;
   --ply-space-xxl: 3rem;
@@ -193,6 +236,9 @@ $btn-secondary-dark-active: #bebebe;
   --ply-bg-surface: #262626;
   --ply-bg-surface-alt: #262626;
   --ply-bg-muted: #393939;
+  // --ply-bg-inverse / --ply-layer-inverse-* / --ply-color-black are not redefined here:
+  // the inverse vars reference --ply-color-body/secondary (which flip in this mixin), and
+  // black is mode-independent.
 
   // Text
   --ply-color-body: #f4f4f4;

@@ -74,7 +74,9 @@
     border-radius: var(--ply-border-radius);
     display: block;
     width: 100%;
-    padding: 0.5em 0.75em;
+    font-size: var(--ply-control-font);
+    line-height: var(--ply-control-lh);
+    padding: var(--ply-control-py) var(--ply-control-px);
   }
 }
 
@@ -264,26 +266,33 @@ input.input-on-black {
   }
 }
 
-/* Sizes */
+/* Sizes — share the control sizing scale with buttons so a given size is the
+   same height across inputs, buttons, selects and textareas */
 .form .input-lg,
 input.input-lg[type],
 textarea.input-lg,
 select.input-lg {
-  font-size: variables.$font-size-xl;
+  font-size: var(--ply-control-font-lg);
+  line-height: var(--ply-control-lh-lg);
+  padding: var(--ply-control-py-lg) var(--ply-control-px-lg);
 }
 
 .form .input-sm,
 input.input-sm[type],
 textarea.input-sm,
 select.input-sm {
-  font-size: variables.$font-size-small;
+  font-size: var(--ply-control-font-sm);
+  line-height: var(--ply-control-lh-sm);
+  padding: var(--ply-control-py-sm) var(--ply-control-px-sm);
 }
 
 .form .input-xs,
 input.input-xs[type],
 textarea.input-xs,
 select.input-xs {
-  font-size: variables.$font-size-smaller;
+  font-size: var(--ply-control-font-xs);
+  line-height: var(--ply-control-lh-xs);
+  padding: var(--ply-control-py-xs) var(--ply-control-px-xs);
 }
 
 /* Append & Prepend */
@@ -394,7 +403,7 @@ select.input-xs {
   }
 }
 
-/* Select */
+// Select — the native dropdown / picker for choosing one option from a list
 .form select {
   appearance: none;
   background-color: var(--ply-color-input-bg);

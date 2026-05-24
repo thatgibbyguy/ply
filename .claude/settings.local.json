@@ -80,7 +80,15 @@
       "mcp__figma-console__figma_execute",
       "mcp__figma-console__figma_capture_screenshot",
       "Bash(./scripts/release.sh 1.6.1 \"Themeable border-radius, docs updates\")",
-      "mcp__figma-console__figma_take_screenshot"
+      "mcp__figma-console__figma_take_screenshot",
+      "Bash(./scripts/release.sh *)",
+      "mcp__figma-console__figma_reconnect",
+      "mcp__figma-console__figma_search_components",
+      "mcp__figma-console__figma_list_open_files",
+      "mcp__figma-console__figma_get_file_data",
+      "mcp__figma-console__figma_set_description",
+      "mcp__figma-console__figma_arrange_component_set",
+      "mcp__figma-desktop__get_screenshot"
     ]
   }
 }
