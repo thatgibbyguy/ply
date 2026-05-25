@@ -54,6 +54,38 @@ Setting a custom `data-theme` value prevents auto dark mode from interfering wit
 
 See `customProperties` in `ply-classes.json` for the full list of overridable variables.
 
+### Scales: Radius, Control Sizing, Spacing
+
+ply exposes three token scales so you can theme size/shape from a few places:
+
+**Border radius** — a scale plus semantic aliases. Change the scale once, or retarget one component.
+
+```css
+--ply-radius-none: 0;        --ply-radius-lg: 0.75rem;   /* 12px */
+--ply-radius-xs: 0.125rem;   --ply-radius-xl: 1rem;      /* 16px */
+--ply-radius-sm: 0.25rem;    --ply-radius-full: 9999px;  /* pill */
+--ply-radius-md: 0.5rem;
+/* aliases consumed by components */
+--ply-border-radius: var(--ply-radius-sm);
+--ply-btn-border-radius: var(--ply-radius-full);
+--ply-label-radius: var(--ply-radius-sm);
+--ply-badge-radius: var(--ply-radius-full);
+--ply-input-radius: var(--ply-radius-sm);
+```
+
+**Control sizing** — shared by inputs, buttons, selects, and textareas, so a given size is the **same height** across every control. Height is emergent (`padding-y × 2 + line-height`), never a fixed dimension. Suffixes: `-lg`, none (default), `-sm`, `-xs`.
+
+```css
+--ply-control-font / -lg / -sm / -xs   /* 1rem · 1.125 · 0.875 · 0.75 */
+--ply-control-py   / -lg / -sm / -xs   /* 0.625rem · 0.875 · 0.375 · 0.25 */
+--ply-control-px   / -lg / -sm / -xs   /* 1.5rem · 2 · 1 · 0.75 */
+--ply-control-lh   / -lg / -sm / -xs   /* 1.5rem · 1.75 · 1.25 · 1 */
+```
+
+**Spacing** — `--ply-space-xs/sm/md`, `--ply-space` (the 16px default unit), `--ply-space-lg/xl/xxl`.
+
+**Inverse & black** — `--ply-bg-inverse` / `--ply-layer-inverse-0/1` reference the text-color variables, so they flip opposite the body automatically. `--ply-color-black` stays `#000` in every mode.
+
 ### Custom Theme Browser Compatibility
 
 ply uses `color-mix()` to auto-compute hover/active button states from your base color. This works in all modern browsers (Chrome 111+, Firefox 113+, Safari 16.4+, Edge 111+). On older browsers (pre-2023), `color-mix()` is ignored and the fallback hex values from ply's default theme are used instead. For custom themes targeting legacy browsers, also set `--ply-btn-default-bg-hover`, `--ply-btn-default-bg-active`, `--ply-btn-secondary-bg-hover`, and `--ply-btn-secondary-bg-active` explicitly. In modern browsers, `color-mix()` overrides these fallbacks automatically.

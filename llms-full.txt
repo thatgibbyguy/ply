@@ -297,6 +297,15 @@ Key variables for mapping:
 
 This ensures third-party components follow ply's theme automatically, including dark mode and custom themes.
 
+### Token Scales
+
+ply exposes three scales so size and shape are themeable from a few variables:
+
+- **Border radius** — `--ply-radius-none/xs/sm/md/lg/xl/full` scale, consumed by semantic aliases `--ply-border-radius` (`= radius-sm`), `--ply-btn-border-radius` (`= radius-full`), `--ply-label-radius` (`= radius-sm`), `--ply-badge-radius` (`= radius-full`), `--ply-input-radius` (`= radius-sm`). Override the scale once or retarget one alias.
+- **Control sizing** — `--ply-control-{font,py,px,lh}` (+ `-lg`/`-sm`/`-xs`) are shared by inputs, buttons, selects, and textareas, so a given size renders the same height across every control. Height is emergent (`padding-y × 2 + line-height`), never fixed.
+- **Spacing** — `--ply-space-xs/sm/md`, `--ply-space` (the 16px default unit), `--ply-space-lg/xl/xxl`.
+- **Inverse & black** — `--ply-bg-inverse` and `--ply-layer-inverse-0/1` reference the text-color variables (flip opposite the body automatically); `--ply-color-black` is `#000` in every mode.
+
 ---
 
 ## Navigation — Semantic and Responsive

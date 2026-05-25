@@ -30,6 +30,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-bg-surface: #ffffff;
   --ply-bg-surface-alt: #f4f4f4;
   --ply-bg-muted: #e0e0e0;
+
   // Inverse surface = the body text color (flips opposite the body automatically).
   // Referencing the parent vars means a themer who changes the text color gets the
   // inverse surface for free, or can override these directly to manage independently.
@@ -90,6 +91,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #{$btn-secondary-light-active};
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
+
   // Border radius scale
   --ply-radius-none: 0;
   --ply-radius-xs: 0.125rem;   // 2px
@@ -236,6 +238,7 @@ $btn-secondary-dark-active: #bebebe;
   --ply-bg-surface: #262626;
   --ply-bg-surface-alt: #262626;
   --ply-bg-muted: #393939;
+
   // --ply-bg-inverse / --ply-layer-inverse-* / --ply-color-black are not redefined here:
   // the inverse vars reference --ply-color-body/secondary (which flip in this mixin), and
   // black is mode-independent.

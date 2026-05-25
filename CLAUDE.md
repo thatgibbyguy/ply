@@ -71,6 +71,13 @@ Setting a custom `data-theme` value prevents auto dark mode from interfering wit
 
 See `customProperties` in `ply-classes.json` for the full list of overridable variables. Use the `themeTemplate` key in `ply-classes.json` for a complete copy-paste CSS block with every overridable variable grouped by category.
 
+### Token Scales
+
+- **Radius** — `--ply-radius-none/xs/sm/md/lg/xl/full` scale, consumed by semantic aliases `--ply-border-radius`, `--ply-btn-border-radius`, `--ply-label-radius`, `--ply-badge-radius`, `--ply-input-radius`. Override the scale once or retarget a single alias.
+- **Control sizing** — `--ply-control-{font,py,px,lh}` (+ `-lg`/`-sm`/`-xs`) are shared by inputs, buttons, selects, and textareas, so the same size renders the same height everywhere. Heights are emergent (padding + line-height), never fixed.
+- **Spacing** — `--ply-space` is the default 16px unit, between `--ply-space-md` (12px) and `--ply-space-lg` (24px).
+- **Inverse & black** — `--ply-bg-inverse` / `--ply-layer-inverse-0/1` reference the text-color vars (flip opposite the body automatically); `--ply-color-black` is `#000` in every mode.
+
 ## Common Patterns
 
 - **Equal-height cards** — Add `equal-height` to `units-row` so all children stretch to the tallest

@@ -12,6 +12,10 @@
   --ply-bg-surface: #ffffff;
   --ply-bg-surface-alt: #f4f4f4;
   --ply-bg-muted: #e0e0e0;
+  --ply-bg-inverse: var(--ply-color-body);
+  --ply-layer-inverse-0: var(--ply-color-body);
+  --ply-layer-inverse-1: var(--ply-color-secondary);
+  --ply-color-black: #000000;
   --ply-color-body: #161616;
   --ply-color-headings: #161616;
   --ply-color-secondary: #525252;
@@ -46,8 +50,34 @@
   --ply-btn-secondary-bg-hover: color-mix(in oklch, var(--ply-btn-secondary-bg), black 15%);
   --ply-btn-secondary-bg-active: #2b2b2b;
   --ply-btn-secondary-bg-active: color-mix(in oklch, var(--ply-btn-secondary-bg), black 25%);
-  --ply-border-radius: 0.25rem;
-  --ply-btn-border-radius: 2rem;
+  --ply-radius-none: 0;
+  --ply-radius-xs: 0.125rem;
+  --ply-radius-sm: 0.25rem;
+  --ply-radius-md: 0.5rem;
+  --ply-radius-lg: 0.75rem;
+  --ply-radius-xl: 1rem;
+  --ply-radius-full: 9999px;
+  --ply-border-radius: var(--ply-radius-sm);
+  --ply-btn-border-radius: var(--ply-radius-full);
+  --ply-label-radius: var(--ply-radius-sm);
+  --ply-badge-radius: var(--ply-radius-full);
+  --ply-control-font-lg: 1.125rem;
+  --ply-control-font: 1rem;
+  --ply-control-font-sm: 0.875rem;
+  --ply-control-font-xs: 0.75rem;
+  --ply-control-py-lg: 0.875rem;
+  --ply-control-py: 0.625rem;
+  --ply-control-py-sm: 0.375rem;
+  --ply-control-py-xs: 0.25rem;
+  --ply-control-px-lg: 2rem;
+  --ply-control-px: 1.5rem;
+  --ply-control-px-sm: 1rem;
+  --ply-control-px-xs: 0.75rem;
+  --ply-control-lh-lg: 1.75rem;
+  --ply-control-lh: 1.5rem;
+  --ply-control-lh-sm: 1.25rem;
+  --ply-control-lh-xs: 1rem;
+  --ply-input-radius: var(--ply-radius-sm);
   --ply-nav-bg: var(--ply-bg-body);
   --ply-nav-color: var(--ply-color-body);
   --ply-nav-border: var(--ply-color-body);
@@ -129,6 +159,7 @@
   --ply-space-xs: 0.25rem;
   --ply-space-sm: 0.5rem;
   --ply-space-md: 0.75rem;
+  --ply-space: 1rem;
   --ply-space-lg: 1.5rem;
   --ply-space-xl: 2rem;
   --ply-space-xxl: 3rem;
@@ -705,20 +736,26 @@ summary {
   font-weight: 600;
   padding: 0.25rem 0;
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 summary::marker, summary::-webkit-details-marker {
   display: none;
 }
-summary::before {
-  content: "▶";
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-size: 0.75em;
+summary::after {
+  content: "";
+  flex: none;
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  border-top: 0.35em solid var(--ply-color-secondary);
   transition: transform 0.15s ease;
 }
 
-details[open] > summary::before {
-  transform: rotate(90deg);
+details[open] > summary::after {
+  transform: rotate(180deg);
 }
 
 details[open] > summary {
@@ -3639,7 +3676,9 @@ table.table-hovered tbody tr:hover td {
   border-radius: var(--ply-border-radius);
   display: block;
   width: 100%;
-  padding: 0.5em 0.75em;
+  font-size: var(--ply-control-font);
+  line-height: var(--ply-control-lh);
+  padding: var(--ply-control-py) var(--ply-control-px);
 }
 
 .form-inline input[type=text],
@@ -3833,26 +3872,33 @@ input.input-on-black:focus::-moz-placeholder, input.input-on-black.active::-moz-
   color: #aaa;
 }
 
-/* Sizes */
+/* Sizes — share the control sizing scale with buttons so a given size is the
+   same height across inputs, buttons, selects and textareas */
 .form .input-lg,
 input.input-lg[type],
 textarea.input-lg,
 select.input-lg {
-  font-size: 1.5rem;
+  font-size: var(--ply-control-font-lg);
+  line-height: var(--ply-control-lh-lg);
+  padding: var(--ply-control-py-lg) var(--ply-control-px-lg);
 }
 
 .form .input-sm,
 input.input-sm[type],
 textarea.input-sm,
 select.input-sm {
-  font-size: 0.875rem;
+  font-size: var(--ply-control-font-sm);
+  line-height: var(--ply-control-lh-sm);
+  padding: var(--ply-control-py-sm) var(--ply-control-px-sm);
 }
 
 .form .input-xs,
 input.input-xs[type],
 textarea.input-xs,
 select.input-xs {
-  font-size: 0.75rem;
+  font-size: var(--ply-control-font-xs);
+  line-height: var(--ply-control-lh-xs);
+  padding: var(--ply-control-py-xs) var(--ply-control-px-xs);
 }
 
 /* Append & Prepend */
@@ -3944,7 +3990,6 @@ select.input-xs {
   border-left: none;
 }
 
-/* Select */
 .form select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -4500,9 +4545,9 @@ button.btn {
   justify-content: center;
   gap: var(--ply-btn-gap, 0.5em);
   font-family: var(--ply-font-body, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji);
-  font-size: var(--ply-btn-font-size, 1em);
+  font-size: var(--ply-btn-font-size, var(--ply-control-font));
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: var(--ply-control-lh);
   text-decoration: none;
   color: var(--ply-btn-secondary-color, var(--ply-color-text-inverse, #fff));
   -webkit-appearance: none;
@@ -4515,7 +4560,7 @@ button.btn {
   box-shadow: none;
   cursor: pointer;
   background: var(--ply-btn-secondary-bg, #393939);
-  padding: 0.625rem 1.5rem;
+  padding: var(--ply-control-py) var(--ply-control-px);
 }
 .btn:hover, .btn:active, .btn:focus-visible,
 input[type=submit].btn:hover,
@@ -4580,8 +4625,9 @@ input[type=submit].btn-lg,
 input[type=button].btn-lg,
 input[type=reset].btn-lg,
 button.btn-lg {
-  font-size: 1.125rem;
-  padding: 0.875rem 2rem;
+  font-size: var(--ply-control-font-lg);
+  line-height: var(--ply-control-lh-lg);
+  padding: var(--ply-control-py-lg) var(--ply-control-px-lg);
 }
 
 .btn-sm,
@@ -4589,8 +4635,9 @@ input[type=submit].btn-sm,
 input[type=button].btn-sm,
 input[type=reset].btn-sm,
 button.btn-sm {
-  font-size: 0.875rem;
-  padding: 0.375rem 1rem;
+  font-size: var(--ply-control-font-sm);
+  line-height: var(--ply-control-lh-sm);
+  padding: var(--ply-control-py-sm) var(--ply-control-px-sm);
 }
 
 .btn-xs,
@@ -4598,8 +4645,9 @@ input[type=submit].btn-xs,
 input[type=button].btn-xs,
 input[type=reset].btn-xs,
 button.btn-xs {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
+  font-size: var(--ply-control-font-xs);
+  line-height: var(--ply-control-lh-xs);
+  padding: var(--ply-control-py-xs) var(--ply-control-px-xs);
   vertical-align: baseline;
 }
 
@@ -5820,6 +5868,10 @@ button.btn-white.btn-outline.btn-active {
   text-transform: uppercase;
 }
 
+.label {
+  border-radius: var(--ply-label-radius);
+}
+
 .label-outline {
   background: none;
   border: 1px solid var(--ply-color-body, #0f0f0f);
@@ -5827,7 +5879,7 @@ button.btn-white.btn-outline.btn-active {
 }
 
 .badge {
-  border-radius: 15px;
+  border-radius: var(--ply-badge-radius);
 }
 
 .badge-small {
