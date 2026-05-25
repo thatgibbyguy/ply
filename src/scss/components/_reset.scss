@@ -283,14 +283,17 @@ summary {
     display: none;
   }
 
-  // Caret sits on the right and rotates when open
+  // Caret sits on the right and rotates when open. Drawn with borders (symmetric
+  // bounding box) so the 180° rotation pivots cleanly with no vertical shift.
   &::after {
-    content: '\25BE'; // ▾
-    display: inline-block;
+    content: '';
+    flex: none;
     margin-left: auto;
-    padding-left: 0.5rem;
-    font-size: 0.75em;
-    color: var(--ply-color-secondary);
+    width: 0;
+    height: 0;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.35em solid var(--ply-color-secondary);
     transition: transform 0.15s ease;
   }
 }
